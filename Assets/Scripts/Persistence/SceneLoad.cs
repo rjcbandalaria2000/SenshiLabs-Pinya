@@ -31,12 +31,12 @@ public class SceneLoad : MonoBehaviour
         {
             SceneHandler addSceneLoader = SingletonManager.Get<SceneHandler>();
 
-            if (addSceneLoader)
+            if (addSceneLoader) //remove extra scenes to the current scene 
             {
                 yield return addSceneLoader.UnloadScene();
-                Debug.Log("ComplexSceneManager_Unloaded");
+                Debug.Log("Scenehandler_Unloaded");
             }
-
+            
 
             yield return SceneManager.UnloadSceneAsync(currentSceneId);
             currentSceneId = string.Empty;
@@ -44,7 +44,7 @@ public class SceneLoad : MonoBehaviour
 
         Resources.UnloadUnusedAssets();
         yield return null;
-        GC.Collect();
+        GC.Collect(); // Trigger a collection to free memory
         yield return null;
 
         yield return SceneManager.LoadSceneAsync(sceneId, LoadSceneMode.Additive);

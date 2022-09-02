@@ -22,9 +22,14 @@ public class SceneHandler : MonoBehaviour
     {
         for (int i = 0; i < AdditionalScene.Count; i++)
         {
-            yield return SceneManager.LoadSceneAsync(AdditionalScene[i], LoadSceneMode.Additive);
+            yield return SceneManager.LoadSceneAsync(AdditionalScene[i], LoadSceneMode.Additive); // adds another scene to the current loaded scene
         }
 
+    }
+
+    public Coroutine UnloadScene()
+    {
+        return StartCoroutine(UnloadSceneRoutine());
     }
 
     private IEnumerator UnloadSceneRoutine()
@@ -35,8 +40,5 @@ public class SceneHandler : MonoBehaviour
         }
     }
 
-    public Coroutine UnloadScene()
-    {
-        return StartCoroutine(UnloadSceneRoutine());
-    }
+   
 }
