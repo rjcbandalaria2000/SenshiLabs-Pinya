@@ -24,4 +24,30 @@ public class MotivationMeter : MonoBehaviour
         EvtChangeMeter.Invoke();
     }
 
+    public void IncreaseMotivation(float value)
+    {
+        if(MotivationAmount < MaxMotivation)
+        {
+            MotivationAmount += value;
+        }
+        else
+        {
+            Debug.Log("Motivation is maxed out");
+        }
+        EvtChangeMeter.Invoke();
+    }
+
+    public void DecreaseMotivation(float value)
+    {
+        if(MotivationAmount > 0)
+        {
+            MotivationAmount -= value;  
+        }
+        else
+        {
+            Debug.Log("Motivation is already at 0");
+        }
+        EvtChangeMeter.Invoke();
+    }
+
 }

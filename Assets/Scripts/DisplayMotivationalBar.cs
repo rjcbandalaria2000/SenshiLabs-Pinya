@@ -15,24 +15,31 @@ public class DisplayMotivationalBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        InitializeMotivationBar();
     }
 
     public void InitializeMotivationBar()
-    {
+    { 
+        if(MotivationSlider == null)
+        {
+            MotivationSlider = this.GetComponent<Slider>();
+        }
         Assert.IsNotNull(Player, Player.name + "is not set or is null");
         playerMotivation = Player.GetComponent<MotivationMeter>();
         if (playerMotivation)
         {
+           
+            MotivationSlider.maxValue = playerMotivation.MaxMotivation; 
+            MotivationSlider.value = playerMotivation.MotivationAmount;
             playerMotivation.EvtChangeMeter.AddListener(UpdateMotivationBar);
         }
+       
     }
 
     public void UpdateMotivationBar()
     {
         Assert.IsNotNull(playerMotivation, "Player Motivation is not set or is null");
         MotivationSlider.value = playerMotivation.MotivationAmount;
-        
     }
 
 }
