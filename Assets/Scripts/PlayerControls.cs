@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
 {
-    public int moveSpeed = 5;
+    public int      MoveSpeed = 5;
     private Vector3 targetPosition;
 
     void Start()
@@ -22,6 +22,6 @@ public class PlayerControls : MonoBehaviour
             targetPosition.z = this.transform.position.z;
         }
         
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed*Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, MoveSpeed*Time.deltaTime);
     }
 }

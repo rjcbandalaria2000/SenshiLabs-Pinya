@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MinigameObject : MonoBehaviour
 {
-    public Interactable Interactable;
+    public Interactable     Interactable;
+    public bool             isInteracted;
 
     public void Start()
     {
@@ -15,12 +16,19 @@ public class MinigameObject : MonoBehaviour
         }
         if (Interactable)
         {
+            //Listen to the interactable event and proceed to interact with the player
             Interactable.EvtInteracted.AddListener(Interact);
+            Interactable.EvtFinishInteract.AddListener(EndInteract);
         }
     }
 
     public void Interact(GameObject player = null)
     {
         Debug.Log("Interacted with " + player.name);
+    }
+
+    public void EndInteract(GameObject player = null)
+    {
+        Debug.Log("End Interact");
     }
 }

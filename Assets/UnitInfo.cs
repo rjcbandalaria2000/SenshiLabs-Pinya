@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class UnitInfo : MonoBehaviour
 {
-    public GameObject Parent;
-
+    public GameObject   Parent;
+  
     public void Start()
     {
         if(Parent == null)
