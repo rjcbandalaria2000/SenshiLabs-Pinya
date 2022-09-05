@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b832078bf6ea9d6458237d8de2438203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Parent: {fileID: 0}
+  Parent: {fileID: 6543178212848092689}
   EvtInteract:
     m_PersistentCalls:
       m_Calls: []

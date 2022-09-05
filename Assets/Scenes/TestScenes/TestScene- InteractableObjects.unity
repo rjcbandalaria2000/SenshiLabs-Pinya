@@ -1515,6 +1515,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.546081, y: 2.5471663}
   m_EdgeRadius: 0
+--- !u!1 &964817258 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2816954076488409267, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+  m_PrefabInstance: {fileID: 2816954076214239176}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &964817263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964817258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c181a4815ee67c49846764ff353adc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1008989011
 GameObject:
   m_ObjectHideFlags: 0
@@ -2871,9 +2888,49 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2816954075471560447, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: m_Size.x
+      value: 15.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816954075471560447, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: m_Size.y
+      value: 17.89
+      objectReference: {fileID: 0}
     - target: {fileID: 2816954076488409267, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
       propertyPath: m_Name
       value: TrashBin
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816954076488409268, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: EvtInteracted.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816954076488409268, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: EvtInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816954076488409268, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: EvtInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 964817263}
+    - target: {fileID: 2816954076488409268, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: EvtInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816954076488409268, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: EvtInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnChangeScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816954076488409268, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: EvtInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneChange, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816954076488409268, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: EvtInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: TestScene- MotivLifeBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816954076488409268, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: EvtInteracted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2816954076488409270, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
       propertyPath: m_RootOrder
@@ -2918,6 +2975,14 @@ PrefabInstance:
     - target: {fileID: 2816954076488409270, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816954076488409271, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: SceneName
+      value: TestScene- MotivLifeBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816954076488409271, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: MinigameScene
+      value: TestScene- MotivLifeBar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
