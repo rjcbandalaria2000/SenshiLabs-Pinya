@@ -5,11 +5,12 @@ using UnityEngine.Events;
 
 public class MotivationMeter : MonoBehaviour
 {
-    public float    MotivationAmount;
-    public float    MaxMotivation;
+    [Header("Values")]
+    public float        MotivationAmount;
+    public float        MaxMotivation;
 
     [Header("Unity Events")]
-    public UnityEvent EvtChangeMeter = new();
+    public UnityEvent   EvtChangeMeter = new();
 
     
     // Start is called before the first frame update

@@ -8,6 +8,7 @@ public class DebuggerManager : MonoBehaviour
     public GameObject       Player;
 
     private MotivationMeter playerMotivation;
+    private PinyaMeter      playerPinyaMeter;
 
     [Header("Change Values")]
     public float MotivationValueChange = 0;
@@ -21,6 +22,7 @@ public class DebuggerManager : MonoBehaviour
     {
         Assert.IsNotNull(Player, "Player is null or is not set");
         playerMotivation = Player.GetComponent<MotivationMeter>();
+        playerPinyaMeter = Player.GetComponent<PinyaMeter>();   
     }
 
     public void OnIncreaseMotivationButtonClicked()
@@ -35,4 +37,9 @@ public class DebuggerManager : MonoBehaviour
         playerMotivation.DecreaseMotivation(MotivationValueChange);
     }
 
+    public void OnIncreasePinyaMeterButtonClicked()
+    {
+        Assert.IsNotNull(playerPinyaMeter, "PlayerPinyaMeter is null or is not set");
+
+    }
 }

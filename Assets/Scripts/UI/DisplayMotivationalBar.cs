@@ -28,7 +28,6 @@ public class DisplayMotivationalBar : MonoBehaviour
         playerMotivation = Player.GetComponent<MotivationMeter>();
         if (playerMotivation)
         {
-           
             MotivationSlider.maxValue = playerMotivation.MaxMotivation; 
             MotivationSlider.value = playerMotivation.MotivationAmount;
             playerMotivation.EvtChangeMeter.AddListener(UpdateMotivationBar);
