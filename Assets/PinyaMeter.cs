@@ -35,6 +35,7 @@ public class PinyaMeter : MonoBehaviour
         {
             Debug.Log("Pinya Value is max");
         }
+        EvtChangeValue.Invoke();
     }
 
     public void DecreasePinyaMeter(float value)
@@ -47,6 +48,7 @@ public class PinyaMeter : MonoBehaviour
         {
             Debug.Log("Pinya value is already 0");
         }
+        EvtChangeValue.Invoke();
     }
 
 }

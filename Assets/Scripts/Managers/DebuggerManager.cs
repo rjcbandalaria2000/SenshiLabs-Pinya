@@ -11,7 +11,8 @@ public class DebuggerManager : MonoBehaviour
     private PinyaMeter      playerPinyaMeter;
 
     [Header("Change Values")]
-    public float MotivationValueChange = 0;
+    public float MotivationValueChange = 1;
+    public float PinyaMeterValueChange = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +41,12 @@ public class DebuggerManager : MonoBehaviour
     public void OnIncreasePinyaMeterButtonClicked()
     {
         Assert.IsNotNull(playerPinyaMeter, "PlayerPinyaMeter is null or is not set");
+        playerPinyaMeter.IncreasePinyaMeter(PinyaMeterValueChange);
+    }
 
+    public void OnDecreasePinyaMeterButtonClicked()
+    {
+        Assert.IsNotNull(playerPinyaMeter, "PlayerPinyaMeter is null or is not set");
+        playerPinyaMeter.DecreasePinyaMeter(PinyaMeterValueChange);
     }
 }

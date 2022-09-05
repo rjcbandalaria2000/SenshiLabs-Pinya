@@ -13,7 +13,7 @@ public class DisplayPinyaMeter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        InitializePinyaBar();
     }
 
     public void InitializePinyaBar()
