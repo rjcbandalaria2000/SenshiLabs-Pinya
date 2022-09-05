@@ -24,7 +24,7 @@ public class PinyaMeter : MonoBehaviour
         PinyaValue = MaxPinyaValue;
         EvtChangeValue.Invoke();
     }
-
+    #region Public Functions
     public void IncreasePinyaMeter(float value)
     {
         if (PinyaValue < MaxPinyaValue)
@@ -51,4 +51,5 @@ public class PinyaMeter : MonoBehaviour
         EvtChangeValue.Invoke();
     }
 
+    #endregion
 }
