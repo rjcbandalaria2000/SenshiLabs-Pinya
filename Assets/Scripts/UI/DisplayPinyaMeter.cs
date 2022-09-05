@@ -10,6 +10,12 @@ public class DisplayPinyaMeter : MonoBehaviour
     public Slider       PinyaSlider;
 
     private PinyaMeter playerPinyaMeter;
+
+    private void Awake()
+    {
+        SingletonManager.Register(this);
+    }
+
     // Start is called before the first frame update
     void Start()
     {

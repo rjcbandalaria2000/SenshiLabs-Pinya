@@ -11,6 +11,10 @@ public class DisplayMotivationalBar : MonoBehaviour
     public Slider MotivationSlider;
 
     private MotivationMeter playerMotivation;
+    private void Awake()
+    {
+        SingletonManager.Register(this);
+    }
 
     // Start is called before the first frame update
     void Start()

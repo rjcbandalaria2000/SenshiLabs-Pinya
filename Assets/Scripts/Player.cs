@@ -19,5 +19,8 @@ public class Player : MonoBehaviour
 
         motivationMeter.MotivationAmount = data.motivationMeter;
         pinyaMeter.PinyaValue = data.piñyaMeter;
+
+        SingletonManager.Get<DisplayMotivationalBar>().UpdateMotivationBar();
+        SingletonManager.Get<DisplayPinyaMeter>().UpdatePinyaBar();
     }
 }
