@@ -19,6 +19,7 @@ public class DisplayMiniGameTimer : MonoBehaviour
         if (SingletonManager.Get<MiniGameTimer>() != null)
         {
             miniGameTimer_UI.text = SingletonManager.Get<MiniGameTimer>().timer.ToString();
+            Events.OnDisplayMinigameTime.AddListener(updateMiniGameTimer);
         }
         else
         {

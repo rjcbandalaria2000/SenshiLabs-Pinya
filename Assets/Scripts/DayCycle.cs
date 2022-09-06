@@ -19,7 +19,7 @@ public class DayCycle : MonoBehaviour
         if(endTime > time)
         {
             time += timeAdd;
-            SingletonManager.Get<DisplayCycleTime>().updateTimerDisplay();
+            Events.OnDisplayCycleTime.Invoke();
         }
         else
         {

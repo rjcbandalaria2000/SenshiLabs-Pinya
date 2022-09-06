@@ -87,7 +87,8 @@ public class GameManager : MonoBehaviour
         while(SingletonManager.Get<MiniGameTimer>().timer > 0)
         {
             SingletonManager.Get<MiniGameTimer>().timer--;
-            SingletonManager.Get<DisplayMiniGameTimer>().updateMiniGameTimer();
+            //SingletonManager.Get<DisplayMiniGameTimer>().updateMiniGameTimer();
+            Events.OnDisplayMinigameTime.Invoke();
             yield return new WaitForSeconds(speedCounter);
         }
     }

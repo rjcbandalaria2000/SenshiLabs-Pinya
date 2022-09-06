@@ -10,21 +10,25 @@ using UnityEngine;
 public static class Events
 {
     // To create an event with no parameters, please follow this format. 
-  
+    #region UI
 
-    public static readonly Evt OnUnitDied = new Evt();
+    public static readonly Evt OnDisplayMinigameTime = new Evt();
+    public static readonly Evt OnDisplayCycleTime = new Evt();
 
-  //  public static readonly Evt<Unit> OnUnitSelect = new Evt();
+    #endregion
 
-    public static readonly Evt OnTowerDied = new Evt();
 
-    public static readonly Evt OnTowerSelect = new Evt();
+    //  public static readonly Evt<Unit> OnUnitSelect = new Evt();
 
-    public static readonly Evt OnResetInfoUI = new Evt();
+    //public static readonly Evt OnTowerDied = new Evt();
 
-    public static readonly Evt OnPlayerSelect = new Evt();
+    //public static readonly Evt OnTowerSelect = new Evt();
 
-    public static readonly Evt OnNexusDestroy = new Evt();
+    //public static readonly Evt OnResetInfoUI = new Evt();
+
+    //public static readonly Evt OnPlayerSelect = new Evt();
+
+    //public static readonly Evt OnNexusDestroy = new Evt();
 
     //public static readonly Evt<Unit,float> OnMiniUIUpdate = new Evt<Unit, float>();
 

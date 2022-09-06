@@ -19,6 +19,7 @@ public class DisplayCycleTime : MonoBehaviour
         if(SingletonManager.Get<DayCycle>() != null)
         {
             cycleTimer_UI.text = SingletonManager.Get<DayCycle>().time.ToString();
+            Events.OnDisplayCycleTime.AddListener(updateTimerDisplay);
         }
         else 
         { 
