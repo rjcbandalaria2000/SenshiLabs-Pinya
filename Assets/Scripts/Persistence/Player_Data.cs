@@ -13,4 +13,15 @@ public class Player_Data : MonoBehaviour
     }
 
    
+    public void storeData(Player player)
+    {
+        storedMotivationData = player.motivationMeter.MotivationAmount;
+        storedPinyaData = player.pinyaMeter.PinyaValue;
+    }
+
+    public void getData(Player player)
+    {
+        player.motivationMeter.MotivationAmount = storedMotivationData;
+        player.pinyaMeter.PinyaValue = storedPinyaData;
+    }
 }

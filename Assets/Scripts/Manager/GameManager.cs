@@ -13,15 +13,22 @@ public class GameManager : MonoBehaviour
     public float maxTime;
     public float speedCounter;
 
+    public Player player;
+
     private void Awake()
     {
         SingletonManager.Register(this);
 
+        
         currentTime = maxTime;
         initialize_MinigameTimer();// remove this line, for testing purpose only;
     }
     public void Start()
     {
+        if(player == null)
+        {
+            player = GameObject.FindObjectOfType<Player>().GetComponent<Player>();
+        }
 
         StartCoroutine(dayStart());
     }
