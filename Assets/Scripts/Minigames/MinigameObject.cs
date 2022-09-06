@@ -19,14 +19,15 @@ public class MinigameObject : MonoBehaviour
         if (Interactable)
         {
             //Listen to the interactable event and proceed to interact with the player
-            Interactable.EvtInteracted.AddListener(Interact);
-            Interactable.EvtFinishInteract.AddListener(EndInteract);
+            Events.OnInteract.AddListener(Interact); 
+            Events.OnFinishInteract.AddListener(EndInteract);
         }
         sceneChange = this.gameObject.GetComponent<SceneChange>();  
     }
 
     public void Interact(GameObject player = null)
     {
+        //When player is interacting with the object 
         // For Scene change, always start at the persistent scene
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -45,6 +46,7 @@ public class MinigameObject : MonoBehaviour
 
     public void EndInteract(GameObject player = null)
     {
+        // When player is out of range or leaves
         Debug.Log("End Interact");
     }
 }

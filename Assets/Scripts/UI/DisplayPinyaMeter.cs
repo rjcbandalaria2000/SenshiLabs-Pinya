@@ -10,6 +10,7 @@ public class DisplayPinyaMeter : MonoBehaviour
     public Slider       PinyaSlider;
 
     private PinyaMeter playerPinyaMeter;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +28,8 @@ public class DisplayPinyaMeter : MonoBehaviour
         {
             PinyaSlider.maxValue = playerPinyaMeter.MaxPinyaValue;
             PinyaSlider.value = playerPinyaMeter.PinyaValue;
-            playerPinyaMeter.EvtChangeValue.AddListener(UpdatePinyaBar);
+            Events.OnChangeMeter.AddListener(UpdatePinyaBar);
+            
         }
     }
     

@@ -9,8 +9,8 @@ public class MotivationMeter : MonoBehaviour
     public float        MotivationAmount;
     public float        MaxMotivation;
 
-    [Header("Unity Events")]
-    public UnityEvent   EvtChangeMeter = new();
+    //[Header("Unity Events")]
+    //public UnityEvent   EvtChangeMeter = new();
 
     
     // Start is called before the first frame update
@@ -22,7 +22,8 @@ public class MotivationMeter : MonoBehaviour
     public void InitializeMeter() {
 
         MotivationAmount = MaxMotivation;
-        EvtChangeMeter.Invoke();
+        Events.OnChangeMeter.Invoke();
+        //EvtChangeMeter.Invoke();
     }
 
     public void IncreaseMotivation(float value)
@@ -35,7 +36,8 @@ public class MotivationMeter : MonoBehaviour
         {
             Debug.Log("Motivation is maxed out");
         }
-        EvtChangeMeter.Invoke();
+        Events.OnChangeMeter.Invoke();
+        //EvtChangeMeter.Invoke();
     }
 
     public void DecreaseMotivation(float value)
@@ -48,7 +50,8 @@ public class MotivationMeter : MonoBehaviour
         {
             Debug.Log("Motivation is already at 0");
         }
-        EvtChangeMeter.Invoke();
+        Events.OnChangeMeter.Invoke();
+        //EvtChangeMeter.Invoke();
     }
 
 }

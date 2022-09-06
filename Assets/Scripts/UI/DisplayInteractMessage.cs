@@ -10,8 +10,6 @@ public class DisplayInteractMessage : MonoBehaviour
     public GameObject       Parent;
     public TextMeshProUGUI  Text;
 
-    private MinigameDetector interactable;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -20,31 +18,26 @@ public class DisplayInteractMessage : MonoBehaviour
 
     public void Initialize()
     {
-        
-        if(Parent == null)
+
+        if (Parent == null)
         {
             Parent = this.gameObject.transform.parent.GetComponent<UnitInfo>().Parent;
         }
         Assert.IsNotNull(Parent, "Parent is not set or is null");
-        if(interactable == null)
-        {
-            interactable = Parent.GetComponent<MinigameDetector>(); 
-            
-        }
-        if (interactable)
-        {
-            interactable.EvtInteract.AddListener(ChangeMessage);
-            interactable.EvtFinishInteract.AddListener(RemoveMessage);
-        }
+
+
+        Events.OnInteract.AddListener(ChangeMessage);
+        Events.OnFinishInteract.AddListener(RemoveMessage);
+
         this.gameObject.SetActive(false);
     }
 
-    public void ChangeMessage()
+    public void ChangeMessage(GameObject player = null)
     {
         this.gameObject.SetActive(true);
     }
 
-    public void RemoveMessage()
+    public void RemoveMessage(GameObject player = null)
     {
         this.gameObject.SetActive(false);
     }
