@@ -30,7 +30,8 @@ public class Dust : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        //can be improved 
+        //can be improved to be transfered in Sweeping Controls
+
         Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         if(mousePosition.normalized.x < swipeLeftAccept)
         {
