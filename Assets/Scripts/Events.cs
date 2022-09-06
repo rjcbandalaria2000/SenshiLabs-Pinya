@@ -53,4 +53,15 @@ public static class Events
     public static readonly Evt<GameObject> OnFinishInteract = new();
     #endregion
 
+    #region MouseEvents
+    public static readonly Evt OnMouseHover = new();
+    public static readonly Evt OnMouseDown = new();
+    public static readonly Evt OnMouseUp = new();
+    #endregion
+
+    #region MinigameEvents
+    public static readonly Evt OnObjectiveUpdate = new();
+    public static readonly Evt OnObjectiveComplete = new();
+    #endregion
+
 }

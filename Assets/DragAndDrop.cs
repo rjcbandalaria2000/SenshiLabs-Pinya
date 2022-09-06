@@ -21,6 +21,7 @@ public class DragAndDrop : MonoBehaviour
         // add offset so the object will not snap in the pivot point of the object
         dragOffset = transform.position - GetMousePosition();
         dragOffset.z = 0;
+        Events.OnMouseDown.Invoke();
     }
 
     private void OnMouseDrag()
@@ -29,6 +30,6 @@ public class DragAndDrop : MonoBehaviour
     }
     private void OnMouseOver()
     {
-        Debug.Log("Over an object");
+        //Debug.Log("Over an object");
     }
 }

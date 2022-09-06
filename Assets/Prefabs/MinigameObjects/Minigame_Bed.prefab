@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 7148304158928383479}
   - component: {fileID: 7148304158928383476}
   m_Layer: 0
-  m_Name: Bed
+  m_Name: Minigame_Bed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
