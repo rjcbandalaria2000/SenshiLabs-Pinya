@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class Dust : MonoBehaviour
 {
+    [Header("States")]
     public bool swipedRight;
     public bool swipedLeft;
 
+    [Header("Values")]
     public int swipeCounter;
     public int swipeRequired;
+
+    [Header("Mouse Sweep Acceptance")]
+    [Range(0f, -1f)]
+    public float swipeLeftAccept = -0.5f;
+    [Range(0f, 1f)] 
+    public float swipeRightAccept = 0.5f;
 
     private Camera mainCamera; 
 
@@ -24,14 +32,14 @@ public class Dust : MonoBehaviour
     {
         //can be improved 
         Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        if(mousePosition.normalized.x < 0)
+        if(mousePosition.normalized.x < swipeLeftAccept)
         {
-            // if the mouse is on the left 
+            // if the mouse moved to the left
             swipedLeft = true;
         }
-        if (mousePosition.normalized.x > 0) 
+        if (mousePosition.normalized.x > swipeRightAccept) 
         { 
-            
+            // if the mouse moved to the right 
             swipedRight = true;
         
         }

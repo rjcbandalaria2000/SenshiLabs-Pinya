@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TestScenes/TestScene- InteractableObjects.unity
     guid: ebb138ce154db5c45a73ad2405d6cb2d
   - enabled: 1
+    path: Assets/Scenes/TestScenes/TestScene- CleanTheHouse.unity
+    guid: e28cd54e3afc23e4f84739ae003e0d4a
+  - enabled: 1
     path: Assets/Scenes/TestScenes/TestScene- MotivLifeBar.unity
     guid: 910a31fc32a96074b86bc9ac307938a5
   m_configObjects: {}
