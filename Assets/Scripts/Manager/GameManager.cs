@@ -4,15 +4,56 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("DayCycle Timer")]
+    public float timer;
+    public float endTime;
+
+    private void Awake()
     {
-        
+        SingletonManager.Register(this);
+    }
+    public void Start()
+    {
+        StartCoroutine(dayStart());
+    }
+    public IEnumerator dayStart()
+    {
+        if(SingletonManager.Get<DayCycle>() != null)
+        {
+            SingletonManager.Get<DayCycle>().time = timer;
+            SingletonManager.Get<DayCycle>().endTime = endTime;
+        }
+        else
+        {
+            Debug.Log("DayCycle doesnt exist");
+        }
+        if(SingletonManager.Get<UIManager>() != null)
+        {
+            SingletonManager.Get<UIManager>().activateTimerUI(); 
+            //SingletonManager.Get<UIManager>().motivationMeter.SetActive(true); 
+            //SingletonManager.Get<UIManager>().piñyaMeter.SetActive(true);
+        }
+        else
+        {
+            Debug.Log("UI Manager doesnt exist");
+        }
+
+        yield return new WaitForSeconds(3f);
     }
 
-    // Update is called once per frame
-    void Update()
+    public IEnumerator dayEnd()
     {
-        
+        if (SingletonManager.Get<UIManager>() != null)
+        {
+            SingletonManager.Get<UIManager>().deactivateTimerUI();
+            SingletonManager.Get<UIManager>().activateDayEnd_UI();
+
+        }
+        else
+        {
+            Debug.Log("UI Manager doesnt exist");
+        }
+
+        yield return new WaitForSeconds(3f);
     }
 }
