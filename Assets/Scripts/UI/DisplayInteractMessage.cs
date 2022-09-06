@@ -25,7 +25,7 @@ public class DisplayInteractMessage : MonoBehaviour
         }
         Assert.IsNotNull(Parent, "Parent is not set or is null");
 
-
+        
         Events.OnInteract.AddListener(ChangeMessage);
         Events.OnFinishInteract.AddListener(RemoveMessage);
 

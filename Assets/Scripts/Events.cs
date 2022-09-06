@@ -41,7 +41,6 @@ public static class Events
     #region UI Events
     //Used for Meter UI Events when updating the values 
     public static readonly Evt OnChangeMeter = new();
-
     #endregion
 
     #region Player Events

@@ -31,7 +31,8 @@ public class MinigameDetector : MonoBehaviour
 
             //interactedObject.EvtInteracted.Invoke(Parent);
             //EvtInteract.Invoke();
-            Events.OnInteract.Invoke(Parent);
+            interactedObject.Interact(Parent);
+            //Events.OnInteract.Invoke(Parent);
         }
         
     }
@@ -43,7 +44,8 @@ public class MinigameDetector : MonoBehaviour
         {
             //interactedObject.EvtFinishInteract.Invoke(Parent);
             //EvtFinishInteract.Invoke();
-            Events.OnFinishInteract.Invoke(Parent);
+            interactedObject.FinishInteract(Parent);  
+            //Events.OnFinishInteract.Invoke(Parent);
         }
     }
 }

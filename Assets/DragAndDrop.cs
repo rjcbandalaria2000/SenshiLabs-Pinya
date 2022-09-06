@@ -6,13 +6,18 @@ using UnityEngine.EventSystems;
 public class DragAndDrop : MonoBehaviour
 {
     //Code Reference: https://www.youtube.com/watch?v=Tv82HIvKcZQ
-    Vector3 dragOffset;
-    
+    private Vector3 dragOffset;
+    private Camera  mainCamera;
+
+    private void Start()
+    {
+        mainCamera = Camera.main;
+    }
 
     Vector3 GetMousePosition()
     {
         //takes the position of the mouse in screen space to world space coordinates 
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         return mousePosition;
 
     } 
