@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 8
-  m_Sprite: {fileID: 21300000, guid: a723a2190602dc9409deadf8695fb166, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 84e9c7c5a42b0c642beb0ce0bbabf602, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -140,7 +140,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 15, y: 11.7}
+  m_Size: {x: 18.1, y: 19.66}
   m_EdgeRadius: 0
 --- !u!1 &7148304157918446678
 GameObject:
@@ -248,7 +248,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.93, y: 4.12}
+  m_Size: {x: 9.02, y: 12.25}
   m_EdgeRadius: 0
 --- !u!114 &7148304158928383479
 MonoBehaviour:
@@ -262,12 +262,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b3d2454b55751409d921fff0e6dc60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EvtInteracted:
-    m_PersistentCalls:
-      m_Calls: []
-  EvtFinishInteract:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &7148304158928383476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,3 +276,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Interactable: {fileID: 7148304158928383479}
   isInteracted: 0
+  MinigameScene: 
