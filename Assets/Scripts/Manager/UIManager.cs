@@ -9,6 +9,9 @@ public class UIManager : MonoBehaviour
     [Header("Time UI")]
     public GameObject timerDisplay;
 
+    [Header("Minigame Time UI")]
+    public GameObject miniGameTimerDisplay;
+
     [Header("Meters UI")]
     public GameObject motivationMeter;
     public GameObject piñyaMeter;
@@ -47,5 +50,15 @@ public class UIManager : MonoBehaviour
     public void deactivateDayEnd_UI()
     {
         dayEnd_UI.SetActive(false);
+    }
+
+    public void activateMiniGameTimer_UI()
+    {
+        miniGameTimerDisplay.SetActive(true);
+    }
+
+    public void deactivateMiniGameTimer_UI()
+    {
+        miniGameTimerDisplay.SetActive(false);
     }
 }
