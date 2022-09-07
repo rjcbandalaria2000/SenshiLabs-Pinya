@@ -33,7 +33,8 @@ public class DisplayPinyaMeter : MonoBehaviour
         {
             PinyaSlider.maxValue = playerPinyaMeter.MaxPinyaValue;
             PinyaSlider.value = playerPinyaMeter.PinyaValue;
-            playerPinyaMeter.EvtChangeValue.AddListener(UpdatePinyaBar);
+            Events.OnChangeMeter.AddListener(UpdatePinyaBar);
+            
         }
     }
     

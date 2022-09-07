@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f191e60c091de1944acc59cb8a1f1455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstSceneId: MainMenu
+  FirstSceneId: InteractableObjects-TestScene
 --- !u!4 &1480656603
 Transform:
   m_ObjectHideFlags: 0
@@ -197,8 +197,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 048d2ee4297ead04da115cf4318e1784, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storedMotivationData: 0
-  storedPinyaData: 0
 --- !u!4 &1566311201
 Transform:
   m_ObjectHideFlags: 0

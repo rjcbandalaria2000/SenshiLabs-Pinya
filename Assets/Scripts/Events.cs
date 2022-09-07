@@ -15,28 +15,67 @@ public static class Events
     public static readonly Evt OnDisplayMinigameTime = new Evt();
     public static readonly Evt OnDisplayCycleTime = new Evt();
 
+    #region How to Use Events as static class 
+    //    public static readonly Evt OnUnitDied = new Evt();
+
+    //  //  public static readonly Evt<Unit> OnUnitSelect = new Evt();
+
+    //    public static readonly Evt OnTowerDied = new Evt();
+
+    //    public static readonly Evt OnTowerSelect = new Evt();
+
+    //    public static readonly Evt OnResetInfoUI = new Evt();
+
+    //    public static readonly Evt OnPlayerSelect = new Evt();
+
+    //    public static readonly Evt OnNexusDestroy = new Evt();
+
+    //    //public static readonly Evt<Unit,float> OnMiniUIUpdate = new Evt<Unit, float>();
+
+    ////    public static readonly Evt<Unit> OnGameOver = new Evt<Unit>();
+
+    //  //  public static readonly Evt<int> OnPlayerSkillIndex = new Evt<int>();
+
+    //    //To create an event with parameters, please follow this format. 
+    //    //public static readonly Evt<int> OnTakeDamage = new Evt<int>();
+
+    // To use, call Events.(EventName)
     #endregion
 
+    #region UI Events
+    //Used for Meter UI Events when updating the values 
+    public static readonly Evt OnChangeMeter = new();
+    #endregion
 
-    //  public static readonly Evt<Unit> OnUnitSelect = new Evt();
+    #region Player Events
 
-    //public static readonly Evt OnTowerDied = new Evt();
+    #endregion
 
-    //public static readonly Evt OnTowerSelect = new Evt();
+    #region Interactable Events
+    public static readonly Evt<GameObject> OnInteract = new();
+    public static readonly Evt<GameObject> OnFinishInteract = new();
+    #endregion
 
-    //public static readonly Evt OnResetInfoUI = new Evt();
+    #region MouseEvents
+    public static readonly Evt OnMouseHover = new();
+    public static readonly Evt OnMouseDown = new();
+    public static readonly Evt OnMouseUp = new();
+    #endregion
 
-    //public static readonly Evt OnPlayerSelect = new Evt();
+    #region Minigame Events
+    public static readonly Evt OnObjectiveUpdate = new();
+    public static readonly Evt OnObjectiveComplete = new();
 
-    //public static readonly Evt OnNexusDestroy = new Evt();
+    #region CleanTheHouseMinigame Events
+    public static readonly Evt<GameObject> OnInteractCleanHouse = new();
+    #endregion
 
-    //public static readonly Evt<Unit,float> OnMiniUIUpdate = new Evt<Unit, float>();
+    #endregion
 
-//    public static readonly Evt<Unit> OnGameOver = new Evt<Unit>();
+    #region SceneChange Events
+    public static readonly Evt OnSceneChange = new();
 
-  //  public static readonly Evt<int> OnPlayerSkillIndex = new Evt<int>();
+    #endregion
 
-    //To create an event with parameters, please follow this format. 
-    //public static readonly Evt<int> OnTakeDamage = new Evt<int>();
 
 }

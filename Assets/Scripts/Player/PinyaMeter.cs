@@ -10,23 +10,22 @@ public class PinyaMeter : MonoBehaviour
     public float        PinyaValue;
     public float        MaxPinyaValue;
 
-    [Header("Events")]
-    public UnityEvent   EvtChangeValue = new();
-
     // Start is called before the first frame update
     void Start()
     {
         IntitializePinyaMeter();
     }
 
+   
+    #region Public Functions 
     public void IntitializePinyaMeter()
     {
         PinyaValue = MaxPinyaValue;
-        EvtChangeValue.Invoke();
+        Events.OnChangeMeter.Invoke();
     }
-    #region Public Functions
     public void IncreasePinyaMeter(float value)
     {
+        //If the current value is less than the max value 
         if (PinyaValue < MaxPinyaValue)
         {
             PinyaValue += value;
@@ -35,7 +34,7 @@ public class PinyaMeter : MonoBehaviour
         {
             Debug.Log("Pinya Value is max");
         }
-        EvtChangeValue.Invoke();
+        Events.OnChangeMeter.Invoke();
     }
 
     public void DecreasePinyaMeter(float value)
@@ -48,7 +47,7 @@ public class PinyaMeter : MonoBehaviour
         {
             Debug.Log("Pinya value is already 0");
         }
-        EvtChangeValue.Invoke();
+        Events.OnChangeMeter.Invoke();
     }
 
     #endregion
