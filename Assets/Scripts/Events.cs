@@ -58,9 +58,15 @@ public static class Events
     public static readonly Evt OnMouseUp = new();
     #endregion
 
-    #region MinigameEvents
+    #region Minigame Events
     public static readonly Evt OnObjectiveUpdate = new();
     public static readonly Evt OnObjectiveComplete = new();
     #endregion
+
+    #region SceneChange Events
+    public static readonly Evt OnSceneChange = new();
+
+    #endregion
+
 
 }

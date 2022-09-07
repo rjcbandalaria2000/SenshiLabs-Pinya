@@ -28,13 +28,17 @@ public class DisplayInteractMessage : MonoBehaviour
         
         Events.OnInteract.AddListener(ChangeMessage);
         Events.OnFinishInteract.AddListener(RemoveMessage);
-
+        Events.OnSceneChange.AddListener(OnSceneChange);
         this.gameObject.SetActive(false);
     }
 
     public void ChangeMessage(GameObject player = null)
     {
+        Debug.Log("Message appear ");
+
         this.gameObject.SetActive(true);
+
+
     }
 
     public void RemoveMessage(GameObject player = null)
@@ -42,6 +46,14 @@ public class DisplayInteractMessage : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
+    public void OnSceneChange()
+    {
+       
+        Events.OnSceneChange.RemoveListener(OnSceneChange);
+        Events.OnInteract.RemoveListener(ChangeMessage);
+        Events.OnFinishInteract.RemoveListener(RemoveMessage);
+        Debug.Log("Removed Interact Message listener");
+    }
 
 
 }
