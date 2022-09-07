@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a72d06d1bd4eed54a9a8d4ac8298359c
+guid: 5d49f510b78c2244a83493a18f8748f3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_0
+      name: SpriteSheet_YardAndKitchen_Props_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: efd40bf59e241fa478dbccbd724a63cc
-      internalID: 1321534931
+      spriteID: e30bfed9f5b0a954a93618ce74be3c93
+      internalID: -1327845900
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_1
+      name: SpriteSheet_YardAndKitchen_Props_1
       rect:
         serializedVersion: 2
         x: 256
@@ -139,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fe719974e7538d488a4a0c019339f84
-      internalID: 508224824
+      spriteID: 9e1a41d123914dd4ea478b66d44eb4ab
+      internalID: -1895474468
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_2
+      name: SpriteSheet_YardAndKitchen_Props_2
       rect:
         serializedVersion: 2
         x: 512
@@ -160,14 +160,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 386a20b89f70c2d46934319f4296b032
-      internalID: 556970676
+      spriteID: 888920aa8b7f15e41be56e6689e4f8f3
+      internalID: 921585205
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_3
+      name: SpriteSheet_YardAndKitchen_Props_3
       rect:
         serializedVersion: 2
         x: 768
@@ -181,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d7aa00e13ed8644ab469f57f983c0fc
-      internalID: -598634995
+      spriteID: 609c53c79e469d24da887a6ed688e0cc
+      internalID: 393476403
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_4
+      name: SpriteSheet_YardAndKitchen_Props_4
       rect:
         serializedVersion: 2
         x: 0
@@ -202,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92b09302a17cd8745b07992e7951dc61
-      internalID: -283941527
+      spriteID: 466f7fdc8b1f85340a54a4c783dcb260
+      internalID: 650550100
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_5
+      name: SpriteSheet_YardAndKitchen_Props_5
       rect:
         serializedVersion: 2
         x: 256
@@ -223,14 +223,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5bd2c78759cdb644b4e85105677da90
-      internalID: -2101675856
+      spriteID: 6af20c047f982b04aaabf3363bcb719f
+      internalID: -1665797616
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_6
+      name: SpriteSheet_YardAndKitchen_Props_6
       rect:
         serializedVersion: 2
         x: 512
@@ -244,14 +244,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 665aea1d80c90b24f818d714888d7445
-      internalID: -12153115
+      spriteID: eea1327d037e5594bacb03df5c6f6dd0
+      internalID: -553679932
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_7
+      name: SpriteSheet_YardAndKitchen_Props_7
       rect:
         serializedVersion: 2
         x: 768
@@ -265,14 +265,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87cdd06a497cb184f854c8866f37d207
-      internalID: 1094760705
+      spriteID: b75b46eec9a3084439c32b902116c135
+      internalID: -1085036842
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_8
+      name: SpriteSheet_YardAndKitchen_Props_8
       rect:
         serializedVersion: 2
         x: 0
@@ -286,14 +286,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3411028220741b0458b841f158da4749
-      internalID: -1032771887
+      spriteID: 3ab9424959874a34da26922336567a28
+      internalID: -727302088
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_9
+      name: SpriteSheet_YardAndKitchen_Props_9
       rect:
         serializedVersion: 2
         x: 256
@@ -307,14 +307,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe54663bb0eda1d45bfeb238712510d1
-      internalID: -1284978034
+      spriteID: a3da55cc6de0c1240b365c34b67f6b9f
+      internalID: -1107354497
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_10
+      name: SpriteSheet_YardAndKitchen_Props_10
       rect:
         serializedVersion: 2
         x: 512
@@ -328,14 +328,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1083d4314b2bae941a736558cb8192db
-      internalID: 1492305736
+      spriteID: fcb69ddfd12679d4880ad6cc5fb98c97
+      internalID: -2109786557
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_11
+      name: SpriteSheet_YardAndKitchen_Props_11
       rect:
         serializedVersion: 2
         x: 768
@@ -349,14 +349,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2b169300314e564db404fe777d794d3
-      internalID: -1533386368
+      spriteID: c0a565dcd7be6f84cabd9947223bc530
+      internalID: -2031277073
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_12
+      name: SpriteSheet_YardAndKitchen_Props_12
       rect:
         serializedVersion: 2
         x: 0
@@ -370,14 +370,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9062699da245a8e4f8f43ed73f81a0b7
-      internalID: -1191936673
+      spriteID: 5b209da27d35fdf49bbaf46220a59f0d
+      internalID: 697454633
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_13
+      name: SpriteSheet_YardAndKitchen_Props_13
       rect:
         serializedVersion: 2
         x: 256
@@ -391,35 +391,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6643ed1f61c44db4082612942962595b
-      internalID: -599639830
+      spriteID: cfedabdd9a7d50240b1a5472027961e2
+      internalID: -630867075
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_14
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d466c94816f16644840f99853a99f61
-      internalID: 1821285025
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_15
+      name: SpriteSheet_YardAndKitchen_Props_14
       rect:
         serializedVersion: 2
         x: 768
@@ -433,8 +412,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f73dc7a96de29da4b8f19c78982093cb
-      internalID: 609253739
+      spriteID: 26f88b7e39d593544840fd092c7e1323
+      internalID: 1789445471
       vertices: []
       indices: 
       edges: []
@@ -450,22 +429,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SpriteSheet_House_Interior_new_10: 1492305736
-      SpriteSheet_House_Interior_new_8: -1032771887
-      SpriteSheet_House_Interior_new_14: 1821285025
-      SpriteSheet_House_Interior_new_13: -599639830
-      SpriteSheet_House_Interior_new_9: -1284978034
-      SpriteSheet_House_Interior_new_11: -1533386368
-      SpriteSheet_House_Interior_new_6: -12153115
-      SpriteSheet_House_Interior_new_4: -283941527
-      SpriteSheet_House_Interior_new_15: 609253739
-      SpriteSheet_House_Interior_new_3: -598634995
-      SpriteSheet_House_Interior_new_0: 1321534931
-      SpriteSheet_House_Interior_new_5: -2101675856
-      SpriteSheet_House_Interior_new_2: 556970676
-      SpriteSheet_House_Interior_new_1: 508224824
-      SpriteSheet_House_Interior_new_7: 1094760705
-      SpriteSheet_House_Interior_new_12: -1191936673
+      SpriteSheet_YardAndKitchen_Props_8: -727302088
+      SpriteSheet_YardAndKitchen_Props_12: 697454633
+      SpriteSheet_YardAndKitchen_Props_14: 1789445471
+      SpriteSheet_YardAndKitchen_Props_4: 650550100
+      SpriteSheet_YardAndKitchen_Props_3: 393476403
+      SpriteSheet_YardAndKitchen_Props_5: -1665797616
+      SpriteSheet_YardAndKitchen_Props_2: 921585205
+      SpriteSheet_YardAndKitchen_Props_11: -2031277073
+      SpriteSheet_YardAndKitchen_Props_10: -2109786557
+      SpriteSheet_YardAndKitchen_Props_13: -630867075
+      SpriteSheet_YardAndKitchen_Props_1: -1895474468
+      SpriteSheet_YardAndKitchen_Props_0: -1327845900
+      SpriteSheet_YardAndKitchen_Props_6: -553679932
+      SpriteSheet_YardAndKitchen_Props_9: -1107354497
+      SpriteSheet_YardAndKitchen_Props_7: -1085036842
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

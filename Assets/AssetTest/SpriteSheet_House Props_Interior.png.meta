@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a72d06d1bd4eed54a9a8d4ac8298359c
+guid: e8c7c87efef32ba418859b6fd336e5c2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_0
+      name: SpriteSheet_House Props_Interior_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: efd40bf59e241fa478dbccbd724a63cc
-      internalID: 1321534931
+      spriteID: 3e6b9bbed8b36ec43b57aa376863e72c
+      internalID: -132130053
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_1
+      name: SpriteSheet_House Props_Interior_1
       rect:
         serializedVersion: 2
         x: 256
@@ -139,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fe719974e7538d488a4a0c019339f84
-      internalID: 508224824
+      spriteID: 5f6b65ec833e0294ea2cdc03f487a4e6
+      internalID: -201899888
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_2
+      name: SpriteSheet_House Props_Interior_2
       rect:
         serializedVersion: 2
         x: 512
@@ -160,14 +160,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 386a20b89f70c2d46934319f4296b032
-      internalID: 556970676
+      spriteID: 3ba58729ca7dd0040b43e76b55b11ede
+      internalID: 211480406
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_3
+      name: SpriteSheet_House Props_Interior_3
       rect:
         serializedVersion: 2
         x: 768
@@ -181,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d7aa00e13ed8644ab469f57f983c0fc
-      internalID: -598634995
+      spriteID: bc0423486e71cc741b79cfa7df2c9aac
+      internalID: 373606441
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_4
+      name: SpriteSheet_House Props_Interior_4
       rect:
         serializedVersion: 2
         x: 0
@@ -202,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92b09302a17cd8745b07992e7951dc61
-      internalID: -283941527
+      spriteID: f8afccc0fabbe2a4b8bb56494dafb65e
+      internalID: -742107681
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_5
+      name: SpriteSheet_House Props_Interior_5
       rect:
         serializedVersion: 2
         x: 256
@@ -223,14 +223,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5bd2c78759cdb644b4e85105677da90
-      internalID: -2101675856
+      spriteID: e48c35fe73376704b864243c1956c1da
+      internalID: -599367009
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_6
+      name: SpriteSheet_House Props_Interior_6
       rect:
         serializedVersion: 2
         x: 512
@@ -244,14 +244,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 665aea1d80c90b24f818d714888d7445
-      internalID: -12153115
+      spriteID: 944614c0336ee794d96d46dc8e2310c4
+      internalID: 1856366559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_7
+      name: SpriteSheet_House Props_Interior_7
       rect:
         serializedVersion: 2
         x: 768
@@ -265,14 +265,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87cdd06a497cb184f854c8866f37d207
-      internalID: 1094760705
+      spriteID: d0d20b8342315ce41adaa4446954795a
+      internalID: 2013857918
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_8
+      name: SpriteSheet_House Props_Interior_8
       rect:
         serializedVersion: 2
         x: 0
@@ -286,14 +286,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3411028220741b0458b841f158da4749
-      internalID: -1032771887
+      spriteID: 6d6542ada30c13b4da85eca60ffa86e9
+      internalID: 193675669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_9
+      name: SpriteSheet_House Props_Interior_9
       rect:
         serializedVersion: 2
         x: 256
@@ -307,14 +307,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe54663bb0eda1d45bfeb238712510d1
-      internalID: -1284978034
+      spriteID: 1d1d91b267bab164cb3524c5dcc1a161
+      internalID: -1950238598
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_10
+      name: SpriteSheet_House Props_Interior_10
       rect:
         serializedVersion: 2
         x: 512
@@ -328,14 +328,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1083d4314b2bae941a736558cb8192db
-      internalID: 1492305736
+      spriteID: bfadbf56b362fb442b208cc8b024fcf4
+      internalID: -1527734587
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_11
+      name: SpriteSheet_House Props_Interior_11
       rect:
         serializedVersion: 2
         x: 768
@@ -349,14 +349,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2b169300314e564db404fe777d794d3
-      internalID: -1533386368
+      spriteID: e539be8d8680d794fbbcfbd859e3a06f
+      internalID: 112004672
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_12
+      name: SpriteSheet_House Props_Interior_12
       rect:
         serializedVersion: 2
         x: 0
@@ -370,71 +370,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9062699da245a8e4f8f43ed73f81a0b7
-      internalID: -1191936673
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_13
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6643ed1f61c44db4082612942962595b
-      internalID: -599639830
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_14
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d466c94816f16644840f99853a99f61
-      internalID: 1821285025
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpriteSheet_House_Interior_new_15
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f73dc7a96de29da4b8f19c78982093cb
-      internalID: 609253739
+      spriteID: c7f97df210e0238448e7f98499b315b1
+      internalID: 748871184
       vertices: []
       indices: 
       edges: []
@@ -450,22 +387,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SpriteSheet_House_Interior_new_10: 1492305736
-      SpriteSheet_House_Interior_new_8: -1032771887
-      SpriteSheet_House_Interior_new_14: 1821285025
-      SpriteSheet_House_Interior_new_13: -599639830
-      SpriteSheet_House_Interior_new_9: -1284978034
-      SpriteSheet_House_Interior_new_11: -1533386368
-      SpriteSheet_House_Interior_new_6: -12153115
-      SpriteSheet_House_Interior_new_4: -283941527
-      SpriteSheet_House_Interior_new_15: 609253739
-      SpriteSheet_House_Interior_new_3: -598634995
-      SpriteSheet_House_Interior_new_0: 1321534931
-      SpriteSheet_House_Interior_new_5: -2101675856
-      SpriteSheet_House_Interior_new_2: 556970676
-      SpriteSheet_House_Interior_new_1: 508224824
-      SpriteSheet_House_Interior_new_7: 1094760705
-      SpriteSheet_House_Interior_new_12: -1191936673
+      SpriteSheet_House Props_Interior_9: -1950238598
+      SpriteSheet_House Props_Interior_10: -1527734587
+      SpriteSheet_House Props_Interior_7: 2013857918
+      SpriteSheet_House Props_Interior_12: 748871184
+      SpriteSheet_House Props_Interior_11: 112004672
+      SpriteSheet_House Props_Interior_4: -742107681
+      SpriteSheet_House Props_Interior_8: 193675669
+      SpriteSheet_House Props_Interior_5: -599367009
+      SpriteSheet_House Props_Interior_3: 373606441
+      SpriteSheet_House Props_Interior_0: -132130053
+      SpriteSheet_House Props_Interior_6: 1856366559
+      SpriteSheet_House Props_Interior_2: 211480406
+      SpriteSheet_House Props_Interior_1: -201899888
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
