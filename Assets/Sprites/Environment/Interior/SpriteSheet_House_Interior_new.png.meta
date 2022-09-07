@@ -1,0 +1,714 @@
+fileFormatVersion: 2
+guid: 97c4321f8856b574fba4f197e2615212
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4555153917813390227
+    second: SpriteSheet_House_Interior_new_0
+  - first:
+      213: 697313912877504578
+    second: SpriteSheet_House_Interior_new_1
+  - first:
+      213: 6750833682396359370
+    second: SpriteSheet_House_Interior_new_2
+  - first:
+      213: 2643079481536659352
+    second: SpriteSheet_House_Interior_new_3
+  - first:
+      213: -1603519370431469177
+    second: SpriteSheet_House_Interior_new_4
+  - first:
+      213: 4620905901819215934
+    second: SpriteSheet_House_Interior_new_5
+  - first:
+      213: 152249296404512593
+    second: SpriteSheet_House_Interior_new_6
+  - first:
+      213: -9074350969801887035
+    second: SpriteSheet_House_Interior_new_7
+  - first:
+      213: -3484724303609674231
+    second: SpriteSheet_House_Interior_new_8
+  - first:
+      213: -6208530282240197120
+    second: SpriteSheet_House_Interior_new_9
+  - first:
+      213: 5700957769471944880
+    second: SpriteSheet_House_Interior_new_0
+  - first:
+      213: 6768669545497392966
+    second: SpriteSheet_House_Interior_new_1
+  - first:
+      213: 8154585041992216103
+    second: SpriteSheet_House_Interior_new_2
+  - first:
+      213: -7771210672883914073
+    second: SpriteSheet_House_Interior_new_3
+  - first:
+      213: -6143347462242861358
+    second: SpriteSheet_House_Interior_new_4
+  - first:
+      213: 6522224648687224139
+    second: SpriteSheet_House_Interior_new_5
+  - first:
+      213: 1175676612091778021
+    second: SpriteSheet_House_Interior_new_6
+  - first:
+      213: -3069697768401558469
+    second: SpriteSheet_House_Interior_new_7
+  - first:
+      213: 6673908434130789265
+    second: SpriteSheet_House_Interior_new_8
+  - first:
+      213: -8376858418188609386
+    second: SpriteSheet_House_Interior_new_9
+  - first:
+      213: 6026171563779944135
+    second: SpriteSheet_House_Interior_new_10
+  - first:
+      213: 2337193897981717655
+    second: SpriteSheet_House_Interior_new_11
+  - first:
+      213: 4766698772217167185
+    second: SpriteSheet_House_Interior_new_12
+  - first:
+      213: 4739652080630304001
+    second: SpriteSheet_House_Interior_new_13
+  - first:
+      213: 8947415906946787378
+    second: SpriteSheet_House_Interior_new_14
+  - first:
+      213: 3207730457857438576
+    second: SpriteSheet_House_Interior_new_15
+  - first:
+      213: -4198551583471055140
+    second: SpriteSheet_House_Interior_new_16
+  - first:
+      213: 6105713043460053696
+    second: SpriteSheet_House_Interior_new_17
+  - first:
+      213: 4155478027338147924
+    second: SpriteSheet_House_Interior_new_18
+  - first:
+      213: 6523338491868285484
+    second: SpriteSheet_House_Interior_new_19
+  - first:
+      213: -2257200989216371400
+    second: SpriteSheet_House_Interior_new_20
+  - first:
+      213: -7528574394702626083
+    second: SpriteSheet_House_Interior_new_21
+  - first:
+      213: -6241478251114320613
+    second: SpriteSheet_House_Interior_new_22
+  - first:
+      213: 5154043412676478981
+    second: SpriteSheet_House_Interior_new_23
+  - first:
+      213: -2008841675755505071
+    second: SpriteSheet_House_Interior_new_24
+  - first:
+      213: 1651120290056630724
+    second: SpriteSheet_House_Interior_new_25
+  - first:
+      213: 2329615335767702907
+    second: SpriteSheet_House_Interior_new_26
+  - first:
+      213: 8872218961421164616
+    second: SpriteSheet_House_Interior_new_27
+  - first:
+      213: -9007432253675938477
+    second: SpriteSheet_House_Interior_new_28
+  - first:
+      213: -6406704361703345061
+    second: SpriteSheet_House_Interior_new_29
+  - first:
+      213: -1265952952202866237
+    second: SpriteSheet_House_Interior_new_30
+  - first:
+      213: -1160708799201110806
+    second: SpriteSheet_House_Interior_new_31
+  - first:
+      213: -2263593948307779947
+    second: SpriteSheet_House_Interior_new_32
+  - first:
+      213: 4074436345327565995
+    second: SpriteSheet_House_Interior_new_33
+  - first:
+      213: 6660696056742251826
+    second: SpriteSheet_House_Interior_new_34
+  - first:
+      213: 5635020293554613828
+    second: SpriteSheet_House_Interior_new_35
+  - first:
+      213: 6310700651124449041
+    second: SpriteSheet_House_Interior_new_36
+  - first:
+      213: 174278649377550013
+    second: SpriteSheet_House_Interior_new_37
+  - first:
+      213: 745879041187899180
+    second: SpriteSheet_House_Interior_new_38
+  - first:
+      213: 3097282022765721525
+    second: SpriteSheet_House_Interior_new_39
+  - first:
+      213: -6988825019878562676
+    second: SpriteSheet_House_Interior_new_40
+  - first:
+      213: 6085486740648229175
+    second: SpriteSheet_House_Interior_new_41
+  - first:
+      213: -2164010657958924545
+    second: SpriteSheet_House_Interior_new_42
+  - first:
+      213: 6715865531875401271
+    second: SpriteSheet_House_Interior_new_43
+  - first:
+      213: 4131656055124543687
+    second: SpriteSheet_House_Interior_new_44
+  - first:
+      213: -40130221433005890
+    second: SpriteSheet_House_Interior_new_45
+  - first:
+      213: -4409617576241607920
+    second: SpriteSheet_House_Interior_new_46
+  - first:
+      213: -8913697343680768568
+    second: SpriteSheet_House_Interior_new_47
+  - first:
+      213: -2094050555680178396
+    second: SpriteSheet_House_Interior_new_48
+  - first:
+      213: -2213645056148698386
+    second: SpriteSheet_House_Interior_new_49
+  - first:
+      213: 3847458798811706962
+    second: SpriteSheet_House_Interior_new_50
+  - first:
+      213: -557210793710557357
+    second: SpriteSheet_House_Interior_new_51
+  - first:
+      213: 9201923941065420205
+    second: SpriteSheet_House_Interior_new_52
+  - first:
+      213: 2609179927438936593
+    second: SpriteSheet_House_Interior_new_53
+  - first:
+      213: -7171192686765598428
+    second: SpriteSheet_House_Interior_new_54
+  - first:
+      213: -5334914217597441632
+    second: SpriteSheet_House_Interior_new_55
+  - first:
+      213: -406267419768190431
+    second: SpriteSheet_House_Interior_new_56
+  - first:
+      213: -3775099788586722682
+    second: SpriteSheet_House_Interior_new_57
+  - first:
+      213: 2111980814212493998
+    second: SpriteSheet_House_Interior_new_58
+  - first:
+      213: 8828957045522163702
+    second: SpriteSheet_House_Interior_new_59
+  - first:
+      213: 2639330973408054309
+    second: SpriteSheet_House_Interior_new_60
+  - first:
+      213: -773203007353677209
+    second: SpriteSheet_House_Interior_new_61
+  - first:
+      213: 3406738829266539351
+    second: SpriteSheet_House_Interior_new_62
+  - first:
+      213: -2454414244073795168
+    second: SpriteSheet_House_Interior_new_63
+  - first:
+      213: 2671727205639242939
+    second: SpriteSheet_House_Interior_new_64
+  - first:
+      213: -2141990645925853827
+    second: SpriteSheet_House_Interior_new_65
+  - first:
+      213: -130993803175010450
+    second: SpriteSheet_House_Interior_new_66
+  - first:
+      213: -6958012718142205538
+    second: SpriteSheet_House_Interior_new_67
+  - first:
+      213: 584607363609104704
+    second: SpriteSheet_House_Interior_new_68
+  - first:
+      213: -4655541962129790184
+    second: SpriteSheet_House_Interior_new_69
+  - first:
+      213: -4704322612954302546
+    second: SpriteSheet_House_Interior_new_70
+  - first:
+      213: 5047849493745765328
+    second: SpriteSheet_House_Interior_new_71
+  - first:
+      213: 444111498105552325
+    second: SpriteSheet_House_Interior_new_72
+  - first:
+      213: -5953578260939728833
+    second: SpriteSheet_House_Interior_new_73
+  - first:
+      213: -5156174082916186641
+    second: SpriteSheet_House_Interior_new_74
+  - first:
+      213: -8576889145884677182
+    second: SpriteSheet_House_Interior_new_75
+  - first:
+      213: -8034344800489474246
+    second: SpriteSheet_House_Interior_new_76
+  - first:
+      213: -2255695436626951239
+    second: SpriteSheet_House_Interior_new_77
+  - first:
+      213: -1148825670526251040
+    second: SpriteSheet_House_Interior_new_78
+  - first:
+      213: 7719577182869166217
+    second: SpriteSheet_House_Interior_new_79
+  - first:
+      213: 3539259301919870844
+    second: SpriteSheet_House_Interior_new_80
+  - first:
+      213: -297791858599964679
+    second: SpriteSheet_House_Interior_new_81
+  - first:
+      213: 3910143758374450612
+    second: SpriteSheet_House_Interior_new_82
+  - first:
+      213: -5064606191072727849
+    second: SpriteSheet_House_Interior_new_83
+  - first:
+      213: 7574182507255826677
+    second: SpriteSheet_House_Interior_new_84
+  - first:
+      213: 8635653080990119962
+    second: SpriteSheet_House_Interior_new_85
+  - first:
+      213: 3040618770752729199
+    second: SpriteSheet_House_Interior_new_86
+  - first:
+      213: 4091412428688460990
+    second: SpriteSheet_House_Interior_new_87
+  - first:
+      213: 3541182154010863273
+    second: SpriteSheet_House_Interior_new_88
+  - first:
+      213: 739565238201002231
+    second: SpriteSheet_House_Interior_new_89
+  - first:
+      213: 3586499549560152275
+    second: SpriteSheet_House_Interior_new_90
+  - first:
+      213: -7713867290126979199
+    second: SpriteSheet_House_Interior_new_91
+  - first:
+      213: 2957486659381474305
+    second: SpriteSheet_House_Interior_new_92
+  - first:
+      213: 2865603345774729807
+    second: SpriteSheet_House_Interior_new_93
+  - first:
+      213: -8587985373501015505
+    second: SpriteSheet_House_Interior_new_94
+  - first:
+      213: 5696265333123140412
+    second: SpriteSheet_House_Interior_new_95
+  - first:
+      213: 6584449507401330798
+    second: SpriteSheet_House_Interior_new_96
+  - first:
+      213: -9082956925338887972
+    second: SpriteSheet_House_Interior_new_97
+  - first:
+      213: -4622669681764922302
+    second: SpriteSheet_House_Interior_new_98
+  - first:
+      213: 1774744355733063565
+    second: SpriteSheet_House_Interior_new_99
+  - first:
+      213: -7389203216444639711
+    second: SpriteSheet_House_Interior_new_100
+  - first:
+      213: -5716873638835368099
+    second: SpriteSheet_House_Interior_new_101
+  - first:
+      213: 8592444418933322755
+    second: SpriteSheet_House_Interior_new_102
+  - first:
+      213: -6320009633164518375
+    second: SpriteSheet_House_Interior_new_103
+  - first:
+      213: -8181760956624397646
+    second: SpriteSheet_House_Interior_new_104
+  - first:
+      213: 4671262102709821390
+    second: SpriteSheet_House_Interior_new_105
+  - first:
+      213: 1292723062380179124
+    second: SpriteSheet_House_Interior_new_106
+  - first:
+      213: -2073086031302260511
+    second: SpriteSheet_House_Interior_new_107
+  - first:
+      213: -4506466513997232588
+    second: SpriteSheet_House_Interior_new_108
+  - first:
+      213: 1706853838455736317
+    second: SpriteSheet_House_Interior_new_109
+  - first:
+      213: 2953815285878304043
+    second: SpriteSheet_House_Interior_new_110
+  - first:
+      213: 882703394167371685
+    second: SpriteSheet_House_Interior_new_111
+  - first:
+      213: -6330442193099968705
+    second: SpriteSheet_House_Interior_new_112
+  - first:
+      213: -511245914160323908
+    second: SpriteSheet_House_Interior_new_113
+  - first:
+      213: 2806444990647704764
+    second: SpriteSheet_House_Interior_new_114
+  - first:
+      213: 2317681214523350220
+    second: SpriteSheet_House_Interior_new_115
+  - first:
+      213: 1965247479136101811
+    second: SpriteSheet_House_Interior_new_116
+  - first:
+      213: -3988970661222225584
+    second: SpriteSheet_House_Interior_new_117
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpriteSheet_House_Interior_new_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 764
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b8e0e8e2eedd1f40800000000000000
+      internalID: 4555153917813390227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House_Interior_new_1
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 764
+        width: 30
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6477065f6152fed50800000000000000
+      internalID: 697313912877504578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House_Interior_new_2
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 764
+        width: 30
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72ee8ae04e7ea2170800000000000000
+      internalID: 6750833682396359370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House_Interior_new_3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 506
+        width: 256
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aaa700111d172490800000000000000
+      internalID: 2643079481536659352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House_Interior_new_4
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 506
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2de773d28027ebaa0800000000000000
+      internalID: -1603519370431469177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House_Interior_new_5
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 506
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b458c4203c8938a50800000000000000
+      internalID: 4620905901819215934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House_Interior_new_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 248
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e3177256a7d05010800000000000000
+      internalID: 152249296404512593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House_Interior_new_7
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 248
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b34ad92c42e3665d0800000000000000
+      internalID: -9074350969801887035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House_Interior_new_8
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 248
+        width: 256
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19369d76c5c7e9c50800000000000000
+      internalID: -3484724303609674231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House_Interior_new_9
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 254
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6989022b6ab6fbb80800000000000000
+      internalID: -6208530282240197120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SpriteSheet_House_Interior_new_8: -3484724303609674231
+      SpriteSheet_House_Interior_new_9: -6208530282240197120
+      SpriteSheet_House_Interior_new_6: 152249296404512593
+      SpriteSheet_House_Interior_new_4: -1603519370431469177
+      SpriteSheet_House_Interior_new_3: 2643079481536659352
+      SpriteSheet_House_Interior_new_0: 4555153917813390227
+      SpriteSheet_House_Interior_new_5: 4620905901819215934
+      SpriteSheet_House_Interior_new_2: 6750833682396359370
+      SpriteSheet_House_Interior_new_1: 697313912877504578
+      SpriteSheet_House_Interior_new_7: -9074350969801887035
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

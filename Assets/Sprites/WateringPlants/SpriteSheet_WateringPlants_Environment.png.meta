@@ -1,0 +1,552 @@
+fileFormatVersion: 2
+guid: f82fc7f97a3b2c747afc2bb87927c515
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5356027856677067242
+    second: SpriteSheet_WateringPlants_Environment_0
+  - first:
+      213: 2935129418431270342
+    second: SpriteSheet_WateringPlants_Environment_1
+  - first:
+      213: -1308088217472958246
+    second: SpriteSheet_WateringPlants_Environment_0
+  - first:
+      213: -2177105387325467897
+    second: SpriteSheet_WateringPlants_Environment_1
+  - first:
+      213: -2804396141697014666
+    second: SpriteSheet_WateringPlants_Environment_2
+  - first:
+      213: -1816939605695993296
+    second: SpriteSheet_WateringPlants_Environment_3
+  - first:
+      213: -8396605703879837663
+    second: SpriteSheet_WateringPlants_Environment_4
+  - first:
+      213: -2583143632103454968
+    second: SpriteSheet_WateringPlants_Environment_5
+  - first:
+      213: 2628627236333412486
+    second: SpriteSheet_WateringPlants_Environment_2
+  - first:
+      213: 5530263076675432384
+    second: SpriteSheet_WateringPlants_Environment_3
+  - first:
+      213: -3605222476939141937
+    second: SpriteSheet_WateringPlants_Environment_4
+  - first:
+      213: -1796648111540559768
+    second: SpriteSheet_WateringPlants_Environment_5
+  - first:
+      213: -2027098523350720854
+    second: SpriteSheet_WateringPlants_Environment_6
+  - first:
+      213: 966627548465689801
+    second: SpriteSheet_WateringPlants_Environment_7
+  - first:
+      213: 8696602646602182892
+    second: SpriteSheet_WateringPlants_Environment_8
+  - first:
+      213: 4793031243938486370
+    second: SpriteSheet_WateringPlants_Environment_9
+  - first:
+      213: -9145389164554678451
+    second: SpriteSheet_WateringPlants_Environment_10
+  - first:
+      213: -2922327304120337502
+    second: SpriteSheet_WateringPlants_Environment_11
+  - first:
+      213: 6749011966024035161
+    second: SpriteSheet_WateringPlants_Environment_12
+  - first:
+      213: 7814917899643295977
+    second: SpriteSheet_WateringPlants_Environment_13
+  - first:
+      213: 5813409726735358702
+    second: SpriteSheet_WateringPlants_Environment_6
+  - first:
+      213: 281419791849731237
+    second: SpriteSheet_WateringPlants_Environment_7
+  - first:
+      213: 4259195252679507352
+    second: SpriteSheet_WateringPlants_Environment_8
+  - first:
+      213: -8409549277529699656
+    second: SpriteSheet_WateringPlants_Environment_9
+  - first:
+      213: -7512464452556348626
+    second: SpriteSheet_WateringPlants_Environment_10
+  - first:
+      213: 6718670875476983590
+    second: SpriteSheet_WateringPlants_Environment_11
+  - first:
+      213: 2421636427275756204
+    second: SpriteSheet_WateringPlants_Environment_12
+  - first:
+      213: 8161298731142374834
+    second: SpriteSheet_WateringPlants_Environment_13
+  - first:
+      213: -6516481149988588830
+    second: SpriteSheet_WateringPlants_Environment_14
+  - first:
+      213: 8997557509049832776
+    second: SpriteSheet_WateringPlants_Environment_15
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpriteSheet_WateringPlants_Environment_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3072
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad086ae52bcb8dde0800000000000000
+      internalID: -5356027856677067242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_WateringPlants_Environment_1
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3072
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70350ed5f2e59c1e0800000000000000
+      internalID: 2935129418431270342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_WateringPlants_Environment_2
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 3072
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 680e19c5b82ca7420800000000000000
+      internalID: -2804396141697014666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_WateringPlants_Environment_3
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 3072
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cfa2b7b7f07fbc40800000000000000
+      internalID: -1816939605695993296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_WateringPlants_Environment_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2048
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fccd9cd224da7fdc0800000000000000
+      internalID: -8396605703879837663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_WateringPlants_Environment_5
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2048
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 860af35cf060117e0800000000000000
+      internalID: -2583143632103454968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_WateringPlants_Environment_6
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 2048
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eea9cdf78516da050800000000000000
+      internalID: -2027098523350720854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_WateringPlants_Environment_7
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 2048
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a4b7f54fcdc7e300800000000000000
+      internalID: 966627548465689801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_WateringPlants_Environment_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89dfdf02483bb1b30800000000000000
+      internalID: 8696602646602182892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_WateringPlants_Environment_9
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1024
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ba03bfdc774b4b80800000000000000
+      internalID: 4793031243938486370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_WateringPlants_Environment_10
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 1024
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2321a5126d5eb790800000000000000
+      internalID: -9145389164554678451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_WateringPlants_Environment_11
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 1024
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62f719f60938d3d50800000000000000
+      internalID: -2922327304120337502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_WateringPlants_Environment_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca2eaee00816b9120800000000000000
+      internalID: 6749011966024035161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_WateringPlants_Environment_13
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b5669f94f1c24170800000000000000
+      internalID: 7814917899643295977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_WateringPlants_Environment_14
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e2b66d7beec095a0800000000000000
+      internalID: -6516481149988588830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_WateringPlants_Environment_15
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 845501522eebddc70800000000000000
+      internalID: 8997557509049832776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SpriteSheet_WateringPlants_Environment_3: -1816939605695993296
+      SpriteSheet_WateringPlants_Environment_9: 4793031243938486370
+      SpriteSheet_WateringPlants_Environment_8: 8696602646602182892
+      SpriteSheet_WateringPlants_Environment_2: -2804396141697014666
+      SpriteSheet_WateringPlants_Environment_0: -5356027856677067242
+      SpriteSheet_WateringPlants_Environment_14: -6516481149988588830
+      SpriteSheet_WateringPlants_Environment_7: 966627548465689801
+      SpriteSheet_WateringPlants_Environment_4: -8396605703879837663
+      SpriteSheet_WateringPlants_Environment_6: -2027098523350720854
+      SpriteSheet_WateringPlants_Environment_11: -2922327304120337502
+      SpriteSheet_WateringPlants_Environment_1: 2935129418431270342
+      SpriteSheet_WateringPlants_Environment_12: 6749011966024035161
+      SpriteSheet_WateringPlants_Environment_13: 7814917899643295977
+      SpriteSheet_WateringPlants_Environment_10: -9145389164554678451
+      SpriteSheet_WateringPlants_Environment_15: 8997557509049832776
+      SpriteSheet_WateringPlants_Environment_5: -2583143632103454968
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
