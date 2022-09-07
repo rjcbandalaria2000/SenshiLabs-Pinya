@@ -19,6 +19,9 @@ public class UIManager : MonoBehaviour
     [Header("Display UI")] //Mostly text base UI
     public GameObject dayEnd_UI;
 
+    [Header("Loading UI")]
+    public GameObject Loading_UI;
+
     private void Awake()
     {
         SingletonManager.Register(this);
@@ -60,5 +63,16 @@ public class UIManager : MonoBehaviour
     public void deactivateMiniGameTimer_UI()
     {
         miniGameTimerDisplay.SetActive(false);
+    }
+
+    public void activateLoading_UI()
+    {
+
+        Loading_UI.SetActive(true);
+    }
+
+    public void deactivateLoading_UI()
+    {
+        Loading_UI.SetActive(false);
     }
 }

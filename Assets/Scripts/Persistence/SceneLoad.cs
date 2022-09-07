@@ -13,6 +13,8 @@ public class SceneLoad : MonoBehaviour
 
     private string currentSceneId;
 
+    private float loadProgress;
+
     private void Awake()
     {
         SingletonManager.Register(this);
@@ -23,6 +25,11 @@ public class SceneLoad : MonoBehaviour
         LoadScene(FirstSceneId);
 
         Player_Data playerData = SingletonManager.Get<Player_Data>();
+    }
+
+    public float getLoadProgress()
+    {
+        return loadProgress;
     }
 
     private IEnumerator LoadSequence(string sceneId)
@@ -47,8 +54,34 @@ public class SceneLoad : MonoBehaviour
         GC.Collect(); // Trigger a collection to free memory
         yield return null;
 
-        yield return SceneManager.LoadSceneAsync(sceneId, LoadSceneMode.Additive);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId, LoadSceneMode.Additive);
+
+        yield return operation;
+
         currentSceneId = sceneId;
+
+        yield return null;
+
+        if(SingletonManager.Get<UIManager>() != null)
+        {
+            SingletonManager.Get<UIManager>().activateLoading_UI();
+        }
+        else { Debug.Log("NO LOADING SCREEN"); }
+        
+
+        while (!operation.isDone)
+        {
+            Debug.Log("Loading");
+            loadProgress = Mathf.Clamp01(operation.progress/.9f);
+            yield return null;
+        }
+
+        if (SingletonManager.Get<UIManager>() != null)
+        {
+            SingletonManager.Get<UIManager>().deactivateLoading_UI();
+        }
+            
+
     }
 
     public Coroutine LoadScene(string sceneId)

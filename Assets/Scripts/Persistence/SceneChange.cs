@@ -6,8 +6,19 @@ public class SceneChange : MonoBehaviour
 {
     public void OnChangeScene(string sceneID)
     {
-      //  SingletonManager.Get<Player_Data>().storeData(SingletonManager.Get<GameManager>().player);
-
+        //  SingletonManager.Get<Player_Data>().storeData(SingletonManager.Get<GameManager>().player);
+        if (SingletonManager.Get<UIManager>() != null)
+        {
+            if (SingletonManager.Get<UIManager>().Loading_UI != null)
+            {
+                SingletonManager.Get<UIManager>().activateLoading_UI();
+            }
+            
+        }
+        else
+        {
+            Debug.Log("NO LOADING SCREEN");
+        }
         SingletonManager.Get<SceneLoad>().LoadScene(sceneID);
     }
 }
