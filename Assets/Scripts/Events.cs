@@ -15,6 +15,8 @@ public static class Events
     public static readonly Evt OnDisplayMinigameTime = new Evt();
     public static readonly Evt OnDisplayCycleTime = new Evt();
 
+    #endregion
+
     #region How to Use Events as static class 
     //    public static readonly Evt OnUnitDied = new Evt();
 

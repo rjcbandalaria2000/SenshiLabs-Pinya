@@ -14,10 +14,6 @@ public class DisplayMotivationalBar : MonoBehaviour
     private void Awake()
     {
         SingletonManager.Register(this);
-    }
-
-    public void Awake()
-    {
         Events.OnChangeMeter.AddListener(UpdateMotivationBar);
     }
 
