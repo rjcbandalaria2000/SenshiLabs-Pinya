@@ -61,6 +61,11 @@ public static class Events
     #region Minigame Events
     public static readonly Evt OnObjectiveUpdate = new();
     public static readonly Evt OnObjectiveComplete = new();
+
+    #region CleanTheHouseMinigame Events
+    public static readonly Evt<GameObject> OnInteractCleanHouse = new();
+    #endregion
+
     #endregion
 
     #region SceneChange Events

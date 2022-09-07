@@ -199,8 +199,8 @@ GameObject:
   - component: {fileID: 2816954076488409270}
   - component: {fileID: 2816954076488409269}
   - component: {fileID: 2816954076488409268}
-  - component: {fileID: 2816954076488409271}
   - component: {fileID: 964817263}
+  - component: {fileID: 2816954076214239179}
   m_Layer: 0
   m_Name: Minigame_TrashBin
   m_TagString: Untagged
@@ -263,21 +263,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b3d2454b55751409d921fff0e6dc60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2816954076488409271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2816954076488409267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 482ceab3e6730eb449b8a9245d11f248, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Interactable: {fileID: 2816954076488409268}
-  isInteracted: 0
-  MinigameScene: TestScene- MotivLifeBar
 --- !u!114 &964817263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,3 +275,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c181a4815ee67c49846764ff353adc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2816954076214239179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2816954076488409267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5679a837f9ce5524c87cc90b2d00cb43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Interactable: {fileID: 2816954076488409268}
+  isInteracted: 0
+  MinigameScene: CleanTheHouse - TestScene

@@ -11,6 +11,9 @@ public class MinigameDetector : MonoBehaviour
     public UnityEvent   EvtInteract = new();
     public UnityEvent   EvtFinishInteract = new();
 
+    //private Interactable interactable;
+    //private GameObject detectedObject; 
+
     public void Start()
     {
         Initialize();
@@ -24,19 +27,33 @@ public class MinigameDetector : MonoBehaviour
         }
     }
 
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        //Only listen when collided with a minigame object
+        Interactable interactedObject = collision.gameObject.GetComponent<Interactable>();
+        if (interactedObject)
+        {
+            MinigameObject detectedMinigame = collision.gameObject.GetComponent<MinigameObject>();
+            if (detectedMinigame)
+            {
+                Events.OnInteract.AddListener(detectedMinigame.Interact);
+            }
+        }
+    }
+
     public void OnTriggerStay2D(Collider2D collision)
     { 
         Interactable interactedObject = collision.gameObject.GetComponent<Interactable>();
         if (interactedObject){
 
-            //interactedObject.EvtInteracted.Invoke(Parent);
-            //EvtInteract.Invoke();
-            //if (Parent)
-            //{
+            //Method 1 for different spawning scene 
+            // Only add listener when collided 
+            MinigameObject detectedMinigame = collision.gameObject.GetComponent<MinigameObject>();
+            if (detectedMinigame)
+            {
+                
                 interactedObject.Interact();
-           // }
-            
-            //Events.OnInteract.Invoke(Parent);
+            }
         }
         
     }
@@ -46,10 +63,18 @@ public class MinigameDetector : MonoBehaviour
         Interactable interactedObject = collision.gameObject.GetComponent<Interactable>();
         if (interactedObject)
         {
-            //interactedObject.EvtFinishInteract.Invoke(Parent);
-            //EvtFinishInteract.Invoke();
-            interactedObject.FinishInteract();  
-            //Events.OnFinishInteract.Invoke(Parent);
+
+            //Method 1 for different spawning scene 
+            // Only add listener when collided 
+            //Remove all listener when outside of collider 
+            MinigameObject detectedMinigame = collision.gameObject.GetComponent<MinigameObject>();
+            if (detectedMinigame)
+            {
+                Events.OnFinishInteract.AddListener(detectedMinigame.EndInteract);
+                interactedObject.FinishInteract();
+                Events.OnInteract.RemoveListener(detectedMinigame.Interact);
+                Events.OnFinishInteract.RemoveListener(detectedMinigame.EndInteract);
+            }
         }
     }
 }

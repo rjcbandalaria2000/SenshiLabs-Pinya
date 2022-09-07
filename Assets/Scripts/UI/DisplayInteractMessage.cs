@@ -34,9 +34,12 @@ public class DisplayInteractMessage : MonoBehaviour
 
     public void ChangeMessage(GameObject player = null)
     {
-        Debug.Log("Message appear ");
-
-        this.gameObject.SetActive(true);
+        //Debug.Log("Message appear ");
+        if (!this.gameObject.activeSelf)
+        {
+            this.gameObject.SetActive(true);
+        }
+       
 
 
     }
