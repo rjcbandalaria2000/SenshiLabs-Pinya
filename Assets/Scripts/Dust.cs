@@ -52,6 +52,7 @@ public class Dust : MonoBehaviour
         }
         if(swipeCounter >= swipeRequired)
         {
+            SingletonManager.Get<CleanTheHouseManager>().AddDustSwept(1);
             Destroy(this.gameObject);
         }
         Debug.Log("X coordinate: " + mousePosition.normalized.x);

@@ -7,8 +7,8 @@ public class SpawnManager : MonoBehaviour
 {
     public List<GameObject> SpawnPoints = new();
     public List<GameObject> ObjectToSpawn = new();
-    public List<int> NumToSpawn = new();
-    public List<WaveSpawnScriptableObject> WaveSpawnScripts = new();
+    public List<int> NumToSpawn = new(); //must be equal to the number of objects to spawn
+    //public List<WaveSpawnScriptableObject> WaveSpawnScripts = new(); // can be utilized later 
 
     private void Awake()
     {
@@ -33,26 +33,10 @@ public class SpawnManager : MonoBehaviour
                 //Store in separate temp variable
                 List<GameObject> tempSpawnPoint = new List<GameObject>();
                 tempSpawnPoint = SpawnPoints;
-                //foreach(GameObject obj in ObjectToSpawn) //to spawn all gameobjects in the list
-                //{
-                //    foreach (int spawnCount in NumToSpawn) //different spawn count 
-                //    {
-                //        for (int i = 0; i < spawnCount; i++) //the amount of objects to spawn
-                //        {
-                //            int randomSpawnPoint = Random.Range(0, tempSpawnPoint.Count);
-                //            GameObject spawnedObject = Instantiate(obj, tempSpawnPoint[randomSpawnPoint].transform.position, Quaternion.identity);
-
-                //            //Remove already selected spawnpoint from tempList 
-                //            tempSpawnPoint.RemoveAt(randomSpawnPoint);
-                //        }
-                       
-                //    }
-                    
-
-                //}
-                for(int i = 0; i < ObjectToSpawn.Count; i++)
+                
+                for(int i = 0; i < ObjectToSpawn.Count; i++) //loop how many objects are needed to spawn
                 {
-                    for (int j = 0; j < NumToSpawn[i]; j++)
+                    for (int j = 0; j < NumToSpawn[i]; j++) //how many objects will spawn
                     {
                         int randomSpawnPoint = Random.Range(0, tempSpawnPoint.Count);
                         GameObject spawnedObject = Instantiate(ObjectToSpawn[i], tempSpawnPoint[randomSpawnPoint].transform.position, Quaternion.identity);

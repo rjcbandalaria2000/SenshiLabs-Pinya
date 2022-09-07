@@ -2921,7 +2921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2816954076488409271, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
       propertyPath: MinigameScene
-      value: TestScene- CleanTheHouse
+      value: CleanTheHouse - TestScene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
