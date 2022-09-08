@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MinigameObject : MonoBehaviour
 {
+    [Header("Setup Values")]
+    public int              MotivationCost;
+
     public Interactable     Interactable;
     public bool             isInteracted;
     public string           MinigameScene;
@@ -52,7 +55,7 @@ public class MinigameObject : MonoBehaviour
     {
 
     }
-    public virtual IEnumerator InteractCoroutine()
+    public virtual IEnumerator InteractCoroutine(GameObject player = null)
     {
         yield return null; 
     }

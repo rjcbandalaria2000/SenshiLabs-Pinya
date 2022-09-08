@@ -2458,7 +2458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f1bded6d13d9e947be8e6efdce47352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameOfNextScene: Main Game Scene
+  NameOfNextScene: MotivationBar -TestScene
   NumberOfTrash: 5
   NumberOfDust: 5
   NumberOfTrashThrown: 0

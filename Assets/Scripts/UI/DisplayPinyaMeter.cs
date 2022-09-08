@@ -27,6 +27,10 @@ public class DisplayPinyaMeter : MonoBehaviour
         if (PinyaSlider == null) {
             PinyaSlider = this.GetComponent<Slider>();
         }
+        if (Player == null)
+        {
+            Player = SingletonManager.Get<GameManager>().player.gameObject;
+        }
         Assert.IsNotNull(Player, "Player is null or is not set");
         playerPinyaMeter = Player.GetComponent<PinyaMeter>();
         if (playerPinyaMeter)
@@ -34,6 +38,7 @@ public class DisplayPinyaMeter : MonoBehaviour
             PinyaSlider.maxValue = playerPinyaMeter.MaxPinyaValue;
             PinyaSlider.value = playerPinyaMeter.PinyaValue;
             Events.OnChangeMeter.AddListener(UpdatePinyaBar);
+            Events.OnSceneChange.AddListener(RemoveListeners);
             
         }
     }
@@ -42,6 +47,12 @@ public class DisplayPinyaMeter : MonoBehaviour
     {
         Assert.IsNotNull(playerPinyaMeter, "Player Pinya Meter is null or is not set");
         PinyaSlider.value = playerPinyaMeter.PinyaValue;
+    }
+
+    public void RemoveListeners()
+    {
+        Events.OnChangeMeter.RemoveListener(UpdatePinyaBar);
+        Events.OnSceneChange.RemoveListener(RemoveListeners);
     }
 
 }

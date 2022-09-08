@@ -76,7 +76,7 @@ public static class Events
 
     #region SceneChange Events
     public static readonly Evt OnSceneChange = new();
-
+    public static readonly Evt OnSceneLoad = new();
     #endregion
 
 

@@ -495,8 +495,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddbe5cabbf2c553468be002ca7055101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motivationMeter: {fileID: 0}
-  pinyaMeter: {fileID: 0}
+  motivationMeter: {fileID: -2348528930903622607}
+  pinyaMeter: {fileID: -6934455366206682333}
 --- !u!114 &-2348528930903622607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -509,8 +509,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9939cf9988158aa45989c4d7d78e5196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MotivationAmount: 100
-  MaxMotivation: 0
+  MotivationAmount: 0
+  MaxMotivation: 100
 --- !u!114 &-6934455366206682333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,7 +570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 213281a4e99f23641b1de06c4493f156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Parent: {fileID: 0}
+  Parent: {fileID: 6543178212848092689}
 --- !u!1 &6543178213279610888
 GameObject:
   m_ObjectHideFlags: 0

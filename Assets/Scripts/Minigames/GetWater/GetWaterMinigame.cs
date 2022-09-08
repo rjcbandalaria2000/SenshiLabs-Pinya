@@ -26,7 +26,7 @@ public class GetWaterMinigame : MinigameObject
         //base.Interact(player);
         //Run a coroutine waiting for player input
         isInteracted = true;
-        interactRoutine = StartCoroutine(InteractCoroutine());
+        interactRoutine = StartCoroutine(InteractCoroutine(player));
     }
 
     public override void EndInteract(GameObject player = null)
@@ -61,15 +61,21 @@ public class GetWaterMinigame : MinigameObject
     }
 
     //Can be improved and transfer to player controls 
-    public override IEnumerator InteractCoroutine()
+    public override IEnumerator InteractCoroutine(GameObject player = null)
     {
         while (isInteracted)
         {
             Debug.Log("Interact with" + this.gameObject.name);
             if (Input.GetKeyDown(KeyCode.E))
             {
+                MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
+                if (playerMotivation)
+                {
+                    playerMotivation.DecreaseMotivation(MotivationCost);
+                }
                 Debug.Log("Interacted");
                 isInteracted = false;
+                yield return new WaitForSeconds(2.0f);
                 JumpToMiniGame();
             }
             yield return null;

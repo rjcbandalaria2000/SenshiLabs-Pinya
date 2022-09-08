@@ -15,6 +15,7 @@ public class DisplayMotivationalBar : MonoBehaviour
     {
         SingletonManager.Register(this);
         Events.OnChangeMeter.AddListener(UpdateMotivationBar);
+        Events.OnSceneChange.AddListener(RemoveListeners);
     }
 
     // Start is called before the first frame update
@@ -30,6 +31,10 @@ public class DisplayMotivationalBar : MonoBehaviour
         {
             MotivationSlider = this.GetComponent<Slider>();
         }
+        if(Player == null)
+        {
+            Player = SingletonManager.Get<GameManager>().player.gameObject;
+        }
         Assert.IsNotNull(Player, Player.name + "is not set or is null");
         playerMotivation = Player.GetComponent<MotivationMeter>();
         if (playerMotivation)
@@ -44,6 +49,13 @@ public class DisplayMotivationalBar : MonoBehaviour
     {
         Assert.IsNotNull(playerMotivation, "Player Motivation is not set or is null");
         MotivationSlider.value = playerMotivation.MotivationAmount;
+    }
+
+    public void RemoveListeners()
+    {
+        //Dont forget to remove listeners when scene changing 
+        Events.OnChangeMeter.RemoveListener(UpdateMotivationBar);
+        Events.OnSceneChange.RemoveListener(RemoveListeners);
     }
 
 }

@@ -38,7 +38,7 @@ public class MinigameDetector : MonoBehaviour
             {
                 Events.OnInteract.AddListener(detectedMinigame.Interact);
                 Events.OnFinishInteract.AddListener(detectedMinigame.EndInteract);
-                interactedObject.Interact();
+                interactedObject.Interact(Parent);
             }
         }
     }
@@ -73,7 +73,7 @@ public class MinigameDetector : MonoBehaviour
             if (detectedMinigame)
             {
                 //Events.OnFinishInteract.AddListener(detectedMinigame.EndInteract);
-                interactedObject.FinishInteract();
+                interactedObject.FinishInteract(Parent);
                 Events.OnInteract.RemoveListener(detectedMinigame.Interact);
                 Events.OnFinishInteract.RemoveListener(detectedMinigame.EndInteract);
             }

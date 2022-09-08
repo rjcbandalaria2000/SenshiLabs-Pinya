@@ -30,6 +30,7 @@ public class CleanTheHouseManager : MinigameManager
         if(NumberOfTrashThrown >= NumberOfTrash && NumberOfDustSwept >= NumberOfDust)
         {
             Debug.Log("Minigame complete");
+            //Events.OnSceneLoad.Invoke();
             Assert.IsNotNull(sceneChange, "Scene change is null or not set");
             sceneChange.OnChangeScene(NameOfNextScene);
         }

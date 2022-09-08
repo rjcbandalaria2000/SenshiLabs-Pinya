@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8555003005193376342}
   - component: {fileID: 8555003005193376343}
   m_Layer: 5
-  m_Name: MotivationFill
+  m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.47865945, g: 0.9716981, b: 0.114587024, a: 1}
+  m_Color: {r: 0.8632653, g: 0.972549, b: 0.1137255, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -86,6 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8555003005583062405}
   - component: {fileID: 8555003005583062404}
+  - component: {fileID: 3686634582077691363}
   m_Layer: 5
   m_Name: LifeBar
   m_TagString: Untagged
@@ -167,6 +168,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3686634582077691363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8555003005583062406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7d1b818997ab8a45a764726160de79a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  PinyaSlider: {fileID: 8555003005583062404}
 --- !u!1 &8555003006507179106
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,7 +194,7 @@ GameObject:
   - component: {fileID: 8555003006507179119}
   - component: {fileID: 8555003006507179104}
   m_Layer: 5
-  m_Name: MotivationText
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -233,7 +248,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Motivation
+  m_text: Pinya Meter
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -314,7 +329,7 @@ GameObject:
   - component: {fileID: 8555003006605391215}
   - component: {fileID: 8555003006605391200}
   m_Layer: 5
-  m_Name: MotivationBorder
+  m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
