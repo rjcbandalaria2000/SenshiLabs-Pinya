@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ClickItem : MonoBehaviour
 {
-    public GameObject item;
+    private GameObject item;
+    public Ingredients ingridientType;
     public GroceryManager_Test groceryMiniGame;
 
     // Start is called before the first frame update
@@ -41,9 +42,9 @@ public class ClickItem : MonoBehaviour
 
     IEnumerator lerpItem()
     {
-        while (this.gameObject.transform.position != groceryMiniGame.basketPosition)
+        while (this.gameObject.transform.position != groceryMiniGame.getBasketPosition())
         {
-            item.transform.position = Vector2.Lerp(this.item.transform.position, groceryMiniGame.basketPosition,1f * Time.deltaTime);
+            item.transform.position = Vector2.Lerp(this.item.transform.position, groceryMiniGame.getBasketPosition(),1f * Time.deltaTime);
             yield return null;
         }
 
