@@ -87,10 +87,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swipedRight: 0
   swipedLeft: 0
-  swipeCounter: 0
   swipeRequired: 3
-  swipeLeftAccept: -0.5
-  swipeRightAccept: 0.5
+  swipeLeftAccept: -0.327
+  swipeRightAccept: 0.327
 --- !u!1 &5920978551436951451
 GameObject:
   m_ObjectHideFlags: 0
