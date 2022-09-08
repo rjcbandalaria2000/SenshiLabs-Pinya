@@ -2818,9 +2818,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63e4698c5aa357043a010328fdc8c067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NameOfNextScene: Main Game Scene
   RequiredNumSwipes: 3
   NumOfSwipes: 0
-  NameOfScene: Main Game Scene
 --- !u!4 &1769558073
 Transform:
   m_ObjectHideFlags: 0

@@ -2,16 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GetWaterManager : MonoBehaviour
+public class GetWaterManager : MinigameManager
 {
     [Header("Setup Values")]
     public int          RequiredNumSwipes = 3;
     public int          NumOfSwipes = 0;
-
-    [Header("Scene Change")]
-    public string       NameOfScene;
-
-    private SceneChange sceneChange;
 
     private void Awake()
     {
@@ -37,7 +32,7 @@ public class GetWaterManager : MonoBehaviour
         Initialize();
     }
 
-    public void Initialize()
+    public override void Initialize()
     {
         if(sceneChange == null)
         {
@@ -61,7 +56,7 @@ public class GetWaterManager : MonoBehaviour
         }
         if (sceneChange)
         {
-            sceneChange.OnChangeScene(NameOfScene);
+            sceneChange.OnChangeScene(NameOfNextScene);
         }
 
     }

@@ -2458,11 +2458,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f1bded6d13d9e947be8e6efdce47352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NameOfNextScene: Main Game Scene
   NumberOfTrash: 5
   NumberOfDust: 5
   NumberOfTrashThrown: 0
   NumberOfDustSwept: 0
-  NameOfScene: Main Game Scene
 --- !u!4 &1036058649
 Transform:
   m_ObjectHideFlags: 0
