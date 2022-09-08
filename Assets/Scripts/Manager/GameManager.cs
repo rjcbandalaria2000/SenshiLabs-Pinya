@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
 
     public Player player;
 
+    public CleanTheHouseManager cleanMiniGame; //Change Public MiniGame;
+    
+
     private void Awake()
     {
         SingletonManager.Register(this);
@@ -27,8 +30,27 @@ public class GameManager : MonoBehaviour
     {
         if(player == null)
         {
-            player = GameObject.FindObjectOfType<Player>().GetComponent<Player>();
+            if(GameObject.FindObjectOfType<Player>() != null)
+            {
+                player = GameObject.FindObjectOfType<Player>().GetComponent<Player>();
+            }
+            
         }
+        if(cleanMiniGame == null)
+        {
+            if(GameObject.FindObjectOfType<CleanTheHouseManager>() != null)
+            {
+                cleanMiniGame = GameObject.FindObjectOfType<CleanTheHouseManager>().GetComponent<CleanTheHouseManager>();
+            }
+        }
+
+        //if(miniGame!=null)
+        //{
+        //    if (GameObject.FindObjectOfType<MiniGame>() != null)
+        //    {
+        //        minigame = GameObject.FindObjectOfType<Player>().GetComponent<Player>();
+        //    }
+        //}
 
         StartCoroutine(dayStart());
     }
@@ -77,19 +99,31 @@ public class GameManager : MonoBehaviour
     {
         if (SingletonManager.Get<MiniGameTimer>() != null)
         {
-            SingletonManager.Get<MiniGameTimer>().timer = currentTime;
-            SingletonManager.Get<MiniGameTimer>().maxTimer = maxTime;
+            SingletonManager.Get<MiniGameTimer>().setTimer(currentTime);
+            SingletonManager.Get<MiniGameTimer>().setMaxTimer(maxTime);
         }
     }
 
     public IEnumerator countdownTimer()
     {
-        while(SingletonManager.Get<MiniGameTimer>().timer > 0)
+        while(SingletonManager.Get<MiniGameTimer>().getTimer() > 0)
         {
-            SingletonManager.Get<MiniGameTimer>().timer--;
+            SingletonManager.Get<MiniGameTimer>().countDown_Minigame();
             //SingletonManager.Get<DisplayMiniGameTimer>().updateMiniGameTimer();
             Events.OnDisplayMinigameTime.Invoke();
             yield return new WaitForSeconds(speedCounter);
         }
+
+        yield return null;
+
+        if(SingletonManager.Get<MiniGameTimer>().getTimer() <= 0)
+        {
+            cleanMiniGame.CheckIfFinished();
+        }
+
+        //if(SingletonManager.Get<MiniGameTimer>().getTimer() <= 0)
+        //{
+        //    minigame->failtask;
+        //}
     }
 }

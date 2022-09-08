@@ -37,6 +37,12 @@ public class CleanTheHouseManager : MonoBehaviour
             Assert.IsNotNull(sceneChange, "Scene change is null or not set");
             sceneChange.OnChangeScene(NameOfScene);
         }
+        else
+        {
+            Debug.Log("Minigame Fail");
+            Assert.IsNotNull(sceneChange, "Scene change is null or not set");
+            sceneChange.OnChangeScene(NameOfScene);
+        }
     }
 
     public void AddTrashThrown(int count)
@@ -49,6 +55,14 @@ public class CleanTheHouseManager : MonoBehaviour
     {
         NumberOfDustSwept += count;
         CheckIfFinished();
+    }
+
+    public void failTask()
+    {
+        if(SingletonManager.Get<MiniGameTimer>().getTimer() <= 0)
+        {
+            CheckIfFinished();
+        }
     }
 
 }

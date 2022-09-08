@@ -55,9 +55,9 @@ public class SceneLoad : MonoBehaviour
         yield return null;
 
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId, LoadSceneMode.Additive);
-
+        
         yield return operation;
-
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneId));
         currentSceneId = sceneId;
 
         yield return null;
