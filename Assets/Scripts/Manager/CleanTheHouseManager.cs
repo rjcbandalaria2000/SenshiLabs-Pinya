@@ -57,12 +57,6 @@ public class CleanTheHouseManager : MonoBehaviour
         CheckIfFinished();
     }
 
-    public void failTask()
-    {
-        if(SingletonManager.Get<MiniGameTimer>().getTimer() <= 0)
-        {
-            CheckIfFinished();
-        }
-    }
+   
 
 }
