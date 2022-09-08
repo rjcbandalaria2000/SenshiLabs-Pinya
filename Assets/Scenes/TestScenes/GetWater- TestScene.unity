@@ -1700,7 +1700,6 @@ GameObject:
   - component: {fileID: 1100426840}
   - component: {fileID: 1100426839}
   - component: {fileID: 1100426838}
-  - component: {fileID: 1100426841}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1774,18 +1773,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1100426841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1100426837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfacea6796f86984a9d850c87fd92d65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1166292705
 GameObject:
   m_ObjectHideFlags: 0
@@ -1907,6 +1894,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1168003674}
   - component: {fileID: 1168003675}
+  - component: {fileID: 1168003676}
   m_Layer: 0
   m_Name: Well
   m_TagString: Untagged
@@ -1956,6 +1944,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.83, y: 9.5}
   m_EdgeRadius: 0
+--- !u!114 &1168003676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168003673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b29ffc9cc66737c4f99ffdc15320061d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RequiredSwipes: 0
+  SwipedUp: 0
+  CanSwipeUp: 0
+  SwipedDown: 0
+  SwipeUpAccept: 0.9
+  SwipeDownAccept: -0.9
 --- !u!1 &1175101928
 GameObject:
   m_ObjectHideFlags: 0
@@ -2810,6 +2816,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63e4698c5aa357043a010328fdc8c067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RequiredNumSwipes: 3
+  NumOfSwipes: 0
 --- !u!4 &1769558073
 Transform:
   m_ObjectHideFlags: 0

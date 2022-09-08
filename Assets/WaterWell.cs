@@ -14,13 +14,14 @@ public class WaterWell : MonoBehaviour
 
     [Header("Mouse Sweep Acceptance")]
     [Range(0f, 1f)]
-    public float SwipeUpAccept = 0.5f;
+    public float    SwipeUpAccept = 0.5f;
     [Range(0f, -1f)]
-    public float SwipeDownAccept = -0.5f;
+    public float    SwipeDownAccept = -0.5f;
 
     private int     playerSwipeUpCount;
     private int     playerSwipeDownCount;
-    private Camera  mainCamera; 
+    private Camera  mainCamera;
+    private Vector2 initialMousePosition;
  
     // Start is called before the first frame update
     void Start()
@@ -34,34 +35,47 @@ public class WaterWell : MonoBehaviour
         RequiredSwipes = SingletonManager.Get<GetWaterManager>().RequiredNumSwipes;
     }
 
+    public void OnMouseDown()
+    {
+        initialMousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+    }
+
     private void OnMouseDrag()
     {
-        Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        if (mousePosition.normalized.y < SwipeDownAccept) {
-
-            if (!SwipedDown)
-            {
-                SwipedDown = true;
-                playerSwipeDownCount++;
-            } 
-            if (!CanSwipeUp)
-            {
-                CanSwipeUp = true; // enable swiping up when the player swiped down first
-            }
-        
-        }
-        if (CanSwipeUp)
+        Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition) - (Vector3)initialMousePosition  ;
+        if (!SwipedUp)
         {
-            if(mousePosition.normalized.y > SwipeUpAccept)
+            if (mousePosition.normalized.y < SwipeDownAccept)
             {
-                if (!SwipedUp)
+
+                if (!SwipedDown)
                 {
-                    SwipedUp = true; 
-                    playerSwipeUpCount++;
+                    SwipedDown = true;
+                    playerSwipeDownCount++;
                 }
-               
+                if (!CanSwipeUp)
+                {
+                    CanSwipeUp = true; // enable swiping up when the player swiped down first
+                }
+
             }
         }
+        if (!SwipedDown)
+        {
+            if (CanSwipeUp)
+            {
+                if (mousePosition.normalized.y > SwipeUpAccept)
+                {
+                    if (!SwipedUp)
+                    {
+                        SwipedUp = true;
+                        playerSwipeUpCount++;
+                    }
+
+                }
+            }
+        }
+        Debug.Log("Y coordinate: " + mousePosition.normalized.y);
     }
 
     private void OnMouseUp()
