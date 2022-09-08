@@ -15,7 +15,6 @@ public class CleanTheHouseManager : MonoBehaviour
 
     [Header("Scene Change")]
     public string NameOfScene;
-
     private SceneChange sceneChange;
 
     private void Awake()

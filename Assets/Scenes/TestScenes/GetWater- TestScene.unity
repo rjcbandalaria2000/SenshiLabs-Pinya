@@ -1958,10 +1958,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RequiredSwipes: 0
   SwipedUp: 0
-  CanSwipeUp: 0
   SwipedDown: 0
-  SwipeUpAccept: 0.9
-  SwipeDownAccept: -0.9
+  CanSwipeUp: 0
+  CanSwipeDown: 0
+  SwipeUpAccept: 0.8
+  SwipeDownAccept: -0.8
 --- !u!1 &1175101928
 GameObject:
   m_ObjectHideFlags: 0
@@ -2797,6 +2798,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1769558073}
   - component: {fileID: 1769558072}
+  - component: {fileID: 1769558074}
   m_Layer: 0
   m_Name: ~GetWaterManager
   m_TagString: Untagged
@@ -2818,6 +2820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RequiredNumSwipes: 3
   NumOfSwipes: 0
+  NameOfScene: Main Game Scene
 --- !u!4 &1769558073
 Transform:
   m_ObjectHideFlags: 0
@@ -2833,6 +2836,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1769558074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769558071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c181a4815ee67c49846764ff353adc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1797360262
 GameObject:
   m_ObjectHideFlags: 0
