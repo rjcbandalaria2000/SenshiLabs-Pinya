@@ -27,15 +27,14 @@ public class CleanTheHouseMinigame : MinigameObject
     public override void Interact(GameObject player = null)
     {
         Debug.Log("Interact with" + this.gameObject.name);
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            JumpToMiniGame();
-        }
+        isInteracted = true;
+        interactRoutine = StartCoroutine(InteractCoroutine());
     }
 
     public override void EndInteract(GameObject player = null)
     {
         base.EndInteract(player);
+        StopCoroutine(interactRoutine);
     }
 
     public override void JumpToMiniGame()
@@ -61,6 +60,21 @@ public class CleanTheHouseMinigame : MinigameObject
         else
         {
             Debug.Log("No Scene change");
+        }
+    }
+
+    public override IEnumerator InteractCoroutine()
+    {
+        while (isInteracted)
+        {
+            Debug.Log("Interact with" + this.gameObject.name);
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.Log("Interacted");
+                isInteracted = false;
+                JumpToMiniGame();
+            }
+            yield return null;
         }
     }
 

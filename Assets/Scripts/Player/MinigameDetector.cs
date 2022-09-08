@@ -37,24 +37,26 @@ public class MinigameDetector : MonoBehaviour
             if (detectedMinigame)
             {
                 Events.OnInteract.AddListener(detectedMinigame.Interact);
+                Events.OnFinishInteract.AddListener(detectedMinigame.EndInteract);
+                interactedObject.Interact();
             }
         }
     }
 
     public void OnTriggerStay2D(Collider2D collision)
     { 
-        Interactable interactedObject = collision.gameObject.GetComponent<Interactable>();
-        if (interactedObject){
+        //Interactable interactedObject = collision.gameObject.GetComponent<Interactable>();
+        //if (interactedObject){
 
-            //Method 1 for different spawning scene 
-            // Only add listener when collided 
-            MinigameObject detectedMinigame = collision.gameObject.GetComponent<MinigameObject>();
-            if (detectedMinigame)
-            {
-                
-                interactedObject.Interact();
-            }
-        }
+        //    //Method 1 for different spawning scene 
+        //    // Only add listener when collided 
+        //    MinigameObject detectedMinigame = collision.gameObject.GetComponent<MinigameObject>();
+        //    if (detectedMinigame)
+        //    {
+        //        Debug.Log("Detected Minigame" + detectedMinigame.name);
+        //        interactedObject.Interact();
+        //    }
+        //}
         
     }
 
@@ -70,7 +72,7 @@ public class MinigameDetector : MonoBehaviour
             MinigameObject detectedMinigame = collision.gameObject.GetComponent<MinigameObject>();
             if (detectedMinigame)
             {
-                Events.OnFinishInteract.AddListener(detectedMinigame.EndInteract);
+                //Events.OnFinishInteract.AddListener(detectedMinigame.EndInteract);
                 interactedObject.FinishInteract();
                 Events.OnInteract.RemoveListener(detectedMinigame.Interact);
                 Events.OnFinishInteract.RemoveListener(detectedMinigame.EndInteract);

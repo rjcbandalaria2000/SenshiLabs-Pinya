@@ -395,6 +395,9 @@ GameObject:
   - component: {fileID: 6543178212848092718}
   - component: {fileID: 6543178212848092717}
   - component: {fileID: 6543178212848092714}
+  - component: {fileID: -3605915370874163803}
+  - component: {fileID: -2348528930903622607}
+  - component: {fileID: -6934455366206682333}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -480,6 +483,48 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &-3605915370874163803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6543178212848092689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddbe5cabbf2c553468be002ca7055101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motivationMeter: {fileID: 0}
+  pinyaMeter: {fileID: 0}
+--- !u!114 &-2348528930903622607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6543178212848092689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9939cf9988158aa45989c4d7d78e5196, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MotivationAmount: 100
+  MaxMotivation: 0
+--- !u!114 &-6934455366206682333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6543178212848092689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 777c121c88abac64d92b482f5f735870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PinyaValue: 0
+  MaxPinyaValue: 100
 --- !u!1 &6543178212961661115
 GameObject:
   m_ObjectHideFlags: 0

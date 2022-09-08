@@ -1601,7 +1601,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.3, y: 2.56}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 0.3, y: 2.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1796,7 +1796,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.3, y: 2.56}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 0.3, y: 2.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2167,7 +2167,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.3, y: 2.56}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 0.3, y: 2.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2462,7 +2462,7 @@ MonoBehaviour:
   NumberOfDust: 5
   NumberOfTrashThrown: 0
   NumberOfDustSwept: 0
-  NameOfScene: InteractableObjects-TestScene
+  NameOfScene: Main Game Scene
 --- !u!4 &1036058649
 Transform:
   m_ObjectHideFlags: 0
@@ -3295,7 +3295,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.3, y: 2.56}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 0.3, y: 2.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4155,7 +4155,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.3, y: 2.56}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 0.3, y: 2.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
