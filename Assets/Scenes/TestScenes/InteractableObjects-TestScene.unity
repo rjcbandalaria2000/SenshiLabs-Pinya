@@ -1063,7 +1063,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.3, y: 2.56}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 0.3, y: 2.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1174,7 +1174,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.3, y: 2.56}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 0.3, y: 2.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1396,7 +1396,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.3, y: 2.56}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 0.3, y: 2.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2197,7 +2197,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.3, y: 2.56}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 0.3, y: 2.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2643,7 +2643,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.3, y: 2.56}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 0.3, y: 2.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2816,7 +2816,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1278223492080597529, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
       propertyPath: m_Name
-      value: Plates
+      value: Sink - CleanTheDishes
       objectReference: {fileID: 0}
     - target: {fileID: 1278223492080597532, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
       propertyPath: m_RootOrder
@@ -2828,7 +2828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1278223492080597532, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.35
+      value: -3.15
       objectReference: {fileID: 0}
     - target: {fileID: 1278223492080597532, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2873,7 +2873,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2816954076488409267, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
       propertyPath: m_Name
-      value: TrashBin
+      value: Broom-CleanTheHouse
       objectReference: {fileID: 0}
     - target: {fileID: 2816954076488409270, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
       propertyPath: m_RootOrder
@@ -2930,7 +2930,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4035600955571030600, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
       propertyPath: m_Name
-      value: WaterPlants
+      value: Flower - WaterThePlants
       objectReference: {fileID: 0}
     - target: {fileID: 4035600955571030605, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
       propertyPath: m_RootOrder
@@ -2976,6 +2976,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4035600955571030606, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
+      propertyPath: m_Size.x
+      value: 0.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035600955571030606, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
+      propertyPath: m_Size.y
+      value: 0.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035600955571030606, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.04
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
 --- !u!1001 &4864778027968275070
@@ -2987,7 +2999,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7148304158928383472, guid: e41e923d36dd9184699d21fe2e39658e, type: 3}
       propertyPath: m_Name
-      value: Bed
+      value: Bed - Sleeping
       objectReference: {fileID: 0}
     - target: {fileID: 7148304158928383477, guid: e41e923d36dd9184699d21fe2e39658e, type: 3}
       propertyPath: m_RootOrder
@@ -2995,11 +3007,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7148304158928383477, guid: e41e923d36dd9184699d21fe2e39658e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.57
+      value: 0.59
       objectReference: {fileID: 0}
     - target: {fileID: 7148304158928383477, guid: e41e923d36dd9184699d21fe2e39658e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.1
+      value: 1.377
       objectReference: {fileID: 0}
     - target: {fileID: 7148304158928383477, guid: e41e923d36dd9184699d21fe2e39658e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3044,7 +3056,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 325155188160618073, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
       propertyPath: m_Name
-      value: CookingPot
+      value: Kitchen - ImHungry
       objectReference: {fileID: 0}
     - target: {fileID: 325155188160618076, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
       propertyPath: m_RootOrder
@@ -3052,11 +3064,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 325155188160618076, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.12
+      value: 1.24
       objectReference: {fileID: 0}
     - target: {fileID: 325155188160618076, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.35
+      value: -3.39
       objectReference: {fileID: 0}
     - target: {fileID: 325155188160618076, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
       propertyPath: m_LocalPosition.z
