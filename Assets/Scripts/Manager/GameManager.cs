@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     [Header("MiniGame Manager")]
     public CleanTheHouseManager cleanMiniGame; //Change Public MiniGame;
     public GroceryManager groceryMiniGame;
+    public HideSeekManager hideseekMiniGame;
 
     private void Awake()
     {
@@ -126,7 +127,19 @@ public class GameManager : MonoBehaviour
 
         if(SingletonManager.Get<MiniGameTimer>().getTimer() <= 0)
         {
-            cleanMiniGame.CheckIfFinished();
+            if(cleanMiniGame != null)
+            {
+                cleanMiniGame.CheckIfFinished();
+            }
+            //if (groceryMiniGame != null)
+            //{
+            //    groceryMiniGame.CheckIfFinished();
+            //}
+            //if(hideseekMiniGame)
+            //{
+            //    hideseekMiniGame.CheckIfFinished();
+            //}
+
         }
 
         //if(SingletonManager.Get<MiniGameTimer>().getTimer() <= 0)
