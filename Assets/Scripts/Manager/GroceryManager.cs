@@ -5,10 +5,11 @@ using UnityEngine.Assertions;
 public enum Ingredients // Use for comparing
 {
     egg,
-    vegetables,
-    fruit,
-    rice,
-    meat
+    tomato,
+    Kalamansi,
+    sili,
+    okra,
+    talong
 };
 
 
@@ -43,7 +44,7 @@ public class GroceryManager : MonoBehaviour //Might rename this
 
     void Start()
     {
-        numberOfItems = Random.Range(1, 5);
+        numberOfItems = Random.Range(2, 5);
         sceneChange = this.gameObject.GetComponent<SceneChange>();
 
         if (groceryItems.Count > 0)
@@ -73,8 +74,9 @@ public class GroceryManager : MonoBehaviour //Might rename this
     {
         for (int i = 0; i < spawnPoints.Count; i++)
         {
-            RNG = Random.Range(0, groceryItems.Count);
-            GameObject item = Instantiate(groceryItems[RNG], spawnPoints[i].transform.position, Quaternion.identity);
+            
+            RNG = Random.Range(0, needItems.Count);
+            GameObject item = Instantiate(needItems[RNG], spawnPoints[i].transform.position, Quaternion.identity);
             yield return null;
         }
     }

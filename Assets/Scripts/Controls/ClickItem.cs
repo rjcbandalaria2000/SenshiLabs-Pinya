@@ -47,7 +47,7 @@ public class ClickItem : MonoBehaviour
     {
         while (this.gameObject.transform.position != groceryMiniGame.getBasketPosition())
         {
-            item.transform.position = Vector2.Lerp(this.item.transform.position, groceryMiniGame.getBasketPosition(),1f * Time.deltaTime);
+            item.transform.position = Vector2.Lerp(this.item.transform.position, groceryMiniGame.getBasketPosition(),5f * Time.deltaTime);
             yield return null;
         }
     }
