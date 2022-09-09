@@ -1,0 +1,460 @@
+fileFormatVersion: 2
+guid: 3f7d6a1074fa7a04d877bf16d2ea9a5b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4615539477063759865
+    second: SpriteSheet_House Props_Interior_0
+  - first:
+      213: -8346112715164846241
+    second: SpriteSheet_House Props_Interior_1
+  - first:
+      213: 2012954792013662345
+    second: SpriteSheet_House Props_Interior_2
+  - first:
+      213: 1458844998743399329
+    second: SpriteSheet_House Props_Interior_3
+  - first:
+      213: -8181873451023824804
+    second: SpriteSheet_House Props_Interior_4
+  - first:
+      213: 1095912454575030899
+    second: SpriteSheet_House Props_Interior_5
+  - first:
+      213: -959540848699359311
+    second: SpriteSheet_House Props_Interior_6
+  - first:
+      213: -5054336410921159575
+    second: SpriteSheet_House Props_Interior_7
+  - first:
+      213: -2285174519810390136
+    second: SpriteSheet_House Props_Interior_8
+  - first:
+      213: -7932388571557978133
+    second: SpriteSheet_House Props_Interior_9
+  - first:
+      213: -4078806584424759178
+    second: SpriteSheet_House Props_Interior_10
+  - first:
+      213: -8096456548112089651
+    second: SpriteSheet_House Props_Interior_11
+  - first:
+      213: -7941927349959333567
+    second: SpriteSheet_House Props_Interior_12
+  - first:
+      213: 35266007513696230
+    second: SpriteSheet_House Props_Interior_13
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpriteSheet_House Props_Interior_0
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 261
+        width: 142
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70882debc4f42ffb0800000000000000
+      internalID: -4615539477063759865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House Props_Interior_1
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 380
+        width: 124
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f577a3584b6ac2c80800000000000000
+      internalID: -8346112715164846241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House Props_Interior_2
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 380
+        width: 124
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98805eed7b37feb10800000000000000
+      internalID: 2012954792013662345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House Props_Interior_3
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 434
+        width: 86
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ab947c0ccbde3410800000000000000
+      internalID: 1458844998743399329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House Props_Interior_4
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 425
+        width: 111
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c58868a1275247e80800000000000000
+      internalID: -8181873451023824804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House Props_Interior_5
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 264
+        width: 209
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3720fdf2296753f00800000000000000
+      internalID: 1095912454575030899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House Props_Interior_6
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 272
+        width: 90
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bf3cc59ea60fa2f0800000000000000
+      internalID: -959540848699359311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House Props_Interior_7
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 274
+        width: 88
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 964b8b330d36bd9b0800000000000000
+      internalID: -5054336410921159575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House Props_Interior_8
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 173
+        width: 45
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8878de0b1ed6940e0800000000000000
+      internalID: -2285174519810390136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House Props_Interior_9
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 163
+        width: 59
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bef1beb2f9e7ae190800000000000000
+      internalID: -7932388571557978133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House Props_Interior_10
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 145
+        width: 92
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67086db950b2567c0800000000000000
+      internalID: -4078806584424759178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House Props_Interior_11
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 2
+        width: 233
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcdb4669aab93af80800000000000000
+      internalID: -8096456548112089651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House Props_Interior_12
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 75
+        width: 208
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 149e6b1472b98c190800000000000000
+      internalID: -7941927349959333567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_House Props_Interior_13
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 4
+        width: 200
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e7008a3f3a4d7000800000000000000
+      internalID: 35266007513696230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SpriteSheet_House Props_Interior_9: -7932388571557978133
+      SpriteSheet_House Props_Interior_10: -4078806584424759178
+      SpriteSheet_House Props_Interior_7: -5054336410921159575
+      SpriteSheet_House Props_Interior_12: -7941927349959333567
+      SpriteSheet_House Props_Interior_11: -8096456548112089651
+      SpriteSheet_House Props_Interior_13: 35266007513696230
+      SpriteSheet_House Props_Interior_4: -8181873451023824804
+      SpriteSheet_House Props_Interior_8: -2285174519810390136
+      SpriteSheet_House Props_Interior_5: 1095912454575030899
+      SpriteSheet_House Props_Interior_3: 1458844998743399329
+      SpriteSheet_House Props_Interior_0: -4615539477063759865
+      SpriteSheet_House Props_Interior_6: -959540848699359311
+      SpriteSheet_House Props_Interior_2: 2012954792013662345
+      SpriteSheet_House Props_Interior_1: -8346112715164846241
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

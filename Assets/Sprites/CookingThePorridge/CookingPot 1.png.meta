@@ -1,0 +1,460 @@
+fileFormatVersion: 2
+guid: 4373fe99ac4cd0e41bae374bc4ed7e67
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3285562753104612650
+    second: CookingPot 1_0
+  - first:
+      213: 4644142928320342402
+    second: CookingPot 1_1
+  - first:
+      213: -46227156667950550
+    second: CookingPot 1_2
+  - first:
+      213: -7355820551102042453
+    second: CookingPot 1_3
+  - first:
+      213: -6079412011965783510
+    second: CookingPot 1_4
+  - first:
+      213: 5656148058239487512
+    second: CookingPot 1_5
+  - first:
+      213: -4142177848014584569
+    second: CookingPot 1_6
+  - first:
+      213: -7528527929191610119
+    second: CookingPot 1_7
+  - first:
+      213: -2593764122787070566
+    second: CookingPot 1_8
+  - first:
+      213: 2784458119959201368
+    second: CookingPot 1_9
+  - first:
+      213: 2714894303382792355
+    second: CookingPot 1_10
+  - first:
+      213: 7163101649335724296
+    second: CookingPot 1_11
+  - first:
+      213: 4145910173906859673
+    second: CookingPot 1_12
+  - first:
+      213: -756140949714930907
+    second: CookingPot 1_13
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CookingPot 1_0
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 1619
+        width: 394
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2d0e029ae9a89d20800000000000000
+      internalID: 3285562753104612650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CookingPot 1_1
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 1628
+        width: 400
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2892da8336f437040800000000000000
+      internalID: 4644142928320342402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CookingPot 1_2
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 1630
+        width: 401
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2a94db55a4cb5ff0800000000000000
+      internalID: -46227156667950550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CookingPot 1_3
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 1690
+        width: 443
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bae6b0c7e20eae990800000000000000
+      internalID: -7355820551102042453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CookingPot 1_4
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 1557
+        width: 39
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2269873cf691aba0800000000000000
+      internalID: -6079412011965783510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CookingPot 1_5
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 1178
+        width: 443
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81e416001bcae7e40800000000000000
+      internalID: 5656148058239487512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CookingPot 1_6
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 1192
+        width: 444
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 705499481370486c0800000000000000
+      internalID: -4142177848014584569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CookingPot 1_7
+      rect:
+        serializedVersion: 2
+        x: 1102
+        y: 1220
+        width: 355
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f84dea7cbb458790800000000000000
+      internalID: -7528527929191610119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CookingPot 1_8
+      rect:
+        serializedVersion: 2
+        x: 1614
+        y: 1220
+        width: 355
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9dbf1ec549110cd0800000000000000
+      internalID: -2593764122787070566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CookingPot 1_9
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 1045
+        width: 39
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 856ce1c48e164a620800000000000000
+      internalID: 2784458119959201368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CookingPot 1_10
+      rect:
+        serializedVersion: 2
+        x: 1051
+        y: 512
+        width: 446
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a8ecdb1cfd3da520800000000000000
+      internalID: 2714894303382792355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CookingPot 1_11
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 951
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 809aba29ff2786360800000000000000
+      internalID: 7163101649335724296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CookingPot 1_12
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 708
+        width: 354
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9967562565b398930800000000000000
+      internalID: 4145910173906859673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CookingPot 1_13
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 694
+        width: 376
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5237d1cffc5a185f0800000000000000
+      internalID: -756140949714930907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      CookingPot 1_3: -7355820551102042453
+      CookingPot 1_6: -4142177848014584569
+      CookingPot 1_8: -2593764122787070566
+      CookingPot 1_2: -46227156667950550
+      CookingPot 1_1: 4644142928320342402
+      CookingPot 1_11: 7163101649335724296
+      CookingPot 1_5: 5656148058239487512
+      CookingPot 1_7: -7528527929191610119
+      CookingPot 1_9: 2784458119959201368
+      CookingPot 1_4: -6079412011965783510
+      CookingPot 1_12: 4145910173906859673
+      CookingPot 1_13: -756140949714930907
+      CookingPot 1_0: 3285562753104612650
+      CookingPot 1_10: 2714894303382792355
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,656 @@
+fileFormatVersion: 2
+guid: 2bf3fdadc59ffae4c87a5dcd609cd11a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4216749805413827816
+    second: Folding_0
+  - first:
+      213: -3731932901275799694
+    second: Folding_1
+  - first:
+      213: -4667277429282822393
+    second: Folding_2
+  - first:
+      213: 8526445517598939577
+    second: Folding_3
+  - first:
+      213: 2784823884426289110
+    second: Folding_4
+  - first:
+      213: 8571232704342249543
+    second: Folding_5
+  - first:
+      213: 8333734274353953297
+    second: Folding_6
+  - first:
+      213: -6572893618206047150
+    second: Folding_7
+  - first:
+      213: 6273082034333151835
+    second: Folding_8
+  - first:
+      213: -7664997800812813073
+    second: Folding_9
+  - first:
+      213: -8128818515114554331
+    second: Folding_10
+  - first:
+      213: 781372478320572571
+    second: Folding_11
+  - first:
+      213: -4441996566371481695
+    second: Folding_12
+  - first:
+      213: -4624229699710612016
+    second: Folding_13
+  - first:
+      213: -3190069530275525100
+    second: Folding_14
+  - first:
+      213: -1951711991544812820
+    second: Folding_15
+  - first:
+      213: -4554787893758244655
+    second: Folding_16
+  - first:
+      213: 476210483715515733
+    second: Folding_17
+  - first:
+      213: 4199008262680283794
+    second: Folding_18
+  - first:
+      213: -1234569688458538474
+    second: Folding_19
+  - first:
+      213: -2405724002646996656
+    second: Folding_20
+  - first:
+      213: 4267351577492717974
+    second: Folding_21
+  - first:
+      213: 8392979037746557454
+    second: Folding_22
+  - first:
+      213: -7852250483071080053
+    second: Folding_23
+  - first:
+      213: -5945335224029353893
+    second: Folding_24
+  - first:
+      213: -393926248937035284
+    second: Folding_25
+  - first:
+      213: -5795897907390327662
+    second: Folding_26
+  - first:
+      213: 6111426402559699875
+    second: Folding_27
+  - first:
+      213: -8986776791692246918
+    second: Folding_28
+  - first:
+      213: -2317293693364911294
+    second: Folding_29
+  - first:
+      213: 821613778125028757
+    second: Folding_30
+  - first:
+      213: -5635802765824518938
+    second: Folding_31
+  - first:
+      213: -5904267562576993146
+    second: Folding_32
+  - first:
+      213: 1081487001028940082
+    second: Folding_33
+  - first:
+      213: 766115594850046710
+    second: Folding_34
+  - first:
+      213: 2002840491632191039
+    second: Folding_35
+  - first:
+      213: -4623903275413153248
+    second: Folding_0
+  - first:
+      213: 5753246005840712940
+    second: Folding_1
+  - first:
+      213: -2459805007345187640
+    second: Folding_2
+  - first:
+      213: -3503304404177029671
+    second: Folding_3
+  - first:
+      213: -2151770136648374261
+    second: Folding_4
+  - first:
+      213: 6204813115621371924
+    second: Folding_5
+  - first:
+      213: 8684903464722817216
+    second: Folding_6
+  - first:
+      213: -3232291774510358905
+    second: Folding_7
+  - first:
+      213: -2007526375650249745
+    second: Folding_8
+  - first:
+      213: 8146498840741722285
+    second: Folding_9
+  - first:
+      213: -3236650760485497918
+    second: Folding_10
+  - first:
+      213: 4240546398198223017
+    second: Folding_11
+  - first:
+      213: 2259868193957733276
+    second: Folding_12
+  - first:
+      213: 2602026111927655584
+    second: Folding_13
+  - first:
+      213: 2885368746703552418
+    second: Folding_14
+  - first:
+      213: -8455803585827947018
+    second: Folding_15
+  - first:
+      213: 4738037947032817120
+    second: Folding_16
+  - first:
+      213: 119627080844633106
+    second: Folding_17
+  - first:
+      213: -7760788559776105056
+    second: Folding_18
+  - first:
+      213: -3250619087549502872
+    second: Folding_19
+  - first:
+      213: 6018312057803823298
+    second: Folding_20
+  - first:
+      213: 9104882178632179200
+    second: Folding_21
+  - first:
+      213: 6385795505529352236
+    second: Folding_22
+  - first:
+      213: -5468078446547847806
+    second: Folding_23
+  - first:
+      213: 791797359652639604
+    second: Folding_24
+  - first:
+      213: -1749000885131841646
+    second: Folding_25
+  - first:
+      213: 8144797481074283087
+    second: Folding_26
+  - first:
+      213: 2079574799635689122
+    second: Folding_27
+  - first:
+      213: -5353133153409073504
+    second: Folding_28
+  - first:
+      213: -5092706218935616330
+    second: Folding_29
+  - first:
+      213: 4127431170984925548
+    second: Folding_30
+  - first:
+      213: -2422268304689876025
+    second: Folding_31
+  - first:
+      213: -5776050050134701800
+    second: Folding_32
+  - first:
+      213: 7529343056625285170
+    second: Folding_33
+  - first:
+      213: 8784948890399969369
+    second: Folding_34
+  - first:
+      213: -5378988361381359840
+    second: Folding_35
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Folding_0
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 2720
+        width: 282
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02adb31387894dfb0800000000000000
+      internalID: -4216749805413827816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding_1
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 2573
+        width: 344
+        height: 451
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce41293a2c2a7df40800000000000000
+      internalID: -3731932901275799694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding_2
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 2573
+        width: 399
+        height: 451
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c48670e0640dddd0800000000000000
+      internalID: -4667277429282822393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding_11
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 2218
+        width: 288
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a0da265b7279da30800000000000000
+      internalID: 781372478320572571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding_12
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 2072
+        width: 294
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c93ed0c262aac5f10800000000000000
+      internalID: -4441996566371481695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding_13
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 2072
+        width: 362
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ac1db176f04c1420800000000000000
+      internalID: -4624229699710612016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding_15
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 1726
+        width: 252
+        height: 292
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fd30408073f6aa80800000000000000
+      internalID: -1951711991544812820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding_16
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 1515
+        width: 260
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ed463dd864e0c140800000000000000
+      internalID: -4554787893758244655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding_17
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 1515
+        width: 350
+        height: 503
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 214e24b323009a100800000000000000
+      internalID: 476210483715515733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding_18
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 1208
+        width: 164
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ad31ad5ce32c4490800000000000000
+      internalID: 4199008262680283794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding_19
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 1092
+        width: 175
+        height: 296
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86ae182992b73e2d0800000000000000
+      internalID: -1234569688458538474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding_20
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 1092
+        width: 219
+        height: 296
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c8d8d02ee6558350800000000000000
+      internalID: -2405724002646996656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding_33
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 704
+        width: 289
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 238343a2e999d7860800000000000000
+      internalID: 1081487001028940082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding_34
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 560
+        width: 294
+        height: 423
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 950904e98786ae970800000000000000
+      internalID: 766115594850046710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Folding_35
+      rect:
+        serializedVersion: 2
+        x: 1124
+        y: 560
+        width: 362
+        height: 423
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02f47ec959ef955b0800000000000000
+      internalID: 2002840491632191039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Folding_0: -4216749805413827816
+      Folding_34: 766115594850046710
+      Folding_12: -4441996566371481695
+      Folding_19: -1234569688458538474
+      Folding_13: -4624229699710612016
+      Folding_11: 781372478320572571
+      Folding_20: -2405724002646996656
+      Folding_35: 2002840491632191039
+      Folding_15: -1951711991544812820
+      Folding_33: 1081487001028940082
+      Folding_2: -4667277429282822393
+      Folding_17: 476210483715515733
+      Folding_1: -3731932901275799694
+      Folding_16: -4554787893758244655
+      Folding_18: 4199008262680283794
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
