@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TestScenes/GetWater- TestScene.unity
     guid: 1eab4fd68f765b245880815d6be2af2c
   - enabled: 1
+    path: Assets/Scenes/TestScenes/SleepingMinigame- TestScene.unity
+    guid: b28cd951dcd943944b74a73f3cf87c11
+  - enabled: 1
     path: Assets/Scenes/TestScenes/MotivationBar -TestScene.unity
     guid: a63ea7fd109d33a4c93f69d80662e0fa
   m_configObjects: {}
