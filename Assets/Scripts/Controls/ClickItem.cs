@@ -6,7 +6,7 @@ public class ClickItem : MonoBehaviour
 {
     private GameObject item;
     public Ingredients ingridientType;
-    public GroceryManager_Test groceryMiniGame;
+    public GroceryManager groceryMiniGame;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +15,7 @@ public class ClickItem : MonoBehaviour
 
         if(groceryMiniGame == null)
         {
-            groceryMiniGame = GameObject.FindObjectOfType<GroceryManager_Test>();
+            groceryMiniGame = GameObject.FindObjectOfType<GroceryManager>();
         }
     }
 
@@ -36,7 +36,8 @@ public class ClickItem : MonoBehaviour
             // this.gameObject.transform.position = groceryMiniGame.basketPosition;
             //// item.transform.position = Vector3.Lerp(this.item.transform.position, groceryMiniGame.basketPosition, 1.0f*Time.deltaTime);
             // // SingletonManager.Get<GroceryManager_Test>().basket.GetComponent<GameObject>().transform.position;
-            StartCoroutine(lerpItem());
+            // StartCoroutine(lerpItem());
+            checkItem();
         }
     }
 
@@ -47,7 +48,22 @@ public class ClickItem : MonoBehaviour
             item.transform.position = Vector2.Lerp(this.item.transform.position, groceryMiniGame.getBasketPosition(),1f * Time.deltaTime);
             yield return null;
         }
+    }
 
-       
+    public void checkItem()
+    {
+        for(int i = 0; i < groceryMiniGame.needItems.Count; i++)
+        {
+            if(ingridientType == groceryMiniGame.needItems[i].GetComponent<ClickItem>().ingridientType && groceryMiniGame.needItems[i] != null)
+            {
+                StartCoroutine(lerpItem());
+                groceryMiniGame.needItems.RemoveAt(i);
+                break;
+            }
+            else
+            {
+                Debug.Log("Wrong");
+            }
+        }
     }
 }

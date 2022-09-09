@@ -15,8 +15,9 @@ public class GameManager : MonoBehaviour
 
     public Player player;
 
+    [Header("MiniGame Manager")]
     public CleanTheHouseManager cleanMiniGame; //Change Public MiniGame;
-    
+    public GroceryManager groceryMiniGame;
 
     private void Awake()
     {
@@ -41,6 +42,13 @@ public class GameManager : MonoBehaviour
             if(GameObject.FindObjectOfType<CleanTheHouseManager>() != null)
             {
                 cleanMiniGame = GameObject.FindObjectOfType<CleanTheHouseManager>().GetComponent<CleanTheHouseManager>();
+            }
+        }
+        if(groceryMiniGame == null)
+        {
+            if(GameObject.FindObjectOfType<GroceryManager>() != null)
+            {
+                groceryMiniGame = GameObject.FindObjectOfType<GroceryManager>().GetComponent<GroceryManager>();
             }
         }
 

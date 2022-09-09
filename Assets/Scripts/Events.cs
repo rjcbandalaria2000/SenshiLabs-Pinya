@@ -10,13 +10,6 @@ using UnityEngine;
 public static class Events
 {
     // To create an event with no parameters, please follow this format. 
-    #region UI
-
-    public static readonly Evt OnDisplayMinigameTime = new Evt();
-    public static readonly Evt OnDisplayCycleTime = new Evt();
-
-    #endregion
-
     #region How to Use Events as static class 
     //    public static readonly Evt OnUnitDied = new Evt();
 
@@ -47,6 +40,9 @@ public static class Events
     #region UI Events
     //Used for Meter UI Events when updating the values 
     public static readonly Evt OnChangeMeter = new();
+
+    public static readonly Evt OnDisplayMinigameTime = new Evt();
+    public static readonly Evt OnDisplayCycleTime = new Evt();
     #endregion
 
     #region Player Events

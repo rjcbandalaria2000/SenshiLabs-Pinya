@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Assertions;
 public enum Ingredients // Use for comparing
 {
     egg,
@@ -12,7 +12,7 @@ public enum Ingredients // Use for comparing
 };
 
 
-public class GroceryManager_Test : MonoBehaviour //Might rename this
+public class GroceryManager : MonoBehaviour //Might rename this
 {
     [Header("Grocery Item")]
     public List<GameObject> groceryItems = new List<GameObject>();
@@ -28,11 +28,17 @@ public class GroceryManager_Test : MonoBehaviour //Might rename this
     public List<GameObject> spawnPoints;
 
     private int RNG;
-  
+
+    [Header("Scene Change")]
+    public string NameOfScene;
+
+    private SceneChange sceneChange;
+
     // Start is called before the first frame update
     void Start()
     {
         numberOfItems = Random.Range(1, 5);
+        sceneChange = this.gameObject.GetComponent<SceneChange>();
 
         if (groceryItems.Count > 0)
         {
@@ -76,4 +82,21 @@ public class GroceryManager_Test : MonoBehaviour //Might rename this
             yield return null;
         }
     }
+
+    public void checkItemList()
+    {
+        if (needItems.Count <= 0)
+        {
+            Debug.Log("Minigame complete");
+            Assert.IsNotNull(sceneChange, "Scene change is null or not set");
+            sceneChange.OnChangeScene(NameOfScene);
+        }
+        else
+        {
+            Debug.Log("Minigame Fail");
+            Assert.IsNotNull(sceneChange, "Scene change is null or not set");
+            sceneChange.OnChangeScene(NameOfScene);
+        }
+    }
+
 }
