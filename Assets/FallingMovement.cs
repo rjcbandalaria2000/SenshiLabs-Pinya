@@ -16,16 +16,9 @@ public class FallingMovement : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //position = new Vector2(this.transform.position.x, this.transform.position.y - moveSpeed *Time.deltaTime);
-       
-    }
-
     private void FixedUpdate()
     {
-         this.transform.position = new Vector2(this.transform.position.x, this.transform.position.y - moveSpeed * Time.deltaTime);
-
+         this.transform.position = new Vector2(this.transform.position.x, 
+             this.transform.position.y - moveSpeed * Time.deltaTime);
     }
 }

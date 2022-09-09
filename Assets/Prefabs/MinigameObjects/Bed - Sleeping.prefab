@@ -307,9 +307,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 482ceab3e6730eb449b8a9245d11f248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MotivationCost: 20
   Interactable: {fileID: 7148304158928383479}
   isInteracted: 0
-  MinigameScene: 
+  MinigameScene: SleepingMinigame- TestScene
 --- !u!1 &8482974667717154378
 GameObject:
   m_ObjectHideFlags: 0

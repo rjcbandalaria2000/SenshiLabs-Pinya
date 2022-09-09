@@ -19,6 +19,7 @@ public class SpawnManager : MonoBehaviour
 
     private Coroutine timedSpawnRoutine;
     private Coroutine timedBoxSpawnRoutine;
+    private Coroutine timedUnlimitedSpawnBoxRoutine;
 
 
     private void Awake()
@@ -80,9 +81,14 @@ public class SpawnManager : MonoBehaviour
         timedSpawnRoutine = StartCoroutine(TimedSpawn());
     }
 
-    public void StartTimedSpawnBoxSpawn() 
+    public void StartUnlimitedTimedSpawnBoxSpawn()
     {
-        timedBoxSpawnRoutine = StartCoroutine(TimedSpawnBoxSpawn());
+        timedUnlimitedSpawnBoxRoutine = StartCoroutine(TimedUnlimitedBoxSpawn());
+    }
+
+    public void StopTimedUnlimitedSpawnBox()
+    {
+        StopCoroutine(timedUnlimitedSpawnBoxRoutine);
     }
 
     IEnumerator TimedSpawn()
@@ -107,7 +113,20 @@ public class SpawnManager : MonoBehaviour
 
     IEnumerator TimedUnlimitedBoxSpawn()
     {
-        yield return null;
+        if (ObjectToSpawn.Count <= 0) { yield return null; }
+        if (NumToSpawn.Count <= 0) { yield return null; }
+        while (true)
+        {
+            for (int i = 0; i < ObjectToSpawn.Count; i++) //loop how many objects are needed to spawn
+            {
+
+                GameObject spawnedObject = Instantiate(ObjectToSpawn[i], GetRandomBoxPosition(), Quaternion.identity);
+                yield return new WaitForSeconds(SpawnTime);
+
+            }
+            yield return null;
+        }
+        //yield return null;
     }
 
     private Vector2 GetRandomBoxPosition()

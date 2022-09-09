@@ -24,5 +24,20 @@ public class MinigameManager : MonoBehaviour
     {
 
     }
+
+    public virtual void OnMinigameFinished()
+    {
+
+    }
+
+    public virtual void OnWin()
+    {
+
+    }
+
+    public virtual void OnLose()
+    {
+
+    }
     
 }
