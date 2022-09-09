@@ -34,7 +34,13 @@ public class GroceryManager : MonoBehaviour //Might rename this
 
     private SceneChange sceneChange;
 
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        SingletonManager.Register(this);
+
+       
+    }
+
     void Start()
     {
         numberOfItems = Random.Range(1, 5);
@@ -50,7 +56,9 @@ public class GroceryManager : MonoBehaviour //Might rename this
 
         }
 
-        if(basket == null)
+       
+
+        if (basket == null)
         {
             basket = GameObject.FindGameObjectWithTag("Basket"); // Might change this
             basketPosition = basket.transform.position;
@@ -77,8 +85,8 @@ public class GroceryManager : MonoBehaviour //Might rename this
         {
             RNG = Random.Range(0, groceryItems.Count);
             needItems.Add(groceryItems[RNG]);
+            SingletonManager.Get<DisplayGroceryList>().updateList();
 
-           
             yield return null;
         }
     }
@@ -88,15 +96,10 @@ public class GroceryManager : MonoBehaviour //Might rename this
         if (needItems.Count <= 0)
         {
             Debug.Log("Minigame complete");
-            Assert.IsNotNull(sceneChange, "Scene change is null or not set");
-            sceneChange.OnChangeScene(NameOfScene);
+            //Assert.IsNotNull(sceneChange, "Scene change is null or not set");
+            //sceneChange.OnChangeScene(NameOfScene);
         }
-        else
-        {
-            Debug.Log("Minigame Fail");
-            Assert.IsNotNull(sceneChange, "Scene change is null or not set");
-            sceneChange.OnChangeScene(NameOfScene);
-        }
+       
     }
 
 }

@@ -7,6 +7,7 @@ public class ClickItem : MonoBehaviour
     private GameObject item;
     public Ingredients ingridientType;
     public GroceryManager groceryMiniGame;
+    public DisplayGroceryList groceryList;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,7 @@ public class ClickItem : MonoBehaviour
         if(groceryMiniGame == null)
         {
             groceryMiniGame = GameObject.FindObjectOfType<GroceryManager>();
+            groceryList = GameObject.FindObjectOfType<DisplayGroceryList>();
         }
     }
 
@@ -57,7 +59,10 @@ public class ClickItem : MonoBehaviour
             if(ingridientType == groceryMiniGame.needItems[i].GetComponent<ClickItem>().ingridientType && groceryMiniGame.needItems[i] != null)
             {
                 StartCoroutine(lerpItem());
+                groceryList.blank();
                 groceryMiniGame.needItems.RemoveAt(i);
+                groceryList.updateList();
+
                 break;
             }
             else
@@ -65,5 +70,7 @@ public class ClickItem : MonoBehaviour
                 Debug.Log("Wrong");
             }
         }
+
+        groceryMiniGame.checkItemList();
     }
 }
