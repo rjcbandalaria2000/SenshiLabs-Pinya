@@ -25,6 +25,7 @@ public class CleanTheHouseManager : MinigameManager
         Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
         sceneChange = this.gameObject.GetComponent<SceneChange>();
         spawnManager = SingletonManager.Get<SpawnManager>();
+        spawnManager.SpawnNoRepeat();
     }
 
     public override void CheckIfFinished()

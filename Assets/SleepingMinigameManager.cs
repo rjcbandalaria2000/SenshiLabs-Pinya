@@ -8,7 +8,8 @@ public class SleepingMinigameManager : MinigameManager
     // Start is called before the first frame update
     void Start()
     {
-        
+        spawnManager = SingletonManager.Get<SpawnManager>();
+        spawnManager.StartTimedSpawnBoxSpawn();
     }
 
     public override void Initialize()
