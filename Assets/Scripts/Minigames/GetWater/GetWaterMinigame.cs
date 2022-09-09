@@ -15,10 +15,10 @@ public class GetWaterMinigame : MinigameObject
         //base.Initialize();
         Interactable = this.GetComponent<Interactable>();
         sceneChange = this.gameObject.GetComponent<SceneChange>();
-        if(interactRoutine != null)
-        {
-            StopCoroutine(interactRoutine);
-        }
+        //if(interactRoutine != null)
+        //{
+        //    StopCoroutine(interactRoutine);
+        //}
     }
 
     public override void Interact(GameObject player = null)
@@ -26,13 +26,21 @@ public class GetWaterMinigame : MinigameObject
         //base.Interact(player);
         //Run a coroutine waiting for player input
         isInteracted = true;
-        interactRoutine = StartCoroutine(InteractCoroutine(player));
+        MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
+        if (playerMotivation)
+        {
+            playerMotivation.DecreaseMotivation(MotivationCost);
+        }
+        Debug.Log("Interacted");
+        isInteracted = false;
+        JumpToMiniGame();
+        //interactRoutine = StartCoroutine(InteractCoroutine(player));
     }
 
     public override void EndInteract(GameObject player = null)
     {
         base.EndInteract(player);
-        StopCoroutine(interactRoutine);
+        //StopCoroutine(interactRoutine);
     }
 
     public override void JumpToMiniGame()

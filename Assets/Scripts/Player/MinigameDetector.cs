@@ -33,31 +33,17 @@ public class MinigameDetector : MonoBehaviour
         Interactable interactedObject = collision.gameObject.GetComponent<Interactable>();
         if (interactedObject)
         {
+            PlayerInteract playerInteract = Parent.GetComponent<PlayerInteract>();
+            if (playerInteract == null) { return; }
+            playerInteract.InteractableObject = interactedObject;
             MinigameObject detectedMinigame = collision.gameObject.GetComponent<MinigameObject>();
             if (detectedMinigame)
             {
+                Events.OnInteract.Invoke(Parent);
                 Events.OnInteract.AddListener(detectedMinigame.Interact);
                 Events.OnFinishInteract.AddListener(detectedMinigame.EndInteract);
-                interactedObject.Interact(Parent);
             }
         }
-    }
-
-    public void OnTriggerStay2D(Collider2D collision)
-    { 
-        //Interactable interactedObject = collision.gameObject.GetComponent<Interactable>();
-        //if (interactedObject){
-
-        //    //Method 1 for different spawning scene 
-        //    // Only add listener when collided 
-        //    MinigameObject detectedMinigame = collision.gameObject.GetComponent<MinigameObject>();
-        //    if (detectedMinigame)
-        //    {
-        //        Debug.Log("Detected Minigame" + detectedMinigame.name);
-        //        interactedObject.Interact();
-        //    }
-        //}
-        
     }
 
     public void OnTriggerExit2D(Collider2D collision)
@@ -65,7 +51,10 @@ public class MinigameDetector : MonoBehaviour
         Interactable interactedObject = collision.gameObject.GetComponent<Interactable>();
         if (interactedObject)
         {
-
+            //Put the interactable object in the player interact controls
+            PlayerInteract playerInteract = Parent.GetComponent<PlayerInteract>();
+            if (playerInteract == null) { return; }
+            playerInteract.InteractableObject = null;
             //Method 1 for different spawning scene 
             // Only add listener when collided 
             //Remove all listener when outside of collider 

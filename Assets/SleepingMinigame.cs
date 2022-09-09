@@ -19,13 +19,21 @@ public class SleepingMinigame : MinigameObject
     public override void Interact(GameObject player = null)
     {
         isInteracted = true;
-        interactRoutine = StartCoroutine(InteractCoroutine(player));
+        MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
+        if (playerMotivation)
+        {
+            playerMotivation.DecreaseMotivation(MotivationCost);
+        }
+        Debug.Log("Interacted");
+        isInteracted = false;
+        JumpToMiniGame();
+        //interactRoutine = StartCoroutine(InteractCoroutine(player));
     }
 
     public override void EndInteract(GameObject player = null)
     {
         base.EndInteract(player);
-        StopCoroutine(interactRoutine);
+        //StopCoroutine(interactRoutine);
     }
 
     public override void JumpToMiniGame()
@@ -66,7 +74,7 @@ public class SleepingMinigame : MinigameObject
                 }
                 Debug.Log("Interacted");
                 isInteracted = false;
-                yield return new WaitForSeconds(2.0f);
+                yield return new WaitForSeconds(1.0f);
                 JumpToMiniGame();
             }
             yield return null;

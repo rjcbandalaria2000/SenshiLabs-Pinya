@@ -13,7 +13,7 @@ public class MinigameObject : MonoBehaviour
     public string           MinigameScene;
 
     protected SceneChange   sceneChange;
-    protected Coroutine     interactRoutine;
+    //protected Coroutine     interactRoutine;
     private void Awake()
     {
        
