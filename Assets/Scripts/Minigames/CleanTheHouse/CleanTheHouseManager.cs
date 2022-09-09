@@ -13,6 +13,7 @@ public class CleanTheHouseManager : MinigameManager
     public int  NumberOfTrashThrown = 0;
     public int  NumberOfDustSwept = 0;
 
+    private SpawnManager spawnManager;
 
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class CleanTheHouseManager : MinigameManager
     {
         Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
         sceneChange = this.gameObject.GetComponent<SceneChange>();
+        spawnManager = SingletonManager.Get<SpawnManager>();
     }
 
     public override void CheckIfFinished()

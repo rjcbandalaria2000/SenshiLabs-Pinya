@@ -2,16 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SleepingMinigameManager : MonoBehaviour
+public class SleepingMinigameManager : MinigameManager
 {
+    private SpawnManager spawnManager;
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Initialize()
+    {
+        
+    }
+
+    public override void CheckIfFinished()
     {
         
     }

@@ -5,10 +5,18 @@ using System.Linq;
 
 public class SpawnManager : MonoBehaviour
 {
-    public List<GameObject> SpawnPoints = new();
-    public List<GameObject> ObjectToSpawn = new();
-    public List<int> NumToSpawn = new(); //must be equal to the number of objects to spawn
+    [Header("Setup Values")]
+    public List<GameObject>     ObjectToSpawn = new();
+    public List<int>            NumToSpawn = new(); //must be equal to the number of objects to spawn
+    public float                SpawnTime = 1f;
     //public List<WaveSpawnScriptableObject> WaveSpawnScripts = new(); // can be utilized later 
+    [Header("Set Spawnpoints")]
+    public List<GameObject>     SpawnPoints = new();
+    [Header("Random Spawnpoints")]
+    public List<GameObject>     RandomSpawnLocation = new();
+
+    private Coroutine timedSpawnRoutine;
+
 
     private void Awake()
     {
@@ -18,12 +26,12 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        NumToSpawn[0] = SingletonManager.Get<CleanTheHouseManager>().NumberOfTrash;
-        NumToSpawn[1] = SingletonManager.Get<CleanTheHouseManager>().NumberOfDust;
-        Spawn();
+        //NumToSpawn[0] = SingletonManager.Get<CleanTheHouseManager>().NumberOfTrash;
+        //NumToSpawn[1] = SingletonManager.Get<CleanTheHouseManager>().NumberOfDust;
+        SpawnNoRepeat();
     }
 
-    public void Spawn()
+    public void SpawnNoRepeat()
     {
         if (ObjectToSpawn.Count > 0)
         {
@@ -49,6 +57,16 @@ public class SpawnManager : MonoBehaviour
                 
             }
         }
+    }
+
+    public void StartTimedSpawn()
+    {
+        timedSpawnRoutine = StartCoroutine(TimedSpawn());
+    }
+
+    IEnumerator TimedSpawn()
+    {
+        yield return null; 
     }
   
 }
