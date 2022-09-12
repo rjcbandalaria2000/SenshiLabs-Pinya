@@ -37,6 +37,7 @@ public class DisplayMotivationalBar : MonoBehaviour
         }
         Assert.IsNotNull(Player, Player.name + "is not set or is null");
         playerMotivation = Player.GetComponent<MotivationMeter>();
+        Assert.IsNotNull(playerMotivation, "No Playermotivation");
         if (playerMotivation)
         {   
             MotivationSlider.maxValue = playerMotivation.MaxMotivation; 
