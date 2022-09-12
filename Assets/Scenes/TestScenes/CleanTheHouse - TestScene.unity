@@ -2081,6 +2081,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c132cf2d4ef8fc4fb5fc530dce869c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ObjectToSpawn:
+  - {fileID: 4803294248504114138, guid: f7cc8600c33d92547989c70d85928a9c, type: 3}
+  - {fileID: 5920978550697659818, guid: 287061364edac044d84a49a81fc1f514, type: 3}
+  NumToSpawn: 0500000005000000
+  SpawnTime: 1
   SpawnPoints:
   - {fileID: 1014635799}
   - {fileID: 1642235146}
@@ -2098,10 +2103,8 @@ MonoBehaviour:
   - {fileID: 1976410423}
   - {fileID: 431337139}
   - {fileID: 299167220}
-  ObjectToSpawn:
-  - {fileID: 4803294248504114138, guid: f7cc8600c33d92547989c70d85928a9c, type: 3}
-  - {fileID: 5920978550697659818, guid: 287061364edac044d84a49a81fc1f514, type: 3}
-  NumToSpawn: 0000000000000000
+  RandomSpawnLocation: []
+  BoxSpawnPoint: {fileID: 0}
 --- !u!4 &877029799
 Transform:
   m_ObjectHideFlags: 0
