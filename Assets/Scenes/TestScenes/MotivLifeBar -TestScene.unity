@@ -734,41 +734,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da8f08f5586c40f41b8739997c82f052, type: 3}
---- !u!114 &3686634582077691360 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8555003005583062404, guid: 653435b4250bc0d4697a1cba1ea8980c, type: 3}
-  m_PrefabInstance: {fileID: 5012778475355119716}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3686634582077691362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &3686634582077691361 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8555003005583062405, guid: 653435b4250bc0d4697a1cba1ea8980c, type: 3}
   m_PrefabInstance: {fileID: 5012778475355119716}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3686634582077691362 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8555003005583062406, guid: 653435b4250bc0d4697a1cba1ea8980c, type: 3}
-  m_PrefabInstance: {fileID: 5012778475355119716}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3686634582077691363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3686634582077691362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7d1b818997ab8a45a764726160de79a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 963117139}
-  PinyaSlider: {fileID: 3686634582077691360}
 --- !u!1001 &5012778475355119716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -776,18 +746,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 983925815}
     m_Modifications:
-    - target: {fileID: 8555003005193376343, guid: 653435b4250bc0d4697a1cba1ea8980c, type: 3}
-      propertyPath: m_Color.b
-      value: 0.1137255
-      objectReference: {fileID: 0}
-    - target: {fileID: 8555003005193376343, guid: 653435b4250bc0d4697a1cba1ea8980c, type: 3}
-      propertyPath: m_Color.g
-      value: 0.972549
-      objectReference: {fileID: 0}
-    - target: {fileID: 8555003005193376343, guid: 653435b4250bc0d4697a1cba1ea8980c, type: 3}
-      propertyPath: m_Color.r
-      value: 0.8632653
-      objectReference: {fileID: 0}
+    - target: {fileID: 3686634582077691363, guid: 653435b4250bc0d4697a1cba1ea8980c, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 963117139}
     - target: {fileID: 8555003005193376360, guid: 653435b4250bc0d4697a1cba1ea8980c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -795,10 +757,6 @@ PrefabInstance:
     - target: {fileID: 8555003005193376360, guid: 653435b4250bc0d4697a1cba1ea8980c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8555003005193376361, guid: 653435b4250bc0d4697a1cba1ea8980c, type: 3}
-      propertyPath: m_Name
-      value: Fill
       objectReference: {fileID: 0}
     - target: {fileID: 8555003005583062405, guid: 653435b4250bc0d4697a1cba1ea8980c, type: 3}
       propertyPath: m_Pivot.x
@@ -810,7 +768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8555003005583062405, guid: 653435b4250bc0d4697a1cba1ea8980c, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8555003005583062405, guid: 653435b4250bc0d4697a1cba1ea8980c, type: 3}
       propertyPath: m_AnchorMax.x
@@ -887,18 +845,6 @@ PrefabInstance:
     - target: {fileID: 8555003005583062406, guid: 653435b4250bc0d4697a1cba1ea8980c, type: 3}
       propertyPath: m_Name
       value: PinyaBar
-      objectReference: {fileID: 0}
-    - target: {fileID: 8555003006507179104, guid: 653435b4250bc0d4697a1cba1ea8980c, type: 3}
-      propertyPath: m_text
-      value: Pinya Meter
-      objectReference: {fileID: 0}
-    - target: {fileID: 8555003006507179106, guid: 653435b4250bc0d4697a1cba1ea8980c, type: 3}
-      propertyPath: m_Name
-      value: Text
-      objectReference: {fileID: 0}
-    - target: {fileID: 8555003006605391202, guid: 653435b4250bc0d4697a1cba1ea8980c, type: 3}
-      propertyPath: m_Name
-      value: Border
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 653435b4250bc0d4697a1cba1ea8980c, type: 3}

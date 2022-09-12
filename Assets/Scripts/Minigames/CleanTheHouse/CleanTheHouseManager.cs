@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-public class CleanTheHouseManager : MonoBehaviour
+public class CleanTheHouseManager : MinigameManager
 {
     [Header("Setup Values")]
     public int  NumberOfTrash = 1;
@@ -13,10 +13,7 @@ public class CleanTheHouseManager : MonoBehaviour
     public int  NumberOfTrashThrown = 0;
     public int  NumberOfDustSwept = 0;
 
-    [Header("Scene Change")]
-    public string NameOfScene;
-
-    private SceneChange sceneChange;
+    private SpawnManager spawnManager;
 
     private void Awake()
     {
@@ -27,15 +24,21 @@ public class CleanTheHouseManager : MonoBehaviour
     {
         Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
         sceneChange = this.gameObject.GetComponent<SceneChange>();
+        spawnManager = SingletonManager.Get<SpawnManager>();
+        spawnManager.NumToSpawn[0] = NumberOfTrash;
+        spawnManager.NumToSpawn[1] = NumberOfDust;
+        spawnManager.SpawnNoRepeat();
+        
     }
 
-    public void CheckIfFinished()
+    public override void CheckIfFinished()
     {
         if(NumberOfTrashThrown >= NumberOfTrash && NumberOfDustSwept >= NumberOfDust)
         {
             Debug.Log("Minigame complete");
+            //Events.OnSceneLoad.Invoke();
             Assert.IsNotNull(sceneChange, "Scene change is null or not set");
-            sceneChange.OnChangeScene(NameOfScene);
+            sceneChange.OnChangeScene(NameOfNextScene);
         }
         else
         {

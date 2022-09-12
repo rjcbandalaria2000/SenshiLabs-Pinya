@@ -5,12 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MinigameObject : MonoBehaviour
 {
+    [Header("Setup Values")]
+    public int              MotivationCost;
+
     public Interactable     Interactable;
     public bool             isInteracted;
     public string           MinigameScene;
 
-    protected SceneChange sceneChange;
-
+    protected SceneChange   sceneChange;
+    //protected Coroutine     interactRoutine;
     private void Awake()
     {
        
@@ -39,25 +42,7 @@ public class MinigameObject : MonoBehaviour
     {
         //When player is interacting with the object 
         // For Scene change, always start at the persistent scene
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    if (sceneChange)
-        //    {  
-        //        //Remove all listeners because when the scene changes it will destroy the scene but will try to access the old active scripts
-        //        Events.OnSceneChange.Invoke();
-        //        Events.OnInteract.RemoveListener(Interact);
-        //        Events.OnFinishInteract.RemoveListener(EndInteract);
-                
-        //        sceneChange.OnChangeScene(MinigameScene);
-                
-        //    }
-        //    else
-        //    {
-        //        Debug.Log("No Scene change");
-        //    }
-        //}
         
-       // Debug.Log("Interacted with " + player.name);
     }
 
     public virtual void EndInteract(GameObject player = null)
@@ -69,5 +54,9 @@ public class MinigameObject : MonoBehaviour
     public virtual void JumpToMiniGame()
     {
 
+    }
+    public virtual IEnumerator InteractCoroutine(GameObject player = null)
+    {
+        yield return null; 
     }
 }

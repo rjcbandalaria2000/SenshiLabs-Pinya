@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GetWaterMinigame : MinigameObject
+public class SleepingMinigame : MinigameObject
 {
     // Start is called before the first frame update
     void Start()
@@ -12,19 +12,12 @@ public class GetWaterMinigame : MinigameObject
 
     public override void Initialize()
     {
-        //base.Initialize();
         Interactable = this.GetComponent<Interactable>();
-        sceneChange = this.gameObject.GetComponent<SceneChange>();
-        //if(interactRoutine != null)
-        //{
-        //    StopCoroutine(interactRoutine);
-        //}
+        sceneChange = this.GetComponent<SceneChange>();
     }
 
     public override void Interact(GameObject player = null)
     {
-        //base.Interact(player);
-        //Run a coroutine waiting for player input
         isInteracted = true;
         MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
         if (playerMotivation)
@@ -45,7 +38,6 @@ public class GetWaterMinigame : MinigameObject
 
     public override void JumpToMiniGame()
     {
-        //base.JumpToMiniGame();
         if (sceneChange)
         {
             if (MinigameScene != null)
@@ -68,7 +60,6 @@ public class GetWaterMinigame : MinigameObject
         }
     }
 
-    //Can be improved and transfer to player controls 
     public override IEnumerator InteractCoroutine(GameObject player = null)
     {
         while (isInteracted)
@@ -83,10 +74,12 @@ public class GetWaterMinigame : MinigameObject
                 }
                 Debug.Log("Interacted");
                 isInteracted = false;
-                yield return new WaitForSeconds(2.0f);
+                yield return new WaitForSeconds(1.0f);
                 JumpToMiniGame();
             }
             yield return null;
         }
     }
 }
+
+    

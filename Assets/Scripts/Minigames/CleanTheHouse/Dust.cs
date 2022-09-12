@@ -9,14 +9,13 @@ public class Dust : MonoBehaviour
     public bool     swipedLeft;
 
     [Header("Values")]
-    
-    public int      swipeRequired;
+    public int      SwipeRequired;
 
     [Header("Mouse Sweep Acceptance")]
     [Range(0f, -1f)]
-    public float    swipeLeftAccept = -0.5f;
+    public float    SwipeLeftAccept = -0.5f;
     [Range(0f, 1f)] 
-    public float    swipeRightAccept = 0.5f;
+    public float    SwipeRightAccept = 0.5f;
 
     private Camera mainCamera; 
     private int swipeCounter;
@@ -31,14 +30,14 @@ public class Dust : MonoBehaviour
     private void OnMouseDrag()
     {
         //can be improved to be transfered in Sweeping Controls
-
+        //Get mouse position
         Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        if(mousePosition.normalized.x < swipeLeftAccept)
+        if(mousePosition.normalized.x < SwipeLeftAccept)
         {
             // if the mouse moved to the left
             swipedLeft = true;
         }
-        if (mousePosition.normalized.x > swipeRightAccept) 
+        if (mousePosition.normalized.x > SwipeRightAccept) 
         { 
             // if the mouse moved to the right 
             swipedRight = true;
@@ -50,7 +49,7 @@ public class Dust : MonoBehaviour
             swipedLeft = false;
             swipedRight = false;
         }
-        if(swipeCounter >= swipeRequired)
+        if(swipeCounter >= SwipeRequired)
         {
             SingletonManager.Get<CleanTheHouseManager>().AddDustSwept(1);
             Destroy(this.gameObject);
