@@ -61,6 +61,7 @@ public class WaterWell : MonoBehaviour
                     {
                         SwipedDown = true;
                         playerSwipeDownCount++;
+                        Events.OnObjectiveUpdate.Invoke();
                     }
                     if (!CanSwipeUp)
                     {
@@ -84,6 +85,7 @@ public class WaterWell : MonoBehaviour
                         CanSwipeDown = false;
                         CanSwipeUp = false; 
                         playerSwipeUpCount++;
+                        Events.OnObjectiveUpdate.Invoke();
                     }
 
                 }
@@ -110,6 +112,10 @@ public class WaterWell : MonoBehaviour
         }
     }
 
+    public int GetSwipeDown()
+    {
+        return playerSwipeDownCount;
+    }
     
 
 }

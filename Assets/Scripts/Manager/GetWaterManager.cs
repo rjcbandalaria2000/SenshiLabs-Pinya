@@ -38,6 +38,7 @@ public class GetWaterManager : MinigameManager
         {
             sceneChange = this.GetComponent<SceneChange>();
         }
+        Events.OnObjectiveUpdate.Invoke();
     }
 
     public void CheckIfComplete()
@@ -56,6 +57,7 @@ public class GetWaterManager : MinigameManager
         }
         if (sceneChange)
         {
+            Events.OnSceneChange.Invoke();
             sceneChange.OnChangeScene(NameOfNextScene);
         }
 
