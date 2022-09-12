@@ -1951,6 +1951,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjectToSpawn:
   - {fileID: 3474590141651843587, guid: 842bbe58d13e87648a5ea2a482c5b343, type: 3}
+  - {fileID: 5201345051732923741, guid: 7381942727a789d4f95bce247cfc1c03, type: 3}
   NumToSpawn: 05000000
   SpawnTime: 1
   SpawnPoints: []
@@ -3471,22 +3472,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1735760688138555277, guid: 7381942727a789d4f95bce247cfc1c03, type: 3}
-      propertyPath: StunDuration
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5201345051732923737, guid: 7381942727a789d4f95bce247cfc1c03, type: 3}
-      propertyPath: m_Size.x
-      value: 20.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 5201345051732923737, guid: 7381942727a789d4f95bce247cfc1c03, type: 3}
-      propertyPath: m_Size.y
-      value: 44.68
-      objectReference: {fileID: 0}
-    - target: {fileID: 5201345051732923737, guid: 7381942727a789d4f95bce247cfc1c03, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5201345051732923741, guid: 7381942727a789d4f95bce247cfc1c03, type: 3}
       propertyPath: m_Name
       value: FallingPinya
