@@ -22,6 +22,11 @@ public class PlayerControls : MonoBehaviour
             targetPosition.z = this.transform.position.z;
         }
         
+        
+    }
+
+    private void FixedUpdate()
+    {
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, MoveSpeed*Time.deltaTime);
     }
 }
