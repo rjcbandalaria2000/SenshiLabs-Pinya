@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TestScenes/MotivLifeBar -TestScene.unity
     guid: 910a31fc32a96074b86bc9ac307938a5
   - enabled: 1
+    path: Assets/Scenes/HideSeek_Test.unity
+    guid: 10a2e55238d86594e8d3f46ba23d9615
+  - enabled: 1
     path: Assets/Scenes/TestScenes/GetWater- TestScene.unity
     guid: 1eab4fd68f765b245880815d6be2af2c
   - enabled: 1
