@@ -19,6 +19,7 @@ public class Dust : MonoBehaviour
 
     private Camera mainCamera; 
     private int swipeCounter;
+    private Vector2 initialPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,11 +28,16 @@ public class Dust : MonoBehaviour
         mainCamera = Camera.main;
     }
 
+    private void OnMouseDown()
+    {
+        initialPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+    }
+
     private void OnMouseDrag()
     {
         //can be improved to be transfered in Sweeping Controls
         //Get mouse position
-        Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition) - (Vector3)initialPosition;
         if(mousePosition.normalized.x < SwipeLeftAccept)
         {
             // if the mouse moved to the left
