@@ -8,17 +8,26 @@ public class GroceriesMinigame : MinigameObject
     // Start is called before the first frame update
     void Start()
     {
-        
+        Initialize();
     }
 
     public override void Initialize()
     {
-        base.Initialize();
+        Interactable = this.GetComponent<Interactable>();
+        sceneChange = this.gameObject.GetComponent<SceneChange>();
     }
 
     public override void Interact(GameObject player = null)
     {
-        base.Interact(player);
+        isInteracted = true;
+        MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
+        if (playerMotivation)
+        {
+            playerMotivation.DecreaseMotivation(MotivationCost);
+        }
+        Debug.Log("Interacted");
+        //isInteracted = false;
+        JumpToMiniGame();
     }
 
     public override void EndInteract(GameObject player = null)
@@ -33,7 +42,26 @@ public class GroceriesMinigame : MinigameObject
 
     public override void JumpToMiniGame()
     {
-        base.JumpToMiniGame();
+        if (sceneChange)
+        {
+            if (MinigameScene != null)
+            {
+                //Remove all listeners because when the scene changes it will destroy the scene but will try to access the old active scripts
+                Events.OnSceneChange.Invoke();
+                Events.OnInteract.RemoveListener(Interact);
+                Events.OnFinishInteract.RemoveListener(EndInteract);
+
+                sceneChange.OnChangeScene(MinigameScene);
+            }
+            else
+            {
+                Debug.Log("No next scene name");
+            }
+        }
+        else
+        {
+            Debug.Log("No Scene change");
+        }
     }
 
 }

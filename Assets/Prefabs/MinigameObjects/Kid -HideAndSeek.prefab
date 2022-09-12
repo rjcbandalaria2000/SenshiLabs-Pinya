@@ -199,8 +199,8 @@ GameObject:
   - component: {fileID: 5983059630999239051}
   - component: {fileID: 5983059630999239048}
   - component: {fileID: 5983059630999239049}
-  - component: {fileID: 3341058457012055674}
   - component: {fileID: 2439750252454565143}
+  - component: {fileID: 3255592397443183566}
   m_Layer: 0
   m_Name: Kid -HideAndSeek
   m_TagString: Untagged
@@ -263,22 +263,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b3d2454b55751409d921fff0e6dc60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3341058457012055674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5983059630999239054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 993ba797735f54c4ba027681c1a5bc7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MotivationCost: 0
-  Interactable: {fileID: 5983059630999239049}
-  isInteracted: 0
-  MinigameScene: GetWater- TestScene
 --- !u!114 &2439750252454565143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,5 +273,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c181a4815ee67c49846764ff353adc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3255592397443183566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5983059630999239054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d657a076cc36934ab8a04b328006d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

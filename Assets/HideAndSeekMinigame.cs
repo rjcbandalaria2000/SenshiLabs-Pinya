@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GetWaterMinigame : MinigameObject
+public class HideAndSeekMinigame : MinigameObject
 {
     // Start is called before the first frame update
     void Start()
     {
-        Initialize();
+        
     }
 
     public override void Initialize()
@@ -25,18 +25,17 @@ public class GetWaterMinigame : MinigameObject
             playerMotivation.DecreaseMotivation(MotivationCost);
         }
         Debug.Log("Interacted");
-        isInteracted = false;
+        //isInteracted = false;
         JumpToMiniGame();
     }
 
-    public override void EndInteract(GameObject player = null)
+    public override IEnumerator InteractCoroutine(GameObject player = null)
     {
-        base.EndInteract(player);
+        return base.InteractCoroutine(player);
     }
 
     public override void JumpToMiniGame()
     {
-        //base.JumpToMiniGame();
         if (sceneChange)
         {
             if (MinigameScene != null)
@@ -59,9 +58,9 @@ public class GetWaterMinigame : MinigameObject
         }
     }
 
-    //Can be improved and transfer to player controls 
-    public override IEnumerator InteractCoroutine(GameObject player = null)
+    public override void EndInteract(GameObject player = null)
     {
-        yield return null;
+        base.EndInteract(player);
     }
+
 }
