@@ -7,13 +7,13 @@ public class HideAndSeekMinigame : MinigameObject
     // Start is called before the first frame update
     void Start()
     {
-        
+        Initialize();
     }
 
     public override void Initialize()
     {
         Interactable = this.GetComponent<Interactable>();
-        sceneChange = this.gameObject.GetComponent<SceneChange>();
+        sceneChange = this.GetComponent<SceneChange>();
     }
 
     public override void Interact(GameObject player = null)

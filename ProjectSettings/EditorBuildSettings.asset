@@ -17,28 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestScenes/CleanTheHouse - TestScene 1.unity
     guid: 99f2a066561fc434d9faa92ea090dc9b
-  - enabled: 0
-    path: Assets/Scenes/MiniGame_Test.unity
-    guid: c370cf1f340d9fa429dce30b78c44157
-  - enabled: 0
-    path: Assets/Scenes/TestScenes/InteractableObjects-TestScene.unity
-    guid: ebb138ce154db5c45a73ad2405d6cb2d
-  - enabled: 0
-    path: Assets/Scenes/TestScenes/CleanTheHouse - TestScene.unity
-    guid: e28cd54e3afc23e4f84739ae003e0d4a
-  - enabled: 0
-    path: Assets/Scenes/TestScenes/MotivLifeBar -TestScene.unity
-    guid: 910a31fc32a96074b86bc9ac307938a5
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/Grocery_Test.unity
+    guid: ad506f5d5df161b4189fb32bd66e583c
+  - enabled: 1
     path: Assets/Scenes/HideSeek_Test.unity
     guid: 10a2e55238d86594e8d3f46ba23d9615
-  - enabled: 0
-    path: Assets/Scenes/TestScenes/GetWater- TestScene.unity
-    guid: 1eab4fd68f765b245880815d6be2af2c
-  - enabled: 0
-    path: Assets/Scenes/TestScenes/SleepingMinigame- TestScene.unity
-    guid: b28cd951dcd943944b74a73f3cf87c11
-  - enabled: 0
-    path: Assets/Scenes/TestScenes/MotivationBar -TestScene.unity
-    guid: a63ea7fd109d33a4c93f69d80662e0fa
   m_configObjects: {}

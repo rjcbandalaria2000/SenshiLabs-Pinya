@@ -642,6 +642,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 186723774}
     - target: {fileID: 1021784888, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
+      propertyPath: MinigameScene
+      value: Grocery_Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021784888, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
       propertyPath: MotivationCost
       value: 50
       objectReference: {fileID: 0}
@@ -5183,6 +5187,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 905496102}
     m_Modifications:
+    - target: {fileID: 3686634582077691363, guid: 653435b4250bc0d4697a1cba1ea8980c, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1965541463}
     - target: {fileID: 8555003005193376360, guid: 653435b4250bc0d4697a1cba1ea8980c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -6152,6 +6160,10 @@ PrefabInstance:
       propertyPath: Interactable
       value: 
       objectReference: {fileID: 2146256291}
+    - target: {fileID: 3255592397443183566, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
+      propertyPath: MinigameScene
+      value: HideSeek_Test
+      objectReference: {fileID: 0}
     - target: {fileID: 5983059630999239051, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
       propertyPath: m_RootOrder
       value: 7
