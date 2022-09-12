@@ -44,7 +44,7 @@ public class CleanTheHouseManager : MinigameManager
         {
             Debug.Log("Minigame Fail");
             Assert.IsNotNull(sceneChange, "Scene change is null or not set");
-            sceneChange.OnChangeScene(NameOfScene);
+            sceneChange.OnChangeScene(NameOfNextScene);
         }
     }
 
