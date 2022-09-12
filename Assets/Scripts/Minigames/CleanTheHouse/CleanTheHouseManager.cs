@@ -7,7 +7,7 @@ public class CleanTheHouseManager : MinigameManager
 {
     [Header("Setup Values")]
     public int  NumberOfTrash = 1;
-    public int  NumberOfDust = 0;
+    public int  NumberOfDust = 1;
 
     [Header("Player Values")]
     public int  NumberOfTrashThrown = 0;
@@ -40,12 +40,12 @@ public class CleanTheHouseManager : MinigameManager
             Assert.IsNotNull(sceneChange, "Scene change is null or not set");
             sceneChange.OnChangeScene(NameOfNextScene);
         }
-        else
-        {
-            Debug.Log("Minigame Fail");
-            Assert.IsNotNull(sceneChange, "Scene change is null or not set");
-            sceneChange.OnChangeScene(NameOfNextScene);
-        }
+        //else
+        //{
+        //    Debug.Log("Minigame Fail");
+        //    Assert.IsNotNull(sceneChange, "Scene change is null or not set");
+        //    sceneChange.OnChangeScene(NameOfNextScene);
+        //}
     }
 
     public void AddTrashThrown(int count)
