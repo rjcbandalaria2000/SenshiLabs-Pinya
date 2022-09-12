@@ -18,6 +18,7 @@ public class ClickHidingChild : MonoBehaviour
     {
         Debug.Log("Child Found");
         groceryMiniGame.score += 1;
+        groceryMiniGame.count -= 1;
         child.SetActive(false); // or DeleteDestroy?
 
         groceryMiniGame.checkChildren();

@@ -135,10 +135,10 @@ public class GameManager : MonoBehaviour
             //{
             //    groceryMiniGame.CheckIfFinished();
             //}
-            //if(hideseekMiniGame)
-            //{
-            //    hideseekMiniGame.CheckIfFinished();
-            //}
+            if (hideseekMiniGame != null)
+            {
+                hideseekMiniGame.CheckIfFinished();
+            }
 
         }
 
