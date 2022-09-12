@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GetWaterMinigame : MinigameObject
+public class GroceriesMinigame : MinigameObject
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +26,7 @@ public class GetWaterMinigame : MinigameObject
             playerMotivation.DecreaseMotivation(MotivationCost);
         }
         Debug.Log("Interacted");
-        isInteracted = false;
+        //isInteracted = false;
         JumpToMiniGame();
     }
 
@@ -34,9 +35,13 @@ public class GetWaterMinigame : MinigameObject
         base.EndInteract(player);
     }
 
+    public override IEnumerator InteractCoroutine(GameObject player = null)
+    {
+        return base.InteractCoroutine(player);
+    }
+
     public override void JumpToMiniGame()
     {
-        //base.JumpToMiniGame();
         if (sceneChange)
         {
             if (MinigameScene != null)
@@ -59,9 +64,4 @@ public class GetWaterMinigame : MinigameObject
         }
     }
 
-    //Can be improved and transfer to player controls 
-    public override IEnumerator InteractCoroutine(GameObject player = null)
-    {
-        yield return null;
-    }
 }
