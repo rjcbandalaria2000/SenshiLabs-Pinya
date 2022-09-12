@@ -2019,10 +2019,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8510290888525592844, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
       propertyPath: m_Name
-      value: Minigame_Groceries
+      value: Groceries - Basket
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
+--- !u!1 &893641064 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8510290888525592844, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
+  m_PrefabInstance: {fileID: 893641063}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &952186010
 GameObject:
   m_ObjectHideFlags: 0
@@ -2367,6 +2372,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8510290888525592841, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
   m_PrefabInstance: {fileID: 893641063}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1021784888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893641064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e8a6a49048732243999d3070420068b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1055887756
 GameObject:
   m_ObjectHideFlags: 0
@@ -4799,6 +4816,9 @@ MonoBehaviour:
   maxTime: 0
   speedCounter: 0
   player: {fileID: 312946475}
+  cleanMiniGame: {fileID: 0}
+  groceryMiniGame: {fileID: 0}
+  hideseekMiniGame: {fileID: 0}
 --- !u!4 &1473840147
 Transform:
   m_ObjectHideFlags: 0
