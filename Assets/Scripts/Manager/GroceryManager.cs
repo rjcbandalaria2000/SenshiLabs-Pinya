@@ -13,7 +13,7 @@ public enum Ingredients // Use for comparing
 };
 
 
-public class GroceryManager : MonoBehaviour //Might rename this
+public class GroceryManager : MinigameManager //Might rename this
 {
     [Header("Grocery Item")]
     public List<GameObject> groceryItems = new List<GameObject>();
@@ -30,11 +30,9 @@ public class GroceryManager : MonoBehaviour //Might rename this
 
     private int RNG;
 
-    [Header("Scene Change")]
-    public string NameOfScene;
-
-    private SceneChange sceneChange;
-
+    Coroutine initializeRoutine;
+    Coroutine spawnRoutine;
+   
     private void Awake()
     {
         SingletonManager.Register(this);
@@ -50,10 +48,10 @@ public class GroceryManager : MonoBehaviour //Might rename this
         if (groceryItems.Count > 0)
         {
             //InitializeList
-            StartCoroutine(initializeList());
+            initializeRoutine = StartCoroutine(initializeList());
 
             //Spawn
-            StartCoroutine(spawnItem());
+            spawnRoutine = StartCoroutine(spawnItem());
 
         }
 
@@ -93,15 +91,22 @@ public class GroceryManager : MonoBehaviour //Might rename this
         }
     }
 
-    public void checkItemList()
+    public override void CheckIfFinished()
     {
         if (needItems.Count <= 0)
         {
             Debug.Log("Minigame complete");
-            //Assert.IsNotNull(sceneChange, "Scene change is null or not set");
-            //sceneChange.OnChangeScene(NameOfScene);
+            Assert.IsNotNull(sceneChange, "Scene change is null or not set");
+            sceneChange.OnChangeScene(NameOfNextScene);
         }
-       
+
+    }
+
+    public override void OnMinigameLose()
+    {
+        Debug.Log("Minigame lose");
+        Assert.IsNotNull(sceneChange, "Scene change is null or not set");
+        sceneChange.OnChangeScene(NameOfNextScene);
     }
 
 }

@@ -14,8 +14,7 @@ public class MiniGameTimer : MonoBehaviour
     {
         SingletonManager.Register(this);
 
-        speed = SingletonManager.Get<GameManager>().speedCounter;
-        maxTimer = SingletonManager.Get<GameManager>().maxTime;
+       
 
         if(gameManager == null)
         {
@@ -25,7 +24,9 @@ public class MiniGameTimer : MonoBehaviour
             }
             
         }
-       
+        speed = gameManager.speedCounter;
+        maxTimer = gameManager.maxTime;
+
         timer = maxTimer;
     }
 
@@ -75,9 +76,19 @@ public class MiniGameTimer : MonoBehaviour
 
         if( timer <= 0)
         {
+            if (gameManager.cleanMiniGame != null)
+            {
+                gameManager.cleanMiniGame.OnMinigameLose();
+            }
+
+            if (gameManager.groceryMiniGame != null)
+            {
+                gameManager.groceryMiniGame.OnMinigameLose();
+            }
+
             if (gameManager.hideseekMiniGame != null)
             {
-                gameManager.hideseekMiniGame.checkChildren();
+                gameManager.hideseekMiniGame.OnMinigameLose();
             }
 
            

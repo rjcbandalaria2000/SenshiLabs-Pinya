@@ -21,7 +21,7 @@ public class ClickHidingChild : MonoBehaviour
         groceryMiniGame.count -= 1;
         child.SetActive(false); // or DeleteDestroy?
 
-        groceryMiniGame.checkChildren();
+        groceryMiniGame.CheckIfFinished();
 
     }
 }

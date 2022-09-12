@@ -71,6 +71,6 @@ public class ClickItem : MonoBehaviour
             }
         }
 
-        groceryMiniGame.checkItemList();
+        groceryMiniGame.CheckIfFinished();
     }
 }

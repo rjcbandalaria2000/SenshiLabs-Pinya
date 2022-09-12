@@ -30,6 +30,12 @@ public class MinigameManager : MonoBehaviour
 
     }
 
+    public virtual void OnMinigameLose()
+    {
+
+    }
+
+
     public virtual void OnWin()
     {
 
