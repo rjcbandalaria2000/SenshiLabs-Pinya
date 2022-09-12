@@ -9,6 +9,7 @@ public class CleanTheHouseManager : MinigameManager
     [Header("Setup Values")]
     public int  NumberOfToys = 1;
     public int  NumberOfDust = 1;
+    public bool isCompleted = false;
 
     [Header("Player Values")]
     public int  NumberOfToysKept = 0;
@@ -31,6 +32,7 @@ public class CleanTheHouseManager : MinigameManager
         spawnManager.NumToSpawn[0] = NumberOfToys;
         spawnManager.NumToSpawn[1] = NumberOfDust;
         spawnManager.SpawnNoRepeat();
+        isCompleted = false;
         Events.OnObjectiveUpdate.Invoke();
 
     }
@@ -39,11 +41,16 @@ public class CleanTheHouseManager : MinigameManager
     {
         if(NumberOfToysKept >= NumberOfToys && NumberOfDustSwept >= NumberOfDust)
         {
-            Debug.Log("Minigame complete");
-            //Events.OnSceneLoad.Invoke();
-            Events.OnSceneChange.Invoke();
-            Assert.IsNotNull(sceneChange, "Scene change is null or not set");
-            sceneChange.OnChangeScene(NameOfNextScene);
+            if (!isCompleted)
+            {   isCompleted=true;
+                Debug.Log("Minigame complete");
+                //Events.OnSceneLoad.Invoke();
+                Events.OnSceneChange.Invoke();
+                
+                Assert.IsNotNull(sceneChange, "Scene change is null or not set");
+                sceneChange.OnChangeScene(NameOfNextScene);
+            }
+            
         }
         //else
         //{
@@ -76,6 +83,6 @@ public class CleanTheHouseManager : MinigameManager
     {
         return NumberOfToys - NumberOfToysKept;
     }
-   
+    
 
 }

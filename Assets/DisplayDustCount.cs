@@ -31,6 +31,7 @@ public class DisplayDustCount : MonoBehaviour
     {
         Events.OnObjectiveUpdate.RemoveListener(UpdateCounter);
         Events.OnSceneChange.RemoveListener(OnSceneChange);
+        Debug.Log("Changing scene" + this.gameObject.name);
     }
 
     
