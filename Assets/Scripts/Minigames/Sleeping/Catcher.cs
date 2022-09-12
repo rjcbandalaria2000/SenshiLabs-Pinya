@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Catcher : MonoBehaviour
 {
+    public GameObject Parent; 
     public int PlayerScore;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Parent = this.gameObject;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -18,8 +19,9 @@ public class Catcher : MonoBehaviour
         if (collidedFood)
         {
             Debug.Log("Collided with" + collidedFood.name);
-            SingletonManager.Get<SleepingMinigameManager>().PlayerPoints++;
-            SingletonManager.Get<SleepingMinigameManager>().CheckIfFinished();
+            collidedFood.OnCollided(Parent);
+            //SingletonManager.Get<SleepingMinigameManager>().PlayerPoints++;
+            //SingletonManager.Get<SleepingMinigameManager>().CheckIfFinished();
             Destroy(collidedFood.gameObject);   
         }
     }

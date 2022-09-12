@@ -6,7 +6,7 @@ using UnityEngine;
 public class MouseFollow : MonoBehaviour
 {
     public float        MoveSpeed = 10f;
-    
+    public bool         canMove = true;
 
     private Vector3     mousePosition;
     private Rigidbody2D rigidBody;
@@ -20,17 +20,26 @@ public class MouseFollow : MonoBehaviour
             rigidBody = this.GetComponent<Rigidbody2D>();
         }
         mainCamera = Camera.main;
+        canMove = true;
     }
 
     private void Update()
     {
-        mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        position = Vector2.Lerp(transform.position, mousePosition, MoveSpeed * Time.deltaTime); 
+        if (canMove)
+        {
+            mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+            position = Vector2.Lerp(transform.position, mousePosition, MoveSpeed * Time.deltaTime);
+        }
+        
     }
 
     private void FixedUpdate()
     {
-        rigidBody.MovePosition(position);
+        if (canMove)
+        {
+            rigidBody.MovePosition(position);
+        }
+       
     }
 
 }
