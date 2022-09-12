@@ -9,14 +9,23 @@ public class MiniGameTimer : MonoBehaviour
 
     private float speed;
 
-    private HideSeekManager hideSeekManager;
+    private GameManager gameManager;
     private void Awake()
     {
         SingletonManager.Register(this);
 
         speed = SingletonManager.Get<GameManager>().speedCounter;
         maxTimer = SingletonManager.Get<GameManager>().maxTime;
-        hideSeekManager = GameObject.FindObjectOfType<HideSeekManager>().GetComponent<HideSeekManager>();
+
+        if(gameManager == null)
+        {
+            if(GameObject.FindObjectOfType<GameManager>() != null)
+            {
+                gameManager = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
+            }
+            
+        }
+       
         timer = maxTimer;
     }
 
@@ -66,7 +75,12 @@ public class MiniGameTimer : MonoBehaviour
 
         if( timer <= 0)
         {
-            hideSeekManager.checkChildren();
+            if (gameManager.hideseekMiniGame != null)
+            {
+                gameManager.hideseekMiniGame.checkChildren();
+            }
+
+           
         }// Lose Condition
         yield return null;
     }
