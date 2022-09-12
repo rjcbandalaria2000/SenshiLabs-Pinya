@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
 
         
         currentTime = maxTime;
-        initialize_MinigameTimer();// remove this line, for testing purpose only;
+        
     }
     public void Start()
     {
@@ -52,7 +52,13 @@ public class GameManager : MonoBehaviour
                 groceryMiniGame = GameObject.FindObjectOfType<GroceryManager>().GetComponent<GroceryManager>();
             }
         }
-
+        if (hideseekMiniGame == null)
+        {
+            if (GameObject.FindObjectOfType<HideSeekManager>() != null)
+            {
+                hideseekMiniGame = GameObject.FindObjectOfType<HideSeekManager>().GetComponent<HideSeekManager>();
+            }
+        }
         //if(miniGame!=null)
         //{
         //    if (GameObject.FindObjectOfType<MiniGame>() != null)
@@ -104,47 +110,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(3f);
     }
 
-    public void initialize_MinigameTimer() // call this when minigame starts
-    {
-        if (SingletonManager.Get<MiniGameTimer>() != null)
-        {
-            SingletonManager.Get<MiniGameTimer>().setTimer(currentTime);
-            SingletonManager.Get<MiniGameTimer>().setMaxTimer(maxTime);
-        }
-    }
-
-    public IEnumerator countdownTimer()
-    {
-        while(SingletonManager.Get<MiniGameTimer>().getTimer() > 0)
-        {
-            SingletonManager.Get<MiniGameTimer>().countDown_Minigame();
-            //SingletonManager.Get<DisplayMiniGameTimer>().updateMiniGameTimer();
-            Events.OnDisplayMinigameTime.Invoke();
-            yield return new WaitForSeconds(speedCounter);
-        }
-
-        yield return null;
-
-        if(SingletonManager.Get<MiniGameTimer>().getTimer() <= 0)
-        {
-            if(cleanMiniGame != null)
-            {
-                cleanMiniGame.CheckIfFinished();
-            }
-            //if (groceryMiniGame != null)
-            //{
-            //    groceryMiniGame.CheckIfFinished();
-            //}
-            if (hideseekMiniGame != null)
-            {
-                hideseekMiniGame.CheckIfFinished();
-            }
-
-        }
-
-        //if(SingletonManager.Get<MiniGameTimer>().getTimer() <= 0)
-        //{
-        //    minigame->failtask;
-        //}
-    }
+  
+  
+    
 }

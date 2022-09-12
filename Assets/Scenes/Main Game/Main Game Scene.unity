@@ -158,6 +158,7 @@ Transform:
   - {fileID: 235961622}
   - {fileID: 1629714511}
   - {fileID: 1988509496}
+  - {fileID: 919734161}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2265,6 +2266,76 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &919734160
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 35880456}
+    m_Modifications:
+    - target: {fileID: 2816954076214239179, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: MinigameScene
+      value: HideSeek_Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816954076214239179, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: MotivationCost
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816954076488409267, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: m_Name
+      value: Broom-CleanTheHouse (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816954076488409270, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816954076488409270, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816954076488409270, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816954076488409270, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816954076488409270, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816954076488409270, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816954076488409270, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816954076488409270, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816954076488409270, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816954076488409270, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2816954076488409270, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+--- !u!4 &919734161 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2816954076488409270, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+  m_PrefabInstance: {fileID: 919734160}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1107298468
 GameObject:
   m_ObjectHideFlags: 0

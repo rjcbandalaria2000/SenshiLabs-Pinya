@@ -2126,6 +2126,7 @@ GameObject:
   - component: {fileID: 448823274}
   - component: {fileID: 448823273}
   - component: {fileID: 448823275}
+  - component: {fileID: 448823276}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -2145,6 +2146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3bed1c9faa791e4b9ce3f7f897eb9e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NameOfNextScene: MainMenu
   children: {fileID: 4245984274280499005, guid: 3c443e307dd1d03439f18e77edce0ee2, type: 3}
   score: 0
   spawnPoints:
@@ -2155,7 +2157,6 @@ MonoBehaviour:
   - {fileID: 1030562469}
   - {fileID: 1362244917}
   count: 0
-  NameOfScene: 
 --- !u!4 &448823272
 Transform:
   m_ObjectHideFlags: 0
@@ -2183,8 +2184,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823114bcfa710324782919cf7ae8bb51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerDisplay: {fileID: 1089180985}
-  miniGameTimerDisplay: {fileID: 0}
+  timerDisplay: {fileID: 0}
+  miniGameTimerDisplay: {fileID: 1089180985}
   motivationMeter: {fileID: 0}
   "pi\xF1yaMeter": {fileID: 0}
   dayEnd_UI: {fileID: 0}
@@ -2204,8 +2205,8 @@ MonoBehaviour:
   timer: 0
   endTime: 0
   currentTime: 0
-  maxTime: 100
-  speedCounter: 0.1
+  maxTime: 20
+  speedCounter: 1
   player: {fileID: 0}
   cleanMiniGame: {fileID: 0}
   groceryMiniGame: {fileID: 0}
@@ -2220,6 +2221,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e605fc5a271943341b6e887c4fbf7009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &448823276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448823270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c181a4815ee67c49846764ff353adc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &457298176

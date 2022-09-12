@@ -3,22 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-public class HideSeekManager : MonoBehaviour
+public class HideSeekManager : MinigameManager
 {
     public GameObject children;
     public int score;
     public List<GameObject> spawnPoints;
     private int RNG;
     public int count;
-
-    [Header("Scene Change")]
-    public string NameOfScene;
-    private SceneChange sceneChange;
+    Coroutine spawnRoutine;
 
     private void Start()
     {
         count = 0;
-        StartCoroutine(spawn());
+        sceneChange = this.GetComponent<SceneChange>() ;
+        spawnRoutine = StartCoroutine(spawn());
     }
     
 
@@ -42,26 +40,22 @@ public class HideSeekManager : MonoBehaviour
 
     public void checkChildren()
     {
-        if(score >= spawnPoints.Count)
-        {
-            CheckIfFinished();
-            Debug.Log("Success");
-        }
+        CheckIfFinished();
     }
 
-    public void CheckIfFinished()
+    public override void CheckIfFinished()
     {
-        if (count <= 0)
+        if (score >= spawnPoints.Count)
         {
             Debug.Log("Minigame complete");
             Assert.IsNotNull(sceneChange, "Scene change is null or not set");
-            sceneChange.OnChangeScene(NameOfScene);
+            sceneChange.OnChangeScene(NameOfNextScene);
         }
         else
         {
             Debug.Log("Minigame Fail");
             Assert.IsNotNull(sceneChange, "Scene change is null or not set");
-            sceneChange.OnChangeScene(NameOfScene);
+            sceneChange.OnChangeScene(NameOfNextScene);
         }
     }
 
