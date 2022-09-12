@@ -21,20 +21,6 @@ public class ToyBin : MonoBehaviour
 
     }
 
-    //public void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    Toy collidedToy = collision.gameObject.GetComponent<Toy>();
-    //    if (collidedToy)
-    //    {
-    //        Debug.Log("Collided with toy");
-    //        //if the toy has been picked up and is not held anymore, accept it in the toybin
-    //        if(collidedToy.isPickedUp && !collidedToy.isHolding)
-    //        {
-    //            Debug.Log("Accept toy");
-    //        }
-    //    }
-    //}
-
     public void OnTriggerStay2D(Collider2D collision)
     {
         Toy collidedToy = collision.gameObject.GetComponent<Toy>();
