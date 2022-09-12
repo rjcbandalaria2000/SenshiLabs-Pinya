@@ -38,11 +38,6 @@ public class HideSeekManager : MinigameManager
 
     }
 
-    public void checkChildren()
-    {
-        CheckIfFinished();
-    }
-
     public override void CheckIfFinished()
     {
         if (score >= spawnPoints.Count)
@@ -51,12 +46,14 @@ public class HideSeekManager : MinigameManager
             Assert.IsNotNull(sceneChange, "Scene change is null or not set");
             sceneChange.OnChangeScene(NameOfNextScene);
         }
-        else
-        {
-            Debug.Log("Minigame Fail");
-            Assert.IsNotNull(sceneChange, "Scene change is null or not set");
-            sceneChange.OnChangeScene(NameOfNextScene);
-        }
+       
+    }
+
+    public override void OnMinigameLose()
+    {
+        Debug.Log("Minigame lose");
+        Assert.IsNotNull(sceneChange, "Scene change is null or not set");
+        sceneChange.OnChangeScene(NameOfNextScene);
     }
 
 }

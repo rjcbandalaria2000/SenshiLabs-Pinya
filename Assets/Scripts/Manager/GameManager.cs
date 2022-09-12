@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
 
     public Player player;
 
-    [Header("MiniGame Manager")]
+    [Header("MiniGame Manager")]    
     public CleanTheHouseManager cleanMiniGame; //Change Public MiniGame;
     public GroceryManager groceryMiniGame;
     public HideSeekManager hideseekMiniGame;

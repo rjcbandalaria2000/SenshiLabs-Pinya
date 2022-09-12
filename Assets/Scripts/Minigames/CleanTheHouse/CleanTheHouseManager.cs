@@ -53,6 +53,13 @@ public class CleanTheHouseManager : MinigameManager
         }
     }
 
+    public override void OnMinigameLose()
+    {
+        Debug.Log("Minigame lose");
+        Assert.IsNotNull(sceneChange, "Scene change is null or not set");
+        sceneChange.OnChangeScene(NameOfNextScene);
+    }
+
     public void AddTrashThrown(int count)
     {
         NumberOfToysKept += count;
