@@ -3188,7 +3188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e28337b611b1c214b9a34a20236b287c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameOfNextScene: MotivationBar -TestScene
+  NameOfNextScene: MainGameScene1
   RequiredPoints: 5
   PlayerPoints: 0
 --- !u!1 &1797360262
