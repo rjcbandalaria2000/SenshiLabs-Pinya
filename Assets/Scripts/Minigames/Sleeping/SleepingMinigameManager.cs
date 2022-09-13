@@ -21,6 +21,7 @@ public class SleepingMinigameManager : MinigameManager
         spawnManager = SingletonManager.Get<SpawnManager>();
         spawnManager.StartUnlimitedTimedSpawnBoxSpawn();
         sceneChange = this.GetComponent<SceneChange>();
+        Events.OnObjectiveUpdate.Invoke();
     }
 
     public override void Initialize()
@@ -38,6 +39,7 @@ public class SleepingMinigameManager : MinigameManager
             SingletonManager.Remove<SpawnManager>();
             if(sceneChange == null) { return; }
             if(NameOfNextScene == null) { return; }
+            Events.OnSceneChange.Invoke();
             sceneChange.OnChangeScene(NameOfNextScene);
 
         }

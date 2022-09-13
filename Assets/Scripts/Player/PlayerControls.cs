@@ -27,6 +27,7 @@ public class PlayerControls : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //Avoids jittering 
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, MoveSpeed*Time.deltaTime);
     }
 }
