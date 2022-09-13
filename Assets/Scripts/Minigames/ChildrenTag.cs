@@ -6,14 +6,26 @@ public class ChildrenTag : MonoBehaviour
 {
     public bool isTag;
 
+    [Header("Points")]
+    public List<GameObject> points;
+
     [Header("Sprites")]
     public Sprite defaultSprite;
     public Sprite TagSprite;
 
+    [Header("Location")]
+    public Vector3 startPos;
+    public Vector3 targetPos;
+    public float speed;
+
+    Coroutine movementRoutine;
     // Start is called before the first frame update
     void Start()
     {
-        
+        startPos = this.transform.position;
+        targetPos = new Vector3(5, 5, 0);
+
+        movementRoutine = StartCoroutine(movement());
     }
 
     // Update is called once per frame
@@ -87,5 +99,24 @@ public class ChildrenTag : MonoBehaviour
                 Debug.Log("Tag");
             }
         }
+    }
+
+    IEnumerator movement()
+    {
+        while (true)
+        {
+            this.transform.position = Vector2.Lerp(this.transform.position, targetPos, speed * Time.deltaTime);
+            
+            yield return new WaitForFixedUpdate();
+            
+            if(Vector2.Distance(this.transform.position, targetPos) <= 5)
+            {
+                startPos = targetPos;
+                targetPos = new Vector3(Random.Range(-10f, 10f), Random.Range(-5, 5), 0);
+                yield return new WaitForSeconds(1.5f);
+            }
+
+        }
+       
     }
 }

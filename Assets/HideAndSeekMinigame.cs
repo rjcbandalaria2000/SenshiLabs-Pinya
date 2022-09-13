@@ -5,6 +5,9 @@ using UnityEngine;
 public class HideAndSeekMinigame : MinigameObject
 {
     // Start is called before the first frame update
+    public List<GameObject> children;
+    public GameObject player;
+
     void Start()
     {
         Initialize();
