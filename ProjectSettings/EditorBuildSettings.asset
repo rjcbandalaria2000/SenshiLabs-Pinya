@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Game/MainGameScene1.unity
     guid: 6a74d43d7515e744c98115b5b67930c6
   - enabled: 1
-    path: Assets/Scenes/TestScenes/CleanTheHouse - TestScene.unity
+    path: Assets/Scenes/Main Game/CleanTheHouse - TestScene.unity
     guid: e28cd54e3afc23e4f84739ae003e0d4a
   - enabled: 1
     path: Assets/Scenes/Main Game/Grocery_Test.unity
