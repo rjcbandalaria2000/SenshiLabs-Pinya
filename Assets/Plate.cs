@@ -5,29 +5,29 @@ using UnityEngine;
 public class Plate : MonoBehaviour
 {
     [Header("States")]
-    public bool swipedRight;
-    public bool swipedLeft;
-    public bool IsClean = false;
+    public bool         swipedRight;
+    public bool         swipedLeft;
+    public bool         IsClean = false;
+    public bool         CanClean;
 
     [Header("Values")]
-    public int SwipeRequired;
+    public int          SwipeRequired;
 
     [Header("Mouse Sweep Acceptance")]
     [Range(0f, -1f)]
-    public float SwipeLeftAccept = -0.5f;
+    public float        SwipeLeftAccept = -0.5f;
     [Range(0f, 1f)]
-    public float SwipeRightAccept = 0.5f;
+    public float        SwipeRightAccept = 0.5f;
 
     [Header("Models")]
-    public GameObject CleanPlateModel;
-    public GameObject DirtyPlateModel;
+    public GameObject   CleanPlateModel;
+    public GameObject   DirtyPlateModel;
    
 
-    private int swipeCounter;
-    private Vector2 initialPosition;
+    private int         swipeCounter;
 
-    private Sponge sponge;
-    private Coroutine spongeInteractRoutine;
+    private Sponge      sponge;
+    private Coroutine   spongeInteractRoutine;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +42,6 @@ public class Plate : MonoBehaviour
         if (collidedSponge)
         {
             sponge = collidedSponge;
-            initialPosition = sponge.gameObject.transform.position;
             StartSpongeInteract();
         }
     }
@@ -69,6 +68,7 @@ public class Plate : MonoBehaviour
 
     public void ChangeModel()
     {
+        //Changes model from dirty plate to clean plate vice versa 
         if (IsClean)
         {
             CleanPlateModel.SetActive(true);
@@ -87,18 +87,16 @@ public class Plate : MonoBehaviour
         while (true)
         {
             if (sponge == null) { break; }
+            // The position of the plate and the position of the sponge
             Vector2 spongePosition = sponge.transform.position + this.gameObject.transform.position;//sponge.gameObject.transform.position - (Vector3)initialPosition;
 
             if (spongePosition.normalized.x < SwipeLeftAccept) // if sponge swiped left 
             {
-
                 swipedLeft = true;
             }
             if (spongePosition.normalized.x > SwipeRightAccept) // if sponge swiped right
             {
-
                 swipedRight = true;
-
             }
             if (swipedRight && swipedLeft) // if the player both reached both ends
             {
@@ -110,10 +108,8 @@ public class Plate : MonoBehaviour
             {
                 IsClean = true;
                 ChangeModel();
-
             }
             Debug.Log("XCoordinates: " + spongePosition.normalized.x);
-
             yield return null;
         }
         

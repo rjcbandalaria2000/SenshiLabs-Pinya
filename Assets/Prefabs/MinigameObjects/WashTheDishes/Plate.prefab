@@ -126,7 +126,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3153082786570523938}
-  - component: {fileID: 3153082786570523949}
+  - component: {fileID: 664381610}
+  - component: {fileID: 664381609}
   m_Layer: 0
   m_Name: Plate
   m_TagString: Untagged
@@ -150,8 +151,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &3153082786570523949
-CircleCollider2D:
+--- !u!61 &664381610
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -164,8 +165,38 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.95
+  m_Size: {x: 4, y: 2}
+  m_EdgeRadius: 0
+--- !u!114 &664381609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3153082786570523939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a06fb6581bf633a49b06b92981fba743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swipedRight: 0
+  swipedLeft: 0
+  IsClean: 0
+  SwipeRequired: 3
+  SwipeLeftAccept: -0.3
+  SwipeRightAccept: 0.3
+  CleanPlateModel: {fileID: 3153082785788386186}
+  DirtyPlateModel: {fileID: 3153082786758233002}
 --- !u!1 &3153082786758233002
 GameObject:
   m_ObjectHideFlags: 0

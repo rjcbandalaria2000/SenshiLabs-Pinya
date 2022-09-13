@@ -31,7 +31,7 @@ public class CleanTheHouseManager : MinigameManager
         spawnManager = SingletonManager.Get<SpawnManager>();
         spawnManager.NumToSpawn[0] = NumberOfToys;
         spawnManager.NumToSpawn[1] = NumberOfDust;
-        spawnManager.SpawnNoRepeat();
+        spawnManager.SpawnRandomNoRepeat();
         isCompleted = false;
         Events.OnObjectiveUpdate.Invoke();
 

@@ -35,7 +35,7 @@ public class SpawnManager : MonoBehaviour
         //SpawnNoRepeat();
     }
 
-    public void SpawnNoRepeat()
+    public void SpawnRandomNoRepeat()
     {
         if (ObjectToSpawn.Count > 0)
         {
@@ -143,5 +143,10 @@ public class SpawnManager : MonoBehaviour
             (Random.Range(-cubeSize.y / 2, cubeSize.y / 2)));
 
         return cubeCenter + randomPosition; 
+    }
+
+    public void SpawnInStaticPositions()
+    {
+
     }
 }

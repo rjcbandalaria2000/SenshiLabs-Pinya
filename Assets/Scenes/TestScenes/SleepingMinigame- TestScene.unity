@@ -4208,6 +4208,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5201345051383436609, guid: 7381942727a789d4f95bce247cfc1c03, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5201345051732923741, guid: 7381942727a789d4f95bce247cfc1c03, type: 3}
       propertyPath: m_Name
       value: FallingPinya
