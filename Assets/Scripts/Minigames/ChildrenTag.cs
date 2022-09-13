@@ -5,6 +5,7 @@ using UnityEngine;
 public class ChildrenTag : MonoBehaviour
 {
     public bool isTag;
+    public bool canTag;
 
     [Header("Bounds")]
     //public List<GameObject> points;
@@ -22,16 +23,30 @@ public class ChildrenTag : MonoBehaviour
     public float speed;
     public float delaySpeed;
 
+    public SpriteRenderer renderer;
+
     Coroutine movementRoutine;
+    Coroutine canTagRoutine;
     // Start is called before the first frame update
     void Start()
     {
-       
+       renderer = this.GetComponent<SpriteRenderer>();
+        canTag = true;
+
+        if (renderer != null)
+        {
+            spriteUpdate();
+        }
 
         startPos = this.transform.position;
         targetPos = RNG_Position();
 
         movementRoutine = StartCoroutine(movement());
+    }
+
+    private void Update()
+    {
+        
     }
 
     public Vector2 RNG_Position()
@@ -45,39 +60,20 @@ public class ChildrenTag : MonoBehaviour
         Vector2 randomPos = new Vector2(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2));
         return center + randomPos;
     }
-    public void spriteUpdate(Collider2D other)
+    public void spriteUpdate()
     {
         if (isTag)
         {
-            this.GetComponent<SpriteRenderer>().sprite = TagSprite;
+           renderer.sprite = TagSprite;
 
-            if(other.gameObject.GetComponent<PlayerTag>())
-            {
-                other.GetComponent<SpriteRenderer>().sprite = other.gameObject.GetComponent<PlayerTag>().defaultSprite;
-            }
-          
-
-            if (other.gameObject.GetComponent<ChildrenTag>())
-            {
-                other.GetComponent<SpriteRenderer>().sprite = other.gameObject.GetComponent<ChildrenTag>().defaultSprite;
-            }
            
          
             Debug.Log("Tag Sprite");
         }
         else
         {
-            this.GetComponent<SpriteRenderer>().sprite = defaultSprite;
+            renderer.sprite = defaultSprite;
            
-            if (other.gameObject.GetComponent<PlayerTag>())
-            {
-                other.GetComponent<SpriteRenderer>().sprite = other.gameObject.GetComponent<PlayerTag>().TagSprite;
-            }
-          
-            if (other.gameObject.GetComponent<ChildrenTag>())
-            {
-                other.GetComponent<SpriteRenderer>().sprite = other.gameObject.GetComponent<ChildrenTag>().TagSprite;
-            }
            
             Debug.Log("Default Sprite");
         }
@@ -85,15 +81,29 @@ public class ChildrenTag : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.GetComponent<ChildrenTag>() != null) //other AI
+        ChildrenTag collidedChildren = other.GetComponent<ChildrenTag>();
+        PlayerTag playerTag = other.GetComponent<PlayerTag>();
+
+        if (collidedChildren != null) //other AI
         {
-      
-            if (other.gameObject.GetComponent<ChildrenTag>().isTag == false && this.isTag == true)
+            if (this.isTag == true)
             {
-                other.gameObject.GetComponent<ChildrenTag>().isTag = true;
-                this.isTag = false;
-                spriteUpdate(other);
-                Debug.Log("Tag");
+                if(collidedChildren.isTag == false)
+                {
+                    if(canTag)
+                    {
+                        collidedChildren.isTag = true;
+                        this.isTag = false;
+                        collidedChildren.spriteUpdate();
+                        spriteUpdate();
+
+                        canTagRoutine = StartCoroutine(cantTag());
+
+                        Debug.Log("AI Tag");
+                    }
+                    
+                }
+                
             }
            
 
@@ -105,14 +115,16 @@ public class ChildrenTag : MonoBehaviour
             {
                 other.gameObject.GetComponent<PlayerTag>().isTag = true;
                 this.isTag = false;
-                spriteUpdate(other);
+                
+                spriteUpdate();
                 Debug.Log("Tag");
             }
             else if (other.gameObject.GetComponent<PlayerTag>().isTag == true && isTag == false)
             {
                 other.gameObject.GetComponent<PlayerTag>().isTag = false;
                 this.isTag = true;
-                spriteUpdate(other);
+               
+                spriteUpdate();
                 Debug.Log("Tag");
             }
         }
@@ -137,4 +149,14 @@ public class ChildrenTag : MonoBehaviour
         }
        
     }
+
+    IEnumerator cantTag()
+    {
+        canTag = false;
+
+        yield return new WaitForSeconds(1.0f);
+
+        canTag = true;
+    }
+   
 }
