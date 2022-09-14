@@ -1512,6 +1512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04fb97c7caead404dacba8b835f00334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
 --- !u!61 &241682645
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2579,6 +2580,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e34ba3f7f56faa4687089f4d7117d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsWatering: 0
+  WaterValue: 2
+  WaterSpeed: 1
+  PlantToWater: {fileID: 0}
 --- !u!1 &424183670
 GameObject:
   m_ObjectHideFlags: 0
@@ -9300,6 +9305,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2005576883}
+  - component: {fileID: 2005576884}
   m_Layer: 0
   m_Name: Detectors
   m_TagString: Untagged
@@ -9323,6 +9329,19 @@ Transform:
   m_Father: {fileID: 395911362}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2005576884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005576882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 213281a4e99f23641b1de06c4493f156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 395911361}
 --- !u!1 &2017880747
 GameObject:
   m_ObjectHideFlags: 0
@@ -9661,6 +9680,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aac30216b0f731d4ab16cfe4a29a8258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentWater: 0
+  MaxWater: 20
+  IsWatered: 0
 --- !u!61 &4941676782765498974
 BoxCollider2D:
   m_ObjectHideFlags: 0
