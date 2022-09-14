@@ -2675,7 +2675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2623126533286589079, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
       propertyPath: m_Name
-      value: Minigame_WateringWell
+      value: Well - GetWater
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
