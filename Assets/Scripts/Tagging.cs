@@ -41,16 +41,9 @@ public class Tagging : MonoBehaviour
                 {
                     updateTag(cacheChild);
 
-                    updateCollider(cacheChild);
-                    //updateCollider(collidedChildren);
-                    //updateCollider(collidedChildren);
-                    //StartCoroutine(updateCollider(collidedChildren));
-                    //if (childrenAI.isTag == false && collidedChildren.canTag == true)
-                    //{
-                    //    this.gameObject.SetActive(false);
-                    //    collidedChildren.tagCollider.SetActive(true);
-                    //    Debug.Log("ActiveCollider");
-                    //}
+                    this.gameObject.SetActive(false);
+
+                   
 
                     Debug.Log("AI Tag");
                     
@@ -63,9 +56,6 @@ public class Tagging : MonoBehaviour
     {
         otherChild.isTag = true;
         childrenAI.isTag = false;
-
-        otherChild.canTag = false;
-        childrenAI.canTag = true;
 
         otherChild.spriteUpdate();
         childrenAI.spriteUpdate();
@@ -99,22 +89,21 @@ public class Tagging : MonoBehaviour
 
     //}
 
-    IEnumerator updateCollider(ChildrenTag otherChild)
-    {
-        Debug.Log("Swap");
+    //IEnumerator updateCollider(ChildrenTag otherChild)
+    //{
+    //    Debug.Log("Swap");
 
-        if (childrenAI.isTag == false)
-        {
-            //childrenAI.tagCollider.SetActive(true);
-            this.gameObject.SetActive(false);
-            yield return new WaitForSeconds(1.0f);
-            otherChild.tagCollider.SetActive(true);
-            Debug.Log("ActiveCollider");
+    //    if (childrenAI.isTag == false)
+    //    {
+    //        //childrenAI.tagCollider.SetActive(true);
+    //        this.gameObject.SetActive(false);
+    //        yield return null;
+      
 
 
-            //yield return new WaitForSeconds(0.5f);
-        }
-        //yield return null;
-    }
+    //        //yield return new WaitForSeconds(0.5f);
+    //    }
+    //    //yield return null;
+    //}
 
 }

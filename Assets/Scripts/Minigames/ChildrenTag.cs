@@ -5,8 +5,6 @@ using UnityEngine;
 public class ChildrenTag : MonoBehaviour
 {
     public bool isTag;
-    public bool canTag;
-
 
     [Header("Bounds")]
     //public List<GameObject> points;
@@ -32,19 +30,12 @@ public class ChildrenTag : MonoBehaviour
     public Coroutine movementRoutine;
     public Coroutine canTagRoutine;
 
-    private float time;
-    private float delay;
+   
     // Start is called before the first frame update
     void Start()
     {
-        time = 0;
-        delay = 1;
+       
        renderer = this.GetComponent<SpriteRenderer>();
-
-        if (!isTag)
-        {
-            canTag = true;
-        }
 
         if (renderer != null)
         {
@@ -79,8 +70,6 @@ public class ChildrenTag : MonoBehaviour
         {
            renderer.sprite = TagSprite;
 
-           
-         
             Debug.Log("Tag Sprite");
         }
         else
@@ -94,6 +83,15 @@ public class ChildrenTag : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+       if(isTag == true)
+        {
+            StartCoroutine(activateCollider());
+        }
+        else
+        {
+            StartCoroutine(deactivateCollider());
+        }
+      
        
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -140,6 +138,17 @@ public class ChildrenTag : MonoBehaviour
        
     }
 
+    IEnumerator activateCollider()
+    {
+        yield return new WaitForSeconds(1.0f);
+        tagCollider.SetActive(true);
+    }
+
+    IEnumerator deactivateCollider()
+    {
+        tagCollider.SetActive(false);
+        yield return null;
+    }
   
    
 }
