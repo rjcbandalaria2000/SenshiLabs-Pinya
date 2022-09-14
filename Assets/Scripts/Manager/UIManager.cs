@@ -22,6 +22,9 @@ public class UIManager : MonoBehaviour
     [Header("Loading UI")]
     public GameObject Loading_UI;
 
+    [Header("Ask Mom UI")]
+    public Button askMomButton;
+
     private void Awake()
     {
         SingletonManager.Register(this);
@@ -74,5 +77,20 @@ public class UIManager : MonoBehaviour
     public void deactivateLoading_UI()
     {
         Loading_UI.SetActive(false);
+    }
+
+    public void buttonUninteractable()
+    {
+        if(askMomButton != null)
+        {
+            askMomButton.interactable = false;
+        }
+    }
+    public void buttonInteractable()
+    {
+        if (askMomButton != null)
+        {
+            askMomButton.interactable = true;
+        }
     }
 }

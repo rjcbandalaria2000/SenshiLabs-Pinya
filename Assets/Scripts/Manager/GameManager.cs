@@ -1,9 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class GameManager : MonoBehaviour
 {
+    private UIManager UI;
+
+    [Header ("Meaters")]
+    public MotivationMeter playerMotivation;
+    public PinyaMeter playerPinyaMeter;
+
+    [Header("Change Values")]
+    public float MotivationValueChange;
+    public float PinyaMeterValueChange;
+
+    [Header("Ask Mom")]
+    public List<GameObject> highlightObj;
+    public float cooldown;
+
     [Header("DayCycle Timer")]
     public float timer;
     public float endTime;
@@ -30,6 +45,8 @@ public class GameManager : MonoBehaviour
     }
     public void Start()
     {
+        UI = GameObject.FindObjectOfType<UIManager>().GetComponent<UIManager>();
+
         if(player == null)
         {
             if(GameObject.FindObjectOfType<Player>() != null)
@@ -110,7 +127,46 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(3f);
     }
 
-  
-  
-    
+    public void AskMom()
+    {
+        if(playerPinyaMeter != null)
+        {
+            Debug.Log("Highlight Obj");
+            StartCoroutine(startCD());
+            Assert.IsNotNull(playerPinyaMeter, "PlayerPinyaMeter is null or is not set");
+            playerPinyaMeter.DecreasePinyaMeter(PinyaMeterValueChange);
+        }
+    }
+
+    IEnumerator startCD()
+    {
+        UI.buttonUninteractable();
+        yield return new WaitForSeconds(cooldown);
+        UI.buttonInteractable();
+    }
+    //public void OnIncreaseMotivationButtonClicked()
+    //{
+    //    Assert.IsNotNull(playerMotivation, "PlayerMotivation not set or is null");
+    //    playerMotivation.IncreaseMotivation(MotivationValueChange);
+    //}
+
+    //public void OnDecreaseMotivationButtonClicked()
+    //{
+    //    Assert.IsNotNull(playerMotivation, "PlayerMotivation not set or is null");
+    //    playerMotivation.DecreaseMotivation(MotivationValueChange);
+    //}
+
+    //public void OnIncreasePinyaMeterButtonClicked()
+    //{
+    //    Assert.IsNotNull(playerPinyaMeter, "PlayerPinyaMeter is null or is not set");
+    //    playerPinyaMeter.IncreasePinyaMeter(PinyaMeterValueChange);
+    //}
+
+    //public void OnDecreasePinyaMeterButtonClicked()
+    //{
+    //    Assert.IsNotNull(playerPinyaMeter, "PlayerPinyaMeter is null or is not set");
+    //    playerPinyaMeter.DecreasePinyaMeter(PinyaMeterValueChange);
+    //}
+
+
 }
