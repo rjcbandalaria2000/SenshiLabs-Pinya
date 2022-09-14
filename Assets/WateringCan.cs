@@ -5,23 +5,29 @@ using UnityEngine;
 public class WateringCan : MonoBehaviour
 {
     [Header("States")]
-    public bool IsWatering;
+    public bool         IsWatering;
 
     [Header("Values")]
-    public float WaterValue;
-    public float WaterSpeed;
+    public float        WaterValue;
+    public float        WaterSpeed;
 
-    public GameObject PlantToWater;
+    [Header("Models")]
+    public GameObject   WateringModel;
+    public GameObject   ReadyModel;
 
-    private Plant plantTarget;
-    private Coroutine waterCanControlsRoutine;
-    private Coroutine wateringPlantRoutine;
+    [Header("Plant Target")]
+    public GameObject   PlantToWater;
+
+    private Plant       plantTarget;
+    private Coroutine   waterCanControlsRoutine;
+    private Coroutine   wateringPlantRoutine;
 
     // Start is called before the first frame update
     void Start()
     {
         waterCanControlsRoutine = null;
         waterCanControlsRoutine = StartCoroutine(OnClickControls());
+        ChangeModel();
     }
 
     IEnumerator OnClickControls()
@@ -30,10 +36,10 @@ public class WateringCan : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Debug.Log(Input.GetMouseButtonDown(0).ToString() + " is pushed");
                 if (!IsWatering)
                 {
                     IsWatering = true;
+                    ChangeModel();
                     if (PlantToWater) 
                     { 
                         StartWateringPlant(); 
@@ -48,6 +54,7 @@ public class WateringCan : MonoBehaviour
                 if (IsWatering)
                 {
                     IsWatering = false;
+                    ChangeModel();
                     StopWateringPlant();
                 }
             }
@@ -80,18 +87,22 @@ public class WateringCan : MonoBehaviour
         {
             yield return new WaitForSeconds(1 / WaterSpeed);
             plantTarget.AddWater(WaterValue);
+            Debug.Log("Watering the plant");
             yield return null;  
         }
-        
     }
 
-    private void OnMouseDown()
+    public void ChangeModel()
     {
-        IsWatering = true;
-    }
-
-    private void OnMouseUp()
-    {
-        IsWatering=false;
+        if (IsWatering)
+        {
+            ReadyModel.SetActive(false);
+            WateringModel.SetActive(true);
+        }
+        else
+        {
+            ReadyModel.SetActive(true);
+            WateringModel.SetActive(false);
+        }
     }
 }
