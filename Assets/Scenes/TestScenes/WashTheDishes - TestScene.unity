@@ -1350,8 +1350,8 @@ MonoBehaviour:
   SpawnTime: 1
   SpawnPoints:
   - {fileID: 0}
-  RandomSpawnLocation: []
   BoxSpawnPoint: {fileID: 0}
+  SpawnedObjects: []
 --- !u!4 &1267660757
 Transform:
   m_ObjectHideFlags: 0
@@ -2288,6 +2288,10 @@ PrefabInstance:
     - target: {fileID: 3153082786570523939, guid: 5140144a29a95624aab3c9a2853e1f5a, type: 3}
       propertyPath: m_Name
       value: Plate
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153082786570523939, guid: 5140144a29a95624aab3c9a2853e1f5a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5140144a29a95624aab3c9a2853e1f5a, type: 3}
