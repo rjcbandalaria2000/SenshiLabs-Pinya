@@ -58,7 +58,9 @@ public class WashTheDishesManager : MinigameManager
     {
         Debug.Log("You cleaned all the plates");
         Assert.IsNotNull(sceneChange, "Scene change is null or is not set");
-        Assert.IsNotNull(NameOfNextScene, "Name of Next Scene is not set or is null");
+        if(NameOfNextScene == null) { return; }
+        Events.OnObjectiveUpdate.RemoveListener(StartNextPlate);
+        Events.OnSceneChange.Invoke();
         sceneChange.OnChangeScene(NameOfNextScene);
 
     }

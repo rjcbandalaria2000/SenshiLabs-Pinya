@@ -1131,7 +1131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c620933ed15e84c81caceb7b5cd249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameOfNextScene: 
+  NameOfNextScene: MainGameScene1
   NumOfCleanPlates: 0
   NumOfDirtyPlates: 5
   WashingPosition: {fileID: 919044197}
