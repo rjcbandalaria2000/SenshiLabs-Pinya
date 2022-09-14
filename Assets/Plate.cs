@@ -34,6 +34,7 @@ public class Plate : MonoBehaviour
     {
         spongeInteractRoutine = null;
         ChangeModel();
+        CanClean = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -42,7 +43,11 @@ public class Plate : MonoBehaviour
         if (collidedSponge)
         {
             sponge = collidedSponge;
-            StartSpongeInteract();
+            if (CanClean)
+            {
+                StartSpongeInteract();
+            }
+            
         }
     }
 
@@ -63,7 +68,11 @@ public class Plate : MonoBehaviour
 
     public void StopSpongeInteract()
     {
-        StopCoroutine(spongeInteractRoutine);
+        if(spongeInteractRoutine != null)
+        {
+            StopCoroutine(spongeInteractRoutine);
+        }
+        
     }
 
     public void ChangeModel()
@@ -106,9 +115,13 @@ public class Plate : MonoBehaviour
             }
             if (swipeCounter >= SwipeRequired)
             {
-                IsClean = true;
-                ChangeModel();
-                Events.OnObjectiveUpdate.Invoke();
+                if (!IsClean)
+                {
+                    IsClean = true;
+                    ChangeModel();
+                    Events.OnObjectiveUpdate.Invoke();
+                }
+                
             }
             Debug.Log("XCoordinates: " + spongePosition.normalized.x);
             yield return null;

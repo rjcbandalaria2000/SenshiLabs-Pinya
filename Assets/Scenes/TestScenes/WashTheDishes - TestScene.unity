@@ -1096,6 +1096,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1127833747}
   - component: {fileID: 1127833748}
+  - component: {fileID: 1127833749}
   m_Layer: 0
   m_Name: ~WashTheDishesManager
   m_TagString: Untagged
@@ -1147,6 +1148,18 @@ MonoBehaviour:
   - {fileID: 708723959}
   - {fileID: 2018972594}
   Plates: []
+--- !u!114 &1127833749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127833746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c181a4815ee67c49846764ff353adc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1224987973
 GameObject:
   m_ObjectHideFlags: 0
@@ -1800,7 +1813,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.1}
+  m_Size: {x: 0.2, y: 0.13}
   m_EdgeRadius: 0
 --- !u!114 &1917861914
 MonoBehaviour:
@@ -2308,7 +2321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6465501187018523353, guid: 76129b1bb3154b847aab4fcbf851974a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.17
+      value: -3.63
       objectReference: {fileID: 0}
     - target: {fileID: 6465501187018523353, guid: 76129b1bb3154b847aab4fcbf851974a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2349,6 +2362,14 @@ PrefabInstance:
     - target: {fileID: 6465501187018523354, guid: 76129b1bb3154b847aab4fcbf851974a, type: 3}
       propertyPath: m_Name
       value: Sponge
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465501187192203467, guid: 76129b1bb3154b847aab4fcbf851974a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6465501187192203468, guid: 76129b1bb3154b847aab4fcbf851974a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6465501187192203468, guid: 76129b1bb3154b847aab4fcbf851974a, type: 3}
       propertyPath: m_LocalPosition.y

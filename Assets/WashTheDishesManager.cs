@@ -29,6 +29,7 @@ public class WashTheDishesManager : MinigameManager
     // Start is called before the first frame update
     void Start()
     {
+        sceneChange = this.GetComponent<SceneChange>();
         plateToWashAreaRoutine = null;
         spawnManager = SingletonManager.Get<SpawnManager>();
         Assert.IsNotNull(spawnManager, "Spawn manager is null or is not set");
@@ -47,17 +48,19 @@ public class WashTheDishesManager : MinigameManager
 
     public override void CheckIfFinished()
     {
-        base.CheckIfFinished();
-    }
-
-    public override void OnMinigameFinished()
-    {
-        base.OnMinigameFinished();
+        if(GetRemainingDirtyPlates() <= 0)
+        {
+            OnWin();
+        }
     }
 
     public override void OnWin()
     {
-        base.OnWin();
+        Debug.Log("You cleaned all the plates");
+        Assert.IsNotNull(sceneChange, "Scene change is null or is not set");
+        Assert.IsNotNull(NameOfNextScene, "Name of Next Scene is not set or is null");
+        sceneChange.OnChangeScene(NameOfNextScene);
+
     }
 
     public override void OnMinigameLose()
@@ -94,7 +97,13 @@ public class WashTheDishesManager : MinigameManager
     {
         yield return new WaitForSeconds(0.5f);
         GoToWashArea();
-       
+        Plate selectedPlate = Plates[plateIndex].GetComponent<Plate>();
+        if (selectedPlate)
+        {
+            selectedPlate.CanClean = true;
+        }
+
+
     }
 
     public void StartNextPlate()
@@ -104,8 +113,16 @@ public class WashTheDishesManager : MinigameManager
 
     IEnumerator NextPlateToWash()
     {
+        NumOfCleanPlates++;
+        yield return new WaitForSeconds(0.5f);
         GoToCleanPile();
-        yield return null;
+        CheckIfFinished();
+        plateIndex++;
+        yield return new WaitForSeconds(0.5f);
+        if (plateIndex < Plates.Count)
+        {
+            StartPlateToWashArea();
+        }
     }
 
     
