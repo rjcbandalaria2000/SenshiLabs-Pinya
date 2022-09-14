@@ -188,7 +188,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &234395623
 GameObject:
@@ -504,13 +504,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1440000364}
-  - {fileID: 1224987974}
-  - {fileID: 259284973}
-  - {fileID: 2061527951}
   - {fileID: 2063014174}
+  - {fileID: 2061527951}
+  - {fileID: 259284973}
+  - {fileID: 1224987974}
+  - {fileID: 1440000364}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &292667421
 GameObject:
@@ -546,7 +546,7 @@ Transform:
   - {fileID: 708723960}
   - {fileID: 2018972595}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &303488144
 GameObject:
@@ -1000,7 +1000,7 @@ Transform:
   - {fileID: 260915389}
   - {fileID: 1447385062}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &919044197
 GameObject:
@@ -1084,7 +1084,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1127833746
 GameObject:
@@ -1096,7 +1096,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1127833747}
   - component: {fileID: 1127833748}
-  - component: {fileID: 1127833749}
   m_Layer: 0
   m_Name: ~WashTheDishesManager
   m_TagString: Untagged
@@ -1133,34 +1132,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NameOfNextScene: 
   NumOfCleanPlates: 0
-  NumOfDirtyPlates: 0
-  WashingPosition: {fileID: 0}
-  DirtyPile:
-  - {fileID: 1440000363}
-  - {fileID: 1224987973}
-  - {fileID: 259284972}
-  - {fileID: 2061527950}
+  NumOfDirtyPlates: 5
+  WashingPosition: {fileID: 919044197}
+  DirtyPilePosition:
   - {fileID: 2063014173}
-  CleanPile: []
---- !u!114 &1127833749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1127833746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c132cf2d4ef8fc4fb5fc530dce869c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectToSpawn:
-  - {fileID: 0}
-  NumToSpawn: 
-  SpawnTime: 1
-  SpawnPoints: []
-  RandomSpawnLocation: []
-  BoxSpawnPoint: {fileID: 0}
+  - {fileID: 2061527950}
+  - {fileID: 259284972}
+  - {fileID: 1224987973}
+  - {fileID: 1440000363}
+  CleanPilePosition:
+  - {fileID: 1299373929}
+  - {fileID: 234395623}
+  - {fileID: 303488144}
+  - {fileID: 708723959}
+  - {fileID: 2018972594}
+  Plates: []
 --- !u!1 &1224987973
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,7 +1177,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 290506298}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1224987975
 SpriteRenderer:
@@ -1329,6 +1315,58 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1267660755
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1267660757}
+  - component: {fileID: 1267660756}
+  m_Layer: 0
+  m_Name: ~SpawnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1267660756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267660755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c132cf2d4ef8fc4fb5fc530dce869c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectToSpawn:
+  - {fileID: 3153082786570523939, guid: 5140144a29a95624aab3c9a2853e1f5a, type: 3}
+  NumToSpawn: 
+  SpawnTime: 1
+  SpawnPoints:
+  - {fileID: 0}
+  RandomSpawnLocation: []
+  BoxSpawnPoint: {fileID: 0}
+--- !u!4 &1267660757
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267660755}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1299373929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1478,7 +1516,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 290506298}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1440000365
 SpriteRenderer:
@@ -2026,7 +2064,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2061527950
 GameObject:
@@ -2058,7 +2096,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 290506298}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2061527952
 SpriteRenderer:
@@ -2142,7 +2180,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 290506298}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2063014175
 SpriteRenderer:
@@ -2205,7 +2243,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3153082786570523938, guid: 5140144a29a95624aab3c9a2853e1f5a, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3153082786570523938, guid: 5140144a29a95624aab3c9a2853e1f5a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2262,7 +2300,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6465501187018523353, guid: 76129b1bb3154b847aab4fcbf851974a, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6465501187018523353, guid: 76129b1bb3154b847aab4fcbf851974a, type: 3}
       propertyPath: m_LocalPosition.x

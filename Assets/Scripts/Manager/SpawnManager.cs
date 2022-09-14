@@ -10,12 +10,13 @@ public class SpawnManager : MonoBehaviour
     public List<int>            NumToSpawn = new(); //must be equal to the number of objects to spawn
     public float                SpawnTime = 1f;
     //public List<WaveSpawnScriptableObject> WaveSpawnScripts = new(); // can be utilized later 
-    [Header("Set Spawnpoints")]
+    [Header("Spawnpoints")]
     public List<GameObject>     SpawnPoints = new();
-    [Header("Random Spawnpoints")]
-    public List<GameObject>     RandomSpawnLocation = new();
     [Header("Box Spawnpoint")]
     public GameObject BoxSpawnPoint;
+
+    [Header("Spawned Objects")]
+    public List<GameObject> SpawnedObjects = new();
 
     private Coroutine timedSpawnRoutine;
     private Coroutine timedBoxSpawnRoutine;
@@ -30,9 +31,7 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //NumToSpawn[0] = SingletonManager.Get<CleanTheHouseManager>().NumberOfTrash;
-        //NumToSpawn[1] = SingletonManager.Get<CleanTheHouseManager>().NumberOfDust;
-        //SpawnNoRepeat();
+      
     }
 
     public void SpawnRandomNoRepeat()
@@ -147,6 +146,17 @@ public class SpawnManager : MonoBehaviour
 
     public void SpawnInStaticPositions()
     {
-
+        if(ObjectToSpawn.Count <= 0) { return; }
+        if(NumToSpawn.Count <= 0) { return; }
+        for (int i = 0; i < ObjectToSpawn.Count; i++) 
+        { 
+            for(int j = 0; j < NumToSpawn[i]; j++)
+            {
+                GameObject spawnedObject = Instantiate(ObjectToSpawn[i],
+                    SpawnPoints[j].transform.position, Quaternion.identity);
+                SpawnedObjects.Add(spawnedObject);
+            }
+        
+        }
     }
 }

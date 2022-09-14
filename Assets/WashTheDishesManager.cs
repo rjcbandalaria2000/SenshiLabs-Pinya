@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class WashTheDishesManager : MinigameManager
 {
     [Header("Values")]
-    public int NumOfCleanPlates;
-    public int NumOfDirtyPlates;
+    public int              NumOfCleanPlates;
+    public int              NumOfDirtyPlates;
 
     [Header("Plate Positions")]    
-    public GameObject WashingPosition;
-    public List<GameObject> DirtyPile;
-    public List<GameObject> CleanPile;
+    public GameObject       WashingPosition;
+    public List<GameObject> DirtyPilePosition;
+    public List<GameObject> CleanPilePosition;
 
+    [Header("Spawned Objects")]
+    public List<GameObject> Plates = new();
+
+    private SpawnManager    spawnManager;
 
     private void Awake()
     {
@@ -21,7 +26,12 @@ public class WashTheDishesManager : MinigameManager
     // Start is called before the first frame update
     void Start()
     {
-        
+        spawnManager = SingletonManager.Get<SpawnManager>();
+        Assert.IsNotNull(spawnManager, "Spawn manager is null or is not set");
+        spawnManager.NumToSpawn.Add(DirtyPilePosition.Count);
+        spawnManager.SpawnPoints = DirtyPilePosition;
+        spawnManager.SpawnInStaticPositions();
+        Plates = spawnManager.SpawnedObjects;
     }
 
     public override void Initialize()
