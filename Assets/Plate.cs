@@ -108,6 +108,7 @@ public class Plate : MonoBehaviour
             {
                 IsClean = true;
                 ChangeModel();
+                Events.OnObjectiveUpdate.Invoke();
             }
             Debug.Log("XCoordinates: " + spongePosition.normalized.x);
             yield return null;

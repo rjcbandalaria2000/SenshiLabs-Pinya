@@ -20,6 +20,7 @@ public class WashTheDishesManager : MinigameManager
     private SpawnManager    spawnManager;
     private int plateIndex = 0;
     private Coroutine plateToWashAreaRoutine;
+    private Coroutine nextPlateToWashRoutine;
 
     private void Awake()
     {
@@ -35,7 +36,8 @@ public class WashTheDishesManager : MinigameManager
         spawnManager.SpawnPoints = DirtyPilePosition;
         spawnManager.SpawnInStaticPositions();
         Plates = spawnManager.SpawnedObjects;
-        plateToWashAreaRoutine = StartCoroutine(PlateToWashArea());
+        StartPlateToWashArea();
+        Events.OnObjectiveUpdate.AddListener(StartNextPlate);
     }
 
     public override void Initialize()
@@ -80,14 +82,30 @@ public class WashTheDishesManager : MinigameManager
 
     public void GoToCleanPile()
     {
+        Plates[plateIndex].transform.position = CleanPilePosition[plateIndex].transform.position;
+    }
 
+    public void StartPlateToWashArea()
+    {
+        plateToWashAreaRoutine = StartCoroutine(PlateToWashArea());
     }
 
     IEnumerator PlateToWashArea()
     {
         yield return new WaitForSeconds(0.5f);
         GoToWashArea();
-        plateIndex++;
+       
+    }
+
+    public void StartNextPlate()
+    {
+        nextPlateToWashRoutine = StartCoroutine(NextPlateToWash());
+    }
+
+    IEnumerator NextPlateToWash()
+    {
+        GoToCleanPile();
+        yield return null;
     }
 
     
