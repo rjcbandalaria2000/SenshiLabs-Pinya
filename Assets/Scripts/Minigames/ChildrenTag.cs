@@ -7,11 +7,15 @@ public class ChildrenTag : MonoBehaviour
     public bool isTag;
     public bool canTag;
 
+
     [Header("Bounds")]
     //public List<GameObject> points;
     public BoxCollider2D bound;
     private Vector2 size;
     private Vector2 center;
+
+    [Header("Tag")]
+    public GameObject tagCollider;
 
     [Header("Sprites")]
     public Sprite defaultSprite;
@@ -25,13 +29,22 @@ public class ChildrenTag : MonoBehaviour
 
     public SpriteRenderer renderer;
 
-    Coroutine movementRoutine;
-    Coroutine canTagRoutine;
+    public Coroutine movementRoutine;
+    public Coroutine canTagRoutine;
+
+    private float time;
+    private float delay;
     // Start is called before the first frame update
     void Start()
     {
+        time = 0;
+        delay = 1;
        renderer = this.GetComponent<SpriteRenderer>();
-        canTag = true;
+
+        if (!isTag)
+        {
+            canTag = true;
+        }
 
         if (renderer != null)
         {
@@ -81,33 +94,8 @@ public class ChildrenTag : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        ChildrenTag collidedChildren = other.GetComponent<ChildrenTag>();
-        PlayerTag playerTag = other.GetComponent<PlayerTag>();
-
-        if (collidedChildren != null) //other AI
-        {
-            if (this.isTag == true)
-            {
-                if(collidedChildren.isTag == false)
-                {
-                    if(canTag)
-                    {
-                        collidedChildren.isTag = true;
-                        this.isTag = false;
-                        collidedChildren.spriteUpdate();
-                        spriteUpdate();
-
-                        canTagRoutine = StartCoroutine(cantTag());
-
-                        Debug.Log("AI Tag");
-                    }
-                    
-                }
-                
-            }
-           
-
-        }
+       
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         if(other.gameObject.GetComponent<PlayerTag>() != null) //Player
         {
@@ -115,7 +103,8 @@ public class ChildrenTag : MonoBehaviour
             {
                 other.gameObject.GetComponent<PlayerTag>().isTag = true;
                 this.isTag = false;
-                
+
+                other.gameObject.GetComponent<SpriteRenderer>().sprite = other.gameObject.GetComponent<PlayerTag>().TagSprite;
                 spriteUpdate();
                 Debug.Log("Tag");
             }
@@ -123,7 +112,8 @@ public class ChildrenTag : MonoBehaviour
             {
                 other.gameObject.GetComponent<PlayerTag>().isTag = false;
                 this.isTag = true;
-               
+
+                other.gameObject.GetComponent<SpriteRenderer>().sprite = other.gameObject.GetComponent<PlayerTag>().defaultSprite;
                 spriteUpdate();
                 Debug.Log("Tag");
             }
@@ -150,13 +140,6 @@ public class ChildrenTag : MonoBehaviour
        
     }
 
-    IEnumerator cantTag()
-    {
-        canTag = false;
-
-        yield return new WaitForSeconds(1.0f);
-
-        canTag = true;
-    }
+  
    
 }
