@@ -47,6 +47,14 @@ public class GameManager : MonoBehaviour
     {
         UI = GameObject.FindObjectOfType<UIManager>().GetComponent<UIManager>();
 
+        if(highlightObj.Count > 0)
+        {
+            for(int i = 0; i < highlightObj.Count; i++)
+            {
+                highlightObj[i].SetActive(false);
+            }
+        }
+
         if(player == null)
         {
             if(GameObject.FindObjectOfType<Player>() != null)
@@ -76,13 +84,7 @@ public class GameManager : MonoBehaviour
                 hideseekMiniGame = GameObject.FindObjectOfType<HideSeekManager>().GetComponent<HideSeekManager>();
             }
         }
-        //if(miniGame!=null)
-        //{
-        //    if (GameObject.FindObjectOfType<MiniGame>() != null)
-        //    {
-        //        minigame = GameObject.FindObjectOfType<Player>().GetComponent<Player>();
-        //    }
-        //}
+      
 
         StartCoroutine(dayStart());
     }
@@ -141,32 +143,61 @@ public class GameManager : MonoBehaviour
     IEnumerator startCD()
     {
         UI.buttonUninteractable();
+        outLineObj();
         yield return new WaitForSeconds(cooldown);
         UI.buttonInteractable();
+        unOutlineObj();
     }
-    //public void OnIncreaseMotivationButtonClicked()
-    //{
-    //    Assert.IsNotNull(playerMotivation, "PlayerMotivation not set or is null");
-    //    playerMotivation.IncreaseMotivation(MotivationValueChange);
-    //}
 
-    //public void OnDecreaseMotivationButtonClicked()
-    //{
-    //    Assert.IsNotNull(playerMotivation, "PlayerMotivation not set or is null");
-    //    playerMotivation.DecreaseMotivation(MotivationValueChange);
-    //}
+    public void outLineObj()
+    {
+        if (highlightObj.Count > 0)
+        {
+            for (int i = 0; i < highlightObj.Count; i++)
+            {
+                highlightObj[i].SetActive(true);
+            }
+        }
+    }
 
-    //public void OnIncreasePinyaMeterButtonClicked()
-    //{
-    //    Assert.IsNotNull(playerPinyaMeter, "PlayerPinyaMeter is null or is not set");
-    //    playerPinyaMeter.IncreasePinyaMeter(PinyaMeterValueChange);
-    //}
+    public void unOutlineObj()
+    {
+        if (highlightObj.Count > 0)
+        {
+            for (int i = 0; i < highlightObj.Count; i++)
+            {
+                highlightObj[i].SetActive(false);
+            }
+        }
+    }
 
-    //public void OnDecreasePinyaMeterButtonClicked()
-    //{
-    //    Assert.IsNotNull(playerPinyaMeter, "PlayerPinyaMeter is null or is not set");
-    //    playerPinyaMeter.DecreasePinyaMeter(PinyaMeterValueChange);
-    //}
+
+
+   
 
 
 }
+
+//public void OnIncreaseMotivationButtonClicked()
+//{
+//    Assert.IsNotNull(playerMotivation, "PlayerMotivation not set or is null");
+//    playerMotivation.IncreaseMotivation(MotivationValueChange);
+//}
+
+//public void OnDecreaseMotivationButtonClicked()
+//{
+//    Assert.IsNotNull(playerMotivation, "PlayerMotivation not set or is null");
+//    playerMotivation.DecreaseMotivation(MotivationValueChange);
+//}
+
+//public void OnIncreasePinyaMeterButtonClicked()
+//{
+//    Assert.IsNotNull(playerPinyaMeter, "PlayerPinyaMeter is null or is not set");
+//    playerPinyaMeter.IncreasePinyaMeter(PinyaMeterValueChange);
+//}
+
+//public void OnDecreasePinyaMeterButtonClicked()
+//{
+//    Assert.IsNotNull(playerPinyaMeter, "PlayerPinyaMeter is null or is not set");
+//    playerPinyaMeter.DecreasePinyaMeter(PinyaMeterValueChange);
+//}
