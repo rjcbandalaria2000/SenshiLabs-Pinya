@@ -30,6 +30,7 @@ public class ChildrenTag : MonoBehaviour
     public Coroutine movementRoutine;
     public Coroutine canTagRoutine;
 
+    public TagMiniGame minigame;
    
     // Start is called before the first frame update
     void Start()
@@ -44,6 +45,14 @@ public class ChildrenTag : MonoBehaviour
 
         startPos = this.transform.position;
         targetPos = RNG_Position();
+
+        if(minigame == null)
+        {
+            if(GameObject.FindObjectOfType<TagMiniGame>() != null)
+            {
+                minigame = GameObject.FindObjectOfType<TagMiniGame>().GetComponent<TagMiniGame>();
+            }
+        }
 
         movementRoutine = StartCoroutine(movement());
     }
@@ -116,6 +125,9 @@ public class ChildrenTag : MonoBehaviour
                 Debug.Log("Tag");
             }
         }
+
+       
+        
     }
 
     IEnumerator movement()
@@ -123,10 +135,13 @@ public class ChildrenTag : MonoBehaviour
         while (true)
         {
             this.transform.position = Vector2.Lerp(this.transform.position, targetPos, speed * Time.deltaTime);
+           
             
             yield return new WaitForFixedUpdate();
             
-            if(Vector2.Distance(this.transform.position, targetPos) <= 1f)
+           
+
+            if (Vector2.Distance(this.transform.position, targetPos) <= 1f)
             {
                 startPos = targetPos;
                 targetPos = RNG_Position();
@@ -135,7 +150,8 @@ public class ChildrenTag : MonoBehaviour
             }
 
         }
-       
+        
+        
     }
 
     IEnumerator activateCollider()
@@ -151,4 +167,5 @@ public class ChildrenTag : MonoBehaviour
     }
   
    
+
 }

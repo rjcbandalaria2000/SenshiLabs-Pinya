@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     public CleanTheHouseManager cleanMiniGame; //Change Public MiniGame;
     public GroceryManager groceryMiniGame;
     public HideSeekManager hideseekMiniGame;
+    public TagMiniGame tagMiniGame;
 
     private void Awake()
     {
@@ -84,7 +85,20 @@ public class GameManager : MonoBehaviour
                 hideseekMiniGame = GameObject.FindObjectOfType<HideSeekManager>().GetComponent<HideSeekManager>();
             }
         }
-      
+        if(tagMiniGame == null)
+        {
+            if(GameObject.FindObjectOfType<TagMiniGame>() != null)
+            {
+                tagMiniGame = GameObject.FindObjectOfType<TagMiniGame>().GetComponent<TagMiniGame>();
+            }
+        }
+        //if(miniGame!=null)
+        //{
+        //    if (GameObject.FindObjectOfType<MiniGame>() != null)
+        //    {
+        //        minigame = GameObject.FindObjectOfType<Player>().GetComponent<Player>();
+        //    }
+        //}
 
         StartCoroutine(dayStart());
     }
@@ -103,7 +117,7 @@ public class GameManager : MonoBehaviour
         {
             SingletonManager.Get<UIManager>().activateTimerUI(); 
             //SingletonManager.Get<UIManager>().motivationMeter.SetActive(true); 
-            //SingletonManager.Get<UIManager>().piñyaMeter.SetActive(true);
+            //SingletonManager.Get<UIManager>().piï¿½yaMeter.SetActive(true);
         }
         else
         {
