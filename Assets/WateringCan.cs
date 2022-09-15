@@ -40,6 +40,7 @@ public class WateringCan : MonoBehaviour
                 {
                     IsWatering = true;
                     ChangeModel();
+                    
                     if (PlantToWater) 
                     { 
                         StartWateringPlant(); 
@@ -49,12 +50,13 @@ public class WateringCan : MonoBehaviour
                 
             }
             if (Input.GetMouseButtonUp(0))
-            {
+            { 
                 Debug.Log(Input.GetMouseButtonDown(0).ToString() + " is released");
                 if (IsWatering)
                 {
                     IsWatering = false;
                     ChangeModel();
+                   
                     StopWateringPlant();
                 }
             }
@@ -87,7 +89,7 @@ public class WateringCan : MonoBehaviour
         {
             yield return new WaitForSeconds(1 / WaterSpeed);
             plantTarget.AddWater(WaterValue);
-            Debug.Log("Watering the plant");
+            Debug.Log("Watering the plant" + plantTarget.gameObject.name);
             yield return null;  
         }
     }
