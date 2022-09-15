@@ -4,45 +4,45 @@ using UnityEngine;
 
 public class Toy : MonoBehaviour
 {
-    public bool isHolding;
-    public bool isHoveredOver;
-    public bool isPickedUp;
+    public bool IsHolding;
+    public bool IsHoveredOver;
+    public bool IsPickedUp;
 
     // Start is called before the first frame update
     void Start()
     {
-        isPickedUp = false;
+        IsPickedUp = false;
     }
 
     private void OnMouseDown()
     {
-        isPickedUp = true;
+        IsPickedUp = true;
     }
 
     private void OnMouseOver()
     {
-        if (!isHoveredOver)
+        if (!IsHoveredOver)
         {
-            isHoveredOver = true;
+            IsHoveredOver = true;
         }
     }
 
     private void OnMouseExit()
     {
-        if (isHoveredOver)
+        if (IsHoveredOver)
         {
-            isHoveredOver = false;
+            IsHoveredOver = false;
         }
     }
 
     private void OnMouseDrag()
     {
-        isHolding = true;
+        IsHolding = true;
     }
 
     private void OnMouseUp()
     {
-        isHolding = false;
+        IsHolding = false;
     }
 
 }

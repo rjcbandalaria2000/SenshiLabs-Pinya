@@ -4,15 +4,47 @@ using UnityEngine;
 
 public class Ingredient : MonoBehaviour
 {
+    public bool IsHolding;
+    public bool IsHoveredOver;
+    public bool IsPickedUp;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        IsPickedUp = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnMouseDown()
     {
-        
+        IsPickedUp = true;
     }
+
+    private void OnMouseOver()
+    {
+        if (!IsHoveredOver)
+        {
+            IsHoveredOver = true;
+        }
+    }
+
+    private void OnMouseExit()
+    {
+        if (IsHoveredOver)
+        {
+            IsHoveredOver = false;
+        }
+    }
+
+    private void OnMouseDrag()
+    {
+        IsHolding = true;
+    }
+
+    private void OnMouseUp()
+    {
+        IsHolding = false;
+    }
+
+
+
 }
