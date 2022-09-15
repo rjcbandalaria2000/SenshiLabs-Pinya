@@ -5,8 +5,16 @@ using UnityEngine;
 public class Pot : MonoBehaviour
 {
     [Header("Setup")]
-    public int RequiredIngredientCount;
-    public int CurrentIngredientCount;
+    public int      RequiredIngredientCount;
+    public int      CurrentIngredientCount;
+    public float    CookingSpeed;
+
+    [Header("States")]
+    public bool     AreIngredientsAdded;
+    public bool     ReadyToCook;
+
+    [Header("Panels")]
+    public GameObject TempChoices;
 
     // Start is called before the first frame update
     void Start()
@@ -24,9 +32,31 @@ public class Pot : MonoBehaviour
             {
                 Debug.Log("Accept Ingredient");
                 CurrentIngredientCount++;
+                CheckAllIngredients();
                 collidedIngredient.gameObject.SetActive(false);
             }
         }
+    }
+
+    public void CheckAllIngredients()
+    {
+        if(CurrentIngredientCount >= RequiredIngredientCount)
+        {
+            AreIngredientsAdded = true;
+            if(TempChoices == null) { return; }
+            TempChoices.SetActive(true);
+        }
+    }
+
+    public void SetCookingSpeed(float speed)
+    {
+        CookingSpeed = speed;
+        TempChoices.SetActive(false);
+    }
+
+    private void OnMouseDown()
+    {
+        
     }
 
 }

@@ -5,8 +5,9 @@ using UnityEngine;
 public class ImHungryManager : MinigameManager
 {
     [Header("Setup")]
-    public SpawnManager SpawnManager;
-    public int          NumOfIngredients;
+    public SpawnManager     SpawnManager;
+    public int              NumOfIngredients;
+    public List<GameObject> IngredientsToSpawn;
 
     private void Awake()
     {
@@ -17,6 +18,7 @@ public class ImHungryManager : MinigameManager
     void Start()
     {
         SpawnManager = SingletonManager.Get<SpawnManager>();
+        //SpawnManager.ObjectToSpawn = IngredientsToSpawn;
         SpawnManager.SpawnRandomObjectsInStaticPositions();
     }
 
