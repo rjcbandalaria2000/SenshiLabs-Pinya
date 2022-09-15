@@ -46,7 +46,18 @@ public class GameManager : MonoBehaviour
     }
     public void Start()
     {
-        UI = GameObject.FindObjectOfType<UIManager>().GetComponent<UIManager>();
+        if(UI == null)
+        {
+            if(GameObject.FindObjectOfType<UIManager>() != null)
+            {
+                UI = GameObject.FindObjectOfType<UIManager>().GetComponent<UIManager>();
+            }
+        }
+        else
+        {
+            Debug.Log("Null UI");
+        }
+        
 
         if(highlightObj.Count > 0)
         {
