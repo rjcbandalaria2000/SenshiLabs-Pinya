@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     public GroceryManager groceryMiniGame;
     public HideSeekManager hideseekMiniGame;
     public TagMiniGame tagMiniGame;
+    public FoldingMinigameManager foldMiniGame; 
 
     private void Awake()
     {
@@ -101,6 +102,13 @@ public class GameManager : MonoBehaviour
             if(GameObject.FindObjectOfType<TagMiniGame>() != null)
             {
                 tagMiniGame = GameObject.FindObjectOfType<TagMiniGame>().GetComponent<TagMiniGame>();
+            }
+        }
+        if(foldMiniGame == null)
+        {
+            if(GameObject.FindObjectsOfType<FoldingMinigameManager>() != null)
+            {
+                foldMiniGame = GameObject.FindObjectOfType<FoldingMinigameManager>().GetComponent<FoldingMinigameManager>();
             }
         }
         //if(miniGame!=null)
