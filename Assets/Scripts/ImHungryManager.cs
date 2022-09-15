@@ -8,10 +8,16 @@ public class ImHungryManager : MinigameManager
     public SpawnManager SpawnManager;
     public int          NumOfIngredients;
 
+    private void Awake()
+    {
+        SingletonManager.Register(this);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        SpawnManager = SingletonManager.Get<SpawnManager>();
+        SpawnManager.SpawnRandomObjectsInStaticPositions();
     }
 
     public override void Initialize()
