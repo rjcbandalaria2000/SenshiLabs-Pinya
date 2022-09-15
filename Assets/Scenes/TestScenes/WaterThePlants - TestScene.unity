@@ -2497,6 +2497,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &383155560 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6131212194066969477, guid: 0453290a6d1557040b311071602ad219, type: 3}
+  m_PrefabInstance: {fileID: 4941676782765498971}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &395911361
 GameObject:
   m_ObjectHideFlags: 0
@@ -7770,6 +7775,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1737302297 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6676157161947609516, guid: 0453290a6d1557040b311071602ad219, type: 3}
+  m_PrefabInstance: {fileID: 4941676782765498971}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1739773018
 GameObject:
   m_ObjectHideFlags: 0
@@ -9685,6 +9695,8 @@ MonoBehaviour:
   CurrentWater: 0
   MaxWater: 20
   IsWatered: 0
+  DehydratedModel: {fileID: 1737302297}
+  HydratedModel: {fileID: 383155560}
 --- !u!61 &4941676782765498974
 BoxCollider2D:
   m_ObjectHideFlags: 0
