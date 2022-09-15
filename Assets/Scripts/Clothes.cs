@@ -13,10 +13,13 @@ public class Clothes : MonoBehaviour
     public int clothes;
 
     [Header("Fold States")]
-    [SerializeField] private bool rightFold;
-    [SerializeField] private bool leftFold;
-    [SerializeField] private bool topFold;
-    [SerializeField] private bool downFold;
+    //[SerializeField] private bool rightFold;
+    //[SerializeField] private bool leftFold;
+    //[SerializeField] private bool topFold;
+    //[SerializeField] private bool downFold;
+   [SerializeField] private bool leftFold;
+   [SerializeField] private bool topFold;
+   [SerializeField] private bool downFold;
 
     [Header("Position")]
     public GameObject startPos;
@@ -39,6 +42,10 @@ public class Clothes : MonoBehaviour
     [Range(0f, -1f)]
     public float SwipeDownAccept = -0.5f;
 
+    [Header("Arro")]
+    public GameObject leftArrow;
+    public GameObject upArrow;
+    public GameObject downArrow;
 
     Coroutine startTransitionRoutine;
     Coroutine endTransitionRoutine;
@@ -46,7 +53,15 @@ public class Clothes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rightFold = false;
+        //rightFold = false;
+        //leftFold = false;
+        //topFold = false;
+        //downFold = false;
+
+        leftArrow.SetActive(true);
+        upArrow.SetActive(false);
+        downArrow.SetActive(false);
+
         leftFold = false;
         topFold = false;
         downFold = false;
@@ -69,31 +84,40 @@ public class Clothes : MonoBehaviour
 
         if (mousePosition.normalized.x < SwipeLeftAccept)
         {
-            // if the mouse moved to the left
-            leftFold = true;
+            if(leftFold == false && topFold == false && downFold == false)
+            {
+                leftFold = true;
 
+                leftArrow.SetActive(false);
+                upArrow.SetActive(true);
+            }
+            // if the mouse moved to the left
             Debug.Log("Fold right");
         }
-        if (mousePosition.normalized.x > SwipeRightAccept)
-        {
-            // if the mouse moved to the right 
-            rightFold = true;
-
-            Debug.Log("Fold left");
-        }
+       
         if(mousePosition.normalized.y > SwipeUpAccept)
         {
-            topFold = true;
+            if(leftFold == true && topFold == false && downFold == false)
+            {
+                topFold = true;
+
+                upArrow.SetActive(false);
+                downArrow.SetActive(true);
+            }
+          
 
             Debug.Log("Fold up");
         }
-        if(mousePosition.normalized.y < SwipeDownAccept)
+        if (mousePosition.normalized.y < SwipeUpAccept)
         {
-            downFold = true;
-
-            Debug.Log("Fold down");
+            if (leftFold == true && topFold == true && downFold == false)
+            {
+                downFold = true;
+            }
+            Debug.Log("DownFoldw");
         }
-        if(rightFold == true && leftFold == true && topFold == true && downFold == true)
+
+        if (leftFold == true && topFold == true && downFold == true)
         {
             if( clothes > 0)
             {
@@ -146,9 +170,11 @@ public class Clothes : MonoBehaviour
 
     private void Reset()
     {
-       // StopCoroutine(endTransitionRoutine);
+        // StopCoroutine(endTransitionRoutine);
+        leftArrow.SetActive(true);
+        upArrow.SetActive(false);
+        downArrow.SetActive(false);
 
-        rightFold = false;
         leftFold = false;
         topFold = false;
         downFold = false;
