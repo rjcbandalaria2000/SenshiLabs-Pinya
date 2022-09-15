@@ -30,8 +30,13 @@ public class Plant : MonoBehaviour
         }
         else
         {
-            IsWatered = true;
-            Debug.Log("Fully watered");
+            if (!IsWatered)
+            {
+                IsWatered = true;
+                Events.OnObjectiveUpdate.Invoke();
+                Debug.Log("Fully watered");
+            }
+           
         }
         ChangeModel();
     }
