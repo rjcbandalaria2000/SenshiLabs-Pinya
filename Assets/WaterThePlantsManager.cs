@@ -42,12 +42,19 @@ public class WaterThePlantsManager : MinigameManager
         foreach(GameObject plant in Plants)
         {
             Plant plantObj = plant .GetComponent<Plant>();
-           
-            if(plantObj != null)
+
+            if (plantObj)
             {
-                Debug.Log(plantObj.gameObject.name + " is watered? " + plantObj.IsWatered);
+                //Check all the plants if all is watered
+                Debug.Log(plantObj.gameObject.name+" is watered? " + plantObj.IsWatered);
                 AllWatered = plantObj.IsWatered;
+                if (!AllWatered)
+                {
+                    //if at least one plant is not watered break the loop and return false
+                    break;
+                }
             }
+            
         }
         return AllWatered;
 

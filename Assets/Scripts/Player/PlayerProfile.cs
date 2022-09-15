@@ -6,11 +6,11 @@ using UnityEngine;
 public class PlayerProfile 
 {
     public float motivationMeter;
-    public float piñyaMeter;
+    public float pinyaMeter;
 
     public PlayerProfile (Player player)
     {
         motivationMeter = player.motivationMeter.MotivationAmount;
-        piñyaMeter = player.pinyaMeter.PinyaValue;
+        pinyaMeter = player.pinyaMeter.PinyaValue;
     }
 }

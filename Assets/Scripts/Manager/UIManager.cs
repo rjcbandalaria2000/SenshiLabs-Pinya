@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour
 
     [Header("Meters UI")]
     public GameObject motivationMeter;
-    public GameObject piñyaMeter;
+    public GameObject pinyaMeter;
 
     [Header("Display UI")] //Mostly text base UI
     public GameObject dayEnd_UI;
