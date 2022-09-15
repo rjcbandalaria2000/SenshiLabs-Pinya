@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Game/HideSeek_Test.unity
     guid: 10a2e55238d86594e8d3f46ba23d9615
   - enabled: 1
-    path: Assets/Scenes/TestScenes/WashTheDishes - TestScene.unity
+    path: Assets/Scenes/Main Game/WashTheDishes - TestScene.unity
     guid: 3859f246144b07f4290f4d356db640ae
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/WaterThePlants - TestScene.unity
+    guid: d9288f12db01fa04d921b2fb0661d848
   m_configObjects: {}

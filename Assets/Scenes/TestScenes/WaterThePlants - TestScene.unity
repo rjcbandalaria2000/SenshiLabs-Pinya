@@ -2661,6 +2661,7 @@ GameObject:
   m_Component:
   - component: {fileID: 417715212}
   - component: {fileID: 417715213}
+  - component: {fileID: 417715214}
   m_Layer: 0
   m_Name: ~WaterThePlantsManager
   m_TagString: Untagged
@@ -2695,11 +2696,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5794cf35c5da864c94b7b76de95540e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameOfNextScene: 
+  NameOfNextScene: MainGameScene1
   Plants:
   - {fileID: 475102912}
   - {fileID: 446830637}
   - {fileID: 662185521}
+--- !u!114 &417715214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417715211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c181a4815ee67c49846764ff353adc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &424183670
 GameObject:
   m_ObjectHideFlags: 0

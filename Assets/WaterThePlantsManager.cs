@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class WaterThePlantsManager : MinigameManager
 {
@@ -9,6 +10,7 @@ public class WaterThePlantsManager : MinigameManager
     // Start is called before the first frame update
     void Start()
     {
+        sceneChange = this.GetComponent<SceneChange>();
         Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
     }
 
@@ -21,7 +23,9 @@ public class WaterThePlantsManager : MinigameManager
     {
         if (AreAllPlantsWatered())
         {
+            Events.OnObjectiveUpdate.RemoveListener(CheckIfFinished);
             Debug.Log("Finished Watering the Plants");
+            OnMinigameFinished();
         }
     }
 
@@ -33,6 +37,13 @@ public class WaterThePlantsManager : MinigameManager
     public override void OnLose()
     {
         base.OnLose();
+    }
+
+    public override void OnMinigameFinished()
+    {
+        if(NameOfNextScene == null) { return; }
+        Assert.IsNotNull(sceneChange, "Scene change is null or is not set");
+        sceneChange.OnChangeScene(NameOfNextScene);
     }
 
     public bool AreAllPlantsWatered()
