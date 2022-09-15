@@ -21,6 +21,7 @@ public class WateringCan : MonoBehaviour
     private Plant       plantTarget;
     private Coroutine   waterCanControlsRoutine;
     private Coroutine   wateringPlantRoutine;
+    private MouseFollow mouseFollow;
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +56,7 @@ public class WateringCan : MonoBehaviour
                 if (IsWatering)
                 {
                     IsWatering = false;
+                    plantTarget = null;
                     ChangeModel();
                    
                     StopWateringPlant();
@@ -80,18 +82,17 @@ public class WateringCan : MonoBehaviour
 
     IEnumerator WateringPlant()
     {
-        plantTarget = PlantToWater.GetComponent<Plant>();
-        if (plantTarget == null)
-        {
-            yield break;
-        }
+       
         while (IsWatering)
-        {
+        { 
+            plantTarget = PlantToWater.GetComponent<Plant>();
+            if (plantTarget == null){ yield break; }
             yield return new WaitForSeconds(1 / WaterSpeed);
             plantTarget.AddWater(WaterValue);
             Debug.Log("Watering the plant" + plantTarget.gameObject.name);
             yield return null;  
         }
+
     }
 
     public void ChangeModel()
