@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public CleanTheHouseManager cleanMiniGame; //Change Public MiniGame;
     public GroceryManager groceryMiniGame;
     public HideSeekManager hideseekMiniGame;
+    public TagMiniGame tagMiniGame;
 
     private void Awake()
     {
@@ -57,6 +58,13 @@ public class GameManager : MonoBehaviour
             if (GameObject.FindObjectOfType<HideSeekManager>() != null)
             {
                 hideseekMiniGame = GameObject.FindObjectOfType<HideSeekManager>().GetComponent<HideSeekManager>();
+            }
+        }
+        if(tagMiniGame == null)
+        {
+            if(GameObject.FindObjectOfType<TagMiniGame>() != null)
+            {
+                tagMiniGame = GameObject.FindObjectOfType<TagMiniGame>().GetComponent<TagMiniGame>();
             }
         }
         //if(miniGame!=null)
