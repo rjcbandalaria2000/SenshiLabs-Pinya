@@ -29,4 +29,14 @@ public class TempertureTracker : MonoBehaviour
             Debug.Log("Collided temp");
         }
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Temperature collidedTemp = collision.gameObject.GetComponent<Temperature>();
+        if (collidedTemp)
+        {
+            parentTempControl.ChosenTemp = null;
+            Debug.Log("Collided temp");
+        }
+    }
 }

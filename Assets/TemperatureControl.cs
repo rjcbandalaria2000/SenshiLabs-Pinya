@@ -11,6 +11,9 @@ public class TemperatureControl : MonoBehaviour
     [Header("Positions")]
     public GameObject StartPosition;
     public GameObject EndPosition;
+    public GameObject TempPositions;
+   
+    public Vector2 RandomTempPosition;
 
     [Header("Temperature")]
     public GameObject ChosenTemp;
@@ -19,29 +22,57 @@ public class TemperatureControl : MonoBehaviour
     [Header("State")]
     public bool CanMove;
 
+    private Vector3 destination;
     private Coroutine moveTrackerRoutine;
     // Start is called before the first frame update
     void Start()
     {
         Assert.IsNotNull(Tracker, "Tracker is null or is not set");
-        //StartMoveTracker();
+        //SetRandomTemperaturePosition();
 
+    }
+
+    public void SetRandomTemperaturePosition()
+    {
+        TempPositions.transform.position = new Vector2(Random.Range(RandomTempPosition.x, RandomTempPosition.y), 
+            TempPositions.transform.position.y);
     }
 
     public void StartMoveTracker()
     {
+        //SetRandomTemperaturePosition();
+        Tracker.transform.position = StartPosition.transform.position;
+        destination = EndPosition.transform.position;
         moveTrackerRoutine = StartCoroutine(MoveTracker());
     }
 
     IEnumerator MoveTracker()
     {
-        while(Vector2.Distance(this.transform.position, EndPosition.transform.position) > 0)
+        //while (Vector2.Distance(Tracker.transform.position, EndPosition.transform.position) > 0)
+        //{
+        //    Tracker.transform.position = Vector2.MoveTowards(Tracker.transform.position,
+        //        EndPosition.transform.position,
+        //        Speed * Time.deltaTime);
+        //    yield return new WaitForFixedUpdate();
+        //}
+
+        while (true)
         {
-            Tracker.transform.position = Vector2.MoveTowards(Tracker.transform.position, 
-                EndPosition.transform.position,
+            if(Tracker.transform.position.x == EndPosition.transform.position.x)
+            {
+                destination = StartPosition.transform.position;
+            }
+            if(Tracker.transform.position.x == StartPosition.transform.position.x)
+            {
+                destination = EndPosition.transform.position;
+            }
+            Tracker.transform.position = Vector2.MoveTowards(Tracker.transform.position,
+                destination,
                 Speed * Time.deltaTime);
             yield return new WaitForFixedUpdate();
+            //yield return null;
         }
+
     }
 
     public void SetCookingTemp()
