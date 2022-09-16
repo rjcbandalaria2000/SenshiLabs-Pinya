@@ -199,7 +199,8 @@ GameObject:
   - component: {fileID: 1278223492080597532}
   - component: {fileID: 1278223492080597535}
   - component: {fileID: 1278223492080597534}
-  - component: {fileID: 1278223492080597533}
+  - component: {fileID: 5285038560494157795}
+  - component: {fileID: 6527601214278887690}
   m_Layer: 0
   m_Name: Sink - CleanTheDishes
   m_TagString: Untagged
@@ -216,7 +217,7 @@ Transform:
   m_GameObject: {fileID: 1278223492080597529}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.93, y: -3.35, z: 0}
-  m_LocalScale: {x: 1.5626826, y: 1.5626826, z: 1.5626826}
+  m_LocalScale: {x: 1.9355388, y: 1.9355388, z: 1.9355388}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1278223491309974278}
@@ -262,7 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b3d2454b55751409d921fff0e6dc60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1278223492080597533
+--- !u!114 &5285038560494157795
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -271,9 +272,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1278223492080597529}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 482ceab3e6730eb449b8a9245d11f248, type: 3}
+  m_Script: {fileID: 11500000, guid: ec7c0dab23d242c4ab69af8ad60a2174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MotivationCost: 20
   Interactable: {fileID: 1278223492080597534}
   isInteracted: 0
-  MinigameScene: 
+  MinigameScene: WashTheDishes - TestScene
+--- !u!114 &6527601214278887690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278223492080597529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c181a4815ee67c49846764ff353adc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
