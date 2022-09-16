@@ -53,7 +53,9 @@ public class TemperatureControl : MonoBehaviour
     public void SetCookingTemp()
     {
         if(ChosenTemp == null) { return; }
-        
+        Pot potParent = Parent.GetComponent<Pot>();
+        if(potParent == null) { return; }
+        potParent.CookingSpeed = ChosenTemp.GetComponent<Temperature>().CookingSpeed;
     }
 
 
