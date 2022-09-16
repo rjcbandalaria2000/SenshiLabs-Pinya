@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class TemperatureControl : MonoBehaviour
 {
     [Header("Tracker")]
+    public GameObject Tracker;
     public float Speed; 
     [Header("Positions")]
     public GameObject StartPosition;
@@ -21,7 +23,9 @@ public class TemperatureControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartMoveTracker();
+        Assert.IsNotNull(Tracker, "Tracker is null or is not set");
+        //StartMoveTracker();
+
     }
 
     public void StartMoveTracker()
@@ -33,20 +37,10 @@ public class TemperatureControl : MonoBehaviour
     {
         while(Vector2.Distance(this.transform.position, EndPosition.transform.position) > 0)
         {
-            this.transform.position = Vector2.MoveTowards(this.transform.position, 
+            Tracker.transform.position = Vector2.MoveTowards(Tracker.transform.position, 
                 EndPosition.transform.position,
                 Speed * Time.deltaTime);
             yield return new WaitForFixedUpdate();
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        Temperature collidedTemp = collision.gameObject.GetComponent<Temperature>();
-        if (collidedTemp)
-        {
-            ChosenTemp = collidedTemp.gameObject;
-            Debug.Log("Collided temp");
         }
     }
 

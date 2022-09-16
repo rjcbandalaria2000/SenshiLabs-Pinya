@@ -546,7 +546,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 166510685}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.02, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1553,8 +1553,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2137475109}
-  m_Father: {fileID: 1501611437}
-  m_RootOrder: 1
+  m_Father: {fileID: 1078846926}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1577,7 +1577,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 23
+    m_Bits: 32
 --- !u!114 &572994182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2363,9 +2363,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1007357099}
   - component: {fileID: 1007357100}
-  - component: {fileID: 1007357101}
   - component: {fileID: 1007357103}
   - component: {fileID: 1007357102}
+  - component: {fileID: 1007357104}
   m_Layer: 0
   m_Name: Tracker
   m_TagString: Untagged
@@ -2428,7 +2428,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 7
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.120949745, g: 0, b: 1, a: 1}
   m_FlipX: 0
@@ -2440,24 +2440,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1007357101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1007357098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52b2e56b47db28042a70e243a7eb84e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 2
-  StartPosition: {fileID: 83568138}
-  EndPosition: {fileID: 506559440}
-  ChosenTemp: {fileID: 0}
-  Parent: {fileID: 1501611435}
-  CanMove: 0
 --- !u!50 &1007357102
 Rigidbody2D:
   serializedVersion: 4
@@ -2478,7 +2460,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 6
+  m_Constraints: 4
 --- !u!58 &1007357103
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2495,6 +2477,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.49999997
+--- !u!114 &1007357104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007357098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3f33f3540a256a4bacce8e5efe6e2a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 1078846925}
 --- !u!1 &1009172471
 GameObject:
   m_ObjectHideFlags: 0
@@ -2672,6 +2667,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1078846926}
+  - component: {fileID: 1078846927}
   m_Layer: 0
   m_Name: TempStage
   m_TagString: Untagged
@@ -2694,9 +2690,29 @@ Transform:
   - {fileID: 695279361}
   - {fileID: 1007357099}
   - {fileID: 1872468650}
+  - {fileID: 572994180}
   m_Father: {fileID: 1501611437}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1078846927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078846925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52b2e56b47db28042a70e243a7eb84e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tracker: {fileID: 1007357098}
+  Speed: 2
+  StartPosition: {fileID: 83568138}
+  EndPosition: {fileID: 506559440}
+  ChosenTemp: {fileID: 0}
+  Parent: {fileID: 1501611435}
+  CanMove: 0
 --- !u!1 &1094255615
 GameObject:
   m_ObjectHideFlags: 0
@@ -3184,7 +3200,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 629732658}
-  - {fileID: 572994180}
   - {fileID: 1078846926}
   m_Father: {fileID: 69784954}
   m_RootOrder: 0
@@ -3206,7 +3221,7 @@ MonoBehaviour:
   CookingSpeed: 0
   AreIngredientsAdded: 0
   ReadyToCook: 0
-  TempChoices: {fileID: 0}
+  TempChoices: {fileID: 1078846925}
 --- !u!58 &1501611439
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4467,7 +4482,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1007357101}
+      - m_Target: {fileID: 1078846927}
         m_TargetAssemblyTypeName: TemperatureControl, Assembly-CSharp
         m_MethodName: StopMoveTracker
         m_Mode: 1

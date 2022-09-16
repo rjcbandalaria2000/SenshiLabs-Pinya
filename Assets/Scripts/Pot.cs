@@ -44,7 +44,7 @@ public class Pot : MonoBehaviour
         {
             AreIngredientsAdded = true;
             if(TempChoices == null) { return; }
-            TempChoices.SetActive(true);
+            ActivateTempChoice();
         }
     }
 
@@ -57,6 +57,17 @@ public class Pot : MonoBehaviour
     private void OnMouseDown()
     {
         
+    }
+
+    public void ActivateTempChoice()
+    {
+        if (TempChoices == null) { return; }
+        TempChoices.SetActive(true);
+        TemperatureControl tempControl = TempChoices.GetComponent<TemperatureControl>();
+        if (tempControl)
+        {
+            tempControl.StartMoveTracker();
+        }
     }
 
 }
