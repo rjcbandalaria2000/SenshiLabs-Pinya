@@ -6,11 +6,14 @@ using UnityEngine;
 public class PlayerControls : MonoBehaviour
 {
     public int      MoveSpeed = 5;
+    public Animator animator;
     private Vector3 targetPosition;
 
     void Start()
     {
         targetPosition = this.transform.position;
+
+      
     }
 
     
@@ -18,6 +21,7 @@ public class PlayerControls : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
+            animator.SetBool("IsIdle", false);
             targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             targetPosition.z = this.transform.position.z;
         }
@@ -28,6 +32,14 @@ public class PlayerControls : MonoBehaviour
     private void FixedUpdate()
     {
         //Avoids jittering 
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, MoveSpeed*Time.deltaTime);
+        if(Vector3.Distance(this.transform.position,targetPosition) > 1)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, MoveSpeed * Time.deltaTime);
+            
+        }
+        else
+        {
+            animator.SetBool("IsIdle", true);
+        }
     }
 }
