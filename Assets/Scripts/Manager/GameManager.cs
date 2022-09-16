@@ -104,9 +104,9 @@ public class GameManager : MonoBehaviour
                 tagMiniGame = GameObject.FindObjectOfType<TagMiniGameManager>().GetComponent<TagMiniGameManager>();
             }
         }
-        if(foldMiniGame == null)
+       if(foldMiniGame == null)
         {
-            if(GameObject.FindObjectsOfType<FoldingMinigameManager>() != null)
+            if (GameObject.FindObjectOfType<FoldingMinigameManager>() != null)
             {
                 foldMiniGame = GameObject.FindObjectOfType<FoldingMinigameManager>().GetComponent<FoldingMinigameManager>();
             }
