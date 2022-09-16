@@ -2315,6 +2315,7 @@ GameObject:
   m_Component:
   - component: {fileID: 955251546}
   - component: {fileID: 955251545}
+  - component: {fileID: 955251547}
   m_Layer: 0
   m_Name: ~ImHungryManager
   m_TagString: Untagged
@@ -2334,10 +2335,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7da968cb06348946aab44e71fe37e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameOfNextScene: 
+  NameOfNextScene: MainGameScene1
   SpawnManager: {fileID: 0}
   NumOfIngredients: 0
   IngredientsToSpawn: []
+  Pot: {fileID: 1501611435}
 --- !u!4 &955251546
 Transform:
   m_ObjectHideFlags: 0
@@ -2353,6 +2355,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &955251547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955251544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c181a4815ee67c49846764ff353adc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1007357098
 GameObject:
   m_ObjectHideFlags: 0
@@ -2713,6 +2727,7 @@ MonoBehaviour:
   TempPositions: {fileID: 166510685}
   RandomTempPosition: {x: -4.4, y: -0.01}
   ChosenTemp: {fileID: 0}
+  RequiredPointCounter: 3
   Parent: {fileID: 1501611435}
   CanMove: 0
 --- !u!1 &1094255615
@@ -3222,7 +3237,7 @@ MonoBehaviour:
   CurrentIngredientCount: 0
   CookingSpeed: 0
   AreIngredientsAdded: 0
-  ReadyToCook: 0
+  IsCooked: 0
   TempChoices: {fileID: 1078846925}
 --- !u!58 &1501611439
 CircleCollider2D:

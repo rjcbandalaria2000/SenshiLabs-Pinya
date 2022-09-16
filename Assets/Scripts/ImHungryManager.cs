@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class ImHungryManager : MinigameManager
 {
@@ -8,7 +9,9 @@ public class ImHungryManager : MinigameManager
     public SpawnManager     SpawnManager;
     public int              NumOfIngredients;
     public List<GameObject> IngredientsToSpawn;
+    public GameObject       Pot;
 
+    private Pot pot;
     private void Awake()
     {
         SingletonManager.Register(this);
@@ -17,9 +20,13 @@ public class ImHungryManager : MinigameManager
     // Start is called before the first frame update
     void Start()
     {
+        sceneChange = this.GetComponent<SceneChange>();
+        Assert.IsNotNull(Pot, "Pot is null or is not set");
         SpawnManager = SingletonManager.Get<SpawnManager>();
         //SpawnManager.ObjectToSpawn = IngredientsToSpawn;
         SpawnManager.SpawnRandomObjectsInStaticPositions();
+        pot = Pot.GetComponent<Pot>();
+        Events.OnObjectiveComplete.AddListener(CheckIfFinished);
     }
 
     public override void Initialize()
@@ -29,7 +36,14 @@ public class ImHungryManager : MinigameManager
 
     public override void CheckIfFinished()
     {
-        base.CheckIfFinished();
+        if(pot == null) { return; }
+        if (pot.IsCooked)
+        {
+            Debug.Log("Finished Cooking");
+            Assert.IsNotNull(sceneChange, "Scene change is null or is not set");
+            if(NameOfNextScene == null) { return; }
+            sceneChange.OnChangeScene(NameOfNextScene);
+        }
     }
 
     public override void OnWin()

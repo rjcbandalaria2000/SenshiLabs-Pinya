@@ -17,11 +17,14 @@ public class TemperatureControl : MonoBehaviour
 
     [Header("Temperature")]
     public GameObject ChosenTemp;
+    
+    public int RequiredPointCounter = 3;
     public GameObject Parent;
 
     [Header("State")]
     public bool CanMove;
 
+    private int pointCounter;
     private Vector3 destination;
     private Coroutine moveTrackerRoutine;
     // Start is called before the first frame update
@@ -87,9 +90,27 @@ public class TemperatureControl : MonoBehaviour
 
     public void StopMoveTracker()
     {
-        if(moveTrackerRoutine == null) { return; }
-        StopCoroutine(moveTrackerRoutine);
-        SetCookingTemp();
+        if(ChosenTemp != null) {
+            if (pointCounter < RequiredPointCounter)
+            {
+                pointCounter++;
+            }
+            if (pointCounter >= RequiredPointCounter)
+            {
+                if (Parent.GetComponent<Pot>().IsCooked) { return; }
+                if (moveTrackerRoutine == null) { return; }
+                StopCoroutine(moveTrackerRoutine);
+                Parent.GetComponent<Pot>().IsCooked = true;
+                Events.OnObjectiveComplete.Invoke();
+            }
+            
+        }
+        else
+        {
+            Debug.Log("Wrong Timing");
+        }
+
+       
     }
 
 }

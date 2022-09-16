@@ -11,7 +11,7 @@ public class Pot : MonoBehaviour
 
     [Header("States")]
     public bool     AreIngredientsAdded;
-    public bool     ReadyToCook;
+    public bool     IsCooked;
 
     [Header("Panels")]
     public GameObject TempChoices;

@@ -5391,7 +5391,7 @@ MonoBehaviour:
   timerDisplay: {fileID: 0}
   miniGameTimerDisplay: {fileID: 0}
   motivationMeter: {fileID: 0}
-  "pi\xF1yaMeter": {fileID: 0}
+  pinyaMeter: {fileID: 0}
   dayEnd_UI: {fileID: 0}
   Loading_UI: {fileID: 1756032841}
 --- !u!4 &1787921855
