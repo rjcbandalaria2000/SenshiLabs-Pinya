@@ -13,12 +13,25 @@ public class FoldingMinigameManager : MinigameManager
     void Start()
     {
         sceneChange = this.GetComponent<SceneChange>();
+        manager = this.GetComponent<GameManager>();
+        gameTimer = this.GetComponent<MiniGameTimer>(); 
+
+        if (ClothesComponent == null)
+        {
+            if(GameObject.FindObjectOfType<Clothes>() != null)
+            {
+                ClothesComponent = GameObject.FindObjectOfType<Clothes>().GetComponent<Clothes>();
+            }
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(gameTimer.getTimer() <= 0)
+        {
+            CheckIfFinished();
+        }
     }
 
     public override void CheckIfFinished()

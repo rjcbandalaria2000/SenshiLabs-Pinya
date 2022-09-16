@@ -1699,7 +1699,7 @@ Transform:
   - {fileID: 128180818}
   - {fileID: 332301249}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1419061865
 GameObject:
@@ -1734,7 +1734,7 @@ Transform:
   - {fileID: 317293122}
   - {fileID: 1021175504}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1559176482
 GameObject:
@@ -1768,6 +1768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19780f22eccea6f41be9fd7e4440cbe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foldManager: {fileID: 0}
   stateSprites: []
   clothes: 3
   leftFold: 0
@@ -1852,7 +1853,7 @@ Transform:
   - {fileID: 1589631794}
   - {fileID: 475085347}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1559176486
 MonoBehaviour:
@@ -1901,9 +1902,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1573738795}
+  - component: {fileID: 1573738796}
   - component: {fileID: 1573738794}
-  - component: {fileID: 1573738793}
   - component: {fileID: 1573738792}
+  - component: {fileID: 1573738793}
   - component: {fileID: 1573738791}
   m_Layer: 0
   m_Name: Manager
@@ -1976,8 +1978,8 @@ MonoBehaviour:
   timer: 0
   endTime: 0
   currentTime: 0
-  maxTime: 0
-  speedCounter: 0
+  maxTime: 10
+  speedCounter: 1
   player: {fileID: 0}
   cleanMiniGame: {fileID: 0}
   groceryMiniGame: {fileID: 0}
@@ -1997,8 +1999,24 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1573738796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573738790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c858e6d85326dd4bb8982217ae7ee67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NameOfNextScene: MainMenu
+  manager: {fileID: 0}
+  gameTimer: {fileID: 0}
+  ClothesComponent: {fileID: 0}
 --- !u!1 &1589631792
 GameObject:
   m_ObjectHideFlags: 0

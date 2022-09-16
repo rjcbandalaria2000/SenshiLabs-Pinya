@@ -6,17 +6,15 @@ using UnityEngine;
 
 public class Clothes : MonoBehaviour
 {
+    public FoldingMinigameManager foldManager;
+
     [Header("Sprite States")]
     public List<Sprite> stateSprites;
 
     [Header("Number of Clothes")]
     public int clothes;
 
-    [Header("Fold States")]
-    //[SerializeField] private bool rightFold;
-    //[SerializeField] private bool leftFold;
-    //[SerializeField] private bool topFold;
-    //[SerializeField] private bool downFold;
+   [Header("Fold States")]
    [SerializeField] private bool leftFold;
    [SerializeField] private bool topFold;
    [SerializeField] private bool downFold;
@@ -53,10 +51,13 @@ public class Clothes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //rightFold = false;
-        //leftFold = false;
-        //topFold = false;
-        //downFold = false;
+        if(foldManager == null)
+        {
+            if(GameObject.FindObjectOfType<FoldingMinigameManager>() != null)
+            {
+                foldManager = GameObject.FindObjectOfType<FoldingMinigameManager>().GetComponent<FoldingMinigameManager>();
+            }
+        }
 
         leftArrow.SetActive(true);
         upArrow.SetActive(false);
@@ -127,8 +128,11 @@ public class Clothes : MonoBehaviour
             }
             else
             {
-                this.gameObject.SetActive(false);
                 Debug.Log("Success");
+                this.gameObject.SetActive(false);
+                foldManager.CheckIfFinished();
+                
+               
             }
             
         }
@@ -139,7 +143,7 @@ public class Clothes : MonoBehaviour
     {
         while(this.transform.position != middlePos.transform.position)
         {
-            Debug.Log(Vector2.Distance(this.transform.position, middlePos.transform.position));
+          //  Debug.Log(Vector2.Distance(this.transform.position, middlePos.transform.position));
             if (Vector2.Distance(this.transform.position, middlePos.transform.position) >= 0.1f )
             {
                 this.transform.position = Vector2.Lerp(this.transform.position, middlePos.transform.position, lerpSpeed * Time.deltaTime);
@@ -162,7 +166,7 @@ public class Clothes : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         Reset();
        
 
