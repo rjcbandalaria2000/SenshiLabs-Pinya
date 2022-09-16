@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     public CleanTheHouseManager cleanMiniGame; //Change Public MiniGame;
     public GroceryManager groceryMiniGame;
     public HideSeekManager hideseekMiniGame;
-    public TagMiniGame tagMiniGame;
+    public TagMiniGameManager tagMiniGame;
     public FoldingMinigameManager foldMiniGame; 
 
     private void Awake()
@@ -99,9 +99,9 @@ public class GameManager : MonoBehaviour
         }
         if(tagMiniGame == null)
         {
-            if(GameObject.FindObjectOfType<TagMiniGame>() != null)
+            if(GameObject.FindObjectOfType<TagMiniGameManager>() != null)
             {
-                tagMiniGame = GameObject.FindObjectOfType<TagMiniGame>().GetComponent<TagMiniGame>();
+                tagMiniGame = GameObject.FindObjectOfType<TagMiniGameManager>().GetComponent<TagMiniGameManager>();
             }
         }
         if(foldMiniGame == null)
@@ -111,14 +111,7 @@ public class GameManager : MonoBehaviour
                 foldMiniGame = GameObject.FindObjectOfType<FoldingMinigameManager>().GetComponent<FoldingMinigameManager>();
             }
         }
-        //if(miniGame!=null)
-        //{
-        //    if (GameObject.FindObjectOfType<MiniGame>() != null)
-        //    {
-        //        minigame = GameObject.FindObjectOfType<Player>().GetComponent<Player>();
-        //    }
-        //}
-
+     
         StartCoroutine(dayStart());
     }
     public IEnumerator dayStart()

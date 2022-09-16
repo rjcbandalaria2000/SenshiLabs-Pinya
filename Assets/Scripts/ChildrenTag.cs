@@ -30,7 +30,7 @@ public class ChildrenTag : MonoBehaviour
     public Coroutine movementRoutine;
     public Coroutine canTagRoutine;
 
-    public TagMiniGame minigame;
+    public TagMiniGameManager minigame;
    
     // Start is called before the first frame update
     void Start()
@@ -48,9 +48,9 @@ public class ChildrenTag : MonoBehaviour
 
         if(minigame == null)
         {
-            if(GameObject.FindObjectOfType<TagMiniGame>() != null)
+            if(GameObject.FindObjectOfType<TagMiniGameManager>() != null)
             {
-                minigame = GameObject.FindObjectOfType<TagMiniGame>().GetComponent<TagMiniGame>();
+                minigame = GameObject.FindObjectOfType<TagMiniGameManager>().GetComponent<TagMiniGameManager>();
             }
         }
 

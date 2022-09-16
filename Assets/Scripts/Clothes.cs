@@ -40,7 +40,7 @@ public class Clothes : MonoBehaviour
     [Range(0f, -1f)]
     public float SwipeDownAccept = -0.5f;
 
-    [Header("Arro")]
+    [Header("Arrow")]
     public GameObject leftArrow;
     public GameObject upArrow;
     public GameObject downArrow;
@@ -109,7 +109,7 @@ public class Clothes : MonoBehaviour
 
             Debug.Log("Fold up");
         }
-        if (mousePosition.normalized.y < SwipeUpAccept)
+        if (mousePosition.normalized.y < SwipeDownAccept)
         {
             if (leftFold == true && topFold == true && downFold == false)
             {

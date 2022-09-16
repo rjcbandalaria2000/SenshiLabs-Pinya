@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TagMiniGame : MinigameObject
+public class FoldMiniGame : MinigameObject
 {
     void Start()
     {
@@ -88,5 +88,4 @@ public class TagMiniGame : MinigameObject
             yield return null;
         }
     }
-
 }
