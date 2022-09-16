@@ -2470,7 +2470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c858e6d85326dd4bb8982217ae7ee67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameOfNextScene: MainGameScene1 1
+  NameOfNextScene: 'MainGameScene1 '
   manager: {fileID: 0}
   gameTimer: {fileID: 0}
   ClothesComponent: {fileID: 0}

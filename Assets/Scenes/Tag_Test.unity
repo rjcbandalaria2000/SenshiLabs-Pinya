@@ -965,7 +965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2068943c2152c0e4ebf0c7a2c9ab1323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameOfNextScene: MainGameScene1 1
+  NameOfNextScene: 'MainGameScene1 '
   player: {fileID: 9630443}
   manager: {fileID: 781254070}
   minigameTime: {fileID: 0}
