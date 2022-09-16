@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestScenes/WaterThePlants - TestScene.unity
     guid: d9288f12db01fa04d921b2fb0661d848
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/ImHungry - Test Scene.unity
+    guid: 01cc7888f57ab9f45819779c31d7cf8c
   m_configObjects: {}

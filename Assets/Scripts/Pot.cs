@@ -19,7 +19,7 @@ public class Pot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        TempChoices.SetActive( false);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
