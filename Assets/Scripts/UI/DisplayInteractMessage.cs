@@ -51,7 +51,6 @@ public class DisplayInteractMessage : MonoBehaviour
 
     public void OnSceneChange()
     {
-       
         Events.OnSceneChange.RemoveListener(OnSceneChange);
         Events.OnInteract.RemoveListener(ChangeMessage);
         Events.OnFinishInteract.RemoveListener(RemoveMessage);

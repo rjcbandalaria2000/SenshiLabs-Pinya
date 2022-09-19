@@ -13,9 +13,9 @@ public class FallingFood : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public virtual void OnCollided(GameObject unit = null)
     {
-        
+
     }
+    
 }
