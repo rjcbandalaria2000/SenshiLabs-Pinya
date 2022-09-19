@@ -24,7 +24,7 @@ public class SceneLoad : MonoBehaviour
     {
         LoadScene(FirstSceneId);
 
-        Player_Data playerData = SingletonManager.Get<Player_Data>();
+        PlayerData playerData = SingletonManager.Get<PlayerData>();
     }
 
     public float getLoadProgress()

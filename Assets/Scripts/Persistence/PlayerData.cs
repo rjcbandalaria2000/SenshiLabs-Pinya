@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Data : MonoBehaviour
+public class PlayerData : MonoBehaviour
 {
     public float    storedMotivationData;
     public float    storedPinyaData;

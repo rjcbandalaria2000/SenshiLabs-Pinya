@@ -46,11 +46,11 @@ public class Player : MonoBehaviour
     {
         if(motivationMeter == null) { return; }
         if(pinyaMeter == null) { return; }
-        SingletonManager.Get<Player_Data>().storedMotivationData = motivationMeter.MotivationAmount;
-        SingletonManager.Get<Player_Data>().storedPinyaData = pinyaMeter.PinyaValue;
-        if (!SingletonManager.Get<Player_Data>().HasSaved)
+        SingletonManager.Get<PlayerData>().storedMotivationData = motivationMeter.MotivationAmount;
+        SingletonManager.Get<PlayerData>().storedPinyaData = pinyaMeter.PinyaValue;
+        if (!SingletonManager.Get<PlayerData>().HasSaved)
         {
-            SingletonManager.Get<Player_Data>().HasSaved = true;
+            SingletonManager.Get<PlayerData>().HasSaved = true;
         }
         Events.OnSceneChange.RemoveListener(OnSceneChange);
     }
