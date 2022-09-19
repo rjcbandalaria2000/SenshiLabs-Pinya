@@ -6,22 +6,22 @@ public class ClickHidingChild : MonoBehaviour
 {
     [SerializeField] private GameObject child;
 
-    public HideSeekManager groceryMiniGame;
+    public HideSeekManager hideSeekManager;
 
     private void Start()
     {
         child = this.gameObject;    
-        groceryMiniGame = GameObject.FindObjectOfType<HideSeekManager>().GetComponent<HideSeekManager>();
+        hideSeekManager = GameObject.FindObjectOfType<HideSeekManager>().GetComponent<HideSeekManager>();
     }
 
     private void OnMouseDown()
     {
         Debug.Log("Child Found");
-        groceryMiniGame.score += 1;
-        groceryMiniGame.count -= 1;
+        hideSeekManager.score += 1;
+        hideSeekManager.count -= 1;
         child.SetActive(false); // or DeleteDestroy?
 
-        groceryMiniGame.CheckIfFinished();
+        hideSeekManager.CheckIfFinished();
 
     }
 }

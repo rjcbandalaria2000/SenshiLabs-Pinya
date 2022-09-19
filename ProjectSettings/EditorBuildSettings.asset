@@ -33,7 +33,7 @@ EditorBuildSettings:
     path: Assets/Scenes/TestScenes/WaterThePlants - TestScene.unity
     guid: d9288f12db01fa04d921b2fb0661d848
   - enabled: 1
-    path: Assets/Scenes/Tag_Test.unity
+    path: Assets/Scenes/Main Game/Tag_Test.unity
     guid: 88db5faa5fd95b244b4f1c330019ca4e
   - enabled: 1
     path: Assets/Scenes/Main Game/WashTheDishes - TestScene.unity
