@@ -12,11 +12,12 @@ public class DisplayFoodCatchCount : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(CatchCount == null)
-        {
-            CatchCount = this.GetComponent<TextMeshProUGUI>();
-        }
-        if(SleepingMinigameManager == null)
+        //if(CatchCount == null)
+        //{
+        //    CatchCount = this.GetComponent<TextMeshProUGUI>();
+        //}
+        CatchCount = this.GetComponent<TextMeshProUGUI>();
+        if (SleepingMinigameManager == null)
         {
             SleepingMinigameManager = SingletonManager.Get<SleepingMinigameManager>();
         }
@@ -33,7 +34,7 @@ public class DisplayFoodCatchCount : MonoBehaviour
 
     public void OnSceneChange()
     {
-        Events.OnObjectiveUpdate.RemoveListener(UpdateCatchCount);
+        Events.UpdateScore.RemoveListener(UpdateCatchCount);
         Events.OnSceneChange.RemoveListener(OnSceneChange);
     }
     
