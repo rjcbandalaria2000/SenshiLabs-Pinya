@@ -342,7 +342,7 @@ MonoBehaviour:
   MotivationCost: 20
   Interactable: {fileID: 325155188160618078}
   isInteracted: 0
-  MinigameScene: I'mHungry - Test Scene
+  MinigameScene: ImHungry - Test Scene
 --- !u!114 &-8228745111466853930
 MonoBehaviour:
   m_ObjectHideFlags: 0

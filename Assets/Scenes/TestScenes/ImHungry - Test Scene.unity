@@ -2335,7 +2335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7da968cb06348946aab44e71fe37e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameOfNextScene: MainGameScene1
+  NameOfNextScene: MainGameScene1 1
   SpawnManager: {fileID: 0}
   NumOfIngredients: 0
   IngredientsToSpawn: []

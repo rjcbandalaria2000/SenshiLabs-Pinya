@@ -38,7 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Game/WashTheDishes - TestScene.unity
     guid: 3859f246144b07f4290f4d356db640ae
-  - enabled: 0
-    path: Assets/Scenes/TestScenes/SleepingMinigame- TestScene.unity
-    guid: b28cd951dcd943944b74a73f3cf87c11
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/ImHungry - Test Scene.unity
+    guid: 01cc7888f57ab9f45819779c31d7cf8c
   m_configObjects: {}
