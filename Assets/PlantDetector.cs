@@ -37,4 +37,13 @@ public class PlantDetector : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        Plant collidedPlant = collision.gameObject.GetComponent<Plant>();
+        if (collidedPlant)
+        {
+            wateringCan.PlantToWater = collidedPlant.gameObject;
+        }
+    }
+
 }

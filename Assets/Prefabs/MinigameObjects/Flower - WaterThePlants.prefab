@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 4035600955571030605}
   - component: {fileID: 4035600955571030606}
   - component: {fileID: 4035600955571030607}
-  - component: {fileID: 4035600955571030604}
+  - component: {fileID: -4991398368355363817}
+  - component: {fileID: -5706834350741523079}
   m_Layer: 0
   m_Name: Flower - WaterThePlants
   m_TagString: Untagged
@@ -74,7 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b3d2454b55751409d921fff0e6dc60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4035600955571030604
+--- !u!114 &-4991398368355363817
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -83,12 +84,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 4035600955571030600}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 482ceab3e6730eb449b8a9245d11f248, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f8d56fff8268e5488aa1b5b1f12eaca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MotivationCost: 20
   Interactable: {fileID: 4035600955571030607}
   isInteracted: 0
-  MinigameScene: 
+  MinigameScene: WaterThePlants - TestScene
+--- !u!114 &-5706834350741523079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4035600955571030600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c181a4815ee67c49846764ff353adc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4035600956585092078
 GameObject:
   m_ObjectHideFlags: 0

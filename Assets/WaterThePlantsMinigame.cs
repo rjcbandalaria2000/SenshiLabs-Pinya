@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SleepingMinigame : MinigameObject
+public class WaterThePlantsMinigame : MinigameObject
 {
+
     // Start is called before the first frame update
     void Start()
     {
         Initialize();
     }
+
 
     public override void Initialize()
     {
@@ -27,13 +29,16 @@ public class SleepingMinigame : MinigameObject
         Debug.Log("Interacted");
         isInteracted = false;
         JumpToMiniGame();
-        //interactRoutine = StartCoroutine(InteractCoroutine(player));
     }
 
     public override void EndInteract(GameObject player = null)
     {
         base.EndInteract(player);
-        //StopCoroutine(interactRoutine);
+    }
+
+    public override IEnumerator InteractCoroutine(GameObject player = null)
+    {
+        return base.InteractCoroutine(player);
     }
 
     public override void JumpToMiniGame()
@@ -60,10 +65,4 @@ public class SleepingMinigame : MinigameObject
         }
     }
 
-    public override IEnumerator InteractCoroutine(GameObject player = null)
-    {
-        yield return null;
-    }
 }
-
-    
