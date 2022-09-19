@@ -39,6 +39,9 @@ public class GameManager : MonoBehaviour
     ////public TagMiniGameManager tagMiniGame;
     ////public FoldingMinigameManager foldMiniGame;
 
+    [Header("List of Task")]
+    public List<string> minigamesName;
+
     [Header("Pre-requisites")]
     public bool isGetWaterFinish;
     public bool isGroceryTaskFinish;
@@ -54,6 +57,9 @@ public class GameManager : MonoBehaviour
     }
     public void Start()
     {
+        isGetWaterFinish = false;
+        isGroceryTaskFinish = false;
+
         if(UI == null)
         {
             if(GameObject.FindObjectOfType<UIManager>() != null)

@@ -6609,11 +6609,9 @@ MonoBehaviour:
   maxTime: 0
   speedCounter: 0
   player: {fileID: 312946475}
-  cleanMiniGame: {fileID: 0}
-  groceryMiniGame: {fileID: 0}
-  hideseekMiniGame: {fileID: 0}
-  tagMiniGame: {fileID: 0}
-  foldMiniGame: {fileID: 0}
+  minigamesName: []
+  isGetWaterFinish: 0
+  isGroceryTaskFinish: 0
 --- !u!4 &1473840147
 Transform:
   m_ObjectHideFlags: 0
