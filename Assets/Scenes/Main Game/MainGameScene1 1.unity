@@ -1295,41 +1295,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -3605915370874163803, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6543178211513549874, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6543178211671691291, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6543178212204887005, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6543178212547229292, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6543178212570473722, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 6543178212848092689, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6543178212848092689, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6543178212848092718, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6543178212848092719, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
       propertyPath: m_RootOrder
@@ -1374,14 +1342,6 @@ PrefabInstance:
     - target: {fileID: 6543178212848092719, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6543178212961661115, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6543178213279610888, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
-      propertyPath: m_Layer
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}

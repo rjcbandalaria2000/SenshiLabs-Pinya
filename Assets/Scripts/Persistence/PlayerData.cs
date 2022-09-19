@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
+    [Header("Player")]
     public float    storedMotivationData;
     public float    storedPinyaData;
-
     public bool     HasSaved;
+
+    [Header("Minigames")]
+    public bool     IsCleanTheHouseFinished;
+    public bool     IsWashTheDishesFinished;
+    public bool     IsGroceryFinished;
+    public bool     IsWaterThePlantsFinished;
+    public bool     IsGetWaterFinished;
+    public bool     IsImHungryFinished;
 
     public void Awake()
     {
@@ -15,13 +23,13 @@ public class PlayerData : MonoBehaviour
     }
 
    
-    public void storeData(Player player)
+    public void StoreData(Player player)
     {
         storedMotivationData = player.motivationMeter.MotivationAmount;
         storedPinyaData = player.pinyaMeter.PinyaValue;
     }
 
-    public void getData(Player player)
+    public void GetData(Player player)
     {
         player.motivationMeter.MotivationAmount = storedMotivationData;
         player.pinyaMeter.PinyaValue = storedPinyaData;

@@ -46,8 +46,9 @@ public class Player : MonoBehaviour
     {
         if(motivationMeter == null) { return; }
         if(pinyaMeter == null) { return; }
-        SingletonManager.Get<PlayerData>().storedMotivationData = motivationMeter.MotivationAmount;
-        SingletonManager.Get<PlayerData>().storedPinyaData = pinyaMeter.PinyaValue;
+        SingletonManager.Get<PlayerData>().StoreData(this);
+        //SingletonManager.Get<PlayerData>().storedMotivationData = motivationMeter.MotivationAmount;
+        //SingletonManager.Get<PlayerData>().storedPinyaData = pinyaMeter.PinyaValue;
         if (!SingletonManager.Get<PlayerData>().HasSaved)
         {
             SingletonManager.Get<PlayerData>().HasSaved = true;
