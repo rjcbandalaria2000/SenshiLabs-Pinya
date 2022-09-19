@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestScenes/ImHungry - Test Scene.unity
     guid: 01cc7888f57ab9f45819779c31d7cf8c
+  - enabled: 1
+    path: Assets/Scenes/FoldLaundry_Test.unity
+    guid: 634ed478ee2516d42b2866ca4d62cad4
   m_configObjects: {}
