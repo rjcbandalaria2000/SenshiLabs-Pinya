@@ -965,7 +965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2068943c2152c0e4ebf0c7a2c9ab1323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameOfNextScene: 'MainGameScene1 '
+  NameOfNextScene: MainGameScene1 1
   player: {fileID: 9630443}
   manager: {fileID: 781254070}
   minigameTime: {fileID: 0}
@@ -1011,7 +1011,7 @@ MonoBehaviour:
   timerDisplay: {fileID: 0}
   miniGameTimerDisplay: {fileID: 0}
   motivationMeter: {fileID: 0}
-  "pi\xF1yaMeter": {fileID: 0}
+  pinyaMeter: {fileID: 0}
   dayEnd_UI: {fileID: 0}
   Loading_UI: {fileID: 1570241346}
   askMomButton: {fileID: 0}

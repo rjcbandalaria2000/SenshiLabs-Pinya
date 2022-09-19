@@ -2696,7 +2696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5794cf35c5da864c94b7b76de95540e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameOfNextScene: MainGameScene1
+  NameOfNextScene: MainGameScene1 1
   Plants:
   - {fileID: 475102912}
   - {fileID: 446830637}

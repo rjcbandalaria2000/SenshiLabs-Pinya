@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Game/MainMenu.unity
     guid: 5b68a9105e6b3fd4cbd5fced448b79e0
   - enabled: 1
-    path: Assets/Scenes/Main Game/Art_Lee-MainGameScene.unity
-    guid: 6a74d43d7515e744c98115b5b67930c6
+    path: Assets/Scenes/Main Game/MainGameScene1 1.unity
+    guid: 97238d283a07a3f43966798fcd99b4a5
   - enabled: 1
     path: Assets/Scenes/Main Game/CleanTheHouse - TestScene.unity
     guid: e28cd54e3afc23e4f84739ae003e0d4a
@@ -27,8 +27,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Game/GetWater- TestScene.unity
     guid: 1eab4fd68f765b245880815d6be2af2c
   - enabled: 1
-    path: Assets/Scenes/Main Game/MainGameScene1 1.unity
-    guid: 97238d283a07a3f43966798fcd99b4a5
+    path: Assets/Scenes/Main Game/SleepingMinigame- TestScene.unity
+    guid: 8d0c3d64dec654d4f9a505b7ffb38d3d
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/WaterThePlants - TestScene.unity
+    guid: d9288f12db01fa04d921b2fb0661d848
+  - enabled: 1
+    path: Assets/Scenes/Tag_Test.unity
+    guid: 88db5faa5fd95b244b4f1c330019ca4e
+  - enabled: 1
+    path: Assets/Scenes/Main Game/WashTheDishes - TestScene.unity
+    guid: 3859f246144b07f4290f4d356db640ae
   - enabled: 0
     path: Assets/Scenes/TestScenes/SleepingMinigame- TestScene.unity
     guid: b28cd951dcd943944b74a73f3cf87c11
