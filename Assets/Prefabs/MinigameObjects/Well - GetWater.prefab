@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6427477042207794531}
   - component: {fileID: 6247782729824067086}
   m_Layer: 0
-  m_Name: Minigame_WateringWell
+  m_Name: Well - GetWater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
