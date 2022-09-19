@@ -7,9 +7,11 @@ public class PlayerData : MonoBehaviour
     [Header("Player")]
     public float    storedMotivationData;
     public float    storedPinyaData;
+    public int      MinigamesPlayed;
     public bool     HasSaved;
 
     [Header("Minigames")]
+    public MinigameObject ActivatedMinigame; 
     public bool     IsCleanTheHouseFinished;
     public bool     IsWashTheDishesFinished;
     public bool     IsGroceryFinished;

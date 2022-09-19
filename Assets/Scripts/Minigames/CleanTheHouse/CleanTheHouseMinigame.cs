@@ -26,6 +26,7 @@ public class CleanTheHouseMinigame : MinigameObject
 
     public override void Interact(GameObject player = null)
     {
+
         Debug.Log("Interact with" + this.gameObject.name);
         MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
         if (playerMotivation)
@@ -51,6 +52,8 @@ public class CleanTheHouseMinigame : MinigameObject
         {
             if(MinigameScene != null)
             {
+                SingletonManager.Get<PlayerData>().ActivatedMinigame = this;
+                SingletonManager.Get<PlayerData>().MinigamesPlayed++;
                 //Remove all listeners because when the scene changes it will destroy the scene but will try to access the old active scripts
                 Events.OnSceneChange.Invoke();
                 Events.OnInteract.RemoveListener(Interact);

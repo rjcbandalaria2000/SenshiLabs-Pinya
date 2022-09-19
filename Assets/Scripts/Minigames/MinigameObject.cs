@@ -7,9 +7,10 @@ public class MinigameObject : MonoBehaviour
 {
     [Header("Setup Values")]
     public int              MotivationCost;
-
+    
     public Interactable     Interactable;
     public bool             isInteracted;
+    public bool             HasCompleted;
     public string           MinigameScene;
 
     protected SceneChange   sceneChange;

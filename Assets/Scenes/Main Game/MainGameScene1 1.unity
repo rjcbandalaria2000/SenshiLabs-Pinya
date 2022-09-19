@@ -6230,6 +6230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1473840147}
   - component: {fileID: 1473840146}
+  - component: {fileID: 1473840148}
   m_Layer: 0
   m_Name: ~GameManager
   m_TagString: Untagged
@@ -6287,6 +6288,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1473840148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473840145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64dbf9f038b429e48af7a8a90e7edce3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0
+  endTime: 0
+  timePeriod: 0
+  isMorning: 0
 --- !u!4 &1481284178 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1278223492080597532, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
