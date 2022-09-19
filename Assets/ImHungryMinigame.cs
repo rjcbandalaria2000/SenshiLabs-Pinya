@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CleanTheHouseMinigame : MinigameObject
+public class ImHungryMinigame : MinigameObject
 {
     // Start is called before the first frame update
     void Start()
@@ -49,7 +49,7 @@ public class CleanTheHouseMinigame : MinigameObject
     {
         if (sceneChange)
         {
-            if(MinigameScene != null)
+            if (MinigameScene != null)
             {
                 //Remove all listeners because when the scene changes it will destroy the scene but will try to access the old active scripts
                 Events.OnSceneChange.Invoke();
