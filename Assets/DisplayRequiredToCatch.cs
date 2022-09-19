@@ -19,7 +19,8 @@ public class DisplayRequiredToCatch : MonoBehaviour
         {
             SleepingMinigameManager = SingletonManager.Get<SleepingMinigameManager>();
         }
-        Events.OnObjectiveUpdate.AddListener(UpdateCatchCount);
+        UpdateCatchCount();
+      //  Events.OnObjectiveUpdate.AddListener(UpdateCatchCount);
         Events.OnSceneChange.AddListener(OnSceneChange);
     }
 
@@ -32,7 +33,8 @@ public class DisplayRequiredToCatch : MonoBehaviour
 
     public void OnSceneChange()
     {
-        Events.OnObjectiveUpdate.RemoveListener(UpdateCatchCount);
+      //  Events.OnObjectiveUpdate.RemoveListener(UpdateCatchCount);
+        Events.UpdateScore.RemoveListener(UpdateCatchCount);
         Events.OnSceneChange.RemoveListener(OnSceneChange);
     }
 }

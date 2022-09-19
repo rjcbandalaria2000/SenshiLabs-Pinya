@@ -15,7 +15,7 @@ public class FallingSafeFood : FallingFood
        
         SingletonManager.Get<SleepingMinigameManager>().PlayerPoints++;
         Debug.Log("Add points");
-        Events.OnObjectiveUpdate.Invoke();
+        Events.UpdateScore.Invoke();
         SingletonManager.Get<SleepingMinigameManager>().CheckIfFinished();
     }
 

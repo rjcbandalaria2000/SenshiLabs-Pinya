@@ -20,7 +20,7 @@ public class DisplayFoodCatchCount : MonoBehaviour
         {
             SleepingMinigameManager = SingletonManager.Get<SleepingMinigameManager>();
         }
-        Events.OnObjectiveUpdate.AddListener(UpdateCatchCount);
+        Events.UpdateScore.AddListener(UpdateCatchCount);
         Events.OnSceneChange.AddListener(OnSceneChange);
     }
 

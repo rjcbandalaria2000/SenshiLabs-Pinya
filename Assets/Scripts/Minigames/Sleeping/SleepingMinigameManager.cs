@@ -21,7 +21,16 @@ public class SleepingMinigameManager : MinigameManager
         spawnManager = SingletonManager.Get<SpawnManager>();
         spawnManager.StartUnlimitedTimedSpawnBoxSpawn();
         sceneChange = this.GetComponent<SceneChange>();
-        Events.OnObjectiveUpdate.Invoke();
+      //  Events.OnObjectiveUpdate.Invoke();
+        Events.UpdateScore.Invoke();
+    }
+
+    private void Update()
+    {
+        if(SingletonManager.Get<MiniGameTimer>().getTimer() <= 0)
+        {
+            CheckIfFinished();
+        }
     }
 
     public override void Initialize()
@@ -42,6 +51,18 @@ public class SleepingMinigameManager : MinigameManager
             Events.OnSceneChange.Invoke();
             sceneChange.OnChangeScene(NameOfNextScene);
 
+        }
+        else if(PlayerPoints <= RequiredPoints && SingletonManager.Get<MiniGameTimer>().getTimer() <= 0)
+        {
+            spawnManager.StopTimedUnlimitedSpawnBox();
+            Debug.Log("Minigame Fail");
+            SingletonManager.Remove<SleepingMinigameManager>();
+            SingletonManager.Remove<SpawnManager>();
+            if (sceneChange == null) { return; }
+            if (NameOfNextScene == null) { return; }
+            Events.OnSceneChange.Invoke();
+            sceneChange.OnChangeScene(NameOfNextScene);
+           
         }
     }
 
