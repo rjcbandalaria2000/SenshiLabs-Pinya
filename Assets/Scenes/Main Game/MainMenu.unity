@@ -155,9 +155,10 @@ MonoBehaviour:
   timerDisplay: {fileID: 0}
   miniGameTimerDisplay: {fileID: 0}
   motivationMeter: {fileID: 0}
-  "pi\xF1yaMeter": {fileID: 0}
+  pinyaMeter: {fileID: 0}
   dayEnd_UI: {fileID: 0}
   Loading_UI: {fileID: 5807545458361907183}
+  askMomButton: {fileID: 0}
 --- !u!4 &141807142
 Transform:
   m_ObjectHideFlags: 0
@@ -266,7 +267,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Main Game Scene
+          m_StringArgument: MainGameScene1 1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &452421530
