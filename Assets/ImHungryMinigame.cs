@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ImHungryMinigame : MinigameObject
 {
-    // Start is called before the first frame update
     void Start()
     {
         Initialize();
@@ -13,20 +12,12 @@ public class ImHungryMinigame : MinigameObject
     public override void Initialize()
     {
         Interactable = this.GetComponent<Interactable>();
-
-        if (Interactable)
-        {
-            //Listen to the interactable event and proceed to interact with the player
-            //Events.OnInteract.AddListener(Interact);
-            //Events.OnFinishInteract.AddListener(EndInteract);
-
-        }
-        sceneChange = this.gameObject.GetComponent<SceneChange>();
+        sceneChange = this.GetComponent<SceneChange>();
     }
 
     public override void Interact(GameObject player = null)
     {
-        Debug.Log("Interact with" + this.gameObject.name);
+        isInteracted = true;
         MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
         if (playerMotivation)
         {
@@ -35,7 +26,6 @@ public class ImHungryMinigame : MinigameObject
         Debug.Log("Interacted");
         isInteracted = false;
         JumpToMiniGame();
-        //isInteracted = true;
         //interactRoutine = StartCoroutine(InteractCoroutine(player));
     }
 
@@ -71,7 +61,7 @@ public class ImHungryMinigame : MinigameObject
 
     public override IEnumerator InteractCoroutine(GameObject player = null)
     {
-       yield return null;
+        yield return null;
     }
 
 }

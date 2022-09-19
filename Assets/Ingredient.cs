@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Toy : MonoBehaviour
+public class Ingredient : MonoBehaviour
 {
     public bool IsHolding;
     public bool IsHoveredOver;
@@ -44,5 +44,7 @@ public class Toy : MonoBehaviour
     {
         IsHolding = false;
     }
+
+
 
 }
