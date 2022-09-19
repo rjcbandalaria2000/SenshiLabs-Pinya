@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2623126533286589079}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.4, y: 3.54, z: 0}
-  m_LocalScale: {x: 0.13379, y: 0.13379, z: 0.13379}
+  m_LocalScale: {x: 0.4081398, y: 0.4081398, z: 0.4081398}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2623126534661094280}
@@ -87,6 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 993ba797735f54c4ba027681c1a5bc7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MotivationCost: 0
   Interactable: {fileID: 2623126533286589072}
   isInteracted: 0
   MinigameScene: GetWater- TestScene
@@ -231,8 +232,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2623126534661094287}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.256985, y: 1.5744358, z: 0.7540402}
+  m_LocalPosition: {x: -0.86, y: 3.41, z: 0}
+  m_LocalScale: {x: 0.8121406, y: 1.0172462, z: 0.48718697}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2623126533286589074}
@@ -279,12 +280,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 8
-  m_Sprite: {fileID: 21300000, guid: 748868e029b7e594fac6f4cc8f6a7133, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5813b0479d2b6e84ea3115bf65b7aff4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 20.48, y: 20.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

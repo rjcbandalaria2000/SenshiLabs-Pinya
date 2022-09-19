@@ -2622,18 +2622,6 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2623126533286589074, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.4081398
-      objectReference: {fileID: 0}
-    - target: {fileID: 2623126533286589074, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.4081398
-      objectReference: {fileID: 0}
-    - target: {fileID: 2623126533286589074, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.4081398
-      objectReference: {fileID: 0}
-    - target: {fileID: 2623126533286589074, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.7
       objectReference: {fileID: 0}
@@ -2677,38 +2665,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Minigame_WateringWell
       objectReference: {fileID: 0}
-    - target: {fileID: 2623126534661094280, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.8121406
-      objectReference: {fileID: 0}
-    - target: {fileID: 2623126534661094280, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.0172462
-      objectReference: {fileID: 0}
-    - target: {fileID: 2623126534661094280, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.48718697
-      objectReference: {fileID: 0}
-    - target: {fileID: 2623126534661094280, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.86
-      objectReference: {fileID: 0}
-    - target: {fileID: 2623126534661094280, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 2623126534661094281, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
-      propertyPath: m_Size.x
-      value: 20.48
-      objectReference: {fileID: 0}
-    - target: {fileID: 2623126534661094281, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
-      propertyPath: m_Size.y
-      value: 20.48
-      objectReference: {fileID: 0}
-    - target: {fileID: 2623126534661094281, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 5813b0479d2b6e84ea3115bf65b7aff4, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
 --- !u!1 &1124742572
@@ -5060,6 +5016,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 475ae4fca14c844448077912c08fbdd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMotivation: {fileID: 0}
+  playerPinyaMeter: {fileID: 0}
+  MotivationValueChange: 0
+  PinyaMeterValueChange: 0
+  highlightObj: []
+  cooldown: 0
   timer: 0
   endTime: 0
   currentTime: 0
@@ -5069,6 +5031,8 @@ MonoBehaviour:
   cleanMiniGame: {fileID: 0}
   groceryMiniGame: {fileID: 0}
   hideseekMiniGame: {fileID: 0}
+  tagMiniGame: {fileID: 0}
+  foldMiniGame: {fileID: 0}
 --- !u!4 &1473840147
 Transform:
   m_ObjectHideFlags: 0
@@ -5435,9 +5399,10 @@ MonoBehaviour:
   timerDisplay: {fileID: 0}
   miniGameTimerDisplay: {fileID: 0}
   motivationMeter: {fileID: 0}
-  "pi\xF1yaMeter": {fileID: 0}
+  pinyaMeter: {fileID: 0}
   dayEnd_UI: {fileID: 0}
   Loading_UI: {fileID: 1756032841}
+  askMomButton: {fileID: 0}
 --- !u!4 &1787921855
 Transform:
   m_ObjectHideFlags: 0

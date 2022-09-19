@@ -538,7 +538,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.36}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -549,7 +549,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 9.16, y: 6.47}
+  m_Size: {x: 2.25, y: 0.99}
   m_EdgeRadius: 0
 --- !u!114 &186787595
 MonoBehaviour:
@@ -3821,8 +3821,8 @@ MonoBehaviour:
   - {fileID: 1976410423}
   - {fileID: 431337139}
   - {fileID: 299167220}
-  RandomSpawnLocation: []
   BoxSpawnPoint: {fileID: 0}
+  SpawnedObjects: []
 --- !u!4 &877029799
 Transform:
   m_ObjectHideFlags: 0
@@ -4590,7 +4590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f1bded6d13d9e947be8e6efdce47352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NameOfNextScene: MainGameScene1
+  NameOfNextScene: MainGameScene1 1
   NumberOfToys: 5
   NumberOfDust: 5
   isCompleted: 0
@@ -4638,9 +4638,10 @@ MonoBehaviour:
   timerDisplay: {fileID: 0}
   miniGameTimerDisplay: {fileID: 877748018}
   motivationMeter: {fileID: 0}
-  "pi\xF1yaMeter": {fileID: 0}
+  pinyaMeter: {fileID: 0}
   dayEnd_UI: {fileID: 0}
   Loading_UI: {fileID: 120098681}
+  askMomButton: {fileID: 0}
 --- !u!114 &1036058652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4653,6 +4654,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 475ae4fca14c844448077912c08fbdd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMotivation: {fileID: 0}
+  playerPinyaMeter: {fileID: 0}
+  MotivationValueChange: 0
+  PinyaMeterValueChange: 0
+  highlightObj: []
+  cooldown: 0
   timer: 0
   endTime: 0
   currentTime: 0
@@ -4662,6 +4669,8 @@ MonoBehaviour:
   cleanMiniGame: {fileID: 0}
   groceryMiniGame: {fileID: 0}
   hideseekMiniGame: {fileID: 0}
+  tagMiniGame: {fileID: 0}
+  foldMiniGame: {fileID: 0}
 --- !u!114 &1036058653
 MonoBehaviour:
   m_ObjectHideFlags: 0
