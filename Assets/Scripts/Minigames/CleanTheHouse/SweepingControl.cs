@@ -16,7 +16,7 @@ public class SweepingControl : MonoBehaviour
     {
         Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         
-        Debug.Log("X coordinate: " + mousePosition.normalized.x);
+      //  Debug.Log("X coordinate: " + mousePosition.normalized.x);
 
     }
 

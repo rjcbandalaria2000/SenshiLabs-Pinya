@@ -12,7 +12,10 @@ public class FallingSafeFood : FallingFood
 
     public override void OnCollided(GameObject unit = null)
     {
+       
         SingletonManager.Get<SleepingMinigameManager>().PlayerPoints++;
+        Debug.Log("Add points");
+        Events.OnObjectiveUpdate.Invoke();
         SingletonManager.Get<SleepingMinigameManager>().CheckIfFinished();
     }
 
