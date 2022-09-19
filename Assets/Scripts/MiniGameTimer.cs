@@ -76,20 +76,20 @@ public class MiniGameTimer : MonoBehaviour
 
         if( timer <= 0)
         {
-            if (gameManager.cleanMiniGame != null)
+            if (gameManager.miniGames != null)
             {
-                gameManager.cleanMiniGame.OnMinigameLose();
+                gameManager.miniGames.OnMinigameLose();
             }
 
-            if (gameManager.groceryMiniGame != null)
-            {
-                gameManager.groceryMiniGame.OnMinigameLose();
-            }
+            //if (gameManager.groceryMiniGame != null)
+            //{
+            //    gameManager.groceryMiniGame.OnMinigameLose();
+            //}
 
-            if (gameManager.hideseekMiniGame != null)
-            {
-                gameManager.hideseekMiniGame.OnMinigameLose();
-            }
+            //if (gameManager.hideseekMiniGame != null)
+            //{
+            //    gameManager.hideseekMiniGame.OnMinigameLose();
+            //}
 
            
         }// Lose Condition
