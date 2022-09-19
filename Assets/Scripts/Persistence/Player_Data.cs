@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Player_Data : MonoBehaviour
 {
-    public float storedMotivationData;
-    public float storedPinyaData;
+    public float    storedMotivationData;
+    public float    storedPinyaData;
+
+    public bool     HasSaved;
 
     public void Awake()
     {
