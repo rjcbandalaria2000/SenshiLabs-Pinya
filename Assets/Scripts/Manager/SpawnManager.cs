@@ -159,4 +159,21 @@ public class SpawnManager : MonoBehaviour
         
         }
     }
+
+    public void SpawnRandomObjectsInStaticPositions()
+    {
+        if (ObjectToSpawn.Count <= 0) { return; }
+        if (NumToSpawn.Count <= 0) { return; }
+        for (int i = 0; i < ObjectToSpawn.Count; i++)
+        {
+            for (int j = 0; j < NumToSpawn[i]; j++)
+            {
+                int randomObjectIndex = Random.Range(0, ObjectToSpawn.Count);
+                GameObject spawnedObject = Instantiate(ObjectToSpawn[randomObjectIndex],
+                    SpawnPoints[i].transform.position, Quaternion.identity);
+                SpawnedObjects.Add(spawnedObject);
+            }
+
+        }
+    }
 }

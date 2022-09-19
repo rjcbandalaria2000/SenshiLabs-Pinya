@@ -9,6 +9,16 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        if(motivationMeter == null)
+        {
+            motivationMeter = this.GetComponent<MotivationMeter>();
+        }
+        if(pinyaMeter == null)
+        {
+            pinyaMeter = this.GetComponent<PinyaMeter>();
+        }
+        
+        Events.OnSceneChange.AddListener(OnSceneChange);
         //Events.OnSceneChange.AddListener(SavePlayer);
         //SavePlayer();
         //LoadPlayer();
@@ -30,6 +40,20 @@ public class Player : MonoBehaviour
 
         SingletonManager.Get<DisplayMotivationalBar>().UpdateMotivationBar();
         SingletonManager.Get<DisplayPinyaMeter>().UpdatePinyaBar();
+    }
+
+    public void OnSceneChange()
+    {
+        if(motivationMeter == null) { return; }
+        if(pinyaMeter == null) { return; }
+        SingletonManager.Get<PlayerData>().StoreData(this);
+        //SingletonManager.Get<PlayerData>().storedMotivationData = motivationMeter.MotivationAmount;
+        //SingletonManager.Get<PlayerData>().storedPinyaData = pinyaMeter.PinyaValue;
+        if (!SingletonManager.Get<PlayerData>().HasSaved)
+        {
+            SingletonManager.Get<PlayerData>().HasSaved = true;
+        }
+        Events.OnSceneChange.RemoveListener(OnSceneChange);
     }
 
     //public void RemoveListeners()

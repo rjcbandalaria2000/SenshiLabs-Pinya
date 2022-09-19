@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CleanTheHouseMinigame : MinigameObject
+public class ImHungryMinigame : MinigameObject
 {
-    // Start is called before the first frame update
     void Start()
     {
         Initialize();
@@ -13,20 +12,12 @@ public class CleanTheHouseMinigame : MinigameObject
     public override void Initialize()
     {
         Interactable = this.GetComponent<Interactable>();
-
-        if (Interactable)
-        {
-            //Listen to the interactable event and proceed to interact with the player
-            //Events.OnInteract.AddListener(Interact);
-            //Events.OnFinishInteract.AddListener(EndInteract);
-
-        }
-        sceneChange = this.gameObject.GetComponent<SceneChange>();
+        sceneChange = this.GetComponent<SceneChange>();
     }
 
     public override void Interact(GameObject player = null)
     {
-        Debug.Log("Interact with" + this.gameObject.name);
+        isInteracted = true;
         MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
         if (playerMotivation)
         {
@@ -35,7 +26,6 @@ public class CleanTheHouseMinigame : MinigameObject
         Debug.Log("Interacted");
         isInteracted = false;
         JumpToMiniGame();
-        //isInteracted = true;
         //interactRoutine = StartCoroutine(InteractCoroutine(player));
     }
 
@@ -49,7 +39,7 @@ public class CleanTheHouseMinigame : MinigameObject
     {
         if (sceneChange)
         {
-            if(MinigameScene != null)
+            if (MinigameScene != null)
             {
                 //Remove all listeners because when the scene changes it will destroy the scene but will try to access the old active scripts
                 Events.OnSceneChange.Invoke();
@@ -71,7 +61,7 @@ public class CleanTheHouseMinigame : MinigameObject
 
     public override IEnumerator InteractCoroutine(GameObject player = null)
     {
-       yield return null;
+        yield return null;
     }
 
 }

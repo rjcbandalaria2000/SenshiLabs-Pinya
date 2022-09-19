@@ -85,6 +85,7 @@ public class WateringCan : MonoBehaviour
        
         while (IsWatering)
         { 
+            if(PlantToWater == null) { yield break; }
             plantTarget = PlantToWater.GetComponent<Plant>();
             if (plantTarget == null){ yield break; }
             yield return new WaitForSeconds(1 / WaterSpeed);
