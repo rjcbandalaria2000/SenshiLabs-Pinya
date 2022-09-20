@@ -43,15 +43,15 @@ public class DayCycle : MonoBehaviour
 
     public void ChangeTimePeriod()
     {
-        if(SingletonManager.Get<PlayerData>().MinigamesPlayed <= 0)
+        if(SingletonManager.Get<PlayerData>().MinigamesPlayed <= 4)
         {
             timePeriod = TimePeriod.Morning;
         }
-        if (SingletonManager.Get<PlayerData>().MinigamesPlayed >= 3)
+        if (SingletonManager.Get<PlayerData>().MinigamesPlayed >= 5)
         {
             timePeriod = TimePeriod.Afternoon;
         }
-        if(SingletonManager.Get<PlayerData>().MinigamesPlayed >= 6)
+        if(SingletonManager.Get<PlayerData>().MinigamesPlayed >= 8)
         {
             timePeriod = TimePeriod.Evening;
         }

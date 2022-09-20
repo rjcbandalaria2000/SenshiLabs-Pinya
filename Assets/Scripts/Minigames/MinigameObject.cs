@@ -14,6 +14,7 @@ public class MinigameObject : MonoBehaviour
     public string           MinigameScene;
 
     protected SceneChange   sceneChange;
+    protected PlayerData    playerData;
     //protected Coroutine     interactRoutine;
     private void Awake()
     {

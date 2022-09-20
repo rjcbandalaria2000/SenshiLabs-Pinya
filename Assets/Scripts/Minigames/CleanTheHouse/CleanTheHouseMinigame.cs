@@ -13,14 +13,7 @@ public class CleanTheHouseMinigame : MinigameObject
     public override void Initialize()
     {
         Interactable = this.GetComponent<Interactable>();
-
-        if (Interactable)
-        {
-            //Listen to the interactable event and proceed to interact with the player
-            //Events.OnInteract.AddListener(Interact);
-            //Events.OnFinishInteract.AddListener(EndInteract);
-
-        }
+        HasCompleted = SingletonManager.Get<PlayerData>().IsCleanTheHouseFinished;
         sceneChange = this.gameObject.GetComponent<SceneChange>();
     }
 
@@ -52,7 +45,6 @@ public class CleanTheHouseMinigame : MinigameObject
         {
             if(MinigameScene != null)
             {
-                SingletonManager.Get<PlayerData>().ActivatedMinigame = this;
                 SingletonManager.Get<PlayerData>().MinigamesPlayed++;
                 //Remove all listeners because when the scene changes it will destroy the scene but will try to access the old active scripts
                 Events.OnSceneChange.Invoke();
