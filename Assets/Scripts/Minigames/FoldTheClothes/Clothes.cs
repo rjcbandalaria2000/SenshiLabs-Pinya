@@ -59,6 +59,8 @@ public class Clothes : MonoBehaviour
             }
         }
 
+        this.GetComponent<SpriteRenderer>().sprite = stateSprites[0];
+
         leftArrow.SetActive(true);
         upArrow.SetActive(false);
         downArrow.SetActive(false);
@@ -89,6 +91,8 @@ public class Clothes : MonoBehaviour
             {
                 leftFold = true;
 
+                this.GetComponent<SpriteRenderer>().sprite = stateSprites[1];
+
                 leftArrow.SetActive(false);
                 upArrow.SetActive(true);
             }
@@ -101,6 +105,8 @@ public class Clothes : MonoBehaviour
             if(leftFold == true && topFold == false && downFold == false)
             {
                 topFold = true;
+
+                this.GetComponent<SpriteRenderer>().sprite = stateSprites[2];
 
                 upArrow.SetActive(false);
                 downArrow.SetActive(true);
@@ -178,6 +184,8 @@ public class Clothes : MonoBehaviour
         leftArrow.SetActive(true);
         upArrow.SetActive(false);
         downArrow.SetActive(false);
+
+        this.GetComponent<SpriteRenderer>().sprite = stateSprites[0];
 
         leftFold = false;
         topFold = false;

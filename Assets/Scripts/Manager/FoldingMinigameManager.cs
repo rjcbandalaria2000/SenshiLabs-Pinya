@@ -5,16 +5,19 @@ using UnityEngine.Assertions;
 
 public class FoldingMinigameManager : MinigameManager
 {
-    public GameManager manager;
-    public MiniGameTimer gameTimer;
+
     public Clothes ClothesComponent;
-    
+
+    private void Awake()
+    {
+        SingletonManager.Register(this);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         sceneChange = this.GetComponent<SceneChange>();
-        manager = this.GetComponent<GameManager>();
-        gameTimer = this.GetComponent<MiniGameTimer>(); 
+     
 
         if (ClothesComponent == null)
         {
@@ -28,7 +31,7 @@ public class FoldingMinigameManager : MinigameManager
     // Update is called once per frame
     void Update()
     {
-        if(gameTimer.getTimer() <= 0)
+        if(SingletonManager.Get<MiniGameTimer>().getTimer() <= 0)
         {
             CheckIfFinished();
         }

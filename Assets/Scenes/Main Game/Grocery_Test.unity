@@ -2180,7 +2180,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 844703404}
-  - component: {fileID: 844703403}
   - component: {fileID: 844703405}
   - component: {fileID: 844703406}
   - component: {fileID: 844703407}
@@ -2192,35 +2191,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &844703403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 844703402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 475ae4fca14c844448077912c08fbdd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerMotivation: {fileID: 0}
-  playerPinyaMeter: {fileID: 0}
-  MotivationValueChange: 0
-  PinyaMeterValueChange: 0
-  highlightObj: []
-  cooldown: 0
-  timer: 0
-  endTime: 0
-  currentTime: 0
-  maxTime: 20
-  speedCounter: 1
-  player: {fileID: 0}
-  cleanMiniGame: {fileID: 0}
-  groceryMiniGame: {fileID: 0}
-  hideseekMiniGame: {fileID: 0}
-  tagMiniGame: {fileID: 0}
-  foldMiniGame: {fileID: 0}
 --- !u!4 &844703404
 Transform:
   m_ObjectHideFlags: 0
@@ -2249,6 +2219,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NameOfNextScene: MainGameScene1 1
+  timer: 0
+  maxTimer: 20
+  speedTimer: 1
   groceryItems:
   - {fileID: 5937934297813480278, guid: 0899e0fa28b10674fbc62867b8278a3c, type: 3}
   - {fileID: 7606113058235698425, guid: a76407bcf4a86ff4288f98d64446c843, type: 3}

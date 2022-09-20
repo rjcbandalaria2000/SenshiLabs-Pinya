@@ -8,6 +8,12 @@ public class MinigameManager : MonoBehaviour
     [Header("Scene Change")]
     public string           NameOfNextScene;
 
+    [Header("Timers")]
+    public float timer;
+    public float maxTimer;
+
+    public float speedTimer;
+
     protected SceneChange   sceneChange;
     // Start is called before the first frame update
     void Start()

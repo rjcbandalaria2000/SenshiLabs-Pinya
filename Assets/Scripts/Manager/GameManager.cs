@@ -30,12 +30,19 @@ public class GameManager : MonoBehaviour
 
     public Player player;
 
-    [Header("MiniGame Manager")]    
-    public CleanTheHouseManager cleanMiniGame; //Change Public MiniGame;
-    public GroceryManager groceryMiniGame;
-    public HideSeekManager hideseekMiniGame;
-    public TagMiniGameManager tagMiniGame;
-    public FoldingMinigameManager foldMiniGame; 
+    //[Header("MiniGame Manager")]    
+    //public MinigameManager miniGames;
+
+    ////public CleanTheHouseManager cleanMiniGame; //Change Public MiniGame;
+    ////public GroceryManager groceryMiniGame;
+    ////public HideSeekManager hideseekMiniGame;
+    ////public TagMiniGameManager tagMiniGame;
+    ////public FoldingMinigameManager foldMiniGame;
+
+    [Header("Pre-requisites")]
+    public bool isGetWaterFinish;
+    public bool isGroceryTaskFinish;
+
 
     private void Awake()
     {
@@ -58,9 +65,19 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Null UI");
         }
+
+        if (player == null)
+        {
+            if (GameObject.FindObjectOfType<Player>() != null)
+            {
+                player = GameObject.FindObjectOfType<Player>().GetComponent<Player>();
+            }
+
+        }
+
         
 
-        if(highlightObj.Count > 0)
+        if (highlightObj.Count > 0)
         {
             for(int i = 0; i < highlightObj.Count; i++)
             {
@@ -68,49 +85,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if(player == null)
-        {
-            if(GameObject.FindObjectOfType<Player>() != null)
-            {
-                player = GameObject.FindObjectOfType<Player>().GetComponent<Player>();
-            }
-            
-        }
-        if(cleanMiniGame == null)
-        {
-            if(GameObject.FindObjectOfType<CleanTheHouseManager>() != null)
-            {
-                cleanMiniGame = GameObject.FindObjectOfType<CleanTheHouseManager>().GetComponent<CleanTheHouseManager>();
-            }
-        }
-        if(groceryMiniGame == null)
-        {
-            if(GameObject.FindObjectOfType<GroceryManager>() != null)
-            {
-                groceryMiniGame = GameObject.FindObjectOfType<GroceryManager>().GetComponent<GroceryManager>();
-            }
-        }
-        if (hideseekMiniGame == null)
-        {
-            if (GameObject.FindObjectOfType<HideSeekManager>() != null)
-            {
-                hideseekMiniGame = GameObject.FindObjectOfType<HideSeekManager>().GetComponent<HideSeekManager>();
-            }
-        }
-        if(tagMiniGame == null)
-        {
-            if(GameObject.FindObjectOfType<TagMiniGameManager>() != null)
-            {
-                tagMiniGame = GameObject.FindObjectOfType<TagMiniGameManager>().GetComponent<TagMiniGameManager>();
-            }
-        }
-       if(foldMiniGame == null)
-        {
-            if (GameObject.FindObjectOfType<FoldingMinigameManager>() != null)
-            {
-                foldMiniGame = GameObject.FindObjectOfType<FoldingMinigameManager>().GetComponent<FoldingMinigameManager>();
-            }
-        }
+        
      
         StartCoroutine(dayStart());
     }
@@ -197,7 +172,38 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //public void initializeMiniGameManager()
+    //{
+       
+    //    if (miniGames == null)
+    //    {
+    //        if (GameObject.FindObjectOfType<CleanTheHouseManager>() != null)
+    //        {
+    //            miniGames = GameObject.FindObjectOfType<CleanTheHouseManager>().GetComponent<CleanTheHouseManager>();
+    //        }
 
+    //        if (GameObject.FindObjectOfType<GroceryManager>() != null)
+    //        {
+    //            miniGames = GameObject.FindObjectOfType<GroceryManager>().GetComponent<GroceryManager>();
+    //        }
+
+    //        if (GameObject.FindObjectOfType<HideSeekManager>() != null)
+    //        {
+    //            miniGames = GameObject.FindObjectOfType<HideSeekManager>().GetComponent<HideSeekManager>();
+    //        }
+
+    //        if (GameObject.FindObjectOfType<TagMiniGameManager>() != null)
+    //        {
+    //            miniGames = GameObject.FindObjectOfType<TagMiniGameManager>().GetComponent<TagMiniGameManager>();
+    //        }
+
+    //        if (GameObject.FindObjectOfType<FoldingMinigameManager>() != null)
+    //        {
+    //            miniGames = GameObject.FindObjectOfType<FoldingMinigameManager>().GetComponent<FoldingMinigameManager>();
+    //        }
+    //    }
+       
+    //}
 
    
 

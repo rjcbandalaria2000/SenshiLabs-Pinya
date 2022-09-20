@@ -2476,7 +2476,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foldManager: {fileID: 0}
-  stateSprites: []
+  stateSprites:
+  - {fileID: -3953354522511725703, guid: e5cb90dfd104f46489540f8e81dd84a5, type: 3}
+  - {fileID: -4441996566371481695, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
+  - {fileID: 781372478320572571, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
+  - {fileID: -9146250182408159570, guid: e5cb90dfd104f46489540f8e81dd84a5, type: 3}
   clothes: 3
   leftFold: 0
   topFold: 0
@@ -2533,7 +2537,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 322e6af890b18e04bb61fe12c776de2b, type: 3}
+  m_Sprite: {fileID: -3953354522511725703, guid: e5cb90dfd104f46489540f8e81dd84a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2591,7 +2595,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 3.24, y: 3.4700003}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2610,7 +2614,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1573738795}
   - component: {fileID: 1573738796}
-  - component: {fileID: 1573738794}
   - component: {fileID: 1573738792}
   - component: {fileID: 1573738793}
   - component: {fileID: 1573738791}
@@ -2664,35 +2667,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e605fc5a271943341b6e887c4fbf7009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1573738794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1573738790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 475ae4fca14c844448077912c08fbdd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerMotivation: {fileID: 0}
-  playerPinyaMeter: {fileID: 0}
-  MotivationValueChange: 0
-  PinyaMeterValueChange: 0
-  highlightObj: []
-  cooldown: 0
-  timer: 0
-  endTime: 0
-  currentTime: 0
-  maxTime: 10
-  speedCounter: 1
-  player: {fileID: 0}
-  cleanMiniGame: {fileID: 0}
-  groceryMiniGame: {fileID: 0}
-  hideseekMiniGame: {fileID: 0}
-  tagMiniGame: {fileID: 0}
-  foldMiniGame: {fileID: 0}
 --- !u!4 &1573738795
 Transform:
   m_ObjectHideFlags: 0
@@ -2721,8 +2695,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NameOfNextScene: MainGameScene1 1
-  manager: {fileID: 0}
-  gameTimer: {fileID: 0}
+  timer: 0
+  maxTimer: 10
+  speedTimer: 1
   ClothesComponent: {fileID: 0}
 --- !u!1 &1589631792
 GameObject:

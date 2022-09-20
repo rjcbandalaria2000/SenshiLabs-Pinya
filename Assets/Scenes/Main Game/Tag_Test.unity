@@ -894,7 +894,6 @@ GameObject:
   - component: {fileID: 781254073}
   - component: {fileID: 781254072}
   - component: {fileID: 781254071}
-  - component: {fileID: 781254070}
   - component: {fileID: 781254074}
   - component: {fileID: 781254075}
   m_Layer: 0
@@ -904,35 +903,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &781254070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 781254069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 475ae4fca14c844448077912c08fbdd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerMotivation: {fileID: 0}
-  playerPinyaMeter: {fileID: 0}
-  MotivationValueChange: 0
-  PinyaMeterValueChange: 0
-  highlightObj: []
-  cooldown: 0
-  timer: 0
-  endTime: 0
-  currentTime: 0
-  maxTime: 10
-  speedCounter: 1
-  player: {fileID: 0}
-  cleanMiniGame: {fileID: 0}
-  groceryMiniGame: {fileID: 0}
-  hideseekMiniGame: {fileID: 0}
-  tagMiniGame: {fileID: 0}
-  foldMiniGame: {fileID: 0}
 --- !u!114 &781254071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -958,9 +928,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NameOfNextScene: MainGameScene1 1
+  timer: 0
+  maxTimer: 10
+  speedTimer: 1
   player: {fileID: 9630443}
-  manager: {fileID: 781254070}
-  minigameTime: {fileID: 0}
 --- !u!4 &781254073
 Transform:
   m_ObjectHideFlags: 0
