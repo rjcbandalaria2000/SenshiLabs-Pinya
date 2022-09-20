@@ -889,9 +889,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1473840146}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: AskMom
+      - m_Target: {fileID: 1473840149}
+        m_TargetAssemblyTypeName: AskMom, Assembly-CSharp
+        m_MethodName: OnAskMomButtonPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6231,6 +6231,7 @@ GameObject:
   - component: {fileID: 1473840147}
   - component: {fileID: 1473840146}
   - component: {fileID: 1473840148}
+  - component: {fileID: 1473840149}
   m_Layer: 0
   m_Name: ~GameManager
   m_TagString: Untagged
@@ -6254,16 +6255,6 @@ MonoBehaviour:
   playerPinyaMeter: {fileID: 312946477}
   MotivationValueChange: 1
   PinyaMeterValueChange: 10
-  highlightObj:
-  - {fileID: 317634576}
-  - {fileID: 847098969}
-  - {fileID: 1940046796}
-  - {fileID: 86573481}
-  - {fileID: 760685720}
-  - {fileID: 714896940}
-  cooldown: 5
-  timer: 0
-  endTime: 0
   currentTime: 0
   maxTime: 0
   speedCounter: 0
@@ -6304,6 +6295,28 @@ MonoBehaviour:
   endTime: 0
   timePeriod: 0
   isMorning: 0
+--- !u!114 &1473840149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473840145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d2243d3faa3844897a0b405db15172, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highLight:
+  - {fileID: 317634576}
+  - {fileID: 847098969}
+  - {fileID: 1940046796}
+  - {fileID: 86573481}
+  - {fileID: 760685720}
+  - {fileID: 714896940}
+  coolDown: 5
+  playerPinyaMeter: {fileID: 312946477}
+  pinyaCost: 5
 --- !u!4 &1481284178 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1278223492080597532, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}

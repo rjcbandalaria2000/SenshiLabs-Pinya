@@ -35,7 +35,7 @@ public class DayCycle : MonoBehaviour
         }
         else
         {
-            StartCoroutine(SingletonManager.Get<GameManager>().dayEnd());
+            //StartCoroutine(SingletonManager.Get<GameManager>().dayEnd());
             Debug.Log("DayEnd");
         }
       

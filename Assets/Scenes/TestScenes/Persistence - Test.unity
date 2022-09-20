@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f191e60c091de1944acc59cb8a1f1455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstSceneId: MotivationBar -TestScene
+  FirstSceneId: DisplayTasks-Test
 --- !u!4 &1480656603
 Transform:
   m_ObjectHideFlags: 0
@@ -199,6 +199,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storedMotivationData: 0
   storedPinyaData: 0
+  MinigamesPlayed: 0
+  HasSaved: 0
+  ActivatedMinigame: {fileID: 0}
+  IsCleanTheHouseFinished: 0
+  IsWashTheDishesFinished: 0
+  IsGroceryFinished: 0
+  IsWaterThePlantsFinished: 0
+  IsGetWaterFinished: 0
+  IsImHungryFinished: 0
 --- !u!4 &1566311201
 Transform:
   m_ObjectHideFlags: 0

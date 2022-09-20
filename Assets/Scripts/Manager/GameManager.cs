@@ -15,13 +15,13 @@ public class GameManager : MonoBehaviour
     public float MotivationValueChange;
     public float PinyaMeterValueChange;
 
-    [Header("Ask Mom")]
-    public List<GameObject> highlightObj;
-    public float cooldown;
+    //[Header("Ask Mom")]
+    //public List<GameObject> highlightObj;
+    //public float cooldown;
 
-    [Header("DayCycle Timer")]
-    public float timer;
-    public float endTime;
+    //[Header("DayCycle Timer")]
+    //public float timer;
+    //public float endTime;
 
     [Header("Mini-Game Timer")]
     public float currentTime;
@@ -60,13 +60,13 @@ public class GameManager : MonoBehaviour
         }
         
 
-        if(highlightObj.Count > 0)
-        {
-            for(int i = 0; i < highlightObj.Count; i++)
-            {
-                highlightObj[i].SetActive(false);
-            }
-        }
+        //if(highlightObj.Count > 0)
+        //{
+        //    for(int i = 0; i < highlightObj.Count; i++)
+        //    {
+        //        highlightObj[i].SetActive(false);
+        //    }
+        //}
 
         if(player == null)
         {
@@ -155,47 +155,47 @@ public class GameManager : MonoBehaviour
     //    yield return new WaitForSeconds(3f);
     //}
 
-    public void AskMom()
-    {
-        if(playerPinyaMeter != null)
-        {
-            Debug.Log("Highlight Obj");
-            StartCoroutine(StartCD());
-            Assert.IsNotNull(playerPinyaMeter, "PlayerPinyaMeter is null or is not set");
-            playerPinyaMeter.DecreasePinyaMeter(PinyaMeterValueChange);
-        }
-    }
+    //public void AskMom()
+    //{
+    //    if(playerPinyaMeter != null)
+    //    {
+    //        Debug.Log("Highlight Obj");
+    //        StartCoroutine(StartCD());
+    //        Assert.IsNotNull(playerPinyaMeter, "PlayerPinyaMeter is null or is not set");
+    //        playerPinyaMeter.DecreasePinyaMeter(PinyaMeterValueChange);
+    //    }
+    //}
 
-    IEnumerator StartCD()
-    {
-        UI.buttonUninteractable();
-        OutLineObj();
-        yield return new WaitForSeconds(cooldown);
-        UI.buttonInteractable();
-        unOutlineObj();
-    }
+    //IEnumerator StartCD()
+    //{
+    //    UI.buttonUninteractable();
+    //    OutLineObj();
+    //    yield return new WaitForSeconds(cooldown);
+    //    UI.buttonInteractable();
+    //    unOutlineObj();
+    //}
 
-    public void OutLineObj()
-    {
-        if (highlightObj.Count > 0)
-        {
-            for (int i = 0; i < highlightObj.Count; i++)
-            {
-                highlightObj[i].SetActive(true);
-            }
-        }
-    }
+    //public void OutLineObj()
+    //{
+    //    if (highlightObj.Count > 0)
+    //    {
+    //        for (int i = 0; i < highlightObj.Count; i++)
+    //        {
+    //            highlightObj[i].SetActive(true);
+    //        }
+    //    }
+    //}
 
-    public void unOutlineObj()
-    {
-        if (highlightObj.Count > 0)
-        {
-            for (int i = 0; i < highlightObj.Count; i++)
-            {
-                highlightObj[i].SetActive(false);
-            }
-        }
-    }
+    //public void unOutlineObj()
+    //{
+    //    if (highlightObj.Count > 0)
+    //    {
+    //        for (int i = 0; i < highlightObj.Count; i++)
+    //        {
+    //            highlightObj[i].SetActive(false);
+    //        }
+    //    }
+    //}
 
 
 
