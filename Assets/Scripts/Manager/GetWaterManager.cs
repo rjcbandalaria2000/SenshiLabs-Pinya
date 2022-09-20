@@ -34,6 +34,16 @@ public class GetWaterManager : MinigameManager
     void Start()
     {
         Initialize();
+
+       
+    }
+
+    private void Update()
+    {
+        if (SingletonManager.Get<MiniGameTimer>().getTimer() <= 0)
+        {
+            CheckIfComplete();
+        }
     }
 
     public override void Initialize()
