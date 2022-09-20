@@ -2220,7 +2220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NameOfNextScene: MainGameScene1 1
   timer: 0
-  maxTimer: 20
+  maxTimer: 10
   speedTimer: 1
   groceryItems:
   - {fileID: 5937934297813480278, guid: 0899e0fa28b10674fbc62867b8278a3c, type: 3}

@@ -2696,7 +2696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NameOfNextScene: MainGameScene1 1
   timer: 0
-  maxTimer: 10
+  maxTimer: 15
   speedTimer: 1
   ClothesComponent: {fileID: 0}
 --- !u!1 &1589631792

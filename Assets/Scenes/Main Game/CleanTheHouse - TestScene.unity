@@ -4591,6 +4591,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NameOfNextScene: MainGameScene1 1
+  timer: 0
+  maxTimer: 20
+  speedTimer: 1
   NumberOfToys: 5
   NumberOfDust: 5
   isCompleted: 0
@@ -4666,11 +4669,8 @@ MonoBehaviour:
   maxTime: 20
   speedCounter: 1
   player: {fileID: 0}
-  cleanMiniGame: {fileID: 0}
-  groceryMiniGame: {fileID: 0}
-  hideseekMiniGame: {fileID: 0}
-  tagMiniGame: {fileID: 0}
-  foldMiniGame: {fileID: 0}
+  isGetWaterFinish: 0
+  isGroceryTaskFinish: 0
 --- !u!114 &1036058653
 MonoBehaviour:
   m_ObjectHideFlags: 0
