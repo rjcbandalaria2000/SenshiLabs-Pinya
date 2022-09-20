@@ -6336,16 +6336,6 @@ MonoBehaviour:
   playerPinyaMeter: {fileID: 312946477}
   MotivationValueChange: 1
   PinyaMeterValueChange: 10
-  highlightObj:
-  - {fileID: 317634576}
-  - {fileID: 847098969}
-  - {fileID: 1940046796}
-  - {fileID: 86573481}
-  - {fileID: 760685720}
-  - {fileID: 714896940}
-  cooldown: 5
-  timer: 0
-  endTime: 0
   currentTime: 0
   maxTime: 0
   speedCounter: 0

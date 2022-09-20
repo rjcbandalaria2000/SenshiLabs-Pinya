@@ -5,37 +5,30 @@ using UnityEngine.Assertions;
 
 public class GameManager : MonoBehaviour
 {
-    private UIManager UI;
+    private UIManager               UI;
 
     [Header ("Meaters")]
-    public MotivationMeter playerMotivation;
-    public PinyaMeter playerPinyaMeter;
+    public MotivationMeter          playerMotivation;
+    public PinyaMeter               playerPinyaMeter;
 
     [Header("Change Values")]
-    public float MotivationValueChange;
-    public float PinyaMeterValueChange;
-
-    //[Header("Ask Mom")]
-    //public List<GameObject> highlightObj;
-    //public float cooldown;
-
-    //[Header("DayCycle Timer")]
-    //public float timer;
-    //public float endTime;
+    public float                    MotivationValueChange;
+    public float                    PinyaMeterValueChange;
 
     [Header("Mini-Game Timer")]
-    public float currentTime;
-    public float maxTime;
-    public float speedCounter;
+    public float                    currentTime;
+    public float                    maxTime;
+    public float                    speedCounter;
 
     public Player player;
 
-    [Header("MiniGame Manager")]    
-    public CleanTheHouseManager cleanMiniGame; //Change Public MiniGame;
-    public GroceryManager groceryMiniGame;
-    public HideSeekManager hideseekMiniGame;
-    public TagMiniGameManager tagMiniGame;
-    public FoldingMinigameManager foldMiniGame; 
+    [Header("MiniGame Manager")]
+    public List<MinigameObject>     minigames = new();
+    public CleanTheHouseManager     cleanMiniGame; //Change Public MiniGame;
+    public GroceryManager           groceryMiniGame;
+    public HideSeekManager          hideseekMiniGame;
+    public TagMiniGameManager       tagMiniGame;
+    public FoldingMinigameManager   foldMiniGame; 
 
     private void Awake()
     {
@@ -58,15 +51,6 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Null UI");
         }
-        
-
-        //if(highlightObj.Count > 0)
-        //{
-        //    for(int i = 0; i < highlightObj.Count; i++)
-        //    {
-        //        highlightObj[i].SetActive(false);
-        //    }
-        //}
 
         if(player == null)
         {
@@ -112,94 +96,8 @@ public class GameManager : MonoBehaviour
             }
         }
      
-        //StartCoroutine(dayStart());
     }
-    //public IEnumerator dayStart()
-    //{
-    //    if(SingletonManager.Get<DayCycle>() != null)
-    //    {
-    //        SingletonManager.Get<DayCycle>().time = timer;
-    //        SingletonManager.Get<DayCycle>().endTime = endTime;
-    //    }
-    //    else
-    //    {
-    //        Debug.Log("DayCycle doesnt exist");
-    //    }
-    //    if(SingletonManager.Get<UIManager>() != null)
-    //    {
-    //        SingletonManager.Get<UIManager>().activateTimerUI(); 
-    //        //SingletonManager.Get<UIManager>().motivationMeter.SetActive(true); 
-    //        //SingletonManager.Get<UIManager>().pi�yaMeter.SetActive(true);
-    //    }
-    //    else
-    //    {
-    //        Debug.Log("UI Manager doesnt exist");
-    //    }
 
-    //    yield return new WaitForSeconds(3f);
-    //}
-
-    //public IEnumerator dayEnd()
-    //{
-    //    if (SingletonManager.Get<UIManager>() != null)
-    //    {
-    //        SingletonManager.Get<UIManager>().deactivateTimerUI();
-    //        SingletonManager.Get<UIManager>().activateDayEnd_UI();
-
-    //    }
-    //    else
-    //    {
-    //        Debug.Log("UI Manager doesnt exist");
-    //    }
-
-    //    yield return new WaitForSeconds(3f);
-    //}
-
-    //public void AskMom()
-    //{
-    //    if(playerPinyaMeter != null)
-    //    {
-    //        Debug.Log("Highlight Obj");
-    //        StartCoroutine(StartCD());
-    //        Assert.IsNotNull(playerPinyaMeter, "PlayerPinyaMeter is null or is not set");
-    //        playerPinyaMeter.DecreasePinyaMeter(PinyaMeterValueChange);
-    //    }
-    //}
-
-    //IEnumerator StartCD()
-    //{
-    //    UI.buttonUninteractable();
-    //    OutLineObj();
-    //    yield return new WaitForSeconds(cooldown);
-    //    UI.buttonInteractable();
-    //    unOutlineObj();
-    //}
-
-    //public void OutLineObj()
-    //{
-    //    if (highlightObj.Count > 0)
-    //    {
-    //        for (int i = 0; i < highlightObj.Count; i++)
-    //        {
-    //            highlightObj[i].SetActive(true);
-    //        }
-    //    }
-    //}
-
-    //public void unOutlineObj()
-    //{
-    //    if (highlightObj.Count > 0)
-    //    {
-    //        for (int i = 0; i < highlightObj.Count; i++)
-    //        {
-    //            highlightObj[i].SetActive(false);
-    //        }
-    //    }
-    //}
-
-
-
-   
 
 
 }

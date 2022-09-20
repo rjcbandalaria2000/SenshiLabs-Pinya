@@ -15,6 +15,7 @@ public class AskMom : MonoBehaviour
 
     private Coroutine           askMomRoutine;
     private UIManager           uiManager;
+    private TaskManager         taskManager;
     // Start is called before the first frame update
     void Start()
     {

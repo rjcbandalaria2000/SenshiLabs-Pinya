@@ -11,9 +11,9 @@ public class FoldMiniGame : MinigameObject
 
     public override void Initialize()
     {
-        Interactable = this.GetComponent<Interactable>();
+        interactable = this.GetComponent<Interactable>();
 
-        if (Interactable)
+        if (interactable)
         {
             //Listen to the interactable event and proceed to interact with the player
             //Events.OnInteract.AddListener(Interact);
@@ -29,7 +29,7 @@ public class FoldMiniGame : MinigameObject
         MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
         if (playerMotivation)
         {
-            playerMotivation.DecreaseMotivation(MotivationCost);
+            playerMotivation.DecreaseMotivation(motivationCost);
         }
         Debug.Log("Interacted");
         isInteracted = false;
@@ -48,14 +48,14 @@ public class FoldMiniGame : MinigameObject
     {
         if (sceneChange)
         {
-            if (MinigameScene != null)
+            if (minigameScene != null)
             {
                 //Remove all listeners because when the scene changes it will destroy the scene but will try to access the old active scripts
                 Events.OnSceneChange.Invoke();
                 Events.OnInteract.RemoveListener(Interact);
                 Events.OnFinishInteract.RemoveListener(EndInteract);
 
-                sceneChange.OnChangeScene(MinigameScene);
+                sceneChange.OnChangeScene(minigameScene);
             }
             else
             {
@@ -78,7 +78,7 @@ public class FoldMiniGame : MinigameObject
                 MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
                 if (playerMotivation)
                 {
-                    playerMotivation.DecreaseMotivation(MotivationCost);
+                    playerMotivation.DecreaseMotivation(motivationCost);
                 }
                 Debug.Log("Interacted");
                 isInteracted = false;

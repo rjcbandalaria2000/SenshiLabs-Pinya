@@ -18,7 +18,7 @@ public class DisplayCycleTime : MonoBehaviour
     {
         if(SingletonManager.Get<DayCycle>() != null)
         {
-            cycleTimer_UI.text = SingletonManager.Get<DayCycle>().time.ToString();
+            //cycleTimer_UI.text = SingletonManager.Get<DayCycle>().time.ToString();
             Events.OnDisplayCycleTime.AddListener(updateTimerDisplay);
         }
         else 
@@ -27,17 +27,11 @@ public class DisplayCycleTime : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void updateTimerDisplay()
     {
         if (SingletonManager.Get<DayCycle>() != null)
         {
-            cycleTimer_UI.text = SingletonManager.Get<DayCycle>().time.ToString();
+            //cycleTimer_UI.text = SingletonManager.Get<DayCycle>().time.ToString();
         }
         else
         {

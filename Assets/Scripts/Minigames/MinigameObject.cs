@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 public class MinigameObject : MonoBehaviour
 {
     [Header("Setup Values")]
-    public int              MotivationCost;
+    public string           minigameName;
+    public int              motivationCost;
     
-    public Interactable     Interactable;
+    public Interactable     interactable;
     public bool             isInteracted;
-    public bool             HasCompleted;
-    public string           MinigameScene;
+    public bool             hasCompleted;
+    public string           minigameScene;
 
     protected SceneChange   sceneChange;
     protected PlayerData    playerData;
@@ -28,9 +29,9 @@ public class MinigameObject : MonoBehaviour
 
     public virtual void Initialize()
     {
-        Interactable = this.GetComponent<Interactable>();
+        interactable = this.GetComponent<Interactable>();
 
-        if (Interactable)
+        if (interactable)
         {
             //Listen to the interactable event and proceed to interact with the player
             Events.OnInteract.AddListener(Interact);

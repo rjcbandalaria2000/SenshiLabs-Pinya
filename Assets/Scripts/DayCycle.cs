@@ -10,36 +10,35 @@ public enum TimePeriod{
 
 public class DayCycle : MonoBehaviour
 {
-    public float time;
-    public float endTime;
+    //public float time;
+    //public float endTime;
     public TimePeriod timePeriod;
 
-    [SerializeField] bool isMorning;
+    //[SerializeField] bool isMorning;
 
     private void Awake()
     {
         SingletonManager.Register(this);
-        
     }
     private void Start()
     {
        ChangeTimePeriod();
     }
 
-    public void IncreaseTime(float timeAdd) // initial (change to events)
-    {
-        if(endTime > time)
-        {
-            time += timeAdd;
-            Events.OnDisplayCycleTime.Invoke();
-        }
-        else
-        {
-            //StartCoroutine(SingletonManager.Get<GameManager>().dayEnd());
-            Debug.Log("DayEnd");
-        }
+    //public void IncreaseTime(float timeAdd) // initial (change to events)
+    //{
+    //    if(endTime > time)
+    //    {
+    //        time += timeAdd;
+    //        Events.OnDisplayCycleTime.Invoke();
+    //    }
+    //    else
+    //    {
+    //        //StartCoroutine(SingletonManager.Get<GameManager>().dayEnd());
+    //        Debug.Log("DayEnd");
+    //    }
       
-    }
+    //}
 
     public void ChangeTimePeriod()
     {

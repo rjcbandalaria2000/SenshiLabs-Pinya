@@ -14,7 +14,7 @@ public class WaterThePlantsMinigame : MinigameObject
 
     public override void Initialize()
     {
-        Interactable = this.GetComponent<Interactable>();
+        interactable = this.GetComponent<Interactable>();
         sceneChange = this.GetComponent<SceneChange>();
     }
 
@@ -24,7 +24,7 @@ public class WaterThePlantsMinigame : MinigameObject
         MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
         if (playerMotivation)
         {
-            playerMotivation.DecreaseMotivation(MotivationCost);
+            playerMotivation.DecreaseMotivation(motivationCost);
         }
         Debug.Log("Interacted");
         isInteracted = false;
@@ -45,14 +45,14 @@ public class WaterThePlantsMinigame : MinigameObject
     {
         if (sceneChange)
         {
-            if (MinigameScene != null)
+            if (minigameScene != null)
             {
                 //Remove all listeners because when the scene changes it will destroy the scene but will try to access the old active scripts
                 Events.OnSceneChange.Invoke();
                 Events.OnInteract.RemoveListener(Interact);
                 Events.OnFinishInteract.RemoveListener(EndInteract);
 
-                sceneChange.OnChangeScene(MinigameScene);
+                sceneChange.OnChangeScene(minigameScene);
             }
             else
             {
