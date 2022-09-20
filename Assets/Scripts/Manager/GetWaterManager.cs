@@ -50,6 +50,7 @@ public class GetWaterManager : MinigameManager
         if(NumOfSwipes == RequiredNumSwipes)
         {
             Debug.Log("Congratulations! You managed to get water");
+            SingletonManager.Get<Player_Data>().achieveGetWater = true;
         }
         else if(NumOfSwipes < RequiredNumSwipes)
         {

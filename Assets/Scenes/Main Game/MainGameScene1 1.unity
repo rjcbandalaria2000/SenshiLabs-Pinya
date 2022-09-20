@@ -1375,6 +1375,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1670789330783138979, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.98
+      objectReference: {fileID: 0}
     - target: {fileID: 6543178211513549874, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -6610,8 +6614,8 @@ MonoBehaviour:
   speedCounter: 0
   player: {fileID: 312946475}
   minigamesName: []
-  isGetWaterFinish: 0
-  isGroceryTaskFinish: 0
+  isGetWaterFinish: 1
+  isGroceryTaskFinish: 1
 --- !u!4 &1473840147
 Transform:
   m_ObjectHideFlags: 0
