@@ -112,70 +112,70 @@ public class GameManager : MonoBehaviour
             }
         }
      
-        StartCoroutine(dayStart());
+        //StartCoroutine(dayStart());
     }
-    public IEnumerator dayStart()
-    {
-        if(SingletonManager.Get<DayCycle>() != null)
-        {
-            SingletonManager.Get<DayCycle>().time = timer;
-            SingletonManager.Get<DayCycle>().endTime = endTime;
-        }
-        else
-        {
-            Debug.Log("DayCycle doesnt exist");
-        }
-        if(SingletonManager.Get<UIManager>() != null)
-        {
-            SingletonManager.Get<UIManager>().activateTimerUI(); 
-            //SingletonManager.Get<UIManager>().motivationMeter.SetActive(true); 
-            //SingletonManager.Get<UIManager>().pi�yaMeter.SetActive(true);
-        }
-        else
-        {
-            Debug.Log("UI Manager doesnt exist");
-        }
+    //public IEnumerator dayStart()
+    //{
+    //    if(SingletonManager.Get<DayCycle>() != null)
+    //    {
+    //        SingletonManager.Get<DayCycle>().time = timer;
+    //        SingletonManager.Get<DayCycle>().endTime = endTime;
+    //    }
+    //    else
+    //    {
+    //        Debug.Log("DayCycle doesnt exist");
+    //    }
+    //    if(SingletonManager.Get<UIManager>() != null)
+    //    {
+    //        SingletonManager.Get<UIManager>().activateTimerUI(); 
+    //        //SingletonManager.Get<UIManager>().motivationMeter.SetActive(true); 
+    //        //SingletonManager.Get<UIManager>().pi�yaMeter.SetActive(true);
+    //    }
+    //    else
+    //    {
+    //        Debug.Log("UI Manager doesnt exist");
+    //    }
 
-        yield return new WaitForSeconds(3f);
-    }
+    //    yield return new WaitForSeconds(3f);
+    //}
 
-    public IEnumerator dayEnd()
-    {
-        if (SingletonManager.Get<UIManager>() != null)
-        {
-            SingletonManager.Get<UIManager>().deactivateTimerUI();
-            SingletonManager.Get<UIManager>().activateDayEnd_UI();
+    //public IEnumerator dayEnd()
+    //{
+    //    if (SingletonManager.Get<UIManager>() != null)
+    //    {
+    //        SingletonManager.Get<UIManager>().deactivateTimerUI();
+    //        SingletonManager.Get<UIManager>().activateDayEnd_UI();
 
-        }
-        else
-        {
-            Debug.Log("UI Manager doesnt exist");
-        }
+    //    }
+    //    else
+    //    {
+    //        Debug.Log("UI Manager doesnt exist");
+    //    }
 
-        yield return new WaitForSeconds(3f);
-    }
+    //    yield return new WaitForSeconds(3f);
+    //}
 
     public void AskMom()
     {
         if(playerPinyaMeter != null)
         {
             Debug.Log("Highlight Obj");
-            StartCoroutine(startCD());
+            StartCoroutine(StartCD());
             Assert.IsNotNull(playerPinyaMeter, "PlayerPinyaMeter is null or is not set");
             playerPinyaMeter.DecreasePinyaMeter(PinyaMeterValueChange);
         }
     }
 
-    IEnumerator startCD()
+    IEnumerator StartCD()
     {
         UI.buttonUninteractable();
-        outLineObj();
+        OutLineObj();
         yield return new WaitForSeconds(cooldown);
         UI.buttonInteractable();
         unOutlineObj();
     }
 
-    public void outLineObj()
+    public void OutLineObj()
     {
         if (highlightObj.Count > 0)
         {
