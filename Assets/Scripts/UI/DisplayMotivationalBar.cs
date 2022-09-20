@@ -14,8 +14,7 @@ public class DisplayMotivationalBar : MonoBehaviour
     private void Awake()
     {
         SingletonManager.Register(this);
-        Events.OnChangeMeter.AddListener(UpdateMotivationBar);
-        Events.OnSceneChange.AddListener(RemoveListeners);
+        
     }
 
     // Start is called before the first frame update
@@ -43,13 +42,15 @@ public class DisplayMotivationalBar : MonoBehaviour
             MotivationSlider.maxValue = playerMotivation.MaxMotivation; 
             MotivationSlider.value = playerMotivation.MotivationAmount;
         }
-       
+        Events.OnChangeMeter.AddListener(UpdateMotivationBar);
+        Events.OnSceneChange.AddListener(RemoveListeners);
     }
 
     public void UpdateMotivationBar()
     {
         Assert.IsNotNull(playerMotivation, "Player Motivation is not set or is null");
         MotivationSlider.value = playerMotivation.MotivationAmount;
+        Debug.Log("UpdatedMotivationalBar");
     }
 
     public void RemoveListeners()

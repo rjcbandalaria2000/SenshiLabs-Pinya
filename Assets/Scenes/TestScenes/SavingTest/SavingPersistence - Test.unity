@@ -199,7 +199,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storedMotivationData: 0
   storedPinyaData: 0
-  HasSaved: 0
 --- !u!4 &1566311201
 Transform:
   m_ObjectHideFlags: 0

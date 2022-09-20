@@ -43,6 +43,7 @@ public class CleanTheHouseManager : MinigameManager
         {
             if (!isCompleted)
             {   isCompleted=true;
+                SingletonManager.Get<PlayerData>().IsCleanTheHouseFinished = true;
                 Debug.Log("Minigame complete");
                 //Events.OnSceneLoad.Invoke();
                 Events.OnSceneChange.Invoke();

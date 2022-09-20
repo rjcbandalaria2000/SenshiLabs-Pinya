@@ -16,7 +16,15 @@ public class MotivationMeter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InitializeMeter();
+        if (SingletonManager.Get<PlayerData>().HasSaved)
+        {
+            MotivationAmount = SingletonManager.Get<PlayerData>().storedMotivationData;
+        }
+        else
+        {
+            InitializeMeter();
+        }
+        Events.OnChangeMeter.Invoke();
     }
 
     public void InitializeMeter() {
