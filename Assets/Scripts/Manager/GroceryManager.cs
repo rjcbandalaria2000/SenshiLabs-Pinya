@@ -96,7 +96,7 @@ public class GroceryManager : MinigameManager //Might rename this
         if (needItems.Count <= 0)
         {
             Debug.Log("Minigame complete");
-            SingletonManager.Get<Player_Data>().achieveGroceryTask = true;
+            SingletonManager.Get<PlayerData>().IsGroceryFinished = true;
             Assert.IsNotNull(sceneChange, "Scene change is null or not set");
             sceneChange.OnChangeScene(NameOfNextScene);
         }

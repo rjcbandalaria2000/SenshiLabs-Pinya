@@ -57,8 +57,8 @@ public class GameManager : MonoBehaviour
     }
     public void Start()
     {
-        isGetWaterFinish = SingletonManager.Get<Player_Data>().achieveGetWater;
-        isGroceryTaskFinish = SingletonManager.Get<Player_Data>().achieveGroceryTask;
+        isGetWaterFinish = SingletonManager.Get<PlayerData>().IsGetWaterFinished;
+        isGroceryTaskFinish = SingletonManager.Get<PlayerData>().IsGroceryFinished;
 
 
         if(UI == null)
