@@ -8,13 +8,18 @@ using TMPro;
 public class TaskManager : MonoBehaviour
 {
     [Header("Minigames")]
-    public List<MinigameObject> minigameObjects;
+    public List<MinigameObject>     minigameObjects = new();
+    public List<PreRequisiteTask>   tasks = new();
+    public List<MinigameObject>     requiredTasks = new();
 
+  
     [Header("Task UI")]
-    public GameObject taskTextPrefab;
-    public GameObject taskListParent;
+    public GameObject               taskTextPrefab;
+    public GameObject               taskListParent;
 
-    private List<GameObject> taskTexts = new();
+
+
+    private List<GameObject>        taskTexts = new();
     private void Awake()
     {
         SingletonManager.Register(this);
@@ -62,6 +67,12 @@ public class TaskManager : MonoBehaviour
             taskTexts.Clear();
         }
         taskListParent.SetActive(false);
+    }
+
+    public void SetRandomTasks() {
+    
+        
+    
     }
 
 }
