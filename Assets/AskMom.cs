@@ -20,6 +20,7 @@ public class AskMom : MonoBehaviour
     void Start()
     {
         uiManager = SingletonManager.Get<UIManager>();
+        taskManager = SingletonManager.Get<TaskManager>();
         askMomRoutine = null;
         DisableHighlight();
     }
@@ -38,17 +39,25 @@ public class AskMom : MonoBehaviour
 
     IEnumerator AskMomCD()
     {
-        if(uiManager != null)
+        if (uiManager != null)
         {
             uiManager.buttonUninteractable();
         }
         EnableHighlight();
+        if (taskManager != null)
+        {
+            taskManager.DisplayTasks();
+        }
         yield return new WaitForSeconds(coolDown);
         if (uiManager != null)
         {
             uiManager.buttonInteractable();
         }
         DisableHighlight();
+        if (taskManager != null)
+        {
+            taskManager.HideTasks();
+        }
     }
 
     public void EnableHighlight()

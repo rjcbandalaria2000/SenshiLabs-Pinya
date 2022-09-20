@@ -22,11 +22,13 @@ public class TaskManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DisplayTasks();
+        taskListParent.SetActive(false);
+        //DisplayTasks();
     }
 
     public void DisplayTasks()
     {
+        taskListParent.SetActive(true);
         Assert.IsNotNull(minigameObjects, "Minigameobjects are not set");
         if (taskTexts.Count > 0)
         {
@@ -45,9 +47,21 @@ public class TaskManager : MonoBehaviour
             {
                 text.text = minigameObjects[i].minigameName.ToString();
             }
-
+            taskTexts.Add(spawnedText);
         }
-      
+    }
+
+    public void HideTasks()
+    {
+        if (taskTexts.Count > 0)
+        {
+            for (int i = 0; i < taskTexts.Count; i++)
+            {
+                Destroy(taskTexts[i]);
+            }
+            taskTexts.Clear();
+        }
+        taskListParent.SetActive(false);
     }
 
 }
