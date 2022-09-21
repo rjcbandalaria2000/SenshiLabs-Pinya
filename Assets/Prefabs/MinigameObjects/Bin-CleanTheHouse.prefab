@@ -287,6 +287,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5679a837f9ce5524c87cc90b2d00cb43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Interactable: {fileID: 2816954076488409268}
+  minigameName: Clean the house
+  motivationCost: 20
+  interactable: {fileID: 2816954076488409268}
   isInteracted: 0
-  MinigameScene: CleanTheHouse - TestScene
+  hasCompleted: 0
+  minigameScene: CleanTheHouse - TestScene
