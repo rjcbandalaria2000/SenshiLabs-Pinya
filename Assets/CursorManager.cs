@@ -72,7 +72,6 @@ public class CursorManager : MonoBehaviour
                 cursorHotspot = Vector2.zero;
                 break;
         }
-        Debug.Log("Cursor Hotspot" + cursorHotspot);
     }
 
 }

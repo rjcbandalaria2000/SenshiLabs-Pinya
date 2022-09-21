@@ -152,6 +152,18 @@ public class UIManager : MonoBehaviour
 
     public void DeactivateResultScreen()
     {
+        minigameResultsUI.SetActive(false);
+    }
 
+    public void ActivateGoodResult()
+    {
+        minigameGoodResult.SetActive(true);
+        minigameBadResult.SetActive(false);
+    }
+
+    public void ActivateBadResult()
+    {
+        minigameGoodResult.SetActive(false);
+        minigameBadResult.SetActive(true);
     }
 }

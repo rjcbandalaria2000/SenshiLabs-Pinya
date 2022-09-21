@@ -54,10 +54,11 @@ public class CleanTheHouseManager : MinigameManager
     public override void OnMinigameLose()
     {
         SingletonManager.Get<UIManager>().ActivateResultScreen();
+        SingletonManager.Get<UIManager>().ActivateBadResult();
         Debug.Log("Minigame lose");
-        Events.OnSceneChange.Invoke();
-        Assert.IsNotNull(sceneChange, "Scene change is null or not set");
-        sceneChange.OnChangeScene(NameOfNextScene);
+        //Events.OnSceneChange.Invoke();
+        //Assert.IsNotNull(sceneChange, "Scene change is null or not set");
+        //sceneChange.OnChangeScene(NameOfNextScene);
     }
 
     public void AddTrashThrown(int count)
@@ -135,6 +136,7 @@ public class CleanTheHouseManager : MinigameManager
         {
             isCompleted = true;
             SingletonManager.Get<UIManager>().ActivateResultScreen();
+            SingletonManager.Get<UIManager>().ActivateGoodResult();
             SingletonManager.Get<PlayerData>().IsCleanTheHouseFinished = true;
             Debug.Log("Minigame complete");
             //Events.OnSceneLoad.Invoke();
@@ -143,5 +145,12 @@ public class CleanTheHouseManager : MinigameManager
             //Assert.IsNotNull(sceneChange, "Scene change is null or not set");
             //sceneChange.OnChangeScene(NameOfNextScene);
         }
+    }
+
+    public override void OnExitMinigame()
+    {
+        Events.OnSceneChange.Invoke();
+        Assert.IsNotNull(sceneChange, "Scene change is null or not set");
+        sceneChange.OnChangeScene(NameOfNextScene);
     }
 }
