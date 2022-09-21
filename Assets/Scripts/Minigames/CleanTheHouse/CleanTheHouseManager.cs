@@ -56,9 +56,6 @@ public class CleanTheHouseManager : MinigameManager
         SingletonManager.Get<UIManager>().ActivateResultScreen();
         SingletonManager.Get<UIManager>().ActivateBadResult();
         Debug.Log("Minigame lose");
-        //Events.OnSceneChange.Invoke();
-        //Assert.IsNotNull(sceneChange, "Scene change is null or not set");
-        //sceneChange.OnChangeScene(NameOfNextScene);
     }
 
     public void AddTrashThrown(int count)
@@ -139,11 +136,6 @@ public class CleanTheHouseManager : MinigameManager
             SingletonManager.Get<UIManager>().ActivateGoodResult();
             SingletonManager.Get<PlayerData>().IsCleanTheHouseFinished = true;
             Debug.Log("Minigame complete");
-            //Events.OnSceneLoad.Invoke();
-            //Events.OnSceneChange.Invoke();
-
-            //Assert.IsNotNull(sceneChange, "Scene change is null or not set");
-            //sceneChange.OnChangeScene(NameOfNextScene);
         }
     }
 

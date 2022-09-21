@@ -6,7 +6,9 @@ public class PlayerData : MonoBehaviour
 {
     [Header("Player")]
     public float    storedMotivationData;
+    public float    maxMotivationData;
     public float    storedPinyaData;
+    public float    maxPinyaData;
     public int      MinigamesPlayed;
     public bool     HasSaved;
 

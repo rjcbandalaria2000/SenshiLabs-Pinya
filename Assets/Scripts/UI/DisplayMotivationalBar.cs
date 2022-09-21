@@ -30,7 +30,7 @@ public class DisplayMotivationalBar : MonoBehaviour
         {
             MotivationSlider = this.GetComponent<Slider>();
         }
-        if(Player == null)
+        if (Player == null)
         {
             Player = SingletonManager.Get<GameManager>().player.gameObject;
         }
