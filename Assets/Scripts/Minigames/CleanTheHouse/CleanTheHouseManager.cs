@@ -30,18 +30,7 @@ public class CleanTheHouseManager : MinigameManager
 
     private void Start()
     {
-        //Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
-        //sceneChange = this.gameObject.GetComponent<SceneChange>();
-        //spawnManager = SingletonManager.Get<SpawnManager>();
-        //spawnManager.NumToSpawn[0] = NumberOfToys;
-        //spawnManager.NumToSpawn[1] = NumberOfDust;
-        //spawnManager.SpawnRandomNoRepeat();
-        //isCompleted = false;
-        //Events.OnObjectiveUpdate.Invoke();
-
         Initialize();
-        //StartMinigame();
-
     }
 
     public override void CheckIfFinished()
@@ -64,6 +53,7 @@ public class CleanTheHouseManager : MinigameManager
     public override void OnMinigameLose()
     {
         Debug.Log("Minigame lose");
+        Events.OnSceneChange.Invoke();
         Assert.IsNotNull(sceneChange, "Scene change is null or not set");
         sceneChange.OnChangeScene(NameOfNextScene);
     }
