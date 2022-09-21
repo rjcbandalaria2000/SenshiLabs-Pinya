@@ -18,7 +18,7 @@ public class CleanTheHouseManager : MinigameManager
 
     private SpawnManager spawnManager;
     private Coroutine startMinigameRoutine;
-
+    
     private void Awake()
     {
         SingletonManager.Register(this);
