@@ -4226,7 +4226,7 @@ MonoBehaviour:
   speedTimer: 1
   NumberOfToys: 5
   NumberOfDust: 5
-  GameStartTime: 3
+  GameStartTime: 0
   NumberOfToysKept: 0
   NumberOfDustSwept: 0
 --- !u!4 &1036058649
@@ -4827,7 +4827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enterCursorTexture: {fileID: 0}
-  cursorHotspot: {x: 0, y: 0}
+  dragCursorTexture: {fileID: 0}
   cursorHotspotPos: 0
 --- !u!1 &1118830445
 GameObject:

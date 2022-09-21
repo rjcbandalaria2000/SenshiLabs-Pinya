@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5920978550697659816}
   - component: {fileID: 5920978550697659819}
   - component: {fileID: 5920978550697659814}
+  - component: {fileID: -2584375376834063795}
   m_Layer: 0
   m_Name: Dust
   m_TagString: Untagged
@@ -90,6 +91,21 @@ MonoBehaviour:
   SwipeRequired: 3
   SwipeLeftAccept: -0.5
   SwipeRightAccept: 0.5
+--- !u!114 &-2584375376834063795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5920978550697659818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0408e621f7f0b124683412f3055fab37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enterCursorTexture: {fileID: 2800000, guid: 0ef06e270db10e847be051310f75f339, type: 3}
+  dragCursorTexture: {fileID: 2800000, guid: 0ef06e270db10e847be051310f75f339, type: 3}
+  cursorHotspotPos: 4
 --- !u!1 &5920978551436951451
 GameObject:
   m_ObjectHideFlags: 0

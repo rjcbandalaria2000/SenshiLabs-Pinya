@@ -17,30 +17,32 @@ public enum CursorHotspotPos
 
 public class CursorManager : MonoBehaviour
 {
-    public Texture2D enterCursorTexture;
-    public Vector2 cursorHotspot = new Vector2(0,0);
+    [Header("MouseTextures")]
+    public Texture2D        enterCursorTexture;
+    public Texture2D        dragCursorTexture;
+    private Vector2         cursorHotspot = new Vector2(0,0);
 
     [Header("Hotspot Positions")]
     public CursorHotspotPos cursorHotspotPos = CursorHotspotPos.TopLeft;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
     public void OnMouseEnter()
     {
         if(enterCursorTexture == null) { return; }
-        //cursorHotspot = new Vector2(handCursor.width / 2, handCursor.height / 2);
+      
         SetHotSpot();
         Cursor.SetCursor(enterCursorTexture, cursorHotspot, CursorMode.Auto);
     }
 
-    
+    public void OnMouseDrag()
+    {
+        if (dragCursorTexture == null) { return; }
+        SetHotSpot();
+        Cursor.SetCursor(dragCursorTexture, cursorHotspot, CursorMode.Auto);
+    }
 
     public void OnMouseExit()
     {
-        if (enterCursorTexture == null) { return; }
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 
