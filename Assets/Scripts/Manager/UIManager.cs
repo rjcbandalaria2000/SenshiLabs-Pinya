@@ -6,11 +6,9 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
+    //------------------------------------------------MAINGAME------------------------------------------------------------------------------------
     [Header("Time UI")]
     public GameObject timerDisplay;
-
-    [Header("Minigame Time UI")]
-    public GameObject miniGameTimerDisplay;
 
     [Header("Meters UI")]
     public GameObject motivationMeter;
@@ -19,11 +17,27 @@ public class UIManager : MonoBehaviour
     [Header("Display UI")] //Mostly text base UI
     public GameObject dayEnd_UI;
 
+    //------------------------------------------------MINIGAME------------------------------------------------------------------------------------
+  
+    [Header("Minigame UI")]
+    public GameObject miniGameTimerDisplay;
+    public GameObject miniGameMainMenu;
+
+   
+
     [Header("Loading UI")]
     public GameObject Loading_UI;
 
     [Header("Ask Mom UI")]
     public Button askMomButton;
+
+    private void Start()
+    {
+        if(miniGameMainMenu != null)
+        {
+            InitializeUI();
+        }
+    }
 
     private void Awake()
     {
@@ -92,5 +106,31 @@ public class UIManager : MonoBehaviour
         {
             askMomButton.interactable = true;
         }
+    }
+
+    public void activateMiniGameMainMenu()
+    {
+        miniGameMainMenu.SetActive(true);
+    }
+
+    public void deactivateMiniGameMainMenu()
+    {
+        miniGameMainMenu.SetActive(false);
+    }
+
+    public void InitializeUI()
+    {
+        deactivateMiniGameTimer_UI();
+
+        activateMiniGameMainMenu();
+
+    }
+
+    public void playMiniGameUI()
+    {
+        deactivateMiniGameMainMenu();
+
+        activateMiniGameTimer_UI();
+
     }
 }

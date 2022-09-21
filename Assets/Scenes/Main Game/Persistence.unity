@@ -177,7 +177,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1566311201}
-  - component: {fileID: 1566311200}
+  - component: {fileID: 1566311202}
   m_Layer: 0
   m_Name: PlayerData
   m_TagString: Untagged
@@ -185,21 +185,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1566311200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1566311199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 048d2ee4297ead04da115cf4318e1784, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  storedMotivationData: 0
-  storedPinyaData: 0
-  HasSaved: 0
 --- !u!4 &1566311201
 Transform:
   m_ObjectHideFlags: 0
@@ -215,3 +200,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1566311202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566311199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 048d2ee4297ead04da115cf4318e1784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storedMotivationData: 0
+  storedPinyaData: 0
+  MinigamesPlayed: 0
+  HasSaved: 0
+  IsCleanTheHouseFinished: 0
+  IsWashTheDishesFinished: 0
+  IsGroceryFinished: 0
+  IsWaterThePlantsFinished: 0
+  IsGetWaterFinished: 0
+  IsImHungryFinished: 0

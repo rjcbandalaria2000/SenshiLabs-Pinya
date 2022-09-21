@@ -34,6 +34,16 @@ public class GetWaterManager : MinigameManager
     void Start()
     {
         Initialize();
+
+       
+    }
+
+    private void Update()
+    {
+        if (SingletonManager.Get<MiniGameTimer>().getTimer() <= 0)
+        {
+            CheckIfComplete();
+        }
     }
 
     public override void Initialize()
@@ -50,6 +60,7 @@ public class GetWaterManager : MinigameManager
         if(NumOfSwipes == RequiredNumSwipes)
         {
             Debug.Log("Congratulations! You managed to get water");
+            SingletonManager.Get<PlayerData>().IsGetWaterFinished = true;
         }
         else if(NumOfSwipes < RequiredNumSwipes)
         {

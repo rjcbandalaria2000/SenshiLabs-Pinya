@@ -17,6 +17,11 @@ public class ImHungryMinigame : MinigameObject
 
     public override void Interact(GameObject player = null)
     {
+        if(!SingletonManager.Get<PlayerData>().IsGroceryFinished)
+        {
+            Debug.Log("Finish Pre-Req");
+            return;
+        }
         isInteracted = true;
         MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
         if (playerMotivation)
