@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GetWaterManager : MinigameManager
 {
+    [Header("Water UI")]
+    public Slider       slider;
+
     [Header("Setup Values")]
     public int          RequiredNumSwipes = 3;
     public int          NumOfSwipes = 0;

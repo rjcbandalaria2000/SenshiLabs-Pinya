@@ -7,19 +7,18 @@ public class TagMiniGameManager : MinigameManager
 {
     public PlayerTag player;
 
-    public GameManager manager;
-    public MiniGameTimer minigameTime;
+
     // Start is called before the first frame update
     void Start()
     {
         sceneChange = this.gameObject.GetComponent<SceneChange>();
-        minigameTime = this.gameObject.GetComponent<MiniGameTimer>();
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(minigameTime.getTimer() <= 0)
+        if(SingletonManager.Get<MiniGameTimer>().getTimer() <= 0)
         {
             CheckIfFinished();
         }

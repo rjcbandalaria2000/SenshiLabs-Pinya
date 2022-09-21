@@ -14,6 +14,11 @@ public class WaterThePlantsManager : MinigameManager
         Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
     }
 
+    private void Update()
+    {
+        CheckIfFinished();
+    }
+
     public override void Initialize()
     {
         base.Initialize();
@@ -25,6 +30,12 @@ public class WaterThePlantsManager : MinigameManager
         {
             Events.OnObjectiveUpdate.RemoveListener(CheckIfFinished);
             Debug.Log("Finished Watering the Plants");
+            OnMinigameFinished();
+        }
+        else if (SingletonManager.Get<MiniGameTimer>().getTimer() <= 0)
+        {
+            Events.OnObjectiveUpdate.RemoveListener(CheckIfFinished);
+            Debug.Log("Fail Watering the Plants");
             OnMinigameFinished();
         }
     }

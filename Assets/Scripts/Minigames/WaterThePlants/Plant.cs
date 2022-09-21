@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Plant : MonoBehaviour
 {
@@ -15,10 +16,14 @@ public class Plant : MonoBehaviour
     public GameObject DehydratedModel;
     public GameObject HydratedModel;
 
+    [Header("WaterBar")]
+    public Image waterBar;
+
     // Start is called before the first frame update
     void Start()
     {
         IsWatered = false;
+        waterBar.fillAmount = 0;
         ChangeModel();
     }
 
@@ -27,6 +32,7 @@ public class Plant : MonoBehaviour
         if(CurrentWater < MaxWater)
         {
             CurrentWater += waterValue;
+            waterBar.fillAmount = CurrentWater / MaxWater;
         }
         else
         {

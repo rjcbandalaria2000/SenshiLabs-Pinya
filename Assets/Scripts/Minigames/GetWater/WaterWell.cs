@@ -38,6 +38,9 @@ public class WaterWell : MonoBehaviour
         CanSwipeUp = false;
         SwipedDown = false;
         SwipedUp = false;
+
+        SingletonManager.Get<GetWaterManager>().slider.maxValue = RequiredSwipes;
+        SingletonManager.Get<GetWaterManager>().slider.value = playerSwipeDownCount;
     }
 
     public void OnMouseDown()
@@ -61,6 +64,7 @@ public class WaterWell : MonoBehaviour
                     {
                         SwipedDown = true;
                         playerSwipeDownCount++;
+                        SingletonManager.Get<GetWaterManager>().slider.value = playerSwipeDownCount;
                         Events.OnObjectiveUpdate.Invoke();
                     }
                     if (!CanSwipeUp)
@@ -96,7 +100,7 @@ public class WaterWell : MonoBehaviour
             SingletonManager.Get<GetWaterManager>().SetNumOfSwipes(playerSwipeDownCount);
             SingletonManager.Get<GetWaterManager>().CheckIfComplete();
         }
-        Debug.Log("Y coordinate: " + mousePosition.normalized.y);
+     //   Debug.Log("Y coordinate: " + mousePosition.normalized.y);
     }
 
     private void OnMouseUp()

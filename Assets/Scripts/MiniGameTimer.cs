@@ -9,23 +9,24 @@ public class MiniGameTimer : MonoBehaviour
 
     private float speed;
 
-    private GameManager gameManager;
+    private MinigameManager miniGames;
+
     private void Awake()
     {
         SingletonManager.Register(this);
 
        
 
-        if(gameManager == null)
+        if(miniGames == null)
         {
-            if(GameObject.FindObjectOfType<GameManager>() != null)
+            if(GameObject.FindObjectOfType<MinigameManager>() != null)
             {
-                gameManager = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
+                miniGames = GameObject.FindObjectOfType<MinigameManager>().GetComponent<MinigameManager>();
             }
             
         }
-        speed = gameManager.speedCounter;
-        maxTimer = gameManager.maxTime;
+        speed = miniGames.speedTimer;
+        maxTimer = miniGames.maxTimer;
 
         timer = maxTimer;
     }
@@ -62,6 +63,7 @@ public class MiniGameTimer : MonoBehaviour
         timer -= 1;
         return timer;
     }
+  
     public IEnumerator countdownTimer()
     {
         while (timer > 0)
@@ -76,20 +78,20 @@ public class MiniGameTimer : MonoBehaviour
 
         if( timer <= 0)
         {
-            if (gameManager.cleanMiniGame != null)
+            if (miniGames != null)
             {
-                gameManager.cleanMiniGame.OnMinigameLose();
+                miniGames.OnMinigameLose();
             }
 
-            if (gameManager.groceryMiniGame != null)
-            {
-                gameManager.groceryMiniGame.OnMinigameLose();
-            }
+            //if (gameManager.groceryMiniGame != null)
+            //{
+            //    gameManager.groceryMiniGame.OnMinigameLose();
+            //}
 
-            if (gameManager.hideseekMiniGame != null)
-            {
-                gameManager.hideseekMiniGame.OnMinigameLose();
-            }
+            //if (gameManager.hideseekMiniGame != null)
+            //{
+            //    gameManager.hideseekMiniGame.OnMinigameLose();
+            //}
 
            
         }// Lose Condition

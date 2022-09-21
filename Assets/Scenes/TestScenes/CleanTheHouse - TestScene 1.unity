@@ -2648,8 +2648,8 @@ MonoBehaviour:
   - {fileID: 1976410423}
   - {fileID: 431337139}
   - {fileID: 299167220}
-  RandomSpawnLocation: []
   BoxSpawnPoint: {fileID: 0}
+  SpawnedObjects: []
 --- !u!4 &877029799
 Transform:
   m_ObjectHideFlags: 0
@@ -3047,9 +3047,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NameOfNextScene: Main Game Scene
-  NumberOfTrash: 5
+  timer: 0
+  maxTimer: 20
+  speedTimer: 1
+  NumberOfToys: 1
   NumberOfDust: 5
-  NumberOfTrashThrown: 0
+  isCompleted: 0
+  NumberOfToysKept: 0
   NumberOfDustSwept: 0
 --- !u!4 &1036058649
 Transform:
@@ -3105,9 +3109,10 @@ MonoBehaviour:
   timerDisplay: {fileID: 0}
   miniGameTimerDisplay: {fileID: 643025740}
   motivationMeter: {fileID: 0}
-  "pi\xF1yaMeter": {fileID: 0}
+  pinyaMeter: {fileID: 0}
   dayEnd_UI: {fileID: 0}
   Loading_UI: {fileID: 1069480587}
+  askMomButton: {fileID: 0}
 --- !u!114 &1036058653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3120,15 +3125,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 475ae4fca14c844448077912c08fbdd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMotivation: {fileID: 0}
+  playerPinyaMeter: {fileID: 0}
+  MotivationValueChange: 0
+  PinyaMeterValueChange: 0
+  highlightObj: []
+  cooldown: 0
   timer: 0
   endTime: 0
   currentTime: 0
   maxTime: 20
   speedCounter: 1
   player: {fileID: 0}
-  cleanMiniGame: {fileID: 0}
-  groceryMiniGame: {fileID: 0}
-  hideseekMiniGame: {fileID: 0}
+  isGetWaterFinish: 0
+  isGroceryTaskFinish: 0
 --- !u!1 &1060065521
 GameObject:
   m_ObjectHideFlags: 0
