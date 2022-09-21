@@ -57,5 +57,10 @@ public class MinigameManager : MonoBehaviour
     {
 
     }
+
+    public virtual void OnExitMinigame()
+    {
+
+    }
     
 }

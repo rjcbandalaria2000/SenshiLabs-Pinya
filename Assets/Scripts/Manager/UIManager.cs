@@ -23,7 +23,9 @@ public class UIManager : MonoBehaviour
     public GameObject miniGameTimerDisplay;
     public GameObject miniGameMainMenu;
     public GameObject minigameStartCountdownUI;
-   
+    public GameObject minigameResultsUI;
+    public GameObject minigameGoodResult;
+    public GameObject minigameBadResult;
 
     [Header("Loading UI")]
     public GameObject Loading_UI;
@@ -141,5 +143,15 @@ public class UIManager : MonoBehaviour
     public void DeactivateGameCountdown()
     {
         minigameStartCountdownUI.SetActive(false);
+    }
+
+    public void ActivateResultScreen()
+    {
+        minigameResultsUI.SetActive(true);
+    }
+
+    public void DeactivateResultScreen()
+    {
+
     }
 }
