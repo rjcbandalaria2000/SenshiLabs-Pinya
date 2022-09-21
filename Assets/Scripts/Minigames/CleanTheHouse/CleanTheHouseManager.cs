@@ -3,19 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Events;
+using TMPro;
 
 public class CleanTheHouseManager : MinigameManager
 {
     [Header("Setup Values")]
     public int  NumberOfToys = 1;
     public int  NumberOfDust = 1;
-    public float GameStartTime = 3f;
-
+   
     [Header("Player Values")]
     public int  NumberOfToysKept = 0;
     public int  NumberOfDustSwept = 0;
 
+    [Header("Countdown Timer")]
+    public float GameStartTime = 3f;
+    public DisplayGameCountdown CountdownTimerUI;
 
+    private float GameStartTimer = 0;
     private SpawnManager spawnManager;
     private Coroutine startMinigameRoutine;
     
@@ -101,6 +105,8 @@ public class CleanTheHouseManager : MinigameManager
 
     public override void StartMinigame()
     {
+        GameStartTimer = GameStartTime;
+        SingletonManager.Get<UIManager>().ActivateGameCountdown();
         startMinigameRoutine = StartCoroutine(StartMinigameCounter());
         SingletonManager.Get<UIManager>().deactivateMiniGameMainMenu(); 
         SingletonManager.Get<UIManager>().activateMiniGameTimer_UI();
@@ -111,8 +117,15 @@ public class CleanTheHouseManager : MinigameManager
 
     public IEnumerator StartMinigameCounter()
     {
-        
-        yield return new WaitForSeconds(GameStartTime);
+        CountdownTimerUI.UpdateCountdownTimer(GameStartTimer);
+        while(GameStartTimer > 0)
+        {
+            GameStartTimer -= 1 * Time.deltaTime;
+            CountdownTimerUI.UpdateCountdownTimer(GameStartTimer);
+            yield return null;
+        }
+        //yield return new WaitForSeconds(GameStartTime);
+        SingletonManager.Get<UIManager>().DeactivateGameCountdown();
         SingletonManager.Get<MiniGameTimer>().StartCountdownTimer();
        
         spawnManager.SpawnRandomNoRepeat();
