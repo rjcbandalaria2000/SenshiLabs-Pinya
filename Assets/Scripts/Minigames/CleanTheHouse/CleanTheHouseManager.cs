@@ -9,7 +9,7 @@ public class CleanTheHouseManager : MinigameManager
     [Header("Setup Values")]
     public int  NumberOfToys = 1;
     public int  NumberOfDust = 1;
-    public bool isCompleted = false;
+    public float GameStartTime = 3f;
 
     [Header("Player Values")]
     public int  NumberOfToysKept = 0;
@@ -17,7 +17,7 @@ public class CleanTheHouseManager : MinigameManager
 
 
     private SpawnManager spawnManager;
-
+    private Coroutine startMinigameRoutine;
 
     private void Awake()
     {
@@ -26,14 +26,17 @@ public class CleanTheHouseManager : MinigameManager
 
     private void Start()
     {
-        Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
-        sceneChange = this.gameObject.GetComponent<SceneChange>();
-        spawnManager = SingletonManager.Get<SpawnManager>();
-        spawnManager.NumToSpawn[0] = NumberOfToys;
-        spawnManager.NumToSpawn[1] = NumberOfDust;
-        spawnManager.SpawnRandomNoRepeat();
-        isCompleted = false;
-        Events.OnObjectiveUpdate.Invoke();
+        //Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
+        //sceneChange = this.gameObject.GetComponent<SceneChange>();
+        //spawnManager = SingletonManager.Get<SpawnManager>();
+        //spawnManager.NumToSpawn[0] = NumberOfToys;
+        //spawnManager.NumToSpawn[1] = NumberOfDust;
+        //spawnManager.SpawnRandomNoRepeat();
+        //isCompleted = false;
+        //Events.OnObjectiveUpdate.Invoke();
+
+        Initialize();
+        StartMinigame();
 
     }
 
@@ -84,6 +87,31 @@ public class CleanTheHouseManager : MinigameManager
     {
         return NumberOfToys - NumberOfToysKept;
     }
-    
+
+    public override void Initialize()
+    {
+        sceneChange = this.gameObject.GetComponent<SceneChange>();
+        spawnManager = SingletonManager.Get<SpawnManager>();
+        Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
+        startMinigameRoutine = null;
+        spawnManager.NumToSpawn[0] = NumberOfToys;
+        spawnManager.NumToSpawn[1] = NumberOfDust;
+    }
+
+    public override void StartMinigame()
+    {
+        startMinigameRoutine = StartCoroutine(StartMinigameCounter());
+        //spawnManager.SpawnRandomNoRepeat();
+        //isCompleted = false;
+        //Events.OnObjectiveUpdate.Invoke();
+    }
+
+    public IEnumerator StartMinigameCounter()
+    {
+        yield return new WaitForSeconds(GameStartTime);
+        spawnManager.SpawnRandomNoRepeat();
+        isCompleted = false;
+        Events.OnObjectiveUpdate.Invoke();
+    }
 
 }

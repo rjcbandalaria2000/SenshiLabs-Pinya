@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MinigameManager : MonoBehaviour
 {
+    [Header("State")]
+    public bool isCompleted = false;
 
     [Header("Scene Change")]
     public string           NameOfNextScene;
@@ -11,7 +13,6 @@ public class MinigameManager : MonoBehaviour
     [Header("Timers")]
     public float timer;
     public float maxTimer;
-
     public float speedTimer;
 
     protected SceneChange   sceneChange;
@@ -22,6 +23,11 @@ public class MinigameManager : MonoBehaviour
     }
 
     public virtual void Initialize()
+    {
+
+    }
+
+    public virtual void StartMinigame()
     {
 
     }
