@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4803294248504114133}
   - component: {fileID: 4803294248504114134}
   - component: {fileID: 4803294248504114129}
+  - component: {fileID: 7462989739060328669}
   m_Layer: 0
   m_Name: Toy
   m_TagString: Untagged
@@ -107,9 +108,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b0f7de2dfb396c409ddb5b1ab0111f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isHolding: 0
-  isHoveredOver: 0
-  isPickedUp: 0
+  IsHolding: 0
+  IsHoveredOver: 0
+  IsPickedUp: 0
+--- !u!114 &7462989739060328669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4803294248504114138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0408e621f7f0b124683412f3055fab37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enterCursorTexture: {fileID: 2800000, guid: 66e3a26d84f673b41aa9b6ea3be047f9, type: 3}
+  cursorHotspot: {x: 0, y: 0}
+  cursorHotspotPos: 4
 --- !u!1 &4803294249102648500
 GameObject:
   m_ObjectHideFlags: 0

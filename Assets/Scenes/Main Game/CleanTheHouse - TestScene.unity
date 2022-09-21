@@ -4219,13 +4219,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f1bded6d13d9e947be8e6efdce47352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isCompleted: 0
   NameOfNextScene: MainGameScene1 1
   timer: 0
   maxTimer: 20
   speedTimer: 1
   NumberOfToys: 5
   NumberOfDust: 5
-  isCompleted: 0
+  GameStartTime: 3
   NumberOfToysKept: 0
   NumberOfDustSwept: 0
 --- !u!4 &1036058649
@@ -4727,6 +4728,7 @@ GameObject:
   - component: {fileID: 1100426839}
   - component: {fileID: 1100426838}
   - component: {fileID: 1100426841}
+  - component: {fileID: 1100426842}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4812,6 +4814,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfacea6796f86984a9d850c87fd92d65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1100426842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100426837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0408e621f7f0b124683412f3055fab37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enterCursorTexture: {fileID: 0}
+  cursorHotspot: {x: 0, y: 0}
+  cursorHotspotPos: 0
 --- !u!1 &1118830445
 GameObject:
   m_ObjectHideFlags: 0
