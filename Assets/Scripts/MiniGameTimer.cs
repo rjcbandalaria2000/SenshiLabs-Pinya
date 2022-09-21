@@ -10,6 +10,7 @@ public class MiniGameTimer : MonoBehaviour
     private float speed;
 
     private MinigameManager miniGames;
+    private Coroutine countdownTimerRoutine;
 
     private void Awake()
     {
@@ -33,7 +34,12 @@ public class MiniGameTimer : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(countdownTimer());
+        //StartCoroutine(countdownTimer());
+    }
+
+    public void StartCountdownTimer()
+    {
+        countdownTimerRoutine = StartCoroutine(countdownTimer());
     }
 
     public float getTimer()

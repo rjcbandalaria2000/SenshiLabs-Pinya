@@ -36,7 +36,7 @@ public class CleanTheHouseManager : MinigameManager
         //Events.OnObjectiveUpdate.Invoke();
 
         Initialize();
-        StartMinigame();
+        //StartMinigame();
 
     }
 
@@ -90,6 +90,7 @@ public class CleanTheHouseManager : MinigameManager
 
     public override void Initialize()
     {
+        SingletonManager.Get<UIManager>().activateMiniGameMainMenu();
         sceneChange = this.gameObject.GetComponent<SceneChange>();
         spawnManager = SingletonManager.Get<SpawnManager>();
         Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
@@ -101,6 +102,8 @@ public class CleanTheHouseManager : MinigameManager
     public override void StartMinigame()
     {
         startMinigameRoutine = StartCoroutine(StartMinigameCounter());
+        SingletonManager.Get<UIManager>().deactivateMiniGameMainMenu(); 
+        SingletonManager.Get<UIManager>().activateMiniGameTimer_UI();
         //spawnManager.SpawnRandomNoRepeat();
         //isCompleted = false;
         //Events.OnObjectiveUpdate.Invoke();
@@ -108,7 +111,10 @@ public class CleanTheHouseManager : MinigameManager
 
     public IEnumerator StartMinigameCounter()
     {
+        
         yield return new WaitForSeconds(GameStartTime);
+        SingletonManager.Get<MiniGameTimer>().StartCountdownTimer();
+       
         spawnManager.SpawnRandomNoRepeat();
         isCompleted = false;
         Events.OnObjectiveUpdate.Invoke();
