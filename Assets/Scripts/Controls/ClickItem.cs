@@ -54,13 +54,13 @@ public class ClickItem : MonoBehaviour
 
     public void checkItem()
     {
-        for(int i = 0; i < groceryMiniGame.needItems.Count; i++)
+        for(int i = 0; i < groceryMiniGame.itemsAvailable.Count; i++)
         {
-            if(ingridientType == groceryMiniGame.needItems[i].GetComponent<ClickItem>().ingridientType && groceryMiniGame.needItems[i] != null)
+            if(ingridientType == groceryMiniGame.itemsAvailable[i].GetComponent<ClickItem>().ingridientType && groceryMiniGame.itemsAvailable[i] != null)
             {
                 StartCoroutine(lerpItem());
                 groceryList.blank();
-                groceryMiniGame.needItems.RemoveAt(i);
+                groceryMiniGame.itemsAvailable.RemoveAt(i);
                 groceryList.updateList();
 
                 break;

@@ -37,10 +37,10 @@ public class DisplayGroceryList : MonoBehaviour
     public void updateList()
     {
        
-        for(int i = 0; i < grocery.needItems.Count;i++)
+        for(int i = 0; i < grocery.wantedItems.Count;i++)
         {
-            Debug.Log(grocery.needItems[i].name);
-            textList[i].text = grocery.needItems[i].gameObject.name.ToString();
+            Debug.Log(grocery.wantedItems[i].name);
+            textList[i].text = grocery.wantedItems[i].gameObject.name.ToString();
         }
         
         
@@ -49,7 +49,7 @@ public class DisplayGroceryList : MonoBehaviour
     public void blank()
     {
         Debug.Log("Clear");
-        for (int i = 0; i < grocery.needItems.Count; i++)
+        for (int i = 0; i < grocery.itemsAvailable.Count; i++)
         {
             textList[i].text = " ";
         }
