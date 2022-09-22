@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7742465383111282697}
   - component: {fileID: 7213201426757405380}
   - component: {fileID: 189447156023594602}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Okra
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1488708207
+  m_SortingLayer: 1
   m_SortingOrder: 5
   m_Sprite: {fileID: -76772508, guid: 81dc9a35c3f341d45adf18fcc3be1aec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
