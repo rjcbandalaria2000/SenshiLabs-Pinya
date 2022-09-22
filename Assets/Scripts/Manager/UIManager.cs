@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Assertions;
 
 public class UIManager : MonoBehaviour
 {
@@ -148,7 +149,13 @@ public class UIManager : MonoBehaviour
 
     public void ActivateResultScreen()
     {
+        if(minigameResultsUI == null) { return; }
         minigameResultsUI.SetActive(true);
+        DisplayMinigameResult results = minigameResultsUI.GetComponent<DisplayMinigameResult>();
+        //if(results == null) { return; }
+        Assert.IsNotNull(results);
+        results.DisplayPinyaMeter();
+        results.DisplayMotivation();
     }
 
     public void DeactivateResultScreen()

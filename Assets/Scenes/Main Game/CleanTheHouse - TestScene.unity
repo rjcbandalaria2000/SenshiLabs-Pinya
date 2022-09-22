@@ -3155,6 +3155,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MotivationMeter: {fileID: 702338738}
   PinyaMeter: {fileID: 702338737}
+  motivationMeterSlider: {fileID: 702338741}
+  pinyaMeterSlider: {fileID: 702338740}
+  playerData: {fileID: 0}
+--- !u!114 &702338740 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7880112026523379491, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
+  m_PrefabInstance: {fileID: 702338735}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702338737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &702338741 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4424961015090766359, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
+  m_PrefabInstance: {fileID: 702338735}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702338738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &728482420
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.EventSystems;
 public enum CursorHotspotPos
 {
     TopLeft = 0,
@@ -28,6 +28,7 @@ public class CursorManager : MonoBehaviour
 
     public void OnMouseEnter()
     {
+        if (EventSystem.current.IsPointerOverGameObject()) { return; }
         if(enterCursorTexture == null) { return; }
       
         SetHotSpot();
@@ -36,6 +37,7 @@ public class CursorManager : MonoBehaviour
 
     public void OnMouseDrag()
     {
+        if (EventSystem.current.IsPointerOverGameObject()) { return; }
         if (dragCursorTexture == null) { return; }
         SetHotSpot();
         Cursor.SetCursor(dragCursorTexture, cursorHotspot, CursorMode.Auto);
@@ -43,16 +45,19 @@ public class CursorManager : MonoBehaviour
 
     public void OnMouseExit()
     {
+        if (EventSystem.current.IsPointerOverGameObject()) { return; }
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 
     public void OnMouseUp()
     {
+        if (EventSystem.current.IsPointerOverGameObject()) { return; }
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 
     private void OnDestroy()
     {
+        //if (EventSystem.current.IsPointerOverGameObject()) { return; }
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 

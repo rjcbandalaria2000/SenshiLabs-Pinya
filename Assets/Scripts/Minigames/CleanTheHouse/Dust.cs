@@ -60,7 +60,7 @@ public class Dust : MonoBehaviour
             SingletonManager.Get<CleanTheHouseManager>().AddDustSwept(1);
             Destroy(this.gameObject);
         }
-        Debug.Log("X coordinate: " + mousePosition.normalized.x);
+        //Debug.Log("X coordinate: " + mousePosition.normalized.x);
     }
 
 
