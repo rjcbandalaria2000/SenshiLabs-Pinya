@@ -46,7 +46,7 @@ public class UIManager : MonoBehaviour
                 Debug.Log("Not Minigame");
             }
         }
-        if(minigame != null)
+        if(miniGameTimerDisplay != null)
         {
             InitializeUI();
         }
