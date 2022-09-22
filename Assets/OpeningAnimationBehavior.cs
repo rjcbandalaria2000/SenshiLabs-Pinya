@@ -1,21 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
-public class OpeningAnimation : StateMachineBehaviour
+public class OpeningAnimationBehavior : StateMachineBehaviour
 {
+    public bool isFinished = false;
+    public float openedTime = 1;
+    public GameObject parent; 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       
+        parent = animator.gameObject.GetComponent<UnitInfo>().Parent;
+        SingletonManager.Get<UIManager>().DeactivateGameUI();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       if(stateInfo.normalizedTime <= 0)
+        //Debug.Log("Animation Length: " + stateInfo.length);
+        //Debug.Log("Animation Normalized Time: " + stateInfo.normalizedTime);
+        if (stateInfo.normalizedTime >= openedTime)
         {
-            Debug.Log("Finished Animation");
+            if (!isFinished)
+            {
+                Debug.Log("Finished Animation");
+                isFinished = true;
+                Assert.IsNotNull(parent, "Curtain not set or is null");
+                parent.SetActive(false);
+                SingletonManager.Get<UIManager>().ActivateGameUI();
+            }
+            
         }
     }
 

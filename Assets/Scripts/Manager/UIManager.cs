@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour
     [Header("Display UI")] //Mostly text base UI
     public GameObject dayEnd_UI;
     public GameObject curtainsUI;
+    public GameObject gameUI;
 
     //------------------------------------------------MINIGAME------------------------------------------------------------------------------------
   
@@ -129,6 +130,7 @@ public class UIManager : MonoBehaviour
         activateMiniGameMainMenu();
 
         DeactivateResultScreen();
+        DeactivateGameUI();
     }
 
     public void playMiniGameUI()
@@ -184,5 +186,16 @@ public class UIManager : MonoBehaviour
     public void DeactivateOpeningCurtains()
     {
         curtainsUI.SetActive(false);
+    }
+
+    public void ActivateGameUI()
+    {
+        if(gameUI == null) { return; }
+        gameUI.SetActive(true);
+    }
+    public void DeactivateGameUI()
+    {
+        if (gameUI == null) { return; }
+        gameUI.SetActive(false);
     }
 }

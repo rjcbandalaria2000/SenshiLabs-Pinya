@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12e7f7b18e5ab2c419ec64cb4af41da9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFinished: 0
+  openedTime: 0.5
+  parent: {fileID: 0}
 --- !u!1107 &-6239217836085554036
 AnimatorStateMachine:
   serializedVersion: 6
@@ -64,7 +67,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: CurtainsOpening
-  m_Speed: 1
+  m_Speed: -1
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours:
