@@ -39,17 +39,16 @@ public class DisplayGroceryList : MonoBehaviour
        
         for(int i = 0; i < grocery.wantedItems.Count;i++)
         {
+            Debug.Log("Update List");
             Debug.Log(grocery.wantedItems[i].name);
             textList[i].text = grocery.wantedItems[i].gameObject.name.ToString();
         }
-        
-        
     }
 
     public void blank()
     {
         Debug.Log("Clear");
-        for (int i = 0; i < grocery.itemsAvailable.Count; i++)
+        for (int i = 0; i < grocery.wantedItems.Count; i++)
         {
             textList[i].text = " ";
         }

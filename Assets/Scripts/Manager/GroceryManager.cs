@@ -125,7 +125,7 @@ public class GroceryManager : MinigameManager //Might rename this
 
     public override void CheckIfFinished()
     {
-        if (itemsAvailable.Count <= 0)
+        if (wantedItems.Count <= 0)
         {
             Debug.Log("Minigame complete");
             SingletonManager.Get<PlayerData>().IsGroceryFinished = true;

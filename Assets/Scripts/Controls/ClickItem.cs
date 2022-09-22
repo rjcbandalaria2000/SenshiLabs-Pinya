@@ -35,10 +35,6 @@ public class ClickItem : MonoBehaviour
         if(groceryMiniGame != null)
         {
             Debug.Log("Moving");
-            // this.gameObject.transform.position = groceryMiniGame.basketPosition;
-            //// item.transform.position = Vector3.Lerp(this.item.transform.position, groceryMiniGame.basketPosition, 1.0f*Time.deltaTime);
-            // // SingletonManager.Get<GroceryManager_Test>().basket.GetComponent<GameObject>().transform.position;
-            // StartCoroutine(lerpItem());
             checkItem();
         }
     }
@@ -54,13 +50,14 @@ public class ClickItem : MonoBehaviour
 
     public void checkItem()
     {
-        for(int i = 0; i < groceryMiniGame.itemsAvailable.Count; i++)
+        for(int i = 0; i < groceryMiniGame.wantedItems.Count; i++)
         {
-            if(ingridientType == groceryMiniGame.itemsAvailable[i].GetComponent<ClickItem>().ingridientType && groceryMiniGame.itemsAvailable[i] != null)
+            if(ingridientType == groceryMiniGame.wantedItems[i].GetComponent<ClickItem>().ingridientType && groceryMiniGame.wantedItems[i] != null)
             {
+                Debug.Log("Correct");
                 StartCoroutine(lerpItem());
                 groceryList.blank();
-                groceryMiniGame.itemsAvailable.RemoveAt(i);
+                groceryMiniGame.wantedItems.RemoveAt(i);
                 groceryList.updateList();
 
                 break;
@@ -71,6 +68,7 @@ public class ClickItem : MonoBehaviour
             }
         }
 
-        groceryMiniGame.CheckIfFinished();
+        SingletonManager.Get<GroceryManager>().CheckIfFinished();
+       // groceryMiniGame.CheckIfFinished();
     }
 }
