@@ -20,6 +20,7 @@ public class CursorManager : MonoBehaviour
     [Header("MouseTextures")]
     public Texture2D        enterCursorTexture;
     public Texture2D        dragCursorTexture;
+    public Texture2D        pressDownCursorTexture;
     private Vector2         cursorHotspot = new Vector2(0,0);
 
     [Header("Hotspot Positions")]
@@ -30,9 +31,14 @@ public class CursorManager : MonoBehaviour
     {
         if (EventSystem.current.IsPointerOverGameObject()) { return; }
         if(enterCursorTexture == null) { return; }
-      
         SetHotSpot();
         Cursor.SetCursor(enterCursorTexture, cursorHotspot, CursorMode.Auto);
+    }
+
+    public void OnMouseDown()
+    {
+        if(pressDownCursorTexture == null) { return; }
+        Cursor.SetCursor(pressDownCursorTexture, cursorHotspot, CursorMode.Auto);
     }
 
     public void OnMouseDrag()
@@ -52,7 +58,8 @@ public class CursorManager : MonoBehaviour
     public void OnMouseUp()
     {
         if (EventSystem.current.IsPointerOverGameObject()) { return; }
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        SetHotSpot();
+        Cursor.SetCursor(enterCursorTexture, cursorHotspot, CursorMode.Auto);
     }
 
     private void OnDestroy()

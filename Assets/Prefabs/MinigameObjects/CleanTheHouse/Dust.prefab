@@ -103,8 +103,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0408e621f7f0b124683412f3055fab37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enterCursorTexture: {fileID: 2800000, guid: 0ef06e270db10e847be051310f75f339, type: 3}
-  dragCursorTexture: {fileID: 2800000, guid: 0ef06e270db10e847be051310f75f339, type: 3}
+  enterCursorTexture: {fileID: 2800000, guid: 063fea6173bab7b48b2bb3e46b64af58, type: 3}
+  dragCursorTexture: {fileID: 2800000, guid: 063fea6173bab7b48b2bb3e46b64af58, type: 3}
+  pressDownCursorTexture: {fileID: 2800000, guid: 063fea6173bab7b48b2bb3e46b64af58, type: 3}
   cursorHotspotPos: 4
 --- !u!1 &5920978551436951451
 GameObject:
