@@ -126,6 +126,7 @@ public class UIManager : MonoBehaviour
 
         activateMiniGameMainMenu();
 
+        DeactivateResultScreen();
     }
 
     public void playMiniGameUI()

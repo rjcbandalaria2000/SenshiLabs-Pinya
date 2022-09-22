@@ -42,6 +42,12 @@ public class MiniGameTimer : MonoBehaviour
         countdownTimerRoutine = StartCoroutine(countdownTimer());
     }
 
+    public void StopCountdownTimer()
+    {
+        if(countdownTimerRoutine == null) { return; }
+        StopCoroutine(countdownTimerRoutine);
+    }
+
     public float getTimer()
     {
         return timer;
@@ -79,27 +85,12 @@ public class MiniGameTimer : MonoBehaviour
             Events.OnDisplayMinigameTime.Invoke();
             yield return new WaitForSeconds(speed);
         }
-
-
-
         if( timer <= 0)
         {
             if (miniGames != null)
             {
                 miniGames.OnMinigameLose();
-            }
-
-            //if (gameManager.groceryMiniGame != null)
-            //{
-            //    gameManager.groceryMiniGame.OnMinigameLose();
-            //}
-
-            //if (gameManager.hideseekMiniGame != null)
-            //{
-            //    gameManager.hideseekMiniGame.OnMinigameLose();
-            //}
-
-           
+            }           
         }// Lose Condition
         yield return null;
     }

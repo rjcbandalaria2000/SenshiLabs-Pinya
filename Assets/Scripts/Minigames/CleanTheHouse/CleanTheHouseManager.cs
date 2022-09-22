@@ -131,6 +131,7 @@ public class CleanTheHouseManager : MinigameManager
     {
         if (!isCompleted)
         {
+            SingletonManager.Get<MiniGameTimer>().StopCountdownTimer();
             isCompleted = true;
             SingletonManager.Get<UIManager>().ActivateResultScreen();
             SingletonManager.Get<UIManager>().ActivateGoodResult();
