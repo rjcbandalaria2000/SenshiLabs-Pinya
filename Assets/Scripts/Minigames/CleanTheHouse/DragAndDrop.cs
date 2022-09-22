@@ -23,6 +23,7 @@ public class DragAndDrop : MonoBehaviour
     } 
     private void OnMouseDown()
     {
+        if (EventSystem.current.IsPointerOverGameObject()) { return; }
         // add offset so the object will not snap in the pivot point of the object
         dragOffset = transform.position - GetMousePosition();
         dragOffset.z = 0;
@@ -31,6 +32,7 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnMouseDrag()
     {
+        if (EventSystem.current.IsPointerOverGameObject()) { return; }
         transform.position = GetMousePosition() + dragOffset;
     }
     private void OnMouseOver()

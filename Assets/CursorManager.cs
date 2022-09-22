@@ -45,7 +45,7 @@ public class CursorManager : MonoBehaviour
 
     public void OnMouseExit()
     {
-        if (EventSystem.current.IsPointerOverGameObject()) { return; }
+        //if (EventSystem.current.IsPointerOverGameObject()) { return; }
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 
@@ -57,7 +57,6 @@ public class CursorManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        //if (EventSystem.current.IsPointerOverGameObject()) { return; }
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 

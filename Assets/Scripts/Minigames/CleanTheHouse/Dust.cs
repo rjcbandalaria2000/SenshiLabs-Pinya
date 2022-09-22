@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Dust : MonoBehaviour
 {
@@ -35,6 +36,7 @@ public class Dust : MonoBehaviour
 
     private void OnMouseDrag()
     {
+        if (EventSystem.current.IsPointerOverGameObject()) { return; }
         //can be improved to be transfered in Sweeping Controls
         //Get mouse position
         Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition) - (Vector3)initialPosition;
