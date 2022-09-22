@@ -21,4 +21,9 @@ public class SceneChange : MonoBehaviour
         }
         SingletonManager.Get<SceneLoad>().LoadScene(sceneID);
     }
+
+    public void QuitApplication()
+    {
+        Application.Quit();
+    }
 }
