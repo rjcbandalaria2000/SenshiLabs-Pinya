@@ -22,6 +22,7 @@ public class GroceryManager : MinigameManager //Might rename this
     public int numberOfItems;
     public List<GameObject> itemsAvailable;
     public List<GameObject> wantedItems;
+    //public List<GameObject> extraList;
 
     [SerializeField]private GameObject basket;
     private Vector3 basketPosition;
@@ -105,6 +106,8 @@ public class GroceryManager : MinigameManager //Might rename this
             RNG = Random.Range(0, itemsAvailable.Count);
             wantedItems.Add(itemsAvailable[RNG]);
             SingletonManager.Get<DisplayGroceryList>().updateList();
+
+            //extraList = itemsAvailable;
 
             yield return null;
         }
