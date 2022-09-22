@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b75ae546a747b864fb59366ba9b9a9f2
+guid: b59e25643824f974993df5ede5ae44f6
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -91,91 +91,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: heart
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 207
-      width: 175
-      height: 178
-    spriteID: ccf8554b120e41442bb9d2dfdd687aa7
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -8, y: 188}
-  - name: outline
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
-      width: 966
-      height: 45
-    spriteID: c814b820ae5c9ef40b906590aa25dd59
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -91, y: -85}
-  - name: shine and shade
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 57
-      width: 968
-      height: 44
-    spriteID: 89faeb2ddb6e7d0438709d9e4cd9b4f4
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -89, y: -34}
-  - name: bar itself
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 109
-      width: 961
-      height: 41
-    spriteID: a2c1a48a4a360cd42b81d9e6bedc45a8
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -94, y: 18}
-  - name: background
+  - name: dsaasd
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -184,9 +100,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 158
-      width: 961
-      height: 41
-    spriteID: c26f9ff6fe048154e926f7a6e8bb4a25
+      width: 229
+      height: 157
+    spriteID: e4733481106c51845901bb45b6406fbc
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -195,7 +111,112 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -94, y: 67}
+    uvTransform: {x: -25, y: 96}
+  - name: outline
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1038
+      y: 4
+      width: 966
+      height: 45
+    spriteID: a7efeb0d2389aa64a927dad188bb874e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 893, y: -120}
+  - name: shine and shade
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 106
+      width: 968
+      height: 44
+    spriteID: 1f01952fb3141d8418fa99502be3ff44
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -139, y: -20}
+  - name: bar itself
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1038
+      y: 57
+      width: 961
+      height: 41
+    spriteID: 5b7c8349593606e4ab8ba4b79dfdc95e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 890, y: -69}
+  - name: background
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 980
+      y: 106
+      width: 961
+      height: 41
+    spriteID: 3224e908a76a2414491aaca22dc9a982
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 832, y: -20}
+  - name: view-white-crumpled-paper
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 1026
+      height: 94
+    spriteID: dc6e0521213c78247b66c4720b186797
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -104, y: -91}
   characterData:
     bones: []
     parts: []
@@ -226,13 +247,13 @@ ScriptedImporter:
   resliceFromLayer: 0
   mosaicPSDLayers: []
   rigPSDLayers:
-  - name: heart
-    spriteName: heart
+  - name: dsaasd
+    spriteName: dsaasd
     isGroup: 0
     parentIndex: -1
-    spriteID: ccf8554b120e41442bb9d2dfdd687aa7
-    layerID: 5
-    mosaicPosition: {x: 4, y: 207}
+    spriteID: e4733481106c51845901bb45b6406fbc
+    layerID: 21
+    mosaicPosition: {x: 4, y: 158}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -240,9 +261,9 @@ ScriptedImporter:
     spriteName: outline
     isGroup: 0
     parentIndex: -1
-    spriteID: c814b820ae5c9ef40b906590aa25dd59
+    spriteID: a7efeb0d2389aa64a927dad188bb874e
     layerID: 17
-    mosaicPosition: {x: 4, y: 4}
+    mosaicPosition: {x: 1038, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -250,9 +271,9 @@ ScriptedImporter:
     spriteName: shine and shade
     isGroup: 0
     parentIndex: -1
-    spriteID: 89faeb2ddb6e7d0438709d9e4cd9b4f4
+    spriteID: 1f01952fb3141d8418fa99502be3ff44
     layerID: 14
-    mosaicPosition: {x: 4, y: 57}
+    mosaicPosition: {x: 4, y: 106}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -260,9 +281,9 @@ ScriptedImporter:
     spriteName: bar itself
     isGroup: 0
     parentIndex: -1
-    spriteID: a2c1a48a4a360cd42b81d9e6bedc45a8
+    spriteID: 5b7c8349593606e4ab8ba4b79dfdc95e
     layerID: 11
-    mosaicPosition: {x: 4, y: 109}
+    mosaicPosition: {x: 1038, y: 57}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -270,9 +291,19 @@ ScriptedImporter:
     spriteName: background
     isGroup: 0
     parentIndex: -1
-    spriteID: c26f9ff6fe048154e926f7a6e8bb4a25
+    spriteID: 3224e908a76a2414491aaca22dc9a982
     layerID: 10
-    mosaicPosition: {x: 4, y: 158}
+    mosaicPosition: {x: 980, y: 106}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: view-white-crumpled-paper
+    spriteName: view-white-crumpled-paper
+    isGroup: 0
+    parentIndex: -1
+    spriteID: dc6e0521213c78247b66c4720b186797
+    layerID: 25
+    mosaicPosition: {x: 4, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1

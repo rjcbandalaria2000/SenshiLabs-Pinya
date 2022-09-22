@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7057dc6f16a8a8b40887b7d689cfa9ba
+guid: a73135b0621cc1f46aa118da76fec2e7
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -91,7 +91,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: pinya Meter
+  - name: Pinya Head
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -99,10 +99,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 267
-      width: 437
-      height: 64
-    spriteID: 926d4359a9ed4e844818ea5883e84240
+      y: 200
+      width: 229
+      height: 157
+    spriteID: 40b588d3777c7cc488cae36c175f72f2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -111,29 +111,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -9, y: 155}
-  - name: bar shine
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 731
-      y: 4
-      width: 101
-      height: 40
-    spriteID: 7223e9349593bc14c9b2d4f9b6ff40d3
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 111, y: -45}
-  - name: red bar
+    uvTransform: {x: -25, y: 138}
+  - name: Layer Style
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -141,31 +120,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 98
-      width: 711
-      height: 79
-    spriteID: 6da4454beb3f0f44a9969d27152f9b65
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -13, y: 85}
-  - name: bar outline
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
-      width: 719
+      y: 106
+      width: 1018
       height: 86
-    spriteID: f5605efc8b5c0b442ba492cd941e6f4a
+    spriteID: 8d5bc5e6f397ada4d8fdebf30a09644d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -174,8 +132,71 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -9, y: -6}
-  - name: Rectangle 1
+    uvTransform: {x: -108, y: 3}
+  - name: outline
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1030
+      y: 106
+      width: 972
+      height: 48
+    spriteID: 8633ef3fd00fbd84bb6c6d08769af410
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 886, y: -16}
+  - name: fill
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1038
+      y: 4
+      width: 963
+      height: 42
+    spriteID: 539ba3469cce60d4b9813c9926e14032
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 891, y: -122}
+  - name: background
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1038
+      y: 54
+      width: 963
+      height: 42
+    spriteID: d11139db71cfcdb43a2a8c650a5d6750
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 891, y: -72}
+  - name: Base Color
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -183,10 +204,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 185
-      width: 693
-      height: 74
-    spriteID: 5cc1fc564d022f54f81139991dbfdd1e
+      y: 4
+      width: 1026
+      height: 94
+    spriteID: c170ebbff67c1d546bfbd8293732c8ec
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -195,7 +216,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -21, y: 165}
+    uvTransform: {x: -104, y: -91}
   characterData:
     bones: []
     parts: []
@@ -226,53 +247,63 @@ ScriptedImporter:
   resliceFromLayer: 0
   mosaicPSDLayers: []
   rigPSDLayers:
-  - name: pinya Meter
-    spriteName: pinya Meter
+  - name: Pinya Head
+    spriteName: Pinya Head
     isGroup: 0
     parentIndex: -1
-    spriteID: 926d4359a9ed4e844818ea5883e84240
-    layerID: 10
-    mosaicPosition: {x: 4, y: 267}
+    spriteID: 40b588d3777c7cc488cae36c175f72f2
+    layerID: 21
+    mosaicPosition: {x: 4, y: 200}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: bar shine
-    spriteName: bar shine
+  - name: Layer Style
+    spriteName: Layer Style
     isGroup: 0
     parentIndex: -1
-    spriteID: 7223e9349593bc14c9b2d4f9b6ff40d3
-    layerID: 6
-    mosaicPosition: {x: 731, y: 4}
+    spriteID: 8d5bc5e6f397ada4d8fdebf30a09644d
+    layerID: 65
+    mosaicPosition: {x: 4, y: 106}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: red bar
-    spriteName: red bar
+  - name: outline
+    spriteName: outline
     isGroup: 0
     parentIndex: -1
-    spriteID: 6da4454beb3f0f44a9969d27152f9b65
-    layerID: 5
-    mosaicPosition: {x: 4, y: 98}
+    spriteID: 8633ef3fd00fbd84bb6c6d08769af410
+    layerID: 80
+    mosaicPosition: {x: 1030, y: 106}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: bar outline
-    spriteName: bar outline
+  - name: fill
+    spriteName: fill
     isGroup: 0
     parentIndex: -1
-    spriteID: f5605efc8b5c0b442ba492cd941e6f4a
-    layerID: 35
+    spriteID: 539ba3469cce60d4b9813c9926e14032
+    layerID: 49
+    mosaicPosition: {x: 1038, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: background
+    spriteName: background
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d11139db71cfcdb43a2a8c650a5d6750
+    layerID: 64
+    mosaicPosition: {x: 1038, y: 54}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Base Color
+    spriteName: Base Color
+    isGroup: 0
+    parentIndex: -1
+    spriteID: c170ebbff67c1d546bfbd8293732c8ec
+    layerID: 27
     mosaicPosition: {x: 4, y: 4}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: Rectangle 1
-    spriteName: Rectangle 1
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 5cc1fc564d022f54f81139991dbfdd1e
-    layerID: 38
-    mosaicPosition: {x: 4, y: 185}
     flatten: 0
     isImported: 1
     isVisible: 1
