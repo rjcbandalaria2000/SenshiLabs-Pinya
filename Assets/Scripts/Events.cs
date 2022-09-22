@@ -52,6 +52,7 @@ public static class Events
     #region Interactable Events
     public static readonly Evt<GameObject> OnInteract = new();
     public static readonly Evt<GameObject> OnFinishInteract = new();
+    public static readonly Evt OnEnterInteraction = new();
     #endregion
 
     #region MouseEvents

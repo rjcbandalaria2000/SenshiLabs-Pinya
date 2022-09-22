@@ -15,22 +15,23 @@ public class CleanTheHouseMinigame : MinigameObject
         interactable = this.GetComponent<Interactable>();
         hasCompleted = SingletonManager.Get<PlayerData>().IsCleanTheHouseFinished;
         sceneChange = this.gameObject.GetComponent<SceneChange>();
+        isInteracted = false;
     }
 
     public override void Interact(GameObject player = null)
     {
-
-        Debug.Log("Interact with" + this.gameObject.name);
-        MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
-        if (playerMotivation)
+        if (!isInteracted)
         {
-            playerMotivation.DecreaseMotivation(motivationCost);
+            Debug.Log("Interact with" + this.gameObject.name);
+            MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
+            if (playerMotivation)
+            {
+                playerMotivation.DecreaseMotivation(motivationCost);
+            }
+            Debug.Log("Interacted");
+            isInteracted = true;
+            JumpToMiniGame();
         }
-        Debug.Log("Interacted");
-        isInteracted = false;
-        JumpToMiniGame();
-        //isInteracted = true;
-        //interactRoutine = StartCoroutine(InteractCoroutine(player));
     }
 
     public override void EndInteract(GameObject player = null)

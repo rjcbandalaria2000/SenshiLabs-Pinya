@@ -33,13 +33,14 @@ public class MinigameDetector : MonoBehaviour
         Interactable interactedObject = collision.gameObject.GetComponent<Interactable>();
         if (interactedObject)
         {
+            Events.OnEnterInteraction.Invoke();
             PlayerInteract playerInteract = Parent.GetComponent<PlayerInteract>();
             if (playerInteract == null) { return; }
             playerInteract.InteractableObject = interactedObject;
             MinigameObject detectedMinigame = collision.gameObject.GetComponent<MinigameObject>();
             if (detectedMinigame)
             {
-                Events.OnInteract.Invoke(Parent);
+                
                 Events.OnInteract.AddListener(detectedMinigame.Interact);
                 Events.OnFinishInteract.AddListener(detectedMinigame.EndInteract);
             }
@@ -62,7 +63,7 @@ public class MinigameDetector : MonoBehaviour
             if (detectedMinigame)
             {
                 //Events.OnFinishInteract.AddListener(detectedMinigame.EndInteract);
-                interactedObject.FinishInteract(Parent);
+                //interactedObject.FinishInteract(Parent);
                 Events.OnInteract.RemoveListener(detectedMinigame.Interact);
                 Events.OnFinishInteract.RemoveListener(detectedMinigame.EndInteract);
             }

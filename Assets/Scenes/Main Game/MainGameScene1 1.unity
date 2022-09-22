@@ -1383,6 +1383,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6543178211671691289, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
+      propertyPath: Parent
+      value: 
+      objectReference: {fileID: 312946472}
     - target: {fileID: 6543178211671691291, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -6669,6 +6673,13 @@ MonoBehaviour:
   maxTime: 0
   speedCounter: 0
   player: {fileID: 312946475}
+  minigames: []
+  cleanMiniGame: {fileID: 0}
+  groceryMiniGame: {fileID: 0}
+  hideseekMiniGame: {fileID: 0}
+  tagMiniGame: {fileID: 0}
+  foldMiniGame: {fileID: 0}
+  minigamesName: []
   isGetWaterFinish: 0
   isGroceryTaskFinish: 0
 --- !u!4 &1473840147
@@ -6698,10 +6709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64dbf9f038b429e48af7a8a90e7edce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 0
-  endTime: 0
   timePeriod: 0
-  isMorning: 0
 --- !u!114 &1473840149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7365,10 +7373,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerDisplay: {fileID: 0}
-  miniGameTimerDisplay: {fileID: 0}
   motivationMeter: {fileID: 0}
   pinyaMeter: {fileID: 0}
   dayEnd_UI: {fileID: 0}
+  miniGameTimerDisplay: {fileID: 0}
+  miniGameMainMenu: {fileID: 0}
+  minigameStartCountdownUI: {fileID: 0}
+  minigameResultsUI: {fileID: 0}
+  minigameGoodResult: {fileID: 0}
+  minigameBadResult: {fileID: 0}
   Loading_UI: {fileID: 1756032841}
   askMomButton: {fileID: 281171958}
 --- !u!4 &1787921855

@@ -29,16 +29,16 @@ public class MinigameObject : MonoBehaviour
 
     public virtual void Initialize()
     {
-        interactable = this.GetComponent<Interactable>();
+        //interactable = this.GetComponent<Interactable>();
 
-        if (interactable)
-        {
-            //Listen to the interactable event and proceed to interact with the player
-            Events.OnInteract.AddListener(Interact);
-            Events.OnFinishInteract.AddListener(EndInteract);
+        //if (interactable)
+        //{
+        //    //Listen to the interactable event and proceed to interact with the player
+        //    Events.OnInteract.AddListener(Interact);
+        //    Events.OnFinishInteract.AddListener(EndInteract);
             
-        }
-        sceneChange = this.gameObject.GetComponent<SceneChange>();
+        //}
+        //sceneChange = this.gameObject.GetComponent<SceneChange>();
     }
 
     public virtual void Interact(GameObject player = null)

@@ -26,13 +26,13 @@ public class DisplayInteractMessage : MonoBehaviour
         Assert.IsNotNull(Parent, "Parent is not set or is null");
 
         
-        Events.OnInteract.AddListener(ChangeMessage);
+        Events.OnEnterInteraction.AddListener(ChangeMessage);
         Events.OnFinishInteract.AddListener(RemoveMessage);
         Events.OnSceneChange.AddListener(OnSceneChange);
         this.gameObject.SetActive(false);
     }
 
-    public void ChangeMessage(GameObject player = null)
+    public void ChangeMessage()
     {
         //Debug.Log("Message appear ");
         if (!this.gameObject.activeSelf)
@@ -52,7 +52,7 @@ public class DisplayInteractMessage : MonoBehaviour
     public void OnSceneChange()
     {
         Events.OnSceneChange.RemoveListener(OnSceneChange);
-        Events.OnInteract.RemoveListener(ChangeMessage);
+        Events.OnEnterInteraction.RemoveListener(ChangeMessage);
         Events.OnFinishInteract.RemoveListener(RemoveMessage);
         Debug.Log("Removed Interact Message listener");
     }
