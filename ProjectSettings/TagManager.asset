@@ -14,7 +14,7 @@ TagManager:
   - Water
   - UI
   - Base
-  - 
+  - Ingredients
   - 
   - 
   - 
@@ -42,4 +42,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ingredients
+    uniqueID: 2806259089
+    locked: 0
+  - name: FrontCover
+    uniqueID: 4283047105
+    locked: 0
+  - name: Basket
+    uniqueID: 2308033831
     locked: 0
