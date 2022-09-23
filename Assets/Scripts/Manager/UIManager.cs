@@ -143,6 +143,7 @@ public class UIManager : MonoBehaviour
 
     public void DeactivateMiniGameMainMenu()
     {
+        if (miniGameMainMenu == null) { return; }
         miniGameMainMenu.SetActive(false);
     }
 
