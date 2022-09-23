@@ -63,7 +63,7 @@ public class MinigameDetector : MonoBehaviour
             if (detectedMinigame)
             {
                 //Events.OnFinishInteract.AddListener(detectedMinigame.EndInteract);
-                //interactedObject.FinishInteract(Parent);
+                interactedObject.FinishInteract(Parent);
                 Events.OnInteract.RemoveListener(detectedMinigame.Interact);
                 Events.OnFinishInteract.RemoveListener(detectedMinigame.EndInteract);
             }
