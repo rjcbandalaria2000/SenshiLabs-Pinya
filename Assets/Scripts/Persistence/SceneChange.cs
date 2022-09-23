@@ -11,7 +11,7 @@ public class SceneChange : MonoBehaviour
         {
             if (SingletonManager.Get<UIManager>().Loading_UI != null)
             {
-                SingletonManager.Get<UIManager>().activateLoading_UI();
+                SingletonManager.Get<UIManager>().ActivateLoadingUI();
             }
             
         }

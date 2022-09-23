@@ -41,7 +41,7 @@ public class AskMom : MonoBehaviour
     {
         if (uiManager != null)
         {
-            uiManager.buttonUninteractable();
+            uiManager.ButtonUninteractable();
         }
         EnableHighlight();
         if (taskManager != null)
@@ -51,7 +51,7 @@ public class AskMom : MonoBehaviour
         yield return new WaitForSeconds(coolDown);
         if (uiManager != null)
         {
-            uiManager.buttonInteractable();
+            uiManager.ButtonInteractable();
         }
         DisableHighlight();
         if (taskManager != null)

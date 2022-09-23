@@ -40,7 +40,6 @@ public static class Events
     #region UI Events
     //Used for Meter UI Events when updating the values 
     public static readonly Evt OnChangeMeter = new();
-
     public static readonly Evt OnDisplayMinigameTime = new Evt();
     public static readonly Evt OnDisplayCycleTime = new Evt();
     #endregion
@@ -77,5 +76,10 @@ public static class Events
     public static readonly Evt OnSceneLoad = new();
     #endregion
 
+    #region TransitionEvents
+    public static readonly Evt OnCurtainStart = new();
+    public static readonly Evt OnCurtainsOpened = new();
+    public static readonly Evt OnCurtainsClosed = new();
 
+    #endregion
 }
