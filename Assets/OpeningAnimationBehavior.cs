@@ -12,7 +12,8 @@ public class OpeningAnimationBehavior : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         parent = animator.gameObject.GetComponent<UnitInfo>().Parent;
-        SingletonManager.Get<UIManager>().DeactivateGameUI();
+        Events.OnCurtainStart.Invoke();
+        //SingletonManager.Get<UIManager>().DeactivateGameUI();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -28,7 +29,7 @@ public class OpeningAnimationBehavior : StateMachineBehaviour
                 isFinished = true;
                 Assert.IsNotNull(parent, "Curtain not set or is null");
                 parent.SetActive(false);
-                SingletonManager.Get<UIManager>().ActivateGameUI();
+                Events.OnCurtainsOpened.Invoke();
             }
             
         }

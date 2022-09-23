@@ -64,7 +64,7 @@ public class SceneLoad : MonoBehaviour
 
         if(SingletonManager.Get<UIManager>() != null)
         {
-            SingletonManager.Get<UIManager>().activateLoading_UI();
+            SingletonManager.Get<UIManager>().ActivateLoadingUI();
         }
         else { Debug.Log("NO LOADING SCREEN"); }
         
@@ -78,7 +78,7 @@ public class SceneLoad : MonoBehaviour
 
         if (SingletonManager.Get<UIManager>() != null)
         {
-            SingletonManager.Get<UIManager>().deactivateLoading_UI();
+            SingletonManager.Get<UIManager>().DeactivateLoadingUI();
         }
             
 

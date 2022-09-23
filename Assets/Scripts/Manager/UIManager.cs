@@ -42,6 +42,14 @@ public class UIManager : MonoBehaviour
         {
             InitializeUI();
         }
+        if(curtainsUI != null)
+        {
+            //For the curtain transition
+            Events.OnCurtainsOpened.AddListener(OnTransitionOpened);
+            Events.OnCurtainStart.AddListener(OnTransitionStarted);
+            Events.OnSceneChange.AddListener(OnSceneChange);
+        }
+       
     }
 
     private void Awake()
@@ -49,7 +57,7 @@ public class UIManager : MonoBehaviour
         SingletonManager.Register(this);
     }
 
-    public void activateTimerUI()
+    public void ActivateTimerUI()
     {
         if (timerDisplay != null)
         {
@@ -58,7 +66,7 @@ public class UIManager : MonoBehaviour
         else { Debug.Log("timerDisplay null"); }
     }
 
-    public void deactivateTimerUI()
+    public void DeactivateTimerUI()
     {
         if (timerDisplay != null)
         {
@@ -67,45 +75,46 @@ public class UIManager : MonoBehaviour
         else { Debug.Log("timerDisplay null"); }
     }
 
-    public void activateDayEnd_UI()
+    public void ActivateDayEndUI()
     {
         dayEnd_UI.SetActive(true);
     }
 
-    public void deactivateDayEnd_UI()
+    public void DeactivateDayEndUI()
     {
         dayEnd_UI.SetActive(false);
     }
 
-    public void activateMiniGameTimer_UI()
+    public void ActivateMiniGameTimerUI()
     {
         miniGameTimerDisplay.SetActive(true);
     }
 
-    public void deactivateMiniGameTimer_UI()
+    public void DeactivateMiniGameTimerUI()
     {
+        if(miniGameTimerDisplay == null) { return; }
         miniGameTimerDisplay.SetActive(false);
     }
 
-    public void activateLoading_UI()
+    public void ActivateLoadingUI()
     {
 
         Loading_UI.SetActive(true);
     }
 
-    public void deactivateLoading_UI()
+    public void DeactivateLoadingUI()
     {
         Loading_UI.SetActive(false);
     }
 
-    public void buttonUninteractable()
+    public void ButtonUninteractable()
     {
         if(askMomButton != null)
         {
             askMomButton.interactable = false;
         }
     }
-    public void buttonInteractable()
+    public void ButtonInteractable()
     {
         if (askMomButton != null)
         {
@@ -113,31 +122,32 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void activateMiniGameMainMenu()
+    public void ActivateMiniGameMainMenu()
     {
+        if(miniGameMainMenu == null) { return; }
         miniGameMainMenu.SetActive(true);
     }
 
-    public void deactivateMiniGameMainMenu()
+    public void DeactivateMiniGameMainMenu()
     {
         miniGameMainMenu.SetActive(false);
     }
 
     public void InitializeUI()
     {
-        deactivateMiniGameTimer_UI();
+        DeactivateMiniGameTimerUI();
 
-        activateMiniGameMainMenu();
+        ActivateMiniGameMainMenu();
 
         DeactivateResultScreen();
         DeactivateGameUI();
     }
 
-    public void playMiniGameUI()
+    public void PlayMiniGameUI()
     {
-        deactivateMiniGameMainMenu();
+        DeactivateMiniGameMainMenu();
 
-        activateMiniGameTimer_UI();
+        ActivateMiniGameTimerUI();
 
     }
 
@@ -163,6 +173,7 @@ public class UIManager : MonoBehaviour
 
     public void DeactivateResultScreen()
     {
+        if (minigameResultsUI == null){ return;}
         minigameResultsUI.SetActive(false);
     }
 
@@ -197,5 +208,31 @@ public class UIManager : MonoBehaviour
     {
         if (gameUI == null) { return; }
         gameUI.SetActive(false);
+    }
+
+    #region Transition Functions
+
+    public void OnTransitionStarted()
+    {
+        DeactivateGameUI();
+        DeactivateMiniGameMainMenu();
+    }
+    public void OnTransitionOpened()
+    {
+        ActivateGameUI();
+        ActivateMiniGameMainMenu();
+    }
+
+    public void OnTransitionClosed()
+    {
+        DeactivateGameUI();
+    }
+    #endregion
+
+    public void OnSceneChange()
+    {
+        Events.OnCurtainsOpened.RemoveListener(OnTransitionOpened);
+        Events.OnCurtainStart.RemoveListener(OnTransitionStarted);
+        Events.OnSceneChange.RemoveListener(OnSceneChange);
     }
 }

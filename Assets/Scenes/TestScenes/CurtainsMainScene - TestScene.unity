@@ -4754,7 +4754,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1323530579
 Transform:
   m_ObjectHideFlags: 0
@@ -7431,7 +7431,7 @@ MonoBehaviour:
   motivationMeter: {fileID: 0}
   pinyaMeter: {fileID: 0}
   dayEnd_UI: {fileID: 0}
-  curtainsUI: {fileID: 0}
+  curtainsUI: {fileID: 1800762079}
   gameUI: {fileID: 1688278696}
   miniGameTimerDisplay: {fileID: 0}
   miniGameMainMenu: {fileID: 0}
@@ -7456,6 +7456,68 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1800762079 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9154487744033142997, guid: cb55753dadc4e444cbf214456fedd843, type: 3}
+  m_PrefabInstance: {fileID: 1846764477}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1846764477
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5908105748690714677, guid: cb55753dadc4e444cbf214456fedd843, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908105748690714677, guid: cb55753dadc4e444cbf214456fedd843, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908105748690714677, guid: cb55753dadc4e444cbf214456fedd843, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -11.932007
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908105748690714677, guid: cb55753dadc4e444cbf214456fedd843, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908105748690714677, guid: cb55753dadc4e444cbf214456fedd843, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908105748690714677, guid: cb55753dadc4e444cbf214456fedd843, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908105748690714677, guid: cb55753dadc4e444cbf214456fedd843, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908105748690714677, guid: cb55753dadc4e444cbf214456fedd843, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908105748690714677, guid: cb55753dadc4e444cbf214456fedd843, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908105748690714677, guid: cb55753dadc4e444cbf214456fedd843, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908105748690714677, guid: cb55753dadc4e444cbf214456fedd843, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154487744033142997, guid: cb55753dadc4e444cbf214456fedd843, type: 3}
+      propertyPath: m_Name
+      value: Curtains
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cb55753dadc4e444cbf214456fedd843, type: 3}
 --- !u!1 &1855357285
 GameObject:
   m_ObjectHideFlags: 0

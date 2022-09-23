@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.AI;
+using UnityEngine.EventSystems;
 
 public class PlayerControls : MonoBehaviour
 {
@@ -21,6 +21,7 @@ public class PlayerControls : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
+            //if (EventSystem.current.IsPointerOverGameObject()) { return; }
             animator.SetBool("IsIdle", false);
             targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             targetPosition.z = this.transform.position.z;
