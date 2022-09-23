@@ -48,7 +48,8 @@ public class UIManager : MonoBehaviour
         }
         if(miniGameTimerDisplay != null)
         {
-            InitializeUI();
+            Debug.Log("Uncomment Code: Initialize UI");
+           // InitializeUI();
         }
     }
 

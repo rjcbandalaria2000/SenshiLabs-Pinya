@@ -153,10 +153,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerDisplay: {fileID: 0}
-  miniGameTimerDisplay: {fileID: 0}
+  minigame: {fileID: 0}
   motivationMeter: {fileID: 0}
   pinyaMeter: {fileID: 0}
   dayEnd_UI: {fileID: 0}
+  miniGameTimerDisplay: {fileID: 0}
+  miniGameMainMenu: {fileID: 0}
   Loading_UI: {fileID: 5807545458361907183}
   askMomButton: {fileID: 0}
 --- !u!4 &141807142
