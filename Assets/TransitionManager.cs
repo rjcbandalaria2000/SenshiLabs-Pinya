@@ -34,4 +34,10 @@ public class TransitionManager : MonoBehaviour
         
     }
 
+    public float GetAnimationLength()
+    {
+        if(animator == null) { return 0f; }
+        return animator.GetCurrentAnimatorStateInfo(0).length;
+    }
+
 }
