@@ -20,7 +20,9 @@ public class GroceryManager : MinigameManager //Might rename this
 
     [Header("ItemCounter")]
     public int numberOfItems;
-    public List<GameObject> needItems;
+    public List<GameObject> itemsAvailable;
+    public List<GameObject> wantedItems;
+    //public List<GameObject> extraList;
 
     [SerializeField]private GameObject basket;
     private Vector3 basketPosition;
@@ -31,6 +33,7 @@ public class GroceryManager : MinigameManager //Might rename this
     private int RNG;
 
     Coroutine initializeRoutine;
+    Coroutine addAvailableItemsRoutine;
     Coroutine spawnRoutine;
    
     private void Awake()
@@ -47,15 +50,20 @@ public class GroceryManager : MinigameManager //Might rename this
 
         if (groceryItems.Count > 0)
         {
-            //InitializeList
-            initializeRoutine = StartCoroutine(initializeList());
+          
+            addAvailableItemsRoutine = StartCoroutine(addAvailableItems());
+           // initializeRoutine = StartCoroutine(initializeList());
 
             //Spawn
             spawnRoutine = StartCoroutine(spawnItem());
 
+            initializeRoutine = StartCoroutine(initializeList());
+
+            //InitializeList
+
         }
 
-       
+
 
         if (basket == null)
         {
@@ -67,14 +75,26 @@ public class GroceryManager : MinigameManager //Might rename this
     {
         return basketPosition;
     }
+    
+   
+
+    IEnumerator wantedSpawn()
+    {
+        for (int i = 0; i < spawnPoints.Count; i++)
+        {
+            RNG = Random.Range(0, itemsAvailable.Count);
+            GameObject item = Instantiate(itemsAvailable[RNG], spawnPoints[i].transform.position, Quaternion.identity);
+
+            yield return null;
+        }
+    }
 
     IEnumerator spawnItem()
     {
         for (int i = 0; i < spawnPoints.Count; i++)
         {
-            
-            RNG = Random.Range(0, needItems.Count);
-            GameObject item = Instantiate(needItems[RNG], spawnPoints[i].transform.position, Quaternion.identity);
+          
+            GameObject item = Instantiate(itemsAvailable[i], spawnPoints[i].transform.position, Quaternion.identity);
             yield return null;
         }
     }
@@ -83,17 +103,32 @@ public class GroceryManager : MinigameManager //Might rename this
     {
         for (int i = 0; i < numberOfItems; i++)
         {
-            RNG = Random.Range(0, groceryItems.Count);
-            needItems.Add(groceryItems[RNG]);
+            RNG = Random.Range(0, itemsAvailable.Count);
+            wantedItems.Add(itemsAvailable[RNG]);
             SingletonManager.Get<DisplayGroceryList>().updateList();
+
+            //extraList = itemsAvailable;
 
             yield return null;
         }
     }
 
+
+    IEnumerator addAvailableItems()
+    {
+        for(int i = 0; i < spawnPoints.Count; i++)
+        {
+            RNG = Random.Range(0,groceryItems.Count);
+            itemsAvailable.Add(groceryItems[RNG]);
+        }
+
+        yield return null;
+    }
+
+
     public override void CheckIfFinished()
     {
-        if (needItems.Count <= 0)
+        if (wantedItems.Count <= 0)
         {
             Debug.Log("Minigame complete");
             SingletonManager.Get<PlayerData>().IsGroceryFinished = true;
