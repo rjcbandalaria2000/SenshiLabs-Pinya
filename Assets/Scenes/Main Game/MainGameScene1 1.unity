@@ -6841,7 +6841,7 @@ MonoBehaviour:
   playerMotivation: {fileID: 312946478}
   playerPinyaMeter: {fileID: 312946477}
   MotivationValueChange: 1
-  PinyaMeterValueChange: 10
+  PinyaMeterValueChange: 50
   currentTime: 0
   maxTime: 0
   speedCounter: 0
