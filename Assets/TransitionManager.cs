@@ -7,7 +7,8 @@ public class TransitionManager : MonoBehaviour
 {
     public GameObject   curtain;
     public Animator     animator;
-    public float        transitionTime;
+    [Range(0f, 1f)]
+    public float        transitionTime = 1;
 
     //Animation Names
     public const string CURTAIN_OPEN = "CurtainsOpening";
@@ -47,6 +48,7 @@ public class TransitionManager : MonoBehaviour
 
     public bool IsAnimationFinished() {
         if(animator == null) { return false; }
+        Debug.Log("Animation time: " + animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
         return animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= transitionTime;
     }
 

@@ -99,7 +99,7 @@ public class CleanTheHouseManager : MinigameManager
         //Deactivate Minigame Main Menu
         SingletonManager.Get<UIManager>().DeactivateMiniGameMainMenu();
         //Start Curtain Transition
-        SingletonManager.Get<TransitionManager>().StartOpeningTransition();
+        SingletonManager.Get<TransitionManager>().ChangeAnimation(TransitionManager.CURTAIN_OPEN);
 
         //Wait for the animation to finish 
         if(transitionManager != null)
