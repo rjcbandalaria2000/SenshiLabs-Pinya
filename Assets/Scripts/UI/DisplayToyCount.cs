@@ -11,8 +11,7 @@ public class DisplayToyCount : MonoBehaviour
 
     private CleanTheHouseManager cleanTheHouseManager;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         ToyCountText = this.GetComponent<TextMeshProUGUI>();
         cleanTheHouseManager = SingletonManager.Get<CleanTheHouseManager>();
@@ -20,11 +19,18 @@ public class DisplayToyCount : MonoBehaviour
         Events.OnSceneChange.AddListener(OnSceneChange);
     }
 
+    // Start is called before the first frame update
+    void Start()
+    {
+      
+    }
+
     public void UpdateCounter()
     {
         Assert.IsNotNull(ToyCountText, "Text for dust count is not set or is null");
         Assert.IsNotNull(cleanTheHouseManager, "Clean The house manager is null");
         ToyCountText.text = cleanTheHouseManager.GetRemainingToys().ToString();
+        Debug.Log("Update Toycount");
     }
 
     public void OnSceneChange()
