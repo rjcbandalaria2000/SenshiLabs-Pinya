@@ -34,7 +34,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12e7f7b18e5ab2c419ec64cb4af41da9, type: 3}
   m_Name: 
@@ -69,7 +69,7 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 2448083740907770000}
+  m_DefaultState: {fileID: 6820093536127051606}
 --- !u!114 &-5531763586748686299
 MonoBehaviour:
   m_ObjectHideFlags: 1

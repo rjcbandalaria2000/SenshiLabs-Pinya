@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class TransitionManager : MonoBehaviour
 {
-    public GameObject curtain;
-    public Animator animator;
+    public GameObject   curtain;
+    public Animator     animator;
+    public float        transitionTime;
 
     //Animation Names
     public const string CURTAIN_OPEN = "CurtainsOpening";
@@ -20,7 +21,7 @@ public class TransitionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ChangeAnimation(CURTAIN_CLOSE);
+        ChangeAnimation(CURTAIN_OPEN);
     }
 
     public void ChangeAnimation(string animationName)
@@ -39,5 +40,11 @@ public class TransitionManager : MonoBehaviour
         if(animator == null) { return 0f; }
         return animator.GetCurrentAnimatorStateInfo(0).length;
     }
+
+    public bool IsAnimationFinished() {
+        if(animator == null) { return false; }
+        return animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= transitionTime;
+    }
+
 
 }

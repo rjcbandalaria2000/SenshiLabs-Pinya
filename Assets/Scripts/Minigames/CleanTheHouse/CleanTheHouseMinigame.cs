@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CleanTheHouseMinigame : MinigameObject
 {
+    private TransitionManager   transitionManager;
+    private Coroutine           interactRoutine;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +33,8 @@ public class CleanTheHouseMinigame : MinigameObject
             }
             Debug.Log("Interacted");
             isInteracted = true;
-            JumpToMiniGame();
+            StartInteractRoutine();
+            //JumpToMiniGame();
         }
     }
 
@@ -65,9 +69,33 @@ public class CleanTheHouseMinigame : MinigameObject
         }
     }
 
+    public void StartInteractRoutine()
+    {
+        interactRoutine = StartCoroutine(InteractCoroutine());
+    }
+
     public override IEnumerator InteractCoroutine(GameObject player = null)
     {
-       yield return null;
+        transitionManager = SingletonManager.Get<TransitionManager>();
+        //Play animation of transition
+        if (transitionManager) { 
+            
+           transitionManager.ChangeAnimation(TransitionManager.CURTAIN_CLOSE);
+            
+        }
+
+        while (!transitionManager.IsAnimationFinished())
+        {
+            Debug.Log("Transitioning");
+            yield return null;
+        }
+
+        //Wait for the transition to end
+        yield return null;
+
+        //Jump to next scene
+        JumpToMiniGame();
+
     }
 
 }
