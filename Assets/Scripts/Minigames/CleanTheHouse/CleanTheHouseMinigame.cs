@@ -86,16 +86,16 @@ public class CleanTheHouseMinigame : MinigameObject
 
         while (!transitionManager.IsAnimationFinished())
         {
-            Debug.Log("Transitioning");
+            Debug.Log("Closing Curtain Time: " + transitionManager.animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
             yield return null;
         }
-
+        //transitionManager.ChangeAnimation(TransitionManager.CURTAIN_IDLE);
         //Wait for the transition to end
-        yield return null;
-
+        
+        //yield return new WaitForSeconds(1f);
         //Jump to next scene
         JumpToMiniGame();
-
+        yield return null;
     }
 
 }
