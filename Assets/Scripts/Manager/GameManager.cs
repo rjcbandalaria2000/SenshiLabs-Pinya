@@ -5,7 +5,7 @@ using UnityEngine.Assertions;
 
 public class GameManager : MonoBehaviour
 {
-    private UIManager               UI;
+   
 
     [Header ("Meaters")]
     public MotivationMeter          playerMotivation;
@@ -29,22 +29,18 @@ public class GameManager : MonoBehaviour
     public HideSeekManager          hideseekMiniGame;
     public TagMiniGameManager       tagMiniGame;
     public FoldingMinigameManager   foldMiniGame; 
-    //[Header("MiniGame Manager")]    
-    //public MinigameManager miniGames;
-
-    ////public CleanTheHouseManager cleanMiniGame; //Change Public MiniGame;
-    ////public GroceryManager groceryMiniGame;
-    ////public HideSeekManager hideseekMiniGame;
-    ////public TagMiniGameManager tagMiniGame;
-    ////public FoldingMinigameManager foldMiniGame;
+    
 
     [Header("List of Task")]
-    public List<string> minigamesName;
+    public List<string>             minigamesName;
 
     [Header("Pre-requisites")]
-    public bool isGetWaterFinish;
-    public bool isGroceryTaskFinish;
-
+    public bool                     isGetWaterFinish;
+    public bool                     isGroceryTaskFinish;
+    
+    private UIManager               UI;
+    private TransitionManager       transitionManager;
+    private Coroutine               startGameRoutine;
 
     private void Awake()
     {
@@ -81,12 +77,34 @@ public class GameManager : MonoBehaviour
 
         }
 
-        
+        if(transitionManager == null)
+        {
+            transitionManager = SingletonManager.Get<TransitionManager>();
+        }
+        StartGameTransition();
+    }
 
+    public void StartGameTransition()
+    {
+        // for curtain transition
+        startGameRoutine = StartCoroutine(StartGame());
+    }
 
+    IEnumerator StartGame()
+    {
+        //Disable UI 
+        UI.DeactivateGameUI();
+        // Start playing curtain animation 
+        transitionManager.ChangeAnimation(TransitionManager.CURTAIN_OPEN);
 
-        
-     
+        //Wait for the animation to finish 
+        while (!transitionManager.IsAnimationFinished()) {
+            yield return null;
+        }
+
+        //Display UI
+        UI.ActivateGameUI();
+        yield return null;
     }
 
 

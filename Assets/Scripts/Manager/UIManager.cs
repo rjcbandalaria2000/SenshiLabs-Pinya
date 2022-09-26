@@ -58,9 +58,9 @@ public class UIManager : MonoBehaviour
         if(curtainsUI != null)
         {
             //For the curtain transition
-            Events.OnCurtainsOpened.AddListener(OnTransitionOpened);
-            Events.OnCurtainStart.AddListener(OnTransitionStarted);
-            Events.OnSceneChange.AddListener(OnSceneChange);
+           // Events.OnCurtainStart.AddListener(OnTransitionStarted); //when transition starts
+            //Events.OnCurtainsOpened.AddListener(OnTransitionOpened); // when opening transition is done 
+            Events.OnSceneChange.AddListener(OnSceneChange); // remove the listeners
         }
        
     }

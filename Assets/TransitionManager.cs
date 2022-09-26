@@ -13,6 +13,9 @@ public class TransitionManager : MonoBehaviour
     public const string CURTAIN_OPEN = "CurtainsOpening";
     public const string CURTAIN_CLOSE = "CurtainsClosing";
 
+    private Coroutine openingTransitionRoutine;
+
+
     private void Awake()
     {
         SingletonManager.Register(this);
@@ -21,7 +24,8 @@ public class TransitionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ChangeAnimation(CURTAIN_OPEN);
+        //StartOpeningTransition();
+        //ChangeAnimation(CURTAIN_OPEN);
     }
 
     public void ChangeAnimation(string animationName)
@@ -46,5 +50,28 @@ public class TransitionManager : MonoBehaviour
         return animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= transitionTime;
     }
 
+    public void OnSceneChange()
+    {
+
+    }
+
+    public void StartOpeningTransition()
+    {
+        openingTransitionRoutine = StartCoroutine(OpeningTransition());
+    }
+
+    IEnumerator OpeningTransition()
+    {
+        Events.OnCurtainStart.Invoke();
+        ChangeAnimation(CURTAIN_OPEN);
+
+        while (!IsAnimationFinished())
+        {
+            yield return null; 
+        }
+
+        yield return null; 
+        Events.OnCurtainsOpened.Invoke();
+    }
 
 }
