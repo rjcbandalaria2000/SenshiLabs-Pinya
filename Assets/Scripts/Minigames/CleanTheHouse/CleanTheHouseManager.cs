@@ -23,7 +23,8 @@ public class CleanTheHouseManager : MinigameManager
     private SpawnManager        spawnManager;
     private Coroutine           startMinigameRoutine;
     private TransitionManager   transitionManager;
-    
+    private Coroutine           exitMinigameRoutine;
+
     private void Awake()
     {
         SingletonManager.Register(this);
@@ -153,8 +154,27 @@ public class CleanTheHouseManager : MinigameManager
 
     public override void OnExitMinigame()
     {
+        exitMinigameRoutine = StartCoroutine(ExitMinigame());
+        //Events.OnSceneChange.Invoke();
+        //Assert.IsNotNull(sceneChange, "Scene change is null or not set");
+        //sceneChange.OnChangeScene(NameOfNextScene);
+    }
+
+    IEnumerator ExitMinigame()
+    {
+        // Play close animation
+        transitionManager.ChangeAnimation(TransitionManager.CURTAIN_CLOSE);
+        SingletonManager.Get<UIManager>().DeactivateResultScreen();
+        SingletonManager.Get<UIManager>().DeactivateTimerUI();
+        //Wait for transition to end
+        while (!transitionManager.IsAnimationFinished())
+        {
+            Debug.Log("Transition to closing");
+            yield return null;
+        }
         Events.OnSceneChange.Invoke();
         Assert.IsNotNull(sceneChange, "Scene change is null or not set");
         sceneChange.OnChangeScene(NameOfNextScene);
+        yield return null;
     }
 }

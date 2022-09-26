@@ -59,11 +59,11 @@ public class TransitionManager : MonoBehaviour
             Debug.Log("Correct animation");
             Debug.Log("Animation time: " + animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
             //animator.GetCurrentAnimatorStateInfo(0).IsName(currentAnimation);
-            if (animator.GetCurrentAnimatorStateInfo(0).speed >= 1)
+            if (animator.GetCurrentAnimatorStateInfo(0).speed >= 1) // if the speed is positive 
             {
                 return animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= (transitionTime);
             }
-            else if (animator.GetCurrentAnimatorStateInfo(0).speed <= 0)
+            else if (animator.GetCurrentAnimatorStateInfo(0).speed <= 0) // if speed is negative. used in closing animation since the speed is -1 to reverse the animation
             {
                 return animator.GetCurrentAnimatorStateInfo(0).normalizedTime* animator.GetCurrentAnimatorStateInfo(0).speed <= (transitionTime * animator.GetCurrentAnimatorStateInfo(0).speed);
             }
