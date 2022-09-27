@@ -12,8 +12,6 @@ public class PlayerControls : MonoBehaviour
     void Start()
     {
         targetPosition = this.transform.position;
-
-      
     }
 
     
@@ -21,7 +19,7 @@ public class PlayerControls : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            //if (EventSystem.current.IsPointerOverGameObject()) { return; }
+            if (EventSystem.current.IsPointerOverGameObject()) { return; }
             animator.SetBool("IsIdle", false);
             targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             targetPosition.z = this.transform.position.z;
