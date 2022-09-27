@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 using TMPro;
 
 public class DisplayGameCountdown : MonoBehaviour
@@ -30,7 +31,12 @@ public class DisplayGameCountdown : MonoBehaviour
             if (time == i)
             {
                 countdownImages[i].SetActive(true);
+                countdownImages[i].transform.DOShakeScale(0.5f, 0.1f, 3, 0, true);
+                countdownImages[i].transform.DOScale(1, 1).WaitForCompletion();
             }
         }
     }
+
+    
+
 }
