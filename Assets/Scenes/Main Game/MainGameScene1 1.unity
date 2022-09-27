@@ -3163,6 +3163,10 @@ PrefabInstance:
       value: Grocery_Test
       objectReference: {fileID: 0}
     - target: {fileID: 1021784888, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
+      propertyPath: minigameScene
+      value: Grocery_Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021784888, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
       propertyPath: MotivationCost
       value: 50
       objectReference: {fileID: 0}
