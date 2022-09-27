@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     public float                    maxTime;
     public float                    speedCounter;
 
-    public Player player;
+    public Player                   player;
 
     [Header("MiniGame Manager")]
     public List<MinigameObject>     minigames = new();
@@ -92,6 +92,12 @@ public class GameManager : MonoBehaviour
 
     IEnumerator StartGame()
     {
+        //Disable player controls
+        PlayerControls playerControls = player.gameObject.GetComponent<PlayerControls>();
+        if (playerControls)
+        {
+            playerControls.enabled = false;
+        }
         //Disable UI 
         UI.DeactivateGameUI();
         // Start playing curtain animation 
@@ -105,6 +111,9 @@ public class GameManager : MonoBehaviour
         //transitionManager.ChangeAnimation(TransitionManager.CURTAIN_IDLE);
         //Display UI
         UI.ActivateGameUI();
+
+        //Activate player controls 
+        playerControls.enabled = true;
         yield return null;
     }
 
