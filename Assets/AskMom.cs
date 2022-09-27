@@ -27,14 +27,19 @@ public class AskMom : MonoBehaviour
     
     public void OnAskMomButtonPressed()
     {
+        if(playerPinyaMeter == null) { return; }
         BeginAskMom();
     }
 
     public void BeginAskMom()
     {
         Assert.IsNotNull(playerPinyaMeter);
+        
+        if(playerPinyaMeter.PinyaValue > 0)
+        {
+            askMomRoutine = StartCoroutine(AskMomCD());
+        }
         playerPinyaMeter.DecreasePinyaMeter(pinyaCost);
-        askMomRoutine = StartCoroutine(AskMomCD());
     }
 
     IEnumerator AskMomCD()

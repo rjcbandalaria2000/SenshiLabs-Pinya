@@ -48,7 +48,8 @@ public class GameManager : MonoBehaviour
 
         
         currentTime = maxTime;
-        
+        Events.OnPinyaEmpty.AddListener(GameLose);
+        Events.OnSceneChange.AddListener(OnSceneChange);
     }
     public void Start()
     {
@@ -117,7 +118,25 @@ public class GameManager : MonoBehaviour
         yield return null;
     }
 
+    public void GameLose()
+    {
+        //Activate Lose Panel
+        UI.ActivateLosePanel();
 
+        //Disable Game UI
+        UI.DeactivateGameUI();
+    }
+
+    public void OnSceneChange()
+    {
+        //Remove Active singletons 
+        //SingletonManager.Remove<GameManager>();
+        //SingletonManager.Remove<UIManager>();
+
+        //Remove all listeners when scene changes
+        Events.OnPinyaEmpty.RemoveListener(GameLose);
+        Events.OnSceneChange.RemoveListener(OnSceneChange);
+    }
 
 }
 

@@ -16,10 +16,12 @@ public class UIManager : MonoBehaviour
     public GameObject motivationMeter;
     public GameObject pinyaMeter;
 
-    [Header("Display UI")] //Mostly text base UI
+    [Header("Main Display UI")] //Mostly text base UI
     public GameObject dayEnd_UI;
     public GameObject curtainsUI;
     public GameObject gameUI;
+    public GameObject losePanelUI;
+    public GameObject winPanelUI;
 
     //------------------------------------------------MINIGAME------------------------------------------------------------------------------------
   
@@ -36,6 +38,8 @@ public class UIManager : MonoBehaviour
 
     [Header("Ask Mom UI")]
     public Button askMomButton;
+
+    private SceneChange sceneChange;
 
     private void Start()
     {
@@ -62,6 +66,7 @@ public class UIManager : MonoBehaviour
             //Events.OnCurtainsOpened.AddListener(OnTransitionOpened); // when opening transition is done 
             Events.OnSceneChange.AddListener(OnSceneChange); // remove the listeners
         }
+        sceneChange = this.gameObject.GetComponent<SceneChange>();
        
     }
 
@@ -155,6 +160,7 @@ public class UIManager : MonoBehaviour
 
         DeactivateResultScreen();
         DeactivateGameUI();
+        DeactivateLosePanel();
     }
 
     public void PlayMiniGameUI()
@@ -179,7 +185,6 @@ public class UIManager : MonoBehaviour
         if(minigameResultsUI == null) { return; }
         minigameResultsUI.SetActive(true);
         DisplayMinigameResult results = minigameResultsUI.GetComponent<DisplayMinigameResult>();
-        //if(results == null) { return; }
         Assert.IsNotNull(results);
         results.DisplayPinyaMeter();
         results.DisplayMotivation();
@@ -224,6 +229,30 @@ public class UIManager : MonoBehaviour
         gameUI.SetActive(false);
     }
 
+    public void ActivateWinPanel()
+    {
+        if(winPanelUI == null) { return; }
+        winPanelUI.SetActive(true);
+    }
+
+    public void DeactivateWinPanel()
+    {
+        if(winPanelUI == null){ return; }
+        winPanelUI.SetActive(false);
+    }
+
+    public void ActivateLosePanel()
+    {
+        if (losePanelUI == null) { return; }
+        losePanelUI.SetActive(true);
+    }
+
+    public void DeactivateLosePanel()
+    {
+        if(losePanelUI == null){ return; }
+        losePanelUI.SetActive(false);
+    }
+
     #region Transition Functions
 
     public void OnTransitionStarted()
@@ -248,5 +277,13 @@ public class UIManager : MonoBehaviour
         Events.OnCurtainsOpened.RemoveListener(OnTransitionOpened);
         Events.OnCurtainStart.RemoveListener(OnTransitionStarted);
         Events.OnSceneChange.RemoveListener(OnSceneChange);
+    }
+
+    public void OnBackToMainMenuClicked(string scene)
+    {
+        if(sceneChange == null) { return; }
+        if(scene == null) { return; }
+        Events.OnSceneChange.Invoke();
+        sceneChange.OnChangeScene(scene);
     }
 }

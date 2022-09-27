@@ -53,6 +53,8 @@ public class PinyaMeter : MonoBehaviour
         }
         else
         {
+            // When Pinya meter is 0
+            Events.OnPinyaEmpty.Invoke();
             Debug.Log("Pinya value is already 0");
         }
         Events.OnChangeMeter.Invoke();

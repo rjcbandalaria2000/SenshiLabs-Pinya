@@ -82,4 +82,8 @@ public static class Events
     public static readonly Evt OnCurtainsClosed = new();
 
     #endregion
+
+    #region PinyaMeter Events
+    public static readonly Evt OnPinyaEmpty = new();
+    #endregion
 }

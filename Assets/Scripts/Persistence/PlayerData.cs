@@ -45,4 +45,21 @@ public class PlayerData : MonoBehaviour
         player.motivationMeter.MotivationAmount = storedMotivationData;
         player.pinyaMeter.PinyaValue = storedPinyaData;
     }
+
+    public void ResetPlayerData()
+    {
+        storedMotivationData = 0; 
+        storedPinyaData = 0;
+        maxMotivationData = 0;
+        maxPinyaData = 0;
+        MinigamesPlayed = 0;
+        HasSaved = false;
+        playerLocation = Vector2.zero;
+        IsCleanTheHouseFinished = false;
+        IsGetWaterFinished = false;
+        IsGroceryFinished = false;
+        IsImHungryFinished = false;
+        IsWashTheDishesFinished = false;
+        IsWaterThePlantsFinished = false;
+    }
 }
