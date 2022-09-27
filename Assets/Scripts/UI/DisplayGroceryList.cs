@@ -8,6 +8,9 @@ public class DisplayGroceryList : MonoBehaviour
 {
     public List<TextMeshProUGUI> textList = new List<TextMeshProUGUI>(5);
 
+    public List<Image> wantImage = new List<Image>(5);
+    //public List<TextMeshProUGUI> duplicateCounter = new List<TextMeshProUGUI>(5);
+
     [SerializeField]private GroceryManager grocery;
     // Start is called before the first frame update
 
@@ -23,6 +26,7 @@ public class DisplayGroceryList : MonoBehaviour
         for(int i = 0; i < textList.Count; i++)
         {
             textList[i].text = " ";
+            wantImage[i].gameObject.SetActive(false);
         }
      
 
@@ -42,8 +46,14 @@ public class DisplayGroceryList : MonoBehaviour
             Debug.Log("Update List");
             Debug.Log(grocery.wantedItems[i].name);
             textList[i].text = grocery.wantedItems[i].gameObject.name.ToString();
+
+
+            wantImage[i].gameObject.SetActive(true);
+            wantImage[i].sprite = grocery.wantedItems[i].gameObject.GetComponent<SpriteRenderer>().sprite;
         }
     }
+
+
 
     public void blank()
     {
@@ -51,6 +61,8 @@ public class DisplayGroceryList : MonoBehaviour
         for (int i = 0; i < grocery.wantedItems.Count; i++)
         {
             textList[i].text = " ";
+            wantImage[i].sprite = null;
+            wantImage[i].gameObject.SetActive(false);
         }
            
     }

@@ -8,6 +8,7 @@ public class MiniGameTimer : MonoBehaviour
     private float maxTimer;
 
     private float speed;
+    public float decreaseValue;
 
     private MinigameManager miniGames;
     private Coroutine countdownTimerRoutine;
@@ -34,6 +35,7 @@ public class MiniGameTimer : MonoBehaviour
 
     private void Start()
     {
+        decreaseValue = 1;
         //StartCoroutine(countdownTimer());
     }
 
@@ -72,7 +74,7 @@ public class MiniGameTimer : MonoBehaviour
 
     public float countDown_Minigame()
     {
-        timer -= 1;
+        timer -= decreaseValue;
         return timer;
     }
   
