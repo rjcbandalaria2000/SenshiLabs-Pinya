@@ -8,18 +8,18 @@ using TMPro;
 public class CleanTheHouseManager : MinigameManager
 {
     [Header("Setup Values")]
-    public int                  NumberOfToys = 1;
-    public int                  NumberOfDust = 1;
+    public int                  numberOfToys = 1;
+    public int                  numberOfDust = 1;
    
     [Header("Player Score")]
-    public int                  NumberOfToysKept = 0;
-    public int                  NumberOfDustSwept = 0;
+    public int                  numberOfToysKept = 0;
+    public int                  numberOfDustSwept = 0;
 
     [Header("Countdown Timer")]
-    public float                GameStartTime = 3f;
-    public DisplayGameCountdown CountdownTimerUI;
+    public float                gameStartTime = 3f;
+    public DisplayGameCountdown countdownTimerUI;
 
-    private float               GameStartTimer = 0;
+    private float               gameStartTimer = 0;
     private SpawnManager        spawnManager;
     private Coroutine           startMinigameRoutine;
     private TransitionManager   transitionManager;
@@ -37,7 +37,7 @@ public class CleanTheHouseManager : MinigameManager
 
     public override void CheckIfFinished()
     {
-        if(NumberOfToysKept >= NumberOfToys && NumberOfDustSwept >= NumberOfDust)
+        if(numberOfToysKept >= numberOfToys && numberOfDustSwept >= numberOfDust)
         {
             OnWin();
         }
@@ -52,26 +52,31 @@ public class CleanTheHouseManager : MinigameManager
 
     public void AddTrashThrown(int count)
     {
-        NumberOfToysKept += count;
+        numberOfToysKept += count;
         Events.OnObjectiveUpdate.Invoke();
         CheckIfFinished();
     }
 
     public void AddDustSwept(int count)
     {
-        NumberOfDustSwept += count;
+        numberOfDustSwept += count;
         Events.OnObjectiveUpdate.Invoke();
         CheckIfFinished();
     }
 
     public int GetRemainingDust()
     {
-        return NumberOfDust - NumberOfDustSwept;
+        return numberOfDust - numberOfDustSwept;
     }
 
     public int GetRemainingToys()
     {
-        return NumberOfToys - NumberOfToysKept;
+        return numberOfToys - numberOfToysKept;
+    }
+
+    public float GetTimeElapsed()
+    {
+        return maxTimer - timer;
     }
 
     public override void Initialize()
@@ -82,13 +87,13 @@ public class CleanTheHouseManager : MinigameManager
         spawnManager = SingletonManager.Get<SpawnManager>();
         Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
         startMinigameRoutine = null;
-        spawnManager.NumToSpawn[0] = NumberOfToys;
-        spawnManager.NumToSpawn[1] = NumberOfDust;
+        spawnManager.NumToSpawn[0] = numberOfToys;
+        spawnManager.NumToSpawn[1] = numberOfDust;
     }
 
     public override void StartMinigame()
     {
-        GameStartTimer = GameStartTime;
+        gameStartTimer = gameStartTime;
         //SingletonManager.Get<UIManager>().ActivateGameCountdown();
         startMinigameRoutine = StartCoroutine(StartMinigameCounter());
         //SingletonManager.Get<UIManager>().DeactivateMiniGameMainMenu();
@@ -112,12 +117,12 @@ public class CleanTheHouseManager : MinigameManager
         }
         //Activate Game Countdown
         SingletonManager.Get<UIManager>().ActivateGameCountdown();
-        CountdownTimerUI.UpdateCountdownTimer(GameStartTimer);
+        countdownTimerUI.UpdateCountdownTimer(gameStartTimer);
         //Wait till the game countdown is finish
-        while(GameStartTimer > 0)
+        while(gameStartTimer > 0)
         {
-            GameStartTimer -= 1 * Time.deltaTime;
-            CountdownTimerUI.UpdateCountdownTimer(GameStartTimer);
+            gameStartTimer -= 1 * Time.deltaTime;
+            countdownTimerUI.UpdateCountdownTimer(gameStartTimer);
             yield return null;
         }
         //After Game Countdown
