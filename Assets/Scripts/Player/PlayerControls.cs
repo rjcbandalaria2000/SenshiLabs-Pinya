@@ -33,7 +33,7 @@ public class PlayerControls : MonoBehaviour
                 targetPosition = this.transform.position;
             }
         }
-        else
+        else // if there is no player data present 
         {
             targetPosition = this.transform.position;
         }
