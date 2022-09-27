@@ -286,4 +286,17 @@ public class UIManager : MonoBehaviour
         Events.OnSceneChange.Invoke();
         sceneChange.OnChangeScene(scene);
     }
+
+    public void OnPlayButtonClicked(string scene)
+    {
+        if(sceneChange == null) { return; }
+        if(scene == null) { return; }
+        Events.OnSceneChange.Invoke();
+        if (SingletonManager.Get<PlayerData>())
+        {
+            //Reset player data
+            SingletonManager.Get<PlayerData>().ResetPlayerData();
+        }
+        sceneChange.OnChangeScene(scene);
+    }
 }

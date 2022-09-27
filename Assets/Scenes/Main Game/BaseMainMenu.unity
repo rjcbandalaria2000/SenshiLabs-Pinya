@@ -1400,9 +1400,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1365861980}
-        m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
-        m_MethodName: OnChangeScene
+      - m_Target: {fileID: 1461062590}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OnPlayButtonClicked
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1460,6 +1460,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1461062589}
   - component: {fileID: 1461062590}
+  - component: {fileID: 1461062591}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -1501,6 +1502,8 @@ MonoBehaviour:
   dayEnd_UI: {fileID: 0}
   curtainsUI: {fileID: 0}
   gameUI: {fileID: 0}
+  losePanelUI: {fileID: 0}
+  winPanelUI: {fileID: 0}
   miniGameTimerDisplay: {fileID: 0}
   miniGameMainMenu: {fileID: 0}
   minigameStartCountdownUI: {fileID: 0}
@@ -1509,6 +1512,18 @@ MonoBehaviour:
   minigameBadResult: {fileID: 0}
   Loading_UI: {fileID: 73583250}
   askMomButton: {fileID: 0}
+--- !u!114 &1461062591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461062588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c181a4815ee67c49846764ff353adc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1493559353
 GameObject:
   m_ObjectHideFlags: 0
