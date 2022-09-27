@@ -113,6 +113,7 @@ public class CleanTheHouseManager : MinigameManager
         //Activate Game Countdown
         SingletonManager.Get<UIManager>().ActivateGameCountdown();
         CountdownTimerUI.UpdateCountdownTimer(GameStartTimer);
+        //Wait till the game countdown is finish
         while(GameStartTimer > 0)
         {
             GameStartTimer -= 1 * Time.deltaTime;

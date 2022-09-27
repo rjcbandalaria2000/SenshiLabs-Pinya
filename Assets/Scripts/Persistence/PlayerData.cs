@@ -11,6 +11,7 @@ public class PlayerData : MonoBehaviour
     public float    maxPinyaData;
     public int      MinigamesPlayed;
     public bool     HasSaved;
+    public Vector2  playerLocation;
 
     [Header("Minigames")]
     
@@ -36,6 +37,7 @@ public class PlayerData : MonoBehaviour
         maxPinyaData = player.pinyaMeter.MaxPinyaValue;
         storedMotivationData = player.motivationMeter.MotivationAmount;
         storedPinyaData = player.pinyaMeter.PinyaValue;
+        playerLocation = player.gameObject.transform.position;
     }
 
     public void GetData(Player player)

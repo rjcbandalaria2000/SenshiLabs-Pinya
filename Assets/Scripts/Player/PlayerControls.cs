@@ -5,9 +5,11 @@ using UnityEngine.EventSystems;
 
 public class PlayerControls : MonoBehaviour
 {
-    public int      MoveSpeed = 5;
-    public Animator animator;
-    private Vector3 targetPosition;
+    public int          MoveSpeed = 5;
+    public Animator     animator;
+
+    private Vector3     targetPosition;
+    private PlayerData  playerData;
 
     void Start()
     {
@@ -15,7 +17,28 @@ public class PlayerControls : MonoBehaviour
         {
             this.enabled = true;
         }
-        targetPosition = this.transform.position;
+        playerData = SingletonManager.Get<PlayerData>();
+        if (playerData)
+        {
+            if (playerData.HasSaved)
+            {
+                // load last location of the player
+                this.transform.position = playerData.playerLocation;
+                targetPosition = playerData.playerLocation;
+                Debug.Log("Going to last location");
+            }
+            else
+            {
+                // if no saved position, target will be where the player is 
+                targetPosition = this.transform.position;
+            }
+        }
+        else
+        {
+            targetPosition = this.transform.position;
+        }
+       
+       
     }
 
     
