@@ -34,16 +34,16 @@ public class PlayerData : MonoBehaviour
     public void StoreData(Player player)
     {
         maxMotivationData = player.motivationMeter.MaxMotivation;
-        maxPinyaData = player.pinyaMeter.MaxPinyaValue;
+        maxPinyaData = player.pinyaMeter.maxPinyaValue;
         storedMotivationData = player.motivationMeter.MotivationAmount;
-        storedPinyaData = player.pinyaMeter.PinyaValue;
+        storedPinyaData = player.pinyaMeter.pinyaValue;
         playerLocation = player.gameObject.transform.position;
     }
 
     public void GetData(Player player)
     {
         player.motivationMeter.MotivationAmount = storedMotivationData;
-        player.pinyaMeter.PinyaValue = storedPinyaData;
+        player.pinyaMeter.pinyaValue = storedPinyaData;
     }
 
     public void ResetPlayerData()

@@ -35,7 +35,7 @@ public class AskMom : MonoBehaviour
     {
         Assert.IsNotNull(playerPinyaMeter);
         
-        if(playerPinyaMeter.PinyaValue > 0)
+        if(playerPinyaMeter.pinyaValue > 0)
         {
             askMomRoutine = StartCoroutine(AskMomCD());
         }
