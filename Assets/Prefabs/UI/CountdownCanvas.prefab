@@ -379,6 +379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameCountdownText: {fileID: 8266011235927154596}
+  countdownImages: []
 --- !u!1 &8266011235985157277
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,6 +391,7 @@ GameObject:
   - component: {fileID: 8266011235985157264}
   - component: {fileID: 8266011235985157267}
   - component: {fileID: 8266011235985157266}
+  - component: {fileID: 3725072826227035113}
   m_Layer: 5
   m_Name: CountdownCanvas
   m_TagString: Untagged
@@ -465,6 +467,23 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
+--- !u!114 &3725072826227035113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8266011235985157277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41bbb8107570066429982d06e9424626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameCountdownText: {fileID: 8266011235927154596}
+  countdownImages:
+  - {fileID: 1975948261}
+  - {fileID: 1997802402}
+  - {fileID: 1644238606}
 --- !u!1 &8266011236554886059
 GameObject:
   m_ObjectHideFlags: 0

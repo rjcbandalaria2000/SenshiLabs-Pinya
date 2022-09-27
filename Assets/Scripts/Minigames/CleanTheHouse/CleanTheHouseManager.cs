@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Events;
 using TMPro;
+using DG.Tweening;
 
 public class CleanTheHouseManager : MinigameManager
 {
@@ -22,6 +23,8 @@ public class CleanTheHouseManager : MinigameManager
     private float GameStartTimer = 0;
     private SpawnManager spawnManager;
     private Coroutine startMinigameRoutine;
+
+   // public List<GameObject> countDownSprites;
     
     private void Awake()
     {
@@ -104,11 +107,13 @@ public class CleanTheHouseManager : MinigameManager
 
     public IEnumerator StartMinigameCounter()
     {
-        CountdownTimerUI.UpdateCountdownTimer(GameStartTimer);
-        while(GameStartTimer > 0)
+      //  CountdownTimerUI.UpdateCountdownTimer(GameStartTimer);
+        CountdownTimerUI.UpdateCountdownSprites((int)GameStartTimer);
+        while (GameStartTimer > 0)
         {
             GameStartTimer -= 1 * Time.deltaTime;
-            CountdownTimerUI.UpdateCountdownTimer(GameStartTimer);
+        //     CountdownTimerUI.UpdateCountdownTimer(GameStartTimer);
+            CountdownTimerUI.UpdateCountdownSprites((int)GameStartTimer);
             yield return null;
         }
         //yield return new WaitForSeconds(GameStartTime);
