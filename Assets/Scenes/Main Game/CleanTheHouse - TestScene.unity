@@ -4718,7 +4718,7 @@ MonoBehaviour:
   pinyaMeter: {fileID: 0}
   dayEnd_UI: {fileID: 0}
   curtainsUI: {fileID: 253858552}
-  gameUI: {fileID: 0}
+  gameUI: {fileID: 1766018812}
   miniGameTimerDisplay: {fileID: 1766018812}
   miniGameMainMenu: {fileID: 82766811}
   minigameStartCountdownUI: {fileID: 608781847}

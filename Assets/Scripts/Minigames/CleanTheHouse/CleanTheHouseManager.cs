@@ -164,8 +164,10 @@ public class CleanTheHouseManager : MinigameManager
     {
         // Play close animation
         transitionManager.ChangeAnimation(TransitionManager.CURTAIN_CLOSE);
+        //Deactivate active UI 
         SingletonManager.Get<UIManager>().DeactivateResultScreen();
         SingletonManager.Get<UIManager>().DeactivateTimerUI();
+        SingletonManager.Get<UIManager>().DeactivateGameUI();
         //Wait for transition to end
         while (!transitionManager.IsAnimationFinished())
         {
