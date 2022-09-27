@@ -11,6 +11,10 @@ public class PlayerControls : MonoBehaviour
 
     void Start()
     {
+        if (!this.enabled)
+        {
+            this.enabled = true;
+        }
         targetPosition = this.transform.position;
     }
 

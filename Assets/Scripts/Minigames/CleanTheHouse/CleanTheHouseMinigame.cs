@@ -26,13 +26,20 @@ public class CleanTheHouseMinigame : MinigameObject
         if (!isInteracted)
         {
             Debug.Log("Interact with" + this.gameObject.name);
+            //Decrease Motivation 
             MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
             if (playerMotivation)
             {
                 playerMotivation.DecreaseMotivation(motivationCost);
             }
+            //Disable player controls 
+            PlayerControls playerControl = player.GetComponent<PlayerControls>();
+            if (playerControl)
+            {
+                playerControl.enabled = false;
+            }
             Debug.Log("Interacted");
-            isInteracted = true;
+            isInteracted = true; // to avoid being called again since it is already interacted
             StartInteractRoutine();
             //JumpToMiniGame();
         }
@@ -83,16 +90,13 @@ public class CleanTheHouseMinigame : MinigameObject
            transitionManager.ChangeAnimation(TransitionManager.CURTAIN_CLOSE);
             
         }
-
+        //Wait for the transition to end
         while (!transitionManager.IsAnimationFinished())
         {
             Debug.Log("Closing Curtain Time: " + transitionManager.animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
             yield return null;
         }
-        //transitionManager.ChangeAnimation(TransitionManager.CURTAIN_IDLE);
-        //Wait for the transition to end
         
-        //yield return new WaitForSeconds(1f);
         //Jump to next scene
         JumpToMiniGame();
         yield return null;
