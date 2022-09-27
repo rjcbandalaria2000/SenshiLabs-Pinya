@@ -3091,11 +3091,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 581812105557379230, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 581812105557379230, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 581812107291078515, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3115,11 +3115,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 758503090553775255, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 758503090553775255, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2009363870646069662, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_fontSize
@@ -3231,7 +3231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2009363870715776589, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2009363870732991160, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_Sprite
@@ -3314,7 +3314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f22e075af1ee84ab8af552e858f67f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minigameTimer: {fileID: 0}
+  minigameTimer: {fileID: 1036058653}
   timeElapsedText: {fileID: 702338740}
 --- !u!1 &728482420
 GameObject:
@@ -4686,12 +4686,12 @@ MonoBehaviour:
   timer: 0
   maxTimer: 20
   speedTimer: 1
-  numberOfToys: 1
-  numberOfDust: 1
+  numberOfToys: 5
+  numberOfDust: 5
   numberOfToysKept: 0
   numberOfDustSwept: 0
   gameStartTime: 3
-  countdownTimerUI: {fileID: 0}
+  countdownTimerUI: {fileID: 8266011236450249355}
 --- !u!4 &1036058649
 Transform:
   m_ObjectHideFlags: 0
@@ -10419,3 +10419,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4b650b5d63dcde4da16e72d023d1435, type: 3}
+--- !u!114 &8266011236450249355 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8266011235927154618, guid: e4b650b5d63dcde4da16e72d023d1435, type: 3}
+  m_PrefabInstance: {fileID: 8266011236450249354}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41bbb8107570066429982d06e9424626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
