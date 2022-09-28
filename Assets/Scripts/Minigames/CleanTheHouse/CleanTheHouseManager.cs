@@ -10,6 +10,7 @@ public class CleanTheHouseManager : MinigameManager
     [Header("Setup Values")]
     public int                  numberOfToys = 1;
     public int                  numberOfDust = 1;
+    public List<GameObject>     objectsToSpawn = new();
    
     [Header("Player Score")]
     public int                  numberOfToysKept = 0;
@@ -128,11 +129,11 @@ public class CleanTheHouseManager : MinigameManager
         //After Game Countdown
         //Activate GameUI and Timer
         SingletonManager.Get<UIManager>().DeactivateGameCountdown();
-        //Events.OnObjectiveUpdate.Invoke();
         SingletonManager.Get<UIManager>().ActivateMiniGameTimerUI();
         SingletonManager.Get<MiniGameTimer>().StartCountdownTimer();
         Events.OnObjectiveUpdate.Invoke();
         Debug.Log("Refresh Score board");
+        //Spawn objects
         spawnManager.SpawnRandomNoRepeat();
         isCompleted = false;
         
