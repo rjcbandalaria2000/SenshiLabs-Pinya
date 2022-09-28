@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
     public GameObject winPanelUI;
 
     //------------------------------------------------MINIGAME------------------------------------------------------------------------------------
-  
+
     [Header("Minigame UI")]
     public GameObject miniGameTimerDisplay;
     public GameObject miniGameMainMenu;
@@ -48,9 +48,9 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
 
-        if(minigame == null)
+        if (minigame == null)
         {
-            if(GameObject.FindObjectOfType<MinigameObject>() != null)
+            if (GameObject.FindObjectOfType<MinigameObject>() != null)
             {
                 minigame = GameObject.FindObjectOfType<MinigameObject>().GetComponent<MinigameObject>();
             }
@@ -59,19 +59,19 @@ public class UIManager : MonoBehaviour
                 Debug.Log("Not Minigame");
             }
         }
-        if(miniGameTimerDisplay != null)
+        if (miniGameTimerDisplay != null)
         {
             InitializeUI();
         }
-        if(curtainsUI != null)
+        if (curtainsUI != null)
         {
             //For the curtain transition
-           // Events.OnCurtainStart.AddListener(OnTransitionStarted); //when transition starts
+            // Events.OnCurtainStart.AddListener(OnTransitionStarted); //when transition starts
             //Events.OnCurtainsOpened.AddListener(OnTransitionOpened); // when opening transition is done 
             Events.OnSceneChange.AddListener(OnSceneChange); // remove the listeners
         }
         sceneChange = this.gameObject.GetComponent<SceneChange>();
-       
+
     }
 
     private void Awake()
@@ -114,7 +114,7 @@ public class UIManager : MonoBehaviour
 
     public void DeactivateMiniGameTimerUI()
     {
-        if(miniGameTimerDisplay == null) { return; }
+        if (miniGameTimerDisplay == null) { return; }
         miniGameTimerDisplay.SetActive(false);
     }
 
@@ -131,7 +131,7 @@ public class UIManager : MonoBehaviour
 
     public void ButtonUninteractable()
     {
-        if(askMomButton != null)
+        if (askMomButton != null)
         {
             askMomButton.interactable = false;
         }
@@ -146,7 +146,7 @@ public class UIManager : MonoBehaviour
 
     public void ActivateMiniGameMainMenu()
     {
-        if(miniGameMainMenu == null) { return; }
+        if (miniGameMainMenu == null) { return; }
         miniGameMainMenu.SetActive(true);
     }
 
@@ -186,7 +186,7 @@ public class UIManager : MonoBehaviour
 
     public void ActivateResultScreen()
     {
-        if(minigameResultsUI == null) { return; }
+        if (minigameResultsUI == null) { return; }
         minigameResultsUI.SetActive(true);
         DisplayMinigameResult results = minigameResultsUI.GetComponent<DisplayMinigameResult>();
         Assert.IsNotNull(results);
@@ -196,7 +196,7 @@ public class UIManager : MonoBehaviour
 
     public void DeactivateResultScreen()
     {
-        if (minigameResultsUI == null){ return;}
+        if (minigameResultsUI == null) { return; }
         minigameResultsUI.SetActive(false);
     }
 
@@ -224,7 +224,7 @@ public class UIManager : MonoBehaviour
 
     public void ActivateGameUI()
     {
-        if(gameUI == null) { return; }
+        if (gameUI == null) { return; }
         gameUI.SetActive(true);
     }
     public void DeactivateGameUI()
@@ -235,13 +235,13 @@ public class UIManager : MonoBehaviour
 
     public void ActivateWinPanel()
     {
-        if(winPanelUI == null) { return; }
+        if (winPanelUI == null) { return; }
         winPanelUI.SetActive(true);
     }
 
     public void DeactivateWinPanel()
     {
-        if(winPanelUI == null){ return; }
+        if (winPanelUI == null) { return; }
         winPanelUI.SetActive(false);
     }
 
@@ -253,7 +253,7 @@ public class UIManager : MonoBehaviour
 
     public void DeactivateLosePanel()
     {
-        if(losePanelUI == null){ return; }
+        if (losePanelUI == null) { return; }
         losePanelUI.SetActive(false);
     }
 
@@ -285,16 +285,16 @@ public class UIManager : MonoBehaviour
 
     public void OnBackToMainMenuClicked(string scene)
     {
-        if(sceneChange == null) { return; }
-        if(scene == null) { return; }
+        if (sceneChange == null) { return; }
+        if (scene == null) { return; }
         Events.OnSceneChange.Invoke();
         sceneChange.OnChangeScene(scene);
     }
 
     public void OnPlayButtonClicked(string scene)
     {
-        if(sceneChange == null) { return; }
-        if(scene == null) { return; }
+        if (sceneChange == null) { return; }
+        if (scene == null) { return; }
         Events.OnSceneChange.Invoke();
         if (SingletonManager.Get<PlayerData>())
         {
@@ -302,7 +302,7 @@ public class UIManager : MonoBehaviour
             SingletonManager.Get<PlayerData>().ResetPlayerData();
         }
         sceneChange.OnChangeScene(scene);
-
+    }
     public void ShowTutorial()
     {
         miniGameMainMenu.SetActive(false);
@@ -330,3 +330,5 @@ public class UIManager : MonoBehaviour
 
     }
 }
+    
+
