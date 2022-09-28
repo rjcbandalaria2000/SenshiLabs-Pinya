@@ -32,13 +32,13 @@ public class CursorManager : MonoBehaviour
         if (EventSystem.current.IsPointerOverGameObject()) { return; }
         if(enterCursorTexture == null) { return; }
         SetHotSpot();
-        Cursor.SetCursor(enterCursorTexture, cursorHotspot, CursorMode.Auto);
+        Cursor.SetCursor(enterCursorTexture, cursorHotspot, CursorMode.ForceSoftware);
     }
 
     public void OnMouseDown()
     {
         if(pressDownCursorTexture == null) { return; }
-        Cursor.SetCursor(pressDownCursorTexture, cursorHotspot, CursorMode.Auto);
+        Cursor.SetCursor(pressDownCursorTexture, cursorHotspot, CursorMode.ForceSoftware);
     }
 
     public void OnMouseDrag()
@@ -46,25 +46,25 @@ public class CursorManager : MonoBehaviour
         if (EventSystem.current.IsPointerOverGameObject()) { return; }
         if (dragCursorTexture == null) { return; }
         SetHotSpot();
-        Cursor.SetCursor(dragCursorTexture, cursorHotspot, CursorMode.Auto);
+        Cursor.SetCursor(dragCursorTexture, cursorHotspot, CursorMode.ForceSoftware);
     }
 
     public void OnMouseExit()
     {
         //if (EventSystem.current.IsPointerOverGameObject()) { return; }
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
     }
 
     public void OnMouseUp()
     {
         if (EventSystem.current.IsPointerOverGameObject()) { return; }
         SetHotSpot();
-        Cursor.SetCursor(enterCursorTexture, cursorHotspot, CursorMode.Auto);
+        Cursor.SetCursor(enterCursorTexture, cursorHotspot, CursorMode.ForceSoftware);
     }
 
     private void OnDestroy()
     {
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
     }
 
     private void SetHotSpot()

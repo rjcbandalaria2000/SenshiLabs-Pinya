@@ -6,8 +6,8 @@ using UnityEngine.Assertions;
 
 public class DisplayTimeElapsed : MonoBehaviour
 {
-    public MiniGameTimer minigameTimer;
-    public TextMeshProUGUI timeElapsedText;
+    public MiniGameTimer    minigameTimer;
+    public TextMeshProUGUI  timeElapsedText;
 
     private void Awake()
     {
