@@ -9,7 +9,15 @@ public class DisplayPinyaMeter : MonoBehaviour
     public GameObject   Player;
     public Slider       PinyaSlider;
 
-    private PinyaMeter playerPinyaMeter;
+    [Header("Effect")]
+    public Image        damageBarImage;
+    public float        fadeTime = 1f;
+    public float        fadeAmount = 1f;
+
+    private float       fadeTimer;
+    private Color       damageBarColor;
+    private PinyaMeter  playerPinyaMeter;
+    private Coroutine   damageFadeRoutine;
 
     private void Awake()
     {
@@ -39,6 +47,9 @@ public class DisplayPinyaMeter : MonoBehaviour
             PinyaSlider.value = playerPinyaMeter.pinyaValue;
             Events.OnChangeMeter.AddListener(UpdatePinyaBar);
             Events.OnSceneChange.AddListener(RemoveListeners);
+        }
+        if (damageBarImage)
+        {
             
         }
     }
@@ -55,4 +66,14 @@ public class DisplayPinyaMeter : MonoBehaviour
         Events.OnSceneChange.RemoveListener(RemoveListeners);
     }
 
+    public void StartDamageFade()
+    {
+        damageFadeRoutine = StartCoroutine(DamageFade());
+    }
+
+    IEnumerator DamageFade()
+    {
+        
+        yield return null;  
+    }
 }
