@@ -66,4 +66,9 @@ public class DisplayGroceryList : MonoBehaviour
         }
            
     }
+
+    public void duplicateCheck(int index, string name)
+    {
+        if (grocery.wantedItems[index].gameObject.name == name) ;
+    }
 }
