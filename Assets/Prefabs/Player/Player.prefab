@@ -437,8 +437,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027ddb4615168cd4b9f0e133275e2ce0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 5
+  moveSpeed: 5
   animator: {fileID: 1095909407}
+  playerModel: {fileID: 6543178212204887002}
+  flippedAngle: 180
+  normalAngle: 0
 --- !u!61 &6543178212848092717
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -526,8 +529,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 777c121c88abac64d92b482f5f735870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PinyaValue: 0
-  MaxPinyaValue: 100
+  pinyaValue: 0
+  maxPinyaValue: 0
 --- !u!114 &312946476
 MonoBehaviour:
   m_ObjectHideFlags: 0
