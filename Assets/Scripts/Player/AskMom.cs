@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using DG.Tweening;
 
 public class AskMom : MonoBehaviour
 {
@@ -40,6 +41,7 @@ public class AskMom : MonoBehaviour
             askMomRoutine = StartCoroutine(AskMomCD());
         }
         playerPinyaMeter.DecreasePinyaMeter(pinyaCost);
+
     }
 
     IEnumerator AskMomCD()
@@ -72,6 +74,7 @@ public class AskMom : MonoBehaviour
             for(int i = 0; i < highLight.Count; i++)
             {
                 highLight[i].SetActive(true);
+                highLight[i].transform.DOShakeScale(coolDown,0.1f,1,0,true);
             }
         }
     }
