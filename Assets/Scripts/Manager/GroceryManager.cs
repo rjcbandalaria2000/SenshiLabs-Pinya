@@ -96,12 +96,13 @@ public class GroceryManager : MinigameManager //Might rename this
 
             
             wantedItems.Add(itemsAvailable[RNG]);
-            SingletonManager.Get<DisplayGroceryList>().updateList();
+           
 
             //extraList = itemsAvailable;
 
             yield return null;
         }
+        SingletonManager.Get<DisplayGroceryList>().updateList();
     }
 
 
