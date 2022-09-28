@@ -37,6 +37,11 @@ public class UIManager : MonoBehaviour
     [Header("Ask Mom UI")]
     public Button askMomButton;
 
+    public GameObject tutorialGO;
+
+    public GameObject confirmationGO;
+
+
     private void Start()
     {
 
@@ -248,5 +253,33 @@ public class UIManager : MonoBehaviour
         Events.OnCurtainsOpened.RemoveListener(OnTransitionOpened);
         Events.OnCurtainStart.RemoveListener(OnTransitionStarted);
         Events.OnSceneChange.RemoveListener(OnSceneChange);
+    }
+
+
+    public void ShowTutorial()
+    {
+        miniGameMainMenu.SetActive(false);
+        tutorialGO.SetActive(true);
+    }
+
+    public void ExitTutorial()
+    {
+        miniGameMainMenu.SetActive(true);
+
+        tutorialGO.SetActive(false);
+    }
+
+    public void ShowConfirmation()
+    {
+        confirmationGO.SetActive(true);
+        miniGameMainMenu.SetActive(false);
+
+    }
+
+    public void ExitConfirmation()
+    {
+        confirmationGO.SetActive(false);
+        miniGameMainMenu.SetActive(true);
+
     }
 }
