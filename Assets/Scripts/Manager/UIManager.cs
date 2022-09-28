@@ -40,6 +40,10 @@ public class UIManager : MonoBehaviour
     public Button askMomButton;
 
     private SceneChange sceneChange;
+    public GameObject tutorialGO;
+
+    public GameObject confirmationGO;
+
 
     private void Start()
     {
@@ -298,5 +302,31 @@ public class UIManager : MonoBehaviour
             SingletonManager.Get<PlayerData>().ResetPlayerData();
         }
         sceneChange.OnChangeScene(scene);
+
+    public void ShowTutorial()
+    {
+        miniGameMainMenu.SetActive(false);
+        tutorialGO.SetActive(true);
+    }
+
+    public void ExitTutorial()
+    {
+        miniGameMainMenu.SetActive(true);
+
+        tutorialGO.SetActive(false);
+    }
+
+    public void ShowConfirmation()
+    {
+        confirmationGO.SetActive(true);
+        miniGameMainMenu.SetActive(false);
+
+    }
+
+    public void ExitConfirmation()
+    {
+        confirmationGO.SetActive(false);
+        miniGameMainMenu.SetActive(true);
+
     }
 }

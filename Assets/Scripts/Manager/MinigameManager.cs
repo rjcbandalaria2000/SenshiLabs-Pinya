@@ -16,6 +16,8 @@ public class MinigameManager : MonoBehaviour
     public float            speedTimer;
 
     protected SceneChange   sceneChange;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,4 +65,5 @@ public class MinigameManager : MonoBehaviour
 
     }
     
+
 }

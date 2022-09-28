@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Events;
 using TMPro;
+using DG.Tweening;
 
 public class CleanTheHouseManager : MinigameManager
 {
