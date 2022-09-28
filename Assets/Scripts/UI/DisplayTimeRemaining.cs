@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.Assertions;
 
-public class DisplayTimeElapsed : MonoBehaviour
+public class DisplayTimeRemaining : MonoBehaviour
 {
     public MiniGameTimer    minigameTimer;
     public TextMeshProUGUI  timeElapsedText;
@@ -17,7 +17,7 @@ public class DisplayTimeElapsed : MonoBehaviour
 
     private void OnEnable()
     {
-        UpdateTimeElapsed();
+        UpdateTimeRemaining();
     }
     // Start is called before the first frame update
     void Start()
@@ -25,10 +25,10 @@ public class DisplayTimeElapsed : MonoBehaviour
         
     }
 
-    public void UpdateTimeElapsed()
+    public void UpdateTimeRemaining()
     {
         Assert.IsNotNull(minigameTimer);
-        timeElapsedText.text = minigameTimer.GetTimeElapsed().ToString("0") + " secs";
+        timeElapsedText.text = minigameTimer.GetTimeRemaining().ToString("0") + " secs";
     }
    
 }

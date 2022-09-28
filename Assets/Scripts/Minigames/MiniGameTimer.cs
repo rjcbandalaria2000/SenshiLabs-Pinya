@@ -76,9 +76,9 @@ public class MiniGameTimer : MonoBehaviour
         return timer;
     }
 
-    public float GetTimeElapsed()
+    public float GetTimeRemaining()
     {
-        return maxTimer - timer;
+        return timer;
     }
   
     public IEnumerator countdownTimer()
