@@ -30,7 +30,13 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void OnAskMomButtonPressed()
     {
         if(playerPinyaMeter == null) { return; }
+        if (pinyaMeterUI)
+        {
+            pinyaMeterUI.StopDamageFade();
+        }
         BeginAskMom();
+        
+
     }
 
     public void BeginAskMom()
