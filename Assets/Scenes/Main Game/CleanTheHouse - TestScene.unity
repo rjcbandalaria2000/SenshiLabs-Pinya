@@ -9041,6 +9041,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1741928357 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2174895158764419280, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+  m_PrefabInstance: {fileID: 2064771248}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1746332580
 GameObject:
   m_ObjectHideFlags: 0
@@ -10196,6 +10207,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 670568283771031146, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 670568283771031146, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -17.099998
+      objectReference: {fileID: 0}
     - target: {fileID: 2174895157945811448, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: m_text
       value: 
@@ -10324,6 +10343,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2174895158764419278, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_Name
+      value: Max Page
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174895158764419280, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174895158764419281, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -188.9442
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174895158764419281, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 107.67211
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174895158764419281, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -17.099998
+      objectReference: {fileID: 0}
     - target: {fileID: 2174895158914797833, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: m_Name
       value: Exit Tutorial
@@ -10388,6 +10427,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2438997712308335277, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3583826841896065890, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -76
+      objectReference: {fileID: 0}
+    - target: {fileID: 8179498856002177307, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_text
+      value: /
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
 --- !u!1 &2064771249 stripped
@@ -10395,6 +10446,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2174895158145102627, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
   m_PrefabInstance: {fileID: 2064771248}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2064771250 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2438997712308335277, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+  m_PrefabInstance: {fileID: 2064771248}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2064771254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10415,6 +10477,8 @@ MonoBehaviour:
   pageCount: 0
   textGO: {fileID: 161734258}
   imageGO: {fileID: 1796232176}
+  currentPage: {fileID: 2064771250}
+  maxPage: {fileID: 1741928357}
 --- !u!1 &2088818240
 GameObject:
   m_ObjectHideFlags: 0

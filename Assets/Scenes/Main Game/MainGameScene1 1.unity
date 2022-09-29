@@ -695,11 +695,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8555003005193376360, guid: 653435b4250bc0d4697a1cba1ea8980c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8555003005193376360, guid: 653435b4250bc0d4697a1cba1ea8980c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8555003005193376360, guid: 653435b4250bc0d4697a1cba1ea8980c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1639,6 +1639,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1738193731829566520, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6543178211513549874, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -2003,7 +2007,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &513541058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5531,11 +5535,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2777084151479815385, guid: da8f08f5586c40f41b8739997c82f052, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2777084151479815385, guid: da8f08f5586c40f41b8739997c82f052, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6219940208187709655, guid: da8f08f5586c40f41b8739997c82f052, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -5790,6 +5794,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1368205542}
   m_CullTransparentMesh: 1
+--- !u!1 &1379248659 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6949856585752409223, guid: 653435b4250bc0d4697a1cba1ea8980c, type: 3}
+  m_PrefabInstance: {fileID: 157644845}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1381435761 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1738193731829566520, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
+  m_PrefabInstance: {fileID: 431213299}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1400855883
 GameObject:
   m_ObjectHideFlags: 0
@@ -9963,6 +9977,8 @@ MonoBehaviour:
   coolDown: 5
   playerPinyaMeter: {fileID: 312946477}
   pinyaCost: 50
+  heartGO: {fileID: 1379248659}
+  crackedGlass: {fileID: 1381435761}
 --- !u!4 &3281135474399031076 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5983059630999239051, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}

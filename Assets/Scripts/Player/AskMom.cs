@@ -17,6 +17,12 @@ public class AskMom : MonoBehaviour
     private Coroutine           askMomRoutine;
     private UIManager           uiManager;
     private TaskManager         taskManager;
+
+    private Camera cm;
+
+    public GameObject heartGO;
+    public GameObject crackedGlass;
+    public GameObject overlayGO;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +30,7 @@ public class AskMom : MonoBehaviour
         taskManager = SingletonManager.Get<TaskManager>();
         askMomRoutine = null;
         DisableHighlight();
+        cm = Camera.main;
     }
     
     public void OnAskMomButtonPressed()
@@ -69,12 +76,14 @@ public class AskMom : MonoBehaviour
 
     public void EnableHighlight()
     {
+      //  cm.transform.dos(1,0.3f,10,0,false);
         if(highLight.Count > 0)
         {
             for(int i = 0; i < highLight.Count; i++)
             {
                 highLight[i].SetActive(true);
                 highLight[i].transform.DOShakeScale(coolDown,0.1f,1,0,true);
+                PulsatingHeart();
             }
         }
     }
@@ -91,5 +100,33 @@ public class AskMom : MonoBehaviour
             }
         }
     }
-    
+
+    public void PulsatingHeart()
+    {
+
+        StartCoroutine(PulsateHeart());
+
+        //  heartGO.transform.DOScale(0.8f, 0.1f).SetEase(Ease.OutBounce);
+    }
+
+
+    IEnumerator PulsateHeart()
+    {
+        float tempCooldown = coolDown;
+        crackedGlass.SetActive(true);
+        while (tempCooldown > 0)
+        {
+            Debug.Log("animatio");
+            heartGO.transform.DOScale(1, 0.3f).SetEase(Ease.OutBounce);
+            yield return new WaitForSeconds(0.5f);
+            heartGO.transform.DOScale(4, 0.3f).SetEase(Ease.OutBounce);
+            crackedGlass.SetActive(false);
+            tempCooldown--;
+
+        }
+
+        heartGO.transform.DOScale(1, 0.3f).SetEase(Ease.OutBounce);
+
+        Debug.Log("End Pulsate");
+    }
 }
