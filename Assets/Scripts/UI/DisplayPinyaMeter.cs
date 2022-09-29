@@ -10,12 +10,12 @@ public class DisplayPinyaMeter : MonoBehaviour
     public Slider       PinyaSlider;
 
     [Header("Effect")]
-    public Image        damageBarImage;
-    public float        fadeTime = 1f;
+    public Image        damageBarImage; // the fader image 
+    public float        maxFadeTime = 1f;
     public float        fadeAmount = 1f;
 
-    private float       fadeTimer;
-    private Color       damageBarColor;
+    private float       fadeTimer; // moving timer for the fade time
+    private Color       damageBarColor; // get the color property of the damageBarImage
     private PinyaMeter  playerPinyaMeter;
     private Coroutine   damageFadeRoutine;
 
@@ -48,16 +48,23 @@ public class DisplayPinyaMeter : MonoBehaviour
             Events.OnChangeMeter.AddListener(UpdatePinyaBar);
             Events.OnSceneChange.AddListener(RemoveListeners);
         }
+        // Set up DamageEffect Fade
+        // Code Reference: https://www.youtube.com/watch?v=cR8jP8OGbhM
         if (damageBarImage)
         {
-            
+            damageBarColor = damageBarImage.color;
+            damageBarColor.a = 0f;
+            damageBarImage.color = damageBarColor;
+            damageBarImage.fillAmount = PinyaSlider.value / PinyaSlider.maxValue;
         }
     }
     
     public void UpdatePinyaBar()
     {
         Assert.IsNotNull(playerPinyaMeter, "Player Pinya Meter is null or is not set");
+        //StartDamageFade();
         PinyaSlider.value = playerPinyaMeter.pinyaValue;
+        
     }
 
     public void RemoveListeners()
@@ -68,12 +75,38 @@ public class DisplayPinyaMeter : MonoBehaviour
 
     public void StartDamageFade()
     {
+        //Show the damage
+        if (damageBarColor.a <= 0)
+        {
+            damageBarImage.fillAmount = (float)PinyaSlider.value / (float)PinyaSlider.maxValue;
+            Debug.Log("Fill Amount Damage Fade: " + damageBarImage.fillAmount);
+        }
+        damageBarColor.a = 1f;
+        damageBarImage.color = damageBarColor;
+        fadeTimer = maxFadeTime;
         damageFadeRoutine = StartCoroutine(DamageFade());
+        Debug.Log("Start fade");
     }
 
     IEnumerator DamageFade()
     {
+        //check if the damage bar is visible
+        if(damageBarColor.a > 0)
+        {
+           
+            while (fadeTimer > 0)
+            {
+                //Start fading
+                Debug.Log("Damage fading");
+
+                damageBarColor.a -= fadeAmount * Time.deltaTime;
+                damageBarImage.color = damageBarColor;
+                fadeTimer -= 1* Time.deltaTime;
+                yield return null;  
+
+            }
+        }
+        //damageBarColor.a = 1f;
         
-        yield return null;  
     }
 }

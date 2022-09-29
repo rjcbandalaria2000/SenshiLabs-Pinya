@@ -12,6 +12,7 @@ public class AskMom : MonoBehaviour
     [Header("Pinya Meter")]
     public PinyaMeter           playerPinyaMeter;
     public int                  pinyaCost;
+    public DisplayPinyaMeter    pinyaMeterUI;
 
     private Coroutine           askMomRoutine;
     private UIManager           uiManager;
@@ -38,6 +39,10 @@ public class AskMom : MonoBehaviour
         if(playerPinyaMeter.pinyaValue > 0)
         {
             askMomRoutine = StartCoroutine(AskMomCD());
+        }
+        if (pinyaMeterUI)
+        {
+            pinyaMeterUI.StartDamageFade();
         }
         playerPinyaMeter.DecreasePinyaMeter(pinyaCost);
     }
