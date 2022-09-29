@@ -21,8 +21,8 @@ public class AskMom : MonoBehaviour
     private Camera cm;
 
     public GameObject heartGO;
-    public GameObject crackedGlass;
-    public GameObject overlayGO;
+   // public GameObject crackedGlass;
+   // public GameObject overlayGO;
     // Start is called before the first frame update
     void Start()
     {
@@ -113,20 +113,24 @@ public class AskMom : MonoBehaviour
     IEnumerator PulsateHeart()
     {
         float tempCooldown = coolDown;
-        crackedGlass.SetActive(true);
+      //  crackedGlass.SetActive(true);
+      //  overlayGO.SetActive(true);
         while (tempCooldown > 0)
         {
             Debug.Log("animatio");
             heartGO.transform.DOScale(1, 0.3f).SetEase(Ease.OutBounce);
+           // overlayGO.transform.DOScale(1.1f, 0.3f).SetEase(Ease.OutBounce);
             yield return new WaitForSeconds(0.5f);
             heartGO.transform.DOScale(4, 0.3f).SetEase(Ease.OutBounce);
-            crackedGlass.SetActive(false);
+            //overlayGO.transform.DOScale(1f, 0.3f).SetEase(Ease.OutBounce);
+        //    crackedGlass.SetActive(false);
             tempCooldown--;
 
         }
+      //  heartGO.transform.DOScale(1, 0.3f).SetEase(Ease.OutBounce);
 
         heartGO.transform.DOScale(1, 0.3f).SetEase(Ease.OutBounce);
-
+      //  overlayGO.SetActive(false);
         Debug.Log("End Pulsate");
     }
 }

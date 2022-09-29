@@ -2717,6 +2717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78b6e68a472229b43b1c62c10801415c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isCompleted: 0
   NameOfNextScene: MainGameScene1 1
   timer: 0
   maxTimer: 10
@@ -2791,10 +2792,20 @@ MonoBehaviour:
   motivationMeter: {fileID: 0}
   pinyaMeter: {fileID: 0}
   dayEnd_UI: {fileID: 0}
+  curtainsUI: {fileID: 0}
+  gameUI: {fileID: 0}
+  losePanelUI: {fileID: 0}
+  winPanelUI: {fileID: 0}
   miniGameTimerDisplay: {fileID: 2135170108}
   miniGameMainMenu: {fileID: 725239297}
+  minigameStartCountdownUI: {fileID: 0}
+  minigameResultsUI: {fileID: 0}
+  minigameGoodResult: {fileID: 0}
+  minigameBadResult: {fileID: 0}
   Loading_UI: {fileID: 431864445}
   askMomButton: {fileID: 0}
+  tutorialGO: {fileID: 0}
+  confirmationGO: {fileID: 0}
 --- !u!114 &844703407
 MonoBehaviour:
   m_ObjectHideFlags: 0
