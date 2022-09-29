@@ -183,7 +183,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8555003005583062405}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -335,7 +335,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8555003005583062405}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -412,8 +412,8 @@ RectTransform:
   m_Children:
   - {fileID: 7673061031292101116}
   - {fileID: 1413270616427627111}
-  - {fileID: 891583069591519718}
   - {fileID: 8555003005193376360}
+  - {fileID: 891583069591519718}
   - {fileID: 8555003006605391201}
   - {fileID: 1344572253306940381}
   - {fileID: 2574252464290302574}
@@ -491,7 +491,8 @@ MonoBehaviour:
   Player: {fileID: 0}
   PinyaSlider: {fileID: 8555003005583062404}
   damageBarImage: {fileID: 0}
-  fadeTime: 1
+  maxFadeTime: 1
+  fadeAmount: 1
 --- !u!1 &8555003006605391202
 GameObject:
   m_ObjectHideFlags: 0

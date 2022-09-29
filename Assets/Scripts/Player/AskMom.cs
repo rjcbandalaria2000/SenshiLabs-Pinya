@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.EventSystems;
 
-public class AskMom : MonoBehaviour
+public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [Header("Highlighted Objects")]
     public List<GameObject>     highLight = new();
@@ -41,7 +42,7 @@ public class AskMom : MonoBehaviour
             askMomRoutine = StartCoroutine(AskMomCD());
             if (pinyaMeterUI)
             {
-                pinyaMeterUI.StartDamageFade();
+                pinyaMeterUI.StartDamageFade(pinyaCost);
             }
         }
         
@@ -94,5 +95,23 @@ public class AskMom : MonoBehaviour
             }
         }
     }
-    
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        // When the player hovers over the ask mom button
+        Debug.Log("Ask mom hover");
+        if (pinyaMeterUI)
+        {
+            pinyaMeterUI.StartDamageFade(pinyaCost);
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (pinyaMeterUI)
+        {
+            pinyaMeterUI.StopDamageFade();
+        }
+        Debug.Log("Ask mom exit");
+    }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class DisplayPinyaMeter : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class DisplayPinyaMeter : MonoBehaviour
     [Header("Effect")]
     public Image        damageBarImage; // the fader image 
     public float        maxFadeTime = 1f;
-    public float        fadeAmount = 1f;
+    private Tween       pulseEffect;
 
     private float       fadeTimer; // moving timer for the fade time
     private Color       damageBarColor; // get the color property of the damageBarImage
@@ -73,12 +74,12 @@ public class DisplayPinyaMeter : MonoBehaviour
         Events.OnSceneChange.RemoveListener(RemoveListeners);
     }
 
-    public void StartDamageFade()
+    public void StartDamageFade(int pinyaCost)
     {
         //Show the damage
         if (damageBarColor.a <= 0)
         {
-            damageBarImage.fillAmount = (float)PinyaSlider.value / (float)PinyaSlider.maxValue;
+            damageBarImage.fillAmount = ((float)PinyaSlider.value - (float) pinyaCost) / (float)PinyaSlider.maxValue;
             Debug.Log("Fill Amount Damage Fade: " + damageBarImage.fillAmount);
         }
         damageBarColor.a = 1f;
@@ -88,25 +89,42 @@ public class DisplayPinyaMeter : MonoBehaviour
         Debug.Log("Start fade");
     }
 
+    public void StopDamageFade()
+    {
+        if (damageFadeRoutine == null) { return; };
+        damageBarColor.a = 0f;
+        damageBarImage.color = damageBarColor;
+        pulseEffect.Kill();
+        StopCoroutine(damageFadeRoutine);
+    }
+
     IEnumerator DamageFade()
     {
-        //check if the damage bar is visible
-        if(damageBarColor.a > 0)
-        {
-           
-            while (fadeTimer > 0)
-            {
-                //Start fading
-                Debug.Log("Damage fading");
-
-                damageBarColor.a -= fadeAmount * Time.deltaTime;
-                damageBarImage.color = damageBarColor;
-                fadeTimer -= 1* Time.deltaTime;
-                yield return null;  
-
-            }
-        }
-        //damageBarColor.a = 1f;
+        pulseEffect = DOTween.Sequence()
+            .Append(damageBarImage.DOFade(0, maxFadeTime))
+            .Append(damageBarImage.DOFade(1, maxFadeTime)).
+            SetLoops(-1, LoopType.Yoyo);
+        yield return null;  
         
+        ////check if the damage bar is visible
+        //if(damageBarColor.a > 0)
+        //{
+           
+        //    while (fadeTimer > 0)
+        //    {
+        //        //Start fading
+        //        Debug.Log("Damage fading");
+
+        //        damageBarColor.a -= fadeAmount * Time.deltaTime;
+        //        damageBarImage.color = damageBarColor;
+        //        fadeTimer -= 1* Time.deltaTime;
+        //        yield return null;  
+
+        //    }
+        //}
+        ////damageBarColor.a = 1f;
+        //yield return null;
     }
+
+    
 }
