@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 using DG.Tweening;
+using UnityEngine.EventSystems;
 
-public class AskMom : MonoBehaviour
+public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [Header("Highlighted Objects")]
     public List<GameObject>     highLight = new();
@@ -13,6 +14,7 @@ public class AskMom : MonoBehaviour
     [Header("Pinya Meter")]
     public PinyaMeter           playerPinyaMeter;
     public int                  pinyaCost;
+    public DisplayPinyaMeter    pinyaMeterUI;
 
     private Coroutine           askMomRoutine;
     private UIManager           uiManager;
@@ -36,17 +38,28 @@ public class AskMom : MonoBehaviour
     public void OnAskMomButtonPressed()
     {
         if(playerPinyaMeter == null) { return; }
+        if (pinyaMeterUI)
+        {
+            pinyaMeterUI.StopDamageFade();
+        }
         BeginAskMom();
+        
+
     }
 
     public void BeginAskMom()
     {
         Assert.IsNotNull(playerPinyaMeter);
-        
-        if(playerPinyaMeter.pinyaValue > 0)
+
+        if (playerPinyaMeter.pinyaValue > 0)
         {
             askMomRoutine = StartCoroutine(AskMomCD());
+            if (pinyaMeterUI)
+            {
+                pinyaMeterUI.StartDamageFade(pinyaCost);
+            }
         }
+        
         playerPinyaMeter.DecreasePinyaMeter(pinyaCost);
 
     }
@@ -101,6 +114,23 @@ public class AskMom : MonoBehaviour
         }
     }
 
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        // When the player hovers over the ask mom button
+        Debug.Log("Ask mom hover");
+        if (pinyaMeterUI)
+        {
+            pinyaMeterUI.StartDamageFade(pinyaCost);
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (pinyaMeterUI)
+        {
+            pinyaMeterUI.StopDamageFade();
+        }
+        Debug.Log("Ask mom exit");
     public void PulsatingHeart()
     {
 

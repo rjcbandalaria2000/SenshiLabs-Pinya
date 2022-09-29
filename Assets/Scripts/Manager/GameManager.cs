@@ -106,7 +106,8 @@ public class GameManager : MonoBehaviour
 
         //Wait for the animation to finish 
         while (!transitionManager.IsAnimationFinished()) {
-            Debug.Log("Transitioning");
+            
+            //Debug.Log("Transitioning");
             yield return null;
         }
         //transitionManager.ChangeAnimation(TransitionManager.CURTAIN_IDLE);

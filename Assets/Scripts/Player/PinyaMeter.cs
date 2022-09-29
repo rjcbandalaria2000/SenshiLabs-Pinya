@@ -29,7 +29,7 @@ public class PinyaMeter : MonoBehaviour
     public void IntitializePinyaMeter()
     {
         pinyaValue = maxPinyaValue;
-        Events.OnChangeMeter.Invoke();
+        //Events.OnChangeMeter.Invoke();
     }
     public void IncreasePinyaMeter(float value)
     {

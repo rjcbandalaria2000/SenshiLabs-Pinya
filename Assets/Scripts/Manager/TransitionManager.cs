@@ -56,8 +56,8 @@ public class TransitionManager : MonoBehaviour
         //Check if the active animation playing is the current animation set
         if (animator.GetCurrentAnimatorStateInfo(0).IsName(currentAnimation))
         {
-            Debug.Log("Correct animation");
-            Debug.Log("Animation time: " + animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+            //Debug.Log("Correct animation");
+            //Debug.Log("Animation time: " + animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
             //animator.GetCurrentAnimatorStateInfo(0).IsName(currentAnimation);
             if (animator.GetCurrentAnimatorStateInfo(0).speed >= 1) // if the speed is positive 
             {
@@ -65,14 +65,10 @@ public class TransitionManager : MonoBehaviour
             }
             else if (animator.GetCurrentAnimatorStateInfo(0).speed <= 0) // if speed is negative. used in closing animation since the speed is -1 to reverse the animation
             {
-                return animator.GetCurrentAnimatorStateInfo(0).normalizedTime* animator.GetCurrentAnimatorStateInfo(0).speed <= (transitionTime * animator.GetCurrentAnimatorStateInfo(0).speed);
+                return animator.GetCurrentAnimatorStateInfo(0).normalizedTime * animator.GetCurrentAnimatorStateInfo(0).speed <= (transitionTime * animator.GetCurrentAnimatorStateInfo(0).speed);
             }
-            
+
         }
-        //Debug.Log("Current animation playing: " + animator.GetCurrentAnimatorStateInfo(0).);
-        //Debug.Log("Animation time: " + animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
-        ////animator.GetCurrentAnimatorStateInfo(0).IsName(currentAnimation);
-        //return animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= (transitionTime * animator.GetCurrentAnimatorStateInfo(0).speed);
         return false;
     }
 
