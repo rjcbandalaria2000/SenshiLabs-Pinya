@@ -10,6 +10,7 @@ public class DisplayItemCounter : MonoBehaviour
     public int quantity;
     bool isDuplicated;
 
+
     private void Start()
     {
         quantity = 1;
@@ -26,6 +27,12 @@ public class DisplayItemCounter : MonoBehaviour
     public void decreasePoint()
     {
         quantity--;
+        counter.text = quantity + "x";
+    }
+
+    public void resetQuantity()
+    {
+        quantity = 1;
         counter.text = quantity + "x";
     }
 }

@@ -67,7 +67,11 @@ public class DisplayGroceryList : MonoBehaviour
             //textList[i].text = " ";
             wantImage[i].gameObject.SetActive(false);
             wantImage[i].sprite = null;
-          
+
+            DisplayItemCounter itemCounter = wantImage[i].gameObject.GetComponent<DisplayItemCounter>();
+            itemCounter.resetQuantity();
+           
+
         }
            
     }
