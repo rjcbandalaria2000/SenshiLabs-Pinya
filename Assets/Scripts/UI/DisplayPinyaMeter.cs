@@ -15,7 +15,6 @@ public class DisplayPinyaMeter : MonoBehaviour
     public float        maxFadeTime = 1f;
     private Tween       pulseEffect;
 
-    private float       fadeTimer; // moving timer for the fade time
     private Color       damageBarColor; // get the color property of the damageBarImage
     private PinyaMeter  playerPinyaMeter;
     private Coroutine   damageFadeRoutine;
@@ -63,7 +62,6 @@ public class DisplayPinyaMeter : MonoBehaviour
     public void UpdatePinyaBar()
     {
         Assert.IsNotNull(playerPinyaMeter, "Player Pinya Meter is null or is not set");
-        //StartDamageFade();
         PinyaSlider.value = playerPinyaMeter.pinyaValue;
         
     }
@@ -84,7 +82,6 @@ public class DisplayPinyaMeter : MonoBehaviour
         }
         damageBarColor.a = 1f;
         damageBarImage.color = damageBarColor;
-        fadeTimer = maxFadeTime;
         damageFadeRoutine = StartCoroutine(DamageFade());
         Debug.Log("Start fade");
     }
