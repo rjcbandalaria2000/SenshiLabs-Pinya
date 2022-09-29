@@ -6,11 +6,14 @@ using TMPro;
 
 public class DisplayGroceryList : MonoBehaviour
 {
-    //public List<TextMeshProUGUI> textList = new List<TextMeshProUGUI>(5);
+    [Header("List UI")]
+    public List<Transform> postionUI = new List<Transform>(5);
+    public GameObject imgUI;
+    public GameObject parentCanvas;
 
-    public List<Image> wantImage = new List<Image>(5);
-    public List<DisplayItemCounter> displayItemCounters = new List<DisplayItemCounter>(5);
-    //public List<TextMeshProUGUI> duplicateCounter = new List<TextMeshProUGUI>(5);
+    //public List<Image> wantImage = new List<Image>(5);
+    //public List<DisplayItemCounter> displayItemCounters = new List<DisplayItemCounter>(5);
+    
 
     public List<GameObject> itemsNeeded;
 
@@ -28,12 +31,13 @@ public class DisplayGroceryList : MonoBehaviour
 
     void Start()
     {
-        for(int i = 0; i < wantImage.Count; i++)
-        {
-            //textList[i].text = " ";
-            wantImage[i].gameObject.SetActive(true);
-        }
-     
+        parentCanvas = this.gameObject;
+        //for(int i = 0; i < postionUI.Count; i++)
+        //{
+        //    //textList[i].text = " ";
+        //    wantImage[i].gameObject.SetActive(true);
+        //}
+
 
     }
 
@@ -45,16 +49,15 @@ public class DisplayGroceryList : MonoBehaviour
 
     public void updateList()
     {
-        Debug.Log("Update List");
-        for (int i = 0; i < grocery.wantedItems.Count; i++)
+        itemsNeeded = grocery.wantedItems;
+
+        for(int i = 0; i < itemsNeeded.Count; i++)
         {
-
-
-            wantImage[i].gameObject.SetActive(true);
-            wantImage[i].sprite = grocery.wantedItems[i].gameObject.GetComponent<SpriteRenderer>().sprite;
+            GameObject WantedItem = Instantiate(imgUI, postionUI[i].position, Quaternion.identity);
+            WantedItem.transform.SetParent(parentCanvas.transform);
+            WantedItem.GetComponent<Image>().sprite = itemsNeeded[i].GetComponent<SpriteRenderer>().sprite;
         }
 
-        duplicateCheck();
     }
 
 
@@ -65,11 +68,12 @@ public class DisplayGroceryList : MonoBehaviour
         for (int i = 0; i < grocery.wantedItems.Count; i++)
         {
             //textList[i].text = " ";
-            wantImage[i].gameObject.SetActive(false);
-            wantImage[i].sprite = null;
+            //wantImage[i].gameObject.SetActive(false);
+            //wantImage[i].sprite = null;
 
-            DisplayItemCounter itemCounter = wantImage[i].gameObject.GetComponent<DisplayItemCounter>();
-            itemCounter.resetQuantity();
+            //DisplayItemCounter itemCounter = wantImage[i].gameObject.GetComponent<DisplayItemCounter>();
+            //itemCounter.isDuplicated = false;
+            //itemCounter.resetQuantity();
            
 
         }
@@ -80,40 +84,37 @@ public class DisplayGroceryList : MonoBehaviour
     {
         itemsNeeded = grocery.wantedItems;
         int index = 0;
-        //int imageIndex = 0;
-       
-       while(index < grocery.wantedItems.Count)
-       {
+        int imageIndex = 1;
+
+        while (index < grocery.wantedItems.Count)
+        {
 
             for (int i = index + 1; i < itemsNeeded.Count; i++)
             {
-
-                if (index == i) 
+                if (index == i)
                 {
                     Debug.Log("Same Item");
-                    
+
                 }
                 else if (itemsNeeded[index] == grocery.wantedItems[i])
                 {
                     Debug.Log("Duplicate");
 
                     // wantImage[index].gameObject.SetActive(true);
-                    DisplayItemCounter itemCounter = wantImage[index].gameObject.GetComponent<DisplayItemCounter>();
-                    itemCounter.quantity += 1;
-                    itemCounter.counter.text = itemCounter.quantity + "x";
+                    //DisplayItemCounter itemCounter = wantImage[index].gameObject.GetComponent<DisplayItemCounter>();
+                    //itemCounter.quantity += 1;
+                    //itemCounter.counter.text = itemCounter.quantity + "x";
 
 
-                    wantImage[i].gameObject.SetActive(false);
+                    //wantImage[imageIndex].sprite = null;
 
                     //imageIndex++;
 
                 }
-
-
             }
-          
+
             index++;
         }
-       
+
     }
 }
