@@ -35,15 +35,16 @@ public class AskMom : MonoBehaviour
     public void BeginAskMom()
     {
         Assert.IsNotNull(playerPinyaMeter);
-        
-        if(playerPinyaMeter.pinyaValue > 0)
+
+        if (playerPinyaMeter.pinyaValue > 0)
         {
             askMomRoutine = StartCoroutine(AskMomCD());
+            if (pinyaMeterUI)
+            {
+                pinyaMeterUI.StartDamageFade();
+            }
         }
-        if (pinyaMeterUI)
-        {
-            pinyaMeterUI.StartDamageFade();
-        }
+        
         playerPinyaMeter.DecreasePinyaMeter(pinyaCost);
     }
 
