@@ -8,7 +8,7 @@ public class DisplayItemCounter : MonoBehaviour
 {
     public TextMeshProUGUI counter;
     public int quantity;
-    bool isDuplicated;
+    public bool isDuplicated;
 
 
     private void Start()
