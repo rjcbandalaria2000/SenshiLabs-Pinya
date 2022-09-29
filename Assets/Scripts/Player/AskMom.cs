@@ -131,6 +131,7 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             pinyaMeterUI.StopDamageFade();
         }
         Debug.Log("Ask mom exit");
+    }
     public void PulsatingHeart()
     {
 

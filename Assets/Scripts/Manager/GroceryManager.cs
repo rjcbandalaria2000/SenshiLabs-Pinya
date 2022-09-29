@@ -132,6 +132,7 @@ public class GroceryManager : MinigameManager //Might rename this
         {
             Debug.Log("Minigame success");
             SingletonManager.Get<UIManager>().ActivateResultScreen();
+            SingletonManager.Get<UIManager>().ActivateGoodResult();
             SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
             objectList.SetActive(false);
         }
@@ -142,8 +143,8 @@ public class GroceryManager : MinigameManager //Might rename this
     {
 
         SingletonManager.Get<UIManager>().ActivateResultScreen();
+        SingletonManager.Get<UIManager>().ActivateBadResult();
 
- 
     }
 
     public override void Initialize()

@@ -4981,7 +4981,7 @@ MonoBehaviour:
   pinyaMeter: {fileID: 0}
   dayEnd_UI: {fileID: 0}
   curtainsUI: {fileID: 0}
-  gameUI: {fileID: 0}
+  gameUI: {fileID: 1766018812}
   losePanelUI: {fileID: 0}
   winPanelUI: {fileID: 0}
   miniGameTimerDisplay: {fileID: 1766018812}
@@ -5006,6 +5006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e605fc5a271943341b6e887c4fbf7009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  decreaseValue: 0
 --- !u!1 &1048502430
 GameObject:
   m_ObjectHideFlags: 0
