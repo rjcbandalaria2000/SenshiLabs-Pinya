@@ -275,10 +275,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e8a6a49048732243999d3070420068b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MotivationCost: 0
-  Interactable: {fileID: 0}
+  minigameName: 
+  motivationCost: 0
+  interactable: {fileID: 0}
   isInteracted: 0
-  MinigameScene: 
+  hasCompleted: 0
+  minigameScene: Grocery_Test
 --- !u!114 &8616929587386935202
 MonoBehaviour:
   m_ObjectHideFlags: 0

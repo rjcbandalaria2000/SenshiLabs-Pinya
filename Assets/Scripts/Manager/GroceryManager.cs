@@ -29,13 +29,23 @@ public class GroceryManager : MinigameManager //Might rename this
     
     public int QuantityOfIngredient;
     public List<GameObject> spawnPoints;
+    public GameObject objectList;
+    public GameObject groceryList;
 
     private int RNG;
-
+   
     Coroutine initializeRoutine;
     Coroutine addAvailableItemsRoutine;
     Coroutine spawnRoutine;
-   
+
+    [Header("Countdown Timer")]
+    public float GameStartTime = 3f;
+    public DisplayGameCountdown CountdownTimerUI;
+    private float GameStartTimer = 0;
+
+    private Coroutine startMinigameRoutine;
+    private Coroutine setUpGroceryRoutine;
+
     private void Awake()
     {
         SingletonManager.Register(this);
@@ -45,31 +55,10 @@ public class GroceryManager : MinigameManager //Might rename this
 
     void Start()
     {
-        numberOfItems = Random.Range(2, 5);
-        sceneChange = this.gameObject.GetComponent<SceneChange>();
 
-        if (groceryItems.Count > 0)
-        {
-          
-            addAvailableItemsRoutine = StartCoroutine(addAvailableItems());
-           // initializeRoutine = StartCoroutine(initializeList());
+        Initialize();
 
-            //Spawn
-            spawnRoutine = StartCoroutine(spawnItem());
-
-            initializeRoutine = StartCoroutine(initializeList());
-
-            //InitializeList
-
-        }
-
-
-
-        if (basket == null)
-        {
-            basket = GameObject.FindGameObjectWithTag("Basket"); // Might change this
-            basketPosition = basket.transform.position;
-        }
+       
     }
     public Vector3 getBasketPosition()
     {
@@ -101,18 +90,29 @@ public class GroceryManager : MinigameManager //Might rename this
 
     IEnumerator initializeList()
     {
-        for (int i = 0; i < numberOfItems; i++)
+        for (int i = 0; i < numberOfItems; i++) 
         {
             RNG = Random.Range(0, itemsAvailable.Count);
+
+            
             wantedItems.Add(itemsAvailable[RNG]);
-            SingletonManager.Get<DisplayGroceryList>().updateList();
+           
 
             //extraList = itemsAvailable;
 
             yield return null;
         }
+        SingletonManager.Get<DisplayGroceryList>().updateList();
     }
 
+
+    //public void checkDuplicate(int num)
+    //{
+    //    for(int i = 0; i < wantedItems.Count; i++)
+    //    {
+            
+    //    }
+    //}
 
     IEnumerator addAvailableItems()
     {
@@ -130,19 +130,118 @@ public class GroceryManager : MinigameManager //Might rename this
     {
         if (wantedItems.Count <= 0)
         {
-            Debug.Log("Minigame complete");
-            SingletonManager.Get<PlayerData>().IsGroceryFinished = true;
-            Assert.IsNotNull(sceneChange, "Scene change is null or not set");
-            sceneChange.OnChangeScene(NameOfNextScene);
+            Debug.Log("Minigame success");
+            SingletonManager.Get<UIManager>().ActivateResultScreen();
+            SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
+            objectList.SetActive(false);
         }
 
     }
 
     public override void OnMinigameLose()
     {
-        Debug.Log("Minigame lose");
+
+        SingletonManager.Get<UIManager>().ActivateResultScreen();
+
+ 
+    }
+
+    public override void Initialize()
+    {
+        SingletonManager.Get<UIManager>().ActivateMiniGameMainMenu();
+        Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
+        objectList.SetActive(false); 
+        startMinigameRoutine = null;
+
+       
+    }
+
+    public override void StartMinigame()
+    {
+        GameStartTimer = GameStartTime;
+        SingletonManager.Get<UIManager>().ActivateGameCountdown();
+        startMinigameRoutine = StartCoroutine(StartMinigameCounter());
+
+        objectList.SetActive(false);
+        groceryList.SetActive(false);
+
+
+        SingletonManager.Get<UIManager>().DeactivateMiniGameMainMenu();
+        SingletonManager.Get<UIManager>().ActivateMiniGameTimerUI();
+
+        numberOfItems = 5;
+        sceneChange = this.gameObject.GetComponent<SceneChange>();
+  
+
+        setUpGroceryRoutine = StartCoroutine(initialGrocery());
+
+       
+        if (basket == null)
+        {
+            basket = GameObject.FindGameObjectWithTag("Basket"); // Might change this
+            basketPosition = basket.transform.position;
+        }
+
+    }
+
+    public IEnumerator StartMinigameCounter()
+    {
+        CountdownTimerUI.UpdateCountdownTimer(GameStartTimer);
+
+        
+
+        while (GameStartTimer > 0)
+        {
+            GameStartTimer -= 1 * Time.deltaTime;
+            CountdownTimerUI.UpdateCountdownTimer(GameStartTimer);
+            yield return null;
+        }
+        //yield return new WaitForSeconds(GameStartTime);
+        SingletonManager.Get<UIManager>().DeactivateGameCountdown();
+        SingletonManager.Get<MiniGameTimer>().StartCountdownTimer();
+
+        isCompleted = false;
+        Events.OnObjectiveUpdate.Invoke();
+        
+    }
+
+    public IEnumerator initialGrocery()
+    {
+
+        yield return new WaitForSeconds(GameStartTimer);
+
+        objectList.SetActive(true);
+        groceryList.SetActive(true);
+
+        if (groceryItems.Count > 0)
+        {
+
+            addAvailableItemsRoutine = StartCoroutine(addAvailableItems());
+            // initializeRoutine = StartCoroutine(initializeList());
+
+            //Spawn
+            spawnRoutine = StartCoroutine(spawnItem());
+
+            initializeRoutine = StartCoroutine(initializeList());
+
+            //InitializeList
+
+        }
+    }
+
+
+    public void continueScene()
+    {
+        Debug.Log("Minigame complete");
+        SingletonManager.Get<PlayerData>().IsGroceryFinished = true;
         Assert.IsNotNull(sceneChange, "Scene change is null or not set");
         sceneChange.OnChangeScene(NameOfNextScene);
     }
 
+    public void gameOver()
+    {
+        Debug.Log("Minigame lose");
+        Assert.IsNotNull(sceneChange, "Scene change is null or not set");
+        sceneChange.OnChangeScene(NameOfNextScene);
+    }
 }

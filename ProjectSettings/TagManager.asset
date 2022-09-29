@@ -52,3 +52,6 @@ TagManager:
   - name: Basket
     uniqueID: 2308033831
     locked: 0
+  - name: Curtain
+    uniqueID: 2201956641
+    locked: 0
