@@ -1454,6 +1454,12 @@ MonoBehaviour:
   - {fileID: 840875635}
   - {fileID: 667065115}
   - {fileID: 1164161792}
+  displayItemCounters:
+  - {fileID: 1319037952}
+  - {fileID: 372397971}
+  - {fileID: 840875638}
+  - {fileID: 667065118}
+  - {fileID: 1164161795}
   itemsNeeded: []
   grocery: {fileID: 0}
 --- !u!114 &371750261
@@ -2993,7 +2999,7 @@ MonoBehaviour:
   isCompleted: 0
   NameOfNextScene: MainGameScene1 1
   timer: 0
-  maxTimer: 10
+  maxTimer: 25
   speedTimer: 1
   groceryItems:
   - {fileID: 5937934297813480278, guid: 0899e0fa28b10674fbc62867b8278a3c, type: 3}
@@ -3049,7 +3055,7 @@ MonoBehaviour:
   - {fileID: 58078232}
   - {fileID: 376665766}
   objectList: {fileID: 371750259}
-  groceryList: {fileID: 0}
+  groceryList: {fileID: 1447865452}
   GameStartTime: 3
   CountdownTimerUI: {fileID: 8266011237784879030}
 --- !u!114 &844703406

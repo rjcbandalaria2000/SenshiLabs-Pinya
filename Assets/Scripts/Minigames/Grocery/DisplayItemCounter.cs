@@ -8,6 +8,7 @@ public class DisplayItemCounter : MonoBehaviour
 {
     public TextMeshProUGUI counter;
     public int quantity;
+    bool isDuplicated;
 
     private void Start()
     {
@@ -15,10 +16,12 @@ public class DisplayItemCounter : MonoBehaviour
         counter.text = quantity + "x";
     }
 
-    public void addPoint()
+    public void addPoint(int point)
     {
-        quantity++;
+       
+        quantity += point;
         counter.text = quantity + "x";
+        Debug.Log("Add Quantity");
     }
     public void decreasePoint()
     {

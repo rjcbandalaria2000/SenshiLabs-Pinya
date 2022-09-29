@@ -162,7 +162,9 @@ public class GroceryManager : MinigameManager //Might rename this
         SingletonManager.Get<UIManager>().ActivateGameCountdown();
         startMinigameRoutine = StartCoroutine(StartMinigameCounter());
 
-        objectList.SetActive(true);
+        objectList.SetActive(false);
+        groceryList.SetActive(false);
+
 
         SingletonManager.Get<UIManager>().DeactivateMiniGameMainMenu();
         SingletonManager.Get<UIManager>().ActivateMiniGameTimerUI();
@@ -185,6 +187,9 @@ public class GroceryManager : MinigameManager //Might rename this
     public IEnumerator StartMinigameCounter()
     {
         CountdownTimerUI.UpdateCountdownTimer(GameStartTimer);
+
+        
+
         while (GameStartTimer > 0)
         {
             GameStartTimer -= 1 * Time.deltaTime;
@@ -204,6 +209,9 @@ public class GroceryManager : MinigameManager //Might rename this
     {
 
         yield return new WaitForSeconds(GameStartTimer);
+
+        objectList.SetActive(true);
+        groceryList.SetActive(true);
 
         if (groceryItems.Count > 0)
         {

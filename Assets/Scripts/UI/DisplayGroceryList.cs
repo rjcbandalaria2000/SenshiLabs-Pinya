@@ -9,6 +9,7 @@ public class DisplayGroceryList : MonoBehaviour
     //public List<TextMeshProUGUI> textList = new List<TextMeshProUGUI>(5);
 
     public List<Image> wantImage = new List<Image>(5);
+    public List<DisplayItemCounter> displayItemCounters = new List<DisplayItemCounter>(5);
     //public List<TextMeshProUGUI> duplicateCounter = new List<TextMeshProUGUI>(5);
 
     public List<GameObject> itemsNeeded;
@@ -30,7 +31,7 @@ public class DisplayGroceryList : MonoBehaviour
         for(int i = 0; i < wantImage.Count; i++)
         {
             //textList[i].text = " ";
-            wantImage[i].gameObject.SetActive(false);
+            wantImage[i].gameObject.SetActive(true);
         }
      
 
@@ -45,11 +46,8 @@ public class DisplayGroceryList : MonoBehaviour
     public void updateList()
     {
         Debug.Log("Update List");
-        for (int i = 0; i < wantImage.Count;i++)
+        for (int i = 0; i < grocery.wantedItems.Count; i++)
         {
-
-
-            //textList[i].text = grocery.wantedItems[i].gameObject.name.ToString();
 
 
             wantImage[i].gameObject.SetActive(true);
@@ -67,8 +65,9 @@ public class DisplayGroceryList : MonoBehaviour
         for (int i = 0; i < grocery.wantedItems.Count; i++)
         {
             //textList[i].text = " ";
-            wantImage[i].sprite = null;
             wantImage[i].gameObject.SetActive(false);
+            wantImage[i].sprite = null;
+          
         }
            
     }
@@ -77,31 +76,38 @@ public class DisplayGroceryList : MonoBehaviour
     {
         itemsNeeded = grocery.wantedItems;
         int index = 0;
-        int imageIndex = 0;
+        //int imageIndex = 0;
        
        while(index < grocery.wantedItems.Count)
        {
-            
+
             for (int i = index + 1; i < itemsNeeded.Count; i++)
             {
 
-                if (itemsNeeded[index] == grocery.wantedItems[i])
+                if (index == i) 
                 {
-
+                    Debug.Log("Same Item");
+                    
+                }
+                else if (itemsNeeded[index] == grocery.wantedItems[i])
+                {
                     Debug.Log("Duplicate");
 
-                    
-                 
-                }
-                else
-                {
-                    //wantImage[imageIndex].gameObject.SetActive(true);
-                    //wantImage[imageIndex].sprite = grocery.wantedItems[imageIndex].gameObject.GetComponent<SpriteRenderer>().sprite;
+                    // wantImage[index].gameObject.SetActive(true);
+                    DisplayItemCounter itemCounter = wantImage[index].gameObject.GetComponent<DisplayItemCounter>();
+                    itemCounter.quantity += 1;
+                    itemCounter.counter.text = itemCounter.quantity + "x";
+
+
+                    wantImage[i].gameObject.SetActive(false);
+
                     //imageIndex++;
+
                 }
+
 
             }
-
+          
             index++;
         }
        
