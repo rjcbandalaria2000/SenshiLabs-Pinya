@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4245283, g: 0.3984959, b: 0.3984959, a: 1}
+  m_Color: {r: 0.4245283, g: 0.3984959, b: 0.3984959, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -492,7 +492,6 @@ MonoBehaviour:
   PinyaSlider: {fileID: 8555003005583062404}
   damageBarImage: {fileID: 0}
   maxFadeTime: 1
-  fadeAmount: 1
 --- !u!1 &8555003006605391202
 GameObject:
   m_ObjectHideFlags: 0

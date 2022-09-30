@@ -10000,7 +10000,7 @@ MonoBehaviour:
   - {fileID: 714896940}
   coolDown: 5
   playerPinyaMeter: {fileID: 312946477}
-  pinyaCost: 50
+  pinyaCost: 25
   pinyaMeterUI: {fileID: 995006581}
 --- !u!4 &3281135474399031076 stripped
 Transform:

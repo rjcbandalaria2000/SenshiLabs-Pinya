@@ -77,8 +77,17 @@ public class DisplayPinyaMeter : MonoBehaviour
         //Show the damage
         if (damageBarColor.a <= 0)
         {
-            damageBarImage.fillAmount = ((float)PinyaSlider.value - (float) pinyaCost) / (float)PinyaSlider.maxValue;
-            Debug.Log("Fill Amount Damage Fade: " + damageBarImage.fillAmount);
+            if ((PinyaSlider.value - pinyaCost) > 0) // if the value after subtracting the pinya cost is greater then 0 (still has remaining health)
+            {
+                damageBarImage.fillAmount = ((float)PinyaSlider.value - (float)pinyaCost) / (float)PinyaSlider.maxValue;
+                Debug.Log("Fill Amount Damage Fade: " + damageBarImage.fillAmount);
+            }
+            else if ((PinyaSlider.value - pinyaCost) <= 0)
+            {
+                damageBarImage.fillAmount = (float)PinyaSlider.value  / (float)PinyaSlider.maxValue;
+                Debug.Log("Fill Amount Damage Fade: " + damageBarImage.fillAmount);
+            }
+            
         }
         damageBarColor.a = 1f;
         damageBarImage.color = damageBarColor;
