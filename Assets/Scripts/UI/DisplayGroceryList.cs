@@ -11,14 +11,11 @@ public class DisplayGroceryList : MonoBehaviour
     public GameObject imgUI;
     public GameObject parentCanvas;
 
-    //public List<Image> wantImage = new List<Image>(5);
-    //public List<DisplayItemCounter> displayItemCounters = new List<DisplayItemCounter>(5);
-    
-
     public List<GameObject> itemsNeeded;
+    public List<GameObject> UIitems;
 
     [SerializeField]private GroceryManager grocery;
-    // Start is called before the first frame update
+
 
     private void Awake()
     {
@@ -50,13 +47,20 @@ public class DisplayGroceryList : MonoBehaviour
     public void updateList()
     {
         itemsNeeded = grocery.wantedItems;
+        int index = 0;
 
-        for(int i = 0; i < itemsNeeded.Count; i++)
+        while(index < itemsNeeded.Count)
         {
-            GameObject WantedItem = Instantiate(imgUI, postionUI[i].position, Quaternion.identity);
+            GameObject WantedItem = Instantiate(imgUI, postionUI[index].position, Quaternion.identity);
             WantedItem.transform.SetParent(parentCanvas.transform);
-            WantedItem.GetComponent<Image>().sprite = itemsNeeded[i].GetComponent<SpriteRenderer>().sprite;
+            WantedItem.GetComponent<Image>().sprite = itemsNeeded[index].GetComponent<SpriteRenderer>().sprite;
+            UIitems.Add(WantedItem);
+            
+            index++;
+           
         }
+
+ 
 
     }
 
@@ -65,18 +69,13 @@ public class DisplayGroceryList : MonoBehaviour
     public void blank()
     {
         Debug.Log("Clear");
-        for (int i = 0; i < grocery.wantedItems.Count; i++)
+
+        for(int i = 0; i < UIitems.Count; i++)
         {
-            //textList[i].text = " ";
-            //wantImage[i].gameObject.SetActive(false);
-            //wantImage[i].sprite = null;
-
-            //DisplayItemCounter itemCounter = wantImage[i].gameObject.GetComponent<DisplayItemCounter>();
-            //itemCounter.isDuplicated = false;
-            //itemCounter.resetQuantity();
-           
-
+            Destroy(UIitems[i]);
         }
+
+        UIitems.Clear();
            
     }
 
@@ -100,15 +99,7 @@ public class DisplayGroceryList : MonoBehaviour
                 {
                     Debug.Log("Duplicate");
 
-                    // wantImage[index].gameObject.SetActive(true);
-                    //DisplayItemCounter itemCounter = wantImage[index].gameObject.GetComponent<DisplayItemCounter>();
-                    //itemCounter.quantity += 1;
-                    //itemCounter.counter.text = itemCounter.quantity + "x";
-
-
-                    //wantImage[imageIndex].sprite = null;
-
-                    //imageIndex++;
+                
 
                 }
             }
