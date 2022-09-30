@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class ClickItem : MonoBehaviour
 {
@@ -33,12 +34,12 @@ public class ClickItem : MonoBehaviour
 
     void OnMouseDown()
     {
-        Debug.Log("Click");
+       // Debug.Log("Click");
   
 
         if(groceryMiniGame != null)
         {
-            Debug.Log("Moving");
+           // Debug.Log("Moving");
             checkItem();
         }
     }
@@ -54,6 +55,8 @@ public class ClickItem : MonoBehaviour
 
     public void checkItem()
     {
+        bool isCorrect = false;
+
         for(int i = 0; i < groceryMiniGame.wantedItems.Count; i++)
         {
             if(ingridientType == groceryMiniGame.wantedItems[i].GetComponent<ClickItem>().ingridientType && groceryMiniGame.wantedItems[i] != null)
@@ -63,13 +66,22 @@ public class ClickItem : MonoBehaviour
                 groceryList.blank();
                 groceryMiniGame.wantedItems.RemoveAt(i);
                 groceryList.updateList();
-
+                isCorrect = true;
                 break;
             }
-            else
-            {
-                Debug.Log("Wrong");
-            }
+            //else
+            //{
+            //    Debug.Log("Wrong");
+            //    //Vector3 shake = new Vector3(0.5f, 0, 0);
+            //    //item.transform.DOShakePosition(0.3f, shake, 10, 45, false, false);
+            //}
+        }
+
+        if(!isCorrect)
+        {
+            Debug.Log("Wrong");
+            Vector3 shake = new Vector3(0.5f, 0, 0);
+            item.transform.DOShakePosition(0.3f, shake, 10, 45, false, false);
         }
 
         SingletonManager.Get<GroceryManager>().CheckIfFinished();
