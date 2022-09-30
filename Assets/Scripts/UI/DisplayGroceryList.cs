@@ -10,8 +10,10 @@ public class DisplayGroceryList : MonoBehaviour
     public List<Transform> postionUI = new List<Transform>(5);
     public GameObject imgUI;
     public GameObject parentCanvas;
-    public List<int> quantities;
-    public List<bool> isDuplicated;
+    public List<int> quantities = new List<int>(5);
+
+ 
+ 
 
     public List<GameObject> itemsNeeded = new();
     public List<GameObject> UIitems;
@@ -42,36 +44,42 @@ public class DisplayGroceryList : MonoBehaviour
 
     public void updateList()
     {
+        
         itemsNeeded = new(grocery.wantedItems);
+        
+       
         int index = 0;
-        int points = 0;
+        int points = 1;
 
         while (index < itemsNeeded.Count)
         {
 
             for (int i = index + 1; i < itemsNeeded.Count; i++)
             {
-                //if(index == i)
-                //{
-                //    Debug.Log("Same Index");
-                //}
+               
                 if (grocery.wantedItems[index] == itemsNeeded[i])
                 {
                     Debug.Log("Duplicate");
                     points++;
                     itemsNeeded.RemoveAt(i);
                 }
+                //else
+                //{
+                //    points = 0;
+                //}
               
             }
 
 
             quantities.Add(points);
-            points = 0;
-
+            points = 1;
+            Debug.Log("ItemList: " + itemsNeeded.Count);
+    
             index++;
 
         }
 
+      
 
 
         for (int i = 0; i < itemsNeeded.Count; i++)
@@ -79,64 +87,45 @@ public class DisplayGroceryList : MonoBehaviour
             GameObject WantedItem = Instantiate(imgUI, postionUI[i].position, Quaternion.identity);
             WantedItem.transform.SetParent(parentCanvas.transform);
             WantedItem.GetComponent<Image>().sprite = itemsNeeded[i].GetComponent<SpriteRenderer>().sprite;
-            //WantedItem.GetComponent<DisplayItemCounter>().quantity += quantities[i];
-            //WantedItem.GetComponent<DisplayItemCounter>().counter.text = WantedItem.GetComponent<DisplayItemCounter>().quantity + "x";
-            //if(isDuplicated[i] == true)
-            //{
-            //    WantedItem.GetComponent<DisplayItemCounter>().quantity += quantities[i];
-            //    WantedItem.GetComponent<DisplayItemCounter>().counter.text = WantedItem.GetComponent<DisplayItemCounter>().quantity + "x";
-            //}
-
-
+            WantedItem.GetComponent<DisplayItemCounter>().quantity = quantities[i];
 
             UIitems.Add(WantedItem);
+
+            //if (UIitems[i].gameObject.GetComponent<DisplayItemCounter>() != null)
+            //{
+            //    UIitems[i].gameObject.GetComponent<DisplayItemCounter>().quantity = 2;
+            //    UIitems[i].gameObject.GetComponent<DisplayItemCounter>().counter.text = UIitems[i].gameObject.GetComponent<DisplayItemCounter>().quantity + "x";
+            //}
+            //else
+            //{
+            //    Debug.Log("DisplayNUll");
+            //}
+
         }
+        
 
 
     }
 
-
-
+    
     public void blank()
     {
         Debug.Log("Clear");
-
+       
         for(int i = 0; i < UIitems.Count; i++)
         {
-            Destroy(UIitems[i]);
+            if(UIitems[i].GetComponent<DisplayItemCounter>().quantity > 0)
+            {
+                Destroy(UIitems[i]);
+            }
+           
+          
+           
         }
-
+        quantities.Clear();
         UIitems.Clear();
            
     }
 
-    //public void duplicateCheck()
-    //{
-    //    itemsNeeded = grocery.wantedItems;
-    //    int index = 0;
-       
-
-    //    while (index < grocery.wantedItems.Count)
-    //    {
-
-    //        for (int i = index + 1; i < itemsNeeded.Count; i++)
-    //        {
-    //            if (index == i)
-    //            {
-    //                Debug.Log("Same Item");
-
-    //            }
-    //            else if (itemsNeeded[index] == grocery.wantedItems[i])
-    //            {
-    //                Debug.Log("Duplicate");
-
-                
-
-    //            }
-    //        }
-
-    //        index++;
-    //    }
-
-    //}
+  
 }

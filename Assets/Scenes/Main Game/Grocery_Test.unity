@@ -1051,8 +1051,8 @@ MonoBehaviour:
   - {fileID: 1373838327}
   imgUI: {fileID: 4228931291223023439, guid: 9fde4a4af3dff7845898a3dc76737886, type: 3}
   parentCanvas: {fileID: 371750259}
+  quantities: 
   itemsNeeded: []
-  UIList: []
   UIitems: []
   grocery: {fileID: 0}
 --- !u!114 &371750261

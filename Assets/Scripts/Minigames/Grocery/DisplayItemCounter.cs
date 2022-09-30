@@ -13,21 +13,26 @@ public class DisplayItemCounter : MonoBehaviour
 
     private void Start()
     {
-        quantity = 1;
+     
         counter.text = quantity + "x";
     }
 
     public void addPoint(int value)
     {
        
-        quantity += value;
-        counter.text = quantity + "x";
+        this.quantity += value;
+        Debug.Log("Quantity: " + quantity);
+
+        this.counter.text = quantity + "x";
         Debug.Log("Add Quantity");
     }
     public void decreasePoint()
     {
-        quantity--;
-        counter.text = quantity + "x";
+        this.quantity--;
+        Debug.Log("Quantity: " + quantity);
+
+        this.counter.text = quantity + "x";
+        Debug.Log("Minus Quantity");
     }
 
     public void resetQuantity()
