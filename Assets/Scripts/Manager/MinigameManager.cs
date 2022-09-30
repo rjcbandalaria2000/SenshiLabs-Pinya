@@ -64,6 +64,15 @@ public class MinigameManager : MonoBehaviour
     {
 
     }
-    
+
+    protected virtual IEnumerator StartMinigameCounter()
+    {
+        yield return null;
+    }
+
+    protected virtual IEnumerator ExitMinigame()
+    {
+        yield return null;
+    }
 
 }

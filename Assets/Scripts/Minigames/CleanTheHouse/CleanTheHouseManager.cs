@@ -82,8 +82,7 @@ public class CleanTheHouseManager : MinigameManager
     }
 
     public override void Initialize()
-    {
-        //SingletonManager.Get<UIManager>().ActivateMiniGameMainMenu();
+    { 
         transitionManager = SingletonManager.Get<TransitionManager>();
         sceneChange = this.gameObject.GetComponent<SceneChange>();
         spawnManager = SingletonManager.Get<SpawnManager>();
@@ -96,13 +95,10 @@ public class CleanTheHouseManager : MinigameManager
     public override void StartMinigame()
     {
         gameStartTimer = gameStartTime;
-        //SingletonManager.Get<UIManager>().ActivateGameCountdown();
         startMinigameRoutine = StartCoroutine(StartMinigameCounter());
-        //SingletonManager.Get<UIManager>().DeactivateMiniGameMainMenu();
-        //SingletonManager.Get<UIManager>().ActivateMiniGameTimerUI();
     }
 
-    public IEnumerator StartMinigameCounter()
+    protected override IEnumerator StartMinigameCounter()
     {
         //Deactivate Minigame Main Menu
         SingletonManager.Get<UIManager>().DeactivateMiniGameMainMenu();
@@ -120,7 +116,6 @@ public class CleanTheHouseManager : MinigameManager
         //Activate Game Countdown
         SingletonManager.Get<UIManager>().ActivateGameCountdown();
         countdownTimerUI.UpdateCountdownSprites((int)gameStartTimer);
-        //countdownTimerUI.UpdateCountdownTimer(gameStartTimer);
         //Wait till the game countdown is finish
         while(gameStartTimer > 0)
         {
@@ -169,7 +164,7 @@ public class CleanTheHouseManager : MinigameManager
         //sceneChange.OnChangeScene(NameOfNextScene);
     }
 
-    IEnumerator ExitMinigame()
+    protected override IEnumerator ExitMinigame()
     {
         // Play close animation
         transitionManager.ChangeAnimation(TransitionManager.CURTAIN_CLOSE);
@@ -188,4 +183,9 @@ public class CleanTheHouseManager : MinigameManager
         sceneChange.OnChangeScene(NameOfNextScene);
         yield return null;
     }
+
+    #region StartMinigameFunctions
+
+
+    #endregion
 }

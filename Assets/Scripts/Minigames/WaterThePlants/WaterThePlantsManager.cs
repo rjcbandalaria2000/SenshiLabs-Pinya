@@ -82,5 +82,14 @@ public class WaterThePlantsManager : MinigameManager
 
     }
 
+    public override void StartMinigame()
+    {
+        base.StartMinigame();
+    }
+
+    protected override IEnumerator StartMinigameCounter()
+    {
+        return base.StartMinigameCounter();
+    }
 
 }
