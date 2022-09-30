@@ -16,7 +16,7 @@ public class WaterThePlantsManager : MinigameManager
 
     private void Update()
     {
-        CheckIfFinished();
+        //CheckIfFinished();
     }
 
     public override void Initialize()

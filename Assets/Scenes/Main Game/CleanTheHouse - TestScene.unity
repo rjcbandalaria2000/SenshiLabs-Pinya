@@ -9280,7 +9280,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1766018814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10023,6 +10023,10 @@ PrefabInstance:
     - target: {fileID: 4257680015237913099, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
       propertyPath: m_Name
       value: ~TransitionManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257680015237913099, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7704427003369924030, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
       propertyPath: m_LocalPosition.x
