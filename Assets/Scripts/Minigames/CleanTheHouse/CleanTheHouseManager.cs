@@ -17,16 +17,10 @@ public class CleanTheHouseManager : MinigameManager
     public int                  numberOfToysKept = 0;
     public int                  numberOfDustSwept = 0;
 
-    [Header("Countdown Timer")]
-    public float                gameStartTime = 3f;
-    public DisplayGameCountdown countdownTimerUI;
-
-    private float               gameStartTimer = 0;
     private SpawnManager        spawnManager;
-    private Coroutine           startMinigameRoutine;
+    
     private TransitionManager   transitionManager;
-    private Coroutine           exitMinigameRoutine;
-
+   
     private void Awake()
     {
         SingletonManager.Register(this);
@@ -184,7 +178,7 @@ public class CleanTheHouseManager : MinigameManager
         yield return null;
     }
 
-    #region StartMinigameFunctions
+    #region Getter Functions
 
 
     #endregion
