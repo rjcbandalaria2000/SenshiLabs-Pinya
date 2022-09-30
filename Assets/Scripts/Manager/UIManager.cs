@@ -20,6 +20,8 @@ public class UIManager : MonoBehaviour
     public GameObject dayEnd_UI;
     public GameObject curtainsUI;
     public GameObject gameUI;
+
+    [Header("Gameover Display")]
     public GameObject losePanelUI;
     public GameObject winPanelUI;
 

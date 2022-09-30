@@ -316,7 +316,7 @@ MonoBehaviour:
   IsWatered: 0
   DehydratedModel: {fileID: 6676157161947609516}
   HydratedModel: {fileID: 6131212194066969477}
-  waterBar: {fileID: 0}
+  waterBar: {fileID: 2661490727432349417}
 --- !u!1 &4395878856887477363
 GameObject:
   m_ObjectHideFlags: 0
