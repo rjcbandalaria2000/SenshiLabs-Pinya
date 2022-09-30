@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CleanTheHouseMinigame : MinigameObject
 {
+    private TransitionManager   transitionManager;
+    private Coroutine           interactRoutine;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,14 +26,32 @@ public class CleanTheHouseMinigame : MinigameObject
         if (!isInteracted)
         {
             Debug.Log("Interact with" + this.gameObject.name);
+            //Decrease Motivation 
             MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
             if (playerMotivation)
             {
-                playerMotivation.DecreaseMotivation(motivationCost);
+                //Check if has enough motivation
+                if (playerMotivation.MotivationAmount < motivationCost)
+                {
+                    // if there is not enough motivation amount
+                    Debug.Log("Not enough motivation");
+                    return;
+                }
+                else
+                {
+                    playerMotivation.DecreaseMotivation(motivationCost);
+                    //Disable player controls 
+                    PlayerControls playerControl = player.GetComponent<PlayerControls>();
+                    if (playerControl)
+                    {
+                        playerControl.enabled = false;
+                    }
+                    Debug.Log("Interacted");
+                    isInteracted = true; // to avoid being called again since it is already interacted
+                    StartInteractRoutine();
+                    //JumpToMiniGame();
+                }
             }
-            Debug.Log("Interacted");
-            isInteracted = true;
-            JumpToMiniGame();
         }
     }
 
@@ -65,9 +86,30 @@ public class CleanTheHouseMinigame : MinigameObject
         }
     }
 
+    public void StartInteractRoutine()
+    {
+        interactRoutine = StartCoroutine(InteractCoroutine());
+    }
+
     public override IEnumerator InteractCoroutine(GameObject player = null)
     {
-       yield return null;
+        transitionManager = SingletonManager.Get<TransitionManager>();
+        //Play animation of transition
+        if (transitionManager) { 
+            
+           transitionManager.ChangeAnimation(TransitionManager.CURTAIN_CLOSE);
+            
+        }
+        //Wait for the transition to end
+        while (!transitionManager.IsAnimationFinished())
+        {
+            Debug.Log("Closing Curtain Time: " + transitionManager.animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+            yield return null;
+        }
+        
+        //Jump to next scene
+        JumpToMiniGame();
+        yield return null;
     }
 
 }

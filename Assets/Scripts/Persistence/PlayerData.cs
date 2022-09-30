@@ -11,6 +11,7 @@ public class PlayerData : MonoBehaviour
     public float    maxPinyaData;
     public int      MinigamesPlayed;
     public bool     HasSaved;
+    public Vector2  playerLocation;
 
     [Header("Minigames")]
     
@@ -33,14 +34,32 @@ public class PlayerData : MonoBehaviour
     public void StoreData(Player player)
     {
         maxMotivationData = player.motivationMeter.MaxMotivation;
-        maxPinyaData = player.pinyaMeter.MaxPinyaValue;
+        maxPinyaData = player.pinyaMeter.maxPinyaValue;
         storedMotivationData = player.motivationMeter.MotivationAmount;
-        storedPinyaData = player.pinyaMeter.PinyaValue;
+        storedPinyaData = player.pinyaMeter.pinyaValue;
+        playerLocation = player.gameObject.transform.position;
     }
 
     public void GetData(Player player)
     {
         player.motivationMeter.MotivationAmount = storedMotivationData;
-        player.pinyaMeter.PinyaValue = storedPinyaData;
+        player.pinyaMeter.pinyaValue = storedPinyaData;
+    }
+
+    public void ResetPlayerData()
+    {
+        storedMotivationData = 0; 
+        storedPinyaData = 0;
+        maxMotivationData = 0;
+        maxPinyaData = 0;
+        MinigamesPlayed = 0;
+        HasSaved = false;
+        playerLocation = Vector2.zero;
+        IsCleanTheHouseFinished = false;
+        IsGetWaterFinished = false;
+        IsGroceryFinished = false;
+        IsImHungryFinished = false;
+        IsWashTheDishesFinished = false;
+        IsWaterThePlantsFinished = false;
     }
 }

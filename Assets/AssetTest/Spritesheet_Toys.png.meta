@@ -124,7 +124,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -140,12 +140,12 @@ TextureImporter:
       name: Spritesheet_Toys_1
       rect:
         serializedVersion: 2
-        x: 256
-        y: 260
-        width: 256
-        height: 256
+        x: 294
+        y: 291
+        width: 174
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -161,12 +161,12 @@ TextureImporter:
       name: Spritesheet_Toys_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 4
-        width: 256
-        height: 256
+        x: 49
+        y: 6
+        width: 158
+        height: 254
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

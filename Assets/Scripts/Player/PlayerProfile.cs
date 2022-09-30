@@ -11,6 +11,6 @@ public class PlayerProfile
     public PlayerProfile (Player player)
     {
         motivationMeter = player.motivationMeter.MotivationAmount;
-        pinyaMeter = player.pinyaMeter.PinyaValue;
+        pinyaMeter = player.pinyaMeter.pinyaValue;
     }
 }

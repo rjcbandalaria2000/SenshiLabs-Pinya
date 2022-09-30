@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     public MotivationMeter  motivationMeter;
     public PinyaMeter       pinyaMeter;
 
+    private PlayerData playerData;
+
     private void Start()
     {
         if(motivationMeter == null)
@@ -36,7 +38,7 @@ public class Player : MonoBehaviour
         PlayerProfile data = DataManager.LoadPlayer();
 
         motivationMeter.MotivationAmount = data.motivationMeter;
-        pinyaMeter.PinyaValue = data.pinyaMeter;
+        pinyaMeter.pinyaValue = data.pinyaMeter;
 
         SingletonManager.Get<DisplayMotivationalBar>().UpdateMotivationBar();
         SingletonManager.Get<DisplayPinyaMeter>().UpdatePinyaBar();
@@ -46,11 +48,15 @@ public class Player : MonoBehaviour
     {
         if(motivationMeter == null) { return; }
         if(pinyaMeter == null) { return; }
-        SingletonManager.Get<PlayerData>().StoreData(this);
-        if (!SingletonManager.Get<PlayerData>().HasSaved)
+        if (SingletonManager.Get<PlayerData>())
         {
-            SingletonManager.Get<PlayerData>().HasSaved = true;
+            SingletonManager.Get<PlayerData>().StoreData(this);
+            if (!SingletonManager.Get<PlayerData>().HasSaved)
+            {
+                SingletonManager.Get<PlayerData>().HasSaved = true;
+            }
         }
+      
         Events.OnSceneChange.RemoveListener(OnSceneChange);
     }
 

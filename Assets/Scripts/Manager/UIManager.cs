@@ -16,13 +16,15 @@ public class UIManager : MonoBehaviour
     public GameObject motivationMeter;
     public GameObject pinyaMeter;
 
-    [Header("Display UI")] //Mostly text base UI
+    [Header("Main Display UI")] //Mostly text base UI
     public GameObject dayEnd_UI;
     public GameObject curtainsUI;
     public GameObject gameUI;
+    public GameObject losePanelUI;
+    public GameObject winPanelUI;
 
     //------------------------------------------------MINIGAME------------------------------------------------------------------------------------
-  
+
     [Header("Minigame UI")]
     public GameObject miniGameTimerDisplay;
     public GameObject miniGameMainMenu;
@@ -37,10 +39,16 @@ public class UIManager : MonoBehaviour
     [Header("Ask Mom UI")]
     public Button askMomButton;
 
+    private SceneChange sceneChange;
+    public GameObject tutorialGO;
+
+    public GameObject confirmationGO;
+
+
     private void Start()
     {
 
-        if(minigame == null)
+        if (minigame == null)
         {
             if(GameObject.FindObjectOfType<MinigameManager>() != null)
             {
@@ -51,18 +59,19 @@ public class UIManager : MonoBehaviour
                 Debug.Log("Not Minigame");
             }
         }
-        if(miniGameTimerDisplay != null)
+        if (miniGameTimerDisplay != null)
         {
             InitializeUI();
         }
-        if(curtainsUI != null)
+        if (curtainsUI != null)
         {
             //For the curtain transition
-            Events.OnCurtainsOpened.AddListener(OnTransitionOpened);
-            Events.OnCurtainStart.AddListener(OnTransitionStarted);
-            Events.OnSceneChange.AddListener(OnSceneChange);
+            // Events.OnCurtainStart.AddListener(OnTransitionStarted); //when transition starts
+            //Events.OnCurtainsOpened.AddListener(OnTransitionOpened); // when opening transition is done 
+            Events.OnSceneChange.AddListener(OnSceneChange); // remove the listeners
         }
-       
+        sceneChange = this.gameObject.GetComponent<SceneChange>();
+
     }
 
     private void Awake()
@@ -105,7 +114,7 @@ public class UIManager : MonoBehaviour
 
     public void DeactivateMiniGameTimerUI()
     {
-        if(miniGameTimerDisplay == null) { return; }
+        if (miniGameTimerDisplay == null) { return; }
         miniGameTimerDisplay.SetActive(false);
     }
 
@@ -122,7 +131,7 @@ public class UIManager : MonoBehaviour
 
     public void ButtonUninteractable()
     {
-        if(askMomButton != null)
+        if (askMomButton != null)
         {
             askMomButton.interactable = false;
         }
@@ -137,7 +146,7 @@ public class UIManager : MonoBehaviour
 
     public void ActivateMiniGameMainMenu()
     {
-        if(miniGameMainMenu == null) { return; }
+        if (miniGameMainMenu == null) { return; }
         miniGameMainMenu.SetActive(true);
     }
 
@@ -155,6 +164,7 @@ public class UIManager : MonoBehaviour
 
         DeactivateResultScreen();
         DeactivateGameUI();
+        DeactivateLosePanel();
     }
 
     public void PlayMiniGameUI()
@@ -176,10 +186,9 @@ public class UIManager : MonoBehaviour
 
     public void ActivateResultScreen()
     {
-        if(minigameResultsUI == null) { return; }
+        if (minigameResultsUI == null) { return; }
         minigameResultsUI.SetActive(true);
         DisplayMinigameResult results = minigameResultsUI.GetComponent<DisplayMinigameResult>();
-        //if(results == null) { return; }
         Assert.IsNotNull(results);
         results.DisplayPinyaMeter();
         results.DisplayMotivation();
@@ -187,7 +196,7 @@ public class UIManager : MonoBehaviour
 
     public void DeactivateResultScreen()
     {
-        if (minigameResultsUI == null){ return;}
+        if (minigameResultsUI == null) { return; }
         minigameResultsUI.SetActive(false);
     }
 
@@ -215,13 +224,37 @@ public class UIManager : MonoBehaviour
 
     public void ActivateGameUI()
     {
-        if(gameUI == null) { return; }
+        if (gameUI == null) { return; }
         gameUI.SetActive(true);
     }
     public void DeactivateGameUI()
     {
         if (gameUI == null) { return; }
         gameUI.SetActive(false);
+    }
+
+    public void ActivateWinPanel()
+    {
+        if (winPanelUI == null) { return; }
+        winPanelUI.SetActive(true);
+    }
+
+    public void DeactivateWinPanel()
+    {
+        if (winPanelUI == null) { return; }
+        winPanelUI.SetActive(false);
+    }
+
+    public void ActivateLosePanel()
+    {
+        if (losePanelUI == null) { return; }
+        losePanelUI.SetActive(true);
+    }
+
+    public void DeactivateLosePanel()
+    {
+        if (losePanelUI == null) { return; }
+        losePanelUI.SetActive(false);
     }
 
     #region Transition Functions
@@ -249,4 +282,53 @@ public class UIManager : MonoBehaviour
         Events.OnCurtainStart.RemoveListener(OnTransitionStarted);
         Events.OnSceneChange.RemoveListener(OnSceneChange);
     }
+
+    public void OnBackToMainMenuClicked(string scene)
+    {
+        if (sceneChange == null) { return; }
+        if (scene == null) { return; }
+        Events.OnSceneChange.Invoke();
+        sceneChange.OnChangeScene(scene);
+    }
+
+    public void OnPlayButtonClicked(string scene)
+    {
+        if (sceneChange == null) { return; }
+        if (scene == null) { return; }
+        Events.OnSceneChange.Invoke();
+        if (SingletonManager.Get<PlayerData>())
+        {
+            //Reset player data
+            SingletonManager.Get<PlayerData>().ResetPlayerData();
+        }
+        sceneChange.OnChangeScene(scene);
+    }
+    public void ShowTutorial()
+    {
+        miniGameMainMenu.SetActive(false);
+        tutorialGO.SetActive(true);
+    }
+
+    public void ExitTutorial()
+    {
+        miniGameMainMenu.SetActive(true);
+
+        tutorialGO.SetActive(false);
+    }
+
+    public void ShowConfirmation()
+    {
+        confirmationGO.SetActive(true);
+        miniGameMainMenu.SetActive(false);
+
+    }
+
+    public void ExitConfirmation()
+    {
+        confirmationGO.SetActive(false);
+        miniGameMainMenu.SetActive(true);
+
+    }
 }
+    
+

@@ -5,7 +5,7 @@ using UnityEngine.Assertions;
 
 public class GameManager : MonoBehaviour
 {
-    private UIManager               UI;
+   
 
     [Header ("Meaters")]
     public MotivationMeter          playerMotivation;
@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     public float                    maxTime;
     public float                    speedCounter;
 
-    public Player player;
+    public Player                   player;
 
     [Header("MiniGame Manager")]
     public List<MinigameObject>     minigames = new();
@@ -29,22 +29,18 @@ public class GameManager : MonoBehaviour
     public HideSeekManager          hideseekMiniGame;
     public TagMiniGameManager       tagMiniGame;
     public FoldingMinigameManager   foldMiniGame; 
-    //[Header("MiniGame Manager")]    
-    //public MinigameManager miniGames;
-
-    ////public CleanTheHouseManager cleanMiniGame; //Change Public MiniGame;
-    ////public GroceryManager groceryMiniGame;
-    ////public HideSeekManager hideseekMiniGame;
-    ////public TagMiniGameManager tagMiniGame;
-    ////public FoldingMinigameManager foldMiniGame;
+    
 
     [Header("List of Task")]
-    public List<string> minigamesName;
+    public List<string>             minigamesName;
 
     [Header("Pre-requisites")]
-    public bool isGetWaterFinish;
-    public bool isGroceryTaskFinish;
-
+    public bool                     isGetWaterFinish;
+    public bool                     isGroceryTaskFinish;
+    
+    private UIManager               UI;
+    private TransitionManager       transitionManager;
+    private Coroutine               startGameRoutine;
 
     private void Awake()
     {
@@ -52,7 +48,8 @@ public class GameManager : MonoBehaviour
 
         
         currentTime = maxTime;
-        
+        Events.OnPinyaEmpty.AddListener(GameLose);
+        Events.OnSceneChange.AddListener(OnSceneChange);
     }
     public void Start()
     {
@@ -81,15 +78,66 @@ public class GameManager : MonoBehaviour
 
         }
 
-        
-
-
-
-        
-     
+        if(transitionManager == null)
+        {
+            transitionManager = SingletonManager.Get<TransitionManager>();
+        }
+        StartGameTransition();
     }
 
+    public void StartGameTransition()
+    {
+        // for curtain transition
+        startGameRoutine = StartCoroutine(StartGame());
+    }
 
+    IEnumerator StartGame()
+    {
+        //Disable player controls
+        PlayerControls playerControls = player.gameObject.GetComponent<PlayerControls>();
+        if (playerControls)
+        {
+            playerControls.enabled = false;
+        }
+        //Disable UI 
+        UI.DeactivateGameUI();
+        // Start playing curtain animation 
+        transitionManager.ChangeAnimation(TransitionManager.CURTAIN_OPEN);
+
+        //Wait for the animation to finish 
+        while (!transitionManager.IsAnimationFinished()) {
+            
+            //Debug.Log("Transitioning");
+            yield return null;
+        }
+        //transitionManager.ChangeAnimation(TransitionManager.CURTAIN_IDLE);
+        //Display UI
+        UI.ActivateGameUI();
+
+        //Activate player controls 
+        playerControls.enabled = true;
+        yield return null;
+    }
+
+    public void GameLose()
+    {
+        //Activate Lose Panel
+        UI.ActivateLosePanel();
+
+        //Disable Game UI
+        UI.DeactivateGameUI();
+    }
+
+    public void OnSceneChange()
+    {
+        //Remove Active singletons 
+        //SingletonManager.Remove<GameManager>();
+        //SingletonManager.Remove<UIManager>();
+
+        //Remove all listeners when scene changes
+        Events.OnPinyaEmpty.RemoveListener(GameLose);
+        Events.OnSceneChange.RemoveListener(OnSceneChange);
+    }
 
 }
 

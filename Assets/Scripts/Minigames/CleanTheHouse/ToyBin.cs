@@ -28,7 +28,7 @@ public class ToyBin : MonoBehaviour
         {
             Debug.Log("Collided with toy");
             //if the toy has been picked up and is not held anymore, accept it in the toybin
-            if (collidedToy.IsPickedUp && !collidedToy.IsHolding)
+            if (collidedToy.isPickedUp && !collidedToy.isHolding)
             {
                 Debug.Log("Accept toy");
                 SingletonManager.Get<CleanTheHouseManager>().AddTrashThrown(1);

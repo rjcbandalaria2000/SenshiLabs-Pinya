@@ -30,7 +30,7 @@ public class MotivationMeter : MonoBehaviour
     public void InitializeMeter() {
 
         MotivationAmount = MaxMotivation;
-        Events.OnChangeMeter.Invoke();
+        //Events.OnChangeMeter.Invoke();
         //EvtChangeMeter.Invoke();
     }
 

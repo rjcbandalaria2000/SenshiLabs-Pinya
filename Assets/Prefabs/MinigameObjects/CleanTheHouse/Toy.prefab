@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4803294248504114138}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.59, y: 0, z: 0}
-  m_LocalScale: {x: 0.38625473, y: 0.38625473, z: 0.38625473}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4803294249102648503}
@@ -108,9 +108,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b0f7de2dfb396c409ddb5b1ab0111f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsHolding: 0
-  IsHoveredOver: 0
-  IsPickedUp: 0
+  isHolding: 0
+  isHoveredOver: 0
+  isPickedUp: 0
 --- !u!114 &7462989739060328669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,6 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4803294249226406196}
   - component: {fileID: 4803294249226406199}
+  - component: {fileID: 6897879553677852716}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -243,3 +244,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6897879553677852716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4803294249226406197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1a70bf52a23174a9031e6e8f7aeae0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  model: {fileID: 4803294249226406197}
+  toySprites:
+  - {fileID: 472792720, guid: 05cd5df97da672648a804cce64251887, type: 3}
+  - {fileID: 1652733333, guid: 05cd5df97da672648a804cce64251887, type: 3}
+  - {fileID: -1937963521, guid: 05cd5df97da672648a804cce64251887, type: 3}

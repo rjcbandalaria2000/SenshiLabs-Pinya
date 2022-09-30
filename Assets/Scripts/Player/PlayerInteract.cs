@@ -15,6 +15,7 @@ public class PlayerInteract : MonoBehaviour
             StopCoroutine(interactRoutine);
         }
         interactRoutine = StartCoroutine(Interact());
+        Events.OnSceneChange.AddListener(OnSceneChange);
     }
 
     IEnumerator Interact()
@@ -32,6 +33,18 @@ public class PlayerInteract : MonoBehaviour
             yield return null;
         }
         
+    }
+
+    public void OnSceneChange()
+    {
+        //Remove any listener if there is still an interactable object 
+        Events.OnSceneChange.RemoveListener(OnSceneChange);
+        if (InteractableObject == null) { return; }
+        MinigameObject minigameObject = InteractableObject.gameObject.GetComponent<MinigameObject>();
+        if (minigameObject == null) { return; }
+        Events.OnInteract.RemoveListener(minigameObject.Interact);
+        Events.OnFinishInteract.RemoveListener(minigameObject.EndInteract);
+        InteractableObject = null;
     }
 
    

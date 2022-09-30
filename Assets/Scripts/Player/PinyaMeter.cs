@@ -7,15 +7,15 @@ using UnityEngine.Assertions;
 public class PinyaMeter : MonoBehaviour
 {
     [Header("Values")]
-    public float        PinyaValue;
-    public float        MaxPinyaValue;
+    public float        pinyaValue;
+    public float        maxPinyaValue;
 
     // Start is called before the first frame update
     void Start()
     {
         if (SingletonManager.Get<PlayerData>().HasSaved)
         {
-            PinyaValue = SingletonManager.Get<PlayerData>().storedPinyaData;
+            pinyaValue = SingletonManager.Get<PlayerData>().storedPinyaData;
         }
         else
         {
@@ -28,15 +28,15 @@ public class PinyaMeter : MonoBehaviour
     #region Public Functions 
     public void IntitializePinyaMeter()
     {
-        PinyaValue = MaxPinyaValue;
-        Events.OnChangeMeter.Invoke();
+        pinyaValue = maxPinyaValue;
+        //Events.OnChangeMeter.Invoke();
     }
     public void IncreasePinyaMeter(float value)
     {
         //If the current value is less than the max value 
-        if (PinyaValue < MaxPinyaValue)
+        if (pinyaValue < maxPinyaValue)
         {
-            PinyaValue += value;
+            pinyaValue += value;
         }
         else
         {
@@ -47,12 +47,14 @@ public class PinyaMeter : MonoBehaviour
 
     public void DecreasePinyaMeter(float value)
     {
-        if(PinyaValue > 0)
+        if(pinyaValue > 0)
         {
-            PinyaValue -= value;
+            pinyaValue -= value;
         }
-        else
+        if (pinyaValue <=0)
         {
+            // When Pinya meter is 0
+            Events.OnPinyaEmpty.Invoke();
             Debug.Log("Pinya value is already 0");
         }
         Events.OnChangeMeter.Invoke();

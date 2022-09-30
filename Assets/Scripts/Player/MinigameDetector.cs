@@ -40,7 +40,6 @@ public class MinigameDetector : MonoBehaviour
             MinigameObject detectedMinigame = collision.gameObject.GetComponent<MinigameObject>();
             if (detectedMinigame)
             {
-                
                 Events.OnInteract.AddListener(detectedMinigame.Interact);
                 Events.OnFinishInteract.AddListener(detectedMinigame.EndInteract);
             }
