@@ -11,7 +11,7 @@ public class DisplayGroceryList : MonoBehaviour
     public GameObject imgUI;
     public GameObject parentCanvas;
 
-    public List<GameObject> itemsNeeded;
+    public List<GameObject> itemsNeeded = new();
     public List<GameObject> UIitems;
 
     [SerializeField]private GroceryManager grocery;
@@ -29,13 +29,7 @@ public class DisplayGroceryList : MonoBehaviour
     void Start()
     {
         parentCanvas = this.gameObject;
-        //for(int i = 0; i < postionUI.Count; i++)
-        //{
-        //    //textList[i].text = " ";
-        //    wantImage[i].gameObject.SetActive(true);
-        //}
-
-
+  
     }
 
     // Update is called once per frame
@@ -46,15 +40,22 @@ public class DisplayGroceryList : MonoBehaviour
 
     public void updateList()
     {
-        itemsNeeded = grocery.wantedItems;
+        itemsNeeded = new(grocery.wantedItems);
         int index = 0;
 
-        while(index < itemsNeeded.Count)
+        while(index < grocery.wantedItems.Count)
         {
-            GameObject WantedItem = Instantiate(imgUI, postionUI[index].position, Quaternion.identity);
-            WantedItem.transform.SetParent(parentCanvas.transform);
-            WantedItem.GetComponent<Image>().sprite = itemsNeeded[index].GetComponent<SpriteRenderer>().sprite;
-            UIitems.Add(WantedItem);
+            
+            for (int i = index + 1 ; i < itemsNeeded.Count; i++)
+            {
+                if(grocery.wantedItems[index] == itemsNeeded[i])
+                {
+                    Debug.Log("Duplicate");
+                    
+                    itemsNeeded.RemoveAt(i);
+                }
+            }
+
             
             index++;
            

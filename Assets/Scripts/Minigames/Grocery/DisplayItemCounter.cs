@@ -17,10 +17,10 @@ public class DisplayItemCounter : MonoBehaviour
         counter.text = quantity + "x";
     }
 
-    public void addPoint(int point)
+    public void addPoint(int value)
     {
        
-        quantity += point;
+        quantity += value;
         counter.text = quantity + "x";
         Debug.Log("Add Quantity");
     }

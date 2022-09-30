@@ -8,13 +8,15 @@ public class ClickItem : MonoBehaviour
     public Ingredients ingridientType;
     public GroceryManager groceryMiniGame;
     public DisplayGroceryList groceryList;
+    public int Quantity;
 
     // Start is called before the first frame update
     void Start()
     {
         item = this.gameObject;
+        Quantity = 1;
 
-        if(groceryMiniGame == null)
+        if (groceryMiniGame == null)
         {
             groceryMiniGame = GameObject.FindObjectOfType<GroceryManager>();
             groceryList = GameObject.FindObjectOfType<DisplayGroceryList>();
