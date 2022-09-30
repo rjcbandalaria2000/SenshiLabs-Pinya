@@ -8,13 +8,15 @@ public class ClickItem : MonoBehaviour
     public Ingredients ingridientType;
     public GroceryManager groceryMiniGame;
     public DisplayGroceryList groceryList;
-    public int Quantity;
+    public bool isDuplicate;
+    public int quantity;
 
     // Start is called before the first frame update
     void Start()
     {
         item = this.gameObject;
-        Quantity = 1;
+        isDuplicate = false;
+        quantity = 0;
 
         if (groceryMiniGame == null)
         {

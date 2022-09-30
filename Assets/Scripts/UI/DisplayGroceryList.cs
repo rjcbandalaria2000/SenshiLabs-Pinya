@@ -10,6 +10,8 @@ public class DisplayGroceryList : MonoBehaviour
     public List<Transform> postionUI = new List<Transform>(5);
     public GameObject imgUI;
     public GameObject parentCanvas;
+    public List<int> quantities;
+    public List<bool> isDuplicated;
 
     public List<GameObject> itemsNeeded = new();
     public List<GameObject> UIitems;
@@ -42,26 +44,54 @@ public class DisplayGroceryList : MonoBehaviour
     {
         itemsNeeded = new(grocery.wantedItems);
         int index = 0;
+        int points = 0;
 
-        while(index < grocery.wantedItems.Count)
+        while (index < itemsNeeded.Count)
         {
-            
-            for (int i = index + 1 ; i < itemsNeeded.Count; i++)
+
+            for (int i = index + 1; i < itemsNeeded.Count; i++)
             {
-                if(grocery.wantedItems[index] == itemsNeeded[i])
+                //if(index == i)
+                //{
+                //    Debug.Log("Same Index");
+                //}
+                if (grocery.wantedItems[index] == itemsNeeded[i])
                 {
                     Debug.Log("Duplicate");
-                    
+                    points++;
                     itemsNeeded.RemoveAt(i);
                 }
+              
             }
 
-            
+
+            quantities.Add(points);
+            points = 0;
+
             index++;
-           
+
         }
 
- 
+
+
+        for (int i = 0; i < itemsNeeded.Count; i++)
+        {
+            GameObject WantedItem = Instantiate(imgUI, postionUI[i].position, Quaternion.identity);
+            WantedItem.transform.SetParent(parentCanvas.transform);
+            WantedItem.GetComponent<Image>().sprite = itemsNeeded[i].GetComponent<SpriteRenderer>().sprite;
+            //WantedItem.GetComponent<DisplayItemCounter>().quantity += quantities[i];
+            //WantedItem.GetComponent<DisplayItemCounter>().counter.text = WantedItem.GetComponent<DisplayItemCounter>().quantity + "x";
+            //if(isDuplicated[i] == true)
+            //{
+            //    WantedItem.GetComponent<DisplayItemCounter>().quantity += quantities[i];
+            //    WantedItem.GetComponent<DisplayItemCounter>().counter.text = WantedItem.GetComponent<DisplayItemCounter>().quantity + "x";
+            //}
+
+
+
+            UIitems.Add(WantedItem);
+        }
+
 
     }
 
@@ -80,33 +110,33 @@ public class DisplayGroceryList : MonoBehaviour
            
     }
 
-    public void duplicateCheck()
-    {
-        itemsNeeded = grocery.wantedItems;
-        int index = 0;
-        int imageIndex = 1;
+    //public void duplicateCheck()
+    //{
+    //    itemsNeeded = grocery.wantedItems;
+    //    int index = 0;
+       
 
-        while (index < grocery.wantedItems.Count)
-        {
+    //    while (index < grocery.wantedItems.Count)
+    //    {
 
-            for (int i = index + 1; i < itemsNeeded.Count; i++)
-            {
-                if (index == i)
-                {
-                    Debug.Log("Same Item");
+    //        for (int i = index + 1; i < itemsNeeded.Count; i++)
+    //        {
+    //            if (index == i)
+    //            {
+    //                Debug.Log("Same Item");
 
-                }
-                else if (itemsNeeded[index] == grocery.wantedItems[i])
-                {
-                    Debug.Log("Duplicate");
+    //            }
+    //            else if (itemsNeeded[index] == grocery.wantedItems[i])
+    //            {
+    //                Debug.Log("Duplicate");
 
                 
 
-                }
-            }
+    //            }
+    //        }
 
-            index++;
-        }
+    //        index++;
+    //    }
 
-    }
+    //}
 }
