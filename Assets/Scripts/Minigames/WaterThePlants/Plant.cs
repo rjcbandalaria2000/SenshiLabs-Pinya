@@ -66,7 +66,7 @@ public class Plant : MonoBehaviour
             MiddleModel.SetActive(true);
             DehydratedModel.SetActive(false);
         } 
-        else //if(CurrentWater < CurrentWater/MaxWater) // not yet watered
+        else// not yet watered
         {
             HydratedModel.SetActive(false);
             DehydratedModel.SetActive(true);
