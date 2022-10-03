@@ -212,6 +212,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8266011235985157277, guid: e4b650b5d63dcde4da16e72d023d1435, type: 3}
   m_PrefabInstance: {fileID: 2104901271}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7784184 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3725072826227035113, guid: e4b650b5d63dcde4da16e72d023d1435, type: 3}
+  m_PrefabInstance: {fileID: 2104901271}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7784183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41bbb8107570066429982d06e9424626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &12370652
 GameObject:
   m_ObjectHideFlags: 0
@@ -2208,8 +2219,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1222391801138347265, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 417715213}
+    - target: {fileID: 1222391801138347265, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1222391801138347265, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartMinigame
+      objectReference: {fileID: 0}
+    - target: {fileID: 1222391801138347265, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WaterThePlantsManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1222391801138347265, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3056311790999024245, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_SizeDelta.x
@@ -2845,7 +2872,7 @@ MonoBehaviour:
   maxTimer: 15
   speedTimer: 1
   gameStartTime: 3
-  countdownTimerUI: {fileID: 0}
+  countdownTimerUI: {fileID: 7784184}
   Plants:
   - {fileID: 475102912}
   - {fileID: 446830637}
@@ -6708,6 +6735,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1188873480 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1997802402, guid: e4b650b5d63dcde4da16e72d023d1435, type: 3}
+  m_PrefabInstance: {fileID: 2104901271}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1189977309
 GameObject:
   m_ObjectHideFlags: 0
@@ -7678,6 +7710,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1428442336 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1644238606, guid: e4b650b5d63dcde4da16e72d023d1435, type: 3}
+  m_PrefabInstance: {fileID: 2104901271}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1430838549
 GameObject:
   m_ObjectHideFlags: 0
@@ -8014,6 +8051,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1523895284 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1975948261, guid: e4b650b5d63dcde4da16e72d023d1435, type: 3}
+  m_PrefabInstance: {fileID: 2104901271}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1527928954
 GameObject:
   m_ObjectHideFlags: 0
@@ -10911,6 +10953,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3725072826227035113, guid: e4b650b5d63dcde4da16e72d023d1435, type: 3}
+      propertyPath: countdownImages.Array.data[0]
+      value: 
+      objectReference: {fileID: 1428442336}
+    - target: {fileID: 3725072826227035113, guid: e4b650b5d63dcde4da16e72d023d1435, type: 3}
+      propertyPath: countdownImages.Array.data[1]
+      value: 
+      objectReference: {fileID: 1188873480}
+    - target: {fileID: 3725072826227035113, guid: e4b650b5d63dcde4da16e72d023d1435, type: 3}
+      propertyPath: countdownImages.Array.data[2]
+      value: 
+      objectReference: {fileID: 1523895284}
     - target: {fileID: 8266011235985157264, guid: e4b650b5d63dcde4da16e72d023d1435, type: 3}
       propertyPath: m_Pivot.x
       value: 0

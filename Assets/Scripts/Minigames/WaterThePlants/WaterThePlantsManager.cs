@@ -20,20 +20,22 @@ public class WaterThePlantsManager : MinigameManager
         sceneChange = this.GetComponent<SceneChange>();
         Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
         transitionManager = SingletonManager.Get<TransitionManager>();
-
+       
         //Disable Player / Water Bucket controls 
         if(waterBucket != null)
-        {
-            MouseFollow mouseFollow = waterBucket.GetComponent<MouseFollow>();
-            if (mouseFollow)
-            {
-                mouseFollow.enabled = false;
-            }
-            WateringCan wateringCan = waterBucket.GetComponent<WateringCan>();
-            if (wateringCan)
-            {
-                wateringCan.enabled = false;
-            }
+        { 
+            // Hide water bucket
+            waterBucket.SetActive(false);
+            //MouseFollow mouseFollow = waterBucket.GetComponent<MouseFollow>();
+            //if (mouseFollow)
+            //{
+            //    mouseFollow.enabled = false;
+            //}
+            //WateringCan wateringCan = waterBucket.GetComponent<WateringCan>();
+            //if (wateringCan)
+            //{
+            //    wateringCan.StopOnClickControls();
+            //}
         }
         //Hide all plants
         HideAllPlants();
@@ -122,9 +124,26 @@ public class WaterThePlantsManager : MinigameManager
         SingletonManager.Get<UIManager>().ActivateMiniGameTimerUI();
         SingletonManager.Get<MiniGameTimer>().StartCountdownTimer();
         Events.OnObjectiveUpdate.Invoke();
-        
-        //Enable movement and input from bucket
 
+        //Enable movement and input from bucket
+        if (waterBucket != null)
+        {
+            waterBucket.SetActive(true);
+            //MouseFollow mouseFollow = waterBucket.GetComponent<MouseFollow>();
+            //if (mouseFollow)
+            //{
+            //    mouseFollow.enabled = true;
+            //}
+            //Activate controls on the bucket
+            WateringCan wateringCan = waterBucket.GetComponent<WateringCan>();
+            if (wateringCan)
+            {
+                wateringCan.StartOnClickControls();
+            }
+        }
+
+        //Show all plants
+        ShowAllPlants();
         isCompleted = false;
         yield return null;
     }
