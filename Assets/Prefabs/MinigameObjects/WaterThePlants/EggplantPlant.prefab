@@ -15,10 +15,6 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1439553834, guid: c9bc21655c474dc44ab1f7b62386424d, type: 3}
-    - target: {fileID: 4941676782765498973, guid: 0453290a6d1557040b311071602ad219, type: 3}
-      propertyPath: waterBar
-      value: 
-      objectReference: {fileID: 2662492216130262449}
     - target: {fileID: 4941676782765498974, guid: 0453290a6d1557040b311071602ad219, type: 3}
       propertyPath: m_Size.x
       value: 4.55
@@ -27,6 +23,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -2144733136, guid: c9bc21655c474dc44ab1f7b62386424d, type: 3}
+    - target: {fileID: 6131212194066969477, guid: 0453290a6d1557040b311071602ad219, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910197081865056349, guid: 0453290a6d1557040b311071602ad219, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7186939849623305680, guid: 0453290a6d1557040b311071602ad219, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -73,14 +77,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0453290a6d1557040b311071602ad219, type: 3}
---- !u!114 &2662492216130262449 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2661490727432349417, guid: 0453290a6d1557040b311071602ad219, type: 3}
-  m_PrefabInstance: {fileID: 8040897148498776}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

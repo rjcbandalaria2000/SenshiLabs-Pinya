@@ -19,6 +19,22 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5676297296435892428, guid: 0453290a6d1557040b311071602ad219, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1745540482, guid: c9bc21655c474dc44ab1f7b62386424d, type: 3}
+    - target: {fileID: 6131212194066969477, guid: 0453290a6d1557040b311071602ad219, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6676157161947609516, guid: 0453290a6d1557040b311071602ad219, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910197081865056349, guid: 0453290a6d1557040b311071602ad219, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7186939849623305680, guid: 0453290a6d1557040b311071602ad219, type: 3}
       propertyPath: m_RootOrder
       value: 0

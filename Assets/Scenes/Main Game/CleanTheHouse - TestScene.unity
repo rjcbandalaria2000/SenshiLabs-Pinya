@@ -4878,13 +4878,13 @@ MonoBehaviour:
   timer: 0
   maxTimer: 20
   speedTimer: 1
+  gameStartTime: 3
+  countdownTimerUI: {fileID: 608781851}
   numberOfToys: 5
   numberOfDust: 5
   objectsToSpawn: []
   numberOfToysKept: 0
   numberOfDustSwept: 0
-  gameStartTime: 3
-  countdownTimerUI: {fileID: 608781851}
 --- !u!4 &1036058649
 Transform:
   m_ObjectHideFlags: 0

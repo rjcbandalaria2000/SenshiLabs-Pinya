@@ -14,6 +14,7 @@ public class Plant : MonoBehaviour
 
     [Header("Models")]
     public GameObject DehydratedModel;
+    public GameObject MiddleModel;
     public GameObject HydratedModel;
 
     [Header("WaterBar")]
@@ -51,16 +52,25 @@ public class Plant : MonoBehaviour
     {
         if(DehydratedModel == null) { return; }
         if(HydratedModel == null) { return; }
+        if (MiddleModel == null) { return; }
 
-        if (IsWatered)
+        if (IsWatered || CurrentWater >= MaxWater) // fully watered 
         {
             HydratedModel.SetActive(true);
+            MiddleModel.SetActive(false);
             DehydratedModel.SetActive(false);
         }
-        else
+        else if (CurrentWater >= MaxWater/2 && CurrentWater > 0)// middle 
+        {
+            HydratedModel.SetActive(false);
+            MiddleModel.SetActive(true);
+            DehydratedModel.SetActive(false);
+        } 
+        else //if(CurrentWater < CurrentWater/MaxWater) // not yet watered
         {
             HydratedModel.SetActive(false);
             DehydratedModel.SetActive(true);
+            MiddleModel.SetActive(false) ;
         }
 
     }
