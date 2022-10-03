@@ -17,15 +17,9 @@ public class CleanTheHouseManager : MinigameManager
     public int                  numberOfToysKept = 0;
     public int                  numberOfDustSwept = 0;
 
-    [Header("Countdown Timer")]
-    public float                gameStartTime = 3f;
-    public DisplayGameCountdown countdownTimerUI;
 
-    private float               gameStartTimer = 0;
     private SpawnManager        spawnManager;
-    private Coroutine           startMinigameRoutine;
-    private TransitionManager   transitionManager;
-    private Coroutine           exitMinigameRoutine;
+
 
     private void Awake()
     {
@@ -102,7 +96,7 @@ public class CleanTheHouseManager : MinigameManager
         //SingletonManager.Get<UIManager>().ActivateMiniGameTimerUI();
     }
 
-    public IEnumerator StartMinigameCounter()
+    protected override IEnumerator StartMinigameCounter()
     {
         //Deactivate Minigame Main Menu
         SingletonManager.Get<UIManager>().DeactivateMiniGameMainMenu();
@@ -169,7 +163,7 @@ public class CleanTheHouseManager : MinigameManager
         //sceneChange.OnChangeScene(NameOfNextScene);
     }
 
-    IEnumerator ExitMinigame()
+    protected override IEnumerator ExitMinigame()
     {
         // Play close animation
         transitionManager.ChangeAnimation(TransitionManager.CURTAIN_CLOSE);

@@ -41,7 +41,7 @@ public class GroceryManager : MinigameManager //Might rename this
     [Header("Countdown Timer")]
     public float GameStartTime = 3f;
     public DisplayGameCountdown CountdownTimerUI;
-    private float GameStartTimer = 0;
+    
 
     private Coroutine startMinigameRoutine;
     private Coroutine setUpGroceryRoutine;
@@ -150,6 +150,8 @@ public class GroceryManager : MinigameManager //Might rename this
 
     public override void Initialize()
     {
+        transitionManager = SingletonManager.Get<TransitionManager>();
+
         SingletonManager.Get<UIManager>().ActivateMiniGameMainMenu();
         Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
         objectList.SetActive(false); 
@@ -160,8 +162,8 @@ public class GroceryManager : MinigameManager //Might rename this
 
     public override void StartMinigame()
     {
-        GameStartTimer = GameStartTime;
-        SingletonManager.Get<UIManager>().ActivateGameCountdown();
+       
+        
         startMinigameRoutine = StartCoroutine(StartMinigameCounter());
 
         objectList.SetActive(false);
@@ -186,31 +188,50 @@ public class GroceryManager : MinigameManager //Might rename this
 
     }
 
-    public IEnumerator StartMinigameCounter()
+    protected override IEnumerator StartMinigameCounter()
     {
-        CountdownTimerUI.UpdateCountdownTimer(GameStartTimer);
+        gameStartTimer = GameStartTime;
 
-        
+        //Deactivate Minigame Main Menu
+        SingletonManager.Get<UIManager>().DeactivateMiniGameMainMenu();
+        //Start Curtain Transition
+        SingletonManager.Get<TransitionManager>().ChangeAnimation(TransitionManager.CURTAIN_OPEN);
 
-        while (GameStartTimer > 0)
+        //Wait for the animation to finish 
+        if (transitionManager != null)
         {
-            GameStartTimer -= 1 * Time.deltaTime;
-            CountdownTimerUI.UpdateCountdownTimer(GameStartTimer);
+            while (!transitionManager.IsAnimationFinished())
+            {
+                yield return null;
+            }
+        }
+        //Activate Game Countdown
+        SingletonManager.Get<UIManager>().ActivateGameCountdown();
+        countdownTimerUI.UpdateCountdownSprites((int)gameStartTimer);
+        //countdownTimerUI.UpdateCountdownTimer(gameStartTimer);
+        //Wait till the game countdown is finish
+        while (gameStartTimer > 0)
+        {
+            gameStartTimer -= 1 * Time.deltaTime;
+            countdownTimerUI.UpdateCountdownSprites((int)gameStartTimer);
             yield return null;
         }
-        //yield return new WaitForSeconds(GameStartTime);
+        //After Game Countdown
+        //Activate GameUI and Timer
         SingletonManager.Get<UIManager>().DeactivateGameCountdown();
+        SingletonManager.Get<UIManager>().ActivateMiniGameTimerUI();
         SingletonManager.Get<MiniGameTimer>().StartCountdownTimer();
-
-        isCompleted = false;
         Events.OnObjectiveUpdate.Invoke();
-        
+        Debug.Log("Refresh Score board");
+        //Spawn objects
+      
+        isCompleted = false;
     }
 
     public IEnumerator initialGrocery()
     {
 
-        yield return new WaitForSeconds(GameStartTimer);
+        yield return new WaitForSeconds(gameStartTimer);
 
         objectList.SetActive(true);
         groceryList.SetActive(true);
@@ -235,15 +256,32 @@ public class GroceryManager : MinigameManager //Might rename this
     public void continueScene()
     {
         Debug.Log("Minigame complete");
-        SingletonManager.Get<PlayerData>().IsGroceryFinished = true;
-        Assert.IsNotNull(sceneChange, "Scene change is null or not set");
-        sceneChange.OnChangeScene(NameOfNextScene);
+        exitMinigameRoutine = StartCoroutine(ExitMinigame());
     }
 
     public void gameOver()
     {
         Debug.Log("Minigame lose");
+        exitMinigameRoutine = StartCoroutine(ExitMinigame());
+    }
+
+    protected override IEnumerator ExitMinigame()
+    {
+        // Play close animation
+        transitionManager.ChangeAnimation(TransitionManager.CURTAIN_CLOSE);
+        //Deactivate active UI 
+        SingletonManager.Get<UIManager>().DeactivateResultScreen();
+        SingletonManager.Get<UIManager>().DeactivateTimerUI();
+        SingletonManager.Get<UIManager>().DeactivateGameUI();
+        //Wait for transition to end
+        while (!transitionManager.IsAnimationFinished())
+        {
+            Debug.Log("Transition to closing");
+            yield return null;
+        }
+        Events.OnSceneChange.Invoke();
         Assert.IsNotNull(sceneChange, "Scene change is null or not set");
         sceneChange.OnChangeScene(NameOfNextScene);
+        yield return null;
     }
 }

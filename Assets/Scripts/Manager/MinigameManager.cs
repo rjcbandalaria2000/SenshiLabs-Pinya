@@ -8,20 +8,31 @@ public class MinigameManager : MonoBehaviour
     public bool isCompleted = false;
 
     [Header("Scene Change")]
-    public string           NameOfNextScene;
+    public string NameOfNextScene;
+    protected SceneChange sceneChange;
 
     [Header("Timers")]
-    public float            timer;
-    public float            maxTimer;
-    public float            speedTimer;
+    public float timer;
+    public float maxTimer;
+    public float speedTimer;
 
-    protected SceneChange   sceneChange;
+    [Header("Countdown Timer")]
+    public float gameStartTime = 3f;
+    public DisplayGameCountdown countdownTimerUI;
+    protected float gameStartTimer = 0;
+    protected Coroutine startMinigameRoutine;
+    protected Coroutine exitMinigameRoutine;
+
+
+
+    [Header("Managers")]
+    protected TransitionManager transitionManager;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     public virtual void Initialize()
@@ -64,6 +75,16 @@ public class MinigameManager : MonoBehaviour
     {
 
     }
-    
+
+    protected virtual IEnumerator StartMinigameCounter()
+    {
+        yield return null;
+    }
+
+    protected virtual IEnumerator ExitMinigame()
+    {
+        yield return null;
+    }
+
 
 }

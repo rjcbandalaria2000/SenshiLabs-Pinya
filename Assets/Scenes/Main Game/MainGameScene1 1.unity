@@ -3754,6 +3754,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1021784890}
     - target: {fileID: 1021784888, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
+      propertyPath: minigameName
+      value: Grocery_Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021784888, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
       propertyPath: MinigameScene
       value: Grocery_Test
       objectReference: {fileID: 0}
@@ -3847,7 +3851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8510290888525592844, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
