@@ -229,7 +229,37 @@ public class WaterThePlantsManager : MinigameManager
 
     protected override IEnumerator ExitMinigame()
     {
-        return base.ExitMinigame();
+        // Play close animation
+        if (transitionManager)
+        {
+            transitionManager.ChangeAnimation(TransitionManager.CURTAIN_CLOSE);
+        }
+        
+        //Deactivate active UI 
+        SingletonManager.Get<UIManager>().DeactivateResultScreen();
+        SingletonManager.Get<UIManager>().DeactivateTimerUI();
+        SingletonManager.Get<UIManager>().DeactivateGameUI();
+
+        //Deactivate Game Objects 
+        HideAllPlants();
+        if (waterBucket)
+        {
+            waterBucket.SetActive(false);
+        }
+        //Wait for transition to end
+        while (!transitionManager.IsAnimationFinished())
+        {
+            Debug.Log("Transition to closing");
+            yield return null;
+        }
+        Events.OnSceneChange.Invoke();
+        Assert.IsNotNull(sceneChange, "Scene change is null or not set");
+        if(NameOfNextScene != null)
+        {
+            sceneChange.OnChangeScene(NameOfNextScene);
+        }
+        
+        yield return null;
     }
 
     #endregion
