@@ -18,7 +18,7 @@ public class TagMiniGameManager : MinigameManager
     // Update is called once per frame
     void Update()
     {
-        if(SingletonManager.Get<MiniGameTimer>().getTimer() <= 0)
+        if(SingletonManager.Get<MiniGameTimer>().GetTimer() <= 0)
         {
             CheckIfFinished();
         }

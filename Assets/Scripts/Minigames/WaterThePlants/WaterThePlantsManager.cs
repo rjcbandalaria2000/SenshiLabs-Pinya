@@ -155,26 +155,38 @@ public class WaterThePlantsManager : MinigameManager
     {
         if (AreAllPlantsWatered())
         {
-            Events.OnObjectiveUpdate.RemoveListener(CheckIfFinished);
-            Debug.Log("Finished Watering the Plants");
-            OnMinigameFinished();
+            OnWin();
+            //OnMinigameFinished();
         }
-        else if (SingletonManager.Get<MiniGameTimer>().getTimer() <= 0)
-        {
-            Events.OnObjectiveUpdate.RemoveListener(CheckIfFinished);
-            Debug.Log("Fail Watering the Plants");
-            OnMinigameFinished();
-        }
+        //else if (SingletonManager.Get<MiniGameTimer>().getTimer() <= 0)
+        //{
+        //    Events.OnObjectiveUpdate.RemoveListener(CheckIfFinished);
+        //    Debug.Log("Fail Watering the Plants");
+        //    OnMinigameFinished();
+        //}
     }
 
     public override void OnWin()
     {
-        base.OnWin();
+        if (!isCompleted)
+        {
+            Events.OnObjectiveUpdate.RemoveListener(CheckIfFinished);
+            Debug.Log("Finished Watering the Plants");
+            SingletonManager.Get<MiniGameTimer>().StopCountdownTimer();
+            SingletonManager.Get<UIManager>().ActivateResultScreen();
+            SingletonManager.Get<UIManager>().ActivateGoodResult();
+            isCompleted = true;
+            SingletonManager.Get<PlayerData>().IsWaterThePlantsFinished = true;
+            //OnMinigameFinished();
+        }
+        
     }
 
-    public override void OnLose()
+    public override void OnMinigameLose()
     {
-        base.OnLose();
+        SingletonManager.Get<UIManager>().ActivateResultScreen();
+        SingletonManager.Get<UIManager>().ActivateBadResult();
+        Debug.Log("Minigame lose");
     }
 
     public override void OnMinigameFinished()
@@ -183,5 +195,7 @@ public class WaterThePlantsManager : MinigameManager
         Assert.IsNotNull(sceneChange, "Scene change is null or is not set");
         sceneChange.OnChangeScene(NameOfNextScene);
     }
+
+
     #endregion
 }

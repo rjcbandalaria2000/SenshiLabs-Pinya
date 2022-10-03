@@ -39,7 +39,7 @@ public class MiniGameTimer : MonoBehaviour
 
     public void StartCountdownTimer()
     {
-        countdownTimerRoutine = StartCoroutine(countdownTimer());
+        countdownTimerRoutine = StartCoroutine(CountdownTimer());
     }
 
     public void StopCountdownTimer()
@@ -48,29 +48,29 @@ public class MiniGameTimer : MonoBehaviour
         StopCoroutine(countdownTimerRoutine);
     }
 
-    public float getTimer()
+    public float GetTimer()
     {
         return timer;
     }
 
-    public float setTimer(float value)
+    public float SetTimer(float value)
     {
         timer += value;
         return timer;
     }
 
-    public float getMaxTimer()
+    public float GetMaxTimer()
     {
         return maxTimer;
     }
 
-    public float setMaxTimer(float value)
+    public float SetMaxTimer(float value)
     {
         maxTimer += value;
         return maxTimer;
     }
 
-    public float countDown_Minigame()
+    public float CountdownMinigame()
     {
         timer -= 1;
         return timer;
@@ -81,11 +81,11 @@ public class MiniGameTimer : MonoBehaviour
         return timer;
     }
   
-    public IEnumerator countdownTimer()
+    public IEnumerator CountdownTimer()
     {
         while (timer > 0)
         {
-            countDown_Minigame();
+            CountdownMinigame();
             //SingletonManager.Get<DisplayMiniGameTimer>().updateMiniGameTimer();
             Events.OnDisplayMinigameTime.Invoke();
             yield return new WaitForSeconds(speed);

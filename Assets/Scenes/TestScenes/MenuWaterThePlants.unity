@@ -4625,7 +4625,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4257680015237913099, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7704427003369924030, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
       propertyPath: m_LocalScale.x
@@ -8967,7 +8967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823114bcfa710324782919cf7ae8bb51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerDisplay: {fileID: 0}
+  timerDisplay: {fileID: 193270722}
   minigame: {fileID: 0}
   motivationMeter: {fileID: 0}
   pinyaMeter: {fileID: 0}
