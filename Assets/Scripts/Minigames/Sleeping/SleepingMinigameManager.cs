@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class SleepingMinigameManager : MinigameManager
 {
@@ -18,6 +19,7 @@ public class SleepingMinigameManager : MinigameManager
     public DisplayGameCountdown CountdownTimerUI;
 
     private SpawnManager spawnManager;
+
 
     private void Awake()
     {
@@ -74,48 +76,32 @@ public class SleepingMinigameManager : MinigameManager
         {
             spawnManager.StopTimedUnlimitedSpawnBox();
             Debug.Log("Minigame Complete");
+            basket.SetActive(false);
+            //if(sceneChange == null) { return; }
+            //if(NameOfNextScene == null) { return; }
+            SingletonManager.Get<UIManager>().ActivateResultScreen();
+            SingletonManager.Get<UIManager>().ActivateGoodResult();
+            SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
+
             SingletonManager.Remove<SleepingMinigameManager>();
             SingletonManager.Remove<SpawnManager>();
-            if(sceneChange == null) { return; }
-            if(NameOfNextScene == null) { return; }
-            Events.OnSceneChange.Invoke();
-            sceneChange.OnChangeScene(NameOfNextScene);
 
         }
         else if(PlayerPoints <= RequiredPoints && SingletonManager.Get<MiniGameTimer>().getTimer() <= 0)
         {
             spawnManager.StopTimedUnlimitedSpawnBox();
             Debug.Log("Minigame Fail");
+            basket.SetActive(false);
+            //if (sceneChange == null) { return; }
+            //if (NameOfNextScene == null) { return; }
+            SingletonManager.Get<UIManager>().ActivateResultScreen();
+            SingletonManager.Get<UIManager>().ActivateBadResult();
+            SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
+
             SingletonManager.Remove<SleepingMinigameManager>();
             SingletonManager.Remove<SpawnManager>();
-            if (sceneChange == null) { return; }
-            if (NameOfNextScene == null) { return; }
-            Events.OnSceneChange.Invoke();
-            sceneChange.OnChangeScene(NameOfNextScene);
-           
+
         }
-    }
-
-   
-
-    public void GetPlayerPoints(int points)
-    {
-
-    }
-
-    public override void OnMinigameFinished()
-    {
-       
-    }
-
-    public override void OnWin()
-    {
-        
-    }
-
-    public override void OnLose()
-    {
-       
     }
 
     protected override IEnumerator StartMinigameCounter()
@@ -165,5 +151,38 @@ public class SleepingMinigameManager : MinigameManager
 
         isCompleted = false;
     }
+
+    public void continueButton()
+    {
+        Debug.Log("Minigame complete");
+        exitMinigameRoutine = StartCoroutine(ExitMinigame());
+    }
+
+    public void exitButton()
+    {
+        Debug.Log("Minigame complete");
+        exitMinigameRoutine = StartCoroutine(ExitMinigame());
+    }
+
+    protected override IEnumerator ExitMinigame()
+    {
+        // Play close animation
+        transitionManager.ChangeAnimation(TransitionManager.CURTAIN_CLOSE);
+        //Deactivate active UI 
+        SingletonManager.Get<UIManager>().DeactivateResultScreen();
+        SingletonManager.Get<UIManager>().DeactivateTimerUI();
+        SingletonManager.Get<UIManager>().DeactivateGameUI();
+        //Wait for transition to end
+        while (!transitionManager.IsAnimationFinished())
+        {
+            Debug.Log("Transition to closing");
+            yield return null;
+        }
+        Events.OnSceneChange.Invoke();
+        Assert.IsNotNull(sceneChange, "Scene change is null or not set");
+        sceneChange.OnChangeScene(NameOfNextScene);
+        yield return null;
+    }
+
 
 }
