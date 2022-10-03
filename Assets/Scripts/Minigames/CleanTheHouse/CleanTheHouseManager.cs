@@ -118,7 +118,7 @@ public class CleanTheHouseManager : MinigameManager
 
     #endregion
 
-    #region Finished Minigame Functions
+    #region Exit Minigame Functions
     public override void OnExitMinigame()
     {
         exitMinigameRoutine = StartCoroutine(ExitMinigame());

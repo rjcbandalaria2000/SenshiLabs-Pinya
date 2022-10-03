@@ -129,11 +129,6 @@ public class WaterThePlantsManager : MinigameManager
         if (waterBucket != null)
         {
             waterBucket.SetActive(true);
-            //MouseFollow mouseFollow = waterBucket.GetComponent<MouseFollow>();
-            //if (mouseFollow)
-            //{
-            //    mouseFollow.enabled = true;
-            //}
             //Activate controls on the bucket
             WateringCan wateringCan = waterBucket.GetComponent<WateringCan>();
             if (wateringCan)
@@ -156,14 +151,7 @@ public class WaterThePlantsManager : MinigameManager
         if (AreAllPlantsWatered())
         {
             OnWin();
-            //OnMinigameFinished();
         }
-        //else if (SingletonManager.Get<MiniGameTimer>().getTimer() <= 0)
-        //{
-        //    Events.OnObjectiveUpdate.RemoveListener(CheckIfFinished);
-        //    Debug.Log("Fail Watering the Plants");
-        //    OnMinigameFinished();
-        //}
     }
 
     public override void OnWin()
@@ -172,6 +160,23 @@ public class WaterThePlantsManager : MinigameManager
         {
             Events.OnObjectiveUpdate.RemoveListener(CheckIfFinished);
             Debug.Log("Finished Watering the Plants");
+
+            //Disable player bucket controls 
+            if (waterBucket)
+            {
+                WateringCan wateringCan = waterBucket.GetComponent<WateringCan>();
+                if (wateringCan)
+                {
+                    wateringCan.StopOnClickControls();
+                }
+
+                MouseFollow mouseFollow = waterBucket.GetComponent<MouseFollow>();
+                if (mouseFollow)
+                {
+                    mouseFollow.enabled = false;
+                }
+            }
+            
             SingletonManager.Get<MiniGameTimer>().StopCountdownTimer();
             SingletonManager.Get<UIManager>().ActivateResultScreen();
             SingletonManager.Get<UIManager>().ActivateGoodResult();
@@ -184,8 +189,24 @@ public class WaterThePlantsManager : MinigameManager
 
     public override void OnMinigameLose()
     {
+        Events.OnObjectiveUpdate.RemoveListener(CheckIfFinished);
         SingletonManager.Get<UIManager>().ActivateResultScreen();
         SingletonManager.Get<UIManager>().ActivateBadResult();
+        //Disable player bucket controls 
+        if (waterBucket)
+        {
+            WateringCan wateringCan = waterBucket.GetComponent<WateringCan>();
+            if (wateringCan)
+            {
+                wateringCan.StopOnClickControls();
+            }
+
+            MouseFollow mouseFollow = waterBucket.GetComponent<MouseFollow>();
+            if (mouseFollow)
+            {
+                mouseFollow.enabled = false;
+            }
+        }
         Debug.Log("Minigame lose");
     }
 
@@ -196,6 +217,20 @@ public class WaterThePlantsManager : MinigameManager
         sceneChange.OnChangeScene(NameOfNextScene);
     }
 
+
+    #endregion
+
+    #region Exit Minigame Functions
+
+    public override void OnExitMinigame()
+    {
+        exitMinigameRoutine = StartCoroutine(ExitMinigame());
+    }
+
+    protected override IEnumerator ExitMinigame()
+    {
+        return base.ExitMinigame();
+    }
 
     #endregion
 }
