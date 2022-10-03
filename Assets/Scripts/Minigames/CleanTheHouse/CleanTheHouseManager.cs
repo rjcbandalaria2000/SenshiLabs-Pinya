@@ -19,8 +19,6 @@ public class CleanTheHouseManager : MinigameManager
 
     private SpawnManager        spawnManager;
     
-    private TransitionManager   transitionManager;
-   
     private void Awake()
     {
         SingletonManager.Register(this);
@@ -30,20 +28,15 @@ public class CleanTheHouseManager : MinigameManager
     {
         Initialize();
     }
-
-    public override void CheckIfFinished()
-    {
-        if(numberOfToysKept >= numberOfToys && numberOfDustSwept >= numberOfDust)
-        {
-            OnWin();
-        }
-    }
-
-    public override void OnMinigameLose()
-    {
-        SingletonManager.Get<UIManager>().ActivateResultScreen();
-        SingletonManager.Get<UIManager>().ActivateBadResult();
-        Debug.Log("Minigame lose");
+    public override void Initialize()
+    { 
+        transitionManager = SingletonManager.Get<TransitionManager>();
+        sceneChange = this.gameObject.GetComponent<SceneChange>();
+        spawnManager = SingletonManager.Get<SpawnManager>();
+        Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
+        startMinigameRoutine = null;
+        spawnManager.NumToSpawn[0] = numberOfToys;
+        spawnManager.NumToSpawn[1] = numberOfDust;
     }
 
     public void AddTrashThrown(int count)
@@ -60,6 +53,7 @@ public class CleanTheHouseManager : MinigameManager
         CheckIfFinished();
     }
 
+    #region Getter Functions
     public int GetRemainingDust()
     {
         return numberOfDust - numberOfDustSwept;
@@ -75,17 +69,9 @@ public class CleanTheHouseManager : MinigameManager
         return maxTimer - timer;
     }
 
-    public override void Initialize()
-    { 
-        transitionManager = SingletonManager.Get<TransitionManager>();
-        sceneChange = this.gameObject.GetComponent<SceneChange>();
-        spawnManager = SingletonManager.Get<SpawnManager>();
-        Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
-        startMinigameRoutine = null;
-        spawnManager.NumToSpawn[0] = numberOfToys;
-        spawnManager.NumToSpawn[1] = numberOfDust;
-    }
+    #endregion
 
+    #region Starting Minigame Functions
     public override void StartMinigame()
     {
         gameStartTimer = gameStartTime;
@@ -100,7 +86,7 @@ public class CleanTheHouseManager : MinigameManager
         SingletonManager.Get<TransitionManager>().ChangeAnimation(TransitionManager.CURTAIN_OPEN);
 
         //Wait for the animation to finish 
-        if(transitionManager != null)
+        if (transitionManager != null)
         {
             while (!transitionManager.IsAnimationFinished())
             {
@@ -111,7 +97,7 @@ public class CleanTheHouseManager : MinigameManager
         SingletonManager.Get<UIManager>().ActivateGameCountdown();
         countdownTimerUI.UpdateCountdownSprites((int)gameStartTimer);
         //Wait till the game countdown is finish
-        while(gameStartTimer > 0)
+        while (gameStartTimer > 0)
         {
             gameStartTimer -= 1 * Time.deltaTime;
             countdownTimerUI.UpdateCountdownSprites((int)gameStartTimer);
@@ -127,35 +113,15 @@ public class CleanTheHouseManager : MinigameManager
         //Spawn objects
         spawnManager.SpawnRandomNoRepeat();
         isCompleted = false;
-        
+
     }
 
-    public override void OnMinigameFinished()
-    {
-        Events.OnSceneChange.Invoke();
-        Assert.IsNotNull(sceneChange, "Scene change is null or not set");
-        sceneChange.OnChangeScene(NameOfNextScene);
-    }
+    #endregion
 
-    public override void OnWin()
-    {
-        if (!isCompleted)
-        {
-            SingletonManager.Get<MiniGameTimer>().StopCountdownTimer();
-            isCompleted = true;
-            SingletonManager.Get<UIManager>().ActivateResultScreen();
-            SingletonManager.Get<UIManager>().ActivateGoodResult();
-            SingletonManager.Get<PlayerData>().IsCleanTheHouseFinished = true;
-            Debug.Log("Minigame complete");
-        }
-    }
-
+    #region Finished Minigame Functions
     public override void OnExitMinigame()
     {
         exitMinigameRoutine = StartCoroutine(ExitMinigame());
-        //Events.OnSceneChange.Invoke();
-        //Assert.IsNotNull(sceneChange, "Scene change is null or not set");
-        //sceneChange.OnChangeScene(NameOfNextScene);
     }
 
     protected override IEnumerator ExitMinigame()
@@ -177,9 +143,44 @@ public class CleanTheHouseManager : MinigameManager
         sceneChange.OnChangeScene(NameOfNextScene);
         yield return null;
     }
+    public override void OnMinigameFinished()
+    {
+        Events.OnSceneChange.Invoke();
+        Assert.IsNotNull(sceneChange, "Scene change is null or not set");
+        sceneChange.OnChangeScene(NameOfNextScene);
+    }
 
-    #region Getter Functions
+    #endregion
 
+    #region Minigame Checkers
+
+    public override void CheckIfFinished()
+    {
+        if (numberOfToysKept >= numberOfToys && numberOfDustSwept >= numberOfDust)
+        {
+            OnWin();
+        }
+    }
+
+    public override void OnMinigameLose()
+    {
+        SingletonManager.Get<UIManager>().ActivateResultScreen();
+        SingletonManager.Get<UIManager>().ActivateBadResult();
+        Debug.Log("Minigame lose");
+    }
+
+    public override void OnWin()
+    {
+        if (!isCompleted)
+        {
+            SingletonManager.Get<MiniGameTimer>().StopCountdownTimer();
+            isCompleted = true;
+            SingletonManager.Get<UIManager>().ActivateResultScreen();
+            SingletonManager.Get<UIManager>().ActivateGoodResult();
+            SingletonManager.Get<PlayerData>().IsCleanTheHouseFinished = true;
+            Debug.Log("Minigame complete");
+        }
+    }
 
     #endregion
 }

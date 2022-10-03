@@ -27,7 +27,7 @@ public class WateringCan : MonoBehaviour
     void Start()
     {
         waterCanControlsRoutine = null;
-        waterCanControlsRoutine = StartCoroutine(OnClickControls());
+        //waterCanControlsRoutine = StartCoroutine(OnClickControls());
         ChangeModel();
     }
 
@@ -65,6 +65,17 @@ public class WateringCan : MonoBehaviour
             yield return null;
         }
         
+    }
+
+    public void StopOnClickControls()
+    {
+        if(waterCanControlsRoutine == null) { return; }
+        StopCoroutine(OnClickControls());
+    }
+
+    public void StartOnClickControls()
+    {
+        waterCanControlsRoutine = StartCoroutine(OnClickControls());
     }
 
     public void StartWateringPlant()
