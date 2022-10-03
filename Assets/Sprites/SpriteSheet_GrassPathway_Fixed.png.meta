@@ -1,28 +1,7 @@
 fileFormatVersion: 2
-guid: cbf21af47e2fa924b801c497b9c2412f
+guid: 89b73464f2fda494fab34fd0b2dec0ab
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -3204844808211871480
-    second: SpriteSheet_GrassPathway_0
-  - first:
-      213: 4901358214353204005
-    second: SpriteSheet_GrassPathway_0
-  - first:
-      213: 177937269367970000
-    second: SpriteSheet_GrassPathway_1
-  - first:
-      213: -3419345958310456677
-    second: SpriteSheet_GrassPathway_2
-  - first:
-      213: 66479642718879341
-    second: SpriteSheet_GrassPathway_3
-  - first:
-      213: -3245160886975967678
-    second: SpriteSheet_GrassPathway_4
-  - first:
-      213: 4123479512099949867
-    second: SpriteSheet_GrassPathway_5
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -125,11 +104,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SpriteSheet_GrassPathway_0
+      name: SpriteSheet_GrassPathway_Fixed_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 768
+        x: 12
+        y: 758
         width: 256
         height: 256
       alignment: 0
@@ -139,18 +118,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5233773d35f150440800000000000000
-      internalID: -3204844808211871480
+      spriteID: 382fc1172f681054c8a98727972ca969
+      internalID: -132106304
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_GrassPathway_1
+      name: SpriteSheet_GrassPathway_Fixed_1
       rect:
         serializedVersion: 2
-        x: 256
-        y: 768
+        x: 553
+        y: 758
         width: 256
         height: 256
       alignment: 0
@@ -160,18 +139,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d81bf4f009287200800000000000000
-      internalID: 177937269367970000
+      spriteID: 99bf7b6e005f81b4badab1c2b13b251c
+      internalID: -87690311
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_GrassPathway_2
+      name: SpriteSheet_GrassPathway_Fixed_2
       rect:
         serializedVersion: 2
-        x: 512
-        y: 768
+        x: 12
+        y: 493
         width: 256
         height: 256
       alignment: 0
@@ -181,18 +160,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b92dcb6a7fa0c80d0800000000000000
-      internalID: -3419345958310456677
+      spriteID: b0a6304594cdb2f4bb4b44017b943fbb
+      internalID: 1528649862
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_GrassPathway_3
+      name: SpriteSheet_GrassPathway_Fixed_3
       rect:
         serializedVersion: 2
-        x: 768
-        y: 768
+        x: 288
+        y: 493
         width: 256
         height: 256
       alignment: 0
@@ -202,18 +181,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6ebd0102ee2ce000800000000000000
-      internalID: 66479642718879341
+      spriteID: af3b0b6e42f72c9449eed73705738469
+      internalID: -932250158
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_GrassPathway_4
+      name: SpriteSheet_GrassPathway_Fixed_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 512
+        x: 553
+        y: 493
         width: 256
         height: 256
       alignment: 0
@@ -223,18 +202,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24e4ecced5fd6f2d0800000000000000
-      internalID: -3245160886975967678
+      spriteID: 863e0b9747511704885b6c9fd5a681f7
+      internalID: -1951704599
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_GrassPathway_5
+      name: SpriteSheet_GrassPathway_Fixed_5
       rect:
         serializedVersion: 2
-        x: 256
-        y: 512
+        x: 12
+        y: 211
         width: 256
         height: 256
       alignment: 0
@@ -244,8 +223,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2d8155e4ca893930800000000000000
-      internalID: 4123479512099949867
+      spriteID: e3ddedf97579421459665231a187be0b
+      internalID: -1853140078
       vertices: []
       indices: 
       edges: []
@@ -261,12 +240,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SpriteSheet_GrassPathway_3: 66479642718879341
-      SpriteSheet_GrassPathway_0: -3204844808211871480
-      SpriteSheet_GrassPathway_1: 177937269367970000
-      SpriteSheet_GrassPathway_4: -3245160886975967678
-      SpriteSheet_GrassPathway_2: -3419345958310456677
-      SpriteSheet_GrassPathway_5: 4123479512099949867
+      SpriteSheet_GrassPathway_Fixed_2: 1528649862
+      SpriteSheet_GrassPathway_Fixed_4: -1951704599
+      SpriteSheet_GrassPathway_Fixed_1: -87690311
+      SpriteSheet_GrassPathway_Fixed_0: -132106304
+      SpriteSheet_GrassPathway_Fixed_5: -1853140078
+      SpriteSheet_GrassPathway_Fixed_3: -932250158
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
