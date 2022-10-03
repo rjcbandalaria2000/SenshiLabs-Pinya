@@ -35,12 +35,26 @@ public class WaterThePlantsManager : MinigameManager
                 wateringCan.enabled = false;
             }
         }
+        //Hide all plants
+        HideAllPlants();
     }
 
     public void HideAllPlants()
     {
         if(Plants.Count <= 0) { return; }
-        
+        for(int i = 0; i < Plants.Count; i++)
+        {
+            Plants[i].SetActive(false);
+        }
+    }
+
+    public void ShowAllPlants()
+    {
+        if (Plants.Count <= 0) { return; }
+        for (int i = 0; i < Plants.Count; i++)
+        {
+            Plants[i].SetActive(true);
+        }
     }
 
     public bool AreAllPlantsWatered()
