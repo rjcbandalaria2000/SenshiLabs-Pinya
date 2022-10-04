@@ -58,6 +58,12 @@ public class MinigameObject : MonoBehaviour
     {
 
     }
+
+    public virtual void StartInteractRoutine()
+    {
+
+    }
+
     public virtual IEnumerator InteractCoroutine(GameObject player = null)
     {
         yield return null; 

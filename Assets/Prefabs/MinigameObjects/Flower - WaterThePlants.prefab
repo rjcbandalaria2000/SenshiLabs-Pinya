@@ -87,10 +87,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8d56fff8268e5488aa1b5b1f12eaca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MotivationCost: 20
-  Interactable: {fileID: 4035600955571030607}
+  minigameName: Water The Plants
+  motivationCost: 20
+  interactable: {fileID: 4035600955571030607}
   isInteracted: 0
-  MinigameScene: WaterThePlants - TestScene
+  hasCompleted: 0
+  minigameScene: WaterThePlants-Polish
 --- !u!114 &-5706834350741523079
 MonoBehaviour:
   m_ObjectHideFlags: 0
