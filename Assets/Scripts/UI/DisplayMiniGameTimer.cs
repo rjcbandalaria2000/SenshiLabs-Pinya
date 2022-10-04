@@ -18,8 +18,8 @@ public class DisplayMiniGameTimer : MonoBehaviour
     {
         if (SingletonManager.Get<MiniGameTimer>() != null)
         {
-            miniGameTimer_UI.text = SingletonManager.Get<MiniGameTimer>().getTimer().ToString();
-            Events.OnDisplayMinigameTime.AddListener(updateMiniGameTimer);
+            miniGameTimer_UI.text = SingletonManager.Get<MiniGameTimer>().GetTimer().ToString();
+            Events.OnDisplayMinigameTime.AddListener(UpdateMiniGameTimer);
         }
         else
         {
@@ -27,17 +27,11 @@ public class DisplayMiniGameTimer : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void updateMiniGameTimer()
+    public void UpdateMiniGameTimer()
     {
         if (SingletonManager.Get<MiniGameTimer>() != null)
         {
-            miniGameTimer_UI.text = SingletonManager.Get<MiniGameTimer>().getTimer().ToString();
+            miniGameTimer_UI.text = SingletonManager.Get<MiniGameTimer>().GetTimer().ToString();
         }
         else
         {

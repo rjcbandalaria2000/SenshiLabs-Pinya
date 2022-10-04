@@ -5,25 +5,25 @@ using UnityEngine;
 public class MinigameManager : MonoBehaviour
 {
     [Header("State")]
-    public bool isCompleted = false;
+    public bool                 isCompleted = false;
 
     [Header("Scene Change")]
-    public string NameOfNextScene;
-    protected SceneChange sceneChange;
+    public string               NameOfNextScene;
+    protected SceneChange       sceneChange;
 
     [Header("Timers")]
-    public float timer;
-    public float maxTimer;
-    public float speedTimer;
+    public float                timer;
+    public float                maxTimer;
+    public float                speedTimer;
 
     [Header("Countdown Timer")]
-    public float gameStartTime = 3f;
+    public float                gameStartTime = 3f;
     public DisplayGameCountdown countdownTimerUI;
-    protected float gameStartTimer = 0;
-    protected Coroutine startMinigameRoutine;
-    protected Coroutine exitMinigameRoutine;
+    protected float             gameStartTimer = 0;
+    protected Coroutine         startMinigameRoutine;
+    protected Coroutine         exitMinigameRoutine;
 
-
+    
 
     [Header("Managers")]
     protected TransitionManager transitionManager;
@@ -85,6 +85,5 @@ public class MinigameManager : MonoBehaviour
     {
         yield return null;
     }
-
 
 }

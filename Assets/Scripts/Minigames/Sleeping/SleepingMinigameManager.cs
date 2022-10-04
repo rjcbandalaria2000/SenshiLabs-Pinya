@@ -42,7 +42,7 @@ public class SleepingMinigameManager : MinigameManager
 
     private void Update()
     {
-        if(SingletonManager.Get<MiniGameTimer>().getTimer() <= 0)
+        if(SingletonManager.Get<MiniGameTimer>().GetTimer() <= 0)
         {
             CheckIfFinished();
         }
@@ -87,7 +87,7 @@ public class SleepingMinigameManager : MinigameManager
             //SingletonManager.Remove<SpawnManager>();
 
         }
-        else if(PlayerPoints <= RequiredPoints && SingletonManager.Get<MiniGameTimer>().getTimer() <= 0)
+        else if(PlayerPoints <= RequiredPoints && SingletonManager.Get<MiniGameTimer>().GetTimer() <= 0)
         {
             spawnManager.StopTimedUnlimitedSpawnBox();
             Debug.Log("Minigame Fail");

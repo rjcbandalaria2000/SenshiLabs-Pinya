@@ -5,70 +5,72 @@ using UnityEngine.Assertions;
 
 public class WaterThePlantsManager : MinigameManager
 {
+    [Header("Game Objects")]
     public List<GameObject> Plants;
-     
+    public GameObject waterBucket;
+
     // Start is called before the first frame update
     void Start()
     {
-        sceneChange = this.GetComponent<SceneChange>();
-        Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
-    }
-
-    private void Update()
-    {
-        CheckIfFinished();
+        Initialize();
     }
 
     public override void Initialize()
     {
-        base.Initialize();
-    }
-
-    public override void CheckIfFinished()
-    {
-        if (AreAllPlantsWatered())
-        {
-            Events.OnObjectiveUpdate.RemoveListener(CheckIfFinished);
-            Debug.Log("Finished Watering the Plants");
-            OnMinigameFinished();
+        sceneChange = this.GetComponent<SceneChange>();
+        Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
+        transitionManager = SingletonManager.Get<TransitionManager>();
+       
+        //Disable Player / Water Bucket controls 
+        if(waterBucket != null)
+        { 
+            // Hide water bucket
+            waterBucket.SetActive(false);
+            //MouseFollow mouseFollow = waterBucket.GetComponent<MouseFollow>();
+            //if (mouseFollow)
+            //{
+            //    mouseFollow.enabled = false;
+            //}
+            //WateringCan wateringCan = waterBucket.GetComponent<WateringCan>();
+            //if (wateringCan)
+            //{
+            //    wateringCan.StopOnClickControls();
+            //}
         }
-        else if (SingletonManager.Get<MiniGameTimer>().getTimer() <= 0)
+        //Hide all plants
+        HideAllPlants();
+    }
+
+    public void HideAllPlants()
+    {
+        if(Plants.Count <= 0) { return; }
+        for(int i = 0; i < Plants.Count; i++)
         {
-            Events.OnObjectiveUpdate.RemoveListener(CheckIfFinished);
-            Debug.Log("Fail Watering the Plants");
-            OnMinigameFinished();
+            Plants[i].SetActive(false);
         }
     }
 
-    public override void OnWin()
+    public void ShowAllPlants()
     {
-        base.OnWin();
-    }
-
-    public override void OnLose()
-    {
-        base.OnLose();
-    }
-
-    public override void OnMinigameFinished()
-    {
-        if(NameOfNextScene == null) { return; }
-        Assert.IsNotNull(sceneChange, "Scene change is null or is not set");
-        sceneChange.OnChangeScene(NameOfNextScene);
+        if (Plants.Count <= 0) { return; }
+        for (int i = 0; i < Plants.Count; i++)
+        {
+            Plants[i].SetActive(true);
+        }
     }
 
     public bool AreAllPlantsWatered()
     {
-        if(Plants == null) { return false; }
+        if (Plants == null) { return false; }
         bool AllWatered = false;
-        foreach(GameObject plant in Plants)
+        foreach (GameObject plant in Plants)
         {
-            Plant plantObj = plant .GetComponent<Plant>();
+            Plant plantObj = plant.GetComponent<Plant>();
 
             if (plantObj)
             {
                 //Check all the plants if all is watered
-                Debug.Log(plantObj.gameObject.name+" is watered? " + plantObj.IsWatered);
+                Debug.Log(plantObj.gameObject.name + " is watered? " + plantObj.IsWatered);
                 AllWatered = plantObj.IsWatered;
                 if (!AllWatered)
                 {
@@ -76,11 +78,189 @@ public class WaterThePlantsManager : MinigameManager
                     break;
                 }
             }
-            
+
         }
         return AllWatered;
 
     }
 
 
+
+    #region Starting Minigame Functions
+    public override void StartMinigame()
+    {
+        gameStartTimer = gameStartTime;
+        startMinigameRoutine = StartCoroutine(StartMinigameCounter());
+    }
+
+    protected override IEnumerator StartMinigameCounter()
+    {
+        //Deactivate Minigame Main Menu
+        SingletonManager.Get<UIManager>().DeactivateMiniGameMainMenu();
+
+        if (transitionManager != null)
+        { 
+            //Start Curtain Transition
+            transitionManager.ChangeAnimation(TransitionManager.CURTAIN_OPEN);
+            //Wait for the animation to finish
+            while (!transitionManager.IsAnimationFinished())
+            {
+                yield return null;
+            }
+        }
+        //Activate Game Countdown
+        SingletonManager.Get<UIManager>().ActivateGameCountdown();
+        countdownTimerUI.UpdateCountdownSprites((int)gameStartTimer);
+        //Wait till the game countdown is finish
+        while (gameStartTimer > 0)
+        {
+            gameStartTimer -= 1 * Time.deltaTime;
+            countdownTimerUI.UpdateCountdownSprites((int)gameStartTimer);
+            yield return null;
+        }
+        //After Game Countdown
+        //Activate GameUI and Timer
+        SingletonManager.Get<UIManager>().DeactivateGameCountdown();
+        SingletonManager.Get<UIManager>().ActivateMiniGameTimerUI();
+        SingletonManager.Get<MiniGameTimer>().StartCountdownTimer();
+        Events.OnObjectiveUpdate.Invoke();
+
+        //Enable movement and input from bucket
+        if (waterBucket != null)
+        {
+            waterBucket.SetActive(true);
+            //Activate controls on the bucket
+            WateringCan wateringCan = waterBucket.GetComponent<WateringCan>();
+            if (wateringCan)
+            {
+                wateringCan.StartOnClickControls();
+            }
+        }
+
+        //Show all plants
+        ShowAllPlants();
+        isCompleted = false;
+        yield return null;
+    }
+
+    #endregion
+
+    #region Finish Minigame Functions
+    public override void CheckIfFinished()
+    {
+        if (AreAllPlantsWatered())
+        {
+            OnWin();
+        }
+    }
+
+    public override void OnWin()
+    {
+        if (!isCompleted)
+        {
+            Events.OnObjectiveUpdate.RemoveListener(CheckIfFinished);
+            Debug.Log("Finished Watering the Plants");
+
+            //Disable player bucket controls 
+            if (waterBucket)
+            {
+                WateringCan wateringCan = waterBucket.GetComponent<WateringCan>();
+                if (wateringCan)
+                {
+                    wateringCan.StopOnClickControls();
+                }
+
+                MouseFollow mouseFollow = waterBucket.GetComponent<MouseFollow>();
+                if (mouseFollow)
+                {
+                    mouseFollow.enabled = false;
+                }
+            }
+            
+            SingletonManager.Get<MiniGameTimer>().StopCountdownTimer();
+            SingletonManager.Get<UIManager>().ActivateResultScreen();
+            SingletonManager.Get<UIManager>().ActivateGoodResult();
+            isCompleted = true;
+            SingletonManager.Get<PlayerData>().IsWaterThePlantsFinished = true;
+            //OnMinigameFinished();
+        }
+        
+    }
+
+    public override void OnMinigameLose()
+    {
+        Events.OnObjectiveUpdate.RemoveListener(CheckIfFinished);
+        SingletonManager.Get<UIManager>().ActivateResultScreen();
+        SingletonManager.Get<UIManager>().ActivateBadResult();
+        //Disable player bucket controls 
+        if (waterBucket)
+        {
+            WateringCan wateringCan = waterBucket.GetComponent<WateringCan>();
+            if (wateringCan)
+            {
+                wateringCan.StopOnClickControls();
+            }
+
+            MouseFollow mouseFollow = waterBucket.GetComponent<MouseFollow>();
+            if (mouseFollow)
+            {
+                mouseFollow.enabled = false;
+            }
+        }
+        Debug.Log("Minigame lose");
+    }
+
+    public override void OnMinigameFinished()
+    {
+        if (NameOfNextScene == null) { return; }
+        Assert.IsNotNull(sceneChange, "Scene change is null or is not set");
+        sceneChange.OnChangeScene(NameOfNextScene);
+    }
+
+
+    #endregion
+
+    #region Exit Minigame Functions
+
+    public override void OnExitMinigame()
+    {
+        exitMinigameRoutine = StartCoroutine(ExitMinigame());
+    }
+
+    protected override IEnumerator ExitMinigame()
+    {
+        // Play close animation
+        if (transitionManager)
+        {
+            transitionManager.ChangeAnimation(TransitionManager.CURTAIN_CLOSE);
+        }
+        
+        //Deactivate active UI 
+        SingletonManager.Get<UIManager>().DeactivateResultScreen();
+        SingletonManager.Get<UIManager>().DeactivateTimerUI();
+        SingletonManager.Get<UIManager>().DeactivateGameUI();
+
+        //Deactivate Game Objects 
+        HideAllPlants();
+        if (waterBucket)
+        {
+            waterBucket.SetActive(false);
+        }
+        //Wait for transition to end
+        while (!transitionManager.IsAnimationFinished())
+        {
+            Debug.Log("Transition to closing");
+            yield return null;
+        }
+        Events.OnSceneChange.Invoke();
+        Assert.IsNotNull(sceneChange, "Scene change is null or not set");
+        if(NameOfNextScene != null)
+        {
+            sceneChange.OnChangeScene(NameOfNextScene);
+        }
+        
+        yield return null;
+    }
+
+    #endregion
 }
