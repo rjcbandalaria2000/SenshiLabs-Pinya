@@ -9,7 +9,7 @@ public class SceneChange : MonoBehaviour
         //  SingletonManager.Get<Player_Data>().storeData(SingletonManager.Get<GameManager>().player);
         if (SingletonManager.Get<UIManager>() != null)
         {
-            if (SingletonManager.Get<UIManager>().Loading_UI != null)
+            if (SingletonManager.Get<UIManager>().loadingUI != null)
             {
                 SingletonManager.Get<UIManager>().ActivateLoadingUI();
             }
