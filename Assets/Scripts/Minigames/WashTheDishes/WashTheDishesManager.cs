@@ -29,7 +29,13 @@ public class WashTheDishesManager : MinigameManager
     // Start is called before the first frame update
     void Start()
     {
+       
+    }
+
+    public override void Initialize()
+    {
         sceneChange = this.GetComponent<SceneChange>();
+        transitionManager = SingletonManager.Get<TransitionManager>();
         plateToWashAreaRoutine = null;
         spawnManager = SingletonManager.Get<SpawnManager>();
         Assert.IsNotNull(spawnManager, "Spawn manager is null or is not set");
@@ -39,11 +45,6 @@ public class WashTheDishesManager : MinigameManager
         Plates = spawnManager.SpawnedObjects;
         StartPlateToWashArea();
         Events.OnObjectiveUpdate.AddListener(StartNextPlate);
-    }
-
-    public override void Initialize()
-    {
-        base.Initialize();
     }
 
     public override void CheckIfFinished()
