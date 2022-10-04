@@ -31,18 +31,10 @@ public class Stun : MonoBehaviour
             Debug.Log("Cannot move");
             mouseFollow.canMove = false;
             catcher.CanCatch = false;
-         
-            while (!mouseFollow.canMove)
-            {
-                mouseFollow.gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
-                yield return new WaitForSeconds(0.1f);
-                mouseFollow.gameObject.GetComponentInChildren<SpriteRenderer>().enabled = true;
-
-            }
-         
             yield return new WaitForSeconds(Duration);
             mouseFollow.canMove = true;
             catcher.CanCatch = true;
+            mouseFollow.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
             Destroy(this);
         }
         
@@ -54,7 +46,8 @@ public class Stun : MonoBehaviour
         mouseFollow = Parent.GetComponent<MouseFollow>();
         catcher = Parent.GetComponent<Catcher>();
         stunEffectRoutine = StartCoroutine(StunUnit());
-       
+        flashEffectRoutine = StartCoroutine(flashEffect());
+
         Debug.Log("Stunned");
     }
 
@@ -68,16 +61,17 @@ public class Stun : MonoBehaviour
         
     }
 
-    //IEnumerator flashEffect()
-    //{
-    //    while (mouseFollow)
-    //    {
-    //        mouseFollow.gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
-    //        yield return new WaitForSeconds(0.1f);
-    //        mouseFollow.gameObject.GetComponentInChildren<SpriteRenderer>().enabled = true;
+    IEnumerator flashEffect()
+    {
+        while (mouseFollow.canMove == false)
+        {
+            mouseFollow.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+            yield return new WaitForSeconds(0.1f);
+            mouseFollow.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+            yield return new WaitForSeconds(0.1f);
 
-    //    }
-
-    //}
+        }
+        
+    }
 
 }

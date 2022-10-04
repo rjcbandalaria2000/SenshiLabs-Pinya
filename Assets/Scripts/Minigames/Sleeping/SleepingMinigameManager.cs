@@ -50,7 +50,7 @@ public class SleepingMinigameManager : MinigameManager
 
     public override void Initialize()
     {
-
+        transitionManager = SingletonManager.Get<TransitionManager>();
         startMinigameRoutine = StartCoroutine(StartMinigameCounter());
 
         
@@ -83,7 +83,7 @@ public class SleepingMinigameManager : MinigameManager
             SingletonManager.Get<UIManager>().ActivateGoodResult();
             SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
 
-            SingletonManager.Remove<SleepingMinigameManager>();
+            //SingletonManager.Remove<SleepingMinigameManager>();
             SingletonManager.Remove<SpawnManager>();
 
         }
@@ -98,7 +98,7 @@ public class SleepingMinigameManager : MinigameManager
             SingletonManager.Get<UIManager>().ActivateBadResult();
             SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
 
-            SingletonManager.Remove<SleepingMinigameManager>();
+            //SingletonManager.Remove<SleepingMinigameManager>();
             SingletonManager.Remove<SpawnManager>();
 
         }

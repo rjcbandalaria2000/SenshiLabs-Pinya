@@ -504,19 +504,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 581812105557379230, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 581812105557379230, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 758503090553775255, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 758503090553775255, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2009363870715776585, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_Pivot.x
@@ -608,8 +608,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2009363870715776589, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2009363870732991167, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1769558075}
+    - target: {fileID: 2009363870732991167, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: continueButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2009363870732991167, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SleepingMinigameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076652295168223026, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6349503282558296002, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
+      propertyPath: minigameTimer
+      value: 
+      objectReference: {fileID: 480825551}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
 --- !u!1 &191622691 stripped
@@ -1027,7 +1047,7 @@ MonoBehaviour:
   motivationMeter: {fileID: 0}
   pinyaMeter: {fileID: 0}
   dayEnd_UI: {fileID: 0}
-  curtainsUI: {fileID: 0}
+  curtainsUI: {fileID: 1971290072}
   gameUI: {fileID: 0}
   losePanelUI: {fileID: 0}
   winPanelUI: {fileID: 0}
@@ -3032,8 +3052,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObjectToSpawn:
-  - {fileID: 3474590141651843587, guid: 842bbe58d13e87648a5ea2a482c5b343, type: 3}
   - {fileID: 5201345051732923741, guid: 7381942727a789d4f95bce247cfc1c03, type: 3}
+  - {fileID: 3474590141651843587, guid: 842bbe58d13e87648a5ea2a482c5b343, type: 3}
+  - {fileID: 3474590141651843587, guid: 0599951e496d6bf4e9eaa91733cd7793, type: 3}
+  - {fileID: 3474590141651843587, guid: 93b07774e5a44b9468b0c546724c809d, type: 3}
+  - {fileID: 3474590141651843587, guid: e9d3093d8c3f4a24aa53e2c518b7094b, type: 3}
+  - {fileID: 3474590141651843587, guid: 540c8aa046bb5e54eb42d7ce082a06c1, type: 3}
   NumToSpawn: 05000000
   SpawnTime: 1
   SpawnPoints: []
@@ -3814,7 +3838,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3056311791677182187, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3056311791677182190, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_SortingOrder
@@ -5027,6 +5051,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
+--- !u!1 &1971290072 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4908104955085118814, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
+  m_PrefabInstance: {fileID: 1971290071}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2031391845
 GameObject:
   m_ObjectHideFlags: 0
