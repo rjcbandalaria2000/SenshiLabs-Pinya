@@ -20,13 +20,9 @@ public class TutorialUIManager : MonoBehaviour
     {
         pageCount = 0;
         textGO.text = instructionText[0];
-        if(tutorialImages != null)
-        {
-            imageGO.sprite = tutorialImages[0];
-        }
+        tempPage = 1;
         currentPage.text = "1";
-        tempPage = instructionText.Count - 1;
-        maxPage.text = tempPage.ToString();
+        maxPage.text = instructionText.Count.ToString();
     }
     public void NextPage()
     {
@@ -39,13 +35,12 @@ public class TutorialUIManager : MonoBehaviour
         else
         {
             pageCount++;
+            tempPage++;
             textGO.text = instructionText[pageCount];
-            if (tutorialImages != null)
-                imageGO.sprite = tutorialImages[pageCount];
-            currentPage.text = pageCount.ToString();
 
         }
-
+        //    int temp = pageCount + 1;
+        currentPage.text = tempPage.ToString();
 
     }
 
@@ -55,21 +50,18 @@ public class TutorialUIManager : MonoBehaviour
         if (pageCount <= 0)
         {
             pageCount = 0;
+            tempPage = 1;
             textGO.text = instructionText[0];
-            if (tutorialImages != null)
-                imageGO.sprite = tutorialImages[0];
-            currentPage.text = "0";
+
         }
         else
         {
             pageCount--;
-
+            tempPage--;
             textGO.text = instructionText[pageCount];
-            if (tutorialImages != null)
-                imageGO.sprite = tutorialImages[pageCount];
-            currentPage.text = pageCount.ToString();
+
         }
 
-
+        currentPage.text = tempPage.ToString();
     }
 }
