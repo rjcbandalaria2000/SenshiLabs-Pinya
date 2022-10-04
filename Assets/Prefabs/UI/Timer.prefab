@@ -25,9 +25,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5126306651084998123}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1938371, y: 0.1938371, z: 0.1938371}
+  m_LocalScale: {x: 0.11384454, y: 0.11384454, z: 0.11384454}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5126306651120619457}
@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 423}
+  m_AnchoredPosition: {x: 0, y: 474}
   m_SizeDelta: {x: 1274, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5126306651084998126
@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 5126306651120619457}
   - component: {fileID: 5126306651120619463}
   - component: {fileID: 5126306651120619462}
+  - component: {fileID: 5517420818928652472}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -212,6 +213,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5517420818928652472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5126306651120619456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e05b9777b1be1d4aa4b7fc3d7b53af1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  miniGameTimer_UI: {fileID: 5126306651120619462}
 --- !u!1 &5126306651134866958
 GameObject:
   m_ObjectHideFlags: 0

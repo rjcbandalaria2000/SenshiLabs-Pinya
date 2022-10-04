@@ -683,11 +683,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3686634582077691363, guid: 653435b4250bc0d4697a1cba1ea8980c, type: 3}
       propertyPath: fadeAmount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3686634582077691363, guid: 653435b4250bc0d4697a1cba1ea8980c, type: 3}
       propertyPath: maxFadeTime
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3686634582077691363, guid: 653435b4250bc0d4697a1cba1ea8980c, type: 3}
       propertyPath: damageBarImage

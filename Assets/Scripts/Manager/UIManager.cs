@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviour
     public GameObject timerDisplay;
 
     [Header("Meters UI")]
-    public MinigameObject minigame;
+    public MinigameManager minigame;
     public GameObject motivationMeter;
     public GameObject pinyaMeter;
 
@@ -52,9 +52,9 @@ public class UIManager : MonoBehaviour
 
         if (minigame == null)
         {
-            if (GameObject.FindObjectOfType<MinigameObject>() != null)
+            if(GameObject.FindObjectOfType<MinigameManager>() != null)
             {
-                minigame = GameObject.FindObjectOfType<MinigameObject>().GetComponent<MinigameObject>();
+                minigame = GameObject.FindObjectOfType<MinigameManager>().GetComponent<MinigameManager>();
             }
             else
             {

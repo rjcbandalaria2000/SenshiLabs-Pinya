@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using DG.Tweening;
+using UnityEngine.EventSystems;
 
-public class AskMom : MonoBehaviour
+public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [Header("Highlighted Objects")]
     public List<GameObject>     highLight = new();
@@ -17,6 +19,12 @@ public class AskMom : MonoBehaviour
     private Coroutine           askMomRoutine;
     private UIManager           uiManager;
     private TaskManager         taskManager;
+
+    private Camera cm;
+
+    public GameObject heartGO;
+   // public GameObject crackedGlass;
+   // public GameObject overlayGO;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,12 +32,19 @@ public class AskMom : MonoBehaviour
         taskManager = SingletonManager.Get<TaskManager>();
         askMomRoutine = null;
         DisableHighlight();
+        cm = Camera.main;
     }
     
     public void OnAskMomButtonPressed()
     {
         if(playerPinyaMeter == null) { return; }
+        if (pinyaMeterUI)
+        {
+            pinyaMeterUI.StopDamageFade();
+        }
         BeginAskMom();
+        
+
     }
 
     public void BeginAskMom()
@@ -41,11 +56,12 @@ public class AskMom : MonoBehaviour
             askMomRoutine = StartCoroutine(AskMomCD());
             if (pinyaMeterUI)
             {
-                pinyaMeterUI.StartDamageFade();
+                pinyaMeterUI.StartDamageFade(pinyaCost);
             }
         }
         
         playerPinyaMeter.DecreasePinyaMeter(pinyaCost);
+
     }
 
     IEnumerator AskMomCD()
@@ -73,11 +89,14 @@ public class AskMom : MonoBehaviour
 
     public void EnableHighlight()
     {
+      //  cm.transform.dos(1,0.3f,10,0,false);
         if(highLight.Count > 0)
         {
             for(int i = 0; i < highLight.Count; i++)
             {
                 highLight[i].SetActive(true);
+                highLight[i].transform.DOShakeScale(coolDown,0.1f,1,0,true);
+                PulsatingHeart();
             }
         }
     }
@@ -94,5 +113,55 @@ public class AskMom : MonoBehaviour
             }
         }
     }
-    
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        // When the player hovers over the ask mom button
+        Debug.Log("Ask mom hover");
+        if (pinyaMeterUI)
+        {
+            pinyaMeterUI.StartDamageFade(pinyaCost);
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (pinyaMeterUI)
+        {
+            pinyaMeterUI.StopDamageFade();
+        }
+        Debug.Log("Ask mom exit");
+    }
+    public void PulsatingHeart()
+    {
+
+        StartCoroutine(PulsateHeart());
+
+        //  heartGO.transform.DOScale(0.8f, 0.1f).SetEase(Ease.OutBounce);
+    }
+
+
+    IEnumerator PulsateHeart()
+    {
+        float tempCooldown = coolDown;
+      //  crackedGlass.SetActive(true);
+      //  overlayGO.SetActive(true);
+        while (tempCooldown > 0)
+        {
+            Debug.Log("animatio");
+            heartGO.transform.DOScale(1, 0.3f).SetEase(Ease.OutBounce);
+           // overlayGO.transform.DOScale(1.1f, 0.3f).SetEase(Ease.OutBounce);
+            yield return new WaitForSeconds(0.5f);
+            heartGO.transform.DOScale(4, 0.3f).SetEase(Ease.OutBounce);
+            //overlayGO.transform.DOScale(1f, 0.3f).SetEase(Ease.OutBounce);
+        //    crackedGlass.SetActive(false);
+            tempCooldown--;
+
+        }
+      //  heartGO.transform.DOScale(1, 0.3f).SetEase(Ease.OutBounce);
+
+        heartGO.transform.DOScale(1, 0.3f).SetEase(Ease.OutBounce);
+      //  overlayGO.SetActive(false);
+        Debug.Log("End Pulsate");
+    }
 }

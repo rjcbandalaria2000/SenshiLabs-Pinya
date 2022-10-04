@@ -85,4 +85,17 @@ public class CursorManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (pressDownCursorTexture == null) { }
+            Cursor.SetCursor(pressDownCursorTexture, cursorHotspot, CursorMode.ForceSoftware);
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
+        }
+    }
+
 }
