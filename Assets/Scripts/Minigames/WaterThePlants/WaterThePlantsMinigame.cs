@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class WaterThePlantsMinigame : MinigameObject
 {
+    private TransitionManager   transitionManager;
+    private Coroutine           interactRoutine;
+
 
     // Start is called before the first frame update
     void Start()
@@ -20,20 +23,40 @@ public class WaterThePlantsMinigame : MinigameObject
 
     public override void Interact(GameObject player = null)
     {
-        if(!SingletonManager.Get<PlayerData>().IsGetWaterFinished)
+        if (!SingletonManager.Get<PlayerData>().IsGetWaterFinished)
         {
             Debug.Log("Finish Pre-Req");
             return;
         }
-        isInteracted = true;
-        MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
-        if (playerMotivation)
+        if (!isInteracted)
         {
-            playerMotivation.DecreaseMotivation(motivationCost);
+            Debug.Log("Interact with" + this.gameObject.name);
+            //Decrease Motivation 
+            MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
+            if (playerMotivation)
+            {
+                //Check if has enough motivation
+                if (playerMotivation.MotivationAmount < motivationCost)
+                {
+                    // if there is not enough motivation amount
+                    Debug.Log("Not enough motivation");
+                    return;
+                }
+                else
+                {
+                    playerMotivation.DecreaseMotivation(motivationCost);
+                    //Disable player controls 
+                    PlayerControls playerControl = player.GetComponent<PlayerControls>();
+                    if (playerControl)
+                    {
+                        playerControl.enabled = false;
+                    }
+                    Debug.Log("Interacted");
+                    isInteracted = true; // to avoid being called again since it is already interacted
+                    StartInteractRoutine();
+                }
+            }
         }
-        Debug.Log("Interacted");
-        isInteracted = false;
-        JumpToMiniGame();
     }
 
     public override void EndInteract(GameObject player = null)
@@ -41,9 +64,31 @@ public class WaterThePlantsMinigame : MinigameObject
         base.EndInteract(player);
     }
 
+    public override void StartInteractRoutine()
+    {
+        interactRoutine = StartCoroutine(InteractCoroutine());
+    }
+
     public override IEnumerator InteractCoroutine(GameObject player = null)
     {
-        return base.InteractCoroutine(player);
+        transitionManager = SingletonManager.Get<TransitionManager>();
+        //Disable UI Elements
+        SingletonManager.Get<UIManager>().DeactivateGameUI();
+        //Play animation of transition
+        if (transitionManager)
+        {
+            transitionManager.ChangeAnimation(TransitionManager.CURTAIN_CLOSE);
+        }
+        //Wait for the transition to end
+        while (!transitionManager.IsAnimationFinished())
+        {
+            Debug.Log("Closing Curtain Time: " + transitionManager.animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+            yield return null;
+        }
+
+        //Jump to next scene
+        JumpToMiniGame();
+        yield return null;
     }
 
     public override void JumpToMiniGame()

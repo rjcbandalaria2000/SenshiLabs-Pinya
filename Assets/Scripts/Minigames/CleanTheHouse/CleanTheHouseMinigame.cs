@@ -86,7 +86,7 @@ public class CleanTheHouseMinigame : MinigameObject
         }
     }
 
-    public void StartInteractRoutine()
+    public override void StartInteractRoutine()
     {
         interactRoutine = StartCoroutine(InteractCoroutine());
     }
@@ -94,6 +94,9 @@ public class CleanTheHouseMinigame : MinigameObject
     public override IEnumerator InteractCoroutine(GameObject player = null)
     {
         transitionManager = SingletonManager.Get<TransitionManager>();
+        //Disable UI Elements
+        SingletonManager.Get<UIManager>().DeactivateGameUI();
+
         //Play animation of transition
         if (transitionManager) { 
             

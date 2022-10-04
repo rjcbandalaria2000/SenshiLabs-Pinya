@@ -7,12 +7,14 @@ public class TutorialUIManager : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public List<string>     instructionText;
-    public List<Sprite>     tutorialImages;
-    public int              pageCount;
-    public TextMeshProUGUI  textGO;
-    public Image            imageGO;
-
+    public List<string> instructionText;
+    public List<Sprite> tutorialImages;
+    public int pageCount;
+    public TextMeshProUGUI textGO;
+    public Image imageGO;
+    public TextMeshProUGUI currentPage;
+    public TextMeshProUGUI maxPage;
+    int tempPage;
 
     private void OnEnable()
     {

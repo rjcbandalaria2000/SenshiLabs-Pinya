@@ -2246,6 +2246,14 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 230
       objectReference: {fileID: 0}
+    - target: {fileID: 3056311790999024245, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3056311790999024245, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3056311791677182187, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_Name
       value: MiniGame_MainMenu
@@ -2347,12 +2355,32 @@ PrefabInstance:
       value: 207
       objectReference: {fileID: 0}
     - target: {fileID: 3056311792059580039, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3056311792059580039, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3056311792059580039, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3056311792059580039, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -72
+      objectReference: {fileID: 0}
+    - target: {fileID: 3056311792059580040, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 417715213}
+    - target: {fileID: 3056311792059580040, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartMinigame
+      objectReference: {fileID: 0}
+    - target: {fileID: 3056311792059580040, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: WaterThePlantsManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3056311792344982017, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_SizeDelta.x
@@ -2361,6 +2389,14 @@ PrefabInstance:
     - target: {fileID: 3056311792344982017, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_SizeDelta.y
       value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 3056311792344982017, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3056311792344982017, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3056311792344982018, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2390,6 +2426,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 22100000, guid: d3f88704221d63c4e8ef2eec9891e7fd, type: 2}
+    - target: {fileID: 6336105097605934675, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7840490333810857148, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2902,6 +2942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e605fc5a271943341b6e887c4fbf7009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  decreaseValue: 0
 --- !u!1 &424183670
 GameObject:
   m_ObjectHideFlags: 0
@@ -4177,6 +4218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e605fc5a271943341b6e887c4fbf7009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  decreaseValue: 0
 --- !u!114 &661794642
 MonoBehaviour:
   m_ObjectHideFlags: 0
