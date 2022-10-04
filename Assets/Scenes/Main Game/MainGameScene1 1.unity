@@ -5626,6 +5626,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1516140953}
     m_Modifications:
+    - target: {fileID: 4795551582156793449, guid: e41e923d36dd9184699d21fe2e39658e, type: 3}
+      propertyPath: minigameName
+      value: Sleeping
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795551582156793449, guid: e41e923d36dd9184699d21fe2e39658e, type: 3}
+      propertyPath: minigameScene
+      value: SleepingMinigame- TestScene
+      objectReference: {fileID: 0}
     - target: {fileID: 6246211231711034711, guid: e41e923d36dd9184699d21fe2e39658e, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -5668,7 +5676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7148304158928383472, guid: e41e923d36dd9184699d21fe2e39658e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7148304158928383477, guid: e41e923d36dd9184699d21fe2e39658e, type: 3}
       propertyPath: m_RootOrder
@@ -9982,6 +9990,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1516140953}
     m_Modifications:
+    - target: {fileID: -4991398368355363817, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
+      propertyPath: minigameName
+      value: WaterThePlants-Polish
+      objectReference: {fileID: 0}
+    - target: {fileID: -4991398368355363817, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
+      propertyPath: minigameScene
+      value: WaterThePlants-Polish
+      objectReference: {fileID: 0}
     - target: {fileID: 1626766352336488398, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
       propertyPath: m_Sprite
       value: 

@@ -39,7 +39,7 @@ public class TutorialUIManager : MonoBehaviour
             textGO.text = instructionText[pageCount];
 
         }
-    //    int temp = pageCount + 1;
+        //    int temp = pageCount + 1;
         currentPage.text = tempPage.ToString();
 
     }

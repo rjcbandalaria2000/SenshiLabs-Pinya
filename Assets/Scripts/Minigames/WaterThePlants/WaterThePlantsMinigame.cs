@@ -23,11 +23,11 @@ public class WaterThePlantsMinigame : MinigameObject
 
     public override void Interact(GameObject player = null)
     {
-        if (!SingletonManager.Get<PlayerData>().IsGetWaterFinished)
-        {
-            Debug.Log("Finish Pre-Req");
-            return;
-        }
+        //if (!SingletonManager.Get<PlayerData>().IsGetWaterFinished)
+        //{
+        //    Debug.Log("Finish Pre-Req");
+        //    return;
+        //}
         if (!isInteracted)
         {
             Debug.Log("Interact with" + this.gameObject.name);

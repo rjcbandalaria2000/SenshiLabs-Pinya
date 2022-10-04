@@ -84,7 +84,8 @@ public class ClickItem : MonoBehaviour
             item.transform.DOShakePosition(0.3f, shake, 10, 45, false, false);
         }
 
-        SingletonManager.Get<GroceryManager>().CheckIfFinished();
-       // groceryMiniGame.CheckIfFinished();
+        //SingletonManager.Get<GroceryManager>().CheckIfFinished();
+        Events.OnObjectiveUpdate.Invoke();  
+        // groceryMiniGame.CheckIfFinished();
     }
 }
