@@ -156,7 +156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8301517833032827718, guid: 1717608a280b0f148a9e05cf914c7d77, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8301517833032827718, guid: 1717608a280b0f148a9e05cf914c7d77, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1652,6 +1652,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6349503282558296002, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
+      propertyPath: minigameTimer
+      value: 
+      objectReference: {fileID: 844703407}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
 --- !u!1 &470774560
@@ -2667,7 +2671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823114bcfa710324782919cf7ae8bb51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerDisplay: {fileID: 0}
+  timerDisplay: {fileID: 199391798}
   minigame: {fileID: 0}
   motivationMeter: {fileID: 0}
   pinyaMeter: {fileID: 0}
@@ -3209,7 +3213,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1064939560
 GameObject:
@@ -4164,7 +4168,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5126306651134866958, guid: 55ba75a0b91c77841aa3228a8faef8af, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5126306651134867058, guid: 55ba75a0b91c77841aa3228a8faef8af, type: 3}
       propertyPath: m_Pivot.x
@@ -4176,7 +4180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5126306651134867058, guid: 55ba75a0b91c77841aa3228a8faef8af, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5126306651134867058, guid: 55ba75a0b91c77841aa3228a8faef8af, type: 3}
       propertyPath: m_AnchorMax.x
@@ -4913,7 +4917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2174895158145102631, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 2174895158145102631, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: m_AnchorMax.x
