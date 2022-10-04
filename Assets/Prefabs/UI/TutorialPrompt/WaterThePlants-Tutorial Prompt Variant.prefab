@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2174895157945811446, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_Name
+      value: InstructionText
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174895158130304436, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_Name
+      value: PreviousButton
+      objectReference: {fileID: 0}
     - target: {fileID: 2174895158145102627, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: m_Name
       value: WaterThePlants-Tutorial Prompt Variant
@@ -95,9 +103,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2174895158226657139, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_Name
+      value: MinigamePreviewImage
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174895158914797833, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_Name
+      value: CloseButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174895159123499890, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_Name
+      value: NextButton
+      objectReference: {fileID: 0}
     - target: {fileID: 2174895159142261092, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: m_Name
       value: PaperBackgroundImage
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174895159261843111, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_Name
+      value: TutorialText
       objectReference: {fileID: 0}
     - target: {fileID: 2174895159903756620, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: m_Name
@@ -105,3 +129,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+--- !u!1 &9179800644453789636 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2174895158145102627, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+  m_PrefabInstance: {fileID: 7010965058245450983}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4375493717882866837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9179800644453789636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0946c9decca17a47b32401f881889d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instructionText: []
+  tutorialImages: []
+  pageCount: 0
+  textGO: {fileID: 0}
+  imageGO: {fileID: 0}
