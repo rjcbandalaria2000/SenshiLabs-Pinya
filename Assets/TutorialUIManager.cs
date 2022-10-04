@@ -23,8 +23,11 @@ public class TutorialUIManager : MonoBehaviour
         tempPage = 1;
         currentPage.text = "1";
 
-        if(tutorialImages != null)
+        if(tutorialImages.Count > 0)
+        {
             imageGO.sprite = tutorialImages[0];
+        }
+           
 
         maxPage.text = instructionText.Count.ToString();
     }
@@ -42,7 +45,7 @@ public class TutorialUIManager : MonoBehaviour
             tempPage++;
             textGO.text = instructionText[pageCount];
 
-            if (tutorialImages != null)
+            if (tutorialImages.Count > 0)
                 imageGO.sprite = tutorialImages[pageCount];
 
         }
@@ -67,7 +70,7 @@ public class TutorialUIManager : MonoBehaviour
             tempPage--;
             textGO.text = instructionText[pageCount];
 
-            if (tutorialImages != null)
+            if (tutorialImages.Count > 0)
                 imageGO.sprite = tutorialImages[pageCount];
         }
 
