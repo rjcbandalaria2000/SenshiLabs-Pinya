@@ -9992,11 +9992,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -4991398368355363817, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
       propertyPath: minigameName
-      value: PlantWatering
+      value: WaterThePlants-Polish
       objectReference: {fileID: 0}
     - target: {fileID: -4991398368355363817, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
       propertyPath: minigameScene
-      value: PlantWatering
+      value: WaterThePlants-Polish
       objectReference: {fileID: 0}
     - target: {fileID: 1626766352336488398, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
       propertyPath: m_Sprite
