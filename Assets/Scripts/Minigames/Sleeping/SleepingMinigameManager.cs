@@ -32,11 +32,11 @@ public class SleepingMinigameManager : MinigameManager
         basket.SetActive(false);
         spawner.SetActive(false);
         playerCanvas.SetActive(false);
-
+        transitionManager = SingletonManager.Get<TransitionManager>();
         spawnManager = SingletonManager.Get<SpawnManager>();
-       
-      
-      //  Events.OnObjectiveUpdate.Invoke();
+        sceneChange = this.gameObject.GetComponent<SceneChange>();
+
+        //  Events.OnObjectiveUpdate.Invoke();
         Events.UpdateScore.Invoke();
     }
 
@@ -50,7 +50,7 @@ public class SleepingMinigameManager : MinigameManager
 
     public override void Initialize()
     {
-        transitionManager = SingletonManager.Get<TransitionManager>();
+  
         startMinigameRoutine = StartCoroutine(StartMinigameCounter());
 
         
@@ -58,7 +58,7 @@ public class SleepingMinigameManager : MinigameManager
         SingletonManager.Get<UIManager>().ActivateMiniGameTimerUI();
 
   
-        sceneChange = this.gameObject.GetComponent<SceneChange>();
+       
 
     }
 
@@ -84,7 +84,7 @@ public class SleepingMinigameManager : MinigameManager
             SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
 
             //SingletonManager.Remove<SleepingMinigameManager>();
-            SingletonManager.Remove<SpawnManager>();
+            //SingletonManager.Remove<SpawnManager>();
 
         }
         else if(PlayerPoints <= RequiredPoints && SingletonManager.Get<MiniGameTimer>().getTimer() <= 0)
@@ -99,7 +99,7 @@ public class SleepingMinigameManager : MinigameManager
             SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
 
             //SingletonManager.Remove<SleepingMinigameManager>();
-            SingletonManager.Remove<SpawnManager>();
+            //SingletonManager.Remove<SpawnManager>();
 
         }
     }
@@ -111,7 +111,7 @@ public class SleepingMinigameManager : MinigameManager
         //Deactivate Minigame Main Menu
         SingletonManager.Get<UIManager>().DeactivateMiniGameMainMenu();
         //Start Curtain Transition
-        SingletonManager.Get<TransitionManager>().ChangeAnimation(TransitionManager.CURTAIN_OPEN);
+        transitionManager.ChangeAnimation(TransitionManager.CURTAIN_OPEN);
 
         //Wait for the animation to finish 
         if (transitionManager != null)
@@ -167,7 +167,15 @@ public class SleepingMinigameManager : MinigameManager
     protected override IEnumerator ExitMinigame()
     {
         // Play close animation
-        transitionManager.ChangeAnimation(TransitionManager.CURTAIN_CLOSE);
+        if(transitionManager)
+        {
+            transitionManager.ChangeAnimation(TransitionManager.CURTAIN_CLOSE);
+        }
+        else
+        {
+            Debug.Log("transition null");
+        }
+       
         //Deactivate active UI 
         SingletonManager.Get<UIManager>().DeactivateResultScreen();
         SingletonManager.Get<UIManager>().DeactivateTimerUI();

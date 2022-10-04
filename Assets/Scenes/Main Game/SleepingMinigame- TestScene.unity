@@ -1048,7 +1048,7 @@ MonoBehaviour:
   pinyaMeter: {fileID: 0}
   dayEnd_UI: {fileID: 0}
   curtainsUI: {fileID: 1971290072}
-  gameUI: {fileID: 0}
+  gameUI: {fileID: 2031391845}
   losePanelUI: {fileID: 0}
   winPanelUI: {fileID: 0}
   miniGameTimerDisplay: {fileID: 62027225}
@@ -4566,7 +4566,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 99
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5053,7 +5053,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
 --- !u!1 &1971290072 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 4908104955085118814, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4257680015237913099, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
   m_PrefabInstance: {fileID: 1971290071}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2031391845
@@ -5411,9 +5411,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '99
-
-'
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
