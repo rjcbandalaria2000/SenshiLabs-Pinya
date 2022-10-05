@@ -18,6 +18,7 @@ public enum CursorHotspotPos
 public class CursorManager : MonoBehaviour
 {
     [Header("MouseTextures")]
+    //public Texture2D        defaultTexture;
     public Texture2D        enterCursorTexture;
     public Texture2D        dragCursorTexture;
     public Texture2D        pressDownCursorTexture;
@@ -52,6 +53,7 @@ public class CursorManager : MonoBehaviour
     public void OnMouseExit()
     {
         //if (EventSystem.current.IsPointerOverGameObject()) { return; }
+        //if(defaultTexture == null) { return; }
         Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
     }
 

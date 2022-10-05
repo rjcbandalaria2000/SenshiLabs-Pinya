@@ -16,7 +16,7 @@ public class MinigameObject : MonoBehaviour
 
     protected SceneChange   sceneChange;
     protected PlayerData    playerData;
-    //protected Coroutine     interactRoutine;
+    protected Coroutine     interactRoutine;
     private void Awake()
     {
        
@@ -29,28 +29,16 @@ public class MinigameObject : MonoBehaviour
 
     public virtual void Initialize()
     {
-        //interactable = this.GetComponent<Interactable>();
 
-        //if (interactable)
-        //{
-        //    //Listen to the interactable event and proceed to interact with the player
-        //    Events.OnInteract.AddListener(Interact);
-        //    Events.OnFinishInteract.AddListener(EndInteract);
-            
-        //}
-        //sceneChange = this.gameObject.GetComponent<SceneChange>();
     }
 
     public virtual void Interact(GameObject player = null)
     {
-        //When player is interacting with the object 
-        // For Scene change, always start at the persistent scene
-        
+      
     }
 
     public virtual void EndInteract(GameObject player = null)
     {
-        // When player is out of range or leaves
         Debug.Log("End Interact");
     }
 

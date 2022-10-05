@@ -5,8 +5,6 @@ using UnityEngine;
 public class WaterThePlantsMinigame : MinigameObject
 {
     private TransitionManager   transitionManager;
-    private Coroutine           interactRoutine;
-
 
     // Start is called before the first frame update
     void Start()
