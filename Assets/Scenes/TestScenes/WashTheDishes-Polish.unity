@@ -1631,6 +1631,8 @@ MonoBehaviour:
   countdownTimerUI: {fileID: 90933282}
   numOfCleanPlates: 0
   numOfDirtyPlates: 5
+  nextPlateDelay: 0.5
+  plateAnimationDuration: 0.5
   washingPosition: {fileID: 919044197}
   dirtyPilePosition:
   - {fileID: 2063014173}

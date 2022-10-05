@@ -62,7 +62,8 @@ public class WashTheDishesManager : MinigameManager
 
     public void GoToCleanPile()
     {
-        plates[plateIndex].transform.position = cleanPilePosition[plateIndex].transform.position;
+        plates[plateIndex].transform.DOMove(cleanPilePosition[plateIndex].transform.position, plateAnimationDuration, false);
+        //plates[plateIndex].transform.position = cleanPilePosition[plateIndex].transform.position;
     }
 
     public void StartPlateToWashArea()
