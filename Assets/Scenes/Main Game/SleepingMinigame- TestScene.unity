@@ -3521,6 +3521,8 @@ MonoBehaviour:
   SpawnPoints: []
   BoxSpawnPoint: {fileID: 953292442}
   SpawnedObjects: []
+  random: 0
+  fruitChance: 30
 --- !u!4 &977571687
 Transform:
   m_ObjectHideFlags: 0

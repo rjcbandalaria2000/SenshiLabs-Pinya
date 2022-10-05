@@ -9,18 +9,32 @@ public class SpawnManager : MonoBehaviour
     public List<GameObject>     ObjectToSpawn = new();
     public List<int>            NumToSpawn = new(); //must be equal to the number of objects to spawn
     public float                SpawnTime = 1f;
+
     //public List<WaveSpawnScriptableObject> WaveSpawnScripts = new(); // can be utilized later 
     [Header("Spawnpoints")]
     public List<GameObject>     SpawnPoints = new();
+
     [Header("Box Spawnpoint")]
     public GameObject BoxSpawnPoint;
 
     [Header("Spawned Objects")]
     public List<GameObject> SpawnedObjects = new();
+   
+
+    [Header("SpawnChance")]
+   [SerializeField] private float random = 0;
+   // public List<int> percentage;
+    public int fruitChance;
+    Coroutine spawnChanceRoutine;
+   // private int pinyaChance;
+   // int totalPercantage;
+
+
 
     private Coroutine timedSpawnRoutine;
     private Coroutine timedBoxSpawnRoutine;
     private Coroutine timedUnlimitedSpawnBoxRoutine;
+
 
 
     private void Awake()
@@ -144,7 +158,7 @@ public class SpawnManager : MonoBehaviour
         return cubeCenter + randomPosition; 
     }
 
-    public void SpawnInStaticPositions()
+    public void SpawnInStaticPositions() //WASHDISH MINIGAME
     {
         if(ObjectToSpawn.Count <= 0) { return; }
         if(NumToSpawn.Count <= 0) { return; }
@@ -160,7 +174,7 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    public void SpawnRandomObjectsInStaticPositions()
+    public void SpawnRandomObjectsInStaticPositions() //HUNGRY MINIGAME
     {
         if (ObjectToSpawn.Count <= 0) { return; }
         if (NumToSpawn.Count <= 0) { return; }
@@ -175,5 +189,46 @@ public class SpawnManager : MonoBehaviour
             }
 
         }
+    }
+
+    public void spawnChance()
+    {
+        spawnChanceRoutine = StartCoroutine(chanceSpawn());
+    }
+    public void stopSpawnChance()
+    {
+        StopCoroutine(chanceSpawn());
+        Debug.Log("Stop");
+    }
+
+    IEnumerator chanceSpawn()
+    {
+        if (ObjectToSpawn.Count <= 0) { yield return null; }
+        if (NumToSpawn.Count <= 0) { yield return null; }
+
+
+        while (true)
+        {
+            for (int i = 0; i < ObjectToSpawn.Count; i++) //loop how many objects are needed to spawn
+            {
+                random = Random.Range(0f, 100f);
+               if (fruitChance > random)
+               {
+                    int randomObjectIndex = Random.Range(1, ObjectToSpawn.Count);
+                    GameObject spawnedObject = Instantiate(ObjectToSpawn[randomObjectIndex],GetRandomBoxPosition(), Quaternion.identity);
+                    SpawnedObjects.Add(spawnedObject);
+               }
+               else
+               {
+                    GameObject spawnedObject = Instantiate(ObjectToSpawn[0], GetRandomBoxPosition(), Quaternion.identity);
+                    SpawnedObjects.Add(spawnedObject);
+               }
+
+                yield return new WaitForSeconds(SpawnTime);
+
+            }
+            yield return null;
+        }
+        //yield return null;
     }
 }
