@@ -26,16 +26,6 @@ public class WaterThePlantsManager : MinigameManager
         { 
             // Hide water bucket
             waterBucket.SetActive(false);
-            //MouseFollow mouseFollow = waterBucket.GetComponent<MouseFollow>();
-            //if (mouseFollow)
-            //{
-            //    mouseFollow.enabled = false;
-            //}
-            //WateringCan wateringCan = waterBucket.GetComponent<WateringCan>();
-            //if (wateringCan)
-            //{
-            //    wateringCan.StopOnClickControls();
-            //}
         }
         //Hide all plants
         HideAllPlants();
@@ -168,6 +158,7 @@ public class WaterThePlantsManager : MinigameManager
                 if (wateringCan)
                 {
                     wateringCan.StopOnClickControls();
+                    Debug.Log("Stop on click controls");
                 }
 
                 MouseFollow mouseFollow = waterBucket.GetComponent<MouseFollow>();
