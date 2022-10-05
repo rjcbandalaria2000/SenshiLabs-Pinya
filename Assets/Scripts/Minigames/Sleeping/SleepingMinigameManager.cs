@@ -29,12 +29,7 @@ public class SleepingMinigameManager : MinigameManager
     // Start is called before the first frame update
     void Start()
     {
-        basket.SetActive(false);
-        spawner.SetActive(false);
-        playerCanvas.SetActive(false);
-        transitionManager = SingletonManager.Get<TransitionManager>();
-        spawnManager = SingletonManager.Get<SpawnManager>();
-        sceneChange = this.gameObject.GetComponent<SceneChange>();
+        Initialize();
 
         //  Events.OnObjectiveUpdate.Invoke();
         Events.UpdateScore.Invoke();
@@ -50,15 +45,25 @@ public class SleepingMinigameManager : MinigameManager
 
     public override void Initialize()
     {
-  
-        startMinigameRoutine = StartCoroutine(StartMinigameCounter());
+        basket.SetActive(false);
+        spawner.SetActive(false);
+        playerCanvas.SetActive(false);
+        transitionManager = SingletonManager.Get<TransitionManager>();
+        spawnManager = SingletonManager.Get<SpawnManager>();
+        sceneChange = this.gameObject.GetComponent<SceneChange>();
 
-        
-        SingletonManager.Get<UIManager>().DeactivateMiniGameMainMenu();
-        SingletonManager.Get<UIManager>().ActivateMiniGameTimerUI();
+        SingletonManager.Get<UIManager>().ActivateMiniGameMainMenu();
+        Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
+        Events.OnSceneChange.AddListener(OnSceneChange);
+        startMinigameRoutine = null;
 
-  
-       
+
+    }
+
+    private void OnSceneChange()
+    {
+        Events.OnObjectiveUpdate.RemoveListener(CheckIfFinished);
+        Events.OnSceneChange.RemoveListener(OnSceneChange);
 
     }
 
