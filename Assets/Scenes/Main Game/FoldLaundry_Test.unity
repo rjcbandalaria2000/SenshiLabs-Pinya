@@ -526,6 +526,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8266011235985157277, guid: e4b650b5d63dcde4da16e72d023d1435, type: 3}
   m_PrefabInstance: {fileID: 220561743}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &220561745 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3725072826227035113, guid: e4b650b5d63dcde4da16e72d023d1435, type: 3}
+  m_PrefabInstance: {fileID: 220561743}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220561744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41bbb8107570066429982d06e9424626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &317293121
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,6 +1067,16 @@ Transform:
   m_Father: {fileID: 1559176485}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &506374616 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3056311791677182187, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
+  m_PrefabInstance: {fileID: 1886771733}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &506374620 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3056311791677182191, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
+  m_PrefabInstance: {fileID: 1886771733}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &515000368
 GameObject:
   m_ObjectHideFlags: 0
@@ -2118,6 +2139,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1149422242 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5126306651134866958, guid: 55ba75a0b91c77841aa3228a8faef8af, type: 3}
+  m_PrefabInstance: {fileID: 835225920}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1154171033
 GameObject:
   m_ObjectHideFlags: 0
@@ -2401,6 +2427,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6349503282558296002, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
+      propertyPath: minigameTimer
+      value: 
+      objectReference: {fileID: 1573738793}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
 --- !u!1 &1224836445 stripped
@@ -2746,7 +2776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4257680015237913097, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.371214
+      value: 6.05
       objectReference: {fileID: 0}
     - target: {fileID: 4257680015237913097, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2786,7 +2816,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4257680015237913099, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
@@ -3111,7 +3141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823114bcfa710324782919cf7ae8bb51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerDisplay: {fileID: 0}
+  timerDisplay: {fileID: 1149422242}
   minigame: {fileID: 0}
   motivationMeter: {fileID: 0}
   pinyaMeter: {fileID: 0}
@@ -3120,8 +3150,8 @@ MonoBehaviour:
   gameUI: {fileID: 1250727523}
   losePanelUI: {fileID: 0}
   winPanelUI: {fileID: 0}
-  miniGameTimerDisplay: {fileID: 1283175835}
-  miniGameMainMenu: {fileID: 1224836445}
+  miniGameTimerDisplay: {fileID: 1149422242}
+  miniGameMainMenu: {fileID: 506374616}
   minigameStartCountdownUI: {fileID: 220561744}
   minigameResultsUI: {fileID: 1224836445}
   minigameGoodResult: {fileID: 2126573776}
@@ -3176,7 +3206,7 @@ MonoBehaviour:
   maxTimer: 15
   speedTimer: 1
   gameStartTime: 3
-  countdownTimerUI: {fileID: 0}
+  countdownTimerUI: {fileID: 220561745}
   ClothesComponent: {fileID: 0}
   GameStartTime: 3
   CountdownTimerUI: {fileID: 0}
@@ -3348,6 +3378,82 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1658153297
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1658153298}
+  - component: {fileID: 1658153300}
+  - component: {fileID: 1658153299}
+  m_Layer: 5
+  m_Name: TitleIMG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1658153298
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658153297}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 506374620}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 317.5}
+  m_SizeDelta: {x: 1534, y: 445}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1658153299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658153297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 31457d36a4db22149a2ad45b889ef38a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1658153300
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658153297}
+  m_CullTransparentMesh: 1
 --- !u!1 &1715874675
 GameObject:
   m_ObjectHideFlags: 0
@@ -3644,9 +3750,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2954455798921403844, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3056311791677182187, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_Name
       value: MiniGame_MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3056311791677182187, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3056311791677182191, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_Pivot.x
@@ -3731,6 +3845,18 @@ PrefabInstance:
     - target: {fileID: 3056311791677182191, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3056311792059580040, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1573738796}
+    - target: {fileID: 3056311792059580040, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartMinigame
+      objectReference: {fileID: 0}
+    - target: {fileID: 3056311792059580040, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FoldingMinigameManager, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
