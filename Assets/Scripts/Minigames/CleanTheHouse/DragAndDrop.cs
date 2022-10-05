@@ -35,8 +35,8 @@ public class DragAndDrop : MonoBehaviour
         if (EventSystem.current.IsPointerOverGameObject()) { return; }
         transform.position = GetMousePosition() + dragOffset;
     }
-    private void OnMouseOver()
+    private void OnMouseUp()
     {
-        //Debug.Log("Over an object");
+        Events.OnMouseUp.Invoke();
     }
 }
