@@ -3612,7 +3612,7 @@ MonoBehaviour:
   - {fileID: 3474590141651843587, guid: e9d3093d8c3f4a24aa53e2c518b7094b, type: 3}
   - {fileID: 3474590141651843587, guid: 540c8aa046bb5e54eb42d7ce082a06c1, type: 3}
   NumToSpawn: 05000000
-  SpawnTime: 1
+  SpawnTime: 0.5
   SpawnPoints: []
   BoxSpawnPoint: {fileID: 953292442}
   SpawnedObjects: []
@@ -4801,14 +4801,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3247125816100506532, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 3247125816100506532, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 712
+      value: 769
       objectReference: {fileID: 0}
     - target: {fileID: 3247125816100506532, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6336105097605934675, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6336105097605934675, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
@@ -4830,6 +4834,31 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3056311791677182187, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
   m_PrefabInstance: {fileID: 1356833103}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1368573399 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2954455798921403844, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
+  m_PrefabInstance: {fileID: 1356833103}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1368573400 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3247125816100506532, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
+  m_PrefabInstance: {fileID: 1356833103}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1368573401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368573399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c644e3df916e0742b208fe325883dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: {fileID: 1368573400}
+  startPos: {x: 0, y: 0}
+  endPos: {x: 121, y: 169}
 --- !u!1 &1401532152
 GameObject:
   m_ObjectHideFlags: 0

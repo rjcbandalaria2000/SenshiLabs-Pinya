@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e462ff4114cb454e83023c9661514fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 8
 --- !u!114 &1735760688138555277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,4 +205,4 @@ MonoBehaviour:
   Id: 
   Name: 
   Parent: {fileID: 0}
-  StunDuration: 4
+  StunDuration: 3
