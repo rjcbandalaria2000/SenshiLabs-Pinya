@@ -7,7 +7,7 @@ public class WashTheDishesManager : MinigameManager
 {
     [Header("Values")]
     public int              numOfCleanPlates;
-    public int              numOfDirtyPlates;
+    public int              numOfDirtyPlates = 5;
 
     [Header("Plate Positions")]    
     public GameObject       washingPosition;
@@ -42,11 +42,12 @@ public class WashTheDishesManager : MinigameManager
         plateToWashAreaRoutine = null;
         spawnManager = SingletonManager.Get<SpawnManager>();
         Assert.IsNotNull(spawnManager, "Spawn manager is null or is not set");
+        //Disable sponge at start 
+        if (sponge)
+        {
+            sponge.SetActive(false);
+        }
     }
-
-   
-
-   
 
     public void GoToWashArea()
     {
@@ -72,8 +73,6 @@ public class WashTheDishesManager : MinigameManager
         {
             selectedPlate.CanClean = true;
         }
-
-
     }
 
     public void StartNextPlate()
@@ -94,6 +93,16 @@ public class WashTheDishesManager : MinigameManager
             StartPlateToWashArea();
         }
     }
+
+    public void HideAllPlates()
+    {
+        if(plates.Count <= 0) { return; }
+        for(int i = 0; i < plates.Count; i++)
+        {
+            plates[i].SetActive(false);
+        }
+    }
+
     #region Starting Minigame Function
     public override void StartMinigame()
     {
@@ -134,6 +143,11 @@ public class WashTheDishesManager : MinigameManager
         Events.OnObjectiveUpdate.Invoke();
 
         //Begin game 
+        // Show sponge
+        if (sponge)
+        {
+            sponge.SetActive(true);
+        }
         spawnManager.NumToSpawn.Add(dirtyPilePosition.Count);
         spawnManager.SpawnPoints = dirtyPilePosition;
         spawnManager.SpawnInStaticPositions();
@@ -178,7 +192,11 @@ public class WashTheDishesManager : MinigameManager
         SingletonManager.Get<UIManager>().ActivateResultScreen();
         SingletonManager.Get<UIManager>().ActivateBadResult();
         //Disable controls
-
+        DragAndDrop spongeControls = sponge.GetComponent<DragAndDrop>();
+        if (spongeControls)
+        {
+            spongeControls.enabled = false;
+        }
     }
 
     #endregion
@@ -192,6 +210,13 @@ public class WashTheDishesManager : MinigameManager
 
     protected override IEnumerator ExitMinigame()
     {
+
+        //Hide the remaining plates 
+        HideAllPlates();
+        if (sponge)
+        {
+            sponge.SetActive(false);
+        }
         // Play close animation
         if (transitionManager)
         {

@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Game/WaterThePlants-Polish.unity
     guid: f91854b4932810146b9f19dd4ff68695
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/WashTheDishes-Polish.unity
+    guid: 3659233de3f0d904e8bc744d7f5231e3
   m_configObjects: {}
