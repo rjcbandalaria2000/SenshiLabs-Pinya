@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using DG.Tweening;
 
 public class WashTheDishesManager : MinigameManager
 {
     [Header("Values")]
     public int              numOfCleanPlates;
     public int              numOfDirtyPlates = 5;
+
+    [Header("DoTween Animation Time")]
+    public float            nextPlateDelay = 0.5f;
+    public float            plateAnimationDuration = 0.5f;
 
     [Header("Plate Positions")]    
     public GameObject       washingPosition;
@@ -51,7 +56,8 @@ public class WashTheDishesManager : MinigameManager
 
     public void GoToWashArea()
     {
-        plates[plateIndex].transform.position = washingPosition.transform.position;
+        plates[plateIndex].transform.DOMove(washingPosition.transform.position, plateAnimationDuration, false);
+        //plates[plateIndex].transform.position = washingPosition.transform.position;
     }
 
     public void GoToCleanPile()
@@ -66,7 +72,7 @@ public class WashTheDishesManager : MinigameManager
 
     IEnumerator PlateToWashArea()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(nextPlateDelay);
         GoToWashArea();
         Plate selectedPlate = plates[plateIndex].GetComponent<Plate>();
         if (selectedPlate)
