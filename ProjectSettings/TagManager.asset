@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Border
   - Basket
+  - StartPos
   layers:
   - Default
   - TransparentFX

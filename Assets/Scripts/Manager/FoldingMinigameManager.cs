@@ -7,10 +7,16 @@ public class FoldingMinigameManager : MinigameManager
 {
 
     public Clothes ClothesComponent;
+    public GameObject spawnClothes;
 
     [Header("Countdown Timer")]
     public float GameStartTime = 3f;
     public DisplayGameCountdown CountdownTimerUI;
+
+    [Header("Position")]
+    public GameObject startPos;
+    public GameObject middlePos;
+    public GameObject endPos;
 
     private void Awake()
     {
@@ -20,13 +26,15 @@ public class FoldingMinigameManager : MinigameManager
     // Start is called before the first frame update
     void Start()
     {
-       
+
         if (ClothesComponent == null)
         {
-            if(GameObject.FindObjectOfType<Clothes>() != null)
+            if (GameObject.FindObjectOfType<Clothes>() != null)
             {
-                ClothesComponent = GameObject.FindObjectOfType<Clothes>().GetComponent<Clothes>();
+                //ClothesComponent = GameObject.FindObjectOfType<Clothes>().GetComponent<Clothes>();
+                ClothesComponent = spawnClothes.GetComponent<Clothes>();
             }
+          
         }
         Initialize();
         //  Events.OnObjectiveUpdate.Invoke();
@@ -46,7 +54,11 @@ public class FoldingMinigameManager : MinigameManager
     {
         transitionManager = SingletonManager.Get<TransitionManager>();
         sceneChange = this.gameObject.GetComponent<SceneChange>();
-        ClothesComponent.gameObject.SetActive(false);
+       
+        spawnClothes.GetComponent<Clothes>().startPos = startPos;
+        spawnClothes.GetComponent<Clothes>().middlePos = middlePos;
+        spawnClothes.GetComponent<Clothes>().endPos = endPos;
+        
 
         SingletonManager.Get<UIManager>().ActivateMiniGameMainMenu();
         Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
@@ -119,7 +131,11 @@ public class FoldingMinigameManager : MinigameManager
     {
         yield return null;
 
-        ClothesComponent.gameObject.SetActive(true);
+        GameObject newClothes = Instantiate(spawnClothes, startPos.transform.position, Quaternion.identity);
+
+       
+
+      //  ClothesComponent.gameObject.SetActive(true);
 
         startMinigameRoutine = null;
 

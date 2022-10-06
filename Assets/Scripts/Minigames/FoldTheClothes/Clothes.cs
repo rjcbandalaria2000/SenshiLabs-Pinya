@@ -61,6 +61,10 @@ public class Clothes : MonoBehaviour
 
         this.GetComponent<SpriteRenderer>().sprite = stateSprites[0];
 
+        startPos = foldManager.startPos;
+        middlePos = foldManager.middlePos;
+        endPos = foldManager.endPos;
+
         leftArrow.SetActive(true);
         upArrow.SetActive(false);
         downArrow.SetActive(false);
@@ -72,7 +76,7 @@ public class Clothes : MonoBehaviour
         mainCamera = Camera.main;
         clothes = 2;
 
-        this.transform.position = startPos.transform.position;
+       // this.transform.position = startPos.transform.position;
         startTransitionRoutine = StartCoroutine(StartTransition());
     }
 
