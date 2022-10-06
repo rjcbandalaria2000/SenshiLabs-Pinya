@@ -4887,7 +4887,7 @@ MonoBehaviour:
   minigameResultsUI: {fileID: 702338736}
   minigameGoodResult: {fileID: 702338738}
   minigameBadResult: {fileID: 702338737}
-  Loading_UI: {fileID: 120098681}
+  loadingUI: {fileID: 120098681}
   askMomButton: {fileID: 0}
   tutorialGO: {fileID: 2064771249}
   confirmationGO: {fileID: 1356130740}
@@ -9930,7 +9930,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4257680015237913099, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7704427003369924030, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
       propertyPath: m_LocalPosition.x

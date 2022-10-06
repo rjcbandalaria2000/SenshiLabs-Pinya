@@ -17,28 +17,29 @@ public enum CursorHotspotPos
 
 public class CursorManager : MonoBehaviour
 {
-    [Header("MouseTextures")]
-    //public Texture2D        defaultTexture;
+    [Header("CursorSettings")]
+    public Texture2D        defaultCursorTexture;
+    public CursorHotspotPos defaultHotspotPos = CursorHotspotPos.TopLeft;
     public Texture2D        enterCursorTexture;
+    public CursorHotspotPos enterCursorHotspotPos = CursorHotspotPos.TopLeft;
     public Texture2D        dragCursorTexture;
+    public CursorHotspotPos dragCursorHotspotPos = CursorHotspotPos.TopLeft;
     public Texture2D        pressDownCursorTexture;
-    private Vector2         cursorHotspot = new Vector2(0,0);
-
-    [Header("Hotspot Positions")]
-    public CursorHotspotPos cursorHotspotPos = CursorHotspotPos.TopLeft;
-    
+    public CursorHotspotPos pressDownHotSpotPos = CursorHotspotPos.TopLeft;
+    private Vector2         cursorHotspot = new Vector2(0,0); // sets the cursors hotspots 
 
     public void OnMouseEnter()
     {
         if (EventSystem.current.IsPointerOverGameObject()) { return; }
         if(enterCursorTexture == null) { return; }
-        SetHotSpot();
+        SetHotSpot(enterCursorHotspotPos, enterCursorTexture);
         Cursor.SetCursor(enterCursorTexture, cursorHotspot, CursorMode.ForceSoftware);
     }
 
     public void OnMouseDown()
     {
         if(pressDownCursorTexture == null) { return; }
+
         Cursor.SetCursor(pressDownCursorTexture, cursorHotspot, CursorMode.ForceSoftware);
     }
 
@@ -46,32 +47,35 @@ public class CursorManager : MonoBehaviour
     {
         if (EventSystem.current.IsPointerOverGameObject()) { return; }
         if (dragCursorTexture == null) { return; }
-        SetHotSpot();
+        SetHotSpot(dragCursorHotspotPos, dragCursorTexture);
         Cursor.SetCursor(dragCursorTexture, cursorHotspot, CursorMode.ForceSoftware);
     }
 
     public void OnMouseExit()
     {
         //if (EventSystem.current.IsPointerOverGameObject()) { return; }
-        //if(defaultTexture == null) { return; }
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
+        if(defaultCursorTexture == null) { return; }
+        SetHotSpot(defaultHotspotPos, defaultCursorTexture);
+        Cursor.SetCursor(defaultCursorTexture, cursorHotspot, CursorMode.ForceSoftware);
     }
 
     public void OnMouseUp()
     {
         if (EventSystem.current.IsPointerOverGameObject()) { return; }
-        SetHotSpot();
+        SetHotSpot(enterCursorHotspotPos, enterCursorTexture);
         Cursor.SetCursor(enterCursorTexture, cursorHotspot, CursorMode.ForceSoftware);
     }
 
     private void OnDestroy()
     {
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
+        if (defaultCursorTexture == null) { return; }
+        SetHotSpot(defaultHotspotPos, defaultCursorTexture);
+        Cursor.SetCursor(defaultCursorTexture, Vector2.zero, CursorMode.ForceSoftware);
     }
 
-    private void SetHotSpot()
+    private void SetHotSpot(CursorHotspotPos hotSpotPos, Texture2D cursorTexture)
     {
-        switch (cursorHotspotPos)
+        switch (enterCursorHotspotPos)
         {
             case CursorHotspotPos.Center:
                 cursorHotspot = new Vector2(cursorTexture.width / 2, cursorTexture.height / 2);
@@ -95,12 +99,15 @@ public class CursorManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (pressDownCursorTexture == null) { }
+            if (pressDownCursorTexture == null) { return; }
+            SetHotSpot(pressDownHotSpotPos, pressDownCursorTexture);
             Cursor.SetCursor(pressDownCursorTexture, cursorHotspot, CursorMode.ForceSoftware);
         }
         else if (Input.GetMouseButtonUp(0))
         {
-            Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
+            if(defaultCursorTexture == null) { return; }
+            SetHotSpot(defaultHotspotPos, defaultCursorTexture);
+            Cursor.SetCursor(defaultCursorTexture, Vector2.zero, CursorMode.ForceSoftware);
         }
     }
 
