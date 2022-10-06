@@ -74,11 +74,15 @@ public class CursorManager : MonoBehaviour
         switch (cursorHotspotPos)
         {
             case CursorHotspotPos.Center:
-                cursorHotspot = new Vector2(enterCursorTexture.width / 2, enterCursorTexture.height / 2);
+                cursorHotspot = new Vector2(cursorTexture.width / 2, cursorTexture.height / 2);
                 break;
 
             case CursorHotspotPos.TopLeft:
                 cursorHotspot = Vector2.zero;
+                break;
+
+            case CursorHotspotPos.TopCenter:
+                cursorHotspot = new Vector2(cursorTexture.width / 2, 0);
                 break;
 
             default:
