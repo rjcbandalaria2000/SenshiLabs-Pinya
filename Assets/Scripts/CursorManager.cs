@@ -18,7 +18,7 @@ public enum CursorHotspotPos
 public class CursorManager : MonoBehaviour
 {
     [Header("MouseTextures")]
-    //public Texture2D        defaultTexture;
+    public Texture2D        defaultTexture;
     public Texture2D        enterCursorTexture;
     public Texture2D        dragCursorTexture;
     public Texture2D        pressDownCursorTexture;
@@ -53,8 +53,8 @@ public class CursorManager : MonoBehaviour
     public void OnMouseExit()
     {
         //if (EventSystem.current.IsPointerOverGameObject()) { return; }
-        //if(defaultTexture == null) { return; }
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
+        if(defaultTexture == null) { return; }
+        Cursor.SetCursor(defaultTexture, Vector2.zero, CursorMode.ForceSoftware);
     }
 
     public void OnMouseUp()
@@ -66,7 +66,8 @@ public class CursorManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
+        if (defaultTexture == null) { return; }
+        Cursor.SetCursor(defaultTexture, Vector2.zero, CursorMode.ForceSoftware);
     }
 
     private void SetHotSpot()
@@ -91,12 +92,13 @@ public class CursorManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (pressDownCursorTexture == null) { }
+            if (pressDownCursorTexture == null) { return; }
             Cursor.SetCursor(pressDownCursorTexture, cursorHotspot, CursorMode.ForceSoftware);
         }
         else if (Input.GetMouseButtonUp(0))
         {
-            Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
+            if(defaultTexture == null) { return; }  
+            Cursor.SetCursor(defaultTexture, Vector2.zero, CursorMode.ForceSoftware);
         }
     }
 

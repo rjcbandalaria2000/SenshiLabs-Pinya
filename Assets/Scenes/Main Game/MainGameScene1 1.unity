@@ -1585,8 +1585,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0408e621f7f0b124683412f3055fab37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enterCursorTexture: {fileID: 0}
-  dragCursorTexture: {fileID: 0}
+  defaultTexture: {fileID: 2800000, guid: 2d8d391eb824a4b4ca6a42a3ad4ca394, type: 3}
+  enterCursorTexture: {fileID: 2800000, guid: 2d8d391eb824a4b4ca6a42a3ad4ca394, type: 3}
+  dragCursorTexture: {fileID: 2800000, guid: 2d8d391eb824a4b4ca6a42a3ad4ca394, type: 3}
   pressDownCursorTexture: {fileID: 2800000, guid: e6b9150ca460c9e498965eb3c3554b91, type: 3}
   cursorHotspotPos: 0
 --- !u!1 &317634576
@@ -6017,7 +6018,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4257680015237913099, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
