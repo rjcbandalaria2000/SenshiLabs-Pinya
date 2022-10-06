@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &571389345455686262
 Transform:
   m_ObjectHideFlags: 0
@@ -196,6 +196,7 @@ MonoBehaviour:
   leftFold: 0
   topFold: 0
   downFold: 0
+  RNG: 0
   startPos: {fileID: 0}
   middlePos: {fileID: 0}
   endPos: {fileID: 0}
@@ -207,6 +208,7 @@ MonoBehaviour:
   leftArrow: {fileID: 571389345885894400}
   upArrow: {fileID: 571389346569692005}
   downArrow: {fileID: 571389345455686260}
+  listArrow: []
 --- !u!114 &571389345484029026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,7 +263,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &571389345885894402
 Transform:
   m_ObjectHideFlags: 0
@@ -345,7 +347,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &571389346569692007
 Transform:
   m_ObjectHideFlags: 0

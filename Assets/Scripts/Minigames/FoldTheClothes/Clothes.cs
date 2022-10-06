@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 
 
@@ -18,12 +19,13 @@ public class Clothes : MonoBehaviour
    [SerializeField] private bool leftFold;
    [SerializeField] private bool topFold;
    [SerializeField] private bool downFold;
+    public int RNG;
 
     [Header("Position")]
     public GameObject startPos;
     public GameObject middlePos;
     public GameObject endPos;
-    public float lerpSpeed;
+    [SerializeField] private float lerpSpeed;
 
     private Camera mainCamera;
     private Vector2 initialPos;
@@ -45,8 +47,11 @@ public class Clothes : MonoBehaviour
     public GameObject upArrow;
     public GameObject downArrow;
 
+    public List<GameObject> listArrow;
+
     Coroutine startTransitionRoutine;
     Coroutine endTransitionRoutine;
+    Coroutine foldResetRoutine;
 
     // Start is called before the first frame update
     void Start()
@@ -65,9 +70,11 @@ public class Clothes : MonoBehaviour
         middlePos = foldManager.middlePos;
         endPos = foldManager.endPos;
 
-        leftArrow.SetActive(true);
-        upArrow.SetActive(false);
-        downArrow.SetActive(false);
+        //leftArrow.SetActive(true);
+        //upArrow.SetActive(false);
+        //downArrow.SetActive(false);
+
+        foldResetRoutine = StartCoroutine(addFoldList());
 
         leftFold = false;
         topFold = false;
@@ -76,7 +83,27 @@ public class Clothes : MonoBehaviour
         mainCamera = Camera.main;
         clothes = 2;
 
-       // this.transform.position = startPos.transform.position;
+        // this.transform.position = startPos.transform.position;
+
+        RNG = Random.Range(0, listArrow.Count);
+        Debug.Log(listArrow.Count);
+        switch (RNG)
+        {
+            case 0:
+                listArrow[0].SetActive(true);
+                break;
+            case 1:
+                listArrow[1].SetActive(true);
+                break;
+            case 2:
+                listArrow[2].SetActive(true);
+                break;
+            default:
+                Debug.Log("Nothing");
+                break;
+        }
+
+
         startTransitionRoutine = StartCoroutine(StartTransition());
     }
 
@@ -91,14 +118,15 @@ public class Clothes : MonoBehaviour
 
         if (mousePosition.normalized.x < SwipeLeftAccept)
         {
-            if(leftFold == false && topFold == false && downFold == false)
+            if(listArrow[0].activeSelf == true)
             {
                 leftFold = true;
 
                 this.GetComponent<SpriteRenderer>().sprite = stateSprites[1];
 
-                leftArrow.SetActive(false);
-                upArrow.SetActive(true);
+                //leftArrow.SetActive(false);
+                //upArrow.SetActive(true);
+                listArrow.RemoveAt(0);
             }
             // if the mouse moved to the left
             Debug.Log("Fold right");
@@ -106,14 +134,16 @@ public class Clothes : MonoBehaviour
        
         if(mousePosition.normalized.y > SwipeUpAccept)
         {
-            if(leftFold == true && topFold == false && downFold == false)
+            if(listArrow[1].activeSelf == true)
             {
                 topFold = true;
 
                 this.GetComponent<SpriteRenderer>().sprite = stateSprites[2];
 
-                upArrow.SetActive(false);
-                downArrow.SetActive(true);
+                //upArrow.SetActive(false);
+                //downArrow.SetActive(true);
+                listArrow.RemoveAt(1);
+
             }
           
 
@@ -121,11 +151,12 @@ public class Clothes : MonoBehaviour
         }
         if (mousePosition.normalized.y < SwipeDownAccept)
         {
-            if (leftFold == true && topFold == true && downFold == false)
+            if (listArrow[2].activeSelf == true)
             {
                 downFold = true;
+                listArrow.RemoveAt(2);
             }
-            Debug.Log("DownFoldw");
+            Debug.Log("DownFold");
         }
 
         if (leftFold == true && topFold == true && downFold == true)
@@ -185,18 +216,39 @@ public class Clothes : MonoBehaviour
     private void Reset()
     {
         // StopCoroutine(endTransitionRoutine);
-        leftArrow.SetActive(true);
-        upArrow.SetActive(false);
-        downArrow.SetActive(false);
+        //leftArrow.SetActive(true);
+        //upArrow.SetActive(false);
+        //downArrow.SetActive(false);
 
         this.GetComponent<SpriteRenderer>().sprite = stateSprites[0];
 
         leftFold = false;
         topFold = false;
         downFold = false;
+        //listArrow.Clear();
 
         this.transform.position = startPos.transform.position;
-
+        foldResetRoutine = StartCoroutine(addFoldList());
         startTransitionRoutine = StartCoroutine(StartTransition());
+    }
+
+   public void FoldRandom()
+    {
+        RNG = Random.Range(0, listArrow.Count);
+        listArrow[RNG].SetActive(true);
+        Debug.Log("FoldPIck");
+    }
+
+    IEnumerator addFoldList()
+    {
+        listArrow.Add(leftArrow);
+  
+        listArrow.Add(upArrow);
+
+        listArrow.Add(downArrow);
+
+        yield return null;
+
+        //foldResetRoutine = null;
     }
 }
