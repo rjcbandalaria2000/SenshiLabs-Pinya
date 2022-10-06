@@ -14,7 +14,7 @@ public class DisplayItemCounter : MonoBehaviour
     private void Start()
     {
      
-        counter.text = quantity + "x";
+        counter.text = "x " + quantity;
     }
 
     public void addPoint(int value)
@@ -23,7 +23,7 @@ public class DisplayItemCounter : MonoBehaviour
         this.quantity += value;
         Debug.Log("Quantity: " + quantity);
 
-        this.counter.text = quantity + "x";
+        this.counter.text = "x " + quantity;
         Debug.Log("Add Quantity");
     }
     public void decreasePoint()
@@ -31,7 +31,7 @@ public class DisplayItemCounter : MonoBehaviour
         this.quantity--;
         Debug.Log("Quantity: " + quantity);
 
-        this.counter.text = quantity + "x";
+        this.counter.text = "x " + quantity;
         Debug.Log("Minus Quantity");
     }
 
