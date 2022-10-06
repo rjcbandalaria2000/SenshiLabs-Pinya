@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5937934297813480273}
   - component: {fileID: 5937934297813480272}
   - component: {fileID: 5937934297813480279}
-  - component: {fileID: 5937934297813480274}
+  - component: {fileID: 3634797590225559314}
   m_Layer: 7
   m_Name: Egg
   m_TagString: Untagged
@@ -72,9 +72,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1488708207
-  m_SortingLayer: 1
-  m_SortingOrder: 5
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 6
   m_Sprite: {fileID: 1811206068, guid: 06ecd5c4bca677b4f995daf4f9c0d5a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -101,7 +101,9 @@ MonoBehaviour:
   ingridientType: 0
   groceryMiniGame: {fileID: 0}
   groceryList: {fileID: 0}
---- !u!61 &5937934297813480274
+  isDuplicate: 0
+  quantity: 0
+--- !u!61 &3634797590225559314
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,7 +116,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0038232803, y: -0.038084477}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -125,5 +127,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0766215, y: 1.7004819}
+  m_Size: {x: 1, y: 1.36}
   m_EdgeRadius: 0
