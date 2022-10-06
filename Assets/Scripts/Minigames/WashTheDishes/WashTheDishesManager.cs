@@ -99,7 +99,6 @@ public class WashTheDishesManager : MinigameManager
         if (plateIndex < plates.Count)
         {
             StartPlateToWashArea();
-            StartNextPlate();
             Events.OnObjectiveUpdate.Invoke();
         }
     }
@@ -166,7 +165,7 @@ public class WashTheDishesManager : MinigameManager
         spawnManager.SpawnInStaticPositions();
         plates = spawnManager.SpawnedObjects;
         StartPlateToWashArea();
-        //Events.OnObjectiveUpdate.AddListener(StartNextPlate);
+        Events.OnPlateCleaned.AddListener(StartNextPlate);
 
 
 
@@ -188,7 +187,7 @@ public class WashTheDishesManager : MinigameManager
     public override void OnWin()
     {
         Debug.Log("You cleaned all the plates");
-        Events.OnObjectiveUpdate.RemoveListener(StartNextPlate);
+        Events.OnPlateCleaned.RemoveListener(StartNextPlate);
         //Stop timer 
         SingletonManager.Get<MiniGameTimer>().StopCountdownTimer();
         //Show result screen

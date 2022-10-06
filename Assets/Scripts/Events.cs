@@ -69,6 +69,12 @@ public static class Events
     public static readonly Evt<GameObject> OnInteractCleanHouse = new();
     #endregion
 
+    #region WashTheDishes Events
+
+    public static readonly Evt OnPlateCleaned = new();
+
+    #endregion
+
     #endregion
 
     #region SceneChange Events
