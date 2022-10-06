@@ -13,6 +13,7 @@ public class DisplayPlateCount : MonoBehaviour
         Events.OnObjectiveUpdate.AddListener(UpdatePlateCount);
         Events.OnSceneChange.AddListener(OnSceneChange);
         plateCountText = this.GetComponent<TextMeshProUGUI>();
+        washTheDishesManager = SingletonManager.Get<WashTheDishesManager>();
     }
 
     // Start is called before the first frame update
