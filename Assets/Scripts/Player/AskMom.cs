@@ -23,6 +23,7 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     private Camera cm;
 
     public GameObject heartGO;
+    public GameObject twinkleGO;
    // public GameObject crackedGlass;
    // public GameObject overlayGO;
     // Start is called before the first frame update
@@ -89,8 +90,9 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void EnableHighlight()
     {
-      //  cm.transform.dos(1,0.3f,10,0,false);
-        if(highLight.Count > 0)
+        //  cm.transform.dos(1,0.3f,10,0,false);
+        twinkleGO.SetActive(true);
+        if (highLight.Count > 0)
         {
             for(int i = 0; i < highLight.Count; i++)
             {
@@ -103,6 +105,7 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void DisableHighlight()
     {
+        twinkleGO.SetActive(false);
         if (highLight.Count > 0)
         {
             for (int i = 0; i < highLight.Count; i++)
