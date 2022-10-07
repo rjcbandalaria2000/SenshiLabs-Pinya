@@ -23,6 +23,10 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     private Camera cm;
 
     public GameObject heartGO;
+    public GameObject twinkleGO;
+    public GameObject arrowsGO;
+    public GameObject lifeBar;
+
    // public GameObject crackedGlass;
    // public GameObject overlayGO;
     // Start is called before the first frame update
@@ -89,13 +93,17 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void EnableHighlight()
     {
-      //  cm.transform.dos(1,0.3f,10,0,false);
-        if(highLight.Count > 0)
+        //  cm.transform.dos(1,0.3f,10,0,false);
+        twinkleGO.SetActive(true);
+        arrowsGO.SetActive(true);
+        lifeBar.transform.DOShakeScale(coolDown + 1, 0.1f, 1, 0, false);
+        if (highLight.Count > 0)
         {
             for(int i = 0; i < highLight.Count; i++)
             {
                 highLight[i].SetActive(true);
-                highLight[i].transform.DOShakeScale(coolDown,0.1f,1,0,true);
+                highLight[i].transform.DOShakeScale(coolDown + 1,0.1f,1,0,false);
+               
                 PulsatingHeart();
             }
         }
@@ -103,6 +111,8 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void DisableHighlight()
     {
+        arrowsGO.SetActive(false);
+        twinkleGO.SetActive(false);
         if (highLight.Count > 0)
         {
             for (int i = 0; i < highLight.Count; i++)
@@ -151,7 +161,7 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             Debug.Log("animatio");
             heartGO.transform.DOScale(1, 0.3f).SetEase(Ease.OutBounce);
            // overlayGO.transform.DOScale(1.1f, 0.3f).SetEase(Ease.OutBounce);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1f);
             heartGO.transform.DOScale(4, 0.3f).SetEase(Ease.OutBounce);
             //overlayGO.transform.DOScale(1f, 0.3f).SetEase(Ease.OutBounce);
         //    crackedGlass.SetActive(false);
