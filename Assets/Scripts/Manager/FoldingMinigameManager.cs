@@ -21,23 +21,15 @@ public class FoldingMinigameManager : MinigameManager
     private void Awake()
     {
         SingletonManager.Register(this);
+
+       
     }
 
     // Start is called before the first frame update
     void Start()
     {
 
-        if (ClothesComponent == null)
-        {
-
-            ClothesComponent = spawnClothes.GetComponent<Clothes>();
-            //if (GameObject.FindObjectOfType<Clothes>() != null)
-            //{
-            //    //ClothesComponent = GameObject.FindObjectOfType<Clothes>().GetComponent<Clothes>();
-            //    ClothesComponent = spawnClothes.GetComponent<Clothes>();
-            //}
-          
-        }
+       
         Initialize();
         //  Events.OnObjectiveUpdate.Invoke();
         Events.UpdateScore.Invoke();
@@ -56,7 +48,9 @@ public class FoldingMinigameManager : MinigameManager
     {
         transitionManager = SingletonManager.Get<TransitionManager>();
         sceneChange = this.gameObject.GetComponent<SceneChange>();
+
        
+
         spawnClothes.GetComponent<Clothes>().startPos = startPos;
         spawnClothes.GetComponent<Clothes>().middlePos = middlePos;
         spawnClothes.GetComponent<Clothes>().endPos = endPos;
@@ -117,6 +111,7 @@ public class FoldingMinigameManager : MinigameManager
         startMinigameRoutine = StartCoroutine(initializeMiniGame());
 
         SingletonManager.Get<UIManager>().DeactivateGameCountdown();
+        SingletonManager.Get<UIManager>().ActivateGameUI();
         SingletonManager.Get<UIManager>().ActivateMiniGameTimerUI();
         SingletonManager.Get<MiniGameTimer>().StartCountdownTimer();
 
@@ -135,9 +130,16 @@ public class FoldingMinigameManager : MinigameManager
 
         GameObject newClothes = Instantiate(spawnClothes, startPos.transform.position, Quaternion.identity);
 
-       
+        if (ClothesComponent == null)
+        {
 
-      //  ClothesComponent.gameObject.SetActive(true);
+            ClothesComponent = GameObject.FindObjectOfType<Clothes>().GetComponent<Clothes>();
+
+
+        }
+        SingletonManager.Get<DisplayFoldCount>().UpdateFoldCount();
+
+        //  ClothesComponent.gameObject.SetActive(true);
 
         startMinigameRoutine = null;
 

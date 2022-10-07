@@ -55,6 +55,11 @@ public class Clothes : MonoBehaviour
 
    public bool canSwipe = true;
 
+    private void Awake()
+    {
+        SingletonManager.Register(this);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -174,7 +179,7 @@ public class Clothes : MonoBehaviour
             {
                 Reset();
                 clothes--;
-
+                
             }
             else
             {
@@ -235,6 +240,7 @@ public class Clothes : MonoBehaviour
         //leftArrow.SetActive(true);
         //upArrow.SetActive(false);
         //downArrow.SetActive(false);
+        SingletonManager.Get<DisplayFoldCount>().UpdateFoldCount();
 
         this.GetComponent<SpriteRenderer>().sprite = stateSprites[0];
 
