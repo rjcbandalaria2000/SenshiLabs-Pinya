@@ -29,11 +29,13 @@ public class FoldingMinigameManager : MinigameManager
 
         if (ClothesComponent == null)
         {
-            if (GameObject.FindObjectOfType<Clothes>() != null)
-            {
-                //ClothesComponent = GameObject.FindObjectOfType<Clothes>().GetComponent<Clothes>();
-                ClothesComponent = spawnClothes.GetComponent<Clothes>();
-            }
+
+            ClothesComponent = spawnClothes.GetComponent<Clothes>();
+            //if (GameObject.FindObjectOfType<Clothes>() != null)
+            //{
+            //    //ClothesComponent = GameObject.FindObjectOfType<Clothes>().GetComponent<Clothes>();
+            //    ClothesComponent = spawnClothes.GetComponent<Clothes>();
+            //}
           
         }
         Initialize();
@@ -143,7 +145,7 @@ public class FoldingMinigameManager : MinigameManager
 
     public override void CheckIfFinished()
     {
-        if (ClothesComponent.clothes == 0)
+        if (ClothesComponent.clothes <= 0)
         {
             Debug.Log("Minigame complete");
             SingletonManager.Get<UIManager>().ActivateResultScreen();

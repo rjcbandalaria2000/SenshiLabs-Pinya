@@ -53,6 +53,8 @@ public class Clothes : MonoBehaviour
     Coroutine endTransitionRoutine;
     Coroutine foldResetRoutine;
 
+   public bool canSwipe = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -86,7 +88,7 @@ public class Clothes : MonoBehaviour
         // this.transform.position = startPos.transform.position;
 
         RNG = Random.Range(0, listArrow.Count);
-        Debug.Log(listArrow.Count);
+ 
         switch (RNG)
         {
             case 0:
@@ -115,47 +117,54 @@ public class Clothes : MonoBehaviour
     private void OnMouseDrag()
     {
         Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition) - (Vector3)initialPos;
+        
+        if(!canSwipe)
+        {
+            return;
+        }
 
         if (mousePosition.normalized.x < SwipeLeftAccept)
         {
-            if(listArrow[0].activeSelf == true)
+            canSwipe = false;
+            if (leftArrow.activeSelf == true)
             {
-                leftFold = true;
-
-                this.GetComponent<SpriteRenderer>().sprite = stateSprites[1];
-
-                //leftArrow.SetActive(false);
-                //upArrow.SetActive(true);
-                listArrow.RemoveAt(0);
+                dragChecker();
+          
+                FoldRandom();
             }
             // if the mouse moved to the left
-            Debug.Log("Fold right");
+            Debug.Log("Fold left");
         }
        
-        if(mousePosition.normalized.y > SwipeUpAccept)
+        else if(mousePosition.normalized.y > SwipeUpAccept)
         {
-            if(listArrow[1].activeSelf == true)
+            canSwipe = false;
+            if (upArrow.activeSelf == true)
             {
-                topFold = true;
-
-                this.GetComponent<SpriteRenderer>().sprite = stateSprites[2];
+                dragChecker();
 
                 //upArrow.SetActive(false);
                 //downArrow.SetActive(true);
-                listArrow.RemoveAt(1);
+
+
+                FoldRandom();
 
             }
           
-
             Debug.Log("Fold up");
         }
-        if (mousePosition.normalized.y < SwipeDownAccept)
+        else if (mousePosition.normalized.y < SwipeDownAccept)
         {
-            if (listArrow[2].activeSelf == true)
+            canSwipe = false;
+            if (downArrow.activeSelf == true)
             {
-                downFold = true;
-                listArrow.RemoveAt(2);
+
+                dragChecker();
+
+
+                 FoldRandom();
             }
+
             Debug.Log("DownFold");
         }
 
@@ -178,7 +187,14 @@ public class Clothes : MonoBehaviour
             
         }
 
+        
+
     }
+    public void OnMouseUp()
+    {
+        canSwipe = true;
+    }
+
 
     IEnumerator StartTransition()
     {
@@ -229,14 +245,87 @@ public class Clothes : MonoBehaviour
 
         this.transform.position = startPos.transform.position;
         foldResetRoutine = StartCoroutine(addFoldList());
+
+        RNG = Random.Range(0, listArrow.Count);
+
+        switch (RNG)
+        {
+            case 0:
+                listArrow[0].SetActive(true);
+                break;
+            case 1:
+                listArrow[1].SetActive(true);
+                break;
+            case 2:
+                listArrow[2].SetActive(true);
+                break;
+            default:
+                Debug.Log("Nothing");
+                break;
+        }
+
         startTransitionRoutine = StartCoroutine(StartTransition());
     }
 
    public void FoldRandom()
     {
-        RNG = Random.Range(0, listArrow.Count);
-        listArrow[RNG].SetActive(true);
-        Debug.Log("FoldPIck");
+        if(listArrow.Count > 0)
+        {
+            RNG = Random.Range(0, listArrow.Count);
+            listArrow[RNG].SetActive(true);
+            Debug.Log("FoldPIck");
+        }
+
+    }
+
+    public void dragChecker()
+    {
+        for(int i =0; i < listArrow.Count; i++)
+        {
+            if (listArrow[i] == leftArrow && leftArrow.activeSelf == true)
+            {
+                leftFold = true;
+                leftArrow.SetActive(false);
+
+               // this.GetComponent<SpriteRenderer>().sprite = stateSprites[0];
+
+                //leftArrow.SetActive(false);
+                //upArrow.SetActive(true);
+                listArrow.RemoveAt(i);
+                Debug.Log(listArrow.Count);
+                break;
+
+            }
+            else if(listArrow[i] == upArrow && upArrow.activeSelf == true)
+            {
+                topFold = true;
+               upArrow.SetActive(false);
+
+              //  this.GetComponent<SpriteRenderer>().sprite = stateSprites[1];
+
+                //leftArrow.SetActive(false);
+                //upArrow.SetActive(true);
+                listArrow.RemoveAt(i);
+                Debug.Log(listArrow.Count);
+                break;
+
+            }
+            else if (listArrow[i] == downArrow && downArrow.activeSelf == true)
+            {
+                downFold = true;
+                downArrow.SetActive(false);
+
+               // this.GetComponent<SpriteRenderer>().sprite = stateSprites[2];
+
+                //leftArrow.SetActive(false);
+                //upArrow.SetActive(true);
+                listArrow.RemoveAt(i);
+                Debug.Log(listArrow.Count);
+                break;
+
+            }
+        }
+        
     }
 
     IEnumerator addFoldList()
