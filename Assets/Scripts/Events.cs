@@ -75,6 +75,13 @@ public static class Events
 
     #endregion
 
+    #region GetWater Events
+
+    public static readonly Evt OnBucketDown = new();
+
+    #endregion
+
+
     #endregion
 
     #region SceneChange Events
