@@ -29,12 +29,7 @@ public class SleepingMinigameManager : MinigameManager
     // Start is called before the first frame update
     void Start()
     {
-        basket.SetActive(false);
-        spawner.SetActive(false);
-        playerCanvas.SetActive(false);
-        transitionManager = SingletonManager.Get<TransitionManager>();
-        spawnManager = SingletonManager.Get<SpawnManager>();
-        sceneChange = this.gameObject.GetComponent<SceneChange>();
+        Initialize();
 
         //  Events.OnObjectiveUpdate.Invoke();
         Events.UpdateScore.Invoke();
@@ -50,15 +45,25 @@ public class SleepingMinigameManager : MinigameManager
 
     public override void Initialize()
     {
-  
-        startMinigameRoutine = StartCoroutine(StartMinigameCounter());
+        basket.SetActive(false);
+        spawner.SetActive(false);
+        playerCanvas.SetActive(false);
+        transitionManager = SingletonManager.Get<TransitionManager>();
+        spawnManager = SingletonManager.Get<SpawnManager>();
+        sceneChange = this.gameObject.GetComponent<SceneChange>();
 
-        
-        SingletonManager.Get<UIManager>().DeactivateMiniGameMainMenu();
-        SingletonManager.Get<UIManager>().ActivateMiniGameTimerUI();
+        SingletonManager.Get<UIManager>().ActivateMiniGameMainMenu();
+        Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
+        Events.OnSceneChange.AddListener(OnSceneChange);
+        startMinigameRoutine = null;
 
-  
-       
+
+    }
+
+    private void OnSceneChange()
+    {
+        Events.OnObjectiveUpdate.RemoveListener(CheckIfFinished);
+        Events.OnSceneChange.RemoveListener(OnSceneChange);
 
     }
 
@@ -74,7 +79,8 @@ public class SleepingMinigameManager : MinigameManager
     {
         if(PlayerPoints >= RequiredPoints)
         {
-            spawnManager.StopTimedUnlimitedSpawnBox();
+            // spawnManager.StopTimedUnlimitedSpawnBox();
+            spawnManager.stopSpawnChance();
             Debug.Log("Minigame Complete");
             basket.SetActive(false);
             //if(sceneChange == null) { return; }
@@ -89,7 +95,8 @@ public class SleepingMinigameManager : MinigameManager
         }
         else if(PlayerPoints <= RequiredPoints && SingletonManager.Get<MiniGameTimer>().GetTimer() <= 0)
         {
-            spawnManager.StopTimedUnlimitedSpawnBox();
+            // spawnManager.StopTimedUnlimitedSpawnBox();
+            spawnManager.stopSpawnChance();
             Debug.Log("Minigame Fail");
             basket.SetActive(false);
             //if (sceneChange == null) { return; }
@@ -138,7 +145,10 @@ public class SleepingMinigameManager : MinigameManager
         basket.SetActive(true);
         spawner.SetActive(true);
         playerCanvas.SetActive(true);
-        spawnManager.StartUnlimitedTimedSpawnBoxSpawn();
+
+        //spawnManager.StartUnlimitedTimedSpawnBoxSpawn();
+        spawnManager.spawnChance();
+
         SingletonManager.Get<UIManager>().DeactivateGameCountdown();
         SingletonManager.Get<UIManager>().ActivateMiniGameTimerUI();
         SingletonManager.Get<MiniGameTimer>().StartCountdownTimer();

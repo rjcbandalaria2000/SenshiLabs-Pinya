@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class FallingMovement : MonoBehaviour
 {
-    public float moveSpeed = 1f;
+    [Range(1f, 5f)]
+    public float moveSpeed;
 
     private Vector2 position;
     private Rigidbody2D rigidBody;
@@ -20,5 +21,6 @@ public class FallingMovement : MonoBehaviour
     {
          this.transform.position = new Vector2(this.transform.position.x, 
              this.transform.position.y - moveSpeed * Time.deltaTime);
+        this.transform.Rotate(0, 0, 1f);
     }
 }
