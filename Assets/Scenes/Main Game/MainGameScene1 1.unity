@@ -4423,13 +4423,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1516140953}
     m_Modifications:
+    - target: {fileID: 2907636213359965985, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
+      propertyPath: minigameName
+      value: Fold
+      objectReference: {fileID: 0}
+    - target: {fileID: 2907636213359965985, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
+      propertyPath: minigameScene
+      value: FoldLaundry_Test
+      objectReference: {fileID: 0}
     - target: {fileID: 4735852996718008032, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
       propertyPath: m_Name
       value: Clothes-Fold
       objectReference: {fileID: 0}
     - target: {fileID: 4735852996718008032, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4735852996718008037, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
       propertyPath: m_RootOrder
