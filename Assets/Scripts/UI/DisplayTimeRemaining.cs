@@ -11,8 +11,7 @@ public class DisplayTimeRemaining : MonoBehaviour
 
     private void Awake()
     {
-        minigameTimer = SingletonManager.Get<MiniGameTimer>();
-        timeElapsedText = this.GetComponent<TextMeshProUGUI>();
+       
     }
 
     private void OnEnable()
@@ -22,7 +21,8 @@ public class DisplayTimeRemaining : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        minigameTimer = SingletonManager.Get<MiniGameTimer>();
+        timeElapsedText = this.GetComponent<TextMeshProUGUI>();
     }
 
     public void UpdateTimeRemaining()
