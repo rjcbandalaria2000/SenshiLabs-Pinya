@@ -22,11 +22,11 @@ public class WashTheDishesMinigame : MinigameObject
 
     public override void Interact(GameObject player = null)
     {
-        if(!SingletonManager.Get<PlayerData>().IsGetWaterFinished)
-        {
-            Debug.Log("Finish Pre-Req");
-            return;
-        }
+        //if(!SingletonManager.Get<PlayerData>().IsGetWaterFinished)
+        //{
+        //    Debug.Log("Finish Pre-Req");
+        //    return;
+        //}
         isInteracted = true;
         MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
         if (playerMotivation)
