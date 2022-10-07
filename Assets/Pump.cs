@@ -21,9 +21,13 @@ public class Pump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-          if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             this.transform.rotation = Quaternion.Euler(0, 0, rotation++);
+        }
+        if (Input.GetMouseButton(1))
+        {
+            this.transform.rotation = Quaternion.Euler(0, 0, rotation--);
         }
     }
 
