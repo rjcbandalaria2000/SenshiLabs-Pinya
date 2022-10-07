@@ -2569,7 +2569,7 @@ MonoBehaviour:
   minigameResultsUI: {fileID: 26359017}
   minigameGoodResult: {fileID: 1384947965}
   minigameBadResult: {fileID: 981140793}
-  loadingUI: {fileID: 0}
+  loadingUI: {fileID: 431864445}
   askMomButton: {fileID: 0}
   tutorialGO: {fileID: 1646780121}
   confirmationGO: {fileID: 329485}
