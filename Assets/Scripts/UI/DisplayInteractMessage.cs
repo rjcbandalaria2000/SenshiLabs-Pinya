@@ -9,6 +9,8 @@ public class DisplayInteractMessage : MonoBehaviour
 {
     public GameObject       Parent;
     public TextMeshProUGUI  Text;
+    public Sprite rmb;
+    public Image interactLogo;
 
     // Start is called before the first frame update
     void Start()
