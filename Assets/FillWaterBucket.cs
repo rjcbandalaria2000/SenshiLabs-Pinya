@@ -26,7 +26,7 @@ public class FillWaterBucket : MonoBehaviour
     {
         while(waterAmount < maxWater)
         {
-            yield return new WaitForSeconds(fillSpeed);
+            yield return new WaitForSeconds(1/ fillSpeed);
             waterAmount += fillAmount;
             Events.OnWaterFilling.Invoke();
         }

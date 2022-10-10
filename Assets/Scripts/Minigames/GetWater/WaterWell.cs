@@ -58,6 +58,7 @@ public class WaterWell : MonoBehaviour
     {
         // use the initial position of the mouse then subract it to its current position to get the direction 
         Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition) - (Vector3)initialMousePosition;
+        if(availableBuckets <= 0) { return; }
         if (SwipedUp) { return; } //if already swiped up, do not let the player swipe down
         if (CanSwipeDown)
         {
@@ -109,6 +110,7 @@ public class WaterWell : MonoBehaviour
                 if(availableBuckets <= 0)
                 {
                     Debug.Log("No more buckets");
+                    SingletonManager.Get<GetWaterManager>().CheckIfComplete();
                 }
                 CanSwipeUp = false;
 

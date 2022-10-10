@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.UI;
 
 public class GetWaterManager : MinigameManager
@@ -52,30 +53,64 @@ public class GetWaterManager : MinigameManager
 
     public void CheckIfComplete()
     {
-        if(NumOfSwipes == RequiredNumSwipes)
+        if (AreBucketsFull())
         {
-            Debug.Log("Congratulations! You managed to get water");
-            SingletonManager.Get<PlayerData>().IsGetWaterFinished = true;
+            OnWin();
         }
-        else if(NumOfSwipes < RequiredNumSwipes)
-        {
-            Debug.Log("Try again next time");
-        }
-        else if(NumOfSwipes > RequiredNumSwipes)
-        {
-            Debug.Log("Whoops you broke the rope, try again");
-        }
-        if (sceneChange)
-        {
-            Events.OnSceneChange.Invoke();
-            sceneChange.OnChangeScene(NameOfNextScene);
-        }
+        //if(NumOfSwipes == RequiredNumSwipes)
+        //{
+        //    Debug.Log("Congratulations! You managed to get water");
+        //    SingletonManager.Get<PlayerData>().IsGetWaterFinished = true;
+        //}
+        //else if(NumOfSwipes < RequiredNumSwipes)
+        //{
+        //    Debug.Log("Try again next time");
+        //}
+        //else if(NumOfSwipes > RequiredNumSwipes)
+        //{
+        //    Debug.Log("Whoops you broke the rope, try again");
+        //}
+        //if (sceneChange)
+        //{
+        //    Events.OnSceneChange.Invoke();
+        //    sceneChange.OnChangeScene(NameOfNextScene);
+        //}
 
+    }
+
+    public bool AreBucketsFull()
+    {
+        bool areBucketsFull = false;
+        Assert.IsNotNull(wateringWell, "Watering well is null or is not set");
+        WaterWell waterWell = wateringWell.GetComponent<WaterWell>();
+        if(waterWell == null) { return areBucketsFull; }
+        if(waterWell.waterBuckets.Count > 0)
+        {
+            for(int i = 0; i < waterWell.waterBuckets.Count; i++)
+            {
+                if (waterWell.waterBuckets[i] < waterWell.fillWaterBucket.maxWater)
+                {
+                    Debug.Log("Insufficient water amount");
+                    areBucketsFull = false;
+                    break;
+                }
+                else
+                {
+                    areBucketsFull = true;
+                }
+            }
+        }
+        return areBucketsFull;
     }
 
     public void SetNumOfSwipes(int count)
     {
         NumOfSwipes = count;
     }
-   
+
+    public override void OnWin()
+    {
+        Debug.Log("All buckets are full");
+
+    }
 }
