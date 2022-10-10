@@ -28,6 +28,7 @@ public class FillWaterBucket : MonoBehaviour
         {
             yield return new WaitForSeconds(fillSpeed);
             waterAmount += fillAmount;
+            Events.OnWaterFilling.Invoke();
         }
         yield return null;
     }

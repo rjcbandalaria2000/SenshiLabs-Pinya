@@ -78,7 +78,7 @@ public static class Events
     #region GetWater Events
 
     public static readonly Evt OnBucketDown = new();
-
+    public static readonly Evt OnWaterFilling = new();
     #endregion
 
 
