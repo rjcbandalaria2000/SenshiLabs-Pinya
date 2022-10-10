@@ -164,6 +164,18 @@ public class FoldingMinigameManager : MinigameManager
 
     }
 
+    public void continueScene()
+    {
+        Debug.Log("Minigame complete");
+        exitMinigameRoutine = StartCoroutine(ExitMinigame());
+    }
+
+    public void gameOver()
+    {
+        Debug.Log("Minigame lose");
+        exitMinigameRoutine = StartCoroutine(ExitMinigame());
+    }
+
     protected override IEnumerator ExitMinigame()
     {
         // Play close animation

@@ -4431,6 +4431,22 @@ PrefabInstance:
       propertyPath: minigameScene
       value: FoldLaundry_Test
       objectReference: {fileID: 0}
+    - target: {fileID: 4735852995408453630, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2285174519810390136, guid: 3f7d6a1074fa7a04d877bf16d2ea9a5b, type: 3}
+    - target: {fileID: 4735852995408453630, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735852995569551532, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
+      propertyPath: m_Size.y
+      value: 7.162909
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735852995569551532, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
+      propertyPath: m_Offset.y
+      value: -1.7585804
+      objectReference: {fileID: 0}
     - target: {fileID: 4735852996718008032, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
       propertyPath: m_Name
       value: Clothes-Fold
@@ -4445,11 +4461,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4735852996718008037, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.7411137
+      value: 4.87
       objectReference: {fileID: 0}
     - target: {fileID: 4735852996718008037, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.130584
+      value: 5.23
       objectReference: {fileID: 0}
     - target: {fileID: 4735852996718008037, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11036,7 +11052,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2006427806}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 0.41, z: 0}
+  m_LocalPosition: {x: 9.52, y: 9.95, z: 0}
   m_LocalScale: {x: 1.3259737, y: 1.2880244, z: 0.7566586}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11083,9 +11099,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 999
-  m_Sprite: {fileID: -1665797616, guid: 5d49f510b78c2244a83493a18f8748f3, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_SortingOrder: 1000
+  m_Sprite: {fileID: -2285174519810390136, guid: 3f7d6a1074fa7a04d877bf16d2ea9a5b, type: 3}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
