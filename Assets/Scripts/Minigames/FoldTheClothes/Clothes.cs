@@ -243,7 +243,15 @@ public class Clothes : MonoBehaviour
         //downArrow.SetActive(false);
         SingletonManager.Get<DisplayFoldCount>().UpdateFoldCount();
 
-        spriteChanger(0);
+        if(clothes == 1)
+        {
+            spriteChanger(4);
+        }
+        else
+        {
+            spriteChanger(0);
+        }
+        
 
         leftFold = false;
         topFold = false;
@@ -294,7 +302,19 @@ public class Clothes : MonoBehaviour
                 leftFold = true;
                 leftArrow.SetActive(false);
 
-                spriteChanger(1);
+                if(clothes == 2)
+                {
+                    spriteChanger(1);
+                }
+                else if(clothes == 1 )
+                {
+                    spriteChanger(5);
+                }
+                else
+                {
+                    spriteChanger(1);
+                }
+               
 
                 //leftArrow.SetActive(false);
                 //upArrow.SetActive(true);
@@ -308,7 +328,18 @@ public class Clothes : MonoBehaviour
                 topFold = true;
                upArrow.SetActive(false);
 
-                spriteChanger(2);
+                if(clothes >= 2)
+                {
+                    spriteChanger(2);
+                }
+                else if (clothes == 1)
+                {
+                    spriteChanger(6);
+                }
+                else
+                {
+                    spriteChanger(2);
+                }
 
                 //leftArrow.SetActive(false);
                 //upArrow.SetActive(true);
@@ -322,7 +353,19 @@ public class Clothes : MonoBehaviour
                 downFold = true;
                 downArrow.SetActive(false);
 
-                spriteChanger(3);
+                if(clothes >= 2)
+                {
+                    spriteChanger(3);
+                }
+                else if (clothes == 1)
+                {
+                    spriteChanger(7);
+                }
+                else
+                {
+                    spriteChanger(3);
+                }
+
 
                 //leftArrow.SetActive(false);
                 //upArrow.SetActive(true);

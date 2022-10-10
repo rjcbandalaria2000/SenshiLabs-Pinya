@@ -192,6 +192,10 @@ MonoBehaviour:
   - {fileID: -4441996566371481695, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
   - {fileID: 781372478320572571, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
   - {fileID: -9146250182408159570, guid: e5cb90dfd104f46489540f8e81dd84a5, type: 3}
+  - {fileID: -3090393448904082626, guid: e5cb90dfd104f46489540f8e81dd84a5, type: 3}
+  - {fileID: -7662771230340114263, guid: e5cb90dfd104f46489540f8e81dd84a5, type: 3}
+  - {fileID: -3731932901275799694, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
+  - {fileID: -4216749805413827816, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
   clothes: 2
   leftFold: 0
   topFold: 0
