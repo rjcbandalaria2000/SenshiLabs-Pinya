@@ -6,6 +6,7 @@ public class WaterWell : MonoBehaviour
 {
     [Header("Values")]
     public int      RequiredSwipes;
+    public FillWaterBucket fillWaterBucket;
 
     [Header("States")]
     public bool     SwipedUp;
@@ -53,53 +54,61 @@ public class WaterWell : MonoBehaviour
     {
         // use the initial position of the mouse then subract it to its current position to get the direction 
         Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition) - (Vector3)initialMousePosition;
+        if (SwipedUp) { return; } //if already swiped up, do not let the player swipe down
         if (CanSwipeDown)
         {
-            if (!SwipedUp) //if already swiped up, do not let the player swipe down
+            if (mousePosition.normalized.y < SwipeDownAccept)
             {
-                if (mousePosition.normalized.y < SwipeDownAccept)
+                if (!SwipedDown)
                 {
-
-                    if (!SwipedDown)
+                    SwipedDown = true;
+                    if (playerSwipeDownCount <= RequiredSwipes)
                     {
-                        SwipedDown = true;
                         playerSwipeDownCount++;
                         SingletonManager.Get<GetWaterManager>().slider.value = playerSwipeDownCount;
                         Events.OnObjectiveUpdate.Invoke();
                     }
-                    if (!CanSwipeUp)
+                    if (playerSwipeDownCount >= RequiredSwipes)
                     {
-                        CanSwipeUp = true; // enable swiping up when the player swiped down first
+                        if(fillWaterBucket == null) { return; }
+                        fillWaterBucket.StartFillingBucket();
                     }
-
+                   
                 }
+                if (!CanSwipeUp)
+                {
+                    CanSwipeUp = true; // enable swiping up when the player swiped down first
+                }
+
             }
+            
         } 
        
-        if (!SwipedDown) // if already swiped down, do not let the player swipe up 
-        {
-            if (CanSwipeUp)
-            {
-                if (mousePosition.normalized.y > SwipeUpAccept)
-                {
-                    if (!SwipedUp)
-                    {
-                        // lock the controls of the player since the player lifted the bucket
-                        SwipedUp = true;
-                        CanSwipeDown = false;
-                        CanSwipeUp = false; 
-                        playerSwipeUpCount++;
-                        Events.OnObjectiveUpdate.Invoke();
-                    }
+        //if (!SwipedDown) // if already swiped down, do not let the player swipe up 
+        //{
+        //    if (CanSwipeUp)
+        //    {
+        //        if (mousePosition.normalized.y > SwipeUpAccept)
+        //        {
+        //            if (!SwipedUp)
+        //            {
+        //                // lock the controls of the player since the player lifted the bucket
+        //                SwipedUp = true;
+        //                CanSwipeDown = false;
+        //                CanSwipeUp = false; 
+        //                playerSwipeUpCount++;
+        //                Events.OnObjectiveUpdate.Invoke();
+        //            }
 
-                }
-            }
-        }
-        if(playerSwipeUpCount >= 1)
-        {
-            SingletonManager.Get<GetWaterManager>().SetNumOfSwipes(playerSwipeDownCount);
-            SingletonManager.Get<GetWaterManager>().CheckIfComplete();
-        }
+        //        }
+        //    }
+        //}
+
+        //if(playerSwipeUpCount >= 1)
+        //{
+        //    SingletonManager.Get<GetWaterManager>().SetNumOfSwipes(playerSwipeDownCount);
+        //    SingletonManager.Get<GetWaterManager>().CheckIfComplete();
+        //}
      //   Debug.Log("Y coordinate: " + mousePosition.normalized.y);
     }
 
@@ -119,6 +128,11 @@ public class WaterWell : MonoBehaviour
     public int GetSwipeDown()
     {
         return playerSwipeDownCount;
+    }
+
+    public void GetWater()
+    {
+
     }
     
 

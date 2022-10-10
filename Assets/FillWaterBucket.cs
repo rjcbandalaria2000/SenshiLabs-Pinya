@@ -14,7 +14,7 @@ public class FillWaterBucket : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartFillingBucket();
+        //StartFillingBucket();
     }
 
     public void StartFillingBucket()
@@ -31,6 +31,12 @@ public class FillWaterBucket : MonoBehaviour
             Events.OnWaterFilling.Invoke();
         }
         yield return null;
+    }
+
+    public void StopFillingBucket()
+    {
+        if (fillBucketRoutine == null) { return; }
+        StopCoroutine(fillBucketRoutine);
     }
    
 }
