@@ -177,8 +177,9 @@ public class Clothes : MonoBehaviour
         {
             if( clothes > 0)
             {
-                Reset();
                 clothes--;
+                Reset();
+             
                 
             }
             else
