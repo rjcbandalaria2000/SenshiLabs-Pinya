@@ -2196,6 +2196,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 730840886c199d248af0af60b6e5f4f7, type: 3}
     - target: {fileID: 6543178211513549872, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
+      propertyPath: shake.z
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543178211513549872, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
       propertyPath: interactLogo
       value: 
       objectReference: {fileID: 2037231273}
@@ -12233,6 +12237,7 @@ GameObject:
   - component: {fileID: 2037231272}
   - component: {fileID: 2037231274}
   - component: {fileID: 2037231273}
+  - component: {fileID: 2037231275}
   m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
@@ -12298,6 +12303,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2037231271}
   m_CullTransparentMesh: 1
+--- !u!95 &2037231275
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037231271}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a98536f0fe0554e448822ace32f8dcda, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2145497557
 GameObject:
   m_ObjectHideFlags: 0
