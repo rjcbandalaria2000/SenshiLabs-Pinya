@@ -79,6 +79,7 @@ public static class Events
 
     public static readonly Evt OnBucketDown = new();
     public static readonly Evt OnWaterFilling = new();
+    public static readonly Evt OnBucketUsed = new();
     #endregion
 
 

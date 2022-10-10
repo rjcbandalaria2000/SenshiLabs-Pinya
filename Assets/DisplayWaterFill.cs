@@ -19,6 +19,7 @@ public class DisplayWaterFill : MonoBehaviour
         waterSlider = this.GetComponent<Slider>();
         Initialize();
         Events.OnWaterFilling.AddListener(UpdateWaterFill);
+        Events.OnSceneChange.AddListener(OnSceneChange);
     }
 
     public void Initialize()
@@ -33,7 +34,11 @@ public class DisplayWaterFill : MonoBehaviour
         //waterSlider.value = fillWaterBucket.waterAmount;
     }
 
-
+    public void OnSceneChange()
+    {
+        Events.OnWaterFilling.RemoveListener(UpdateWaterFill);
+        Events.OnSceneChange.RemoveListener(OnSceneChange);
+    }
 
    
 }

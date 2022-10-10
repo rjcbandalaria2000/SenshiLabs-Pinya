@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class FillWaterBucket : MonoBehaviour
 {
+    [Header("Values")]
     public float        waterAmount = 0;
     public float        maxWater = 5;
+
+    [Header("Fill Speed")]
     public float        fillSpeed = 1;
     public float        fillAmount = 0.1f;
 
