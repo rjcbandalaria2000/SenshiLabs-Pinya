@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class GetWaterManager : MinigameManager
 {
+    [Header("Well")]
+    public GameObject   wateringWell;
+
     [Header("Water UI")]
     public Slider       slider;
 

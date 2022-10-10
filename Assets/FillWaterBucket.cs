@@ -38,5 +38,15 @@ public class FillWaterBucket : MonoBehaviour
         if (fillBucketRoutine == null) { return; }
         StopCoroutine(fillBucketRoutine);
     }
-   
+    
+    public void ResetWaterBucket()
+    {
+        waterAmount = 0;
+        Events.OnWaterFilling.Invoke();
+    }
+
+    //public float GetWaterAmount()
+    //{
+    //    return waterAmount;
+    //}
 }

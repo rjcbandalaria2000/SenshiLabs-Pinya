@@ -4813,6 +4813,7 @@ MonoBehaviour:
   speedTimer: 0
   gameStartTime: 3
   countdownTimerUI: {fileID: 0}
+  wateringWell: {fileID: 0}
   slider: {fileID: 1126816171}
   RequiredNumSwipes: 3
   NumOfSwipes: 0
@@ -5570,6 +5571,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4723817009131137376, guid: 79ddbf630769dcb419744cc69782224b, type: 3}
+      propertyPath: fillWaterBucket
+      value: 
+      objectReference: {fileID: 4723817010128747328}
+    - target: {fileID: 4723817009131137376, guid: 79ddbf630769dcb419744cc69782224b, type: 3}
+      propertyPath: availableBuckets
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4723817009131137381, guid: 79ddbf630769dcb419744cc69782224b, type: 3}
       propertyPath: m_Name
       value: Well
