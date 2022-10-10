@@ -243,7 +243,7 @@ public class Clothes : MonoBehaviour
         //downArrow.SetActive(false);
         SingletonManager.Get<DisplayFoldCount>().UpdateFoldCount();
 
-        this.GetComponent<SpriteRenderer>().sprite = stateSprites[0];
+        spriteChanger(0);
 
         leftFold = false;
         topFold = false;
@@ -294,7 +294,7 @@ public class Clothes : MonoBehaviour
                 leftFold = true;
                 leftArrow.SetActive(false);
 
-                this.GetComponent<SpriteRenderer>().sprite = stateSprites[1];
+                spriteChanger(1);
 
                 //leftArrow.SetActive(false);
                 //upArrow.SetActive(true);
@@ -308,7 +308,7 @@ public class Clothes : MonoBehaviour
                 topFold = true;
                upArrow.SetActive(false);
 
-                this.GetComponent<SpriteRenderer>().sprite = stateSprites[2];
+                spriteChanger(2);
 
                 //leftArrow.SetActive(false);
                 //upArrow.SetActive(true);
@@ -322,7 +322,7 @@ public class Clothes : MonoBehaviour
                 downFold = true;
                 downArrow.SetActive(false);
 
-                this.GetComponent<SpriteRenderer>().sprite = stateSprites[3];
+                spriteChanger(3);
 
                 //leftArrow.SetActive(false);
                 //upArrow.SetActive(true);
@@ -346,5 +346,10 @@ public class Clothes : MonoBehaviour
         yield return null;
 
         //foldResetRoutine = null;
+    }
+
+    public void  spriteChanger(int index)
+    {
+        this.GetComponent<SpriteRenderer>().sprite = stateSprites[index];
     }
 }

@@ -8,6 +8,7 @@ public class FoldingMinigameManager : MinigameManager
 
     public Clothes ClothesComponent;
     public GameObject spawnClothes;
+    public int clothesNum;
 
     [Header("Countdown Timer")]
     public float GameStartTime = 3f;
