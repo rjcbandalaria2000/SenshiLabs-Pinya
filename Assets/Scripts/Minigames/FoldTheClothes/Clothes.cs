@@ -293,7 +293,7 @@ public class Clothes : MonoBehaviour
                 leftFold = true;
                 leftArrow.SetActive(false);
 
-               // this.GetComponent<SpriteRenderer>().sprite = stateSprites[0];
+                this.GetComponent<SpriteRenderer>().sprite = stateSprites[1];
 
                 //leftArrow.SetActive(false);
                 //upArrow.SetActive(true);
@@ -307,7 +307,7 @@ public class Clothes : MonoBehaviour
                 topFold = true;
                upArrow.SetActive(false);
 
-              //  this.GetComponent<SpriteRenderer>().sprite = stateSprites[1];
+                this.GetComponent<SpriteRenderer>().sprite = stateSprites[2];
 
                 //leftArrow.SetActive(false);
                 //upArrow.SetActive(true);
@@ -321,7 +321,7 @@ public class Clothes : MonoBehaviour
                 downFold = true;
                 downArrow.SetActive(false);
 
-               // this.GetComponent<SpriteRenderer>().sprite = stateSprites[2];
+                this.GetComponent<SpriteRenderer>().sprite = stateSprites[3];
 
                 //leftArrow.SetActive(false);
                 //upArrow.SetActive(true);
