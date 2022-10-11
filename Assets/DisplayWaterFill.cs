@@ -30,7 +30,7 @@ public class DisplayWaterFill : MonoBehaviour
 
     public void UpdateWaterFill()
     {
-        waterSlider.DOValue(fillWaterBucket.waterAmount, 1, false);
+        waterSlider.DOValue(fillWaterBucket.waterAmount, GetFillSpeed(), false);
         //waterSlider.value = fillWaterBucket.waterAmount;
     }
 
@@ -38,6 +38,11 @@ public class DisplayWaterFill : MonoBehaviour
     {
         Events.OnWaterFilling.RemoveListener(UpdateWaterFill);
         Events.OnSceneChange.RemoveListener(OnSceneChange);
+    }
+
+    public float GetFillSpeed()
+    {
+        return 1 / fillWaterBucket.fillSpeed;
     }
 
    

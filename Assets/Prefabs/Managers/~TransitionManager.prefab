@@ -48,7 +48,7 @@ MonoBehaviour:
   curtain: {fileID: 4908104955085118814}
   animator: {fileID: 2355280403457872351}
   currentAnimation: 
-  transitionTime: 2
+  transitionTime: 1
   animationTime: 0
 --- !u!1001 &4257680013768123787
 PrefabInstance:

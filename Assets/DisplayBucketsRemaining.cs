@@ -7,12 +7,22 @@ public class DisplayBucketsRemaining : MonoBehaviour
 {
     public WaterWell waterWell;
     public TextMeshProUGUI bucketsText;
+
+    private void Awake()
+    {
+        bucketsText = this.GetComponent<TextMeshProUGUI>();
+        if(waterWell == null)
+        {
+            waterWell = SingletonManager.Get<GetWaterManager>().wateringWell.GetComponent<WaterWell>();
+        }
+        Events.OnBucketUsed.AddListener(UpdateBucketsRemaining);
+        Events.OnSceneChange.AddListener(OnSceneChange);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        bucketsText = this.GetComponent<TextMeshProUGUI>();
-        Events.OnBucketUsed.AddListener(UpdateBucketsRemaining);
-        Events.OnSceneChange.AddListener(OnSceneChange);
+        
     }
 
     public void UpdateBucketsRemaining()
