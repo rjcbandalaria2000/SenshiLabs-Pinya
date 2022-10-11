@@ -22,7 +22,7 @@ public class PlayerInteract : MonoBehaviour
     {
         while (true)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetMouseButtonDown(1))
             {
                 if (InteractableObject)
                 {

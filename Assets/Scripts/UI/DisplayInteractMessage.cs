@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 using UnityEngine.Assertions;
 
 public class DisplayInteractMessage : MonoBehaviour
 {
+
     public GameObject       Parent;
     public TextMeshProUGUI  Text;
+    public Sprite rmb;
+    public Image interactLogo;
+    public Vector3 shake;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +43,7 @@ public class DisplayInteractMessage : MonoBehaviour
         if (!this.gameObject.activeSelf)
         {
             this.gameObject.SetActive(true);
+            StartCoroutine(RMBAnimation());
         }
        
 
@@ -46,7 +52,10 @@ public class DisplayInteractMessage : MonoBehaviour
 
     public void RemoveMessage(GameObject player = null)
     {
+        interactLogo.color = Color.white;
+
         this.gameObject.SetActive(false);
+       // StopCoroutine(RMBAnimation());
     }
 
     public void OnSceneChange()
@@ -57,5 +66,16 @@ public class DisplayInteractMessage : MonoBehaviour
         Debug.Log("Removed Interact Message listener");
     }
 
-
+    public IEnumerator RMBAnimation()
+    {
+        while (gameObject.activeInHierarchy)
+        {
+           // interactLogo.DOColor(Color.gray, 0.5f);
+           // interactLogo.transform.DORotate(shake, 0.5f, RotateMode.Fast).WaitForCompletion();
+           
+            yield return new WaitForSeconds(1f);
+            ///interactLogo.DOColor(Color.white, 0.5f);
+            //interactLogo.transform.DORotate(new Vector3(0,0,0), 0.5f, RotateMode.Fast).WaitForCompletion();
+        }
+    }
 }
