@@ -37,9 +37,7 @@ public class GetWaterManager : MinigameManager
     // Start is called before the first frame update
     void Start()
     {
-        Initialize();
-
-       
+        Initialize(); 
     }
 
     public override void Initialize()
@@ -51,11 +49,68 @@ public class GetWaterManager : MinigameManager
         Events.OnObjectiveUpdate.Invoke();
     }
 
+   
+
+    public void SetNumOfSwipes(int count)
+    {
+        NumOfSwipes = count;
+    }
+
+    
+
+    #region Starting Minigame Functions
+
+    public override void StartMinigame()
+    {
+        startMinigameRoutine = StartCoroutine(StartMinigameCounter());
+    }
+    protected override IEnumerator StartMinigameCounter()
+    {
+        return base.StartMinigameCounter();
+    }
+
+    #endregion
+
+    #region Exit Minigame Functions
+
+    public override void OnExitMinigame()
+    {
+        base.OnExitMinigame();
+    }
+
+    protected override IEnumerator ExitMinigame()
+    {
+        return base.ExitMinigame();
+    }
+
+    public override void OnMinigameFinished()
+    {
+        base.OnMinigameFinished();
+    }
+
+    #endregion
+
+    #region Minigame Checkers
+    public override void OnWin()
+    {
+        Debug.Log("All buckets are full");
+
+    }
+
+    public override void OnMinigameLose()
+    {
+        base.OnMinigameLose();
+    } 
+    
     public void CheckIfComplete()
     {
         if (AreBucketsFull())
         {
             OnWin();
+        }
+        else
+        {
+            OnMinigameLose();
         }
         //if(NumOfSwipes == RequiredNumSwipes)
         //{
@@ -102,15 +157,5 @@ public class GetWaterManager : MinigameManager
         }
         return areBucketsFull;
     }
-
-    public void SetNumOfSwipes(int count)
-    {
-        NumOfSwipes = count;
-    }
-
-    public override void OnWin()
-    {
-        Debug.Log("All buckets are full");
-
-    }
+    #endregion
 }
