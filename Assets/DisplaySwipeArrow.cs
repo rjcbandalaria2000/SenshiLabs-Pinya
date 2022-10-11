@@ -6,6 +6,13 @@ public class DisplaySwipeArrow : MonoBehaviour
 {
     public GameObject upArrowImage;
     public GameObject downArrowImage;
+
+    private void Awake()
+    {
+        Events.OnBucketDrop.AddListener(ActivateDownArrow);
+        Events.OnBucketRetrieve.AddListener(ActivateUpArrow);
+        Events.OnSceneChange.AddListener(OnSceneChange);
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +34,19 @@ public class DisplaySwipeArrow : MonoBehaviour
     {
         upArrowImage.SetActive(false);
         downArrowImage.SetActive(true);
+    }
+
+    public void DeactivateArrows()
+    {
+        upArrowImage.SetActive(false);
+        downArrowImage.SetActive(false);
+    }
+
+    public void OnSceneChange()
+    {
+        Events.OnBucketDrop.AddListener(ActivateDownArrow);
+        Events.OnBucketRetrieve.AddListener(ActivateUpArrow);
+        Events.OnSceneChange.AddListener(OnSceneChange);
     }
 
 }

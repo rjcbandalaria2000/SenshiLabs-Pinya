@@ -47,6 +47,7 @@ public class WaterWell : MonoBehaviour
         SingletonManager.Get<GetWaterManager>().slider.maxValue = RequiredSwipes;
         SingletonManager.Get<GetWaterManager>().slider.value = playerSwipeDownCount;
         Events.OnBucketUsed.Invoke();
+        Events.OnBucketDrop.Invoke();
     }
 
     public void OnMouseDown()
@@ -78,6 +79,7 @@ public class WaterWell : MonoBehaviour
                     {
                         if(fillWaterBucket == null) { return; }
                         fillWaterBucket.StartFillingBucket();
+                        Events.OnBucketRetrieve.Invoke();
                     }
                    
                 }
@@ -108,6 +110,7 @@ public class WaterWell : MonoBehaviour
                     //Reset swipes 
                     playerSwipeDownCount = 0;
                     SingletonManager.Get<GetWaterManager>().slider.value = playerSwipeDownCount;
+                    Events.OnBucketDrop.Invoke();
                 }
                 if(availableBuckets <= 0)
                 {
