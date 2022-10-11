@@ -196,6 +196,10 @@ MonoBehaviour:
   - {fileID: -7662771230340114263, guid: e5cb90dfd104f46489540f8e81dd84a5, type: 3}
   - {fileID: -3731932901275799694, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
   - {fileID: -4216749805413827816, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
+  - {fileID: 1621994792071686412, guid: e5cb90dfd104f46489540f8e81dd84a5, type: 3}
+  - {fileID: 1474804350881627885, guid: e5cb90dfd104f46489540f8e81dd84a5, type: 3}
+  - {fileID: -4554787893758244655, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
+  - {fileID: -1951711991544812820, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
   clothes: 2
   leftFold: 0
   topFold: 0
@@ -214,6 +218,8 @@ MonoBehaviour:
   downArrow: {fileID: 571389345455686260}
   listArrow: []
   canSwipe: 1
+  isWrong: 0
+  effectDuration: 1
 --- !u!114 &571389345484029026
 MonoBehaviour:
   m_ObjectHideFlags: 0

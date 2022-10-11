@@ -52,8 +52,14 @@ public class Clothes : MonoBehaviour
     Coroutine startTransitionRoutine;
     Coroutine endTransitionRoutine;
     Coroutine foldResetRoutine;
+    Coroutine wrongEffectRoutine;
+    Coroutine effectDurationRoutine;
 
    public bool canSwipe = true;
+
+    [Header("Effect")]
+    public bool isWrong;
+    public int effectDuration;
 
     private void Awake()
     {
@@ -134,8 +140,14 @@ public class Clothes : MonoBehaviour
             if (leftArrow.activeSelf == true)
             {
                 dragChecker();
-          
                 FoldRandom();
+            }
+            else
+            {
+                Debug.Log("WrongSwipe");
+                isWrong = true;
+               // wrongEffectRoutine = StartCoroutine(wrongEffect(listArrow[RNG]));
+                effectDurationRoutine = StartCoroutine(wrongEffectDuration(listArrow[RNG]));
             }
             // if the mouse moved to the left
             Debug.Log("Fold left");
@@ -147,15 +159,17 @@ public class Clothes : MonoBehaviour
             if (upArrow.activeSelf == true)
             {
                 dragChecker();
-
-                //upArrow.SetActive(false);
-                //downArrow.SetActive(true);
-
-
                 FoldRandom();
 
             }
-          
+            else
+            {
+                Debug.Log("WrongSwipe");
+                isWrong = true;
+               // wrongEffectRoutine = StartCoroutine(wrongEffect(listArrow[RNG]));
+                effectDurationRoutine = StartCoroutine(wrongEffectDuration(listArrow[RNG]));
+            }
+
             Debug.Log("Fold up");
         }
         else if (mousePosition.normalized.y < SwipeDownAccept)
@@ -163,14 +177,25 @@ public class Clothes : MonoBehaviour
             canSwipe = false;
             if (downArrow.activeSelf == true)
             {
-
                 dragChecker();
-
-
-                 FoldRandom();
+                FoldRandom();
+            }
+            else
+            {
+                Debug.Log("WrongSwipe");
+                isWrong = true;
+                //wrongEffectRoutine = StartCoroutine(wrongEffect(listArrow[RNG]));
+                effectDurationRoutine = StartCoroutine(wrongEffectDuration(listArrow[RNG]));
             }
 
             Debug.Log("DownFold");
+        }
+        else if(mousePosition.normalized.x > SwipeRightAccept)
+        {
+            Debug.Log("SwipeRight");
+            isWrong = true;
+            //wrongEffectRoutine = StartCoroutine(wrongEffect(listArrow[RNG]));
+            effectDurationRoutine = StartCoroutine(wrongEffectDuration(listArrow[RNG]));
         }
 
         if (leftFold == true && topFold == true && downFold == true)
@@ -237,10 +262,7 @@ public class Clothes : MonoBehaviour
 
     private void Reset()
     {
-        // StopCoroutine(endTransitionRoutine);
-        //leftArrow.SetActive(true);
-        //upArrow.SetActive(false);
-        //downArrow.SetActive(false);
+
         SingletonManager.Get<DisplayFoldCount>().UpdateFoldCount();
 
         if(clothes == 1)
@@ -249,7 +271,7 @@ public class Clothes : MonoBehaviour
         }
         else
         {
-            spriteChanger(0);
+            spriteChanger(8);
         }
         
 
@@ -302,19 +324,24 @@ public class Clothes : MonoBehaviour
                 leftFold = true;
                 leftArrow.SetActive(false);
 
-                if(clothes == 2)
+                switch (clothes)
                 {
-                    spriteChanger(1);
+                    case 2:
+                        spriteChanger(1);
+                        break;
+                    case 1:
+                        spriteChanger(5);
+                        break;
+                    case 0:
+                        spriteChanger(9);
+                        break;
+                    default:
+                        break;
+
+
                 }
-                else if(clothes == 1 )
-                {
-                    spriteChanger(5);
-                }
-                else
-                {
-                    spriteChanger(1);
-                }
-               
+
+      
 
                 //leftArrow.SetActive(false);
                 //upArrow.SetActive(true);
@@ -328,18 +355,24 @@ public class Clothes : MonoBehaviour
                 topFold = true;
                upArrow.SetActive(false);
 
-                if(clothes >= 2)
+                switch (clothes)
                 {
-                    spriteChanger(2);
+                    case 2:
+                        spriteChanger(2);
+                        break;
+                    case 1:
+                        spriteChanger(6);
+                        break;
+                    case 0:
+                        spriteChanger(10);
+                        break;
+                    default:
+                        break;
+
+
                 }
-                else if (clothes == 1)
-                {
-                    spriteChanger(6);
-                }
-                else
-                {
-                    spriteChanger(2);
-                }
+
+     
 
                 //leftArrow.SetActive(false);
                 //upArrow.SetActive(true);
@@ -353,18 +386,23 @@ public class Clothes : MonoBehaviour
                 downFold = true;
                 downArrow.SetActive(false);
 
-                if(clothes >= 2)
+                switch (clothes)
                 {
-                    spriteChanger(3);
+                    case 2:
+                        spriteChanger(3);
+                        break;
+                    case 1:
+                        spriteChanger(7);
+                        break;
+                    case 0:
+                        spriteChanger(11);
+                        break;
+                    default:
+                        break;
+
+
                 }
-                else if (clothes == 1)
-                {
-                    spriteChanger(7);
-                }
-                else
-                {
-                    spriteChanger(3);
-                }
+
 
 
                 //leftArrow.SetActive(false);
@@ -395,4 +433,27 @@ public class Clothes : MonoBehaviour
     {
         this.GetComponent<SpriteRenderer>().sprite = stateSprites[index];
     }
-}
+
+    IEnumerator wrongEffect(GameObject arrow)
+    {
+        while (isWrong)
+        {
+            arrow.GetComponent<SpriteRenderer>().color = Color.red;
+            yield return new WaitForSeconds(0.1f);
+            arrow.GetComponent<SpriteRenderer>().color = Color.white;
+            yield return new WaitForSeconds(0.1f);
+
+        }
+
+    }
+
+    IEnumerator wrongEffectDuration(GameObject arrow)
+    {
+        isWrong = true;
+        wrongEffectRoutine = StartCoroutine(wrongEffect(arrow));
+        yield return new WaitForSeconds(effectDuration);
+        isWrong = false;
+        wrongEffectRoutine = null;
+
+    }
+}   
