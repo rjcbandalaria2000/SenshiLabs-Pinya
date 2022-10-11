@@ -24,6 +24,9 @@ public class WaterWell : MonoBehaviour
     public List<float>      waterBuckets = new();
     public int              availableBuckets = 3;
 
+    [Header("UI")]
+    public GameObject       UI;
+
     private int             playerSwipeUpCount;
     private int             playerSwipeDownCount;
     private Camera          mainCamera;

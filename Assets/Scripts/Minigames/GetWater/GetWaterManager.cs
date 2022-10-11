@@ -46,6 +46,8 @@ public class GetWaterManager : MinigameManager
         {
             sceneChange = this.GetComponent<SceneChange>();
         }
+        transitionManager = SingletonManager.Get<TransitionManager>();
+        isCompleted= false; 
         Events.OnObjectiveUpdate.Invoke();
     }
 
@@ -62,11 +64,51 @@ public class GetWaterManager : MinigameManager
 
     public override void StartMinigame()
     {
+        gameStartTimer = gameStartTime;
         startMinigameRoutine = StartCoroutine(StartMinigameCounter());
     }
+
     protected override IEnumerator StartMinigameCounter()
     {
-        return base.StartMinigameCounter();
+        //Disable Well UI 
+        WaterWell well = wateringWell.GetComponent<WaterWell>();
+        if (well)
+        {
+            well.UI.SetActive(false);
+        }
+        //Deactivate Minigame Main Menu
+        SingletonManager.Get<UIManager>().DeactivateMiniGameMainMenu();
+        //Start Curtain Transition
+        SingletonManager.Get<TransitionManager>().ChangeAnimation(TransitionManager.CURTAIN_OPEN);
+
+        //Wait for the animation to finish 
+        if (transitionManager != null)
+        {
+            while (!transitionManager.IsAnimationFinished())
+            {
+                yield return null;
+            }
+        }
+        //Activate Game Countdown
+        SingletonManager.Get<UIManager>().ActivateGameCountdown();
+        countdownTimerUI.UpdateCountdownSprites((int)gameStartTimer);
+        //Wait till the game countdown is finish
+        while (gameStartTimer > 0)
+        {
+            gameStartTimer -= 1 * Time.deltaTime;
+            countdownTimerUI.UpdateCountdownSprites((int)gameStartTimer);
+            yield return null;
+        }
+        //After Game Countdown
+        //Activate GameUI and Timer
+        SingletonManager.Get<UIManager>().DeactivateGameCountdown();
+        SingletonManager.Get<UIManager>().ActivateMiniGameTimerUI();
+        SingletonManager.Get<MiniGameTimer>().StartCountdownTimer();
+        SingletonManager.Get<UIManager>().ActivateGameUI();
+        //Activate well UI
+        well.UI.SetActive(true);
+        Events.OnObjectiveUpdate.Invoke();
+        Debug.Log("Refresh Score board");
     }
 
     #endregion
@@ -75,17 +117,39 @@ public class GetWaterManager : MinigameManager
 
     public override void OnExitMinigame()
     {
-        base.OnExitMinigame();
+        exitMinigameRoutine = StartCoroutine(ExitMinigame());
     }
 
     protected override IEnumerator ExitMinigame()
     {
-        return base.ExitMinigame();
+        // Play close animation
+        transitionManager.ChangeAnimation(TransitionManager.CURTAIN_CLOSE);
+        //Deactivate active UI 
+        SingletonManager.Get<UIManager>().DeactivateResultScreen();
+        SingletonManager.Get<UIManager>().DeactivateTimerUI();
+        SingletonManager.Get<UIManager>().DeactivateGameUI();
+        WaterWell well = wateringWell.GetComponent<WaterWell>();
+        if (well)
+        {
+            well.UI.SetActive(false);
+        }
+        //Wait for transition to end
+        while (!transitionManager.IsAnimationFinished())
+        {
+            Debug.Log("Transition to closing");
+            yield return null;
+        }
+        Events.OnSceneChange.Invoke();
+        Assert.IsNotNull(sceneChange, "Scene change is null or not set");
+        sceneChange.OnChangeScene(NameOfNextScene);
+        yield return null;
     }
 
     public override void OnMinigameFinished()
     {
-        base.OnMinigameFinished();
+        Events.OnSceneChange.Invoke();
+        Assert.IsNotNull(sceneChange, "Scene change is null or not set");
+        sceneChange.OnChangeScene(NameOfNextScene);
     }
 
     #endregion
@@ -93,13 +157,23 @@ public class GetWaterManager : MinigameManager
     #region Minigame Checkers
     public override void OnWin()
     {
-        Debug.Log("All buckets are full");
-
+        if (!isCompleted)
+        {
+            SingletonManager.Get<MiniGameTimer>().StopCountdownTimer();
+            isCompleted = true;
+            SingletonManager.Get<UIManager>().ActivateResultScreen();
+            SingletonManager.Get<UIManager>().ActivateGoodResult();
+            SingletonManager.Get<PlayerData>().IsGetWaterFinished = true;
+            Debug.Log("Minigame complete");
+        }
     }
 
     public override void OnMinigameLose()
     {
-        base.OnMinigameLose();
+        SingletonManager.Get<MiniGameTimer>().StopCountdownTimer();
+        SingletonManager.Get<UIManager>().ActivateResultScreen();
+        SingletonManager.Get<UIManager>().ActivateBadResult();
+        Debug.Log("Minigame lose");
     } 
     
     public void CheckIfComplete()
@@ -112,25 +186,6 @@ public class GetWaterManager : MinigameManager
         {
             OnMinigameLose();
         }
-        //if(NumOfSwipes == RequiredNumSwipes)
-        //{
-        //    Debug.Log("Congratulations! You managed to get water");
-        //    SingletonManager.Get<PlayerData>().IsGetWaterFinished = true;
-        //}
-        //else if(NumOfSwipes < RequiredNumSwipes)
-        //{
-        //    Debug.Log("Try again next time");
-        //}
-        //else if(NumOfSwipes > RequiredNumSwipes)
-        //{
-        //    Debug.Log("Whoops you broke the rope, try again");
-        //}
-        //if (sceneChange)
-        //{
-        //    Events.OnSceneChange.Invoke();
-        //    sceneChange.OnChangeScene(NameOfNextScene);
-        //}
-
     }
 
     public bool AreBucketsFull()
