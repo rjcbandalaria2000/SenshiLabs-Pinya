@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 
 
@@ -18,12 +19,13 @@ public class Clothes : MonoBehaviour
    [SerializeField] private bool leftFold;
    [SerializeField] private bool topFold;
    [SerializeField] private bool downFold;
+    public int RNG;
 
     [Header("Position")]
     public GameObject startPos;
     public GameObject middlePos;
     public GameObject endPos;
-    public float lerpSpeed;
+    [SerializeField] private float lerpSpeed;
 
     private Camera mainCamera;
     private Vector2 initialPos;
@@ -45,8 +47,24 @@ public class Clothes : MonoBehaviour
     public GameObject upArrow;
     public GameObject downArrow;
 
+    public List<GameObject> listArrow;
+
     Coroutine startTransitionRoutine;
     Coroutine endTransitionRoutine;
+    Coroutine foldResetRoutine;
+    Coroutine wrongEffectRoutine;
+    Coroutine effectDurationRoutine;
+
+   public bool canSwipe = true;
+
+    [Header("Effect")]
+    public bool isWrong;
+    public int effectDuration;
+
+    private void Awake()
+    {
+        SingletonManager.Register(this);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -61,9 +79,15 @@ public class Clothes : MonoBehaviour
 
         this.GetComponent<SpriteRenderer>().sprite = stateSprites[0];
 
-        leftArrow.SetActive(true);
-        upArrow.SetActive(false);
-        downArrow.SetActive(false);
+        startPos = foldManager.startPos;
+        middlePos = foldManager.middlePos;
+        endPos = foldManager.endPos;
+
+        //leftArrow.SetActive(true);
+        //upArrow.SetActive(false);
+        //downArrow.SetActive(false);
+
+        foldResetRoutine = StartCoroutine(addFoldList());
 
         leftFold = false;
         topFold = false;
@@ -72,7 +96,27 @@ public class Clothes : MonoBehaviour
         mainCamera = Camera.main;
         clothes = 2;
 
-        this.transform.position = startPos.transform.position;
+        // this.transform.position = startPos.transform.position;
+
+        RNG = Random.Range(0, listArrow.Count);
+ 
+        switch (RNG)
+        {
+            case 0:
+                listArrow[0].SetActive(true);
+                break;
+            case 1:
+                listArrow[1].SetActive(true);
+                break;
+            case 2:
+                listArrow[2].SetActive(true);
+                break;
+            default:
+                Debug.Log("Nothing");
+                break;
+        }
+
+
         startTransitionRoutine = StartCoroutine(StartTransition());
     }
 
@@ -84,53 +128,84 @@ public class Clothes : MonoBehaviour
     private void OnMouseDrag()
     {
         Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition) - (Vector3)initialPos;
+        
+        if(!canSwipe)
+        {
+            return;
+        }
 
         if (mousePosition.normalized.x < SwipeLeftAccept)
         {
-            if(leftFold == false && topFold == false && downFold == false)
+            canSwipe = false;
+            if (leftArrow.activeSelf == true)
             {
-                leftFold = true;
-
-                this.GetComponent<SpriteRenderer>().sprite = stateSprites[1];
-
-                leftArrow.SetActive(false);
-                upArrow.SetActive(true);
+                dragChecker();
+                FoldRandom();
+            }
+            else
+            {
+                Debug.Log("WrongSwipe");
+                isWrong = true;
+               // wrongEffectRoutine = StartCoroutine(wrongEffect(listArrow[RNG]));
+                effectDurationRoutine = StartCoroutine(wrongEffectDuration(listArrow[RNG]));
             }
             // if the mouse moved to the left
-            Debug.Log("Fold right");
+            Debug.Log("Fold left");
         }
        
-        if(mousePosition.normalized.y > SwipeUpAccept)
+        else if(mousePosition.normalized.y > SwipeUpAccept)
         {
-            if(leftFold == true && topFold == false && downFold == false)
+            canSwipe = false;
+            if (upArrow.activeSelf == true)
             {
-                topFold = true;
+                dragChecker();
+                FoldRandom();
 
-                this.GetComponent<SpriteRenderer>().sprite = stateSprites[2];
-
-                upArrow.SetActive(false);
-                downArrow.SetActive(true);
             }
-          
+            else
+            {
+                Debug.Log("WrongSwipe");
+                isWrong = true;
+               // wrongEffectRoutine = StartCoroutine(wrongEffect(listArrow[RNG]));
+                effectDurationRoutine = StartCoroutine(wrongEffectDuration(listArrow[RNG]));
+            }
 
             Debug.Log("Fold up");
         }
-        if (mousePosition.normalized.y < SwipeDownAccept)
+        else if (mousePosition.normalized.y < SwipeDownAccept)
         {
-            if (leftFold == true && topFold == true && downFold == false)
+            canSwipe = false;
+            if (downArrow.activeSelf == true)
             {
-                downFold = true;
+                dragChecker();
+                FoldRandom();
             }
-            Debug.Log("DownFoldw");
+            else
+            {
+                Debug.Log("WrongSwipe");
+                isWrong = true;
+                //wrongEffectRoutine = StartCoroutine(wrongEffect(listArrow[RNG]));
+                effectDurationRoutine = StartCoroutine(wrongEffectDuration(listArrow[RNG]));
+            }
+
+            Debug.Log("DownFold");
+        }
+        else if(mousePosition.normalized.x > SwipeRightAccept)
+        {
+            Debug.Log("SwipeRight");
+            isWrong = true;
+            //wrongEffectRoutine = StartCoroutine(wrongEffect(listArrow[RNG]));
+            effectDurationRoutine = StartCoroutine(wrongEffectDuration(listArrow[RNG]));
         }
 
         if (leftFold == true && topFold == true && downFold == true)
         {
             if( clothes > 0)
             {
-                Reset();
                 clothes--;
-
+                Reset();
+             
+                
             }
             else
             {
@@ -143,7 +218,14 @@ public class Clothes : MonoBehaviour
             
         }
 
+        
+
     }
+    public void OnMouseUp()
+    {
+        canSwipe = true;
+    }
+
 
     IEnumerator StartTransition()
     {
@@ -180,19 +262,198 @@ public class Clothes : MonoBehaviour
 
     private void Reset()
     {
-        // StopCoroutine(endTransitionRoutine);
-        leftArrow.SetActive(true);
-        upArrow.SetActive(false);
-        downArrow.SetActive(false);
 
-        this.GetComponent<SpriteRenderer>().sprite = stateSprites[0];
+        SingletonManager.Get<DisplayFoldCount>().UpdateFoldCount();
+
+        if(clothes == 1)
+        {
+            spriteChanger(4);
+        }
+        else
+        {
+            spriteChanger(8);
+        }
+        
 
         leftFold = false;
         topFold = false;
         downFold = false;
+        //listArrow.Clear();
 
         this.transform.position = startPos.transform.position;
+        foldResetRoutine = StartCoroutine(addFoldList());
+
+        RNG = Random.Range(0, listArrow.Count);
+
+        switch (RNG)
+        {
+            case 0:
+                listArrow[0].SetActive(true);
+                break;
+            case 1:
+                listArrow[1].SetActive(true);
+                break;
+            case 2:
+                listArrow[2].SetActive(true);
+                break;
+            default:
+                Debug.Log("Nothing");
+                break;
+        }
 
         startTransitionRoutine = StartCoroutine(StartTransition());
     }
-}
+
+   public void FoldRandom()
+    {
+        if(listArrow.Count > 0)
+        {
+            RNG = Random.Range(0, listArrow.Count);
+            listArrow[RNG].SetActive(true);
+            Debug.Log("FoldPIck");
+        }
+
+    }
+
+    public void dragChecker()
+    {
+        for(int i =0; i < listArrow.Count; i++)
+        {
+            if (listArrow[i] == leftArrow && leftArrow.activeSelf == true)
+            {
+                leftFold = true;
+                leftArrow.SetActive(false);
+
+                switch (clothes)
+                {
+                    case 2:
+                        spriteChanger(1);
+                        break;
+                    case 1:
+                        spriteChanger(5);
+                        break;
+                    case 0:
+                        spriteChanger(9);
+                        break;
+                    default:
+                        break;
+
+
+                }
+
+      
+
+                //leftArrow.SetActive(false);
+                //upArrow.SetActive(true);
+                listArrow.RemoveAt(i);
+                Debug.Log(listArrow.Count);
+                break;
+
+            }
+            else if(listArrow[i] == upArrow && upArrow.activeSelf == true)
+            {
+                topFold = true;
+               upArrow.SetActive(false);
+
+                switch (clothes)
+                {
+                    case 2:
+                        spriteChanger(2);
+                        break;
+                    case 1:
+                        spriteChanger(6);
+                        break;
+                    case 0:
+                        spriteChanger(10);
+                        break;
+                    default:
+                        break;
+
+
+                }
+
+     
+
+                //leftArrow.SetActive(false);
+                //upArrow.SetActive(true);
+                listArrow.RemoveAt(i);
+                Debug.Log(listArrow.Count);
+                break;
+
+            }
+            else if (listArrow[i] == downArrow && downArrow.activeSelf == true)
+            {
+                downFold = true;
+                downArrow.SetActive(false);
+
+                switch (clothes)
+                {
+                    case 2:
+                        spriteChanger(3);
+                        break;
+                    case 1:
+                        spriteChanger(7);
+                        break;
+                    case 0:
+                        spriteChanger(11);
+                        break;
+                    default:
+                        break;
+
+
+                }
+
+
+
+                //leftArrow.SetActive(false);
+                //upArrow.SetActive(true);
+                listArrow.RemoveAt(i);
+                Debug.Log(listArrow.Count);
+                break;
+
+            }
+        }
+        
+    }
+
+    IEnumerator addFoldList()
+    {
+        listArrow.Add(leftArrow);
+  
+        listArrow.Add(upArrow);
+
+        listArrow.Add(downArrow);
+
+        yield return null;
+
+        //foldResetRoutine = null;
+    }
+
+    public void  spriteChanger(int index)
+    {
+        this.GetComponent<SpriteRenderer>().sprite = stateSprites[index];
+    }
+
+    IEnumerator wrongEffect(GameObject arrow)
+    {
+        while (isWrong)
+        {
+            arrow.GetComponent<SpriteRenderer>().color = Color.red;
+            yield return new WaitForSeconds(0.1f);
+            arrow.GetComponent<SpriteRenderer>().color = Color.white;
+            yield return new WaitForSeconds(0.1f);
+
+        }
+
+    }
+
+    IEnumerator wrongEffectDuration(GameObject arrow)
+    {
+        isWrong = true;
+        wrongEffectRoutine = StartCoroutine(wrongEffect(arrow));
+        yield return new WaitForSeconds(effectDuration);
+        isWrong = false;
+        wrongEffectRoutine = null;
+
+    }
+}   
