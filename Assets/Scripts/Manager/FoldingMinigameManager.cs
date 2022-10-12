@@ -39,10 +39,10 @@ public class FoldingMinigameManager : MinigameManager
     // Update is called once per frame
     void Update()
     {
-        //if(SingletonManager.Get<MiniGameTimer>().GetTimer() <= 0)
-        //{
-        //    CheckIfFinished();
-        //}
+        if (SingletonManager.Get<MiniGameTimer>().GetTimer() <= 0)
+        {
+            CheckIfFinished();
+        }
     }
 
     public override void Initialize()
@@ -159,7 +159,7 @@ public class FoldingMinigameManager : MinigameManager
         {
             Debug.Log("Minigame lose");
             SingletonManager.Get<UIManager>().ActivateResultScreen();
-            SingletonManager.Get<UIManager>().ActivateGoodResult();
+            SingletonManager.Get<UIManager>().ActivateBadResult();
             SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
         }
 
