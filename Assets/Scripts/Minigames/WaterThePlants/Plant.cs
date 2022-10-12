@@ -40,7 +40,9 @@ public class Plant : MonoBehaviour
             if (!IsWatered)
             {
                 IsWatered = true;
+                SingletonManager.Get<WaterThePlantsManager>().plantsWatered++;
                 Events.OnObjectiveUpdate.Invoke();
+               
                 Debug.Log("Fully watered");
             }
            

@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Game/BaseMainMenu.unity
     guid: c370cf1f340d9fa429dce30b78c44157
   - enabled: 1
+    path: Assets/IntroStoryboard.unity
+    guid: 2696cc93770404d4d980668f49f27369
+  - enabled: 1
     path: Assets/Scenes/Main Game/MainGameScene1 1.unity
     guid: 97238d283a07a3f43966798fcd99b4a5
   - enabled: 1
@@ -33,7 +36,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Game/Tag_Test.unity
     guid: 88db5faa5fd95b244b4f1c330019ca4e
   - enabled: 1
-    path: Assets/Scenes/Main Game/WashTheDishes - TestScene.unity
+    path: Assets/Scenes/TestScenes/WashTheDishes - TestScene.unity
     guid: 3859f246144b07f4290f4d356db640ae
   - enabled: 1
     path: Assets/Scenes/TestScenes/ImHungry - Test Scene.unity
@@ -44,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Game/WaterThePlants-Polish.unity
     guid: f91854b4932810146b9f19dd4ff68695
+  - enabled: 1
+    path: Assets/Scenes/Main Game/WashTheDishes-Polish.unity
+    guid: 3659233de3f0d904e8bc744d7f5231e3
   m_configObjects: {}

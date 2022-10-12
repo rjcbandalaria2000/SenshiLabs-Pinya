@@ -5,24 +5,32 @@ using UnityEngine;
 public class WaterWell : MonoBehaviour
 {
     [Header("Values")]
-    public int      RequiredSwipes;
+    public int              RequiredSwipes;
+    public FillWaterBucket  fillWaterBucket;
 
     [Header("States")]
-    public bool     SwipedUp;
-    public bool     SwipedDown;
-    public bool     CanSwipeUp; // blocks the player from swiping up early on the level
-    public bool     CanSwipeDown;
+    public bool             SwipedUp;
+    public bool             SwipedDown;
+    public bool             CanSwipeUp; // blocks the player from swiping up early on the level
+    public bool             CanSwipeDown;
 
     [Header("Mouse Sweep Acceptance")]
     [Range(0f, 1f)]
-    public float    SwipeUpAccept = 0.5f;
+    public float            SwipeUpAccept = 0.5f;
     [Range(0f, -1f)]
-    public float    SwipeDownAccept = -0.5f;
+    public float            SwipeDownAccept = -0.5f;
 
-    private int     playerSwipeUpCount;
-    private int     playerSwipeDownCount;
-    private Camera  mainCamera;
-    private Vector2 initialMousePosition;
+    [Header("Buckets Filled")]
+    public List<float>      waterBuckets = new();
+    public int              availableBuckets = 3;
+
+    [Header("UI")]
+    public GameObject       UI;
+
+    private int             playerSwipeUpCount;
+    private int             playerSwipeDownCount;
+    private Camera          mainCamera;
+    private Vector2         initialMousePosition;
  
     // Start is called before the first frame update
     void Start()
@@ -41,6 +49,8 @@ public class WaterWell : MonoBehaviour
 
         SingletonManager.Get<GetWaterManager>().slider.maxValue = RequiredSwipes;
         SingletonManager.Get<GetWaterManager>().slider.value = playerSwipeDownCount;
+        Events.OnBucketUsed.Invoke();
+        Events.OnBucketDrop.Invoke();
     }
 
     public void OnMouseDown()
@@ -53,54 +63,87 @@ public class WaterWell : MonoBehaviour
     {
         // use the initial position of the mouse then subract it to its current position to get the direction 
         Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition) - (Vector3)initialMousePosition;
+        if(availableBuckets <= 0) { return; }
+        if (SwipedUp) { return; } //if already swiped up, do not let the player swipe down
         if (CanSwipeDown)
         {
-            if (!SwipedUp) //if already swiped up, do not let the player swipe down
+            if (mousePosition.normalized.y < SwipeDownAccept)
             {
-                if (mousePosition.normalized.y < SwipeDownAccept)
+                if (!SwipedDown)
                 {
-
-                    if (!SwipedDown)
+                    SwipedDown = true;
+                    if (playerSwipeDownCount < RequiredSwipes)
                     {
-                        SwipedDown = true;
                         playerSwipeDownCount++;
                         SingletonManager.Get<GetWaterManager>().slider.value = playerSwipeDownCount;
                         Events.OnObjectiveUpdate.Invoke();
                     }
-                    if (!CanSwipeUp)
+                    if (playerSwipeDownCount >= RequiredSwipes)
                     {
-                        CanSwipeUp = true; // enable swiping up when the player swiped down first
+                        if(fillWaterBucket == null) { return; }
+                        fillWaterBucket.StartFillingBucket();
+                        Events.OnBucketRetrieve.Invoke();
                     }
-
+                   
                 }
-            }
-        } 
-       
-        if (!SwipedDown) // if already swiped down, do not let the player swipe up 
-        {
-            if (CanSwipeUp)
-            {
-                if (mousePosition.normalized.y > SwipeUpAccept)
+                if (!CanSwipeUp)
                 {
-                    if (!SwipedUp)
-                    {
-                        // lock the controls of the player since the player lifted the bucket
-                        SwipedUp = true;
-                        CanSwipeDown = false;
-                        CanSwipeUp = false; 
-                        playerSwipeUpCount++;
-                        Events.OnObjectiveUpdate.Invoke();
-                    }
-
+                    CanSwipeUp = true; // enable swiping up when the player swiped down first
                 }
+
+            }
+            
+        }
+
+        if (CanSwipeUp)
+        {
+            if (mousePosition.normalized.y > SwipeUpAccept)
+            {
+                // Stop the water from filling 
+                fillWaterBucket.StopFillingBucket();
+                if (availableBuckets > 0)
+                {
+                    //Store the waterAmount in the waterBuckets 
+                    waterBuckets.Add(fillWaterBucket.waterAmount);
+                    //Reset the waterAmount 
+                    fillWaterBucket.ResetWaterBucket();
+                    //subtract 1 fro the available buckets 
+                    availableBuckets--;
+                    Events.OnBucketUsed.Invoke();
+                    //Reset swipes 
+                    playerSwipeDownCount = 0;
+                    SingletonManager.Get<GetWaterManager>().slider.value = playerSwipeDownCount;
+                    Events.OnBucketDrop.Invoke();
+                }
+                if(availableBuckets <= 0)
+                {
+                    Events.OnBucketUsed.Invoke();
+                    Debug.Log("No more buckets");
+                    SingletonManager.Get<GetWaterManager>().CheckIfComplete();
+                }
+                CanSwipeUp = false;
+
+
+                //if (!SwipedUp)
+                //{
+                //    // lock the controls of the player since the player lifted the bucket
+                //    SwipedUp = true;
+                //    CanSwipeDown = false;
+                //    CanSwipeUp = false;
+                //    playerSwipeUpCount++;
+                //    Events.OnObjectiveUpdate.Invoke();
+                //}
+
             }
         }
-        if(playerSwipeUpCount >= 1)
-        {
-            SingletonManager.Get<GetWaterManager>().SetNumOfSwipes(playerSwipeDownCount);
-            SingletonManager.Get<GetWaterManager>().CheckIfComplete();
-        }
-     //   Debug.Log("Y coordinate: " + mousePosition.normalized.y);
+        
+
+        //if(playerSwipeUpCount >= 1)
+        //{
+        //    SingletonManager.Get<GetWaterManager>().SetNumOfSwipes(playerSwipeDownCount);
+        //    SingletonManager.Get<GetWaterManager>().CheckIfComplete();
+        //}
+        //   Debug.Log("Y coordinate: " + mousePosition.normalized.y);
     }
 
     private void OnMouseUp()
@@ -119,6 +162,11 @@ public class WaterWell : MonoBehaviour
     public int GetSwipeDown()
     {
         return playerSwipeDownCount;
+    }
+
+    public void GetWater()
+    {
+
     }
     
 

@@ -5,7 +5,6 @@ using UnityEngine;
 public class CleanTheHouseMinigame : MinigameObject
 {
     private TransitionManager   transitionManager;
-    private Coroutine           interactRoutine;
 
     // Start is called before the first frame update
     void Start()
@@ -58,7 +57,6 @@ public class CleanTheHouseMinigame : MinigameObject
     public override void EndInteract(GameObject player = null)
     {
         base.EndInteract(player);
-        //StopCoroutine(interactRoutine);
     }
 
     public override void JumpToMiniGame()

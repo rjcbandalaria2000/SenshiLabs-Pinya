@@ -103,10 +103,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0408e621f7f0b124683412f3055fab37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultCursorTexture: {fileID: 2800000, guid: 2d8d391eb824a4b4ca6a42a3ad4ca394, type: 3}
+  defaultHotspotPos: 0
   enterCursorTexture: {fileID: 2800000, guid: 063fea6173bab7b48b2bb3e46b64af58, type: 3}
+  enterCursorHotspotPos: 4
   dragCursorTexture: {fileID: 2800000, guid: 063fea6173bab7b48b2bb3e46b64af58, type: 3}
+  dragCursorHotspotPos: 4
   pressDownCursorTexture: {fileID: 2800000, guid: 063fea6173bab7b48b2bb3e46b64af58, type: 3}
-  cursorHotspotPos: 4
+  pressDownHotSpotPos: 4
 --- !u!1 &5920978551436951451
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,43 +9,43 @@ public class UIManager : MonoBehaviour
 {
     //------------------------------------------------MAINGAME------------------------------------------------------------------------------------
     [Header("Time UI")]
-    public GameObject timerDisplay;
+    public GameObject       timerDisplay;
 
     [Header("Meters UI")]
-    public MinigameManager minigame;
-    public GameObject motivationMeter;
-    public GameObject pinyaMeter;
+    public MinigameManager  minigame;
+    public GameObject       motivationMeter;
+    public GameObject       pinyaMeter;
 
     [Header("Main Display UI")] //Mostly text base UI
-    public GameObject dayEnd_UI;
-    public GameObject curtainsUI;
-    public GameObject gameUI;
+    public GameObject       dayEnd_UI;
+    public GameObject       curtainsUI;
+    public GameObject       gameUI;
 
     [Header("Gameover Display")]
-    public GameObject losePanelUI;
-    public GameObject winPanelUI;
+    public GameObject       losePanelUI;
+    public GameObject       winPanelUI;
 
     //------------------------------------------------MINIGAME------------------------------------------------------------------------------------
 
     [Header("Minigame UI")]
-    public GameObject miniGameTimerDisplay;
-    public GameObject miniGameMainMenu;
-    public GameObject minigameStartCountdownUI;
-    public GameObject minigameResultsUI;
-    public GameObject minigameGoodResult;
-    public GameObject minigameBadResult;
+    public GameObject       miniGameTimerDisplay;
+    public GameObject       miniGameMainMenu;
+    public GameObject       minigameStartCountdownUI;
+    public GameObject       minigameResultsUI;
+    public GameObject       minigameGoodResult;
+    public GameObject       minigameBadResult;
 
     [Header("Loading UI")]
-    public GameObject Loading_UI;
+    public GameObject       loadingUI;
 
     [Header("Ask Mom UI")]
-    public Button askMomButton;
+    public Button           askMomButton;
 
-    private SceneChange sceneChange;
-    public GameObject tutorialGO;
+    [Header("Tutorial UI")]
+    public GameObject       tutorialGO;
+    public GameObject       confirmationGO;
 
-    public GameObject confirmationGO;
-
+    private SceneChange     sceneChange;
 
     private void Start()
     {
@@ -123,12 +123,12 @@ public class UIManager : MonoBehaviour
     public void ActivateLoadingUI()
     {
 
-        Loading_UI.SetActive(true);
+        loadingUI.SetActive(true);
     }
 
     public void DeactivateLoadingUI()
     {
-        Loading_UI.SetActive(false);
+        loadingUI.SetActive(false);
     }
 
     public void ButtonUninteractable()
@@ -307,14 +307,17 @@ public class UIManager : MonoBehaviour
     }
     public void ShowTutorial()
     {
+        if(miniGameMainMenu == null) { return; }
+        if(tutorialGO == null) { return; }
         miniGameMainMenu.SetActive(false);
         tutorialGO.SetActive(true);
     }
 
     public void ExitTutorial()
     {
+        if (miniGameMainMenu == null) { return; }
+        if (tutorialGO == null) { return; }
         miniGameMainMenu.SetActive(true);
-
         tutorialGO.SetActive(false);
     }
 

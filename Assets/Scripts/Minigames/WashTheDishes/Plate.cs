@@ -119,7 +119,7 @@ public class Plate : MonoBehaviour
                 {
                     IsClean = true;
                     ChangeModel();
-                    Events.OnObjectiveUpdate.Invoke();
+                    Events.OnPlateCleaned.Invoke();
                 }
                 
             }

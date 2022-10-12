@@ -2,25 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using DG.Tweening;
 
 public class WashTheDishesManager : MinigameManager
 {
     [Header("Values")]
-    public int              NumOfCleanPlates;
-    public int              NumOfDirtyPlates;
+    public int              numOfCleanPlates;
+    public int              numOfDirtyPlates = 5;
+
+    [Header("DoTween Animation Time")]
+    public float            nextPlateDelay = 0.5f;
+    public float            plateAnimationDuration = 0.5f;
 
     [Header("Plate Positions")]    
-    public GameObject       WashingPosition;
-    public List<GameObject> DirtyPilePosition;
-    public List<GameObject> CleanPilePosition;
+    public GameObject       washingPosition;
+    public List<GameObject> dirtyPilePosition;
+    public List<GameObject> cleanPilePosition;
 
     [Header("Spawned Objects")]
-    public List<GameObject> Plates = new();
+    public List<GameObject> plates = new();
+
+    [Header("Sponge")]
+    public GameObject       sponge;
 
     private SpawnManager    spawnManager;
-    private int plateIndex = 0;
-    private Coroutine plateToWashAreaRoutine;
-    private Coroutine nextPlateToWashRoutine;
+    private int             plateIndex = 0;
+    private Coroutine       plateToWashAreaRoutine;
+    private Coroutine       nextPlateToWashRoutine;
 
     private void Awake()
     {
@@ -29,65 +37,34 @@ public class WashTheDishesManager : MinigameManager
     // Start is called before the first frame update
     void Start()
     {
-        sceneChange = this.GetComponent<SceneChange>();
-        plateToWashAreaRoutine = null;
-        spawnManager = SingletonManager.Get<SpawnManager>();
-        Assert.IsNotNull(spawnManager, "Spawn manager is null or is not set");
-        spawnManager.NumToSpawn.Add(DirtyPilePosition.Count);
-        spawnManager.SpawnPoints = DirtyPilePosition;
-        spawnManager.SpawnInStaticPositions();
-        Plates = spawnManager.SpawnedObjects;
-        StartPlateToWashArea();
-        Events.OnObjectiveUpdate.AddListener(StartNextPlate);
+        Initialize();
     }
 
     public override void Initialize()
     {
-        base.Initialize();
-    }
-
-    public override void CheckIfFinished()
-    {
-        if(GetRemainingDirtyPlates() <= 0)
+        sceneChange = this.GetComponent<SceneChange>();
+        transitionManager = SingletonManager.Get<TransitionManager>();
+        plateToWashAreaRoutine = null;
+        spawnManager = SingletonManager.Get<SpawnManager>();
+        Assert.IsNotNull(spawnManager, "Spawn manager is null or is not set");
+        //Disable sponge at start 
+        if (sponge)
         {
-            OnWin();
+            sponge.SetActive(false);
         }
-    }
-
-    public override void OnWin()
-    {
-        Debug.Log("You cleaned all the plates");
-        Assert.IsNotNull(sceneChange, "Scene change is null or is not set");
-        if(NameOfNextScene == null) { return; }
-        Events.OnObjectiveUpdate.RemoveListener(StartNextPlate);
-        Events.OnSceneChange.Invoke();
-        sceneChange.OnChangeScene(NameOfNextScene);
-
-    }
-
-    public override void OnMinigameLose()
-    {
-        base.OnMinigameLose();
-    }
-
-    public override void OnLose()
-    {
-        base.OnLose();
-    }
-
-    public int GetRemainingDirtyPlates()
-    {
-        return NumOfDirtyPlates - NumOfCleanPlates;
     }
 
     public void GoToWashArea()
     {
-        Plates[plateIndex].transform.position = WashingPosition.transform.position;
+        plates[plateIndex].transform.DOMove(washingPosition.transform.position, plateAnimationDuration, false);
+        //plates[plateIndex].transform.position = washingPosition.transform.position;
     }
 
     public void GoToCleanPile()
     {
-        Plates[plateIndex].transform.position = CleanPilePosition[plateIndex].transform.position;
+        plates[plateIndex].transform.DOMove(cleanPilePosition[plateIndex].transform.position, plateAnimationDuration, false);
+        plates[plateIndex].transform.DORotate(new Vector3(0, 0, 90), plateAnimationDuration, RotateMode.Fast);
+        //plates[plateIndex].transform.position = cleanPilePosition[plateIndex].transform.position;
     }
 
     public void StartPlateToWashArea()
@@ -97,15 +74,13 @@ public class WashTheDishesManager : MinigameManager
 
     IEnumerator PlateToWashArea()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(nextPlateDelay);
         GoToWashArea();
-        Plate selectedPlate = Plates[plateIndex].GetComponent<Plate>();
+        Plate selectedPlate = plates[plateIndex].GetComponent<Plate>();
         if (selectedPlate)
         {
             selectedPlate.CanClean = true;
         }
-
-
     }
 
     public void StartNextPlate()
@@ -115,17 +90,180 @@ public class WashTheDishesManager : MinigameManager
 
     IEnumerator NextPlateToWash()
     {
-        NumOfCleanPlates++;
+        numOfCleanPlates++;
         yield return new WaitForSeconds(0.5f);
         GoToCleanPile();
         CheckIfFinished();
         plateIndex++;
         yield return new WaitForSeconds(0.5f);
-        if (plateIndex < Plates.Count)
+        if (plateIndex < plates.Count)
         {
             StartPlateToWashArea();
+            Events.OnObjectiveUpdate.Invoke();
         }
     }
 
-    
+    public void HideAllPlates()
+    {
+        if(plates.Count <= 0) { return; }
+        for(int i = 0; i < plates.Count; i++)
+        {
+            plates[i].SetActive(false);
+        }
+    }
+
+    #region Starting Minigame Function
+    public override void StartMinigame()
+    {
+        gameStartTimer = gameStartTime;
+        startMinigameRoutine = StartCoroutine(StartMinigameCounter());
+    }
+
+    protected override IEnumerator StartMinigameCounter()
+    {
+        //Deactivate Game UI
+        SingletonManager.Get<UIManager>().DeactivateGameUI();
+        //Deactivate Minigame Main Menu
+        SingletonManager.Get<UIManager>().DeactivateMiniGameMainMenu();
+
+        if (transitionManager != null)
+        {
+            //Start Curtain Transition
+            transitionManager.ChangeAnimation(TransitionManager.CURTAIN_OPEN);
+            //Wait for the animation to finish
+            while (!transitionManager.IsAnimationFinished())
+            {
+                yield return null;
+            }
+        }
+        //Activate Game Countdown
+        SingletonManager.Get<UIManager>().ActivateGameCountdown();
+        countdownTimerUI.UpdateCountdownSprites((int)gameStartTimer);
+        //Wait till the game countdown is finish
+        while (gameStartTimer > 0)
+        {
+            gameStartTimer -= 1 * Time.deltaTime;
+            countdownTimerUI.UpdateCountdownSprites((int)gameStartTimer);
+            yield return null;
+        }
+        //After Game Countdown
+        //Activate GameUI and Timer
+        SingletonManager.Get<UIManager>().DeactivateGameCountdown();
+        SingletonManager.Get<UIManager>().ActivateGameUI();
+        SingletonManager.Get<UIManager>().ActivateMiniGameTimerUI();
+        SingletonManager.Get<MiniGameTimer>().StartCountdownTimer();
+        Events.OnObjectiveUpdate.Invoke();
+
+        //Begin game 
+        // Show sponge
+        if (sponge)
+        {
+            sponge.SetActive(true);
+        }
+        spawnManager.NumToSpawn.Add(dirtyPilePosition.Count);
+        spawnManager.SpawnPoints = dirtyPilePosition;
+        spawnManager.SpawnInStaticPositions();
+        plates = spawnManager.SpawnedObjects;
+        StartPlateToWashArea();
+        Events.OnPlateCleaned.AddListener(StartNextPlate);
+
+
+
+        isCompleted = false;
+        yield return null;
+    }
+
+    #endregion
+
+    #region Finish Minigame Functions
+    public override void CheckIfFinished()
+    {
+        if (GetRemainingDirtyPlates() <= 0)
+        {
+            OnWin();
+        }
+    }
+
+    public override void OnWin()
+    {
+        Debug.Log("You cleaned all the plates");
+        Events.OnPlateCleaned.RemoveListener(StartNextPlate);
+        //Stop timer 
+        SingletonManager.Get<MiniGameTimer>().StopCountdownTimer();
+        //Show result screen
+        SingletonManager.Get<UIManager>().ActivateResultScreen();
+        SingletonManager.Get<UIManager>().ActivateGoodResult();
+        isCompleted = true;
+        SingletonManager.Get<PlayerData>().IsWashTheDishesFinished = true;
+
+    }
+
+    public override void OnMinigameLose()
+    {
+        Events.OnObjectiveUpdate.RemoveListener(StartNextPlate);
+        SingletonManager.Get<UIManager>().ActivateResultScreen();
+        SingletonManager.Get<UIManager>().ActivateBadResult();
+        //Disable controls
+        DragAndDrop spongeControls = sponge.GetComponent<DragAndDrop>();
+        if (spongeControls)
+        {
+            spongeControls.enabled = false;
+        }
+    }
+
+    #endregion
+
+    #region Exit Minigame Functions
+
+    public override void OnExitMinigame()
+    {
+        exitMinigameRoutine = StartCoroutine(ExitMinigame());
+    }
+
+    protected override IEnumerator ExitMinigame()
+    {
+
+        //Hide the remaining plates 
+        HideAllPlates();
+        if (sponge)
+        {
+            sponge.SetActive(false);
+        }
+        // Play close animation
+        if (transitionManager)
+        {
+            transitionManager.ChangeAnimation(TransitionManager.CURTAIN_CLOSE);
+        }
+
+        //Deactivate active UI 
+        SingletonManager.Get<UIManager>().DeactivateResultScreen();
+        SingletonManager.Get<UIManager>().DeactivateTimerUI();
+        SingletonManager.Get<UIManager>().DeactivateGameUI();
+
+        //Wait for transition to end
+        while (!transitionManager.IsAnimationFinished())
+        {
+            Debug.Log("Transition to closing");
+            yield return null;
+        }
+        Events.OnSceneChange.Invoke();
+        Assert.IsNotNull(sceneChange, "Scene change is null or not set");
+        if (NameOfNextScene != null)
+        {
+            sceneChange.OnChangeScene(NameOfNextScene);
+        }
+
+        yield return null;
+    }
+
+    #endregion
+
+    #region Getters
+    public int GetRemainingDirtyPlates()
+    {
+        return numOfDirtyPlates - numOfCleanPlates;
+    }
+
+    #endregion
+
 }

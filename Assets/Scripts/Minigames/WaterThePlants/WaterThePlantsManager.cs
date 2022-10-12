@@ -9,6 +9,15 @@ public class WaterThePlantsManager : MinigameManager
     public List<GameObject> Plants;
     public GameObject waterBucket;
 
+    [Header("Values")]
+    public int plantsWatered;
+    public int numOfPlants;
+
+    private void Awake()
+    {
+        SingletonManager.Register(this);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,22 +29,12 @@ public class WaterThePlantsManager : MinigameManager
         sceneChange = this.GetComponent<SceneChange>();
         Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
         transitionManager = SingletonManager.Get<TransitionManager>();
-       
+        numOfPlants = Plants.Count;
         //Disable Player / Water Bucket controls 
         if(waterBucket != null)
         { 
             // Hide water bucket
             waterBucket.SetActive(false);
-            //MouseFollow mouseFollow = waterBucket.GetComponent<MouseFollow>();
-            //if (mouseFollow)
-            //{
-            //    mouseFollow.enabled = false;
-            //}
-            //WateringCan wateringCan = waterBucket.GetComponent<WateringCan>();
-            //if (wateringCan)
-            //{
-            //    wateringCan.StopOnClickControls();
-            //}
         }
         //Hide all plants
         HideAllPlants();
@@ -84,6 +83,14 @@ public class WaterThePlantsManager : MinigameManager
 
     }
 
+    #region Getter Functions
+
+    public int GetRemainingPlants()
+    {
+        return numOfPlants - plantsWatered;
+    }
+
+    #endregion
 
 
     #region Starting Minigame Functions
@@ -95,6 +102,8 @@ public class WaterThePlantsManager : MinigameManager
 
     protected override IEnumerator StartMinigameCounter()
     {
+        //Deactivate Game UI
+        SingletonManager.Get<UIManager>().DeactivateGameUI();
         //Deactivate Minigame Main Menu
         SingletonManager.Get<UIManager>().DeactivateMiniGameMainMenu();
 
@@ -121,6 +130,7 @@ public class WaterThePlantsManager : MinigameManager
         //After Game Countdown
         //Activate GameUI and Timer
         SingletonManager.Get<UIManager>().DeactivateGameCountdown();
+        SingletonManager.Get<UIManager>().ActivateGameUI();
         SingletonManager.Get<UIManager>().ActivateMiniGameTimerUI();
         SingletonManager.Get<MiniGameTimer>().StartCountdownTimer();
         Events.OnObjectiveUpdate.Invoke();
@@ -168,6 +178,7 @@ public class WaterThePlantsManager : MinigameManager
                 if (wateringCan)
                 {
                     wateringCan.StopOnClickControls();
+                    Debug.Log("Stop on click controls");
                 }
 
                 MouseFollow mouseFollow = waterBucket.GetComponent<MouseFollow>();

@@ -42,8 +42,6 @@ public class GroceryManager : MinigameManager //Might rename this
     public float GameStartTime = 3f;
     public DisplayGameCountdown CountdownTimerUI;
     
-
-    private Coroutine startMinigameRoutine;
     private Coroutine setUpGroceryRoutine;
 
     private void Awake()

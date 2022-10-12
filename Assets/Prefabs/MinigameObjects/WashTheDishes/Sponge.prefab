@@ -41,6 +41,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6465501187018523353}
+  - component: {fileID: 5793241685582824064}
+  - component: {fileID: 7651017860309501084}
   m_Layer: 0
   m_Name: Sponge
   m_TagString: Untagged
@@ -64,6 +66,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5793241685582824064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6465501187018523354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfacea6796f86984a9d850c87fd92d65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7651017860309501084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6465501187018523354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46856f09510e8eb4ea5df8b19f8a7a6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  returnPosition: {fileID: 0}
 --- !u!1 &6465501187192203469
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,8 +163,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_SortingOrder: 15
+  m_Sprite: {fileID: 21300000, guid: 64db3c31cf8aca6469fd4fd239aa82aa, type: 3}
   m_Color: {r: 1, g: 0.8666878, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0

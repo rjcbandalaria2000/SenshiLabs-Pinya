@@ -69,6 +69,22 @@ public static class Events
     public static readonly Evt<GameObject> OnInteractCleanHouse = new();
     #endregion
 
+    #region WashTheDishes Events
+
+    public static readonly Evt OnPlateCleaned = new();
+
+    #endregion
+
+    #region GetWater Events
+
+    public static readonly Evt OnBucketDown = new();
+    public static readonly Evt OnWaterFilling = new();
+    public static readonly Evt OnBucketUsed = new();
+    public static readonly Evt OnBucketDrop = new(); // controls the arrows UI in Get Water Minigame (activates down arrow)
+    public static readonly Evt OnBucketRetrieve = new(); //controls the arrows UI in Get Water Minigame (activates up arrow)
+    #endregion
+
+
     #endregion
 
     #region SceneChange Events

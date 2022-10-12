@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 5285038560494157795}
   - component: {fileID: 6527601214278887690}
   m_Layer: 0
-  m_Name: Sink - CleanTheDishes
+  m_Name: Sink - WashTheDishes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -275,10 +275,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec7c0dab23d242c4ab69af8ad60a2174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MotivationCost: 20
-  Interactable: {fileID: 1278223492080597534}
+  minigameName: Wash The Dishes
+  motivationCost: 20
+  interactable: {fileID: 1278223492080597534}
   isInteracted: 0
-  MinigameScene: WashTheDishes - TestScene
+  hasCompleted: 0
+  minigameScene: WashTheDishes-Polish
 --- !u!114 &6527601214278887690
 MonoBehaviour:
   m_ObjectHideFlags: 0
