@@ -42,7 +42,7 @@ public class WaterWell : MonoBehaviour
     {
         mainCamera = Camera.main;
         RequiredSwipes = SingletonManager.Get<GetWaterManager>().RequiredNumSwipes;
-        CanSwipeDown = true;
+        //CanSwipeDown = true;
         CanSwipeUp = false;
         SwipedDown = false;
         SwipedUp = false;
