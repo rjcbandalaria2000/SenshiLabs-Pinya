@@ -8207,7 +8207,7 @@ PrefabInstance:
     - target: {fileID: 6349503282558296002, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: minigameTimer
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 448823275}
     - target: {fileID: 7406783592760213957, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 316

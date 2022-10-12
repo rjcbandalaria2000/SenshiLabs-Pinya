@@ -20,10 +20,11 @@ public class ClickHidingChild : MonoBehaviour
         hideSeekManager.score += 1;
         hideSeekManager.count -= 1;
         SingletonManager.Get<DisplayChildCount>().updateChildCount();
+        hideSeekManager.CheckIfFinished();
         child.SetActive(false); // or DeleteDestroy?
        
 
-        hideSeekManager.CheckIfFinished();
+        
 
     }
 }
