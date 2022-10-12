@@ -5,16 +5,20 @@ using UnityEngine;
 public class Pot : MonoBehaviour
 {
     [Header("Setup")]
-    public int      RequiredIngredientCount;
-    public int      CurrentIngredientCount;
-    public float    CookingSpeed;
+    public int          RequiredIngredientCount;
+    public int          CurrentIngredientCount;
+    public float        CookingSpeed;
 
     [Header("States")]
-    public bool     AreIngredientsAdded;
-    public bool     IsCooked;
-
+    public bool         AreIngredientsAdded;
+    public bool         IsCooked;
+    public GameObject   unCookedImage;
+    public GameObject   midCookedImage;
+    public GameObject   cookedImage;
+    public GameObject   potCover;
+    
     [Header("Panels")]
-    public GameObject TempChoices;
+    public GameObject   TempChoices;
 
     // Start is called before the first frame update
     void Start()
@@ -67,6 +71,47 @@ public class Pot : MonoBehaviour
         if (tempControl)
         {
             tempControl.StartMoveTracker();
+        }
+    }
+
+    public void ShowCookingStage(int stageIndex)
+    {
+        if(unCookedImage == null) { return; }
+        if(midCookedImage == null) { return; }
+        if(potCover == null) { return;} 
+        if(cookedImage == null) { return; }
+        switch (stageIndex)
+        {
+            case 0:
+                unCookedImage.SetActive(false);
+                midCookedImage.SetActive(false);
+                cookedImage.SetActive(false);
+                potCover.SetActive(true);
+                break;
+            case 1:
+                unCookedImage.SetActive(true);
+                midCookedImage.SetActive(false);
+                cookedImage.SetActive(false);
+                potCover.SetActive(true);
+                break;
+            case 2:
+                unCookedImage.SetActive(true);
+                midCookedImage.SetActive(true);
+                cookedImage.SetActive(false);
+                potCover.SetActive(true);
+                break;
+            case 3:
+                unCookedImage.SetActive(true);
+                midCookedImage.SetActive(true);
+                cookedImage.SetActive(true);
+                potCover.SetActive(false);
+                break;
+            default:
+                unCookedImage.SetActive(false);
+                midCookedImage.SetActive(false);
+                cookedImage.SetActive(false);
+                potCover.SetActive(true);
+                break;
         }
     }
 

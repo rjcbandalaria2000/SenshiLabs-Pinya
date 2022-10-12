@@ -6,33 +6,38 @@ using UnityEngine.Assertions;
 public class TemperatureControl : MonoBehaviour
 {
     [Header("Tracker")]
-    public GameObject Tracker;
+    public GameObject   Tracker;
     public float Speed; 
     [Header("Positions")]
-    public GameObject StartPosition;
-    public GameObject EndPosition;
-    public GameObject TempPositions;
+    public GameObject   StartPosition;
+    public GameObject   EndPosition;
+    public GameObject   TempPositions;
    
-    public Vector2 RandomTempPosition;
+    public Vector2      RandomTempPosition;
 
     [Header("Temperature")]
-    public GameObject ChosenTemp;
+    public GameObject   ChosenTemp;
     
-    public int RequiredPointCounter = 3;
-    public GameObject Parent;
+    public int          RequiredPointCounter = 3;
+    public GameObject   Parent;
 
     [Header("State")]
-    public bool CanMove;
+    public bool         CanMove;
 
-    private int pointCounter;
-    private Vector3 destination;
-    private Coroutine moveTrackerRoutine;
+    private int         pointCounter;
+    private Vector3     destination;
+    private Coroutine   moveTrackerRoutine;
+    private Pot         pot;
     // Start is called before the first frame update
     void Start()
     {
         Assert.IsNotNull(Tracker, "Tracker is null or is not set");
         //SetRandomTemperaturePosition();
-
+        pot = Parent.GetComponent<Pot>();
+        if(pot != null)
+        {
+            pot.ShowCookingStage(pointCounter);
+        }
     }
 
     public void SetRandomTemperaturePosition()
@@ -94,6 +99,7 @@ public class TemperatureControl : MonoBehaviour
             if (pointCounter < RequiredPointCounter)
             {
                 pointCounter++;
+                
             }
             if (pointCounter >= RequiredPointCounter)
             {
@@ -103,7 +109,10 @@ public class TemperatureControl : MonoBehaviour
                 Parent.GetComponent<Pot>().IsCooked = true;
                 Events.OnObjectiveComplete.Invoke();
             }
-            
+            if (pot != null)
+                {
+                    pot.ShowCookingStage(pointCounter);
+                }
         }
         else
         {
