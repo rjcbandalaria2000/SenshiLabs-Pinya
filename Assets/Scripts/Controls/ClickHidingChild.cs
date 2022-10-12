@@ -19,7 +19,9 @@ public class ClickHidingChild : MonoBehaviour
         Debug.Log("Child Found");
         hideSeekManager.score += 1;
         hideSeekManager.count -= 1;
+        SingletonManager.Get<DisplayChildCount>().updateChildCount();
         child.SetActive(false); // or DeleteDestroy?
+       
 
         hideSeekManager.CheckIfFinished();
 
