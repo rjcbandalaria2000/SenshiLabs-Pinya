@@ -7,12 +7,17 @@ public class DisplayCookingInstructions : MonoBehaviour
     public GameObject ingredientInstructionsUI;
     public GameObject cookingInstructionUI;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         Events.OnPrepStage.AddListener(ActivateIngredientInstructions);
         Events.OnCookingStage.AddListener(ActivateCookingInstructions);
         Events.OnSceneChange.AddListener(OnSceneChange);
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+       
     }
 
     public void ActivateIngredientInstructions()
