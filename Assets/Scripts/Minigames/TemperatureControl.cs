@@ -8,16 +8,17 @@ public class TemperatureControl : MonoBehaviour
     [Header("Tracker")]
     public GameObject   Tracker;
     public List<float>  Speeds = new(); 
+
     [Header("Positions")]
     public GameObject   StartPosition;
     public GameObject   EndPosition;
     public GameObject   TempPositions;
-   
     public Vector2      RandomTempPosition;
+    public GameObject   leftRandomPosition;
+    public GameObject   rightRandomPosition;
 
     [Header("Temperature")]
     public GameObject   ChosenTemp;
-    
     public int          RequiredPointCounter = 3;
     public GameObject   Parent;
 
@@ -32,7 +33,7 @@ public class TemperatureControl : MonoBehaviour
     void Start()
     {
         Assert.IsNotNull(Tracker, "Tracker is null or is not set");
-        //SetRandomTemperaturePosition();
+        SetRandomTemperaturePosition();
         pot = Parent.GetComponent<Pot>();
         if(pot != null)
         {
@@ -42,7 +43,9 @@ public class TemperatureControl : MonoBehaviour
 
     public void SetRandomTemperaturePosition()
     {
-        TempPositions.transform.position = new Vector2(Random.Range(RandomTempPosition.x, RandomTempPosition.y), 
+        if(leftRandomPosition == null) { return; }
+        if(rightRandomPosition == null) { return; }
+        TempPositions.transform.position = new Vector2(Random.Range(leftRandomPosition.transform.position.x, rightRandomPosition.transform.position.x), 
             TempPositions.transform.position.y);
     }
 
@@ -101,6 +104,7 @@ public class TemperatureControl : MonoBehaviour
             {
                 pointCounter++;
                 Tracker.transform.position = StartPosition.transform.position;
+                SetRandomTemperaturePosition();
                 
             }
             if (pointCounter >= RequiredPointCounter)
