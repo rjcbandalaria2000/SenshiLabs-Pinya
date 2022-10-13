@@ -267,11 +267,11 @@ public class Clothes : MonoBehaviour
 
         if(clothes == 1)
         {
-            spriteChanger(4);
+            spriteChanger(3);
         }
         else
         {
-            spriteChanger(8);
+            spriteChanger(6);
         }
         
 
@@ -330,10 +330,10 @@ public class Clothes : MonoBehaviour
                         spriteChanger(1);
                         break;
                     case 1:
-                        spriteChanger(5);
+                        spriteChanger(4);
                         break;
                     case 0:
-                        spriteChanger(9);
+                        spriteChanger(7);
                         break;
                     default:
                         break;
@@ -361,10 +361,10 @@ public class Clothes : MonoBehaviour
                         spriteChanger(2);
                         break;
                     case 1:
-                        spriteChanger(6);
+                        spriteChanger(5);
                         break;
                     case 0:
-                        spriteChanger(10);
+                        spriteChanger(8);
                         break;
                     default:
                         break;
@@ -389,13 +389,13 @@ public class Clothes : MonoBehaviour
                 switch (clothes)
                 {
                     case 2:
-                        spriteChanger(3);
+                        spriteChanger(2);
                         break;
                     case 1:
-                        spriteChanger(7);
+                        spriteChanger(5);
                         break;
                     case 0:
-                        spriteChanger(11);
+                        spriteChanger(8);
                         break;
                     default:
                         break;

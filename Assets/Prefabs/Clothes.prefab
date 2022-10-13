@@ -188,16 +188,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foldManager: {fileID: 0}
   stateSprites:
-  - {fileID: -4624229699710612016, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
-  - {fileID: -4441996566371481695, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
-  - {fileID: 781372478320572571, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
-  - {fileID: -4441996566371481695, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
+  - {fileID: 2002840491632191039, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
+  - {fileID: 766115594850046710, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
+  - {fileID: 1081487001028940082, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
   - {fileID: -4667277429282822393, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
   - {fileID: -3731932901275799694, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
   - {fileID: -4216749805413827816, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
-  - {fileID: -4216749805413827816, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
   - {fileID: 476210483715515733, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
-  - {fileID: -1951711991544812820, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
   - {fileID: -4554787893758244655, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
   - {fileID: -1951711991544812820, guid: 2bf3fdadc59ffae4c87a5dcd609cd11a, type: 3}
   clothes: 2
