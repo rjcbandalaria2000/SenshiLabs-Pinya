@@ -99,6 +99,7 @@ public class TemperatureControl : MonoBehaviour
             if (pointCounter < RequiredPointCounter)
             {
                 pointCounter++;
+                Tracker.transform.position = StartPosition.transform.position;
                 
             }
             if (pointCounter >= RequiredPointCounter)
@@ -107,12 +108,13 @@ public class TemperatureControl : MonoBehaviour
                 if (moveTrackerRoutine == null) { return; }
                 StopCoroutine(moveTrackerRoutine);
                 Parent.GetComponent<Pot>().IsCooked = true;
-                Events.OnObjectiveComplete.Invoke();
+                //Events.OnObjectiveComplete.Invoke();
             }
             if (pot != null)
-                {
-                    pot.ShowCookingStage(pointCounter);
-                }
+            {
+                pot.ShowCookingStage(pointCounter);
+                Debug.Log("Update Cook Stage");
+            }
         }
         else
         {
