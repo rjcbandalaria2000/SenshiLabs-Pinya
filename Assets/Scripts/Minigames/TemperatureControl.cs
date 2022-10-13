@@ -58,14 +58,6 @@ public class TemperatureControl : MonoBehaviour
 
     IEnumerator MoveTracker()
     {
-        //while (Vector2.Distance(Tracker.transform.position, EndPosition.transform.position) > 0)
-        //{
-        //    Tracker.transform.position = Vector2.MoveTowards(Tracker.transform.position,
-        //        EndPosition.transform.position,
-        //        Speed * Time.deltaTime);
-        //    yield return new WaitForFixedUpdate();
-        //}
-
         while (true)
         {
             if(pointCounter > Speeds.Count) { yield return null; }
@@ -107,18 +99,18 @@ public class TemperatureControl : MonoBehaviour
                 Events.OnCookingButtonPressed.Invoke();
                 
             }
+            if (pot != null)
+            {
+                pot.ShowCookingStage(pointCounter);
+                Debug.Log("Update Cook Stage");
+            }
             if (pointCounter >= RequiredPointCounter)
             {
                 if (Parent.GetComponent<Pot>().IsCooked) { return; }
                 if (moveTrackerRoutine == null) { return; }
                 StopCoroutine(moveTrackerRoutine);
                 Parent.GetComponent<Pot>().IsCooked = true;
-                //Events.OnObjectiveComplete.Invoke();
-            }
-            if (pot != null)
-            {
-                pot.ShowCookingStage(pointCounter);
-                Debug.Log("Update Cook Stage");
+                Events.OnObjectiveComplete.Invoke();
             }
         }
         else

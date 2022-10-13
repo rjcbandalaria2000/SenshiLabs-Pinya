@@ -85,6 +85,30 @@ public class ImHungryManager : MinigameManager
 
     #region Exit Minigame Functions
 
+    public override void OnExitMinigame()
+    {
+        exitMinigameRoutine = StartCoroutine(ExitMinigame());
+    }
+    protected override IEnumerator ExitMinigame()
+    {
+        // Play close animation
+        transitionManager.ChangeAnimation(TransitionManager.CURTAIN_CLOSE);
+        //Deactivate active UI 
+        SingletonManager.Get<UIManager>().DeactivateResultScreen();
+        SingletonManager.Get<UIManager>().DeactivateTimerUI();
+        SingletonManager.Get<UIManager>().DeactivateGameUI();
+        //Wait for transition to end
+        while (!transitionManager.IsAnimationFinished())
+        {
+            Debug.Log("Transition to closing");
+            yield return null;
+        }
+        Events.OnSceneChange.Invoke();
+        Assert.IsNotNull(sceneChange, "Scene change is null or not set");
+        sceneChange.OnChangeScene(NameOfNextScene);
+        yield return null;
+
+    }
 
 
     #endregion
