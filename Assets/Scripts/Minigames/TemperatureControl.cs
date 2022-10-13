@@ -7,7 +7,7 @@ public class TemperatureControl : MonoBehaviour
 {
     [Header("Tracker")]
     public GameObject   Tracker;
-    public float Speed; 
+    public List<float>  Speeds = new(); 
     [Header("Positions")]
     public GameObject   StartPosition;
     public GameObject   EndPosition;
@@ -24,7 +24,7 @@ public class TemperatureControl : MonoBehaviour
     [Header("State")]
     public bool         CanMove;
 
-    private int         pointCounter;
+    private int         pointCounter = 0;
     private Vector3     destination;
     private Coroutine   moveTrackerRoutine;
     private Pot         pot;
@@ -66,6 +66,7 @@ public class TemperatureControl : MonoBehaviour
 
         while (true)
         {
+            if(pointCounter > Speeds.Count) { yield return null; }
             if(Tracker.transform.position.x == EndPosition.transform.position.x)
             {
                 destination = StartPosition.transform.position;
@@ -76,7 +77,7 @@ public class TemperatureControl : MonoBehaviour
             }
             Tracker.transform.position = Vector2.MoveTowards(Tracker.transform.position,
                 destination,
-                Speed * Time.deltaTime);
+                Speeds[pointCounter] * Time.deltaTime);
             yield return new WaitForFixedUpdate();
             //yield return null;
         }

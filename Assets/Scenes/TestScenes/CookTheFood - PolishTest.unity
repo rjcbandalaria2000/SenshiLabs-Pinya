@@ -2706,7 +2706,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tracker: {fileID: 1007357098}
-  Speed: 2
+  Speeds:
+  - 2
+  - 3
+  - 4
+  - 5
   StartPosition: {fileID: 83568138}
   EndPosition: {fileID: 506559440}
   TempPositions: {fileID: 166510685}
