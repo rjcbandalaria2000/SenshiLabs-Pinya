@@ -97,6 +97,13 @@ public class ImHungryManager : MinigameManager
         SingletonManager.Get<UIManager>().DeactivateResultScreen();
         SingletonManager.Get<UIManager>().DeactivateTimerUI();
         SingletonManager.Get<UIManager>().DeactivateGameUI();
+
+        //Deactivate Pot UI
+        if (pot)
+        {
+            pot.DeactivateTempChoice();
+        }
+
         //Wait for transition to end
         while (!transitionManager.IsAnimationFinished())
         {
@@ -120,26 +127,33 @@ public class ImHungryManager : MinigameManager
         if (pot == null) { return; }
         if (pot.IsCooked)
         {
-            Debug.Log("Finished Cooking");
-            Assert.IsNotNull(sceneChange, "Scene change is null or is not set");
-            if (NameOfNextScene == null) { return; }
-            sceneChange.OnChangeScene(NameOfNextScene);
+            OnWin();
         }
     }
 
     public override void OnWin()
     {
-        base.OnWin();
+        SingletonManager.Get<MiniGameTimer>().StopCountdownTimer();
+        isCompleted = true;
+        SingletonManager.Get<UIManager>().ActivateResultScreen();
+        SingletonManager.Get<UIManager>().ActivateGoodResult();
+        SingletonManager.Get<PlayerData>().IsImHungryFinished = true;
+        Debug.Log("Minigame complete");
     }
 
     public override void OnMinigameLose()
     {
-        base.OnMinigameLose();
+        SingletonManager.Get<MiniGameTimer>().StopCountdownTimer();
+        SingletonManager.Get<UIManager>().ActivateResultScreen();
+        SingletonManager.Get<UIManager>().ActivateBadResult();
+        Debug.Log("Minigame lose");
     }
 
     public override void OnMinigameFinished()
     {
-        base.OnMinigameFinished();
+        Events.OnSceneChange.Invoke();
+        Assert.IsNotNull(sceneChange, "Scene change is null or not set");
+        sceneChange.OnChangeScene(NameOfNextScene);
     }
 
     #endregion

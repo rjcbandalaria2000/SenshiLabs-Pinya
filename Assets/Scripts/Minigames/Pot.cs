@@ -78,6 +78,12 @@ public class Pot : MonoBehaviour
         }
     }
 
+    public void DeactivateTempChoice()
+    {
+        if (TempChoices == null) { return; }
+        TempChoices.SetActive(false);
+    }
+
     public void ShowCookingStage(int stageIndex)
     {
         if(unCookedImage == null) { return; }
