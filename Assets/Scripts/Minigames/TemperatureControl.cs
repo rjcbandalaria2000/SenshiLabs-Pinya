@@ -104,6 +104,7 @@ public class TemperatureControl : MonoBehaviour
                 pointCounter++;
                 Tracker.transform.position = StartPosition.transform.position;
                 SetRandomTemperaturePosition();
+                Events.OnCookingButtonPressed.Invoke();
                 
             }
             if (pointCounter >= RequiredPointCounter)
@@ -126,6 +127,11 @@ public class TemperatureControl : MonoBehaviour
         }
 
        
+    }
+
+    public int GetRemainingCookingCounter()
+    {
+        return RequiredPointCounter - pointCounter;
     }
 
 }

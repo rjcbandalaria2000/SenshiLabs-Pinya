@@ -25,6 +25,7 @@ public class DisplayRemainingIngredients : MonoBehaviour
 
         Events.OnIngredientPlaced.AddListener(UpdateRemainingIngredients);
         Events.OnSceneChange.AddListener(OnSceneChange);
+        UpdateRemainingIngredients();
     }
 
     public void UpdateRemainingIngredients()

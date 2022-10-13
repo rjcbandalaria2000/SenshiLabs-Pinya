@@ -25,6 +25,7 @@ public class Pot : MonoBehaviour
     {
         TempChoices.SetActive(false);
         Events.OnIngredientPlaced.Invoke();
+        Events.OnPrepStage.Invoke();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -51,6 +52,7 @@ public class Pot : MonoBehaviour
             AreIngredientsAdded = true;
             if(TempChoices == null) { return; }
             ActivateTempChoice();
+            Events.OnCookingStage.Invoke();
         }
     }
 

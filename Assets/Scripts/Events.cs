@@ -89,6 +89,7 @@ public static class Events
     public static readonly Evt OnIngredientPlaced = new();
     public static readonly Evt OnPrepStage = new();
     public static readonly Evt OnCookingStage = new();
+    public static readonly Evt OnCookingButtonPressed = new();
 
     #endregion
 
