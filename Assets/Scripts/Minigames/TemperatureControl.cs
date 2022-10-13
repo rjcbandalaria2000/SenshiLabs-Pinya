@@ -13,7 +13,6 @@ public class TemperatureControl : MonoBehaviour
     public GameObject   StartPosition;
     public GameObject   EndPosition;
     public GameObject   TempPositions;
-    public Vector2      RandomTempPosition;
     public GameObject   leftRandomPosition;
     public GameObject   rightRandomPosition;
 
