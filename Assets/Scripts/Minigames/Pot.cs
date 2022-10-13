@@ -23,7 +23,8 @@ public class Pot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        TempChoices.SetActive( false);
+        TempChoices.SetActive(false);
+        Events.OnIngredientPlaced.Invoke();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -38,6 +39,7 @@ public class Pot : MonoBehaviour
                 CurrentIngredientCount++;
                 CheckAllIngredients();
                 collidedIngredient.gameObject.SetActive(false);
+                Events.OnIngredientPlaced.Invoke();
             }
         }
     }
@@ -113,6 +115,11 @@ public class Pot : MonoBehaviour
                 potCover.SetActive(true);
                 break;
         }
+    }
+
+    public int GetRemainingIngredients()
+    {
+        return RequiredIngredientCount - CurrentIngredientCount;
     }
 
 }
