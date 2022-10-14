@@ -43,6 +43,11 @@ public class ChildrenTag : MonoBehaviour
             spriteUpdate();
         }
 
+        if(bound == null)
+        {
+            bound = GameObject.FindGameObjectWithTag("Bound").GetComponent<BoxCollider2D>();
+        }
+
         startPos = this.transform.position;
         targetPos = RNG_Position();
 
@@ -77,15 +82,15 @@ public class ChildrenTag : MonoBehaviour
     {
         if (isTag)
         {
-           renderer.sprite = TagSprite;
+           renderer.material.color = Color.red;
 
             Debug.Log("Tag Sprite");
         }
         else
         {
-            renderer.sprite = defaultSprite;
-           
-           
+            renderer.material.color = Color.white;
+
+
             Debug.Log("Default Sprite");
         }
     }
