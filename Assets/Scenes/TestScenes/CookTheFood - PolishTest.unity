@@ -579,6 +579,14 @@ PrefabInstance:
       value: 'Click the mouse button and the time speed of the cursor to cook the
         food. Successfully clicking on the green bar makes you cook the food.  '
       objectReference: {fileID: 0}
+    - target: {fileID: 6831142648749375009, guid: 888fba8b9858f884f89759d4f8510ca9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1662821798}
+    - target: {fileID: 6831142648749375009, guid: 888fba8b9858f884f89759d4f8510ca9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitTutorial
+      objectReference: {fileID: 0}
     - target: {fileID: 6831142649519135753, guid: 888fba8b9858f884f89759d4f8510ca9, type: 3}
       propertyPath: m_Name
       value: CookTheFoodTutorialPrompt
@@ -1504,6 +1512,11 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 20
   m_TargetDisplay: 0
+--- !u!1 &576310539 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6831142649519135753, guid: 888fba8b9858f884f89759d4f8510ca9, type: 3}
+  m_PrefabInstance: {fileID: 192594015}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &598190663
 GameObject:
   m_ObjectHideFlags: 0
@@ -3746,6 +3759,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3056311790999024246, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1662821798}
+    - target: {fileID: 3056311790999024246, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ShowTutorial
+      objectReference: {fileID: 0}
     - target: {fileID: 3056311791677182187, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_Name
       value: MiniGame_MainMenu
@@ -4763,7 +4784,7 @@ MonoBehaviour:
   minigameBadResult: {fileID: 1806432717}
   loadingUI: {fileID: 48252566}
   askMomButton: {fileID: 0}
-  tutorialGO: {fileID: 0}
+  tutorialGO: {fileID: 576310539}
   confirmationGO: {fileID: 0}
 --- !u!4 &1662821799
 Transform:
