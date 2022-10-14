@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestScenes/GetWater- PolishTest.unity
     guid: ece5d402c239bc64d82e311141408a53
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/CookTheFood - PolishTest.unity
+    guid: 05f4c92c76240864b9beb6bc81a3d70e
   m_configObjects: {}
