@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Game/WashTheDishes-Polish.unity
     guid: 3659233de3f0d904e8bc744d7f5231e3
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/GetWater- PolishTest.unity
+    guid: ece5d402c239bc64d82e311141408a53
   m_configObjects: {}

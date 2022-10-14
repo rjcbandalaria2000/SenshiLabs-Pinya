@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GetWaterMinigame : MinigameObject
 {
+    private TransitionManager transitionManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +16,8 @@ public class GetWaterMinigame : MinigameObject
     {
         interactable = this.GetComponent<Interactable>();
         sceneChange = this.gameObject.GetComponent<SceneChange>();
+        transitionManager = SingletonManager.Get<TransitionManager>();
+        
     }
 
     public override void Interact(GameObject player = null)
@@ -22,11 +26,28 @@ public class GetWaterMinigame : MinigameObject
         MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
         if (playerMotivation)
         {
-            playerMotivation.DecreaseMotivation(motivationCost);
+            //Check if has enough motivation
+            if (playerMotivation.MotivationAmount < motivationCost)
+            {
+                // if there is not enough motivation amount
+                Debug.Log("Not enough motivation");
+                return;
+            }
+            else
+            {
+                playerMotivation.DecreaseMotivation(motivationCost);
+                //Disable player controls 
+                PlayerControls playerControl = player.GetComponent<PlayerControls>();
+                if (playerControl)
+                {
+                    playerControl.enabled = false;
+                }
+                Debug.Log("Interacted");
+                isInteracted = true; // to avoid being called again since it is already interacted
+                StartInteractRoutine();
+            }
         }
         Debug.Log("Interacted");
-        isInteracted = false;
-        JumpToMiniGame();
     }
 
     public override void EndInteract(GameObject player = null)
@@ -62,6 +83,30 @@ public class GetWaterMinigame : MinigameObject
     //Can be improved and transfer to player controls 
     public override IEnumerator InteractCoroutine(GameObject player = null)
     {
+        transitionManager = SingletonManager.Get<TransitionManager>();
+        //Disable UI Elements
+        SingletonManager.Get<UIManager>().DeactivateGameUI();
+
+        //Play animation of transition
+        if (transitionManager)
+        {
+
+            transitionManager.ChangeAnimation(TransitionManager.CURTAIN_CLOSE);
+
+        }
+        //Wait for the transition to end
+        while (!transitionManager.IsAnimationFinished())
+        {
+            Debug.Log("Closing Curtain Time: " + transitionManager.animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+            yield return null;
+        }
+
+        //Jump to next scene
+        JumpToMiniGame();
         yield return null;
+    }
+    public override void StartInteractRoutine()
+    {
+        interactRoutine = StartCoroutine(InteractCoroutine());
     }
 }

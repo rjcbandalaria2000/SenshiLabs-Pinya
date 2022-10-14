@@ -71,10 +71,12 @@ public class GetWaterManager : MinigameManager
     protected override IEnumerator StartMinigameCounter()
     {
         //Disable Well UI 
+        //Disable Swiping
         WaterWell well = wateringWell.GetComponent<WaterWell>();
         if (well)
         {
             well.UI.SetActive(false);
+            well.CanSwipeDown = false;
         }
         //Deactivate Minigame Main Menu
         SingletonManager.Get<UIManager>().DeactivateMiniGameMainMenu();
@@ -107,6 +109,7 @@ public class GetWaterManager : MinigameManager
         SingletonManager.Get<UIManager>().ActivateGameUI();
         //Activate well UI
         well.UI.SetActive(true);
+        well.CanSwipeDown = true;
         Events.OnObjectiveUpdate.Invoke();
         Debug.Log("Refresh Score board");
     }

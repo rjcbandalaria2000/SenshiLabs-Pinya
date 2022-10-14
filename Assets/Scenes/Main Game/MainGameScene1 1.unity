@@ -6211,7 +6211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2623126533286589079, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
       propertyPath: m_Name
-      value: Minigame_WateringWell
+      value: Well-GetWater
       objectReference: {fileID: 0}
     - target: {fileID: 2623126533286589079, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
       propertyPath: m_Layer
@@ -6219,7 +6219,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2623126533286589079, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2623126534419913521, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
       propertyPath: m_Layer
@@ -6241,8 +6241,35 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6427477042207794531, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
+      propertyPath: interactable
+      value: 
+      objectReference: {fileID: 1114840999}
+    - target: {fileID: 6427477042207794531, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
+      propertyPath: minigameName
+      value: Get Water
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427477042207794531, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
+      propertyPath: minigameScene
+      value: GetWater- PolishTest
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427477042207794531, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
+      propertyPath: motivationCost
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
+--- !u!114 &1114840999 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2623126533286589072, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
+  m_PrefabInstance: {fileID: 1114840998}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b3d2454b55751409d921fff0e6dc60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1139237638
 PrefabInstance:
   m_ObjectHideFlags: 0
