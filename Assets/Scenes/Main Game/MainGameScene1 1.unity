@@ -10269,7 +10269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 44300141547989905, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 44300141547989908, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
       propertyPath: m_RootOrder
@@ -10314,6 +10314,14 @@ PrefabInstance:
     - target: {fileID: 44300141547989908, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 390742304502025315, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
+      propertyPath: minigameName
+      value: Tag
+      objectReference: {fileID: 0}
+    - target: {fileID: 390742304502025315, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
+      propertyPath: minigameScene
+      value: Tag_Test
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
