@@ -116,7 +116,7 @@ public class ChildrenTag : MonoBehaviour
                 other.gameObject.GetComponent<PlayerTag>().isTag = true;
                 this.isTag = false;
 
-                other.gameObject.GetComponent<SpriteRenderer>().sprite = other.gameObject.GetComponent<PlayerTag>().TagSprite;
+                other.gameObject.GetComponent<SpriteRenderer>().material.color = Color.red;
                 spriteUpdate();
                 Debug.Log("Tag");
             }
@@ -125,7 +125,7 @@ public class ChildrenTag : MonoBehaviour
                 other.gameObject.GetComponent<PlayerTag>().isTag = false;
                 this.isTag = true;
 
-                other.gameObject.GetComponent<SpriteRenderer>().sprite = other.gameObject.GetComponent<PlayerTag>().defaultSprite;
+                other.gameObject.GetComponent<SpriteRenderer>().material.color = Color.white;
                 spriteUpdate();
                 Debug.Log("Tag");
             }
