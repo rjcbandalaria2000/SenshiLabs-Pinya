@@ -6,6 +6,7 @@ using UnityEngine.Assertions;
 public class TagMiniGameManager : MinigameManager
 {
     public PlayerTag player;
+    public PlayerTag spawnPlayer;
     public GameObject bot;
 
     [Header("Countdown Timer")]
@@ -106,12 +107,13 @@ public class TagMiniGameManager : MinigameManager
 
     public override void CheckIfFinished()
     {
-        if (player.isTag == false)
+        if (spawnPlayer.isTag == false)
         {
             Debug.Log("Minigame complete");
             SingletonManager.Get<UIManager>().ActivateResultScreen();
             SingletonManager.Get<UIManager>().ActivateGoodResult();
             SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
+            spawnPlayer.gameObject.SetActive(false);
         }
         else 
         {
@@ -119,6 +121,7 @@ public class TagMiniGameManager : MinigameManager
             SingletonManager.Get<UIManager>().ActivateResultScreen();
             SingletonManager.Get<UIManager>().ActivateBadResult();
             SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
+            spawnPlayer.gameObject.SetActive(false);
         }
 
     }
@@ -128,6 +131,7 @@ public class TagMiniGameManager : MinigameManager
        
 
         GameObject newPlayer = Instantiate(player.gameObject, playerPos.position, Quaternion.identity);
+        spawnPlayer = newPlayer.GetComponent<PlayerTag>();
         yield return null;
 
         for(int i = 0; i < botSpawnPos.Count; i++)
@@ -166,6 +170,11 @@ public class TagMiniGameManager : MinigameManager
 
     protected override IEnumerator ExitMinigame()
     {
+        //Deactivate active UI 
+        SingletonManager.Get<UIManager>().DeactivateResultScreen();
+        SingletonManager.Get<UIManager>().DeactivateTimerUI();
+        SingletonManager.Get<UIManager>().DeactivateGameUI();
+
         // Play close animation
         if (transitionManager)
         {
@@ -176,10 +185,7 @@ public class TagMiniGameManager : MinigameManager
             Debug.Log("transition null");
         }
 
-        //Deactivate active UI 
-        SingletonManager.Get<UIManager>().DeactivateResultScreen();
-        SingletonManager.Get<UIManager>().DeactivateTimerUI();
-        SingletonManager.Get<UIManager>().DeactivateGameUI();
+        
         //Wait for transition to end
         while (!transitionManager.IsAnimationFinished())
         {
