@@ -106,7 +106,6 @@ public class HideSeekManager : MinigameManager
         //Activate Game Countdown
         SingletonManager.Get<UIManager>().ActivateGameCountdown();
         countdownTimerUI.UpdateCountdownSprites((int)gameStartTimer);
-        //countdownTimerUI.UpdateCountdownTimer(gameStartTimer);
         //Wait till the game countdown is finish
         while (gameStartTimer > 0)
         {

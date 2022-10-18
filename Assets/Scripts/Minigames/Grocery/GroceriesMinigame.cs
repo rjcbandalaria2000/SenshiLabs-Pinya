@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class GroceriesMinigame : MinigameObject
 {
-
-    // Start is called before the first frame update
     void Start()
     {
         Initialize();
@@ -26,7 +24,6 @@ public class GroceriesMinigame : MinigameObject
             playerMotivation.DecreaseMotivation(motivationCost);
         }
         Debug.Log("Interacted");
-        //isInteracted = false;
         JumpToMiniGame();
     }
 

@@ -13,13 +13,6 @@ public class FoldMiniGame : MinigameObject
     {
         interactable = this.GetComponent<Interactable>();
 
-        if (interactable)
-        {
-            //Listen to the interactable event and proceed to interact with the player
-            //Events.OnInteract.AddListener(Interact);
-            //Events.OnFinishInteract.AddListener(EndInteract);
-
-        }
         sceneChange = this.gameObject.GetComponent<SceneChange>();
     }
 
@@ -34,14 +27,13 @@ public class FoldMiniGame : MinigameObject
         Debug.Log("Interacted");
         isInteracted = false;
         JumpToMiniGame();
-        //isInteracted = true;
-        //interactRoutine = StartCoroutine(InteractCoroutine(player));
+       
     }
 
     public override void EndInteract(GameObject player = null)
     {
         base.EndInteract(player);
-        //StopCoroutine(interactRoutine);
+  
     }
 
     public override void JumpToMiniGame()

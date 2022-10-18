@@ -15,9 +15,6 @@ public class ChildrenTag : MonoBehaviour
     [Header("Tag")]
     public GameObject tagCollider;
 
-    [Header("Sprites")]
-    public Sprite defaultSprite;
-    public Sprite TagSprite;
 
     [Header("Location")]
     public Vector2 startPos;

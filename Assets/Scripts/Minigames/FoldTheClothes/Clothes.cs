@@ -66,7 +66,7 @@ public class Clothes : MonoBehaviour
         SingletonManager.Register(this);
     }
 
-    // Start is called before the first frame update
+   
     void Start()
     {
         if(foldManager == null)
@@ -83,9 +83,6 @@ public class Clothes : MonoBehaviour
         middlePos = foldManager.middlePos;
         endPos = foldManager.endPos;
 
-        //leftArrow.SetActive(true);
-        //upArrow.SetActive(false);
-        //downArrow.SetActive(false);
 
         foldResetRoutine = StartCoroutine(addFoldList());
 
@@ -95,8 +92,6 @@ public class Clothes : MonoBehaviour
 
         mainCamera = Camera.main;
         clothes = 2;
-
-        // this.transform.position = startPos.transform.position;
 
         RNG = Random.Range(0, listArrow.Count);
  
@@ -146,7 +141,6 @@ public class Clothes : MonoBehaviour
             {
                 Debug.Log("WrongSwipe");
                 isWrong = true;
-               // wrongEffectRoutine = StartCoroutine(wrongEffect(listArrow[RNG]));
                 effectDurationRoutine = StartCoroutine(wrongEffectDuration(listArrow[RNG]));
             }
             // if the mouse moved to the left
@@ -166,7 +160,6 @@ public class Clothes : MonoBehaviour
             {
                 Debug.Log("WrongSwipe");
                 isWrong = true;
-               // wrongEffectRoutine = StartCoroutine(wrongEffect(listArrow[RNG]));
                 effectDurationRoutine = StartCoroutine(wrongEffectDuration(listArrow[RNG]));
             }
 
@@ -184,7 +177,6 @@ public class Clothes : MonoBehaviour
             {
                 Debug.Log("WrongSwipe");
                 isWrong = true;
-                //wrongEffectRoutine = StartCoroutine(wrongEffect(listArrow[RNG]));
                 effectDurationRoutine = StartCoroutine(wrongEffectDuration(listArrow[RNG]));
             }
 
@@ -194,7 +186,6 @@ public class Clothes : MonoBehaviour
         {
             Debug.Log("SwipeRight");
             isWrong = true;
-            //wrongEffectRoutine = StartCoroutine(wrongEffect(listArrow[RNG]));
             effectDurationRoutine = StartCoroutine(wrongEffectDuration(listArrow[RNG]));
         }
 
@@ -231,7 +222,6 @@ public class Clothes : MonoBehaviour
     {
         while(this.transform.position != middlePos.transform.position)
         {
-          //  Debug.Log(Vector2.Distance(this.transform.position, middlePos.transform.position));
             if (Vector2.Distance(this.transform.position, middlePos.transform.position) >= 0.1f )
             {
                 this.transform.position = Vector2.Lerp(this.transform.position, middlePos.transform.position, lerpSpeed * Time.deltaTime);
@@ -278,7 +268,6 @@ public class Clothes : MonoBehaviour
         leftFold = false;
         topFold = false;
         downFold = false;
-        //listArrow.Clear();
 
         this.transform.position = startPos.transform.position;
         foldResetRoutine = StartCoroutine(addFoldList());
@@ -341,10 +330,6 @@ public class Clothes : MonoBehaviour
 
                 }
 
-      
-
-                //leftArrow.SetActive(false);
-                //upArrow.SetActive(true);
                 listArrow.RemoveAt(i);
                 Debug.Log(listArrow.Count);
                 break;
@@ -369,13 +354,8 @@ public class Clothes : MonoBehaviour
                     default:
                         break;
 
-
                 }
 
-     
-
-                //leftArrow.SetActive(false);
-                //upArrow.SetActive(true);
                 listArrow.RemoveAt(i);
                 Debug.Log(listArrow.Count);
                 break;
@@ -403,10 +383,6 @@ public class Clothes : MonoBehaviour
 
                 }
 
-
-
-                //leftArrow.SetActive(false);
-                //upArrow.SetActive(true);
                 listArrow.RemoveAt(i);
                 Debug.Log(listArrow.Count);
                 break;
@@ -426,7 +402,6 @@ public class Clothes : MonoBehaviour
 
         yield return null;
 
-        //foldResetRoutine = null;
     }
 
     public void  spriteChanger(int index)

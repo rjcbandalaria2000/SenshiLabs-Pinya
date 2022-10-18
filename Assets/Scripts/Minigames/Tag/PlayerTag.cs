@@ -13,7 +13,7 @@ public class PlayerTag : MonoBehaviour
     public Sprite defaultSprite;
     public Sprite TagSprite;
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         isTag = false;
@@ -21,7 +21,7 @@ public class PlayerTag : MonoBehaviour
      
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");

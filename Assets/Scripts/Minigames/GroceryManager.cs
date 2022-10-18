@@ -22,7 +22,7 @@ public class GroceryManager : MinigameManager //Might rename this
     public int numberOfItems;
     public List<GameObject> itemsAvailable;
     public List<GameObject> wantedItems;
-    //public List<GameObject> extraList;
+
 
     [SerializeField]private GameObject basket;
     private Vector3 basketPosition;
@@ -48,15 +48,12 @@ public class GroceryManager : MinigameManager //Might rename this
     {
         SingletonManager.Register(this);
 
-       
     }
 
     void Start()
     {
-
         Initialize();
 
-       
     }
     public Vector3 getBasketPosition()
     {
@@ -102,16 +99,6 @@ public class GroceryManager : MinigameManager //Might rename this
         }
         SingletonManager.Get<DisplayGroceryList>().updateList();
     }
-
-
-    //public void checkDuplicate(int num)
-    //{
-    //    for(int i = 0; i < wantedItems.Count; i++)
-    //    {
-            
-    //    }
-    //}
-
     IEnumerator addAvailableItems()
     {
         for(int i = 0; i < spawnPoints.Count; i++)
@@ -183,9 +170,6 @@ public class GroceryManager : MinigameManager //Might rename this
 
         startMinigameRoutine = StartCoroutine(StartMinigameCounter());
 
-
-        
-
         if (basket == null)
         {
             basket = GameObject.FindGameObjectWithTag("Basket"); // Might change this
@@ -197,8 +181,6 @@ public class GroceryManager : MinigameManager //Might rename this
     protected override IEnumerator StartMinigameCounter()
     {
         gameStartTimer = GameStartTime;
-
-       
 
         //Deactivate Minigame Main Menu
         SingletonManager.Get<UIManager>().DeactivateMiniGameMainMenu();
@@ -254,7 +236,6 @@ public class GroceryManager : MinigameManager //Might rename this
         {
 
             addAvailableItemsRoutine = StartCoroutine(addAvailableItems());
-            // initializeRoutine = StartCoroutine(initializeList());
 
             //Spawn
             spawnRoutine = StartCoroutine(spawnItem());
