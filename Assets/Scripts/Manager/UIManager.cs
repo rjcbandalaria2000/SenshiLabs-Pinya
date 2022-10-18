@@ -199,6 +199,7 @@ public class UIManager : MonoBehaviour
     public void DeactivateResultScreen()
     {
         if (minigameResultsUI == null) { return; }
+        Debug.Log("Close Result");
         minigameResultsUI.SetActive(false);
     }
 
