@@ -46,13 +46,17 @@ public class TaskManager : MonoBehaviour
         Assert.IsNotNull(taskTextPrefab, "taskTextPrefab is not set");
         for (int i = 0; i < minigameObjects.Count; i++)
         {
-            GameObject spawnedText = Instantiate(taskTextPrefab, taskListParent.transform, false);
-            TextMeshProUGUI text = spawnedText.GetComponent<TextMeshProUGUI>();
-            if (text)
+            //Only spawn if minigame is not yet completed 
+            if (!minigameObjects[i].hasCompleted)
             {
-                text.text = minigameObjects[i].minigameName.ToString();
+                GameObject spawnedText = Instantiate(taskTextPrefab, taskListParent.transform, false);
+                TextMeshProUGUI text = spawnedText.GetComponent<TextMeshProUGUI>();
+                if (text)
+                {
+                    text.text = minigameObjects[i].minigameName.ToString();
+                }
+                taskTexts.Add(spawnedText);
             }
-            taskTexts.Add(spawnedText);
         }
     }
 

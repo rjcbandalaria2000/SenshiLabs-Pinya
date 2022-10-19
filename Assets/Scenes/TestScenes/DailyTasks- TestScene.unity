@@ -11179,6 +11179,10 @@ PrefabInstance:
       propertyPath: minigameScene
       value: WaterThePlants-Polish
       objectReference: {fileID: 0}
+    - target: {fileID: -4991398368355363817, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
+      propertyPath: preRequisiteTasks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1626766352336488398, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -12874,7 +12878,7 @@ MonoBehaviour:
   - {fileID: 714896940}
   coolDown: 5
   playerPinyaMeter: {fileID: 312946477}
-  pinyaCost: 50
+  pinyaCost: 10
   pinyaMeterUI: {fileID: 3686634581920591310}
   heartGO: {fileID: 6949856585603288234}
   twinkleGO: {fileID: 1106236529}
