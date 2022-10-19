@@ -6,38 +6,45 @@ using UnityEngine.Assertions;
 public class TemperatureControl : MonoBehaviour
 {
     [Header("Tracker")]
-    public GameObject Tracker;
-    public float Speed; 
+    public GameObject   Tracker;
+    public List<float>  Speeds = new(); 
+
     [Header("Positions")]
-    public GameObject StartPosition;
-    public GameObject EndPosition;
-    public GameObject TempPositions;
-   
-    public Vector2 RandomTempPosition;
+    public GameObject   StartPosition;
+    public GameObject   EndPosition;
+    public GameObject   TempPositions;
+    public GameObject   leftRandomPosition;
+    public GameObject   rightRandomPosition;
 
     [Header("Temperature")]
-    public GameObject ChosenTemp;
-    
-    public int RequiredPointCounter = 3;
-    public GameObject Parent;
+    public GameObject   ChosenTemp;
+    public int          RequiredPointCounter = 3;
+    public GameObject   Parent;
 
     [Header("State")]
-    public bool CanMove;
+    public bool         CanMove;
 
-    private int pointCounter;
-    private Vector3 destination;
-    private Coroutine moveTrackerRoutine;
+    private int         pointCounter = 0;
+    private Vector3     destination;
+    private Coroutine   moveTrackerRoutine;
+    private Pot         pot;
     // Start is called before the first frame update
     void Start()
     {
         Assert.IsNotNull(Tracker, "Tracker is null or is not set");
-        //SetRandomTemperaturePosition();
-
+        SetRandomTemperaturePosition();
+        pot = Parent.GetComponent<Pot>();
+        if(pot != null)
+        {
+            pot.ShowCookingStage(pointCounter);
+        }
     }
 
     public void SetRandomTemperaturePosition()
     {
-        TempPositions.transform.position = new Vector2(Random.Range(RandomTempPosition.x, RandomTempPosition.y), 
+        if(leftRandomPosition == null) { return; }
+        if(rightRandomPosition == null) { return; }
+        TempPositions.transform.position = new Vector2(Random.Range(leftRandomPosition.transform.position.x, rightRandomPosition.transform.position.x), 
             TempPositions.transform.position.y);
     }
 
@@ -51,16 +58,9 @@ public class TemperatureControl : MonoBehaviour
 
     IEnumerator MoveTracker()
     {
-        //while (Vector2.Distance(Tracker.transform.position, EndPosition.transform.position) > 0)
-        //{
-        //    Tracker.transform.position = Vector2.MoveTowards(Tracker.transform.position,
-        //        EndPosition.transform.position,
-        //        Speed * Time.deltaTime);
-        //    yield return new WaitForFixedUpdate();
-        //}
-
         while (true)
         {
+            if(pointCounter > Speeds.Count) { yield return null; }
             if(Tracker.transform.position.x == EndPosition.transform.position.x)
             {
                 destination = StartPosition.transform.position;
@@ -71,7 +71,7 @@ public class TemperatureControl : MonoBehaviour
             }
             Tracker.transform.position = Vector2.MoveTowards(Tracker.transform.position,
                 destination,
-                Speed * Time.deltaTime);
+                Speeds[pointCounter] * Time.deltaTime);
             yield return new WaitForFixedUpdate();
             //yield return null;
         }
@@ -94,6 +94,15 @@ public class TemperatureControl : MonoBehaviour
             if (pointCounter < RequiredPointCounter)
             {
                 pointCounter++;
+                Tracker.transform.position = StartPosition.transform.position;
+                SetRandomTemperaturePosition();
+                Events.OnCookingButtonPressed.Invoke();
+                
+            }
+            if (pot != null)
+            {
+                pot.ShowCookingStage(pointCounter);
+                Debug.Log("Update Cook Stage");
             }
             if (pointCounter >= RequiredPointCounter)
             {
@@ -103,7 +112,6 @@ public class TemperatureControl : MonoBehaviour
                 Parent.GetComponent<Pot>().IsCooked = true;
                 Events.OnObjectiveComplete.Invoke();
             }
-            
         }
         else
         {
@@ -111,6 +119,11 @@ public class TemperatureControl : MonoBehaviour
         }
 
        
+    }
+
+    public int GetRemainingCookingCounter()
+    {
+        return RequiredPointCounter - pointCounter;
     }
 
 }

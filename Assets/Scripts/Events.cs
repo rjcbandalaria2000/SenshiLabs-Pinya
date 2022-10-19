@@ -84,6 +84,14 @@ public static class Events
     public static readonly Evt OnBucketRetrieve = new(); //controls the arrows UI in Get Water Minigame (activates up arrow)
     #endregion
 
+    #region CookTheFood Events
+
+    public static readonly Evt OnIngredientPlaced = new();
+    public static readonly Evt OnPrepStage = new();
+    public static readonly Evt OnCookingStage = new();
+    public static readonly Evt OnCookingButtonPressed = new();
+
+    #endregion
 
     #endregion
 
