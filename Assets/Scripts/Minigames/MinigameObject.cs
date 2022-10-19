@@ -14,6 +14,8 @@ public class MinigameObject : MonoBehaviour
     public bool             hasCompleted;
     public string           minigameScene;
 
+    public List<MinigameObject> preRequisiteTasks;
+
     protected SceneChange   sceneChange;
     protected PlayerData    playerData;
     protected Coroutine     interactRoutine;
@@ -55,5 +57,10 @@ public class MinigameObject : MonoBehaviour
     public virtual IEnumerator InteractCoroutine(GameObject player = null)
     {
         yield return null; 
+    }
+
+    public bool CheckIfPrerequisiteFinished()
+    {
+        return false;
     }
 }
