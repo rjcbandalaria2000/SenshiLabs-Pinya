@@ -77,13 +77,26 @@ public class TaskManager : MonoBehaviour
 
     public void SetRandomTasks() {
 
+        //Temporarily store all tasks. Modify to avoid duplicates 
+        List<MinigameObject> tempTaskList = new();
+
+        //Only add to the tempTaskList tasks/minigames that are not yet completed
+        for (int i = 0; i < minigameObjects.Count; i++) {
+
+            if (!minigameObjects[i].hasCompleted)
+            {
+                tempTaskList.Add(minigameObjects[i]);
+            }
+        
+        }
         for (int i = 0; i < maxNumOfTasks; i++) {
 
-            int randomTaskIndex = Random.Range(0, minigameObjects.Count);
-            requiredTasks.Add(minigameObjects[randomTaskIndex]);
+            int randomTaskIndex = Random.Range(0, tempTaskList.Count);
+            //Check for duplicates
+            requiredTasks.Add(tempTaskList[randomTaskIndex]);
+            tempTaskList.RemoveAt(randomTaskIndex);
+               
         }
-        
-    
     }
 
 }
