@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Game/HideSeek_Test.unity
     guid: 10a2e55238d86594e8d3f46ba23d9615
   - enabled: 1
-    path: Assets/Scenes/Main Game/GetWater- TestScene.unity
+    path: Assets/Scenes/TestScenes/GetWater- TestScene.unity
     guid: 1eab4fd68f765b245880815d6be2af2c
   - enabled: 1
     path: Assets/Scenes/Main Game/SleepingMinigame- TestScene.unity
@@ -51,7 +51,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Game/WashTheDishes-Polish.unity
     guid: 3659233de3f0d904e8bc744d7f5231e3
   - enabled: 1
-    path: Assets/Scenes/TestScenes/GetWater- PolishTest.unity
+    path: Assets/Scenes/Main Game/GetWater- PolishTest.unity
     guid: ece5d402c239bc64d82e311141408a53
   - enabled: 1
     path: Assets/Scenes/TestScenes/CookTheFood - PolishTest.unity

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class WaterWell : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class WaterWell : MonoBehaviour
 
     [Header("UI")]
     public GameObject       UI;
+
+    [Header("Animation")]
+    public float            animationDuration = 1f;
 
     private int             playerSwipeUpCount;
     private int             playerSwipeDownCount;
@@ -75,7 +79,8 @@ public class WaterWell : MonoBehaviour
                     if (playerSwipeDownCount < RequiredSwipes)
                     {
                         playerSwipeDownCount++;
-                        SingletonManager.Get<GetWaterManager>().slider.value = playerSwipeDownCount;
+                        SingletonManager.Get<GetWaterManager>().slider.DOValue(playerSwipeDownCount, animationDuration, false);
+                       // SingletonManager.Get<GetWaterManager>().slider.value = playerSwipeDownCount;
                         Events.OnObjectiveUpdate.Invoke();
                     }
                     if (playerSwipeDownCount >= RequiredSwipes)
@@ -112,7 +117,8 @@ public class WaterWell : MonoBehaviour
                     Events.OnBucketUsed.Invoke();
                     //Reset swipes 
                     playerSwipeDownCount = 0;
-                    SingletonManager.Get<GetWaterManager>().slider.value = playerSwipeDownCount;
+                    SingletonManager.Get<GetWaterManager>().slider.DOValue(playerSwipeDownCount, animationDuration, false);
+                    //SingletonManager.Get<GetWaterManager>().slider.value = playerSwipeDownCount;
                     Events.OnBucketDrop.Invoke();
                 }
                 if(availableBuckets <= 0)
