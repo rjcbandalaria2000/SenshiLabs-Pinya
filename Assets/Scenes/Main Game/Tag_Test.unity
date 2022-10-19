@@ -1203,11 +1203,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2009363870715776589, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
   m_PrefabInstance: {fileID: 479062265}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &479062267 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5916939463018089454, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
-  m_PrefabInstance: {fileID: 479062265}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &479062268 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5571515022663844316, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
@@ -1283,6 +1278,7 @@ MonoBehaviour:
   - {fileID: 1370266434}
   - {fileID: 933009707}
   - {fileID: 100784887}
+  uIManager: {fileID: 781254075}
 --- !u!4 &781254073
 Transform:
   m_ObjectHideFlags: 0
@@ -1322,7 +1318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823114bcfa710324782919cf7ae8bb51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerDisplay: {fileID: 479062267}
+  timerDisplay: {fileID: 1742925307}
   minigame: {fileID: 0}
   motivationMeter: {fileID: 0}
   pinyaMeter: {fileID: 0}

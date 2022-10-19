@@ -59,11 +59,6 @@ public class ChildrenTag : MonoBehaviour
         movementRoutine = StartCoroutine(movement());
     }
 
-    private void Update()
-    {
-        
-    }
-
     public Vector2 RNG_Position()
     {
         Transform boxBound = bound.GetComponent<Transform>();

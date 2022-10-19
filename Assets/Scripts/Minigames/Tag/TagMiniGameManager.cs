@@ -17,28 +17,19 @@ public class TagMiniGameManager : MinigameManager
     public Transform playerPos;
     public List<Transform> botSpawnPos;
 
+    public UIManager uIManager;
     // Start is called before the first frame update
     void Start()
     {
         Initialize();
        
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(SingletonManager.Get<MiniGameTimer>().GetTimer() <= 0)
-        {
-            CheckIfFinished();
-        }
-    }
-
     public override void Initialize()
     {
         transitionManager = SingletonManager.Get<TransitionManager>();
         sceneChange = this.gameObject.GetComponent<SceneChange>();
 
-        SingletonManager.Get<UIManager>().ActivateMiniGameMainMenu();
+        uIManager.ActivateMiniGameMainMenu();
         Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
         Events.OnSceneChange.AddListener(OnSceneChange);
         startMinigameRoutine = null;
@@ -64,7 +55,7 @@ public class TagMiniGameManager : MinigameManager
         gameStartTimer = GameStartTime;
 
         //Deactivate Minigame Main Menu
-        SingletonManager.Get<UIManager>().DeactivateMiniGameMainMenu();
+        uIManager.DeactivateMiniGameMainMenu();
         //Start Curtain Transition
         transitionManager.ChangeAnimation(TransitionManager.CURTAIN_OPEN);
 
@@ -77,7 +68,7 @@ public class TagMiniGameManager : MinigameManager
             }
         }
         //Activate Game Countdown
-        SingletonManager.Get<UIManager>().ActivateGameCountdown();
+        uIManager.ActivateGameCountdown();
         countdownTimerUI.UpdateCountdownSprites((int)gameStartTimer);
         //countdownTimerUI.UpdateCountdownTimer(gameStartTimer);
         //Wait till the game countdown is finish
@@ -92,10 +83,12 @@ public class TagMiniGameManager : MinigameManager
 
         startMinigameRoutine = StartCoroutine(initializeMiniGame());
 
-        SingletonManager.Get<UIManager>().DeactivateGameCountdown();
-        SingletonManager.Get<UIManager>().ActivateGameUI();
-        SingletonManager.Get<UIManager>().ActivateMiniGameTimerUI();
+        uIManager.DeactivateGameCountdown();
+        uIManager.ActivateGameUI();
+        uIManager.ActivateMiniGameTimerUI();
         SingletonManager.Get<MiniGameTimer>().StartCountdownTimer();
+        
+        StartCoroutine(checkStatus());
 
 
 
@@ -110,16 +103,18 @@ public class TagMiniGameManager : MinigameManager
         if (spawnPlayer.isTag == false)
         {
             Debug.Log("Minigame complete");
-            SingletonManager.Get<UIManager>().ActivateResultScreen();
-            SingletonManager.Get<UIManager>().ActivateGoodResult();
+            isCompleted = true;
+            uIManager.ActivateResultScreen();
+            uIManager.ActivateGoodResult();
             SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
             spawnPlayer.gameObject.SetActive(false);
         }
         else 
         {
             Debug.Log("Minigame lose");
-            SingletonManager.Get<UIManager>().ActivateResultScreen();
-            SingletonManager.Get<UIManager>().ActivateBadResult();
+            isCompleted = true;
+            uIManager.ActivateResultScreen();
+            uIManager.ActivateBadResult();
             SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
             spawnPlayer.gameObject.SetActive(false);
         }
@@ -149,43 +144,54 @@ public class TagMiniGameManager : MinigameManager
             }
         }
 
+
         yield return null;
+
 
 
         startMinigameRoutine = null;
 
     }
 
+    IEnumerator checkStatus()
+    {
+
+        while (!isCompleted)
+        {
+            if(SingletonManager.Get<MiniGameTimer>().GetTimer() <= 0)
+            {
+              
+                CheckIfFinished();
+                yield return null;
+            }
+            Debug.Log("Playing");
+            yield return null;
+        }
+        
+    }
+
     public void continueScene()
     {
         Debug.Log("Minigame complete");
+
         exitMinigameRoutine = StartCoroutine(ExitMinigame());
     }
 
     public void gameOver()
     {
         Debug.Log("Minigame lose");
+       
         exitMinigameRoutine = StartCoroutine(ExitMinigame());
     }
 
     protected override IEnumerator ExitMinigame()
     {
-        //Deactivate active UI 
-        SingletonManager.Get<UIManager>().DeactivateResultScreen();
-        SingletonManager.Get<UIManager>().DeactivateTimerUI();
-        SingletonManager.Get<UIManager>().DeactivateGameUI();
-
         // Play close animation
-        if (transitionManager)
-        {
-            transitionManager.ChangeAnimation(TransitionManager.CURTAIN_CLOSE);
-        }
-        else
-        {
-            Debug.Log("transition null");
-        }
-
-        
+        transitionManager.ChangeAnimation(TransitionManager.CURTAIN_CLOSE);
+        //Deactivate active UI 
+        uIManager.DeactivateResultScreen();
+        uIManager.DeactivateTimerUI();
+        uIManager.DeactivateGameUI();
         //Wait for transition to end
         while (!transitionManager.IsAnimationFinished())
         {
