@@ -64,7 +64,6 @@ public class PlayerControls : MonoBehaviour
             // for model flipping based on where the player is going 
            
             Vector2 lookDirection = targetPosition - this.transform.position; 
-            Debug.Log("X direction: " + lookDirection.normalized.x);
             if(lookDirection.normalized.x > 0)
             {
                 //the target position is going right
