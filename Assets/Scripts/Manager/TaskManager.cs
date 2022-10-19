@@ -7,17 +7,18 @@ using TMPro;
 
 public class TaskManager : MonoBehaviour
 {
+    [Header("Values")]
+    public int                      maxNumOfTasks = 1;
+
     [Header("Minigames")]
     public List<MinigameObject>     minigameObjects = new();
-    public List<PreRequisiteTask>   tasks = new();
+    //public List<PreRequisiteTask>   tasks = new();
     public List<MinigameObject>     requiredTasks = new();
-
+    public List<MinigameObject>     finishedTasks = new();
   
     [Header("Task UI")]
     public GameObject               taskTextPrefab;
     public GameObject               taskListParent;
-
-
 
     private List<GameObject>        taskTexts = new();
     private void Awake()
@@ -27,6 +28,7 @@ public class TaskManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SetRandomTasks();
         taskListParent.SetActive(false);
         //DisplayTasks();
     }
@@ -44,16 +46,16 @@ public class TaskManager : MonoBehaviour
             taskTexts.Clear();
         }
         Assert.IsNotNull(taskTextPrefab, "taskTextPrefab is not set");
-        for (int i = 0; i < minigameObjects.Count; i++)
+        for (int i = 0; i < requiredTasks.Count; i++)
         {
             //Only spawn if minigame is not yet completed 
-            if (!minigameObjects[i].hasCompleted)
+            if (!requiredTasks[i].hasCompleted)
             {
                 GameObject spawnedText = Instantiate(taskTextPrefab, taskListParent.transform, false);
                 TextMeshProUGUI text = spawnedText.GetComponent<TextMeshProUGUI>();
                 if (text)
                 {
-                    text.text = minigameObjects[i].minigameName.ToString();
+                    text.text = requiredTasks[i].minigameName.ToString();
                 }
                 taskTexts.Add(spawnedText);
             }
@@ -74,7 +76,12 @@ public class TaskManager : MonoBehaviour
     }
 
     public void SetRandomTasks() {
-    
+
+        for (int i = 0; i < maxNumOfTasks; i++) {
+
+            int randomTaskIndex = Random.Range(0, minigameObjects.Count);
+            requiredTasks.Add(minigameObjects[randomTaskIndex]);
+        }
         
     
     }

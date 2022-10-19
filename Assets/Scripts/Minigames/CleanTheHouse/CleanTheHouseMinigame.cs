@@ -15,9 +15,12 @@ public class CleanTheHouseMinigame : MinigameObject
     public override void Initialize()
     {
         interactable = this.GetComponent<Interactable>();
-        hasCompleted = SingletonManager.Get<PlayerData>().IsCleanTheHouseFinished;
         sceneChange = this.gameObject.GetComponent<SceneChange>();
         isInteracted = false;
+        if (SingletonManager.Get<PlayerData>())
+        {
+            hasCompleted = SingletonManager.Get<PlayerData>().IsCleanTheHouseFinished;
+        }
     }
 
     public override void Interact(GameObject player = null)

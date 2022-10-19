@@ -9,7 +9,7 @@ public class TransitionManager : MonoBehaviour
     public Animator     animator;
     public string       currentAnimation;
     [Range(0f, 1f)]
-    public float        transitionTime = 1;
+    public float        transitionTime = 1f;
 
     public float animationTime;
 
@@ -29,8 +29,7 @@ public class TransitionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //StartOpeningTransition();
-        //ChangeAnimation(CURTAIN_OPEN);
+       
     }
 
     public void ChangeAnimation(string animationName)
@@ -56,9 +55,7 @@ public class TransitionManager : MonoBehaviour
         //Check if the active animation playing is the current animation set
         if (animator.GetCurrentAnimatorStateInfo(0).IsName(currentAnimation))
         {
-            //Debug.Log("Correct animation");
-            //Debug.Log("Animation time: " + animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
-            //animator.GetCurrentAnimatorStateInfo(0).IsName(currentAnimation);
+            
             if (animator.GetCurrentAnimatorStateInfo(0).speed >= 1) // if the speed is positive 
             {
                 return animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= (transitionTime);

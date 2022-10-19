@@ -17,6 +17,10 @@ public class WaterThePlantsMinigame : MinigameObject
     {
         interactable = this.GetComponent<Interactable>();
         sceneChange = this.GetComponent<SceneChange>();
+        if (SingletonManager.Get<PlayerData>())
+        {
+            hasCompleted = SingletonManager.Get<PlayerData>().IsWaterThePlantsFinished;
+        }
     }
 
     public override void Interact(GameObject player = null)
