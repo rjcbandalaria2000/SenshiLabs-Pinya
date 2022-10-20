@@ -18,6 +18,10 @@ public class WashTheDishesMinigame : MinigameObject
         sceneChange = this.GetComponent<SceneChange>();
         transitionManager = SingletonManager.Get<TransitionManager>();
         isInteracted = false;
+        if (SingletonManager.Get<PlayerData>())
+        {
+            hasCompleted = SingletonManager.Get<PlayerData>().IsWashTheDishesFinished;
+        }
     }
 
     public override void Interact(GameObject player = null)

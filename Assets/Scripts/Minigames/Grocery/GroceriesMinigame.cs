@@ -15,6 +15,10 @@ public class GroceriesMinigame : MinigameObject
     {
         interactable = this.GetComponent<Interactable>();
         sceneChange = this.gameObject.GetComponent<SceneChange>();
+        if (SingletonManager.Get<PlayerData>())
+        {
+            hasCompleted = SingletonManager.Get<PlayerData>().IsGroceryFinished;
+        }
     }
 
     public override void Interact(GameObject player = null)

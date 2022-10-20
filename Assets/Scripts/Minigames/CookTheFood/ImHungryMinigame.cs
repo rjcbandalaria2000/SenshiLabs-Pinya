@@ -16,6 +16,10 @@ public class ImHungryMinigame : MinigameObject
         interactable = this.GetComponent<Interactable>();
         sceneChange = this.GetComponent<SceneChange>();
         transitionManager = SingletonManager.Get<TransitionManager>();
+        if (SingletonManager.Get<PlayerData>())
+        {
+            hasCompleted = SingletonManager.Get<PlayerData>().IsImHungryFinished;
+        }
     }
 
     public override void Interact(GameObject player = null)

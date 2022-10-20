@@ -16,6 +16,10 @@ public class SleepingMinigame : MinigameObject
         interactable = this.GetComponent<Interactable>();
         sceneChange = this.GetComponent<SceneChange>();
         transitionManager = SingletonManager.Get<TransitionManager>();
+        if (SingletonManager.Get<PlayerData>())
+        {
+            hasCompleted = SingletonManager.Get<PlayerData>().IsSleepFinished;
+        }
     }
 
     public override void Interact(GameObject player = null)

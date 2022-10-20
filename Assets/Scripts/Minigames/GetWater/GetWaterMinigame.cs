@@ -17,7 +17,11 @@ public class GetWaterMinigame : MinigameObject
         interactable = this.GetComponent<Interactable>();
         sceneChange = this.gameObject.GetComponent<SceneChange>();
         transitionManager = SingletonManager.Get<TransitionManager>();
-        
+        if (SingletonManager.Get<PlayerData>())
+        {
+            hasCompleted = SingletonManager.Get<PlayerData>().IsGetWaterFinished;
+        }
+
     }
 
     public override void Interact(GameObject player = null)
