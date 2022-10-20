@@ -88,7 +88,7 @@ public class SleepingMinigameManager : MinigameManager
             SingletonManager.Get<UIManager>().ActivateResultScreen();
             SingletonManager.Get<UIManager>().ActivateGoodResult();
             SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
-
+            SingletonManager.Get<PlayerData>().IsSleepFinished = true;
             //SingletonManager.Remove<SleepingMinigameManager>();
             //SingletonManager.Remove<SpawnManager>();
 
