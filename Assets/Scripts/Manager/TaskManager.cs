@@ -9,6 +9,7 @@ public class TaskManager : MonoBehaviour
 {
     [Header("Values")]
     public int                      maxNumOfTasks = 1;
+    public bool                     isCurrentTasksDone = false;
 
     [Header("Minigames")]
     public List<MinigameObject>     minigameObjects = new();
@@ -28,9 +29,25 @@ public class TaskManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetRandomTasks();
+        Initialize();
+    }
+
+    public void Initialize()
+    {
+        if (SingletonManager.Get<PlayerData>())
+        {
+            if(SingletonManager.Get<PlayerData>().requiredTasks.Count > 0)
+            {
+               
+            }
+        }
+        if (requiredTasks.Count <= 0)
+        {
+            SetRandomTasks();
+        }
+
         taskListParent.SetActive(false);
-        //DisplayTasks();
+        Events.OnSceneChange.AddListener(OnSceneChange);
     }
 
     public void DisplayTasks()
@@ -97,6 +114,38 @@ public class TaskManager : MonoBehaviour
             tempTaskList.RemoveAt(randomTaskIndex);
                
         }
+    }
+
+    public void CheckIfRequiredTasksComplete()
+    {
+        if (requiredTasks.Count <= 0) { return; }
+        for (int i = 0; i < requiredTasks.Count; i++)
+        {
+
+        }
+    }
+
+    public void OnSceneChange()
+    {
+        //Save the required tasks in the PlayerData 
+        if(requiredTasks.Count <= 0) { return; }
+        PlayerData playerData = SingletonManager.Get<PlayerData>();
+        if (playerData)
+        {
+            foreach (MinigameObject minigame in requiredTasks)
+            {
+                playerData.requiredTasks.Add(minigame.minigameName);
+            }
+        }
+        Events.OnSceneChange.RemoveListener(OnSceneChange);
+    }
+
+    public void RestoreSavedRequiredTasks()
+    {
+        PlayerData playerData = SingletonManager.Get<PlayerData>();
+        if(playerData == null) { return; }
+        
+        
     }
 
 }

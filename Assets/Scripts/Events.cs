@@ -110,4 +110,10 @@ public static class Events
     #region PinyaMeter Events
     public static readonly Evt OnPinyaEmpty = new();
     #endregion
+
+    #region TaskManagerEvents
+
+    public static readonly Evt OnTasksComplete = new();
+
+    #endregion
 }

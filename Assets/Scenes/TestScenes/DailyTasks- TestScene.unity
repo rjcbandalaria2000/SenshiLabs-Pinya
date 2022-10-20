@@ -2979,6 +2979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxNumOfTasks: 4
+  isCurrentTasksDone: 0
   minigameObjects:
   - {fileID: 1896368317}
   - {fileID: 1142555488}
