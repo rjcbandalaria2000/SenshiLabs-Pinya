@@ -24,15 +24,15 @@ public class GameManager : MonoBehaviour
 
     [Header("MiniGame Manager")]
     public List<MinigameObject>     minigames = new();
-    public CleanTheHouseManager     cleanMiniGame; //Change Public MiniGame;
-    public GroceryManager           groceryMiniGame;
-    public HideSeekManager          hideseekMiniGame;
-    public TagMiniGameManager       tagMiniGame;
-    public FoldingMinigameManager   foldMiniGame; 
+    //public CleanTheHouseManager     cleanMiniGame; //Change Public MiniGame;
+    //public GroceryManager           groceryMiniGame;
+    //public HideSeekManager          hideseekMiniGame;
+    //public TagMiniGameManager       tagMiniGame;
+    //public FoldingMinigameManager   foldMiniGame; 
     
 
-    [Header("List of Task")]
-    public List<string>             minigamesName;
+    //[Header("List of Task")]
+    //public List<string>             minigamesName;
 
     [Header("Pre-requisites")]
     public bool                     isGetWaterFinish;

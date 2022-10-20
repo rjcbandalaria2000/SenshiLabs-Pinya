@@ -38,7 +38,7 @@ public class TaskManager : MonoBehaviour
         {
             if(SingletonManager.Get<PlayerData>().requiredTasks.Count > 0)
             {
-               
+                RestoreSavedRequiredTasks();
             }
         }
         if (requiredTasks.Count <= 0)
@@ -143,9 +143,20 @@ public class TaskManager : MonoBehaviour
     public void RestoreSavedRequiredTasks()
     {
         PlayerData playerData = SingletonManager.Get<PlayerData>();
-        if(playerData == null) { return; }
-        
-        
+        if (playerData == null) { return; }
+        for (int i = 0; i < playerData.requiredTasks.Count; i++)
+        {
+            for(int j = 0; j < minigameObjects.Count; j++)
+            {
+                if (playerData.requiredTasks[i] == minigameObjects[j].minigameName)
+                {
+                    requiredTasks.Add(minigameObjects[j]);
+                    break;
+                }
+            }
+
+
+        }
     }
 
 }
