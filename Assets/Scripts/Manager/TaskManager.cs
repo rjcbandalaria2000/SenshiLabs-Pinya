@@ -152,7 +152,11 @@ public class TaskManager : MonoBehaviour
 
     public void CheckIfTasksDone()
     {
-        if (AreRequiredTasksDone())
+        if (AreAllTasksDone())
+        {
+            Debug.Log("Player wins ");
+        }
+        else if (AreRequiredTasksDone())
         {
             // Set new random tasks
             OnTasksDone();
@@ -216,4 +220,25 @@ public class TaskManager : MonoBehaviour
         }
     }
 
+    public bool AreAllTasksDone()
+    {
+        bool areTasksDone = false;
+        if (minigameObjects.Count <= 0) { return false; }
+        for (int i = 0; i < minigameObjects.Count; i++) 
+        {
+            if (!minigameObjects[i].hasCompleted)
+            {
+                areTasksDone = false;
+                break;
+            }
+            else
+            {
+                areTasksDone = true;
+            }
+        
+        
+        }
+        return areTasksDone;
+
+    }
 }
