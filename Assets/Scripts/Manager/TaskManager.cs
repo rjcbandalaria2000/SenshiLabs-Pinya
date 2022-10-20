@@ -45,6 +45,15 @@ public class TaskManager : MonoBehaviour
         //{
         //    SetRandomTasks();
         //}
+        if (SingletonManager.Get<PlayerData>().requiredTasks.Count > 0)
+        {
+            RestoreSavedRequiredTasks();
+        }
+        else
+        {
+            SetRandomTasks();
+        }
+
         CheckIfTasksDone();
         taskListParent.SetActive(false);
         Events.OnSceneChange.AddListener(OnSceneChange);
@@ -106,12 +115,15 @@ public class TaskManager : MonoBehaviour
             }
         
         }
+        // Clear required task list 
+        requiredTasks.Clear();
         for (int i = 0; i < maxNumOfTasks; i++) {
 
             int randomTaskIndex = Random.Range(0, tempTaskList.Count);
             //Check for duplicates
             requiredTasks.Add(tempTaskList[randomTaskIndex]);
             tempTaskList.RemoveAt(randomTaskIndex);
+            if (tempTaskList.Count <= 0) { break; }
                
         }
     }
@@ -121,10 +133,13 @@ public class TaskManager : MonoBehaviour
         bool allTasksDone = false;
         if (requiredTasks.Count <= 0) { return false; }
         for (int i = 0; i < requiredTasks.Count; i++)
-        {
+        { 
+            Debug.Log(requiredTasks[i].minigameName + " " + requiredTasks[i].hasCompleted);
             if (!requiredTasks[i].hasCompleted)
             {
                 allTasksDone = false;
+               
+                Debug.Log("Not all tasks are done");
                 break;
             }
             else
@@ -141,20 +156,21 @@ public class TaskManager : MonoBehaviour
         {
             // Set new random tasks
             OnTasksDone();
+            Debug.Log("All Tasks are done");
         }
-        else
-        {
-            // Check if there is already saved required tasks 
-            if(SingletonManager.Get<PlayerData>().requiredTasks.Count > 0)
-            {
-                RestoreSavedRequiredTasks();
-            }
-            else // else set new random tasks 
-            {
-                SetRandomTasks();
-            }
+        //else
+        //{
+        //    // Check if there is already saved required tasks 
+        //    if(SingletonManager.Get<PlayerData>().requiredTasks.Count > 0)
+        //    {
+        //        RestoreSavedRequiredTasks();
+        //    }
+        //    else // else set new random tasks 
+        //    {
+        //        SetRandomTasks();
+        //    }
 
-        }
+        //}
     }
 
     public void OnTasksDone()
@@ -169,6 +185,8 @@ public class TaskManager : MonoBehaviour
         PlayerData playerData = SingletonManager.Get<PlayerData>();
         if (playerData)
         {
+            //Refresh the player data required Tasks
+            playerData.requiredTasks.Clear();
             foreach (MinigameObject minigame in requiredTasks)
             {
                 playerData.requiredTasks.Add(minigame.minigameName);
@@ -182,6 +200,7 @@ public class TaskManager : MonoBehaviour
         PlayerData playerData = SingletonManager.Get<PlayerData>();
         if (playerData == null) { return; }
         if(playerData.requiredTasks.Count <= 0) { return; }
+        //Set the required tasks 
         for (int i = 0; i < playerData.requiredTasks.Count; i++)
         {
             for(int j = 0; j < minigameObjects.Count; j++)

@@ -6,9 +6,14 @@ public class ImHungryMinigame : MinigameObject
 {
     private TransitionManager transitionManager;
 
-    void Start()
+    private void Awake()
     {
         Initialize();
+    }
+
+    void Start()
+    {
+        
     }
 
     public override void Initialize()

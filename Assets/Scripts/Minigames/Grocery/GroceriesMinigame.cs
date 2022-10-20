@@ -5,10 +5,15 @@ using UnityEngine;
 public class GroceriesMinigame : MinigameObject
 {
 
+    private void Awake()
+    {
+        Initialize();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        Initialize();
+        
     }
 
     public override void Initialize()

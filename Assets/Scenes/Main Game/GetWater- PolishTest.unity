@@ -5162,7 +5162,7 @@ MonoBehaviour:
   isCompleted: 0
   NameOfNextScene: MainGameScene1 1
   timer: 0
-  maxTimer: 20
+  maxTimer: 35
   speedTimer: 1
   gameStartTime: 3
   countdownTimerUI: {fileID: 1698600892}

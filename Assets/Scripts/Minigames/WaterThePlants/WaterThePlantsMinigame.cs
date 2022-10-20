@@ -6,10 +6,15 @@ public class WaterThePlantsMinigame : MinigameObject
 {
     private TransitionManager   transitionManager;
 
+    private void Awake()
+    {
+        Initialize();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        Initialize();
+       
     }
 
 

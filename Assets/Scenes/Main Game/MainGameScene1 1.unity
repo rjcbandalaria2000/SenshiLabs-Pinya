@@ -4808,7 +4808,7 @@ PrefabInstance:
       objectReference: {fileID: 1021784890}
     - target: {fileID: 1021784888, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
       propertyPath: minigameName
-      value: Grocery_Test
+      value: Grocery
       objectReference: {fileID: 0}
     - target: {fileID: 1021784888, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
       propertyPath: MinigameScene
@@ -5120,17 +5120,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4735852996718008037, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
   m_PrefabInstance: {fileID: 917626506}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &917626508 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2907636213359965985, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
-  m_PrefabInstance: {fileID: 917626506}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcb796f3904931a458c6734213c8ab5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &920740507
 GameObject:
   m_ObjectHideFlags: 0
@@ -7884,9 +7873,6 @@ MonoBehaviour:
   - {fileID: 893641064}
   - {fileID: 677417415}
   - {fileID: 1114841000}
-  - {fileID: 9115556523157542576}
-  - {fileID: 917626508}
-  - {fileID: 1603101464}
   requiredTasks: []
   finishedTasks: []
   taskTextPrefab: {fileID: 8821998574807300443, guid: 65e0c267d798110448e4d3fecf68a721, type: 3}
@@ -10526,17 +10512,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
---- !u!114 &1603101464 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 390742304502025315, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
-  m_PrefabInstance: {fileID: 1603101463}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70ae48288063d554b82fcfd950a1d9fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1618416711 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2623126533286589074, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
@@ -11169,7 +11144,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -4991398368355363817, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
       propertyPath: minigameName
-      value: WaterThePlants-Polish
+      value: Water The Plants
       objectReference: {fileID: 0}
     - target: {fileID: -4991398368355363817, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
       propertyPath: minigameScene
@@ -13427,17 +13402,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
---- !u!114 &9115556523157542576 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3255592397443183566, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
-  m_PrefabInstance: {fileID: 9115556523157542575}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d657a076cc36934ab8a04b328006d4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &9188597008347393596
 GameObject:
   m_ObjectHideFlags: 0

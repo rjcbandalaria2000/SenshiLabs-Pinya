@@ -6,10 +6,15 @@ public class WashTheDishesMinigame : MinigameObject
 {
     private TransitionManager transitionManager;
 
+    private void Awake()
+    {
+        Initialize();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        Initialize();
+       
     }
 
     public override void Initialize()
