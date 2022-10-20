@@ -39,7 +39,6 @@ public class DisplayChildCount : MonoBehaviour
     {
         Assert.IsNotNull(ChildCount, "Catch Count text is not set or is null");
         Assert.IsNotNull(hideAndSeekMinigame, "Fold Minigame Manager is null or is not set");
-        Debug.Log("Update FoldCount");
         ChildCount.text = hideAndSeekMinigame.count.ToString();
     }
 

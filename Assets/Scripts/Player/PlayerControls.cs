@@ -26,7 +26,12 @@ public class PlayerControls : MonoBehaviour
             this.enabled = true;
         }
         mainCamera = Camera.main;
-        playerData = SingletonManager.Get<PlayerData>();
+
+        if(SingletonManager.Get<Player>() != null)
+        {
+            playerData = SingletonManager.Get<PlayerData>();
+        }
+       
         if (playerData)
         {
             if (playerData.HasSaved)

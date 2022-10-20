@@ -8,11 +8,30 @@ public class DragCovers : MonoBehaviour
 
     private Camera mainCamera;
     private Vector3 dragOffset;
-
+  
 
     void Start()
     {
         mainCamera = Camera.main;
+       
+
+
+    }
+
+    private void Update()
+    {
+        RaycastHit hit;
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out hit))
+        {
+            if(Input.GetMouseButtonDown(0))
+            {
+                // add offset so the object will not snap in the pivot point of the object
+                dragOffset = transform.position - GetMousePosition();
+                dragOffset.z = 0;
+                Events.OnMouseDown.Invoke();
+            }
+        }    
     }
 
     Vector3 GetMousePosition()
@@ -23,21 +42,28 @@ public class DragCovers : MonoBehaviour
 
     }
 
-    private void OnMouseDown()
-    {
-        RaycastHit hit;
-        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit))
+    //private void OnMouseDown()
+    //{
+    //    RaycastHit hit;
+    //    Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+    //    if (Physics.Raycast(ray, out hit, 1000f, ~IgnoreLayer))
+    //    {
 
-            if (hit.transform.gameObject.tag == "HidingSpot")
-            {
-                if (EventSystem.current.IsPointerOverGameObject()) { return; }
-                // add offset so the object will not snap in the pivot point of the object
-                dragOffset = transform.position - GetMousePosition();
-                dragOffset.z = 0;
-                Events.OnMouseDown.Invoke();
-            }
-    }
+    //        if (hit.transform.gameObject.tag == "HidingSpot")
+    //        {
+    //            // add offset so the object will not snap in the pivot point of the object
+    //            dragOffset = transform.position - GetMousePosition();
+    //            dragOffset.z = 0;
+    //            Events.OnMouseDown.Invoke();
+    //        }
+    //        else
+    //        {
+    //            return;
+    //        }
+    //    }
+
+            
+    //}
 
     private void OnMouseDrag()
     {

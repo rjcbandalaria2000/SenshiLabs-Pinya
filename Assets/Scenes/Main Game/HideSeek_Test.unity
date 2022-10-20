@@ -1916,9 +1916,9 @@ GameObject:
   - component: {fileID: 403256975}
   - component: {fileID: 403256976}
   m_Layer: 8
-  m_Name: Tree (2)
+  m_Name: Logs
   m_TagString: HidingSpot
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1931,7 +1931,7 @@ Transform:
   m_GameObject: {fileID: 403256970}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -10.57, y: 2, z: 2.3457031}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2003335177}
@@ -1978,7 +1978,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 1838790704963931801, guid: a698d4c4de2fc344abd31a580cccc2a2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8f4d04052d6d0fd4ba7512b003ab69dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2018,14 +2018,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 10.24}
+    oldSize: {x: 4.99, y: 3.47}
     newSize: {x: 7.32, y: 9.92}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 10}
+  m_Size: {x: 5, y: 3}
   m_EdgeRadius: 0
 --- !u!50 &403256975
 Rigidbody2D:
@@ -3774,9 +3774,9 @@ GameObject:
   - component: {fileID: 637839145}
   - component: {fileID: 637839146}
   m_Layer: 8
-  m_Name: Tree
+  m_Name: Logs
   m_TagString: HidingSpot
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3789,7 +3789,7 @@ Transform:
   m_GameObject: {fileID: 637839140}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.572042, y: -1.98, z: 2.3457031}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2003335177}
@@ -3836,7 +3836,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 1838790704963931801, guid: a698d4c4de2fc344abd31a580cccc2a2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8f4d04052d6d0fd4ba7512b003ab69dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3864,14 +3864,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 10.24}
+    oldSize: {x: 4.99, y: 3.47}
     newSize: {x: 7.32, y: 9.92}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 10}
+  m_Size: {x: 5, y: 3}
   m_EdgeRadius: 0
 --- !u!50 &637839145
 Rigidbody2D:
@@ -6095,9 +6095,9 @@ GameObject:
   - component: {fileID: 1115072923}
   - component: {fileID: 1115072924}
   m_Layer: 8
-  m_Name: Log
+  m_Name: Leaves
   m_TagString: HidingSpot
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6157,7 +6157,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 1838790704963931801, guid: a698d4c4de2fc344abd31a580cccc2a2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0451e844867ce9446a04e95aed14b96b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6197,14 +6197,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 10.24}
+    oldSize: {x: 5.68, y: 4.92}
     newSize: {x: 8.18, y: 3.46}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 10}
+  m_Size: {x: 5, y: 5}
   m_EdgeRadius: 0
 --- !u!50 &1115072923
 Rigidbody2D:
@@ -7747,7 +7747,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 245, y: -88.5}
+  m_AnchoredPosition: {x: 188, y: -70}
   m_SizeDelta: {x: 490, y: 177}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1380130206
@@ -8233,7 +8233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4257680015237913097, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.275
+      value: 1.2909375
       objectReference: {fileID: 0}
     - target: {fileID: 4257680015237913097, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8241,7 +8241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4257680015237913097, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.25
+      value: 8.3525
       objectReference: {fileID: 0}
     - target: {fileID: 4257680015237913097, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8421,9 +8421,9 @@ GameObject:
   - component: {fileID: 1467588590}
   - component: {fileID: 1467588591}
   m_Layer: 8
-  m_Name: Tree (1)
+  m_Name: Logs
   m_TagString: HidingSpot
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -8436,7 +8436,7 @@ Transform:
   m_GameObject: {fileID: 1467588585}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8.45, y: 2, z: 2.3457031}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2003335177}
@@ -8483,7 +8483,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 1838790704963931801, guid: a698d4c4de2fc344abd31a580cccc2a2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8f4d04052d6d0fd4ba7512b003ab69dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8523,14 +8523,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 10.24}
+    oldSize: {x: 4.99, y: 3.47}
     newSize: {x: 7.32, y: 9.92}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 10}
+  m_Size: {x: 5, y: 3}
   m_EdgeRadius: 0
 --- !u!50 &1467588590
 Rigidbody2D:
@@ -10094,7 +10094,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727883194}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.88, y: -9.03, z: 0.086567715}
+  m_LocalPosition: {x: -8.29, y: -9.03, z: 0.086567715}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10252,9 +10252,9 @@ GameObject:
   - component: {fileID: 1773115067}
   - component: {fileID: 1773115068}
   m_Layer: 8
-  m_Name: Log (2)
+  m_Name: Leaves
   m_TagString: HidingSpot
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -10266,7 +10266,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773115062}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.89, y: -7.6, z: 2.3457031}
+  m_LocalPosition: {x: -10, y: -6.8, z: 2.3457031}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10314,7 +10314,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 1838790704963931801, guid: a698d4c4de2fc344abd31a580cccc2a2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0451e844867ce9446a04e95aed14b96b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -10354,14 +10354,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 10.24}
+    oldSize: {x: 5.68, y: 4.92}
     newSize: {x: 8.18, y: 3.46}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 10}
+  m_Size: {x: 5, y: 5}
   m_EdgeRadius: 0
 --- !u!50 &1773115067
 Rigidbody2D:
@@ -10831,9 +10831,9 @@ GameObject:
   - component: {fileID: 1851014508}
   - component: {fileID: 1851014509}
   m_Layer: 8
-  m_Name: Tree (3)
+  m_Name: Logs
   m_TagString: HidingSpot
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -10846,7 +10846,7 @@ Transform:
   m_GameObject: {fileID: 1851014503}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 10.75, y: -5.54, z: 2.3457031}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2003335177}
@@ -10893,7 +10893,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 1838790704963931801, guid: a698d4c4de2fc344abd31a580cccc2a2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8f4d04052d6d0fd4ba7512b003ab69dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -10933,14 +10933,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 10.24}
+    oldSize: {x: 4.99, y: 3.47}
     newSize: {x: 7.32, y: 9.92}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 10}
+  m_Size: {x: 5, y: 3}
   m_EdgeRadius: 0
 --- !u!50 &1851014508
 Rigidbody2D:
@@ -10990,9 +10990,9 @@ GameObject:
   - component: {fileID: 1871802609}
   - component: {fileID: 1871802610}
   m_Layer: 8
-  m_Name: Log (1)
+  m_Name: Leaves
   m_TagString: HidingSpot
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -11052,7 +11052,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 1838790704963931801, guid: a698d4c4de2fc344abd31a580cccc2a2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0451e844867ce9446a04e95aed14b96b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -11092,14 +11092,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 10.24}
+    oldSize: {x: 5.68, y: 4.92}
     newSize: {x: 8.18, y: 3.46}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 10}
+  m_Size: {x: 5, y: 5}
   m_EdgeRadius: 0
 --- !u!50 &1871802609
 Rigidbody2D:
