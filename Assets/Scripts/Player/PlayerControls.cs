@@ -15,9 +15,10 @@ public class PlayerControls : MonoBehaviour
     public float        flippedAngle = 180;
     public float        normalAngle = 0;
 
-    private Vector3     targetPosition;
+     private Vector3     targetPosition;
     private PlayerData  playerData;
     private Camera      mainCamera; 
+    
 
     void Start()
     {
@@ -91,5 +92,10 @@ public class PlayerControls : MonoBehaviour
         {
             animator.SetBool("IsIdle", true);
         }
+    }
+
+    public void SetTargetPosition(Vector3 pos)
+    {
+        targetPosition = pos;
     }
 }
