@@ -34,6 +34,7 @@ public class UIManager : MonoBehaviour
     public GameObject       minigameResultsUI;
     public GameObject       minigameGoodResult;
     public GameObject       minigameBadResult;
+    public GameObject       transitionUI;
 
     [Header("Loading UI")]
     public GameObject       loadingUI;
@@ -49,6 +50,10 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        if(transitionUI != null)
+        {
+            transitionUI.SetActive(true);
+        }
 
         if (minigame == null)
         {
