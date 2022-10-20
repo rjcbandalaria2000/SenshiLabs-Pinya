@@ -34,18 +34,18 @@ public class TaskManager : MonoBehaviour
 
     public void Initialize()
     {
-        if (SingletonManager.Get<PlayerData>())
-        {
-            if(SingletonManager.Get<PlayerData>().requiredTasks.Count > 0)
-            {
-                RestoreSavedRequiredTasks();
-            }
-        }
-        if (requiredTasks.Count <= 0)
-        {
-            SetRandomTasks();
-        }
-
+        //if (SingletonManager.Get<PlayerData>())
+        //{
+        //    if(SingletonManager.Get<PlayerData>().requiredTasks.Count > 0)
+        //    {
+        //        RestoreSavedRequiredTasks();
+        //    }
+        //}
+        //if (requiredTasks.Count <= 0)
+        //{
+        //    SetRandomTasks();
+        //}
+        CheckIfTasksDone();
         taskListParent.SetActive(false);
         Events.OnSceneChange.AddListener(OnSceneChange);
     }
@@ -116,13 +116,50 @@ public class TaskManager : MonoBehaviour
         }
     }
 
-    public void CheckIfRequiredTasksComplete()
+    public bool AreRequiredTasksDone()
     {
-        if (requiredTasks.Count <= 0) { return; }
+        bool allTasksDone = false;
+        if (requiredTasks.Count <= 0) { return false; }
         for (int i = 0; i < requiredTasks.Count; i++)
         {
+            if (!requiredTasks[i].hasCompleted)
+            {
+                allTasksDone = false;
+                break;
+            }
+            else
+            {
+                allTasksDone = true;
+            }
+        }
+        return allTasksDone;
+    }
+
+    public void CheckIfTasksDone()
+    {
+        if (AreRequiredTasksDone())
+        {
+            // Set new random tasks
+            OnTasksDone();
+        }
+        else
+        {
+            // Check if there is already saved required tasks 
+            if(SingletonManager.Get<PlayerData>().requiredTasks.Count > 0)
+            {
+                RestoreSavedRequiredTasks();
+            }
+            else // else set new random tasks 
+            {
+                SetRandomTasks();
+            }
 
         }
+    }
+
+    public void OnTasksDone()
+    {
+        SetRandomTasks();
     }
 
     public void OnSceneChange()
@@ -144,6 +181,7 @@ public class TaskManager : MonoBehaviour
     {
         PlayerData playerData = SingletonManager.Get<PlayerData>();
         if (playerData == null) { return; }
+        if(playerData.requiredTasks.Count <= 0) { return; }
         for (int i = 0; i < playerData.requiredTasks.Count; i++)
         {
             for(int j = 0; j < minigameObjects.Count; j++)
