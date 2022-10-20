@@ -11,8 +11,8 @@ public class CutsceneManager : MonoBehaviour
     public Image pageImage;
     public List<Sprite> spritePages;
     public int pageCount;
-    public List<string> story;
-    public TextMeshProUGUI text;
+   // public List<string> story;
+    //public TextMeshProUGUI text;
     private SceneChange sceneChange;
     public string sceneName;
 
@@ -23,7 +23,7 @@ public class CutsceneManager : MonoBehaviour
     void Start()
     {
         pageImage.sprite = spritePages[0];
-        text.text = story[0];
+    //    text.text = story[0];
     }
 
     public void OnNextPage()
@@ -32,7 +32,7 @@ public class CutsceneManager : MonoBehaviour
         {
             pageCount++;
             pageImage.sprite = spritePages[pageCount];
-            text.text = story[pageCount];
+      //      text.text = story[pageCount];
         }
         else
         {

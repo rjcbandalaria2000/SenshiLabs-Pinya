@@ -10547,7 +10547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1705872687
 Transform:
   m_ObjectHideFlags: 0
@@ -12137,6 +12137,10 @@ PrefabInstance:
     - target: {fileID: 2930835036515486009, guid: 406b4b45bd39f4e47a57d6377fda27d1, type: 3}
       propertyPath: m_Name
       value: Twinkle (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2930835036515486009, guid: 406b4b45bd39f4e47a57d6377fda27d1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 406b4b45bd39f4e47a57d6377fda27d1, type: 3}
