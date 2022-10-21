@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerTag : MonoBehaviour
 {
@@ -13,7 +14,8 @@ public class PlayerTag : MonoBehaviour
     public Sprite defaultSprite;
     public Sprite TagSprite;
 
-    
+    private Vector3 targetPosition;
+
     void Start()
     {
         isTag = false;
@@ -24,14 +26,31 @@ public class PlayerTag : MonoBehaviour
    
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (EventSystem.current.IsPointerOverGameObject()) { return; }
+            
+            targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            targetPosition.z = this.transform.position.z;
+        }
+
+
+        //movement.x = Input.GetAxisRaw("Horizontal");
+        //movement.y = Input.GetAxisRaw("Vertical");
 
        
     }
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.deltaTime);
+        //Avoids jittering 
+        if (Vector3.Distance(this.transform.position, targetPosition) > 1)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+
+        }
+
+        //rb.MovePosition(rb.position + movement * moveSpeed * Time.deltaTime);
     }
 
    
