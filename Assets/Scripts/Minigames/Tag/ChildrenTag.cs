@@ -22,6 +22,9 @@ public class ChildrenTag : MonoBehaviour
     public float speed;
     public float delaySpeed;
 
+    [Header("Target")]
+    public Transform target;
+
     public SpriteRenderer renderer;
 
     public Coroutine movementRoutine;
@@ -163,6 +166,13 @@ public class ChildrenTag : MonoBehaviour
         yield return null;
     }
   
+    public void goToTarget()
+    {
+        if(this.gameObject.transform.position != target.position && target != null)
+        {
+            this.transform.position = Vector2.Lerp(this.transform.position, target.position, speed * Time.deltaTime);
+        }
+    }
    
 
 }
