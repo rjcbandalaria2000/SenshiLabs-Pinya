@@ -2,20 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class Plant : MonoBehaviour
 {
     [Header("Values")]
-    public float    CurrentWater;
-    public float    MaxWater;
+    public float        CurrentWater;
+    public float        MaxWater;
+
+    [Header("Animation")]
+    public float        animationTime = 1f;
 
     [Header("States")]
-    public bool     IsWatered =false;
+    public bool         IsWatered =false;
 
     [Header("Models")]
-    public GameObject DehydratedModel;
-    public GameObject MiddleModel;
-    public GameObject HydratedModel;
+    public GameObject   DehydratedModel;
+    public GameObject   MiddleModel;
+    public GameObject   HydratedModel;
 
     [Header("WaterBar")]
     public Image waterBar;
@@ -33,7 +37,8 @@ public class Plant : MonoBehaviour
         if(CurrentWater < MaxWater)
         {
             CurrentWater += waterValue;
-            waterBar.fillAmount = CurrentWater / MaxWater;
+            waterBar.DOFillAmount(CurrentWater / MaxWater, animationTime);
+            //waterBar.fillAmount = CurrentWater / MaxWater;
         }
         else
         {
