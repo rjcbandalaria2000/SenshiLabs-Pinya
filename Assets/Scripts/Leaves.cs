@@ -1,0 +1,109 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.EventSystems;
+
+public class Leaves : MonoBehaviour
+{
+    [Header("States")]
+    public bool swipedRight;
+    public bool swipedLeft;
+
+    [Header("Values")]
+    public int SwipeRequired;
+
+    [Header("Mouse Sweep Acceptance")]
+    [Range(0f, -1f)]
+    public float SwipeLeftAccept = -0.5f;
+    [Range(0f, 1f)]
+    public float SwipeRightAccept = 0.5f;
+
+    private Camera mainCamera;
+    private int swipeCounter;
+    private Vector2 initialPosition;
+    public GameObject child;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+       
+    }
+
+    private void OnEnable()
+    {
+        swipedRight = false;
+        swipedLeft = false;
+        mainCamera = Camera.main;
+    }
+
+    private void OnDisable()
+    {
+        if(child != null)
+        {
+            child.gameObject.GetComponent<ClickHidingChild>().isHiding = false;
+        }
+        
+    }
+
+    private void OnMouseDown()
+    {
+        initialPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+    }
+
+    private void OnMouseDrag()
+    {
+        if (EventSystem.current.IsPointerOverGameObject()) { return; }
+        //can be improved to be transfered in Sweeping Controls
+        //Get mouse position
+        Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition) - (Vector3)initialPosition;
+        if (mousePosition.normalized.x < SwipeLeftAccept)
+        {
+            // if the mouse moved to the left
+            swipedLeft = true;
+        }
+        if (mousePosition.normalized.x > SwipeRightAccept)
+        {
+            // if the mouse moved to the right 
+            swipedRight = true;
+
+        }
+        if (swipedRight && swipedLeft)
+        {
+            swipeCounter++;
+            swipedLeft = false;
+            swipedRight = false;
+        }
+        if (swipeCounter >= SwipeRequired)
+        {
+           
+            //Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
+        }
+        //Debug.Log("X coordinate: " + mousePosition.normalized.x);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision != null)
+        {
+            child = collision.gameObject;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision != null)
+        {
+            child = collision.gameObject;
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision != null)
+        {
+            child = collision.gameObject;
+        }
+    }
+
+}

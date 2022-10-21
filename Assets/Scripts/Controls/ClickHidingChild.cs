@@ -7,7 +7,7 @@ public class ClickHidingChild : MonoBehaviour
     [SerializeField] private GameObject child;
 
     public HideSeekManager hideSeekManager;
-    [SerializeField] private bool isHiding;
+    public bool isHiding;
 
     private void Start()
     {
@@ -43,6 +43,7 @@ public class ClickHidingChild : MonoBehaviour
         }
     }
 
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("HidingSpot"))
@@ -51,4 +52,5 @@ public class ClickHidingChild : MonoBehaviour
             this.gameObject.layer = LayerMask.NameToLayer("ChildHide");
         }
     }
+
 }
