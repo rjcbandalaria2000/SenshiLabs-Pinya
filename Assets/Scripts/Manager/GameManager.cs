@@ -5,9 +5,7 @@ using UnityEngine.Assertions;
 
 public class GameManager : MonoBehaviour
 {
-   
-
-    [Header ("Meaters")]
+    [Header ("Meters")]
     public MotivationMeter          playerMotivation;
     public PinyaMeter               playerPinyaMeter;
 
@@ -24,19 +22,6 @@ public class GameManager : MonoBehaviour
 
     [Header("MiniGame Manager")]
     public List<MinigameObject>     minigames = new();
-    //public CleanTheHouseManager     cleanMiniGame; //Change Public MiniGame;
-    //public GroceryManager           groceryMiniGame;
-    //public HideSeekManager          hideseekMiniGame;
-    //public TagMiniGameManager       tagMiniGame;
-    //public FoldingMinigameManager   foldMiniGame; 
-    
-
-    //[Header("List of Task")]
-    //public List<string>             minigamesName;
-
-    [Header("Pre-requisites")]
-    public bool                     isGetWaterFinish;
-    public bool                     isGroceryTaskFinish;
     
     private UIManager               UI;
     private TransitionManager       transitionManager;
@@ -50,13 +35,10 @@ public class GameManager : MonoBehaviour
         currentTime = maxTime;
         Events.OnPinyaEmpty.AddListener(GameLose);
         Events.OnSceneChange.AddListener(OnSceneChange);
+        Events.OnTasksComplete.AddListener(GameWin);
     }
     public void Start()
     {
-        isGetWaterFinish = SingletonManager.Get<PlayerData>().IsGetWaterFinished;
-        isGroceryTaskFinish = SingletonManager.Get<PlayerData>().IsGroceryFinished;
-
-
         if(UI == null)
         {
             if(GameObject.FindObjectOfType<UIManager>() != null)
@@ -105,12 +87,10 @@ public class GameManager : MonoBehaviour
         transitionManager.ChangeAnimation(TransitionManager.CURTAIN_OPEN);
 
         //Wait for the animation to finish 
-        while (!transitionManager.IsAnimationFinished()) {
-            
-            //Debug.Log("Transitioning");
+        while (!transitionManager.IsAnimationFinished())
+        {
             yield return null;
         }
-        //transitionManager.ChangeAnimation(TransitionManager.CURTAIN_IDLE);
         //Display UI
         UI.ActivateGameUI();
 
@@ -128,6 +108,12 @@ public class GameManager : MonoBehaviour
         UI.DeactivateGameUI();
     }
 
+    public void GameWin()
+    {
+        Debug.Log("Player wins");
+
+    }
+
     public void OnSceneChange()
     {
         //Remove Active singletons 
@@ -137,30 +123,7 @@ public class GameManager : MonoBehaviour
         //Remove all listeners when scene changes
         Events.OnPinyaEmpty.RemoveListener(GameLose);
         Events.OnSceneChange.RemoveListener(OnSceneChange);
+        Events.OnTasksComplete.RemoveListener(GameWin);
     }
 
 }
-
-//public void OnIncreaseMotivationButtonClicked()
-//{
-//    Assert.IsNotNull(playerMotivation, "PlayerMotivation not set or is null");
-//    playerMotivation.IncreaseMotivation(MotivationValueChange);
-//}
-
-//public void OnDecreaseMotivationButtonClicked()
-//{
-//    Assert.IsNotNull(playerMotivation, "PlayerMotivation not set or is null");
-//    playerMotivation.DecreaseMotivation(MotivationValueChange);
-//}
-
-//public void OnIncreasePinyaMeterButtonClicked()
-//{
-//    Assert.IsNotNull(playerPinyaMeter, "PlayerPinyaMeter is null or is not set");
-//    playerPinyaMeter.IncreasePinyaMeter(PinyaMeterValueChange);
-//}
-
-//public void OnDecreasePinyaMeterButtonClicked()
-//{
-//    Assert.IsNotNull(playerPinyaMeter, "PlayerPinyaMeter is null or is not set");
-//    playerPinyaMeter.DecreasePinyaMeter(PinyaMeterValueChange);
-//}

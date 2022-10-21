@@ -5061,6 +5061,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1516140953}
     m_Modifications:
+    - target: {fileID: 2907636213359965985, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
+      propertyPath: minigameName
+      value: Fold the Clothes
+      objectReference: {fileID: 0}
     - target: {fileID: 4735852996718008032, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
       propertyPath: m_Name
       value: Clothes-Fold
@@ -5888,15 +5892,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.24528301, g: 0.24528301, b: 0.24528301, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -2719145392924540775, guid: 79338f16b027c024da2272aceb7066bb, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -9838,8 +9842,6 @@ MonoBehaviour:
   speedCounter: 0
   player: {fileID: 312946475}
   minigames: []
-  isGetWaterFinish: 0
-  isGroceryTaskFinish: 0
 --- !u!4 &1473840147
 Transform:
   m_ObjectHideFlags: 0
@@ -10509,6 +10511,10 @@ PrefabInstance:
     - target: {fileID: 44300141547989908, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 390742304502025315, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
+      propertyPath: minigameName
+      value: Tag
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
@@ -13348,6 +13354,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1516140953}
     m_Modifications:
+    - target: {fileID: 3255592397443183566, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
+      propertyPath: minigameName
+      value: Hide and Seek
+      objectReference: {fileID: 0}
     - target: {fileID: 5983059630999239051, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
       propertyPath: m_RootOrder
       value: 7
