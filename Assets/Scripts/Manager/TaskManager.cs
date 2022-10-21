@@ -122,9 +122,38 @@ public class TaskManager : MonoBehaviour
             int randomTaskIndex = Random.Range(0, tempTaskList.Count);
             //Check for duplicates
             requiredTasks.Add(tempTaskList[randomTaskIndex]);
+            //Check if the task has pre requisite
+            if (tempTaskList[randomTaskIndex].preRequisiteTasks.Count > 0)
+            {
+                //if there is a pre requisite add it to the required task list
+                for(int j = 0; j < tempTaskList[randomTaskIndex].preRequisiteTasks.Count; j++)
+                {
+                    requiredTasks.Add(tempTaskList[randomTaskIndex].preRequisiteTasks[j]);
+                    
+                }
+            }
+
             tempTaskList.RemoveAt(randomTaskIndex);
+            //if the required tasks are over the max number of tasks
+            
+            //if the temp task list is not enough 
             if (tempTaskList.Count <= 0) { break; }
                
+        }
+        if (requiredTasks.Count > maxNumOfTasks)
+        {
+            // only remove the ones without pre requisites
+            for (int i = 0; i < requiredTasks.Count - maxNumOfTasks; i++)
+            {
+                for (int j = 0; j < requiredTasks.Count; j++)
+                {
+                    if (requiredTasks[j].preRequisiteTasks.Count <= 0)
+                    {
+                        requiredTasks.RemoveAt(j);
+                        break;
+                    }
+                }
+            }
         }
     }
 
@@ -163,19 +192,6 @@ public class TaskManager : MonoBehaviour
             OnTasksDone();
             Debug.Log("All Tasks are done");
         }
-        //else
-        //{
-        //    // Check if there is already saved required tasks 
-        //    if(SingletonManager.Get<PlayerData>().requiredTasks.Count > 0)
-        //    {
-        //        RestoreSavedRequiredTasks();
-        //    }
-        //    else // else set new random tasks 
-        //    {
-        //        SetRandomTasks();
-        //    }
-
-        //}
     }
 
     public void OnTasksDone()

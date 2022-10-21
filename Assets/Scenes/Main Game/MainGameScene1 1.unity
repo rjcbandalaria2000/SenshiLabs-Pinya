@@ -6916,6 +6916,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.661
       objectReference: {fileID: 0}
+    - target: {fileID: 5285038560494157795, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
+      propertyPath: preRequisiteTasks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5285038560494157795, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
+      propertyPath: preRequisiteTasks.Array.data[0]
+      value: 
+      objectReference: {fileID: 1114841000}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
 --- !u!114 &1139237639 stripped
@@ -11640,6 +11648,14 @@ PrefabInstance:
       propertyPath: minigameScene
       value: WaterThePlants-Polish
       objectReference: {fileID: 0}
+    - target: {fileID: -4991398368355363817, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
+      propertyPath: preRequisiteTasks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4991398368355363817, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
+      propertyPath: preRequisiteTasks.Array.data[0]
+      value: 
+      objectReference: {fileID: 1114841000}
     - target: {fileID: 1626766352336488398, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -12050,6 +12066,14 @@ PrefabInstance:
       propertyPath: motivationCost
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: -8512082004905795788, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
+      propertyPath: preRequisiteTasks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8512082004905795788, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
+      propertyPath: preRequisiteTasks.Array.data[0]
+      value: 
+      objectReference: {fileID: 893641064}
     - target: {fileID: 887505232, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
       propertyPath: m_Layer
       value: 6
