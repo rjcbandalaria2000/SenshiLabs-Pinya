@@ -50,7 +50,7 @@ public class HideSeekManager : MinigameManager
             list = spawnPoints;
 
             int randomPoint = Random.Range(0, list.Count);
-            GameObject child = Instantiate(children, list[i].transform.position, Quaternion.identity);
+            GameObject child = Instantiate(children, list[randomPoint].transform.position, Quaternion.identity);
             count += 1;
             list.RemoveAt(randomPoint);
 

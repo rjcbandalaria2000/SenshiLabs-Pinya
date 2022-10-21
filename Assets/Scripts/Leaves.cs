@@ -23,6 +23,7 @@ public class Leaves : MonoBehaviour
     private Vector2 initialPosition;
     public GameObject child;
 
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -38,11 +39,8 @@ public class Leaves : MonoBehaviour
 
     private void OnDisable()
     {
-        if(child != null)
-        {
-            child.gameObject.GetComponent<ClickHidingChild>().isHiding = false;
-        }
-        
+       
+
     }
 
     private void OnMouseDown()
@@ -76,34 +74,18 @@ public class Leaves : MonoBehaviour
         if (swipeCounter >= SwipeRequired)
         {
            
-            //Destroy(this.gameObject);
             this.gameObject.SetActive(false);
         }
         //Debug.Log("X coordinate: " + mousePosition.normalized.x);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision != null)
-        {
-            child = collision.gameObject;
-        }
-    }
-
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision != null)
-        {
-            child = collision.gameObject;
-        }
+        Debug.Log("Collide_Trigger");
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision != null)
-        {
-            child = collision.gameObject;
-        }
+        collision.gameObject.layer = LayerMask.NameToLayer("ChildHide");
     }
-
 }
