@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     public MotivationMeter          playerMotivation;
     public PinyaMeter               playerPinyaMeter;
 
+    [Header("States")]
+    public bool isGameFinished = false;
+
     [Header("Change Values")]
     public float                    MotivationValueChange;
     public float                    PinyaMeterValueChange;
@@ -110,8 +113,12 @@ public class GameManager : MonoBehaviour
 
     public void GameWin()
     {
-        Debug.Log("Player wins");
-
+        if (!isGameFinished)
+        {
+            isGameFinished = true;
+            Debug.Log("Player wins");
+            SingletonManager.Get<UIManager>().ActivateWinPanel();
+        }
     }
 
     public void OnSceneChange()

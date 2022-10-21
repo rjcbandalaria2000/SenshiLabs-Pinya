@@ -155,6 +155,7 @@ public class TaskManager : MonoBehaviour
         if (AreAllTasksDone())
         {
             Debug.Log("Player wins ");
+            Events.OnTasksComplete.Invoke();
         }
         else if (AreRequiredTasksDone())
         {
