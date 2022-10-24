@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [Header("Highlighted Objects")]
-    public List<GameObject>     highLight = new();
+    //public List<GameObject>     highLight = new();
     public List<GameObject>     minigameObjects = new();
     public float                coolDown;
 
@@ -203,11 +203,12 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if (minigameObjects.Count <= 0) { return; }
         foreach (GameObject minigame in minigameObjects)
         {
-            minigame.transform.GetChild(2).gameObject.SetActive(false);
-            UnitInfo unitInfo = minigame.transform.GetChild(2).GetComponent<UnitInfo>();
+            //minigame.transform.GetChild(2).gameObject.SetActive(true);
+            UnitInfo unitInfo = minigame.GetComponent<UnitInfo>();
             if (unitInfo)
             {
-                unitInfo.effects.SetActive(false);
+                unitInfo.effects.gameObject.SetActive(false);
+                Debug.Log("Deactivate Effects");
             }
 
         }
