@@ -11,7 +11,7 @@ public class TagMiniGameManager : MinigameManager
     public GameObject bot;
 
     [Header("AI target")]
-    public List<Sprite> botSprite;
+   // public List<Sprite> botSprite;
     public List<GameObject> activeBots;
 
     [Header("Countdown Timer")]
@@ -20,7 +20,7 @@ public class TagMiniGameManager : MinigameManager
 
     [Header("SpawnPos")]
     public Transform playerPos;
-    //public List<Transform> botSpawnPos;
+    public List<Transform> botRandomPos;
 
     public UIManager uIManager;
 
@@ -144,30 +144,26 @@ public class TagMiniGameManager : MinigameManager
             {
                 activeBots[i].gameObject.SetActive(true);
                 activeBots[i].GetComponent<ChildrenTag>().isTag = true;
-                activeBots[i].GetComponent<ChildrenTag>().canTag = true;
-                activeBots[i].GetComponent<SpriteRenderer>().sprite = botSprite[i];
+                //activeBots[i].GetComponent<ChildrenTag>().canTag = true;
+               // activeBots[i].GetComponent<SpriteRenderer>().sprite = botSprite[i];
                 activeBots[i].GetComponent<ChildrenTag>().ID = i;
             }
             else
             {
                 activeBots[i].gameObject.SetActive(true);
                 activeBots[i].GetComponent<ChildrenTag>().isTag = false;
-                activeBots[i].GetComponent<ChildrenTag>().canTag = false;
-                activeBots[i].GetComponent<SpriteRenderer>().sprite = botSprite[i];
+               // activeBots[i].GetComponent<ChildrenTag>().canTag = false;
+              //  activeBots[i].GetComponent<SpriteRenderer>().sprite = botSprite[i];
                 activeBots[i].GetComponent<ChildrenTag>().ID = i;
                 Debug.Log("Activate");
             }
         }
 
         yield return null;
-       
+
         for (int i = 0; i < activeBots.Count; i++) //initialze bot
         {
-            if(activeBots[i].GetComponent<ChildrenTag>().isTag == true)
-            {
-                activeBots[i].GetComponent<ChildrenTag>().setTarget();
-            }
-            
+            activeBots[i].GetComponent<ChildrenTag>().setTarget();
         }
 
         startMinigameRoutine = null;
@@ -182,7 +178,12 @@ public class TagMiniGameManager : MinigameManager
             if(SingletonManager.Get<MiniGameTimer>().GetTimer() <= 0)
             {
               
+                for(int i = 0; i < activeBots.Count; i++)
+                {
+                    StopCoroutine(activeBots[i].GetComponent<ChildrenTag>().goToTargetRoutine);
+                }
                 CheckIfFinished();
+
                 yield return null;
             }
           

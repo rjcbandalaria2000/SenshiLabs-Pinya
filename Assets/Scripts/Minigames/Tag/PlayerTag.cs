@@ -16,11 +16,12 @@ public class PlayerTag : MonoBehaviour
 
     private Vector3 targetPosition;
 
+    public SpriteRenderer renderer;
     void Start()
     {
         isTag = false;
         rb = this.GetComponent<Rigidbody2D>();
-     
+        renderer = this.GetComponent<SpriteRenderer>();
     }
 
    
@@ -53,5 +54,22 @@ public class PlayerTag : MonoBehaviour
         //rb.MovePosition(rb.position + movement * moveSpeed * Time.deltaTime);
     }
 
-   
+    public void spriteUpdate()
+    {
+        if (isTag)
+        {
+            renderer.material.color = Color.red;
+        }
+        else
+        {
+            renderer.material.color = Color.white;
+        }
+    }
+
+    public IEnumerator colliderCooldown()
+    {
+        this.GetComponent<BoxCollider2D>().enabled = false;
+        yield return new WaitForSeconds(1f);
+        this.GetComponent<BoxCollider2D>().enabled = true;
+    }
 }
