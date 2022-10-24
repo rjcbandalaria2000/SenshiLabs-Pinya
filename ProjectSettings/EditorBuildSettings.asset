@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestScenes/GlowArrows -TestScene.unity
     guid: 3a414ebc833f59a498b4916ad592d7d1
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/ActiveDailyTasks - TestScene.unity
+    guid: 8a96113b3cf95d947ab7710ef88e32f2
   m_configObjects: {}

@@ -155,6 +155,7 @@ public class TaskManager : MonoBehaviour
                 }
             }
         }
+        ActivateSetTasks();
     }
 
     public bool AreRequiredTasksDone()
@@ -257,5 +258,26 @@ public class TaskManager : MonoBehaviour
         }
         return areTasksDone;
 
+    }
+
+    public void ActivateSetTasks()
+    {
+        if(minigameObjects.Count <= 0) { return; }
+        if(requiredTasks.Count <= 0) { return; }
+        for(int i = 0; i < minigameObjects.Count; i++)
+        {
+            for(int j = 0; j < requiredTasks.Count; j++)
+            {
+                if (requiredTasks[j] == minigameObjects[i])
+                {
+                    requiredTasks[j].gameObject.SetActive(true);
+                    break;
+                }
+                else
+                {
+                    minigameObjects[i].gameObject.SetActive(false);
+                }
+            }
+        }
     }
 }
