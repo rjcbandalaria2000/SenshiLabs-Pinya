@@ -178,14 +178,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 557101563}
-  - component: {fileID: 7232043733548782582}
   m_Layer: 6
   m_Name: Effects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &557101563
 Transform:
   m_ObjectHideFlags: 0
@@ -204,21 +203,6 @@ Transform:
   m_Father: {fileID: 2816954076488409270}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7232043733548782582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 557101562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 213281a4e99f23641b1de06c4493f156, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Parent: {fileID: 0}
-  UI: {fileID: 0}
-  effects: {fileID: 557101562}
 --- !u!1 &739634604
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,7 +229,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 739634604}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.047619577, y: 1.66, z: 0}
+  m_LocalPosition: {x: 0.047619577, y: 1.99, z: 0}
   m_LocalScale: {x: 0.6657522, y: 0.6657522, z: 0.6657522}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -316,7 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b184774aea6e554189928c1d27ee0db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPos: {x: -1.41, y: 4.2, z: 0}
+  endPos: {x: 0.04761958, y: 1.49, z: 0}
 --- !u!1 &2816954075350616341
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,6 +504,7 @@ GameObject:
   - component: {fileID: 2816954076488409268}
   - component: {fileID: 964817263}
   - component: {fileID: 2816954076214239179}
+  - component: {fileID: 1144538573}
   m_Layer: 6
   m_Name: Bin-CleanTheHouse
   m_TagString: Untagged
@@ -614,6 +599,21 @@ MonoBehaviour:
   hasCompleted: 0
   minigameScene: CleanTheHouse - TestScene
   preRequisiteTasks: []
+--- !u!114 &1144538573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2816954076488409267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 213281a4e99f23641b1de06c4493f156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  UI: {fileID: 0}
+  effects: {fileID: 557101562}
 --- !u!1001 &846214265
 PrefabInstance:
   m_ObjectHideFlags: 0
