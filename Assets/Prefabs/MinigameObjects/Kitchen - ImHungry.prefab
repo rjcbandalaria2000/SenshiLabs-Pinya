@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 887505233}
   - component: {fileID: 887505234}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: KitchenTop2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1076030879}
   - component: {fileID: 1076030880}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: KitchenTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1898466281}
   - component: {fileID: 1898466282}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898466280}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.109, y: 1.043, z: 0}
+  m_LocalPosition: {x: 0.08, y: 0.51, z: 0}
   m_LocalScale: {x: 0.84974, y: 0.84974, z: 0.84974}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -241,7 +241,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 8
-  m_Sprite: {fileID: -1107354497, guid: 5d49f510b78c2244a83493a18f8748f3, type: 3}
+  m_Sprite: {fileID: -64483714, guid: f45f47015a4f20640a63089548a9070c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 325155188160618078}
   - component: {fileID: -8512082004905795788}
   - component: {fileID: -8228745111466853930}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Kitchen - ImHungry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,10 +339,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419fa3e89147a3e4ab4df49fae8ed2ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MotivationCost: 20
-  Interactable: {fileID: 325155188160618078}
+  minigameName: Cook The Food
+  motivationCost: 20
+  interactable: {fileID: 325155188160618078}
   isInteracted: 0
-  MinigameScene: ImHungry - Test Scene
+  hasCompleted: 0
+  minigameScene: CookTheFood - PolishTest
+  preRequisiteTasks:
+  - {fileID: 0}
 --- !u!114 &-8228745111466853930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -364,7 +368,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 325155188931467078}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -399,7 +403,7 @@ GameObject:
   m_Component:
   - component: {fileID: 325155189039054868}
   - component: {fileID: 325155189039054869}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: InteractCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +438,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.5, y: 0}
+  m_Offset: {x: -0.46671653, y: 0.11649263}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -445,7 +449,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.18, y: 1.92}
+  m_Size: {x: 2.5808954, y: 1.6870146}
   m_EdgeRadius: 0
 --- !u!1 &325155189168453631
 GameObject:
@@ -457,7 +461,7 @@ GameObject:
   m_Component:
   - component: {fileID: 325155189168453628}
   - component: {fileID: 325155189168453629}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Detector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -493,3 +497,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parent: {fileID: 0}
+  UI: {fileID: 0}

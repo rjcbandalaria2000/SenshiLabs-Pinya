@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2623126533286589072}
   - component: {fileID: 6427477042207794531}
   - component: {fileID: 6247782729824067086}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Well - GetWater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,10 +87,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 993ba797735f54c4ba027681c1a5bc7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MotivationCost: 0
-  Interactable: {fileID: 2623126533286589072}
+  minigameName: Get Water
+  motivationCost: 20
+  interactable: {fileID: 2623126533286589072}
   isInteracted: 0
-  MinigameScene: GetWater- TestScene
+  hasCompleted: 0
+  minigameScene: GetWater- PolishTest
+  preRequisiteTasks: []
 --- !u!114 &6247782729824067086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2623126534419913522}
   - component: {fileID: 2623126534419913523}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Detector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parent: {fileID: 0}
+  UI: {fileID: 0}
 --- !u!1 &2623126534567685337
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2623126534567685338}
   - component: {fileID: 2623126534567685339}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: InteractCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2623126534661094280}
   - component: {fileID: 2623126534661094281}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +236,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2623126534661094287}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.86, y: 3.41, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.8121406, y: 1.0172462, z: 0.48718697}
   m_ConstrainProportionsScale: 0
   m_Children: []
