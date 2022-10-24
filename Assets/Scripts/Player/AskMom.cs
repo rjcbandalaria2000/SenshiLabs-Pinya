@@ -9,6 +9,7 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [Header("Highlighted Objects")]
     public List<GameObject>     highLight = new();
+    public List<GameObject>     minigameObjects = new();
     public float                coolDown;
 
     [Header("Pinya Meter")]
@@ -16,16 +17,19 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public int                  pinyaCost;
     public DisplayPinyaMeter    pinyaMeterUI;
 
+    [Header("Effects")]
+    public GameObject heartGO;
+    public GameObject twinkleGO;
+    public GameObject arrowsGO;
+    public GameObject lifeBar;
+
     private Coroutine           askMomRoutine;
     private UIManager           uiManager;
     private TaskManager         taskManager;
 
     private Camera cm;
 
-    public GameObject heartGO;
-    public GameObject twinkleGO;
-    public GameObject arrowsGO;
-    public GameObject lifeBar;
+   
 
    // public GameObject crackedGlass;
    // public GameObject overlayGO;
