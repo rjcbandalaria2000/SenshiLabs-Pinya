@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
+
 public class TagMiniGameManager : MinigameManager
 {
     public PlayerTag player;
     public PlayerTag spawnPlayer;
     public GameObject bot;
+
+    [Header("AI target")]
+    public List<Sprite> botSprite;
+    public List<GameObject> activeBots;
 
     [Header("Countdown Timer")]
     public float GameStartTime = 3f;
@@ -15,10 +20,15 @@ public class TagMiniGameManager : MinigameManager
 
     [Header("SpawnPos")]
     public Transform playerPos;
-    public List<Transform> botSpawnPos;
+    //public List<Transform> botSpawnPos;
 
     public UIManager uIManager;
-    // Start is called before the first frame update
+
+    private void Awake()
+    {
+        SingletonManager.Register(this);
+    }
+
     void Start()
     {
         Initialize();
@@ -123,31 +133,42 @@ public class TagMiniGameManager : MinigameManager
 
     IEnumerator initializeMiniGame()
     {
-       
-
         GameObject newPlayer = Instantiate(player.gameObject, playerPos.position, Quaternion.identity);
         spawnPlayer = newPlayer.GetComponent<PlayerTag>();
         yield return null;
 
-        for(int i = 0; i < botSpawnPos.Count; i++)
+
+        for (int i = 0; i < activeBots.Count; i++) //initialze bot
         {
-            GameObject newBot = Instantiate(bot,botSpawnPos[i].position, Quaternion.identity);
-            if(i == 0)
+            if (i == 0)
             {
-                newBot.GetComponent<ChildrenTag>().isTag = true;
-            
+                activeBots[i].gameObject.SetActive(true);
+                activeBots[i].GetComponent<ChildrenTag>().isTag = true;
+                activeBots[i].GetComponent<ChildrenTag>().canTag = true;
+                activeBots[i].GetComponent<SpriteRenderer>().sprite = botSprite[i];
+                activeBots[i].GetComponent<ChildrenTag>().ID = i;
             }
             else
             {
-                newBot.GetComponent<ChildrenTag>().isTag = false;
-       
+                activeBots[i].gameObject.SetActive(true);
+                activeBots[i].GetComponent<ChildrenTag>().isTag = false;
+                activeBots[i].GetComponent<ChildrenTag>().canTag = false;
+                activeBots[i].GetComponent<SpriteRenderer>().sprite = botSprite[i];
+                activeBots[i].GetComponent<ChildrenTag>().ID = i;
+                Debug.Log("Activate");
             }
         }
 
-
         yield return null;
-
-
+       
+        for (int i = 0; i < activeBots.Count; i++) //initialze bot
+        {
+            if(activeBots[i].GetComponent<ChildrenTag>().isTag == true)
+            {
+                activeBots[i].GetComponent<ChildrenTag>().setTarget();
+            }
+            
+        }
 
         startMinigameRoutine = null;
 
@@ -164,7 +185,7 @@ public class TagMiniGameManager : MinigameManager
                 CheckIfFinished();
                 yield return null;
             }
-            Debug.Log("Playing");
+          
             yield return null;
         }
         

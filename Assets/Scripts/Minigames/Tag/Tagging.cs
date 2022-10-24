@@ -61,49 +61,5 @@ public class Tagging : MonoBehaviour
         childrenAI.spriteUpdate();
     }
 
-    //private void updateCollider(ChildrenTag otherChildren)
-    //{
-    //    Debug.Log("Swap");
-    //    float delay = 1.0f;
-    //    float time = 0f;
-
-    //    this.gameObject.SetActive(false);
-
-    //    while (time <= delay && childrenAI.isTag == false)
-    //    {
-    //        time += 0.1f;
-    //        if (time == delay)
-    //        {
-    //            otherChildren.tagCollider.SetActive(true);
-    //            Debug.Log("ActiveCollider");
-    //        }
-    //    }
-
-    //    //if (childrenAI.isTag == false)
-    //    //{
-    //    //    //childrenAI.tagCollider.SetActive(true);
-    //    //    this.gameObject.SetActive(false);
-    //    //    otherChildren.tagCollider.SetActive(true);
-    //    //    Debug.Log("ActiveCollider");
-    //    //}
-
-    //}
-
-    //IEnumerator updateCollider(ChildrenTag otherChild)
-    //{
-    //    Debug.Log("Swap");
-
-    //    if (childrenAI.isTag == false)
-    //    {
-    //        //childrenAI.tagCollider.SetActive(true);
-    //        this.gameObject.SetActive(false);
-    //        yield return null;
-      
-
-
-    //        //yield return new WaitForSeconds(0.5f);
-    //    }
-    //    //yield return null;
-    //}
-
+   
 }

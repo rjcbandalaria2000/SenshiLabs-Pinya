@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class ChildrenTag : MonoBehaviour
 {
+
+    public int ID;
     public bool isTag;
+    //public bool canTag;
+    public int tagCD;
 
     [Header("Bounds")]
     //public List<GameObject> points;
@@ -17,12 +21,13 @@ public class ChildrenTag : MonoBehaviour
 
 
     [Header("Location")]
-    public Vector2 startPos;
-    public Vector2 targetPos;
+    //public Vector2 startPos;
+    //public Vector2 targetPos;
     public float speed;
     public float delaySpeed;
 
     [Header("Target")]
+    public List<GameObject> potentialTargets = new();
     public Transform target;
 
     public SpriteRenderer renderer;
@@ -43,13 +48,6 @@ public class ChildrenTag : MonoBehaviour
             spriteUpdate();
         }
 
-        if(bound == null)
-        {
-            bound = GameObject.FindGameObjectWithTag("Bound").GetComponent<BoxCollider2D>();
-        }
-
-        startPos = this.transform.position;
-        targetPos = RNG_Position();
 
         if(minigame == null)
         {
@@ -59,8 +57,20 @@ public class ChildrenTag : MonoBehaviour
             }
         }
 
-        movementRoutine = StartCoroutine(movement());
+        potentialTargets = new(minigame.activeBots);
+       
+        for (int i = 0; i < potentialTargets.Count; i++)
+        {
+            if (ID == potentialTargets[i].GetComponent<ChildrenTag>().ID)
+            {
+                potentialTargets.RemoveAt(i);
+            }
+        }
+        potentialTargets.Add(minigame.spawnPlayer.gameObject);
+
     }
+
+
 
     public Vector2 RNG_Position()
     {
@@ -95,6 +105,7 @@ public class ChildrenTag : MonoBehaviour
        if(isTag == true)
         {
             StartCoroutine(activateCollider());
+           
         }
         else
         {
@@ -129,31 +140,6 @@ public class ChildrenTag : MonoBehaviour
        
         
     }
-
-    IEnumerator movement()
-    {
-        while (true)
-        {
-            this.transform.position = Vector2.Lerp(this.transform.position, targetPos, speed * Time.deltaTime);
-           
-            
-            yield return new WaitForFixedUpdate();
-            
-           
-
-            if (Vector2.Distance(this.transform.position, targetPos) <= 1f)
-            {
-                startPos = targetPos;
-                targetPos = RNG_Position();
-                //Debug.Log("New Pos");
-                yield return new WaitForSeconds(delaySpeed);
-            }
-
-        }
-        
-        
-    }
-
     IEnumerator activateCollider()
     {
         yield return new WaitForSeconds(1.0f);
@@ -166,13 +152,37 @@ public class ChildrenTag : MonoBehaviour
         yield return null;
     }
   
-    public void goToTarget()
+    public IEnumerator goToTarget()
     {
-        if(this.gameObject.transform.position != target.position && target != null)
+        while(this.gameObject.transform.position != target.position)
         {
             this.transform.position = Vector2.Lerp(this.transform.position, target.position, speed * Time.deltaTime);
+            yield return null;
         }
+  
     }
    
+    public void setTarget()
+    {
+       
+        if (isTag == true)
+        {
+            int RNG = Random.Range(0, potentialTargets.Count);
 
+            target = potentialTargets[RNG].transform;
+            StartCoroutine(goToTarget());
+        }
+        else
+        {
+            target = null;
+        }
+  
+    }
+
+    //public IEnumerator tagCooldown()
+    //{
+    //    canTag = false;
+    //    yield return new WaitForSeconds(tagCD);
+    //    canTag = true;
+    //}
 }
