@@ -19,8 +19,8 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     [Header("Effects")]
     public GameObject heartGO;
-    public GameObject twinkleGO;
-    public GameObject arrowsGO;
+    //public GameObject twinkleGO;
+    //public GameObject arrowsGO;
     public GameObject lifeBar;
 
     private Coroutine           askMomRoutine;
@@ -39,7 +39,7 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         uiManager = SingletonManager.Get<UIManager>();
         taskManager = SingletonManager.Get<TaskManager>();
         askMomRoutine = null;
-        DisableHighlight();
+        //DisableHighlight();
         cm = Camera.main;
     }
     
@@ -102,16 +102,17 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         //arrowsGO.SetActive(true);
         EnableEffects();
         lifeBar.transform.DOShakeScale(coolDown + 1, 0.1f, 1, 0, false);
-        if (highLight.Count > 0)
-        {
-            for(int i = 0; i < highLight.Count; i++)
-            {
-                highLight[i].SetActive(true);
-                highLight[i].transform.DOShakeScale(coolDown + 1,0.1f,1,0,false);
+        //if (highLight.Count > 0)
+        //{
+        //    for(int i = 0; i < highLight.Count; i++)
+        //    {
+        //        highLight[i].SetActive(true);
+        //        highLight[i].transform.DOShakeScale(coolDown + 1,0.1f,1,0,false);
                
-                PulsatingHeart();
-            }
-        }
+                
+        //    }
+        //}
+        PulsatingHeart();
     }
 
     public void DisableHighlight()
@@ -119,15 +120,15 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         //arrowsGO.SetActive(false);
         //twinkleGO.SetActive(false);
         DisableEffects();
-        if (highLight.Count > 0)
-        {
-            for (int i = 0; i < highLight.Count; i++)
-            {
+        //if (highLight.Count > 0)
+        //{
+        //    for (int i = 0; i < highLight.Count; i++)
+        //    {
 
-                highLight[i].SetActive(false);
+        //        highLight[i].SetActive(false);
 
-            }
-        }
+        //    }
+        //}
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -186,11 +187,12 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if(minigameObjects.Count <=0) { return; }
         foreach(GameObject minigame in minigameObjects)
         {
-            minigame.transform.GetChild(2).gameObject.SetActive(true);
-            UnitInfo unitInfo = minigame.transform.GetChild(2).GetComponent<UnitInfo>();
+            //minigame.transform.GetChild(2).gameObject.SetActive(true);
+            UnitInfo unitInfo = minigame.GetComponent<UnitInfo>();
             if (unitInfo)
             {
-                unitInfo.effects.SetActive(true);
+                unitInfo.effects.gameObject.SetActive(true);
+                Debug.Log("Activate Effects");
             }
             
         }
