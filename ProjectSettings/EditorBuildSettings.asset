@@ -45,6 +45,6 @@ EditorBuildSettings:
     path: Assets/Scenes/TestScenes/CookTheFood - PolishTest.unity
     guid: 05f4c92c76240864b9beb6bc81a3d70e
   - enabled: 1
-    path: Assets/Scenes/TestScenes/DailyTasks- TestScene.unity
-    guid: def8193f438ba8f4e9400ef0b574788f
+    path: Assets/Scenes/TestScenes/GlowArrows -TestScene.unity
+    guid: 3a414ebc833f59a498b4916ad592d7d1
   m_configObjects: {}

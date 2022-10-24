@@ -98,8 +98,9 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void EnableHighlight()
     {
         //  cm.transform.dos(1,0.3f,10,0,false);
-        twinkleGO.SetActive(true);
-        arrowsGO.SetActive(true);
+        //twinkleGO.SetActive(true);
+        //arrowsGO.SetActive(true);
+        EnableEffects();
         lifeBar.transform.DOShakeScale(coolDown + 1, 0.1f, 1, 0, false);
         if (highLight.Count > 0)
         {
@@ -115,8 +116,9 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void DisableHighlight()
     {
-        arrowsGO.SetActive(false);
-        twinkleGO.SetActive(false);
+        //arrowsGO.SetActive(false);
+        //twinkleGO.SetActive(false);
+        DisableEffects();
         if (highLight.Count > 0)
         {
             for (int i = 0; i < highLight.Count; i++)
@@ -177,5 +179,35 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         heartGO.transform.DOScale(1, 0.3f).SetEase(Ease.OutBounce);
       //  overlayGO.SetActive(false);
         Debug.Log("End Pulsate");
+    }
+
+    public void EnableEffects()
+    {
+        if(minigameObjects.Count <=0) { return; }
+        foreach(GameObject minigame in minigameObjects)
+        {
+            minigame.transform.GetChild(2).gameObject.SetActive(true);
+            UnitInfo unitInfo = minigame.transform.GetChild(2).GetComponent<UnitInfo>();
+            if (unitInfo)
+            {
+                unitInfo.effects.SetActive(true);
+            }
+            
+        }
+    }
+
+    public void DisableEffects()
+    {
+        if (minigameObjects.Count <= 0) { return; }
+        foreach (GameObject minigame in minigameObjects)
+        {
+            minigame.transform.GetChild(2).gameObject.SetActive(false);
+            UnitInfo unitInfo = minigame.transform.GetChild(2).GetComponent<UnitInfo>();
+            if (unitInfo)
+            {
+                unitInfo.effects.SetActive(false);
+            }
+
+        }
     }
 }
