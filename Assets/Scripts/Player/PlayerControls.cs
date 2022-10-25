@@ -27,7 +27,7 @@ public class PlayerControls : MonoBehaviour
         }
         mainCamera = Camera.main;
 
-        if(SingletonManager.Get<Player>() != null)
+        if(SingletonManager.Get<PlayerData>() == null)
         {
             playerData = SingletonManager.Get<PlayerData>();
         }
