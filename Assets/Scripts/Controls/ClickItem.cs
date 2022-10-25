@@ -69,12 +69,7 @@ public class ClickItem : MonoBehaviour
                 isCorrect = true;
                 break;
             }
-            //else
-            //{
-            //    Debug.Log("Wrong");
-            //    //Vector3 shake = new Vector3(0.5f, 0, 0);
-            //    //item.transform.DOShakePosition(0.3f, shake, 10, 45, false, false);
-            //}
+           
         }
 
         if(!isCorrect)
@@ -84,8 +79,8 @@ public class ClickItem : MonoBehaviour
             item.transform.DOShakePosition(0.3f, shake, 10, 45, false, false);
         }
 
-        //SingletonManager.Get<GroceryManager>().CheckIfFinished();
+       
         Events.OnObjectiveUpdate.Invoke();  
-        // groceryMiniGame.CheckIfFinished();
+        
     }
 }

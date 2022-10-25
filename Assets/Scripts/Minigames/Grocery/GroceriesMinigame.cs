@@ -35,7 +35,6 @@ public class GroceriesMinigame : MinigameObject
             playerMotivation.DecreaseMotivation(motivationCost);
         }
         Debug.Log("Interacted");
-        //isInteracted = false;
         JumpToMiniGame();
     }
 

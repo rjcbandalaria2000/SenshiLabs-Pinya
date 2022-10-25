@@ -7,30 +7,31 @@ public class FoldingMinigameManager : MinigameManager
 {
 
     public Clothes ClothesComponent;
+    public GameObject spawnClothes;
+    public int clothesNum;
 
     [Header("Countdown Timer")]
     public float GameStartTime = 3f;
     public DisplayGameCountdown CountdownTimerUI;
 
+    [Header("Position")]
+    public GameObject startPos;
+    public GameObject middlePos;
+    public GameObject endPos;
+
     private void Awake()
     {
         SingletonManager.Register(this);
+
+       
     }
 
     // Start is called before the first frame update
     void Start()
     {
+
        
         Initialize();
-
-        if (ClothesComponent == null)
-        {
-            if(GameObject.FindObjectOfType<Clothes>() != null)
-            {
-                ClothesComponent = GameObject.FindObjectOfType<Clothes>().GetComponent<Clothes>();
-            }
-        }
-
         //  Events.OnObjectiveUpdate.Invoke();
         Events.UpdateScore.Invoke();
     }
@@ -38,7 +39,7 @@ public class FoldingMinigameManager : MinigameManager
     // Update is called once per frame
     void Update()
     {
-        if(SingletonManager.Get<MiniGameTimer>().GetTimer() <= 0)
+        if (SingletonManager.Get<MiniGameTimer>().GetTimer() <= 0)
         {
             CheckIfFinished();
         }
@@ -48,7 +49,14 @@ public class FoldingMinigameManager : MinigameManager
     {
         transitionManager = SingletonManager.Get<TransitionManager>();
         sceneChange = this.gameObject.GetComponent<SceneChange>();
+
        
+
+        spawnClothes.GetComponent<Clothes>().startPos = startPos;
+        spawnClothes.GetComponent<Clothes>().middlePos = middlePos;
+        spawnClothes.GetComponent<Clothes>().endPos = endPos;
+        
+
         SingletonManager.Get<UIManager>().ActivateMiniGameMainMenu();
         Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
         Events.OnSceneChange.AddListener(OnSceneChange);
@@ -65,17 +73,8 @@ public class FoldingMinigameManager : MinigameManager
 
     public override void StartMinigame()
     {
-       
-
-
-        SingletonManager.Get<UIManager>().DeactivateMiniGameMainMenu();
-        SingletonManager.Get<UIManager>().ActivateMiniGameTimerUI();
-        ClothesComponent.gameObject.SetActive(false);
-     
-
+  
         startMinigameRoutine = StartCoroutine(StartMinigameCounter());
-
-        ClothesComponent.gameObject.SetActive(true);
 
     }
 
@@ -110,13 +109,15 @@ public class FoldingMinigameManager : MinigameManager
         //After Game Countdown
         //Activate GameUI and Timer
 
+        startMinigameRoutine = StartCoroutine(initializeMiniGame());
+
         SingletonManager.Get<UIManager>().DeactivateGameCountdown();
+        SingletonManager.Get<UIManager>().ActivateGameUI();
         SingletonManager.Get<UIManager>().ActivateMiniGameTimerUI();
         SingletonManager.Get<MiniGameTimer>().StartCountdownTimer();
 
 
-
-        Events.OnObjectiveUpdate.Invoke();
+ 
         Debug.Log("Refresh Score board");
         //Spawn objects
 
@@ -124,9 +125,30 @@ public class FoldingMinigameManager : MinigameManager
     }
 
 
+    IEnumerator initializeMiniGame()
+    {
+        yield return null;
+
+        GameObject newClothes = Instantiate(spawnClothes, startPos.transform.position, Quaternion.identity);
+
+        if (ClothesComponent == null)
+        {
+
+            ClothesComponent = GameObject.FindObjectOfType<Clothes>().GetComponent<Clothes>();
+
+
+        }
+        SingletonManager.Get<DisplayFoldCount>().UpdateFoldCount();
+
+        //  ClothesComponent.gameObject.SetActive(true);
+
+        startMinigameRoutine = null;
+
+    }
+
     public override void CheckIfFinished()
     {
-        if (ClothesComponent.clothes == 0)
+        if (ClothesComponent.clothes <= 0)
         {
             Debug.Log("Minigame complete");
             SingletonManager.Get<UIManager>().ActivateResultScreen();
@@ -137,10 +159,22 @@ public class FoldingMinigameManager : MinigameManager
         {
             Debug.Log("Minigame lose");
             SingletonManager.Get<UIManager>().ActivateResultScreen();
-            SingletonManager.Get<UIManager>().ActivateGoodResult();
+            SingletonManager.Get<UIManager>().ActivateBadResult();
             SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
         }
 
+    }
+
+    public void continueScene()
+    {
+        Debug.Log("Minigame complete");
+        exitMinigameRoutine = StartCoroutine(ExitMinigame());
+    }
+
+    public void gameOver()
+    {
+        Debug.Log("Minigame lose");
+        exitMinigameRoutine = StartCoroutine(ExitMinigame());
     }
 
     protected override IEnumerator ExitMinigame()

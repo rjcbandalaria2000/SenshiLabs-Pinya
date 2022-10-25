@@ -48,8 +48,4 @@ public class FillWaterBucket : MonoBehaviour
         Events.OnWaterFilling.Invoke();
     }
 
-    //public float GetWaterAmount()
-    //{
-    //    return waterAmount;
-    //}
 }

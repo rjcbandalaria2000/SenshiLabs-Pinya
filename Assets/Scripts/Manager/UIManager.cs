@@ -34,6 +34,7 @@ public class UIManager : MonoBehaviour
     public GameObject       minigameResultsUI;
     public GameObject       minigameGoodResult;
     public GameObject       minigameBadResult;
+    public GameObject       transitionUI;
 
     [Header("Loading UI")]
     public GameObject       loadingUI;
@@ -49,6 +50,10 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        if(transitionUI != null)
+        {
+            transitionUI.SetActive(true);
+        }
 
         if (minigame == null)
         {
@@ -188,18 +193,22 @@ public class UIManager : MonoBehaviour
 
     public void ActivateResultScreen()
     {
+        
         if (minigameResultsUI == null) { return; }
         minigameResultsUI.SetActive(true);
         DisplayMinigameResult results = minigameResultsUI.GetComponent<DisplayMinigameResult>();
         Assert.IsNotNull(results);
         results.DisplayPinyaMeter();
         results.DisplayMotivation();
+        Debug.Log("ActivateResult");
     }
 
     public void DeactivateResultScreen()
     {
         if (minigameResultsUI == null) { return; }
+      
         minigameResultsUI.SetActive(false);
+        Debug.Log("Close Result");
     }
 
     public void ActivateGoodResult()

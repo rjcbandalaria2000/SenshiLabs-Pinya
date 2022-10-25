@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Border
   - Basket
+  - StartPos
+  - HidingSpot
+  - Bound
+  - Wall
+  - Goal
+  - Child
   layers:
   - Default
   - TransparentFX
@@ -15,8 +21,8 @@ TagManager:
   - UI
   - Base
   - Ingredients
-  - 
-  - 
+  - Tree
+  - ChildHide
   - 
   - 
   - 
@@ -54,4 +60,10 @@ TagManager:
     locked: 0
   - name: Curtain
     uniqueID: 2201956641
+    locked: 0
+  - name: Tree
+    uniqueID: 1110076557
+    locked: 0
+  - name: Child
+    uniqueID: 3155561309
     locked: 0

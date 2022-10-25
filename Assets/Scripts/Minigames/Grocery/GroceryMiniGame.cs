@@ -14,13 +14,6 @@ public class GroceryMiniGame : MinigameObject
     {
         interactable = this.GetComponent<Interactable>();
 
-        if (interactable)
-        {
-            //Listen to the interactable event and proceed to interact with the player
-            //Events.OnInteract.AddListener(Interact);
-            //Events.OnFinishInteract.AddListener(EndInteract);
-
-        }
         sceneChange = this.gameObject.GetComponent<SceneChange>();
     }
 

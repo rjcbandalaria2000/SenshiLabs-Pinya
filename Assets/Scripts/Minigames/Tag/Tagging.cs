@@ -7,10 +7,13 @@ public class Tagging : MonoBehaviour
     private ChildrenTag childrenAI;
     private ChildrenTag cacheChild;
 
+    //private PlayerTag cachePlayer;
+
     // Start is called before the first frame update
     void Start()
     {
         childrenAI = GetComponentInParent<ChildrenTag>();
+
 
         if(childrenAI.isTag == true)
         {
@@ -30,26 +33,37 @@ public class Tagging : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        cacheChild = other.GetComponent<ChildrenTag>();
-        //PlayerTag playerTag = other.GetComponent<PlayerTag>();
-
+        if(other.GetComponentInParent<ChildrenTag>())
+        {
+            cacheChild = other.GetComponent<ChildrenTag>();
+        }
+        //else if(other.GetComponentInParent<PlayerTag>())
+        //{
+        //    cachePlayer = other.GetComponent<PlayerTag>();
+        //}
+    
         if (cacheChild != null) //other AI
         {
-            if (childrenAI.isTag == true)
+            if (childrenAI.isTag == true && cacheChild.isTag == false)
             {
-                if (cacheChild.isTag == false)
-                {
+                
                     updateTag(cacheChild);
 
                     this.gameObject.SetActive(false);
-
-                   
-
                     Debug.Log("AI Tag");
-                    
-                }
+
             }
         }
+        //else if(cachePlayer != null)
+        //{
+        //    if (childrenAI.isTag == true && cachePlayer.isTag == false)
+        //    {
+        //        updatePlayerTag(cachePlayer);
+
+        //        this.gameObject.SetActive(false);
+        //        Debug.Log("AI Tag");
+        //    }
+        //}
     }
 
     public void updateTag(ChildrenTag otherChild)
@@ -59,51 +73,28 @@ public class Tagging : MonoBehaviour
 
         otherChild.spriteUpdate();
         childrenAI.spriteUpdate();
+
+        otherChild.previousTag = childrenAI.gameObject;
+        childrenAI.previousTag = null;
+
+        childrenAI.setTarget();
+        StartCoroutine(targetCooldown(otherChild));
     }
 
-    //private void updateCollider(ChildrenTag otherChildren)
+    IEnumerator targetCooldown(ChildrenTag otherChild)
+    {
+        yield return new WaitForSeconds(1.0f);
+        otherChild.setTarget();
+    }
+    //public void updatePlayerTag(PlayerTag otherPlayer)
     //{
-    //    Debug.Log("Swap");
-    //    float delay = 1.0f;
-    //    float time = 0f;
+    //    otherPlayer.isTag = true;
+    //    childrenAI.isTag = false;
 
-    //    this.gameObject.SetActive(false);
+    //    otherPlayer.spriteUpdate();
+    //    childrenAI.spriteUpdate();
 
-    //    while (time <= delay && childrenAI.isTag == false)
-    //    {
-    //        time += 0.1f;
-    //        if (time == delay)
-    //        {
-    //            otherChildren.tagCollider.SetActive(true);
-    //            Debug.Log("ActiveCollider");
-    //        }
-    //    }
-
-    //    //if (childrenAI.isTag == false)
-    //    //{
-    //    //    //childrenAI.tagCollider.SetActive(true);
-    //    //    this.gameObject.SetActive(false);
-    //    //    otherChildren.tagCollider.SetActive(true);
-    //    //    Debug.Log("ActiveCollider");
-    //    //}
-
+    //    childrenAI.setTarget();
+        
     //}
-
-    //IEnumerator updateCollider(ChildrenTag otherChild)
-    //{
-    //    Debug.Log("Swap");
-
-    //    if (childrenAI.isTag == false)
-    //    {
-    //        //childrenAI.tagCollider.SetActive(true);
-    //        this.gameObject.SetActive(false);
-    //        yield return null;
-      
-
-
-    //        //yield return new WaitForSeconds(0.5f);
-    //    }
-    //    //yield return null;
-    //}
-
 }
