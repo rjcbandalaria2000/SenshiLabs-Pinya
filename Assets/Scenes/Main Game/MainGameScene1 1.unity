@@ -6584,7 +6584,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4257680015237913099, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
@@ -10658,6 +10658,7 @@ MonoBehaviour:
   minigameResultsUI: {fileID: 0}
   minigameGoodResult: {fileID: 0}
   minigameBadResult: {fileID: 0}
+  transitionUI: {fileID: 0}
   loadingUI: {fileID: 1756032841}
   askMomButton: {fileID: 281171958}
   tutorialGO: {fileID: 0}
@@ -12295,20 +12296,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8d2243d3faa3844897a0b405db15172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highLight:
-  - {fileID: 317634576}
-  - {fileID: 847098969}
-  - {fileID: 1940046796}
-  - {fileID: 86573481}
-  - {fileID: 760685720}
-  - {fileID: 714896940}
+  minigameObjects: []
   coolDown: 5
   playerPinyaMeter: {fileID: 312946477}
   pinyaCost: 20
   pinyaMeterUI: {fileID: 3686634581920591310}
   heartGO: {fileID: 6949856585603288234}
-  twinkleGO: {fileID: 0}
-  arrowsGO: {fileID: 457159207}
   lifeBar: {fileID: 811907666}
 --- !u!222 &2985707811973519142
 CanvasRenderer:
