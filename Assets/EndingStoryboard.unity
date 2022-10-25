@@ -452,11 +452,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pageImage: {fileID: 1454389998}
   spritePages:
-  - {fileID: 21300000, guid: 4d2961970863d98488b6cc57da98e8f1, type: 3}
-  - {fileID: 21300000, guid: c33b87e4e1c30da47b0cb8905c3ab9ee, type: 3}
-  - {fileID: 21300000, guid: 641abc5ff4a35564aa4bcdcc8ff9ed9f, type: 3}
-  - {fileID: 21300000, guid: 97ccb5f2b5ace77478bffa1da2a1daa3, type: 3}
-  - {fileID: 21300000, guid: 722375cc39263d24dadab61a2e82c9c0, type: 3}
+  - {fileID: 21300000, guid: ad2a82f386880e740891d114d31f65cb, type: 3}
+  - {fileID: 21300000, guid: f4405537669f2f44cabacd7fda0080d0, type: 3}
+  - {fileID: 21300000, guid: c614922a376e4964cac191d2a75a7378, type: 3}
+  - {fileID: 21300000, guid: 0a2fc3f39d8044642ba29fe1ecf42b8f, type: 3}
+  - {fileID: 21300000, guid: a3fd0b3a166cb50488abcce9cbe4b631, type: 3}
   pageCount: 0
   sceneName: MainGameScene1 1
 --- !u!4 &798298896
@@ -1172,7 +1172,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4d2961970863d98488b6cc57da98e8f1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad2a82f386880e740891d114d31f65cb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
