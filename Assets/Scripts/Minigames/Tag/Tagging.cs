@@ -83,6 +83,7 @@ public class Tagging : MonoBehaviour
 
     IEnumerator targetCooldown(ChildrenTag otherChild)
     {
+        otherChild.speed = 0;
         yield return new WaitForSeconds(1.0f);
         otherChild.setTarget();
     }

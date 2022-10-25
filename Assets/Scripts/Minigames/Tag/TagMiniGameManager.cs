@@ -13,6 +13,7 @@ public class TagMiniGameManager : MinigameManager
     [Header("AI target")]
    // public List<Sprite> botSprite;
     public List<GameObject> activeBots;
+    public GameObject currentTagged;
 
     [Header("Countdown Timer")]
     public float GameStartTime = 3f;
@@ -97,7 +98,8 @@ public class TagMiniGameManager : MinigameManager
         uIManager.ActivateGameUI();
         uIManager.ActivateMiniGameTimerUI();
         SingletonManager.Get<MiniGameTimer>().StartCountdownTimer();
-        
+
+      
         StartCoroutine(checkStatus());
 
 
@@ -144,28 +146,26 @@ public class TagMiniGameManager : MinigameManager
             {
                 activeBots[i].gameObject.SetActive(true);
                 activeBots[i].GetComponent<ChildrenTag>().isTag = true;
-                //activeBots[i].GetComponent<ChildrenTag>().canTag = true;
-               // activeBots[i].GetComponent<SpriteRenderer>().sprite = botSprite[i];
+             
                 activeBots[i].GetComponent<ChildrenTag>().ID = i;
             }
             else
             {
                 activeBots[i].gameObject.SetActive(true);
                 activeBots[i].GetComponent<ChildrenTag>().isTag = false;
-               // activeBots[i].GetComponent<ChildrenTag>().canTag = false;
-              //  activeBots[i].GetComponent<SpriteRenderer>().sprite = botSprite[i];
+
                 activeBots[i].GetComponent<ChildrenTag>().ID = i;
                 Debug.Log("Activate");
             }
         }
 
         yield return null;
+        updateCurrentTagged();
 
         for (int i = 0; i < activeBots.Count; i++) //initialze bot
         {
             activeBots[i].GetComponent<ChildrenTag>().setTarget();
         }
-
         startMinigameRoutine = null;
 
     }
@@ -227,4 +227,19 @@ public class TagMiniGameManager : MinigameManager
         yield return null;
     }
    
+    public void updateCurrentTagged()
+    {
+        for(int i = 0; i < activeBots.Count; i++)
+        {
+            if(activeBots[i].GetComponent<ChildrenTag>().isTag == true)
+            {
+                currentTagged = activeBots[i];
+            }
+        }
+
+        if(spawnPlayer.isTag == true)
+        {
+            currentTagged = spawnPlayer.gameObject;
+        }
+    }
 }
