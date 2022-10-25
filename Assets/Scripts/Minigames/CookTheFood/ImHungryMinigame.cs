@@ -23,7 +23,7 @@ public class ImHungryMinigame : MinigameObject
         transitionManager = SingletonManager.Get<TransitionManager>();
         if (SingletonManager.Get<PlayerData>())
         {
-            hasCompleted = SingletonManager.Get<PlayerData>().IsImHungryFinished;
+            hasCompleted = SingletonManager.Get<PlayerData>().isImHungryFinished;
         }
     }
 

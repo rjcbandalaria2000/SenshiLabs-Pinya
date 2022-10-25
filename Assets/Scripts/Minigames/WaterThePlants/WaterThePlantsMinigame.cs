@@ -24,7 +24,7 @@ public class WaterThePlantsMinigame : MinigameObject
         sceneChange = this.GetComponent<SceneChange>();
         if (SingletonManager.Get<PlayerData>())
         {
-            hasCompleted = SingletonManager.Get<PlayerData>().IsWaterThePlantsFinished;
+            hasCompleted = SingletonManager.Get<PlayerData>().isWaterThePlantsFinished;
         }
     }
 

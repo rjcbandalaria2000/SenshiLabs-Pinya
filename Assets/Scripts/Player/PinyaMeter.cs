@@ -13,7 +13,7 @@ public class PinyaMeter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (SingletonManager.Get<PlayerData>().HasSaved)
+        if (SingletonManager.Get<PlayerData>().hasSaved)
         {
             pinyaValue = SingletonManager.Get<PlayerData>().storedPinyaData;
         }

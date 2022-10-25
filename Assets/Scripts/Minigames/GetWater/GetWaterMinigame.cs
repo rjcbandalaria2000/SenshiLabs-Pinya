@@ -24,7 +24,7 @@ public class GetWaterMinigame : MinigameObject
         transitionManager = SingletonManager.Get<TransitionManager>();
         if (SingletonManager.Get<PlayerData>())
         {
-            hasCompleted = SingletonManager.Get<PlayerData>().IsGetWaterFinished;
+            hasCompleted = SingletonManager.Get<PlayerData>().isGetWaterFinished;
         }
 
     }

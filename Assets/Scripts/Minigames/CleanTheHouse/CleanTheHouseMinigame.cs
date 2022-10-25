@@ -24,7 +24,7 @@ public class CleanTheHouseMinigame : MinigameObject
         isInteracted = false;
         if (SingletonManager.Get<PlayerData>())
         {
-            hasCompleted = SingletonManager.Get<PlayerData>().IsCleanTheHouseFinished;
+            hasCompleted = SingletonManager.Get<PlayerData>().isCleanTheHouseFinished;
         }
     }
 
@@ -73,7 +73,7 @@ public class CleanTheHouseMinigame : MinigameObject
         {
             if(minigameScene != null)
             {
-                SingletonManager.Get<PlayerData>().MinigamesPlayed++;
+                SingletonManager.Get<PlayerData>().minigamesPlayed++;
                 //Remove all listeners because when the scene changes it will destroy the scene but will try to access the old active scripts
                 Events.OnSceneChange.Invoke();
                 Events.OnInteract.RemoveListener(Interact);

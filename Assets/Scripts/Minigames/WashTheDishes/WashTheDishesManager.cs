@@ -194,7 +194,7 @@ public class WashTheDishesManager : MinigameManager
         SingletonManager.Get<UIManager>().ActivateResultScreen();
         SingletonManager.Get<UIManager>().ActivateGoodResult();
         isCompleted = true;
-        SingletonManager.Get<PlayerData>().IsWashTheDishesFinished = true;
+        SingletonManager.Get<PlayerData>().isWashTheDishesFinished = true;
 
     }
 

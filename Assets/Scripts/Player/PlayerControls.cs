@@ -34,7 +34,7 @@ public class PlayerControls : MonoBehaviour
        
         if (playerData)
         {
-            if (playerData.HasSaved)
+            if (playerData.hasSaved)
             {
                 // load last location of the player
                 this.transform.position = playerData.playerLocation;

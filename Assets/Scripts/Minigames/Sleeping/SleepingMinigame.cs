@@ -23,7 +23,7 @@ public class SleepingMinigame : MinigameObject
         transitionManager = SingletonManager.Get<TransitionManager>();
         if (SingletonManager.Get<PlayerData>())
         {
-            hasCompleted = SingletonManager.Get<PlayerData>().IsSleepFinished;
+            hasCompleted = SingletonManager.Get<PlayerData>().isSleepFinished;
         }
     }
 

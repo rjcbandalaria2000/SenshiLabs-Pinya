@@ -199,7 +199,7 @@ public class SleepingMinigameManager : MinigameManager
         basket.SetActive(false);
         //if(sceneChange == null) { return; }
         //if(NameOfNextScene == null) { return; }
-        SingletonManager.Get<PlayerData>().IsSleepFinished = true;
+        SingletonManager.Get<PlayerData>().isSleepFinished = true;
         IncreaseMotivationalMeter(motivationalPoints);
         SingletonManager.Get<UIManager>().ActivateResultScreen();
         SingletonManager.Get<UIManager>().ActivateGoodResult();

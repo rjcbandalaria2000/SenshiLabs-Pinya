@@ -25,7 +25,7 @@ public class WashTheDishesMinigame : MinigameObject
         isInteracted = false;
         if (SingletonManager.Get<PlayerData>())
         {
-            hasCompleted = SingletonManager.Get<PlayerData>().IsWashTheDishesFinished;
+            hasCompleted = SingletonManager.Get<PlayerData>().isWashTheDishesFinished;
         }
     }
 

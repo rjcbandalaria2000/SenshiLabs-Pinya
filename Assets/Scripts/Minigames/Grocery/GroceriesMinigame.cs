@@ -22,7 +22,7 @@ public class GroceriesMinigame : MinigameObject
         sceneChange = this.gameObject.GetComponent<SceneChange>();
         if (SingletonManager.Get<PlayerData>())
         {
-            hasCompleted = SingletonManager.Get<PlayerData>().IsGroceryFinished;
+            hasCompleted = SingletonManager.Get<PlayerData>().isGroceryFinished;
         }
     }
 

@@ -51,9 +51,9 @@ public class Player : MonoBehaviour
         if (SingletonManager.Get<PlayerData>())
         {
             SingletonManager.Get<PlayerData>().StoreData(this);
-            if (!SingletonManager.Get<PlayerData>().HasSaved)
+            if (!SingletonManager.Get<PlayerData>().hasSaved)
             {
-                SingletonManager.Get<PlayerData>().HasSaved = true;
+                SingletonManager.Get<PlayerData>().hasSaved = true;
             }
         }
       

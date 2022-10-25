@@ -119,7 +119,7 @@ public class GroceryManager : MinigameManager //Might rename this
             SingletonManager.Get<UIManager>().ActivateResultScreen();
             SingletonManager.Get<UIManager>().ActivateGoodResult();
             SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
-            SingletonManager.Get<PlayerData>().IsGroceryFinished = true;
+            SingletonManager.Get<PlayerData>().isGroceryFinished = true;
             objectList.SetActive(false);
         }
 

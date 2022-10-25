@@ -192,7 +192,7 @@ public class WaterThePlantsManager : MinigameManager
             SingletonManager.Get<UIManager>().ActivateResultScreen();
             SingletonManager.Get<UIManager>().ActivateGoodResult();
             isCompleted = true;
-            SingletonManager.Get<PlayerData>().IsWaterThePlantsFinished = true;
+            SingletonManager.Get<PlayerData>().isWaterThePlantsFinished = true;
             //OnMinigameFinished();
         }
         

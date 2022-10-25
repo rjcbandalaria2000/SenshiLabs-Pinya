@@ -166,7 +166,7 @@ public class GetWaterManager : MinigameManager
             isCompleted = true;
             SingletonManager.Get<UIManager>().ActivateResultScreen();
             SingletonManager.Get<UIManager>().ActivateGoodResult();
-            SingletonManager.Get<PlayerData>().IsGetWaterFinished = true;
+            SingletonManager.Get<PlayerData>().isGetWaterFinished = true;
             Debug.Log("Minigame complete");
         }
     }

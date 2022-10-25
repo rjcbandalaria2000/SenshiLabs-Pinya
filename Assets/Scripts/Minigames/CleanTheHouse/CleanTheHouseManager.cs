@@ -177,7 +177,7 @@ public class CleanTheHouseManager : MinigameManager
             isCompleted = true;
             SingletonManager.Get<UIManager>().ActivateResultScreen();
             SingletonManager.Get<UIManager>().ActivateGoodResult();
-            SingletonManager.Get<PlayerData>().IsCleanTheHouseFinished = true;
+            SingletonManager.Get<PlayerData>().isCleanTheHouseFinished = true;
             Debug.Log("Minigame complete");
         }
     }

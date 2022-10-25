@@ -137,7 +137,7 @@ public class ImHungryManager : MinigameManager
         isCompleted = true;
         SingletonManager.Get<UIManager>().ActivateResultScreen();
         SingletonManager.Get<UIManager>().ActivateGoodResult();
-        SingletonManager.Get<PlayerData>().IsImHungryFinished = true;
+        SingletonManager.Get<PlayerData>().isImHungryFinished = true;
         Debug.Log("Minigame complete");
     }
 
