@@ -180,7 +180,8 @@ public class TagMiniGameManager : MinigameManager
               
                 for(int i = 0; i < activeBots.Count; i++)
                 {
-                    StopCoroutine(activeBots[i].GetComponent<ChildrenTag>().goToTargetRoutine);
+                   activeBots[i].SetActive(false);
+                   spawnPlayer.gameObject.SetActive(false);
                 }
                 CheckIfFinished();
 

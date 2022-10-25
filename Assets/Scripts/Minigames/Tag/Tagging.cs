@@ -74,6 +74,9 @@ public class Tagging : MonoBehaviour
         otherChild.spriteUpdate();
         childrenAI.spriteUpdate();
 
+        otherChild.previousTag = childrenAI.gameObject;
+        childrenAI.previousTag = null;
+
         childrenAI.setTarget();
         StartCoroutine(targetCooldown(otherChild));
     }

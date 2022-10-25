@@ -198,8 +198,17 @@ public class ChildrenTag : MonoBehaviour
             speed = 1f;
 
             target = potentialTargets[RNG].transform;
-            distance = Vector3.Distance(target.transform.position, this.transform.position);
-            goToTargetRoutine = StartCoroutine(goToTarget());
+            if(target == previousTag)
+            {
+                setTarget();
+                Debug.Log("Refresh Target");
+            }
+            else
+            {
+                distance = Vector3.Distance(target.transform.position, this.transform.position);
+                goToTargetRoutine = StartCoroutine(goToTarget());
+            }
+           
         }
         else
         {
