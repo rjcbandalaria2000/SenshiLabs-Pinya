@@ -2285,6 +2285,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: instructionText.Array.data[0]
+      value: 'Can you help Pina fold all the clothes as quickly as possible? '
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: instructionText.Array.data[1]
+      value: 'To fold the clothes, Pina must use the mouse button to click and swipe
+        in the direction given on the screen.   '
+      objectReference: {fileID: 0}
     - target: {fileID: 670568283771031146, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 20
@@ -2989,6 +2998,7 @@ MonoBehaviour:
   minigameResultsUI: {fileID: 1243383289}
   minigameGoodResult: {fileID: 1821863267}
   minigameBadResult: {fileID: 1616591903}
+  transitionUI: {fileID: 0}
   loadingUI: {fileID: 1046125348}
   askMomButton: {fileID: 0}
   tutorialGO: {fileID: 0}
@@ -4321,9 +4331,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instructionText:
-  - 'The house is dirty! All the toys and dust were spread across the entire house! '
-  - 'Drag all the toys into their place and swipe left and right to sweep the dust
-    that stays in the house! '
+  - 'Can you help Pina fold all the clothes as quickly as possible? '
+  - 'To fold the clothes, Pina must use the mouse button to click and swipe in the
+    direction given on the screen.   '
   tutorialImages: []
   pageCount: 0
   textGO: {fileID: 2016981021}

@@ -607,9 +607,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instructionText:
-  - 'The house is dirty! All the toys and dust were spread across the entire house! '
-  - 'Drag all the toys into their place and swipe left and right to sweep the dust
-    that stays in the house! '
+  - "Click on the running children to \u201Ctag\u201D them. Pina must need to touch
+    the others to tag them! "
+  - "Avoid getting \u201Ctag\u201D back from the other players to complete the game
+    before the time ends!  "
   tutorialImages: []
   pageCount: 0
   textGO: {fileID: 169305958}
