@@ -5,6 +5,7 @@ using DG.Tweening;
 
 public class ArrowAnimation : MonoBehaviour
 {
+    public Vector3 startPos;
     public Vector3 endPos;
 
     // Start is called before the first frame update
@@ -15,6 +16,11 @@ public class ArrowAnimation : MonoBehaviour
     private void OnEnable()
     {
         PlayAnimation();
+    }
+
+    private void OnDisable()
+    {
+        this.transform.position = startPos;
     }
 
 
