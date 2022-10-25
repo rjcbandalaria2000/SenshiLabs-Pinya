@@ -34,24 +34,15 @@ public class TaskManager : MonoBehaviour
 
     public void Initialize()
     {
-        //if (SingletonManager.Get<PlayerData>())
-        //{
-        //    if(SingletonManager.Get<PlayerData>().requiredTasks.Count > 0)
-        //    {
-        //        RestoreSavedRequiredTasks();
-        //    }
-        //}
-        //if (requiredTasks.Count <= 0)
-        //{
-        //    SetRandomTasks();
-        //}
         if (SingletonManager.Get<PlayerData>().requiredTasks.Count > 0)
         {
             RestoreSavedRequiredTasks();
+            ActivateSetTasks();
         }
         else
         {
             SetRandomTasks();
+            ActivateSetTasks();
         }
 
         CheckIfTasksDone();
@@ -126,10 +117,21 @@ public class TaskManager : MonoBehaviour
             if (tempTaskList[randomTaskIndex].preRequisiteTasks.Count > 0)
             {
                 //if there is a pre requisite add it to the required task list
-                for(int j = 0; j < tempTaskList[randomTaskIndex].preRequisiteTasks.Count; j++)
+                for (int j = 0; j < tempTaskList[randomTaskIndex].preRequisiteTasks.Count; j++)
                 {
-                    requiredTasks.Add(tempTaskList[randomTaskIndex].preRequisiteTasks[j]);
+                    //check if the pre requisite task is already in the required tasks
+                  
+                  
+                        // only add the pre req task if its not in the required task
+
+
+                        requiredTasks.Add(tempTaskList[randomTaskIndex].preRequisiteTasks[j]);
+                        tempTaskList.Remove(tempTaskList[randomTaskIndex].preRequisiteTasks[j]);
+                  
                     
+
+
+
                 }
             }
 
@@ -142,12 +144,12 @@ public class TaskManager : MonoBehaviour
         }
         if (requiredTasks.Count > maxNumOfTasks)
         {
-            // only remove the ones without pre requisites
+            // only remove the ones without pre requisites // reverse the process remove the ones with pre requisites
             for (int i = 0; i < requiredTasks.Count - maxNumOfTasks; i++)
             {
                 for (int j = 0; j < requiredTasks.Count; j++)
                 {
-                    if (requiredTasks[j].preRequisiteTasks.Count <= 0)
+                    if (requiredTasks[j].preRequisiteTasks.Count > 0)
                     {
                         requiredTasks.RemoveAt(j);
                         break;
@@ -155,7 +157,6 @@ public class TaskManager : MonoBehaviour
                 }
             }
         }
-        ActivateSetTasks();
     }
 
     public bool AreRequiredTasksDone()
