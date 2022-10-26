@@ -112,10 +112,10 @@ public class TaskManager : MonoBehaviour
 
             int randomTaskIndex = Random.Range(0, tempTaskList.Count);
             //Check for duplicates
-            //if(!CheckForMinigameDuplicateInList(tempTaskList, tempTaskList[randomTaskIndex]))
-            //{
+            if(!CheckForMinigameDuplicateInList(requiredTasks, tempTaskList[randomTaskIndex]))
+            {
                 requiredTasks.Add(tempTaskList[randomTaskIndex]);
-            //}
+            }
            
 
 
@@ -126,20 +126,16 @@ public class TaskManager : MonoBehaviour
                 for (int j = 0; j < tempTaskList[randomTaskIndex].preRequisiteTasks.Count; j++)
                 {
                     //check if the pre requisite task is already in the required tasks
-                    for(int k = 0; k < requiredTasks.Count; k++)
-                    {
-                        if (requiredTasks[k] == tempTaskList[randomTaskIndex].preRequisiteTasks[j])
-                        {
-                            break;
-                        }
-                        else
-                        {
-                            // only add the pre req task if its not in the required task
+                    if(!CheckForMinigameDuplicateInList(requiredTasks, tempTaskList[randomTaskIndex].preRequisiteTasks[j]) && j <= tempTaskList[randomTaskIndex].preRequisiteTasks.Count - 1)
+                    { 
+                        // only add the pre req task if its not in the required task
                             requiredTasks.Add(tempTaskList[randomTaskIndex].preRequisiteTasks[j]);
                             tempTaskList.Remove(tempTaskList[randomTaskIndex].preRequisiteTasks[j]);
                             break;
-                        }
                     }
+                           
+                        
+                    
                 }
             }
 
@@ -150,22 +146,23 @@ public class TaskManager : MonoBehaviour
             if (tempTaskList.Count <= 0) { break; }
                
         } 
-        //if the required tasks are over the max number of tasks
-        if (requiredTasks.Count > maxNumOfTasks)
-        {
-            // only remove the ones without pre requisites // reverse the process remove the ones with pre requisites
-            for (int i = 0; i < requiredTasks.Count - maxNumOfTasks; i++)
-            {
-                for (int j = 0; j < requiredTasks.Count; j++)
-                {
-                    if (requiredTasks[j].preRequisiteTasks.Count > 0)
-                    {
-                        requiredTasks.RemoveAt(j);
-                        break;
-                    }
-                }
-            }
-        }
+        ////if the required tasks are over the max number of tasks
+        //if (requiredTasks.Count > maxNumOfTasks)
+        //{
+        //    // only remove the ones without pre requisites // reverse the process remove the ones with pre requisites
+        //    for (int i = 0; i < requiredTasks.Count - maxNumOfTasks; i++)
+        //    {
+        //        for (int j = 0; j < requiredTasks.Count; j++)
+        //        {
+        //            if (requiredTasks[j].preRequisiteTasks.Count > 0)
+        //            {
+        //                Debug.Log("Removed " + requiredTasks[j].preRequisiteTasks[j].minigameName);
+        //                requiredTasks.RemoveAt(j);
+        //                break;
+        //            }
+        //        }
+        //    }
+        //}
     }
 
     public bool AreRequiredTasksDone()
@@ -290,6 +287,7 @@ public class TaskManager : MonoBehaviour
                 }
             }
         }
+        Debug.Log("Activating Required Tasks");
     }
 
     public bool CheckForMinigameDuplicateInList(List<MinigameObject> minigameList, MinigameObject minigameToCheck) {

@@ -187,12 +187,11 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if(minigameObjects.Count <=0) { return; }
         foreach(GameObject minigame in minigameObjects)
         {
-            //minigame.transform.GetChild(2).gameObject.SetActive(true);
             UnitInfo unitInfo = minigame.GetComponent<UnitInfo>();
             if (unitInfo)
             {
                 unitInfo.effects.gameObject.SetActive(true);
-                Debug.Log("Activate Effects");
+                //Debug.Log("Activate Effects");
             }
             
         }
@@ -208,7 +207,7 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             if (unitInfo)
             {
                 unitInfo.effects.gameObject.SetActive(false);
-                Debug.Log("Deactivate Effects");
+                //Debug.Log("Deactivate Effects");
             }
 
         }
