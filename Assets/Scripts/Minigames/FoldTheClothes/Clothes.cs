@@ -61,9 +61,13 @@ public class Clothes : MonoBehaviour
     public bool isWrong;
     public int effectDuration;
 
+    public List<AudioClip> audioClips;
+    public AudioClip stackSFX;
+    SFXManager sFXManager;
     private void Awake()
     {
         SingletonManager.Register(this);
+        sFXManager = GetComponent<SFXManager>();
     }
 
    
@@ -194,16 +198,15 @@ public class Clothes : MonoBehaviour
             if( clothes > 0)
             {
                 clothes--;
-                Reset();
-             
-                
+                sFXManager.PlaySFX(stackSFX);
+                Reset();   
             }
             else
             {
                 Debug.Log("Success");
+              //  sFXManager.PlaySFX(stackSFX);
                 this.gameObject.SetActive(false);
                 foldManager.CheckIfFinished();
-                
                
             }
             
@@ -308,11 +311,12 @@ public class Clothes : MonoBehaviour
     {
         for(int i =0; i < listArrow.Count; i++)
         {
+            
             if (listArrow[i] == leftArrow && leftArrow.activeSelf == true)
             {
                 leftFold = true;
                 leftArrow.SetActive(false);
-
+                
                 switch (clothes)
                 {
                     case 2:
@@ -329,7 +333,7 @@ public class Clothes : MonoBehaviour
 
 
                 }
-
+              
                 listArrow.RemoveAt(i);
                 Debug.Log(listArrow.Count);
                 break;
@@ -357,6 +361,7 @@ public class Clothes : MonoBehaviour
                 }
 
                 listArrow.RemoveAt(i);
+                sFXManager.PlaySFX(audioClips[i]);
                 Debug.Log(listArrow.Count);
                 break;
 
@@ -384,6 +389,7 @@ public class Clothes : MonoBehaviour
                 }
 
                 listArrow.RemoveAt(i);
+                sFXManager.PlaySFX(audioClips[i]);
                 Debug.Log(listArrow.Count);
                 break;
 
@@ -407,6 +413,7 @@ public class Clothes : MonoBehaviour
     public void  spriteChanger(int index)
     {
         this.GetComponent<SpriteRenderer>().sprite = stateSprites[index];
+
     }
 
     IEnumerator wrongEffect(GameObject arrow)
