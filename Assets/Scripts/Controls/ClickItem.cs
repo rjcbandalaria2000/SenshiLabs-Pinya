@@ -11,8 +11,16 @@ public class ClickItem : MonoBehaviour
     public DisplayGroceryList groceryList;
     public bool isDuplicate;
     public int quantity;
+    SFXManager sFX;
+    public AudioClip correctSFX;
+    public AudioClip wrongSFX;
 
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        sFX = GetComponent<SFXManager>();
+    }
     void Start()
     {
         item = this.gameObject;
@@ -67,6 +75,7 @@ public class ClickItem : MonoBehaviour
                 groceryMiniGame.wantedItems.RemoveAt(i);
                 groceryList.updateList();
                 isCorrect = true;
+                sFX.PlaySFX(correctSFX);
                 break;
             }
            
@@ -77,6 +86,7 @@ public class ClickItem : MonoBehaviour
             Debug.Log("Wrong");
             Vector3 shake = new Vector3(0.5f, 0, 0);
             item.transform.DOShakePosition(0.3f, shake, 10, 45, false, false);
+            sFX.PlaySFX(wrongSFX);
         }
 
        
