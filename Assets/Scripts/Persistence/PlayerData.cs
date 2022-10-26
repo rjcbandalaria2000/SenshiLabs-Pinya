@@ -26,7 +26,11 @@ public class PlayerData : MonoBehaviour
     public bool                     IsSleepFinished;
 
     [Header("Tasks")]
-    public List<string>     requiredTasks;
+    public List<string>             requiredTasks;
+
+    [Header("TimePeriod")]
+    public int                      savedTimeIndex;
+    public TimePeriod               savedTimePeriod;
 
     public void Awake()
     {
