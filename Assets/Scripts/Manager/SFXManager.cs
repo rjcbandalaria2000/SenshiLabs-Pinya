@@ -33,4 +33,14 @@ public class SFXManager : MonoBehaviour
     {
         source.Play();
     }
+
+    public IEnumerator WaitForSFX(float time)
+    {
+        yield return new WaitForSeconds(time);
+    }
+
+    public void Wait(float time)
+    {
+        StartCoroutine(WaitForSFX(time));
+    }
 }

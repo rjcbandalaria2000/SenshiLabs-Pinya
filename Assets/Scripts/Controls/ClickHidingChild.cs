@@ -12,9 +12,11 @@ public class ClickHidingChild : MonoBehaviour
     public HideSeekManager hideSeekManager;
     //public bool isHiding;
 
+
     private void Start()
     {
         //isHiding = true;
+      //  sFXManager = GetComponent<SFXManager>();
         child = this.gameObject;    
         hideSeekManager = GameObject.FindObjectOfType<HideSeekManager>().GetComponent<HideSeekManager>();
    
@@ -26,18 +28,25 @@ public class ClickHidingChild : MonoBehaviour
 
     private void OnMouseDown()
     {
-        
+    
             Debug.Log("Child Found");
-            child.SetActive(false); // or DeleteDestroy?
+            
+      
+            
             hideSeekManager.score += 1;
             hideSeekManager.count -= 1;
             SingletonManager.Get<DisplayChildCount>().updateChildCount();
             hideSeekManager.CheckIfFinished();
-          
-        
+           //     sFXManager.Wait(2f);
+               child.SetActive(false); // or DeleteDestroy?
+
+
     }
 
-
+    private void OnDisable()
+    {
+   
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -58,4 +67,5 @@ public class ClickHidingChild : MonoBehaviour
         }
     }
 
+   
 }
