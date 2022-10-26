@@ -11,6 +11,7 @@ public class TagOccupied : MonoBehaviour
         if(other.gameObject.GetComponent<AITagMinigame>().isTag == true || other.gameObject.GetComponent<TagMinigamePlayer>().isTag == true)
         {
             isObjectTag = true;
+            Debug.Log("TagOccupied");
         }
       
     }

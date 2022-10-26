@@ -19,6 +19,7 @@ public class AITagMinigame : MonoBehaviour
     public float defaultSpeed;
     public float speed;
     public float delaySpeed;
+    public float changeTimer;
 
     [Header("Target")]
     public List<GameObject> potentialTargets = new();
@@ -28,7 +29,7 @@ public class AITagMinigame : MonoBehaviour
     [Header("Distance")]
     public float distance;
     public float minDistance;
-    public float fleeDistance;
+ 
 
     public Coroutine movementRoutine;
     public Coroutine canTagRoutine;
@@ -47,9 +48,6 @@ public class AITagMinigame : MonoBehaviour
     private void Start()
     {
         previousTag = null;
-
-
-        minDistance = 1;
 
         spriteUpdate();
 
@@ -94,22 +92,21 @@ public class AITagMinigame : MonoBehaviour
 
     public void setTarget()
     {
-        if (isTag == true)
+        if (this.isTag == true)
         {
             int RNG = Random.Range(0, potentialTargets.Count);
+            this.target = potentialTargets[RNG];
 
-            speed = taggedSpeed;
-
-            target = potentialTargets[RNG];
-
-            if (target == previousTag)
+            if (this.target == previousTag)
             {
+                this.target = null;
                 setTarget();
                 Debug.Log("Refresh Target");
             }
             else
             {
-                distance = Vector3.Distance(target.transform.position, this.transform.position);
+                this.speed = taggedSpeed;
+                distance = Vector3.Distance(this.target.transform.position, this.transform.position);
                 goToTargetRoutine = StartCoroutine(goToTarget());
             }
 
@@ -118,8 +115,6 @@ public class AITagMinigame : MonoBehaviour
         {
 
             int RNG = Random.Range(0, randomPoints.Count);
-
-            speed = defaultSpeed;
             if(randomPoints[RNG].gameObject.GetComponent<TagOccupied>().isObjectTag == true) 
             {
                 setTarget();
@@ -127,9 +122,10 @@ public class AITagMinigame : MonoBehaviour
             }
             else
             {
-                target = randomPoints[RNG].gameObject;
+                this.speed = defaultSpeed;
+                this.target = randomPoints[RNG].gameObject;
 
-                distance = Vector3.Distance(target.transform.position, this.transform.position);
+                distance = Vector3.Distance(this.target.transform.position, this.transform.position);
                 goToTargetRoutine = StartCoroutine(goToTarget());
             }
          
@@ -142,25 +138,39 @@ public class AITagMinigame : MonoBehaviour
 
         while (distance > minDistance)
         {
-            this.transform.position = Vector2.Lerp(this.transform.position, target.transform.position, speed * Time.deltaTime);
-            distance = Vector3.Distance(target.transform.position, this.transform.position);
+            if(target != null)
+            {
+                this.transform.position = Vector2.MoveTowards(this.transform.position, this.target.transform.position, this.speed * Time.deltaTime);
+                distance = Vector3.Distance(this.target.transform.position, this.transform.position);
+               
+            }
             yield return null;
         }
         
-        yield return new WaitForSeconds(delaySpeed);
-       
-        if (isTag == false)
+        yield return new WaitForSeconds(changeTimer);
+        
+        if (distance <= minDistance || distance <= 0)
         {
-            if (distance < minDistance)
-            {
-                setTarget();
-                Debug.Log("NewTarget");
-            }
+            this.target = null;
+            setTarget();
+
+            Debug.Log("NewTarget");
         }
-        else
-        {
-            yield return null;
-        }
+
+        //if (isTag == false)
+        //{
+        //    if (distance <= minDistance || distance <= 0)
+        //    {
+        //        this.target = null;
+        //        setTarget();
+              
+        //        Debug.Log("NewTarget");
+        //    }
+        //}
+        //else
+        //{
+        //    yield return null;
+        //}
     }
 
     public IEnumerator AiTagAi(AITagMinigame otherChild)
@@ -173,20 +183,22 @@ public class AITagMinigame : MonoBehaviour
 
         this.setTarget();
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(delaySpeed);
 
         otherChild.setTarget();
         //StartCoroutine(coolDown(otherChild));
        
     }
 
-    public void updatePlayerTag(TagMinigamePlayer otherPlayer)
+    public IEnumerator AiTagPlayer(TagMinigamePlayer otherPlayer)
     {
         otherPlayer.isTag = true;
         this.isTag = false;
 
         otherPlayer.spriteUpdate();
         this.spriteUpdate();
+
+        yield return new WaitForSeconds(delaySpeed);
 
         this.setTarget();
 
@@ -200,22 +212,22 @@ public class AITagMinigame : MonoBehaviour
         otherPlayer.spriteUpdate();
         this.spriteUpdate();
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(delaySpeed);
 
         this.setTarget();
-    }
-
-    IEnumerator coolDown(AITagMinigame otherAI)
-    {
-        otherAI.speed = 0;
-        yield return new WaitForSeconds(1.5f);
-        otherAI.speed = otherAI.taggedSpeed;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         collideRoutine = StartCoroutine(collide(other));
+        Debug.Log("Enter Collided");
     
+    }
+    IEnumerator tagImmune(Collider2D other)
+    {
+        other.GetComponent<AITagMinigame>().previousTag = this.gameObject;
+        yield return new WaitForSeconds(2.5f);
+        other.GetComponent<AITagMinigame>().previousTag = null;
     }
 
     IEnumerator collide(Collider2D other)
@@ -224,39 +236,70 @@ public class AITagMinigame : MonoBehaviour
         {
             if (isTag == true && other.GetComponent<AITagMinigame>().isTag == false)
             {
-               
-                other.GetComponent<AITagMinigame>().previousTag = this.gameObject;
-                this.previousTag = null;
-                AITagAIRoutine = StartCoroutine(AiTagAi(other.GetComponent<AITagMinigame>()));
-               
-                Debug.Log("Other AI Tag");
+                if (this.target != previousTag)
+                {
+                    StopCoroutine(this.goToTargetRoutine);
+                    this.target = null;
+                    other.GetComponent<AITagMinigame>().target = null;
 
+                    //other.GetComponent<AITagMinigame>().previousTag = this.gameObject;
+                    //yield return new WaitForSeconds(2.5f);
+                    //other.GetComponent<AITagMinigame>().previousTag = null;
+                    StartCoroutine(tagImmune(other));
+
+                    //other.GetComponent<AITagMinigame>().previousTag = this.gameObject;
+                    this.previousTag = null;
+                    AITagAIRoutine = StartCoroutine(AiTagAi(other.GetComponent<AITagMinigame>()));
+
+                    Debug.Log("AI tag AI Tag");
+                    
+                }
+                else
+                {
+                    yield return null;
+                }
+ 
+            }
+            else
+            {
+                yield return null;
             }
         }
         else if (other.GetComponent<TagMinigamePlayer>() != null) 
         {
             if (isTag == true && other.GetComponent<TagMinigamePlayer>().isTag == false) //AI tag Player
             {
-                //StopCoroutine(goToTargetRoutine);
+                StopCoroutine(this.goToTargetRoutine);
+                this.target = null;
+
                 other.GetComponent<TagMinigamePlayer>().previousTag = this.gameObject;
-                updatePlayerTag(other.GetComponent<TagMinigamePlayer>());
+                this.previousTag = null;
+
+                AITagPlayerRoutine = StartCoroutine(AiTagPlayer(other.GetComponent<TagMinigamePlayer>()));
                 Debug.Log("Ai Tag Player");
+                yield return null;
 
             }
             else if (isTag == false && other.GetComponent<TagMinigamePlayer>().isTag == true) // player tag AI
             {
                 if(this.gameObject != other.GetComponent<TagMinigamePlayer>().previousTag)
                 {
+                    StopCoroutine(this.goToTargetRoutine);
+                    this.target = null;
+
                     other.GetComponent<TagMinigamePlayer>().previousTag = null;
                     this.previousTag = other.gameObject;
                     PlayerTagAIRourine = StartCoroutine(playerTagAI(other.GetComponent<TagMinigamePlayer>()));
                     Debug.Log("player tag AI");
+                    yield return null;
                 }
         
             }
+            else
+            {
+                yield return null;
+            }
         }
-
-        yield return null;
     }
 
 }
