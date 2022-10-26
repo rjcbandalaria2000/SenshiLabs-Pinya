@@ -10,7 +10,7 @@ public class TagMinigamePlayer : MonoBehaviour
     Vector2 movement;
     public bool isTag;
     private Vector3 targetPosition;
-    public GameObject previousTag;
+    //public GameObject previousTag;
 
     public SpriteRenderer renderer;
     void Start()
@@ -69,17 +69,11 @@ public class TagMinigamePlayer : MonoBehaviour
 
     //private void OnTriggerEnter2D(Collider2D other)
     //{
-    //    if (other.GetComponent<AITagMinigame>() != null) //other AI
+    //    if (other.GetComponent<AITagMinigame>() != null && isTag == true) //other AI
     //    {
-    //        if (isTag == true && other.GetComponent<AITagMinigame>().isTag == false)
-    //        {
-    //            other.GetComponent<AITagMinigame>().previousTag = this.gameObject;
-    //            UpdateTag(other.GetComponent<AITagMinigame>());
-    //            Debug.Log("AI Tag");
-
-    //        }
+    //        StartCoroutine(other.GetComponent<AITagMinigame>().collide(other));
     //    }
-       
+
     //}
 
 }
