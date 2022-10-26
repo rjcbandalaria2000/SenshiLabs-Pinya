@@ -605,7 +605,7 @@ GameObject:
   - component: {fileID: 854555913}
   - component: {fileID: 854555912}
   m_Layer: 0
-  m_Name: PLACEHOLDER BGM
+  m_Name: BGM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -621,7 +621,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 46e87d64bf7d6564993df43c3d5e3173, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 78c4ea19e8a88ad479724a7e7a8efe43, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.41
   m_Pitch: 1
@@ -1104,7 +1104,7 @@ MonoBehaviour:
           m_MethodName: PlaySFX
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: 6567f535b3d083e408a80cccf0d130d1, type: 3}
+            m_ObjectArgument: {fileID: 8300000, guid: b8d10cac23742464a9e5d3cef0460e60, type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -1120,7 +1120,7 @@ MonoBehaviour:
           m_MethodName: PlaySFX
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: a2ce8709eec9db9409a2959bc23854d4, type: 3}
+            m_ObjectArgument: {fileID: 8300000, guid: a56f94076436dff4aa442ab769150fa0, type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -1348,7 +1348,7 @@ MonoBehaviour:
           m_MethodName: PlaySFX
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: 6567f535b3d083e408a80cccf0d130d1, type: 3}
+            m_ObjectArgument: {fileID: 8300000, guid: b8d10cac23742464a9e5d3cef0460e60, type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -1364,7 +1364,7 @@ MonoBehaviour:
           m_MethodName: PlaySFX
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: a2ce8709eec9db9409a2959bc23854d4, type: 3}
+            m_ObjectArgument: {fileID: 8300000, guid: a56f94076436dff4aa442ab769150fa0, type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -1723,7 +1723,7 @@ MonoBehaviour:
           m_MethodName: PlaySFX
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: 6567f535b3d083e408a80cccf0d130d1, type: 3}
+            m_ObjectArgument: {fileID: 8300000, guid: b8d10cac23742464a9e5d3cef0460e60, type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -1739,7 +1739,7 @@ MonoBehaviour:
           m_MethodName: PlaySFX
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: a2ce8709eec9db9409a2959bc23854d4, type: 3}
+            m_ObjectArgument: {fileID: 8300000, guid: a56f94076436dff4aa442ab769150fa0, type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -1806,6 +1806,7 @@ MonoBehaviour:
   minigameResultsUI: {fileID: 0}
   minigameGoodResult: {fileID: 0}
   minigameBadResult: {fileID: 0}
+  transitionUI: {fileID: 0}
   loadingUI: {fileID: 827761523}
   askMomButton: {fileID: 0}
   tutorialGO: {fileID: 0}

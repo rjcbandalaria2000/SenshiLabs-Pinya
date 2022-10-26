@@ -4281,6 +4281,7 @@ MonoBehaviour:
   minigameResultsUI: {fileID: 0}
   minigameGoodResult: {fileID: 0}
   minigameBadResult: {fileID: 0}
+  transitionUI: {fileID: 0}
   loadingUI: {fileID: 0}
   askMomButton: {fileID: 0}
   tutorialGO: {fileID: 0}
@@ -9468,6 +9469,7 @@ MonoBehaviour:
   minigameResultsUI: {fileID: 677568698}
   minigameGoodResult: {fileID: 235193982}
   minigameBadResult: {fileID: 1898211566}
+  transitionUI: {fileID: 0}
   loadingUI: {fileID: 1995038644}
   askMomButton: {fileID: 0}
   tutorialGO: {fileID: 476275623}
@@ -11533,7 +11535,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: tutorialImages.Array.size
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: instructionText.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: tutorialImages.Array.data[0]
@@ -11541,6 +11547,10 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: fb5c2b5d7e7d1434b9fa72c22a45cd0b, type: 3}
     - target: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: tutorialImages.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: fb5c2b5d7e7d1434b9fa72c22a45cd0b, type: 3}
+    - target: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: tutorialImages.Array.data[2]
       value: 
       objectReference: {fileID: 21300000, guid: fb5c2b5d7e7d1434b9fa72c22a45cd0b, type: 3}
     - target: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
@@ -11552,6 +11562,10 @@ PrefabInstance:
       propertyPath: instructionText.Array.data[1]
       value: 'Click the mouse to pour down water into the plants. Control the watering
         can by your mouse as you give them water.  '
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: instructionText.Array.data[2]
+      value: 'Control the watering can by your mouse as you give them water. '
       objectReference: {fileID: 0}
     - target: {fileID: 2174895158145102627, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: m_Name
