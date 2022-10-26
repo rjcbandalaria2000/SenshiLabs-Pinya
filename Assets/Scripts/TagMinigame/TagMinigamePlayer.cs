@@ -10,6 +10,7 @@ public class TagMinigamePlayer : MonoBehaviour
     Vector2 movement;
     public bool isTag;
     private Vector3 targetPosition;
+    public GameObject previousTag;
 
     public SpriteRenderer renderer;
     void Start()
@@ -54,19 +55,31 @@ public class TagMinigamePlayer : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void UpdateTag(AITagMinigame otherAI)
     {
-        if (other.GetComponent<AITagMinigame>() != null) //other AI
-        {
-            if (isTag == true && other.GetComponent<AITagMinigame>().isTag == false)
-            {
-                other.GetComponent<AITagMinigame>().previousTag = this.gameObject;
-                other.GetComponent<AITagMinigame>().updateAITag(other.GetComponent<AITagMinigame>());
-                Debug.Log("AI Tag");
+        this.isTag = false;
+        otherAI.isTag = true;
 
-            }
-        }
-       
+        spriteUpdate();
+        otherAI.spriteUpdate();
+
+        otherAI.setTarget();
+
     }
+
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    if (other.GetComponent<AITagMinigame>() != null) //other AI
+    //    {
+    //        if (isTag == true && other.GetComponent<AITagMinigame>().isTag == false)
+    //        {
+    //            other.GetComponent<AITagMinigame>().previousTag = this.gameObject;
+    //            UpdateTag(other.GetComponent<AITagMinigame>());
+    //            Debug.Log("AI Tag");
+
+    //        }
+    //    }
+       
+    //}
 
 }

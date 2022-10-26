@@ -95,7 +95,7 @@ public class TagManager : MinigameManager
 
         StartCoroutine(checkStatus());
 
-        Debug.Log("Refresh Score board");
+        //Debug.Log("Refresh Score board");
         //Spawn objects
 
         isCompleted = false;
@@ -146,7 +146,7 @@ public class TagManager : MinigameManager
                 activeAI[i].GetComponent<AITagMinigame>().isTag = false;
 
                 activeAI[i].GetComponent<AITagMinigame>().ID = i;
-                Debug.Log("Activate");
+              
             }
         }
 
