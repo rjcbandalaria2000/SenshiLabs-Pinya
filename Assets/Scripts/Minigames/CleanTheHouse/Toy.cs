@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Toy : MonoBehaviour
 {
@@ -8,16 +9,22 @@ public class Toy : MonoBehaviour
     public bool         isHolding;
     public bool         isHoveredOver;
     public bool         isPickedUp;
+    AudioSource audioSource;
+    public AudioClip clip;
 
+  //  public UnityEvent OnPickUp;
+   // public UnityEvent OnPickDown;
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         isPickedUp = false;
     }
 
     private void OnMouseDown()
     {
         isPickedUp = true;
+      //  OnPickUp.Invoke();
     }
 
     private void OnMouseOver()
@@ -44,6 +51,8 @@ public class Toy : MonoBehaviour
     private void OnMouseUp()
     {
         isHolding = false;
+        audioSource.PlayOneShot(clip);
+        //OnPickDown.Invoke();
     }
 
 }
