@@ -5,6 +5,7 @@ using UnityEngine;
 public class Sponge : MonoBehaviour
 {
     public Transform returnPosition;
+   
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class Sponge : MonoBehaviour
     {
         if(returnPosition == null) { return; }
         this.transform.position = returnPosition.position;
+       
     }
 
     public void OnSceneChange()

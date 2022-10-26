@@ -23,4 +23,9 @@ public class SFXManager : MonoBehaviour
     {
         source.PlayOneShot(audioClip);
     }
+
+    public void StopMusic()
+    {
+        source.Stop();
+    }
 }

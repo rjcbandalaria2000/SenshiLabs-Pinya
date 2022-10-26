@@ -29,6 +29,11 @@ public class Plate : MonoBehaviour
     private Sponge      sponge;
     private Coroutine   spongeInteractRoutine;
 
+
+    public SFXManager sFX;
+    public AudioClip audioClip;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +51,7 @@ public class Plate : MonoBehaviour
             if (CanClean)
             {
                 StartSpongeInteract();
+                sFX.PlaySFX(audioClip);
             }
             
         }
@@ -58,6 +64,7 @@ public class Plate : MonoBehaviour
         {
             sponge = null;
             StopSpongeInteract();
+            this.sFX.StopMusic();
         }
     }
 
@@ -80,6 +87,7 @@ public class Plate : MonoBehaviour
         //Changes model from dirty plate to clean plate vice versa 
         if (IsClean)
         {
+            
             CleanPlateModel.SetActive(true);
             DirtyPlateModel.SetActive(false);
         }
@@ -120,6 +128,7 @@ public class Plate : MonoBehaviour
                     IsClean = true;
                     ChangeModel();
                     Events.OnPlateCleaned.Invoke();
+       
                 }
                 
             }

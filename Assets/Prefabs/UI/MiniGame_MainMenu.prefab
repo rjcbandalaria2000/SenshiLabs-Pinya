@@ -281,7 +281,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 2042580034100349126}
           m_TargetAssemblyTypeName: SFXManager, Assembly-CSharp
           m_MethodName: PlaySFX
           m_Mode: 2
@@ -297,7 +297,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 2042580034100349126}
           m_TargetAssemblyTypeName: SFXManager, Assembly-CSharp
           m_MethodName: PlaySFX
           m_Mode: 2
@@ -321,6 +321,8 @@ GameObject:
   - component: {fileID: 3056311791677182190}
   - component: {fileID: 3056311791677182189}
   - component: {fileID: 3056311791677182188}
+  - component: {fileID: 3054661716898204348}
+  - component: {fileID: 2042580034100349126}
   m_Layer: 5
   m_Name: MiniGame_MainMenu
   m_TagString: Untagged
@@ -414,6 +416,114 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!82 &3054661716898204348
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3056311791677182187}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &2042580034100349126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3056311791677182187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35f39ae76d8ad7c4bb3e6bc34adb005d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3056311792059580038
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,7 +675,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 5217622356854553542, guid: f640e4935bcbc834d90338e544bf1de2, type: 3}
+        - m_Target: {fileID: 2042580034100349126}
           m_TargetAssemblyTypeName: SFXManager, Assembly-CSharp
           m_MethodName: PlaySFX
           m_Mode: 2
@@ -581,7 +691,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 5217622356854553542, guid: f640e4935bcbc834d90338e544bf1de2, type: 3}
+        - m_Target: {fileID: 2042580034100349126}
           m_TargetAssemblyTypeName: SFXManager, Assembly-CSharp
           m_MethodName: PlaySFX
           m_Mode: 2
@@ -744,7 +854,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 5217622356854553542, guid: f640e4935bcbc834d90338e544bf1de2, type: 3}
+        - m_Target: {fileID: 2042580034100349126}
           m_TargetAssemblyTypeName: SFXManager, Assembly-CSharp
           m_MethodName: PlaySFX
           m_Mode: 2
@@ -760,7 +870,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 5217622356854553542, guid: f640e4935bcbc834d90338e544bf1de2, type: 3}
+        - m_Target: {fileID: 2042580034100349126}
           m_TargetAssemblyTypeName: SFXManager, Assembly-CSharp
           m_MethodName: PlaySFX
           m_Mode: 2
