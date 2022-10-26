@@ -10,10 +10,9 @@ public enum TimePeriod{
 
 public class DayCycle : MonoBehaviour
 {
-    //public float time;
-    //public float endTime;
-    public TimePeriod timePeriod;
 
+    public TimePeriod   timePeriod;
+    public int          timeIndex = 0;
     //[SerializeField] bool isMorning;
 
     private void Awake()
@@ -22,7 +21,7 @@ public class DayCycle : MonoBehaviour
     }
     private void Start()
     {
-       ChangeTimePeriod();
+       //ChangeTimePeriod(timeIndex);
     }
 
     //public void IncreaseTime(float timeAdd) // initial (change to events)
@@ -40,21 +39,39 @@ public class DayCycle : MonoBehaviour
       
     //}
 
-    public void ChangeTimePeriod()
+    public void ChangeTimePeriod(int timeIndex)
     {
-        if(SingletonManager.Get<PlayerData>().MinigamesPlayed <= 4)
+        //if(SingletonManager.Get<PlayerData>().MinigamesPlayed <= 4)
+        //{
+        //    timePeriod = TimePeriod.Morning;
+        //}
+        //if (SingletonManager.Get<PlayerData>().MinigamesPlayed >= 5)
+        //{
+        //    timePeriod = TimePeriod.Afternoon;
+        //}
+        //if(SingletonManager.Get<PlayerData>().MinigamesPlayed >= 8)
+        //{
+        //    timePeriod = TimePeriod.Evening;
+        //}
+        Mathf.Clamp(timeIndex, 0, 2);
+        switch (timeIndex)
         {
-            timePeriod = TimePeriod.Morning;
-        }
-        if (SingletonManager.Get<PlayerData>().MinigamesPlayed >= 5)
-        {
-            timePeriod = TimePeriod.Afternoon;
-        }
-        if(SingletonManager.Get<PlayerData>().MinigamesPlayed >= 8)
-        {
-            timePeriod = TimePeriod.Evening;
+            case 0:
+                timePeriod = TimePeriod.Morning;
+                break;
+            case 1:
+                timePeriod = TimePeriod.Afternoon;
+                break;
+            case 2:
+                timePeriod = TimePeriod.Evening;
+                break;
+
+            default: 
+                timePeriod = TimePeriod.Morning;
+                break;
         }
 
-            Debug.Log("Current Time Period " + timePeriod.ToString());
+        Debug.Log("Current Time Period " + timePeriod.ToString());
+        Events.OnChangeTimePeriod.Invoke();
     }
 }

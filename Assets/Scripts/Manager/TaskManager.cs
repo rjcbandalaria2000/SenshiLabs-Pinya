@@ -198,7 +198,14 @@ public class TaskManager : MonoBehaviour
         {
             // Set new random tasks
             OnTasksDone();
+            SingletonManager.Get<DayCycle>().timeIndex++;
+            SingletonManager.Get<DayCycle>().ChangeTimePeriod(SingletonManager.Get<DayCycle>().timeIndex);
             Debug.Log("All Tasks are done");
+
+        }
+        else
+        {
+            SingletonManager.Get<DayCycle>().ChangeTimePeriod(SingletonManager.Get<DayCycle>().timeIndex);
         }
     }
 
