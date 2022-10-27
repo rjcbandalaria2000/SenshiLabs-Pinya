@@ -23,9 +23,11 @@ public class WateringCan : MonoBehaviour
     private Coroutine   wateringPlantRoutine;
     private MouseFollow mouseFollow;
 
+    SFXManager sFX;
     // Start is called before the first frame update
     void Start()
     {
+        sFX = GetComponent<SFXManager>();
         waterCanControlsRoutine = null;
         //waterCanControlsRoutine = StartCoroutine(OnClickControls());
         ChangeModel();
@@ -111,11 +113,13 @@ public class WateringCan : MonoBehaviour
     {
         if (IsWatering)
         {
+            sFX.PlayMusic();
             ReadyModel.SetActive(false);
             WateringModel.SetActive(true);
         }
         else
         {
+            sFX.StopMusic();
             ReadyModel.SetActive(true);
             WateringModel.SetActive(false);
         }

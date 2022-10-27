@@ -21,9 +21,13 @@ public class Dust : MonoBehaviour
     private Camera mainCamera; 
     private int swipeCounter;
     private Vector2 initialPosition;
+
+    AudioSource audioSource;
+    public AudioClip audioClip;
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         swipedRight = false;
         swipedLeft = false; 
         mainCamera = Camera.main;
@@ -53,12 +57,14 @@ public class Dust : MonoBehaviour
         }
         if(swipedRight && swipedLeft)
         {
+            audioSource.PlayOneShot(audioClip);
             swipeCounter++;
             swipedLeft = false;
             swipedRight = false;
         }
         if(swipeCounter >= SwipeRequired)
         {
+           
             SingletonManager.Get<CleanTheHouseManager>().AddDustSwept(1);
             Destroy(this.gameObject);
         }

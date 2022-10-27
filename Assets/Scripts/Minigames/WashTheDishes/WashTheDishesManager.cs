@@ -30,9 +30,12 @@ public class WashTheDishesManager : MinigameManager
     private Coroutine       plateToWashAreaRoutine;
     private Coroutine       nextPlateToWashRoutine;
 
+    public SFXManager source;
+    public AudioClip audioClip;
     private void Awake()
     {
         SingletonManager.Register(this);
+       // source = GetComponent<AudioSource>();
     }
     // Start is called before the first frame update
     void Start()
@@ -64,6 +67,7 @@ public class WashTheDishesManager : MinigameManager
     {
         plates[plateIndex].transform.DOMove(cleanPilePosition[plateIndex].transform.position, plateAnimationDuration, false);
         plates[plateIndex].transform.DORotate(new Vector3(0, 0, 90), plateAnimationDuration, RotateMode.Fast);
+        source.PlaySFX(audioClip);
         //plates[plateIndex].transform.position = cleanPilePosition[plateIndex].transform.position;
     }
 

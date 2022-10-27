@@ -9,12 +9,15 @@ public class DisplayChildCount : MonoBehaviour
 {
     public TextMeshProUGUI ChildCount;
     public HideSeekManager hideAndSeekMinigame;
+        SFXManager sFXManager;
+    public AudioClip foundSFX;
+    int counter; 
 
     private void Awake()
     {
         SingletonManager.Register(this);
+        sFXManager = GetComponent<SFXManager>();
 
-       
     }
 
     // Start is called before the first frame update
@@ -37,9 +40,19 @@ public class DisplayChildCount : MonoBehaviour
 
     public void updateChildCount()
     {
+       
         Assert.IsNotNull(ChildCount, "Catch Count text is not set or is null");
         Assert.IsNotNull(hideAndSeekMinigame, "Fold Minigame Manager is null or is not set");
         ChildCount.text = hideAndSeekMinigame.count.ToString();
+        if (counter == 0)
+        {
+            counter++;
+        }
+        else
+        {
+            sFXManager.PlaySFX(foundSFX);
+        }
+       
     }
 
     public void OnSceneChange()

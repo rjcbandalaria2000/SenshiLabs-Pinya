@@ -24,9 +24,13 @@ public class Plant : MonoBehaviour
     [Header("WaterBar")]
     public Image waterBar;
 
+    SFXManager sFX;
+    public AudioClip audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
+        sFX = GetComponent<SFXManager>();
         IsWatered = false;
         waterBar.fillAmount = 0;
         ChangeModel();
@@ -63,9 +67,16 @@ public class Plant : MonoBehaviour
 
         if (IsWatered || CurrentWater >= MaxWater) // fully watered 
         {
+            if(sFX != null)
+            {
+                sFX.PlaySFX(audioSource);
+            }
+  
             HydratedModel.SetActive(true);
             MiddleModel.SetActive(false);
             DehydratedModel.SetActive(false);
+
+            this.sFX = null;
         }
         else if (CurrentWater >= MaxWater/2 && CurrentWater > 0)// middle 
         {

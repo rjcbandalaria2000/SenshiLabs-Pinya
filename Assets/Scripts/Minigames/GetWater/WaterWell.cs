@@ -35,10 +35,16 @@ public class WaterWell : MonoBehaviour
     private int             playerSwipeDownCount;
     private Camera          mainCamera;
     private Vector2         initialMousePosition;
+
+    public AudioClip pullDownSFX;
+    public AudioClip pullUpSFX;
+
+    SFXManager sFXManager;
  
     // Start is called before the first frame update
     void Start()
     {
+        sFXManager = GetComponent<SFXManager>();
         Initialize();
     }
 
@@ -80,7 +86,8 @@ public class WaterWell : MonoBehaviour
                     {
                         playerSwipeDownCount++;
                         SingletonManager.Get<GetWaterManager>().slider.DOValue(playerSwipeDownCount, animationDuration, false);
-                       // SingletonManager.Get<GetWaterManager>().slider.value = playerSwipeDownCount;
+                        sFXManager.PlaySFX(pullDownSFX);
+                        // SingletonManager.Get<GetWaterManager>().slider.value = playerSwipeDownCount;
                         Events.OnObjectiveUpdate.Invoke();
                     }
                     if (playerSwipeDownCount >= RequiredSwipes)
@@ -88,6 +95,7 @@ public class WaterWell : MonoBehaviour
                         if(fillWaterBucket == null) { return; }
                         fillWaterBucket.StartFillingBucket();
                         Events.OnBucketRetrieve.Invoke();
+                       
                     }
                    
                 }
@@ -105,6 +113,7 @@ public class WaterWell : MonoBehaviour
             if (mousePosition.normalized.y > SwipeUpAccept)
             {
                 // Stop the water from filling 
+     
                 fillWaterBucket.StopFillingBucket();
                 if (availableBuckets > 0)
                 {
@@ -117,6 +126,8 @@ public class WaterWell : MonoBehaviour
                     Events.OnBucketUsed.Invoke();
                     //Reset swipes 
                     playerSwipeDownCount = 0;
+                    sFXManager.PlaySFX(pullUpSFX);
+
                     SingletonManager.Get<GetWaterManager>().slider.DOValue(playerSwipeDownCount, animationDuration, false);
                     //SingletonManager.Get<GetWaterManager>().slider.value = playerSwipeDownCount;
                     Events.OnBucketDrop.Invoke();

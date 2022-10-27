@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ToyBin : MonoBehaviour
 {
-
+    public SFXManager sFX;
+    public AudioClip clip;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +32,7 @@ public class ToyBin : MonoBehaviour
             if (collidedToy.isPickedUp && !collidedToy.isHolding)
             {
                 Debug.Log("Accept toy");
+                sFX.PlaySFX(clip);
                 SingletonManager.Get<CleanTheHouseManager>().AddTrashThrown(1);
                 Destroy(collidedToy.gameObject);
             }

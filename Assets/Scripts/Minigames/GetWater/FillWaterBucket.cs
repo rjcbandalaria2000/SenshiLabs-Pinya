@@ -14,14 +14,19 @@ public class FillWaterBucket : MonoBehaviour
 
     private Coroutine   fillBucketRoutine;
 
+    SFXManager sFX;
+  //  public AudioClip fillWater;
+
     // Start is called before the first frame update
     void Start()
     {
+        sFX = GetComponent<SFXManager>();
         //StartFillingBucket();
     }
 
     public void StartFillingBucket()
     {
+        sFX.PlayMusic();
         fillBucketRoutine = StartCoroutine(FillTheBucket());
     }
 
@@ -44,6 +49,7 @@ public class FillWaterBucket : MonoBehaviour
     
     public void ResetWaterBucket()
     {
+        sFX.StopMusic();
         waterAmount = 0;
         Events.OnWaterFilling.Invoke();
     }

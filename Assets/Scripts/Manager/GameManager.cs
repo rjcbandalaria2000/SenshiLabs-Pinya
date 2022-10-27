@@ -29,11 +29,12 @@ public class GameManager : MonoBehaviour
     private UIManager               UI;
     private TransitionManager       transitionManager;
     private Coroutine               startGameRoutine;
+    private SceneChange             sceneChange;
 
     private void Awake()
     {
         SingletonManager.Register(this);
-
+        sceneChange = this.GetComponent<SceneChange>();
         
         currentTime = maxTime;
         Events.OnPinyaEmpty.AddListener(GameLose);
@@ -118,6 +119,7 @@ public class GameManager : MonoBehaviour
             isGameFinished = true;
             Debug.Log("Player wins");
             SingletonManager.Get<UIManager>().ActivateWinPanel();
+            sceneChange.OnChangeScene("EndingStoryboard");
         }
     }
 
