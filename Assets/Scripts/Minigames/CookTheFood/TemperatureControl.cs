@@ -28,9 +28,15 @@ public class TemperatureControl : MonoBehaviour
     private Vector3     destination;
     private Coroutine   moveTrackerRoutine;
     private Pot         pot;
+
+    public List<AudioClip> cookingSFX;
+    SFXManager sFX;
+    public AudioClip correctSFX;
+    public AudioClip wrongSFX;
     // Start is called before the first frame update
     void Start()
     {
+        sFX = GetComponent<SFXManager>();
         Assert.IsNotNull(Tracker, "Tracker is null or is not set");
         SetRandomTemperaturePosition();
         pot = Parent.GetComponent<Pot>();
@@ -94,6 +100,8 @@ public class TemperatureControl : MonoBehaviour
             if (pointCounter < RequiredPointCounter)
             {
                 pointCounter++;
+                sFX.ChangePlayMusic(cookingSFX[pointCounter - 1]);
+                sFX.PlaySFX(correctSFX);
                 Tracker.transform.position = StartPosition.transform.position;
                 SetRandomTemperaturePosition();
                 Events.OnCookingButtonPressed.Invoke();
@@ -106,6 +114,8 @@ public class TemperatureControl : MonoBehaviour
             }
             if (pointCounter >= RequiredPointCounter)
             {
+
+              //  sFX.ChangePlayMusic(cookingSFX[RequiredPointCounter - 1]);
                 if (Parent.GetComponent<Pot>().IsCooked) { return; }
                 if (moveTrackerRoutine == null) { return; }
                 StopCoroutine(moveTrackerRoutine);
@@ -115,6 +125,7 @@ public class TemperatureControl : MonoBehaviour
         }
         else
         {
+            sFX.PlaySFX(wrongSFX);
             Debug.Log("Wrong Timing");
         }
 

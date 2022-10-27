@@ -8,15 +8,19 @@ public class Ingredient : MonoBehaviour
     public bool IsHoveredOver;
     public bool IsPickedUp;
 
+    SFXManager sFX;
+    public AudioClip pickedSFX;
     // Start is called before the first frame update
     void Start()
     {
+        sFX = GetComponent<SFXManager>();
         IsPickedUp = false;
     }
 
     private void OnMouseDown()
     {
         IsPickedUp = true;
+        sFX.PlaySFX(pickedSFX);
     }
 
     private void OnMouseOver()

@@ -34,6 +34,12 @@ public class SFXManager : MonoBehaviour
         source.Play();
     }
 
+    public void ChangePlayMusic(AudioClip audioClip)
+    {
+        source.clip = audioClip;
+        source.Play();
+    }
+
     public IEnumerator WaitForSFX(float time)
     {
         yield return new WaitForSeconds(time);

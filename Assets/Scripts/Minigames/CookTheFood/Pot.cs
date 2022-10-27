@@ -20,9 +20,14 @@ public class Pot : MonoBehaviour
     [Header("Panels")]
     public GameObject   TempChoices;
 
+    SFXManager sFX;
+    
+    public AudioClip insertFoodSFX;
+
     // Start is called before the first frame update
     void Start()
     {
+        sFX = GetComponent<SFXManager>();
         TempChoices.SetActive(false);
         Events.OnIngredientPlaced.Invoke();
         Events.OnPrepStage.Invoke();
@@ -36,6 +41,7 @@ public class Pot : MonoBehaviour
             Debug.Log("Collided with ingredient");
             if(collidedIngredient.IsPickedUp && !collidedIngredient.IsHolding)
             {
+                sFX.PlaySFX(insertFoodSFX);
                 Debug.Log("Accept Ingredient");
                 CurrentIngredientCount++;
                 CheckAllIngredients();
