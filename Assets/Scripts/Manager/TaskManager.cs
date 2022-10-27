@@ -22,6 +22,7 @@ public class TaskManager : MonoBehaviour
     public GameObject               taskListParent;
 
     private List<GameObject>        taskTexts = new();
+    private List<MinigameObject> tempTaskList = new();
     private void Awake()
     {
         SingletonManager.Register(this);
@@ -34,18 +35,24 @@ public class TaskManager : MonoBehaviour
 
     public void Initialize()
     {
-        if (SingletonManager.Get<PlayerData>().requiredTasks.Count > 0)
+        CheckIfAllTasksDone();
+        if (SingletonManager.Get<PlayerData>().hasSaved)
         {
-            RestoreSavedRequiredTasks();
-            ActivateSetTasks();
+            if (SingletonManager.Get<PlayerData>().requiredTasks.Count > 0)
+            {
+                RestoreSavedRequiredTasks();
+                ActivateSetTasks();
+            }
         }
         else
         {
             SetRandomTasks();
             ActivateSetTasks();
+            SingletonManager.Get<DayCycle>().ChangeTimePeriod(SingletonManager.Get<DayCycle>().timeIndex);
         }
 
-        CheckIfTasksDone();
+        CheckIfRequiredTasksDone();
+       
         taskListParent.SetActive(false);
         Events.OnSceneChange.AddListener(OnSceneChange);
     }
@@ -96,7 +103,7 @@ public class TaskManager : MonoBehaviour
     {
 
         //Temporarily store all tasks. Modify to avoid duplicates 
-        List<MinigameObject> tempTaskList = new();
+        //List<MinigameObject> tempTaskList = new();
 
         //Only add to the tempTaskList tasks/minigames that are not yet completed
         for (int i = 0; i < minigameObjects.Count; i++)
@@ -172,25 +179,34 @@ public class TaskManager : MonoBehaviour
         return allTasksDone;
     }
 
-    public void CheckIfTasksDone()
+    public void CheckIfRequiredTasksDone()
+    {
+        if (AreRequiredTasksDone())
+        {
+            // Set new random tasks
+            OnTasksDone();
+            SingletonManager.Get<DayCycle>().timeIndex++;
+            SingletonManager.Get<DayCycle>().ChangeTimePeriod(SingletonManager.Get<DayCycle>().timeIndex);
+            Debug.Log("Required Tasks are done");
+
+        }
+        else
+        {
+            SingletonManager.Get<DayCycle>().ChangeTimePeriod(SingletonManager.Get<DayCycle>().timeIndex);
+            Debug.Log("Required Tasks are not yet done");
+        }
+    }
+
+    public void CheckIfAllTasksDone()
     {
         if (AreAllTasksDone())
         {
             Debug.Log("Player wins ");
             Events.OnTasksComplete.Invoke();
         }
-        else if (AreRequiredTasksDone())
-        {
-            // Set new random tasks
-            OnTasksDone();
-            SingletonManager.Get<DayCycle>().timeIndex++;
-            SingletonManager.Get<DayCycle>().ChangeTimePeriod(SingletonManager.Get<DayCycle>().timeIndex);
-            Debug.Log("All Tasks are done");
-
-        }
-        else
         {
             SingletonManager.Get<DayCycle>().ChangeTimePeriod(SingletonManager.Get<DayCycle>().timeIndex);
+            Debug.Log("All tasks are not yet done");
         }
     }
 
@@ -244,6 +260,7 @@ public class TaskManager : MonoBehaviour
         if (minigameObjects.Count <= 0) { return false; }
         for (int i = 0; i < minigameObjects.Count; i++) 
         {
+            Debug.Log(minigameObjects[i].minigameName + " is completed?  " + minigameObjects[i].hasCompleted);
             if (!minigameObjects[i].hasCompleted)
             {
                 areTasksDone = false;

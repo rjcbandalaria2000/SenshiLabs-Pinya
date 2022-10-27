@@ -65,5 +65,6 @@ public class DayCycle : MonoBehaviour
             playerData.savedTimeIndex = timeIndex;
             playerData.savedTimePeriod = timePeriod;
         }
+        Events.OnSceneChange.RemoveListener(OnSceneChange);
     }
 }

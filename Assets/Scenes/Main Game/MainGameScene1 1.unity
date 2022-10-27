@@ -9973,7 +9973,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 390742304502025315, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
       propertyPath: minigameScene
-      value: Tag_Test
+      value: Tag
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}

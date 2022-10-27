@@ -154,6 +154,7 @@ public class FoldingMinigameManager : MinigameManager
             SingletonManager.Get<UIManager>().ActivateResultScreen();
             SingletonManager.Get<UIManager>().ActivateGoodResult();
             SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
+            SingletonManager.Get<PlayerData>().isFoldingClothesFinished = true;
         }
         else
         {
