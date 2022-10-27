@@ -23,7 +23,7 @@ public class DayCycle : MonoBehaviour
     {
         if (SingletonManager.Get<PlayerData>())
         {
-            if (SingletonManager.Get<PlayerData>().HasSaved) 
+            if (SingletonManager.Get<PlayerData>().hasSaved) 
             {
                 timePeriod = SingletonManager.Get<PlayerData>().savedTimePeriod;
                 timeIndex = SingletonManager.Get<PlayerData>().savedTimeIndex;
