@@ -334,6 +334,17 @@ public class UIManager : MonoBehaviour
         miniGameMainMenu.SetActive(true);
 
     }
+
+    public void OnConfirmExitMinigame(string scene)
+    {
+        confirmationGO.SetActive(false);
+        Events.OnSceneChange.Invoke();
+        if (sceneChange == null) { return; }
+        if (scene != null)
+        {
+            sceneChange.OnChangeScene(scene);
+        }
+    }
 }
     
 
