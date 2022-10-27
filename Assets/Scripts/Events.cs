@@ -113,9 +113,15 @@ public static class Events
     public static readonly Evt OnPinyaEmpty = new();
     #endregion
 
-    #region TaskManagerEvents
+    #region TaskManager Events
 
     public static readonly Evt OnTasksComplete = new();
+
+    #endregion
+
+    #region DayCycle Events 
+    public static readonly Evt OnChangeTimePeriod = new();
+
 
     #endregion
 }

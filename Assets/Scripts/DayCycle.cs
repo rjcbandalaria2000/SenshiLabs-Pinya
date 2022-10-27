@@ -10,10 +10,9 @@ public enum TimePeriod{
 
 public class DayCycle : MonoBehaviour
 {
-    //public float time;
-    //public float endTime;
-    public TimePeriod timePeriod;
 
+    public TimePeriod   timePeriod;
+    public int          timeIndex = 0;
     //[SerializeField] bool isMorning;
 
     private void Awake()
@@ -22,39 +21,49 @@ public class DayCycle : MonoBehaviour
     }
     private void Start()
     {
-       ChangeTimePeriod();
+        if (SingletonManager.Get<PlayerData>())
+        {
+            if (SingletonManager.Get<PlayerData>().HasSaved) 
+            {
+                timePeriod = SingletonManager.Get<PlayerData>().savedTimePeriod;
+                timeIndex = SingletonManager.Get<PlayerData>().savedTimeIndex;
+            }
+        }
+        Events.OnSceneChange.AddListener(OnSceneChange);
     }
 
-    //public void IncreaseTime(float timeAdd) // initial (change to events)
-    //{
-    //    if(endTime > time)
-    //    {
-    //        time += timeAdd;
-    //        Events.OnDisplayCycleTime.Invoke();
-    //    }
-    //    else
-    //    {
-    //        //StartCoroutine(SingletonManager.Get<GameManager>().dayEnd());
-    //        Debug.Log("DayEnd");
-    //    }
-      
-    //}
-
-    public void ChangeTimePeriod()
+    public void ChangeTimePeriod(int timeIndex)
     {
-        if(SingletonManager.Get<PlayerData>().minigamesPlayed <= 4)
+        Mathf.Clamp(timeIndex, 0, 2);
+        switch (timeIndex)
         {
-            timePeriod = TimePeriod.Morning;
-        }
-        if (SingletonManager.Get<PlayerData>().minigamesPlayed >= 5)
-        {
-            timePeriod = TimePeriod.Afternoon;
-        }
-        if(SingletonManager.Get<PlayerData>().minigamesPlayed >= 8)
-        {
-            timePeriod = TimePeriod.Evening;
+            case 0:
+                timePeriod = TimePeriod.Morning;
+                break;
+            case 1:
+                timePeriod = TimePeriod.Afternoon;
+                break;
+            case 2:
+                timePeriod = TimePeriod.Evening;
+                break;
+
+            default: 
+                timePeriod = TimePeriod.Morning;
+                break;
         }
 
-            Debug.Log("Current Time Period " + timePeriod.ToString());
+        Debug.Log("Current Time Period " + timePeriod.ToString());
+        Events.OnChangeTimePeriod.Invoke();
+    }
+
+    public void OnSceneChange()
+    {
+        //Save data 
+        PlayerData playerData = SingletonManager.Get<PlayerData>();
+        if (playerData)
+        {
+            playerData.savedTimeIndex = timeIndex;
+            playerData.savedTimePeriod = timePeriod;
+        }
     }
 }

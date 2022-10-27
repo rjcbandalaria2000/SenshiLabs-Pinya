@@ -34,24 +34,15 @@ public class TaskManager : MonoBehaviour
 
     public void Initialize()
     {
-        //if (SingletonManager.Get<PlayerData>())
-        //{
-        //    if(SingletonManager.Get<PlayerData>().requiredTasks.Count > 0)
-        //    {
-        //        RestoreSavedRequiredTasks();
-        //    }
-        //}
-        //if (requiredTasks.Count <= 0)
-        //{
-        //    SetRandomTasks();
-        //}
         if (SingletonManager.Get<PlayerData>().requiredTasks.Count > 0)
         {
             RestoreSavedRequiredTasks();
+            ActivateSetTasks();
         }
         else
         {
             SetRandomTasks();
+            ActivateSetTasks();
         }
 
         CheckIfTasksDone();
@@ -101,62 +92,64 @@ public class TaskManager : MonoBehaviour
         taskListParent.SetActive(false);
     }
 
-    public void SetRandomTasks() {
+    public void SetRandomTasks()
+    {
 
         //Temporarily store all tasks. Modify to avoid duplicates 
         List<MinigameObject> tempTaskList = new();
 
         //Only add to the tempTaskList tasks/minigames that are not yet completed
-        for (int i = 0; i < minigameObjects.Count; i++) {
+        for (int i = 0; i < minigameObjects.Count; i++)
+        {
 
             if (!minigameObjects[i].hasCompleted)
             {
                 tempTaskList.Add(minigameObjects[i]);
             }
-        
+
         }
         // Clear required task list 
         requiredTasks.Clear();
-        for (int i = 0; i < maxNumOfTasks; i++) {
+        for (int i = 0; i < maxNumOfTasks; i++)
+        {
 
             int randomTaskIndex = Random.Range(0, tempTaskList.Count);
             //Check for duplicates
-            requiredTasks.Add(tempTaskList[randomTaskIndex]);
+            if (!CheckForMinigameDuplicateInList(requiredTasks, tempTaskList[randomTaskIndex]))
+            {
+                requiredTasks.Add(tempTaskList[randomTaskIndex]);
+            }
+
+
+
             //Check if the task has pre requisite
             if (tempTaskList[randomTaskIndex].preRequisiteTasks.Count > 0)
             {
                 //if there is a pre requisite add it to the required task list
-                for(int j = 0; j < tempTaskList[randomTaskIndex].preRequisiteTasks.Count; j++)
+                for (int j = 0; j < tempTaskList[randomTaskIndex].preRequisiteTasks.Count; j++)
                 {
-                    requiredTasks.Add(tempTaskList[randomTaskIndex].preRequisiteTasks[j]);
-                    
+                    //Check if it is not yet completed
+                    if (!tempTaskList[randomTaskIndex].preRequisiteTasks[j].hasCompleted)
+                    {
+                        //check if the pre requisite task is already in the required tasks
+                        if (!CheckForMinigameDuplicateInList(requiredTasks, tempTaskList[randomTaskIndex].preRequisiteTasks[j]) && j <= tempTaskList[randomTaskIndex].preRequisiteTasks.Count - 1)
+                        {
+                            //Remove the task with pre requisite
+                            requiredTasks.Remove(tempTaskList[randomTaskIndex]);
+                            // only add the pre req task if its not in the required task
+                            requiredTasks.Add(tempTaskList[randomTaskIndex].preRequisiteTasks[j]);
+                            tempTaskList.Remove(tempTaskList[randomTaskIndex].preRequisiteTasks[j]);
+                            break;
+                        }
+                    }
+                   
                 }
             }
-
             tempTaskList.RemoveAt(randomTaskIndex);
-            //if the required tasks are over the max number of tasks
-            
             //if the temp task list is not enough 
             if (tempTaskList.Count <= 0) { break; }
-               
-        }
-        if (requiredTasks.Count > maxNumOfTasks)
-        {
-            // only remove the ones without pre requisites
-            for (int i = 0; i < requiredTasks.Count - maxNumOfTasks; i++)
-            {
-                for (int j = 0; j < requiredTasks.Count; j++)
-                {
-                    if (requiredTasks[j].preRequisiteTasks.Count <= 0)
-                    {
-                        requiredTasks.RemoveAt(j);
-                        break;
-                    }
-                }
-            }
         }
     }
-
     public bool AreRequiredTasksDone()
     {
         bool allTasksDone = false;
@@ -190,13 +183,21 @@ public class TaskManager : MonoBehaviour
         {
             // Set new random tasks
             OnTasksDone();
+            SingletonManager.Get<DayCycle>().timeIndex++;
+            SingletonManager.Get<DayCycle>().ChangeTimePeriod(SingletonManager.Get<DayCycle>().timeIndex);
             Debug.Log("All Tasks are done");
+
+        }
+        else
+        {
+            SingletonManager.Get<DayCycle>().ChangeTimePeriod(SingletonManager.Get<DayCycle>().timeIndex);
         }
     }
 
     public void OnTasksDone()
     {
         SetRandomTasks();
+        ActivateSetTasks();
     }
 
     public void OnSceneChange()
@@ -257,5 +258,48 @@ public class TaskManager : MonoBehaviour
         }
         return areTasksDone;
 
+    }
+
+    public void ActivateSetTasks()
+    {
+        if(minigameObjects.Count <= 0) { return; }
+        if(requiredTasks.Count <= 0) { return; }
+        for(int i = 0; i < minigameObjects.Count; i++)
+        {
+            for(int j = 0; j < requiredTasks.Count; j++)
+            {
+                if (requiredTasks[j] == minigameObjects[i])
+                {
+                    requiredTasks[j].gameObject.SetActive(true);
+                    break;
+                }
+                else
+                {
+                    minigameObjects[i].gameObject.SetActive(false);
+                }
+            }
+        }
+        Debug.Log("Activating Required Tasks");
+    }
+
+    public bool CheckForMinigameDuplicateInList(List<MinigameObject> minigameList, MinigameObject minigameToCheck) {
+
+        bool isDuplicate = false;
+        if (minigameList.Count <= 0) { return false; } 
+        foreach(MinigameObject minigame in minigameList)
+        {
+            if(minigame == minigameToCheck)
+            {
+                isDuplicate = true;
+                Debug.Log(minigameToCheck.minigameName + " is a duplicate");
+                return isDuplicate;
+                
+            }
+        }
+        if (!isDuplicate)
+        {
+            Debug.Log("Is not duplicate");
+        }
+        return isDuplicate;
     }
 }

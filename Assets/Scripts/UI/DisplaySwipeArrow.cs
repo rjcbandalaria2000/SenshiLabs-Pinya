@@ -44,9 +44,9 @@ public class DisplaySwipeArrow : MonoBehaviour
 
     public void OnSceneChange()
     {
-        Events.OnBucketDrop.AddListener(ActivateDownArrow);
-        Events.OnBucketRetrieve.AddListener(ActivateUpArrow);
-        Events.OnSceneChange.AddListener(OnSceneChange);
+        Events.OnBucketDrop.RemoveListener(ActivateDownArrow);
+        Events.OnBucketRetrieve.RemoveListener(ActivateUpArrow);
+        Events.OnSceneChange.RemoveListener(OnSceneChange);
     }
 
 }

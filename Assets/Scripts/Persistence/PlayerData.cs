@@ -27,7 +27,11 @@ public class PlayerData : MonoBehaviour
     public bool                     isFoldingClothesFinished;
 
     [Header("Tasks")]
-    public List<string>     requiredTasks;
+    public List<string>             requiredTasks;
+
+    [Header("TimePeriod")]
+    public int                      savedTimeIndex;
+    public TimePeriod               savedTimePeriod;
 
     public void Awake()
     {
