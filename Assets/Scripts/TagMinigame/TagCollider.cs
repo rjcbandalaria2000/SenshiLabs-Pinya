@@ -6,7 +6,9 @@ public class TagCollider : MonoBehaviour
 {
     public AITagMinigame parent;
 
-    public Coroutine collideRoutine;
+    [Header("Coroutines")]
+    public Coroutine delayAiColliderRoutine;
+    public Coroutine delayPlayerAiColliderRoutine;
     
     private void Start()
     {
@@ -31,10 +33,19 @@ public class TagCollider : MonoBehaviour
               
 
                 AiTagAi(otherAI);
-                StartCoroutine(delay(otherAI));
+                delayAiColliderRoutine = StartCoroutine(delayAICollider(otherAI));
 
                 
                 //collideRoutine = StartCoroutine(collide(collision));
+
+            }
+        }
+        else if(collision.gameObject.GetComponent<TagMinigamePlayer>() != null)
+        {
+            if (parent.isTag == true)
+            {
+                AiTagPlayer(collision.gameObject.GetComponent<TagMinigamePlayer>());
+                delayPlayerAiColliderRoutine = StartCoroutine(delayAiToPlayerCollider(collision.gameObject.GetComponent<TagMinigamePlayer>()));
 
             }
         }
@@ -42,8 +53,6 @@ public class TagCollider : MonoBehaviour
 
     public void AiTagAi(AITagMinigame otherAI)
     {
-       
-
         parent.target = null;
         otherAI.target = null;
 
@@ -55,13 +64,23 @@ public class TagCollider : MonoBehaviour
 
         parent.setTarget();
 
-       
+    }
 
-        
+    public void AiTagPlayer(TagMinigamePlayer otherPlayer)
+    {
+        parent.target = null;
+
+        parent.isTag = false;
+        otherPlayer.isTag = true;
+
+        parent.spriteUpdate();
+        otherPlayer.spriteUpdate();
+
+        parent.setTarget();
     }
 
 
-    IEnumerator delay(AITagMinigame otherAI)
+    IEnumerator delayAICollider(AITagMinigame otherAI)
     {
         otherAI.speed = 0;
 
@@ -75,5 +94,17 @@ public class TagCollider : MonoBehaviour
 
         this.gameObject.SetActive(false);
     }
-    
+
+    IEnumerator delayAiToPlayerCollider(TagMinigamePlayer otherPlayer)
+    {
+       
+        yield return new WaitForSeconds(1f);
+
+        otherPlayer.tagCollider.SetActive(true);
+
+        Debug.Log(this.gameObject.name + " collide " + otherPlayer.gameObject.name);
+
+        this.gameObject.SetActive(false);
+    }
+
 }

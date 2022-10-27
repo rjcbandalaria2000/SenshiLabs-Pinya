@@ -11,6 +11,7 @@ public class TagMinigamePlayer : MonoBehaviour
     public bool isTag;
     private Vector3 targetPosition;
 
+    public GameObject tagCollider;
 
     public SpriteRenderer renderer;
     void Start()

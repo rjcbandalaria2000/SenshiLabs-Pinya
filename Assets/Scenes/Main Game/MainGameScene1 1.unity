@@ -10321,7 +10321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 390742304502025315, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
       propertyPath: minigameScene
-      value: Tag_Test
+      value: Tag
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
@@ -10641,6 +10641,7 @@ MonoBehaviour:
   minigameResultsUI: {fileID: 0}
   minigameGoodResult: {fileID: 0}
   minigameBadResult: {fileID: 0}
+  transitionUI: {fileID: 0}
   loadingUI: {fileID: 1113579686}
   askMomButton: {fileID: 281171958}
   tutorialGO: {fileID: 0}
