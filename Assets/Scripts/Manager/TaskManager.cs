@@ -92,31 +92,34 @@ public class TaskManager : MonoBehaviour
         taskListParent.SetActive(false);
     }
 
-    public void SetRandomTasks() {
+    public void SetRandomTasks()
+    {
 
         //Temporarily store all tasks. Modify to avoid duplicates 
         List<MinigameObject> tempTaskList = new();
 
         //Only add to the tempTaskList tasks/minigames that are not yet completed
-        for (int i = 0; i < minigameObjects.Count; i++) {
+        for (int i = 0; i < minigameObjects.Count; i++)
+        {
 
             if (!minigameObjects[i].hasCompleted)
             {
                 tempTaskList.Add(minigameObjects[i]);
             }
-        
+
         }
         // Clear required task list 
         requiredTasks.Clear();
-        for (int i = 0; i < maxNumOfTasks; i++) {
+        for (int i = 0; i < maxNumOfTasks; i++)
+        {
 
             int randomTaskIndex = Random.Range(0, tempTaskList.Count);
             //Check for duplicates
-            if(!CheckForMinigameDuplicateInList(requiredTasks, tempTaskList[randomTaskIndex]))
+            if (!CheckForMinigameDuplicateInList(requiredTasks, tempTaskList[randomTaskIndex]))
             {
                 requiredTasks.Add(tempTaskList[randomTaskIndex]);
             }
-           
+
 
 
             //Check if the task has pre requisite
@@ -125,46 +128,26 @@ public class TaskManager : MonoBehaviour
                 //if there is a pre requisite add it to the required task list
                 for (int j = 0; j < tempTaskList[randomTaskIndex].preRequisiteTasks.Count; j++)
                 {
-                    //check if the pre requisite task is already in the required tasks
-                    if(!CheckForMinigameDuplicateInList(requiredTasks, tempTaskList[randomTaskIndex].preRequisiteTasks[j]) && j <= tempTaskList[randomTaskIndex].preRequisiteTasks.Count - 1)
-                    { 
-                        // only add the pre req task if its not in the required task
+                    //Check if it is not yet completed
+                    if (!tempTaskList[randomTaskIndex].preRequisiteTasks[j].hasCompleted)
+                    {
+                        //check if the pre requisite task is already in the required tasks
+                        if (!CheckForMinigameDuplicateInList(requiredTasks, tempTaskList[randomTaskIndex].preRequisiteTasks[j]) && j <= tempTaskList[randomTaskIndex].preRequisiteTasks.Count - 1)
+                        {
+                            // only add the pre req task if its not in the required task
                             requiredTasks.Add(tempTaskList[randomTaskIndex].preRequisiteTasks[j]);
                             tempTaskList.Remove(tempTaskList[randomTaskIndex].preRequisiteTasks[j]);
                             break;
+                        }
                     }
-                           
-                        
-                    
+                   
                 }
             }
-
             tempTaskList.RemoveAt(randomTaskIndex);
-           
-            
             //if the temp task list is not enough 
             if (tempTaskList.Count <= 0) { break; }
-               
-        } 
-        ////if the required tasks are over the max number of tasks
-        //if (requiredTasks.Count > maxNumOfTasks)
-        //{
-        //    // only remove the ones without pre requisites // reverse the process remove the ones with pre requisites
-        //    for (int i = 0; i < requiredTasks.Count - maxNumOfTasks; i++)
-        //    {
-        //        for (int j = 0; j < requiredTasks.Count; j++)
-        //        {
-        //            if (requiredTasks[j].preRequisiteTasks.Count > 0)
-        //            {
-        //                Debug.Log("Removed " + requiredTasks[j].preRequisiteTasks[j].minigameName);
-        //                requiredTasks.RemoveAt(j);
-        //                break;
-        //            }
-        //        }
-        //    }
-        //}
+        }
     }
-
     public bool AreRequiredTasksDone()
     {
         bool allTasksDone = false;
