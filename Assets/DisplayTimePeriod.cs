@@ -10,7 +10,8 @@ public class DisplayTimePeriod : MonoBehaviour
 
     private void Awake()
     {
-        
+        Events.OnSceneChange.AddListener(OnSceneChange);
+        Events.OnChangeTimePeriod.AddListener(UpdateTimePeriod);
     }
 
     // Start is called before the first frame update
@@ -18,8 +19,7 @@ public class DisplayTimePeriod : MonoBehaviour
     {
         dayCycle = SingletonManager.Get<DayCycle>();
         timePeriodText = this.GetComponent<TextMeshProUGUI>();
-        Events.OnSceneChange.AddListener(OnSceneChange);
-        Events.OnChangeTimePeriod.AddListener(UpdateTimePeriod);
+        
     }
 
     public void UpdateTimePeriod()
