@@ -4,25 +4,18 @@ using UnityEngine;
 using UnityEngine.Assertions;
 
 
-public class TagMiniGameManager : MinigameManager
+public class TagManager : MinigameManager
 {
-    public PlayerTag player;
-    public PlayerTag spawnPlayer;
-    public GameObject bot;
+    public GameObject player;
+    public GameObject spawnedPlayer;
 
-    [Header("AI target")]
-   // public List<Sprite> botSprite;
-    public List<GameObject> activeBots;
-    public GameObject currentTagged;
-
-    [Header("Countdown Timer")]
-    public float GameStartTime = 3f;
-    public DisplayGameCountdown CountdownTimerUI;
+    [Header("AI")]
+    public List<GameObject> activeAI;
+    public List<Transform>  points;
 
     [Header("SpawnPos")]
     public Transform playerPos;
-    public List<Transform> botRandomPos;
-
+    
     public UIManager uIManager;
 
     private void Awake()
@@ -33,8 +26,9 @@ public class TagMiniGameManager : MinigameManager
     void Start()
     {
         Initialize();
-       
+
     }
+
     public override void Initialize()
     {
         transitionManager = SingletonManager.Get<TransitionManager>();
@@ -63,7 +57,7 @@ public class TagMiniGameManager : MinigameManager
 
     protected override IEnumerator StartMinigameCounter()
     {
-        gameStartTimer = GameStartTime;
+        gameStartTimer = gameStartTime;
 
         //Deactivate Minigame Main Menu
         uIManager.DeactivateMiniGameMainMenu();
@@ -99,12 +93,9 @@ public class TagMiniGameManager : MinigameManager
         uIManager.ActivateMiniGameTimerUI();
         SingletonManager.Get<MiniGameTimer>().StartCountdownTimer();
 
-      
         StartCoroutine(checkStatus());
 
-
-
-        Debug.Log("Refresh Score board");
+        //Debug.Log("Refresh Score board");
         //Spawn objects
 
         isCompleted = false;
@@ -112,60 +103,50 @@ public class TagMiniGameManager : MinigameManager
 
     public override void CheckIfFinished()
     {
-        if (spawnPlayer.isTag == false)
+        if (spawnedPlayer.GetComponent<TagMinigamePlayer>().isTag == false)
         {
             Debug.Log("Minigame complete");
             isCompleted = true;
             uIManager.ActivateResultScreen();
             uIManager.ActivateGoodResult();
             SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
-            spawnPlayer.gameObject.SetActive(false);
+            spawnedPlayer.gameObject.SetActive(false);
         }
-        else 
+        else
         {
             Debug.Log("Minigame lose");
             isCompleted = true;
             uIManager.ActivateResultScreen();
             uIManager.ActivateBadResult();
             SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
-            spawnPlayer.gameObject.SetActive(false);
+            spawnedPlayer.gameObject.SetActive(false);
         }
 
     }
-
     IEnumerator initializeMiniGame()
     {
         GameObject newPlayer = Instantiate(player.gameObject, playerPos.position, Quaternion.identity);
-        spawnPlayer = newPlayer.GetComponent<PlayerTag>();
+        spawnedPlayer = newPlayer.GetComponent<TagMinigamePlayer>().gameObject;
+
         yield return null;
-
-
-        for (int i = 0; i < activeBots.Count; i++) //initialze bot
+        for (int i = 0; i < activeAI.Count; i++) //initialze bot
         {
             if (i == 0)
             {
-                activeBots[i].gameObject.SetActive(true);
-                activeBots[i].GetComponent<ChildrenTag>().isTag = true;
-             
-                activeBots[i].GetComponent<ChildrenTag>().ID = i;
+                activeAI[i].gameObject.SetActive(true);
+                activeAI[i].GetComponent<AITagMinigame>().isTag = true;
+                activeAI[i].GetComponent<AITagMinigame>().ID = i;
             }
             else
             {
-                activeBots[i].gameObject.SetActive(true);
-                activeBots[i].GetComponent<ChildrenTag>().isTag = false;
-
-                activeBots[i].GetComponent<ChildrenTag>().ID = i;
-                Debug.Log("Activate");
+                activeAI[i].gameObject.SetActive(true);
+                activeAI[i].GetComponent<AITagMinigame>().isTag = false;
+                activeAI[i].GetComponent<AITagMinigame>().ID = i;
+              
             }
+            yield return null;
         }
 
-        yield return null;
-        updateCurrentTagged();
-
-        for (int i = 0; i < activeBots.Count; i++) //initialze bot
-        {
-            activeBots[i].GetComponent<ChildrenTag>().setTarget();
-        }
         startMinigameRoutine = null;
 
     }
@@ -175,22 +156,22 @@ public class TagMiniGameManager : MinigameManager
 
         while (!isCompleted)
         {
-            if(SingletonManager.Get<MiniGameTimer>().GetTimer() <= 0)
+            if (SingletonManager.Get<MiniGameTimer>().GetTimer() <= 0)
             {
-              
-                for(int i = 0; i < activeBots.Count; i++)
+
+                for (int i = 0; i < activeAI.Count; i++)
                 {
-                   activeBots[i].SetActive(false);
-                   spawnPlayer.gameObject.SetActive(false);
+                    activeAI[i].SetActive(false);
+                    spawnedPlayer.gameObject.SetActive(false);
                 }
                 CheckIfFinished();
 
                 yield return null;
             }
-          
+
             yield return null;
         }
-        
+
     }
 
     public void continueScene()
@@ -203,7 +184,7 @@ public class TagMiniGameManager : MinigameManager
     public void gameOver()
     {
         Debug.Log("Minigame lose");
-       
+
         exitMinigameRoutine = StartCoroutine(ExitMinigame());
     }
 
@@ -226,20 +207,6 @@ public class TagMiniGameManager : MinigameManager
         sceneChange.OnChangeScene(NameOfNextScene);
         yield return null;
     }
-   
-    public void updateCurrentTagged()
-    {
-        for(int i = 0; i < activeBots.Count; i++)
-        {
-            if(activeBots[i].GetComponent<ChildrenTag>().isTag == true)
-            {
-                currentTagged = activeBots[i];
-            }
-        }
 
-        if(spawnPlayer.isTag == true)
-        {
-            currentTagged = spawnPlayer.gameObject;
-        }
-    }
+   
 }

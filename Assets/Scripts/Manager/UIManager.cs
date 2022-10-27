@@ -208,7 +208,7 @@ public class UIManager : MonoBehaviour
         if (minigameResultsUI == null) { return; }
       
         minigameResultsUI.SetActive(false);
-        Debug.Log("Close Result");
+      //  Debug.Log("Close Result");
     }
 
     public void ActivateGoodResult()

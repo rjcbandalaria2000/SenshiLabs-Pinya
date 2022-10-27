@@ -26,6 +26,8 @@ public class ChildrenTag : MonoBehaviour
     [Header("Location")]
     //public Vector2 startPos;
     //public Vector2 targetPos;
+    public float taggedSpeed;
+    public float defaultSpeed;
     public float speed;
     public float delaySpeed;
 
@@ -37,6 +39,7 @@ public class ChildrenTag : MonoBehaviour
     [Header("Distance")]
     public float distance;
     public float minDistance;
+    public float fleeDistance;
 
     //public SpriteRenderer renderer;
 
@@ -120,7 +123,7 @@ public class ChildrenTag : MonoBehaviour
             if (isTag == true)
             {
                 StartCoroutine(activateCollider());
-
+                minigame.updateCurrentTagged();
 
             }
             else
@@ -140,6 +143,7 @@ public class ChildrenTag : MonoBehaviour
                 other.gameObject.GetComponent<SpriteRenderer>().material.color = Color.red;
                 spriteUpdate();
                 StartCoroutine(other.gameObject.GetComponent<PlayerTag>().colliderCooldown());
+                minigame.updateCurrentTagged();
 
                 Debug.Log("Tag");
             }
@@ -151,6 +155,8 @@ public class ChildrenTag : MonoBehaviour
                 other.gameObject.GetComponent<SpriteRenderer>().material.color = Color.white;
                 spriteUpdate();
                 StartCoroutine(activateCollider());
+                minigame.updateCurrentTagged();
+
                 Debug.Log("Tag");
             }
         }
@@ -188,14 +194,25 @@ public class ChildrenTag : MonoBehaviour
             Debug.Log("NewTarget");
         }
     }
-   
+
+    public IEnumerator fleeTarget(Transform target)
+    {
+        while (distance <= fleeDistance)
+        {
+            this.transform.position = Vector2.MoveTowards(this.transform.position, target.position, -1 * speed * Time.deltaTime);
+            distance = Vector3.Distance(target.transform.position, this.transform.position);
+            yield return null;
+        }
+
+    }
+
     public void setTarget()
     {
         if (isTag == true)
         {
             int RNG = Random.Range(0, potentialTargets.Count);
 
-            speed = 1f;
+            speed = taggedSpeed;
 
             target = potentialTargets[RNG].transform;
             if(target == previousTag)
@@ -215,11 +232,13 @@ public class ChildrenTag : MonoBehaviour
 
             int RNG = Random.Range(0, randomPoints.Count);
 
-            speed = 2f;
-            
+            speed = defaultSpeed;
+
             target = randomPoints[RNG].transform;
+            //target = minigame.currentTagged.transform;
             distance = Vector3.Distance(target.transform.position, this.transform.position);
             goToTargetRoutine = StartCoroutine(goToTarget());
+           // StartCoroutine(fleeTarget(target));
 
             Debug.Log("Position Set");
         }
