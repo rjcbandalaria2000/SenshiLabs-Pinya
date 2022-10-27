@@ -134,6 +134,8 @@ public class TaskManager : MonoBehaviour
                         //check if the pre requisite task is already in the required tasks
                         if (!CheckForMinigameDuplicateInList(requiredTasks, tempTaskList[randomTaskIndex].preRequisiteTasks[j]) && j <= tempTaskList[randomTaskIndex].preRequisiteTasks.Count - 1)
                         {
+                            //Remove the task with pre requisite
+                            requiredTasks.Remove(tempTaskList[randomTaskIndex]);
                             // only add the pre req task if its not in the required task
                             requiredTasks.Add(tempTaskList[randomTaskIndex].preRequisiteTasks[j]);
                             tempTaskList.Remove(tempTaskList[randomTaskIndex].preRequisiteTasks[j]);
