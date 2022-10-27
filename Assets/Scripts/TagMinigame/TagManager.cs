@@ -129,34 +129,24 @@ public class TagManager : MinigameManager
         spawnedPlayer = newPlayer.GetComponent<TagMinigamePlayer>().gameObject;
 
         yield return null;
-
-
         for (int i = 0; i < activeAI.Count; i++) //initialze bot
         {
             if (i == 0)
             {
                 activeAI[i].gameObject.SetActive(true);
                 activeAI[i].GetComponent<AITagMinigame>().isTag = true;
-
                 activeAI[i].GetComponent<AITagMinigame>().ID = i;
             }
             else
             {
                 activeAI[i].gameObject.SetActive(true);
                 activeAI[i].GetComponent<AITagMinigame>().isTag = false;
-
                 activeAI[i].GetComponent<AITagMinigame>().ID = i;
               
             }
+            yield return null;
         }
 
-        yield return null;
-
-
-        for (int i = 0; i < activeAI.Count; i++) //initialze bot
-        {
-            activeAI[i].GetComponent<AITagMinigame>().setTarget();
-        }
         startMinigameRoutine = null;
 
     }

@@ -404,6 +404,7 @@ Transform:
   m_Children:
   - {fileID: 1653203700}
   - {fileID: 1560952468}
+  - {fileID: 542777985}
   m_Father: {fileID: 1432366941}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -421,20 +422,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 0
   isTag: 0
+  tagCollider: {fileID: 542777984}
   defaultState: {fileID: 1653203699}
   tagState: {fileID: 1560952467}
-  taggedSpeed: 3
-  defaultSpeed: 2
+  taggedSpeed: 5
+  defaultSpeed: 3.5
   speed: 0
-  delaySpeed: 0.3
-  changeTimer: 0
+  delaySpeed: 1
+  stopTimer: 0
   potentialTargets: []
   randomPoints: []
   target: {fileID: 0}
   distance: 0
   minDistance: 0
   minigame: {fileID: 0}
-  previousTag: {fileID: 0}
 --- !u!61 &65332516
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2205,6 +2206,78 @@ Transform:
   m_Father: {fileID: 1370942632}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &542777984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 542777985}
+  - component: {fileID: 542777987}
+  - component: {fileID: 542777986}
+  m_Layer: 0
+  m_Name: TagCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &542777985
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542777984}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 65332514}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &542777986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542777984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e2b65840a8a12b4ebbafff207e86c20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 0}
+--- !u!61 &542777987
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542777984}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &543060692
 GameObject:
   m_ObjectHideFlags: 0
@@ -2438,7 +2511,7 @@ MonoBehaviour:
   isCompleted: 0
   NameOfNextScene: MainGameScene1 1
   timer: 0
-  maxTimer: 15
+  maxTimer: 100
   speedTimer: 1
   gameStartTime: 3
   countdownTimerUI: {fileID: 297066471}
@@ -2943,6 +3016,7 @@ Transform:
   m_Children:
   - {fileID: 2012360253}
   - {fileID: 396265344}
+  - {fileID: 1856990389}
   m_Father: {fileID: 1432366941}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3007,20 +3081,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 0
   isTag: 0
+  tagCollider: {fileID: 1856990388}
   defaultState: {fileID: 2012360252}
   tagState: {fileID: 396265343}
-  taggedSpeed: 3
-  defaultSpeed: 2
+  taggedSpeed: 5
+  defaultSpeed: 3.5
   speed: 0
-  delaySpeed: 0.3
-  changeTimer: 0
+  delaySpeed: 1
+  stopTimer: 0
   potentialTargets: []
   randomPoints: []
   target: {fileID: 0}
   distance: 0
   minDistance: 0
   minigame: {fileID: 0}
-  previousTag: {fileID: 0}
 --- !u!1 &974187500
 GameObject:
   m_ObjectHideFlags: 0
@@ -3969,20 +4043,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 0
   isTag: 0
+  tagCollider: {fileID: 0}
   defaultState: {fileID: 1689358362}
   tagState: {fileID: 180549335}
   taggedSpeed: 3.5
   defaultSpeed: 3
   speed: 0
   delaySpeed: 0.5
-  changeTimer: 0
+  stopTimer: 0
   potentialTargets: []
   randomPoints: []
   target: {fileID: 0}
   distance: 0
   minDistance: 0
   minigame: {fileID: 0}
-  previousTag: {fileID: 0}
 --- !u!61 &1335681856
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5851,6 +5925,78 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55ba75a0b91c77841aa3228a8faef8af, type: 3}
+--- !u!1 &1856990388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1856990389}
+  - component: {fileID: 1856990391}
+  - component: {fileID: 1856990390}
+  m_Layer: 0
+  m_Name: TagCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1856990389
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856990388}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 963158765}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1856990390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856990388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e2b65840a8a12b4ebbafff207e86c20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 0}
+--- !u!61 &1856990391
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856990388}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.5, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.83, y: 6.85}
+    newSize: {x: 8.35, y: 8.35}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4, y: 7}
+  m_EdgeRadius: 0
 --- !u!1 &1881243541
 GameObject:
   m_ObjectHideFlags: 0
