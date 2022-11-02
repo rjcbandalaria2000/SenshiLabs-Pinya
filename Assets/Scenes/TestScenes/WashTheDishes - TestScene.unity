@@ -1709,7 +1709,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.4119873, y: 0.49998474}
+  m_AnchoredPosition: {x: 4.4119873, y: 0.5}
   m_SizeDelta: {x: 8.8239, y: 1.0001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1104328510
@@ -1797,26 +1797,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c620933ed15e84c81caceb7b5cd249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isCompleted: 0
   NameOfNextScene: MainGameScene1 1
   timer: 0
   maxTimer: 20
   speedTimer: 1
-  NumOfCleanPlates: 0
-  NumOfDirtyPlates: 5
-  WashingPosition: {fileID: 919044197}
-  DirtyPilePosition:
-  - {fileID: 2063014173}
-  - {fileID: 2061527950}
-  - {fileID: 259284972}
-  - {fileID: 1224987973}
-  - {fileID: 1440000363}
-  CleanPilePosition:
-  - {fileID: 1299373929}
-  - {fileID: 234395623}
-  - {fileID: 303488144}
-  - {fileID: 708723959}
-  - {fileID: 2018972594}
-  Plates: []
+  gameStartTime: 3
+  countdownTimerUI: {fileID: 0}
+  numOfCleanPlates: 0
+  numOfDirtyPlates: 5
+  nextPlateDelay: 0.5
+  plateAnimationDuration: 0.5
+  washingPosition: {fileID: 0}
+  dirtyPilePosition: []
+  cleanPilePosition: []
+  plates: []
+  sponge: {fileID: 0}
+  source: {fileID: 0}
+  audioClip: {fileID: 0}
 --- !u!114 &1127833749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1842,13 +1840,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerDisplay: {fileID: 0}
+  minigame: {fileID: 0}
   motivationMeter: {fileID: 0}
   pinyaMeter: {fileID: 0}
   dayEnd_UI: {fileID: 1708659392}
+  curtainsUI: {fileID: 0}
+  gameUI: {fileID: 0}
+  losePanelUI: {fileID: 0}
+  winPanelUI: {fileID: 0}
   miniGameTimerDisplay: {fileID: 0}
   miniGameMainMenu: {fileID: 0}
-  Loading_UI: {fileID: 611662449}
+  minigameStartCountdownUI: {fileID: 0}
+  minigameResultsUI: {fileID: 0}
+  minigameGoodResult: {fileID: 0}
+  minigameBadResult: {fileID: 0}
+  transitionUI: {fileID: 0}
+  loadingUI: {fileID: 0}
   askMomButton: {fileID: 0}
+  tutorialGO: {fileID: 0}
+  confirmationGO: {fileID: 0}
 --- !u!114 &1127833751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1861,6 +1871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e605fc5a271943341b6e887c4fbf7009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  decreaseValue: 0
 --- !u!1 &1157075391
 GameObject:
   m_ObjectHideFlags: 0
@@ -2501,6 +2512,8 @@ MonoBehaviour:
   - {fileID: 0}
   BoxSpawnPoint: {fileID: 0}
   SpawnedObjects: []
+  random: 0
+  fruitChance: 0
 --- !u!4 &1267660757
 Transform:
   m_ObjectHideFlags: 0
@@ -3548,6 +3561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46856f09510e8eb4ea5df8b19f8a7a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  returnPosition: {fileID: 0}
 --- !u!1 &2018972594
 GameObject:
   m_ObjectHideFlags: 0

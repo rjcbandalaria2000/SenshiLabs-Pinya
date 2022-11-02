@@ -2692,14 +2692,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5794cf35c5da864c94b7b76de95540e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isCompleted: 0
   NameOfNextScene: MainGameScene1 1
   timer: 0
   maxTimer: 15
   speedTimer: 1
+  gameStartTime: 3
+  countdownTimerUI: {fileID: 0}
   Plants:
   - {fileID: 475102912}
   - {fileID: 446830637}
   - {fileID: 662185521}
+  waterBucket: {fileID: 0}
+  plantsWatered: 0
+  numOfPlants: 0
 --- !u!114 &417715214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4071,6 +4077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e605fc5a271943341b6e887c4fbf7009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  decreaseValue: 0
 --- !u!114 &661794642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4084,12 +4091,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerDisplay: {fileID: 0}
-  miniGameTimerDisplay: {fileID: 1591125049}
+  minigame: {fileID: 0}
   motivationMeter: {fileID: 0}
   pinyaMeter: {fileID: 0}
   dayEnd_UI: {fileID: 0}
-  Loading_UI: {fileID: 2110286227}
+  curtainsUI: {fileID: 0}
+  gameUI: {fileID: 0}
+  losePanelUI: {fileID: 0}
+  winPanelUI: {fileID: 0}
+  miniGameTimerDisplay: {fileID: 1591125049}
+  miniGameMainMenu: {fileID: 0}
+  minigameStartCountdownUI: {fileID: 0}
+  minigameResultsUI: {fileID: 0}
+  minigameGoodResult: {fileID: 0}
+  minigameBadResult: {fileID: 0}
+  transitionUI: {fileID: 0}
+  loadingUI: {fileID: 0}
   askMomButton: {fileID: 0}
+  tutorialGO: {fileID: 0}
+  confirmationGO: {fileID: 0}
 --- !u!114 &661794643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4104,18 +4124,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMotivation: {fileID: 0}
   playerPinyaMeter: {fileID: 0}
+  isGameFinished: 0
   MotivationValueChange: 0
   PinyaMeterValueChange: 0
-  highlightObj: []
-  cooldown: 0
-  timer: 0
-  endTime: 0
   currentTime: 0
   maxTime: 20
   speedCounter: 1
   player: {fileID: 0}
-  isGetWaterFinish: 0
-  isGroceryTaskFinish: 0
+  minigames: []
 --- !u!1 &662185521 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4622933539618263828, guid: c8931a41b5edd41479a9c468c84f302c, type: 3}
@@ -10622,6 +10638,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parent: {fileID: 395911361}
+  UI: {fileID: 0}
+  effects: {fileID: 0}
 --- !u!1 &2017880747
 GameObject:
   m_ObjectHideFlags: 0

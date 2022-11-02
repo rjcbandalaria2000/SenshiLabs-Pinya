@@ -1179,6 +1179,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2759568113863651915, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
   m_PrefabInstance: {fileID: 2759568114136131006}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &281171958 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2759568113863651912, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
+  m_PrefabInstance: {fileID: 2759568114136131006}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2759568114136131007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &284333033
 GameObject:
   m_ObjectHideFlags: 0
@@ -10304,7 +10315,7 @@ MonoBehaviour:
   minigameBadResult: {fileID: 0}
   transitionUI: {fileID: 0}
   loadingUI: {fileID: 1756032841}
-  askMomButton: {fileID: 0}
+  askMomButton: {fileID: 281171958}
   tutorialGO: {fileID: 0}
   confirmationGO: {fileID: 0}
 --- !u!4 &1787921855
@@ -11835,6 +11846,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 513541060}
     m_Modifications:
+    - target: {fileID: 2759568113863651912, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
+      propertyPath: m_SpriteState.m_DisabledSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dcfd6c8d605201249a45355f6c7a226c, type: 3}
+    - target: {fileID: 2759568113863651912, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 43f043ee534584d41ace4274fe69d39d, type: 3}
+    - target: {fileID: 2759568113863651912, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2759568114136131008}
+    - target: {fileID: 2759568113863651912, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnAskMomButtonPressed
+      objectReference: {fileID: 0}
     - target: {fileID: 2759568113863651914, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
       propertyPath: m_Name
       value: AskMom
@@ -11869,11 +11896,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2759568113863651915, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 569.6819
+      value: 582
       objectReference: {fileID: 0}
     - target: {fileID: 2759568113863651915, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 307.05
+      value: 385
       objectReference: {fileID: 0}
     - target: {fileID: 2759568113863651915, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11905,11 +11932,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2759568113863651915, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -338.8453
+      value: -346
       objectReference: {fileID: 0}
     - target: {fileID: 2759568113863651915, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -89.361
+      value: -112
       objectReference: {fileID: 0}
     - target: {fileID: 2759568113863651915, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11923,64 +11950,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2759568114136131008, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
-      propertyPath: heartGO
-      value: 
-      objectReference: {fileID: 6949856585603288234}
-    - target: {fileID: 2759568114136131008, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
-      propertyPath: lifeBar
-      value: 
-      objectReference: {fileID: 811907666}
-    - target: {fileID: 2759568114136131008, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
-      propertyPath: pinyaMeterUI
-      value: 
-      objectReference: {fileID: 3686634581920591310}
-    - target: {fileID: 2759568114136131008, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
-      propertyPath: playerPinyaMeter
-      value: 
-      objectReference: {fileID: 312946477}
-    - target: {fileID: 2759568114136131008, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
-      propertyPath: minigameObjects.Array.data[0]
-      value: 
-      objectReference: {fileID: 1896368317}
-    - target: {fileID: 2759568114136131008, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
-      propertyPath: minigameObjects.Array.data[1]
-      value: 
-      objectReference: {fileID: 1142555488}
-    - target: {fileID: 2759568114136131008, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
-      propertyPath: minigameObjects.Array.data[2]
-      value: 
-      objectReference: {fileID: 1951076039}
-    - target: {fileID: 2759568114136131008, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
-      propertyPath: minigameObjects.Array.data[3]
-      value: 
-      objectReference: {fileID: 1139237640}
-    - target: {fileID: 2759568114136131008, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
-      propertyPath: minigameObjects.Array.data[4]
-      value: 
-      objectReference: {fileID: 893641065}
-    - target: {fileID: 2759568114136131008, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
-      propertyPath: minigameObjects.Array.data[5]
-      value: 
-      objectReference: {fileID: 677417416}
-    - target: {fileID: 2759568114136131008, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
-      propertyPath: minigameObjects.Array.data[6]
-      value: 
-      objectReference: {fileID: 1114840999}
-    - target: {fileID: 2759568114136131008, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
-      propertyPath: minigameObjects.Array.data[7]
-      value: 
-      objectReference: {fileID: 9115556523157542576}
-    - target: {fileID: 2759568114136131008, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
-      propertyPath: minigameObjects.Array.data[8]
-      value: 
-      objectReference: {fileID: 917626508}
-    - target: {fileID: 2759568114136131008, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
-      propertyPath: minigameObjects.Array.data[9]
-      value: 
-      objectReference: {fileID: 1603101464}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
+--- !u!1 &2759568114136131007 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2759568113863651914, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
+  m_PrefabInstance: {fileID: 2759568114136131006}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2759568114136131008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2759568114136131007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d2243d3faa3844897a0b405db15172, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minigameObjects:
+  - {fileID: 1896368317}
+  - {fileID: 1142555488}
+  - {fileID: 1951076039}
+  - {fileID: 1139237640}
+  - {fileID: 893641065}
+  - {fileID: 677417416}
+  - {fileID: 1114840999}
+  - {fileID: 9115556523157542576}
+  - {fileID: 917626508}
+  - {fileID: 1603101464}
+  coolDown: 5
+  playerPinyaMeter: {fileID: 312946477}
+  pinyaCost: 20
+  pinyaMeterUI: {fileID: 3686634581920591310}
+  heartGO: {fileID: 6949856585603288234}
+  lifeBar: {fileID: 811907666}
 --- !u!222 &2985707811973519142
 CanvasRenderer:
   m_ObjectHideFlags: 0
