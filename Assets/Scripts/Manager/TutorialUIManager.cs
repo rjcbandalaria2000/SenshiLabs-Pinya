@@ -21,7 +21,7 @@ public class TutorialUIManager : MonoBehaviour
         pageCount = 0;
         textGO.text = instructionText[0];
         tempPage = 1;
-        currentPage.text = "1";
+        currentPage.text = "1"; 
 
         if(tutorialImages.Count > 0)
         {

@@ -586,6 +586,28 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: tutorialImages.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: tutorialImages.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: bd06e4f180f278b4199be749a5105958, type: 3}
+    - target: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: tutorialImages.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 99b2dbfba70e8ae4c9808d3d35cdd638, type: 3}
+    - target: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: instructionText.Array.data[0]
+      value: "Click on the running children to \u201Ctag\u201D them. Pina must need
+        to touch the others to tag them! "
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: instructionText.Array.data[1]
+      value: "Avoid getting \u201Ctag\u201D back from the other players to complete
+        the game before the time ends!  "
+      objectReference: {fileID: 0}
     - target: {fileID: 670568283771031146, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 20
@@ -597,6 +619,14 @@ PrefabInstance:
     - target: {fileID: 2174895157945811448, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: m_text
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174895157945811449, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000011295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174895157945811449, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -662.5
       objectReference: {fileID: 0}
     - target: {fileID: 2174895158130304436, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: m_Name
@@ -613,7 +643,7 @@ PrefabInstance:
     - target: {fileID: 2174895158130304438, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 169305959}
+      objectReference: {fileID: 169305962}
     - target: {fileID: 2174895158130304438, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -757,7 +787,7 @@ PrefabInstance:
     - target: {fileID: 2174895158914797835, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 781254075}
     - target: {fileID: 2174895158914797835, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -789,7 +819,7 @@ PrefabInstance:
     - target: {fileID: 2174895159123499892, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 169305959}
+      objectReference: {fileID: 169305962}
     - target: {fileID: 2174895159123499892, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -825,33 +855,10 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2174895158145102627, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
   m_PrefabInstance: {fileID: 169305955}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &169305957 stripped
+--- !u!114 &169305962 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2174895158226657141, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
   m_PrefabInstance: {fileID: 169305955}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &169305958 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2174895157945811448, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
-  m_PrefabInstance: {fileID: 169305955}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &169305959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 169305956}
   m_Enabled: 1
@@ -859,16 +866,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0946c9decca17a47b32401f881889d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instructionText:
-  - 'The house is dirty! All the toys and dust were spread across the entire house! '
-  - 'Drag all the toys into their place and swipe left and right to sweep the dust
-    that stays in the house! '
-  tutorialImages: []
-  pageCount: 0
-  textGO: {fileID: 169305958}
-  imageGO: {fileID: 169305957}
-  currentPage: {fileID: 0}
-  maxPage: {fileID: 0}
 --- !u!1 &170804928
 GameObject:
   m_ObjectHideFlags: 0
@@ -1786,11 +1783,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 581812105557379230, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 581812105557379230, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 581812107291078515, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1810,11 +1807,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 758503090553775255, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 758503090553775255, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2009363870646069662, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_fontSize
@@ -1930,7 +1927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2009363870715776589, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2009363870732991160, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_Sprite
@@ -2591,7 +2588,7 @@ MonoBehaviour:
   transitionUI: {fileID: 0}
   loadingUI: {fileID: 21562959}
   askMomButton: {fileID: 0}
-  tutorialGO: {fileID: 0}
+  tutorialGO: {fileID: 169305956}
   confirmationGO: {fileID: 0}
 --- !u!114 &781254076
 MonoBehaviour:
@@ -3668,7 +3665,7 @@ PrefabInstance:
     - target: {fileID: 3056311790999024246, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 781254075}
     - target: {fileID: 3056311790999024246, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -3691,7 +3688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3056311791677182187, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3056311791677182191, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_Pivot.x
