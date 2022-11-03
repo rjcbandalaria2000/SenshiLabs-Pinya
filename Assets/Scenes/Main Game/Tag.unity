@@ -418,7 +418,7 @@ PrefabInstance:
     - target: {fileID: 2174895158914797835, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 781254075}
     - target: {fileID: 2174895158914797835, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -486,33 +486,10 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2174895158145102627, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
   m_PrefabInstance: {fileID: 169305955}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &169305957 stripped
+--- !u!114 &169305959 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2174895158226657141, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
   m_PrefabInstance: {fileID: 169305955}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &169305958 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2174895157945811448, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
-  m_PrefabInstance: {fileID: 169305955}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &169305959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 169305956}
   m_Enabled: 1
@@ -520,18 +497,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0946c9decca17a47b32401f881889d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instructionText:
-  - 'The house is dirty! All the toys and dust were spread across the entire house! '
-  - 'Drag all the toys into their place and swipe left and right to sweep the dust
-    that stays in the house! '
-  tutorialImages: []
-  pageCount: 0
-  textGO: {fileID: 169305958}
-  imageGO: {fileID: 169305957}
-  currentPage: {fileID: 0}
-  maxPage: {fileID: 0}
-  nextArrow: {fileID: 0}
-  prevArrow: {fileID: 0}
 --- !u!114 &169305960 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2174895159123499892, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
@@ -1650,7 +1615,7 @@ MonoBehaviour:
   transitionUI: {fileID: 0}
   loadingUI: {fileID: 21562959}
   askMomButton: {fileID: 0}
-  tutorialGO: {fileID: 0}
+  tutorialGO: {fileID: 169305956}
   confirmationGO: {fileID: 0}
 --- !u!114 &781254076
 MonoBehaviour:
@@ -2014,7 +1979,7 @@ PrefabInstance:
     - target: {fileID: 3056311790999024246, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 781254075}
     - target: {fileID: 3056311790999024246, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
