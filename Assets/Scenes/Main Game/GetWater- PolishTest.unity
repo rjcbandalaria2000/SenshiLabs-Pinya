@@ -1722,6 +1722,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GetWaterTutorialPrompt
       objectReference: {fileID: 0}
+    - target: {fileID: 5019996669541480482, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5019996669541480486, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1806,13 +1810,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5019996669585820408, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -684.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5019996669926369869, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
+      propertyPath: m_Name
+      value: PageCounter
+      objectReference: {fileID: 0}
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: tutorialImages.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: instructionText.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: tutorialImages.Array.data[0]
@@ -1831,22 +1843,30 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 395cef2c1df651342b15d842d2d2ee33, type: 3}
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
+      propertyPath: tutorialImages.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 395cef2c1df651342b15d842d2d2ee33, type: 3}
+    - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: instructionText.Array.data[0]
-      value: 'Help Pina as she get fresh water to use to other tasks! Drop the bucket
-        into the water by slowly swiping down the rope into the well. '
+      value: 'Help Pina as she get fresh water to use to other tasks! '
       objectReference: {fileID: 0}
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: instructionText.Array.data[1]
+      value: 'Drop the bucket into the water by slowly swiping down the rope into
+        the well. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
+      propertyPath: instructionText.Array.data[2]
       value: 'Thread slowly as fast swiping will make the rope to be broken. Making
         you repeat and start all over again. '
       objectReference: {fileID: 0}
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
-      propertyPath: instructionText.Array.data[2]
+      propertyPath: instructionText.Array.data[3]
       value: 'The progress bar on the left side will show you the distance between
         the bucket and the water.  '
       objectReference: {fileID: 0}
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
-      propertyPath: instructionText.Array.data[3]
+      propertyPath: instructionText.Array.data[4]
       value: 'Perform a quick swipe up to get the water bucket to complete the tasks!  '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
