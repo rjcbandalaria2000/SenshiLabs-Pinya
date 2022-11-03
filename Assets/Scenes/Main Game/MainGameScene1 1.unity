@@ -11869,11 +11869,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2759568113863651915, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 569.6819
+      value: 669.5392
       objectReference: {fileID: 0}
     - target: {fileID: 2759568113863651915, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 307.05
+      value: 434.0237
       objectReference: {fileID: 0}
     - target: {fileID: 2759568113863651915, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11905,11 +11905,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2759568113863651915, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -338.8453
+      value: -396.84534
       objectReference: {fileID: 0}
     - target: {fileID: 2759568113863651915, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -89.361
+      value: -126.23599
       objectReference: {fileID: 0}
     - target: {fileID: 2759568113863651915, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11979,6 +11979,14 @@ PrefabInstance:
       propertyPath: minigameObjects.Array.data[9]
       value: 
       objectReference: {fileID: 1603101464}
+    - target: {fileID: 5585413270642449677, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5585413270642449677, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
 --- !u!222 &2985707811973519142
