@@ -15,7 +15,13 @@ public class TutorialUIManager : MonoBehaviour
     public TextMeshProUGUI currentPage;
     public TextMeshProUGUI maxPage;
     int tempPage;
+    public RawImage videoImage;
+    VideoManager videoManager;
 
+    private void Awake()
+    {
+        videoManager = GetComponent<VideoManager>();
+    }
     private void OnEnable()
     {
         pageCount = 0;
@@ -26,7 +32,10 @@ public class TutorialUIManager : MonoBehaviour
         if(tutorialImages.Count > 0)
         {
             imageGO.sprite = tutorialImages[0];
+            videoImage.gameObject.SetActive(false);
         }
+
+
            
 
         maxPage.text = instructionText.Count.ToString();
@@ -45,9 +54,24 @@ public class TutorialUIManager : MonoBehaviour
             tempPage++;
             textGO.text = instructionText[pageCount];
 
-            if (tutorialImages.Count > 0)
-                imageGO.sprite = tutorialImages[pageCount];
 
+
+            if (tutorialImages[pageCount] == null)
+            {
+                imageGO.gameObject.SetActive(false);
+                videoImage.gameObject.SetActive(true);
+                videoManager.MoveVideo(0);
+            }
+            else
+            {
+                if (tutorialImages.Count > 0)
+                {
+                    videoImage.gameObject.SetActive(false);
+                    imageGO.gameObject.SetActive(true);
+                    imageGO.sprite = tutorialImages[pageCount];
+                }
+            }
+           
         }
         //    int temp = pageCount + 1;
         currentPage.text = tempPage.ToString();
@@ -70,8 +94,22 @@ public class TutorialUIManager : MonoBehaviour
             tempPage--;
             textGO.text = instructionText[pageCount];
 
-            if (tutorialImages.Count > 0)
-                imageGO.sprite = tutorialImages[pageCount];
+            if (tutorialImages[pageCount] == null)
+            {
+                imageGO.gameObject.SetActive(false);
+                videoImage.gameObject.SetActive(true);
+                videoManager.MoveVideo(0);
+            }
+            else
+            {
+                if (tutorialImages.Count > 0)
+                {
+                    videoImage.gameObject.SetActive(false);
+                    imageGO.gameObject.SetActive(true);
+                    imageGO.sprite = tutorialImages[pageCount];
+                }
+            }
+
         }
 
         currentPage.text = tempPage.ToString();
