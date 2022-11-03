@@ -14,11 +14,22 @@ public class TagMinigamePlayer : MonoBehaviour
     public GameObject tagCollider;
 
     public SpriteRenderer renderer;
+
+    [Header("States")]
+    public GameObject normalState;
+    public GameObject tagState;
+
+    [Header("Animation")]
+    public Animator animator;
+   
+
     void Start()
     {
         isTag = false;
         rb = this.GetComponent<Rigidbody2D>();
         renderer = this.GetComponent<SpriteRenderer>();
+
+        animator = normalState.GetComponent<Animator>();
     }
 
 
@@ -28,6 +39,7 @@ public class TagMinigamePlayer : MonoBehaviour
         {
             if (EventSystem.current.IsPointerOverGameObject()) { return; }
 
+            animator.SetBool("IsIdle", false);
             targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             targetPosition.z = this.transform.position.z;
         }
@@ -40,6 +52,10 @@ public class TagMinigamePlayer : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
         }
+        else
+        {
+            animator.SetBool("IsIdle", true);
+        }
 
     }
 
@@ -47,11 +63,17 @@ public class TagMinigamePlayer : MonoBehaviour
     {
         if (isTag)
         {
-            renderer.material.color = Color.red;
+            normalState.SetActive(false);
+            tagState.SetActive(true);
+
+            animator = tagState.GetComponent<Animator>();
         }
         else
         {
-            renderer.material.color = Color.white;
+            normalState.SetActive(true);
+            tagState.SetActive(false);
+
+            animator = normalState.GetComponent<Animator>();
         }
     }
 

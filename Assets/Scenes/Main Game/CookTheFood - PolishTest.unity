@@ -507,6 +507,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CookingSpeed: 5
+--- !u!114 &139766838 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6831142648286983262, guid: 888fba8b9858f884f89759d4f8510ca9, type: 3}
+  m_PrefabInstance: {fileID: 192594015}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &166510685
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,6 +557,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4675826665115256732, guid: 888fba8b9858f884f89759d4f8510ca9, type: 3}
+      propertyPath: nextArrow
+      value: 
+      objectReference: {fileID: 139766838}
+    - target: {fileID: 4675826665115256732, guid: 888fba8b9858f884f89759d4f8510ca9, type: 3}
+      propertyPath: prevArrow
+      value: 
+      objectReference: {fileID: 1479716901}
     - target: {fileID: 4675826665115256732, guid: 888fba8b9858f884f89759d4f8510ca9, type: 3}
       propertyPath: tutorialImages.Array.size
       value: 4
@@ -4599,6 +4618,17 @@ Transform:
   m_Father: {fileID: 1617983046}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1479716901 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6831142649517148828, guid: 888fba8b9858f884f89759d4f8510ca9, type: 3}
+  m_PrefabInstance: {fileID: 192594015}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1501611435
 GameObject:
   m_ObjectHideFlags: 0
