@@ -82,7 +82,7 @@ public class CursorManager : MonoBehaviour
 
     private void SetHotSpot(CursorHotspotPos hotSpotPos, Texture2D cursorTexture)
     {
-        switch (enterCursorHotspotPos)
+        switch (hotSpotPos)
         {
             case CursorHotspotPos.Center:
                 cursorHotspot = new Vector2(cursorTexture.width / 2, cursorTexture.height / 2);
@@ -106,7 +106,10 @@ public class CursorManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            //if (!EventSystem.current.IsPointerOverGameObject()) { return; }
+            if (EventSystem.current.IsPointerOverGameObject()) {
+                Debug.Log("There is no game object");
+                
+                return; }
             if (defaultCursorPressDownTexture == null) { return; }
             SetHotSpot(defaultPressDownHotspotPos, defaultCursorPressDownTexture);
             Cursor.SetCursor(defaultCursorPressDownTexture, cursorHotspot, CursorMode.ForceSoftware);
