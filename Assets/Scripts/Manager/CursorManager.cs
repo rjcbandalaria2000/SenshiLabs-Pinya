@@ -106,9 +106,10 @@ public class CursorManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (pressDownCursorTexture == null) { return; }
-            SetHotSpot(pressDownHotSpotPos, pressDownCursorTexture);
-            Cursor.SetCursor(pressDownCursorTexture, cursorHotspot, CursorMode.ForceSoftware);
+            //if (!EventSystem.current.IsPointerOverGameObject()) { return; }
+            if (defaultCursorPressDownTexture == null) { return; }
+            SetHotSpot(defaultPressDownHotspotPos, defaultCursorPressDownTexture);
+            Cursor.SetCursor(defaultCursorPressDownTexture, cursorHotspot, CursorMode.ForceSoftware);
         }
         else if (Input.GetMouseButtonUp(0))
         {
