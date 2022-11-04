@@ -22,6 +22,26 @@ public class TutorialUIManager : MonoBehaviour
     {
         videoManager = GetComponent<VideoManager>();
     }
+
+    private void Start()
+    {
+        if (tutorialImages[pageCount] == null)
+        {
+            videoImage.gameObject.SetActive(true);
+
+            imageGO.gameObject.SetActive(false);
+            videoManager.MoveVideo(0);
+            // videoManager.MoveVideo(0);
+        }
+        else
+        {
+            if (tutorialImages.Count > 0)
+            {
+                imageGO.sprite = tutorialImages[0];
+                videoImage.gameObject.SetActive(false);
+            }
+        }
+    }
     private void OnEnable()
     {
         pageCount = 0;
@@ -29,14 +49,7 @@ public class TutorialUIManager : MonoBehaviour
         tempPage = 1;
         currentPage.text = "1";
 
-        if(tutorialImages.Count > 0)
-        {
-            imageGO.sprite = tutorialImages[0];
-            videoImage.gameObject.SetActive(false);
-        }
-
-
-           
+       
 
         maxPage.text = instructionText.Count.ToString();
     }
