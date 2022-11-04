@@ -90,8 +90,8 @@ MonoBehaviour:
   swipedRight: 0
   swipedLeft: 0
   SwipeRequired: 3
-  SwipeLeftAccept: -0.5
-  SwipeRightAccept: 0.5
+  SwipeLeftAccept: -0.6
+  SwipeRightAccept: 0.6
   audioClip: {fileID: 8300000, guid: b60f519e04f2f6d48b43af3a662f7e88, type: 3}
 --- !u!114 &-2584375376834063795
 MonoBehaviour:
