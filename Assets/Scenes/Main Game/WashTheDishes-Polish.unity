@@ -915,6 +915,27 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1515349649379182166, guid: 31cfb3a59497eb149b60851bbf70a1ae, type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: d2b849c788a346b408e08d5df45b8732, type: 3}
+    - target: {fileID: 5563670667801656280, guid: 31cfb3a59497eb149b60851bbf70a1ae, type: 3}
+      propertyPath: tutorialImages.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563670667801656280, guid: 31cfb3a59497eb149b60851bbf70a1ae, type: 3}
+      propertyPath: instructionText.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563670667801656280, guid: 31cfb3a59497eb149b60851bbf70a1ae, type: 3}
+      propertyPath: instructionText.Array.data[0]
+      value: 'Click and drag the sponge to wipe the plates clean! '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563670667801656280, guid: 31cfb3a59497eb149b60851bbf70a1ae, type: 3}
+      propertyPath: instructionText.Array.data[1]
+      value: 'You need to clean all the plates before the timer runs out! entire
+        house! '
+      objectReference: {fileID: 0}
     - target: {fileID: 5987790108873907657, guid: 31cfb3a59497eb149b60851bbf70a1ae, type: 3}
       propertyPath: m_Name
       value: Tutorial Text
@@ -1051,6 +1072,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ExitTutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 8400845913782978086, guid: 31cfb3a59497eb149b60851bbf70a1ae, type: 3}
+      propertyPath: clips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8400845913782978086, guid: 31cfb3a59497eb149b60851bbf70a1ae, type: 3}
+      propertyPath: clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 32900000, guid: d2b849c788a346b408e08d5df45b8732, type: 3}
+    - target: {fileID: 8400845913782978086, guid: 31cfb3a59497eb149b60851bbf70a1ae, type: 3}
+      propertyPath: clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 32900000, guid: 344b6e653628bf843898583b8d1a2d9d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31cfb3a59497eb149b60851bbf70a1ae, type: 3}
 --- !u!1 &290506297
