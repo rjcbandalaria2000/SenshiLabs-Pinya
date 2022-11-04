@@ -20,12 +20,19 @@ public class CursorManager : MonoBehaviour
     [Header("CursorSettings")]
     public Texture2D        defaultCursorTexture;
     public CursorHotspotPos defaultHotspotPos = CursorHotspotPos.TopLeft;
+
+    public Texture2D        defaultCursorPressDownTexture;
+    public CursorHotspotPos defaultPressDownHotspotPos = CursorHotspotPos.TopLeft;
+
     public Texture2D        enterCursorTexture;
     public CursorHotspotPos enterCursorHotspotPos = CursorHotspotPos.TopLeft;
+
     public Texture2D        dragCursorTexture;
     public CursorHotspotPos dragCursorHotspotPos = CursorHotspotPos.TopLeft;
+
     public Texture2D        pressDownCursorTexture;
     public CursorHotspotPos pressDownHotSpotPos = CursorHotspotPos.TopLeft;
+
     private Vector2         cursorHotspot = new Vector2(0,0); // sets the cursors hotspots 
 
     public void OnMouseEnter()
