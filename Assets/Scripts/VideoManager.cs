@@ -8,7 +8,7 @@ public class VideoManager : MonoBehaviour
 
     VideoPlayer videoPlayer;
     public List<VideoClip> clips;
-
+    int counter;
     private void Awake()
     {
         videoPlayer = GetComponent<VideoPlayer>();
@@ -18,5 +18,17 @@ public class VideoManager : MonoBehaviour
     public void MoveVideo(int index)
     {
         videoPlayer.clip = clips[index];
+    }
+
+    public void NextVideo()
+    {
+        counter++;
+        videoPlayer.clip = clips[counter];
+    }
+
+    public void PrevVideo()
+    {
+        counter--;
+        videoPlayer.clip = clips[counter];
     }
 }

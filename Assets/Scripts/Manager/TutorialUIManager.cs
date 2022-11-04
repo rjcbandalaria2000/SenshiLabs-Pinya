@@ -60,7 +60,8 @@ public class TutorialUIManager : MonoBehaviour
             {
                 imageGO.gameObject.SetActive(false);
                 videoImage.gameObject.SetActive(true);
-                videoManager.MoveVideo(0);
+                videoManager.NextVideo();
+               // videoManager.MoveVideo(0);
             }
             else
             {
@@ -98,7 +99,8 @@ public class TutorialUIManager : MonoBehaviour
             {
                 imageGO.gameObject.SetActive(false);
                 videoImage.gameObject.SetActive(true);
-                videoManager.MoveVideo(0);
+                // videoManager.MoveVideo(0);
+                videoManager.PrevVideo();
             }
             else
             {
