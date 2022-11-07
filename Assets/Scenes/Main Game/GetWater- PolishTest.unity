@@ -1776,16 +1776,16 @@ PrefabInstance:
       objectReference: {fileID: 1505382336}
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: tutorialImages.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: instructionText.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: tutorialImages.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 395cef2c1df651342b15d842d2d2ee33, type: 3}
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: tutorialImages.Array.data[1]
       value: 
@@ -1797,11 +1797,11 @@ PrefabInstance:
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: tutorialImages.Array.data[3]
       value: 
-      objectReference: {fileID: 21300000, guid: 395cef2c1df651342b15d842d2d2ee33, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: tutorialImages.Array.data[4]
       value: 
-      objectReference: {fileID: 21300000, guid: 395cef2c1df651342b15d842d2d2ee33, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: instructionText.Array.data[0]
       value: 'Help Pina as she get fresh water to use to other tasks! '
@@ -1813,13 +1813,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: instructionText.Array.data[2]
-      value: 'Thread slowly as fast swiping will make the rope to be broken. Making
-        you repeat and start all over again. '
+      value: 'The progress bar on the left side will show you the distance between
+        the bucket and the water.  '
       objectReference: {fileID: 0}
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: instructionText.Array.data[3]
-      value: 'The progress bar on the left side will show you the distance between
-        the bucket and the water.  '
+      value: 'Perform a quick swipe up to get the water bucket to complete the tasks!  '
       objectReference: {fileID: 0}
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: instructionText.Array.data[4]
