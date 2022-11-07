@@ -354,6 +354,16 @@ public class UIManager : MonoBehaviour
             sceneChange.OnChangeScene(scene);
         }
     }
+
+    public void ActivateCredits()
+    {
+        Debug.Log("Credits ON");
+    }
+
+    public void DeactivateCredits()
+    {
+        Debug.Log("Credits OFF");
+    }
 }
     
 

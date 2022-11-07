@@ -34,6 +34,8 @@ public class AITagMinigame : MonoBehaviour
 
     public TagManager minigame;
 
+    public Animator animator;
+
     private void Start()
     {
         spriteUpdate();
@@ -59,7 +61,8 @@ public class AITagMinigame : MonoBehaviour
        potentialTargets.Add(minigame.spawnedPlayer.gameObject);
 
         setTarget();
-   
+
+       
 
     }
 
@@ -74,6 +77,8 @@ public class AITagMinigame : MonoBehaviour
         {
             defaultState.SetActive(false);
             tagState.SetActive(true);
+
+            animator = tagState.GetComponentInChildren<Animator>();
   
         }
         else
@@ -81,6 +86,7 @@ public class AITagMinigame : MonoBehaviour
             defaultState.SetActive(true);
             tagState.SetActive(false);
 
+            animator = defaultState.GetComponentInChildren<Animator>();
         }
     }
 
@@ -115,6 +121,7 @@ public class AITagMinigame : MonoBehaviour
         {
             if (target != null)
             {
+                animator.SetBool("IsIdle", false);
                 this.transform.position = Vector2.MoveTowards(this.transform.position, target.transform.position, speed * Time.deltaTime);
                 distance = Vector2.Distance(this.transform.position, target.transform.position);
 
@@ -123,33 +130,11 @@ public class AITagMinigame : MonoBehaviour
         }
         else
         {
+          
             setTarget();
             Debug.Log("New Target");
         }
     }
-
-    IEnumerator goToTarget()
-    {
-        yield return new WaitForSeconds(delaySpeed);
-
-        while (distance > minDistance)
-        {
-            if(target != null)
-            {
-                this.transform.position = Vector2.MoveTowards(this.transform.position, target.transform.position, speed * Time.deltaTime);
-                distance = Vector2.Distance(this.transform.position, target.transform.position);
-                
-            }
-            yield return null;
-        }
-
-        yield return new WaitForSeconds(delaySpeed);
-        setTarget();
-        Debug.Log("New Target");
-
-        yield return null;
-    }
-
 
    
   

@@ -16,8 +16,12 @@ public class TutorialUIManager : MonoBehaviour
     public TextMeshProUGUI maxPage;
     int tempPage;
 
+    public Button nextArrow;
+    public Button prevArrow;
+
     private void OnEnable()
     {
+        prevArrow.gameObject.SetActive(false);
         pageCount = 0;
         textGO.text = instructionText[0];
         tempPage = 1;
@@ -37,10 +41,12 @@ public class TutorialUIManager : MonoBehaviour
         if (pageCount >= instructionText.Count - 1)
         {
             pageCount = instructionText.Count - 1;
+            
 
         }
         else
         {
+            prevArrow.gameObject.SetActive(true);
             pageCount++;
             tempPage++;
             textGO.text = instructionText[pageCount];
@@ -48,7 +54,13 @@ public class TutorialUIManager : MonoBehaviour
             if (tutorialImages.Count > 0)
                 imageGO.sprite = tutorialImages[pageCount];
 
+            if(pageCount >= instructionText.Count - 1)
+            {
+                nextArrow.gameObject.SetActive(false);
+            }
+
         }
+
         //    int temp = pageCount + 1;
         currentPage.text = tempPage.ToString();
 
@@ -59,6 +71,7 @@ public class TutorialUIManager : MonoBehaviour
 
         if (pageCount <= 0)
         {
+           
             pageCount = 0;
             tempPage = 1;
             textGO.text = instructionText[0];
@@ -66,12 +79,18 @@ public class TutorialUIManager : MonoBehaviour
         }
         else
         {
+            nextArrow.gameObject.SetActive(true);
             pageCount--;
             tempPage--;
             textGO.text = instructionText[pageCount];
 
             if (tutorialImages.Count > 0)
                 imageGO.sprite = tutorialImages[pageCount];
+
+            if(pageCount <= 0)
+            {
+                prevArrow.gameObject.SetActive(false);
+            }
         }
 
         currentPage.text = tempPage.ToString();

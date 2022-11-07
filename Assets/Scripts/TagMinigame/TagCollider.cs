@@ -83,8 +83,11 @@ public class TagCollider : MonoBehaviour
     IEnumerator delayAICollider(AITagMinigame otherAI)
     {
         otherAI.speed = 0;
+        parent.animator.SetBool("IsIdle" , true);
 
         yield return new WaitForSeconds(1.5f);
+
+        parent.animator.SetBool("IsIdle", false);
 
         otherAI.setTarget();
 
