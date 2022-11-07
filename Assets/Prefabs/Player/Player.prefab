@@ -406,7 +406,6 @@ GameObject:
   - component: {fileID: -6934455366206682333}
   - component: {fileID: 312946476}
   - component: {fileID: 8969359699294080342}
-  - component: {fileID: 312946479}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -565,26 +564,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultCursorTexture: {fileID: 2800000, guid: 2d8d391eb824a4b4ca6a42a3ad4ca394, type: 3}
   defaultHotspotPos: 0
-  enterCursorTexture: {fileID: 2800000, guid: 2d8d391eb824a4b4ca6a42a3ad4ca394, type: 3}
-  enterCursorHotspotPos: 0
-  dragCursorTexture: {fileID: 2800000, guid: e6b9150ca460c9e498965eb3c3554b91, type: 3}
-  dragCursorHotspotPos: 0
-  pressDownCursorTexture: {fileID: 2800000, guid: e6b9150ca460c9e498965eb3c3554b91, type: 3}
-  pressDownHotSpotPos: 0
---- !u!114 &312946479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6543178212848092689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0408e621f7f0b124683412f3055fab37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultCursorTexture: {fileID: 2800000, guid: 2d8d391eb824a4b4ca6a42a3ad4ca394, type: 3}
-  defaultHotspotPos: 0
+  defaultCursorPressDownTexture: {fileID: 2800000, guid: e6b9150ca460c9e498965eb3c3554b91, type: 3}
+  defaultPressDownHotspotPos: 0
   enterCursorTexture: {fileID: 2800000, guid: 2d8d391eb824a4b4ca6a42a3ad4ca394, type: 3}
   enterCursorHotspotPos: 0
   dragCursorTexture: {fileID: 2800000, guid: e6b9150ca460c9e498965eb3c3554b91, type: 3}
