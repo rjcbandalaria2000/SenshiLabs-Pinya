@@ -231,10 +231,22 @@ PrefabInstance:
     - target: {fileID: 8301517832102607517, guid: 1717608a280b0f148a9e05cf914c7d77, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1573738792}
+    - target: {fileID: 8301517832102607517, guid: 1717608a280b0f148a9e05cf914c7d77, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitConfirmation
       objectReference: {fileID: 0}
     - target: {fileID: 8301517832720503713, guid: 1717608a280b0f148a9e05cf914c7d77, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1573738792}
+    - target: {fileID: 8301517832720503713, guid: 1717608a280b0f148a9e05cf914c7d77, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnConfirmExitMinigame
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301517832720503713, guid: 1717608a280b0f148a9e05cf914c7d77, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8301517833032827718, guid: 1717608a280b0f148a9e05cf914c7d77, type: 3}
       propertyPath: m_Pivot.x
@@ -330,6 +342,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1717608a280b0f148a9e05cf914c7d77, type: 3}
+--- !u!1 &150778038 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8301517833032827722, guid: 1717608a280b0f148a9e05cf914c7d77, type: 3}
+  m_PrefabInstance: {fileID: 150778037}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &159047704
 GameObject:
   m_ObjectHideFlags: 0
@@ -3155,7 +3172,7 @@ MonoBehaviour:
   loadingUI: {fileID: 1046125348}
   askMomButton: {fileID: 0}
   tutorialGO: {fileID: 2136206196}
-  confirmationGO: {fileID: 0}
+  confirmationGO: {fileID: 150778038}
 --- !u!114 &1573738793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4046,14 +4063,14 @@ PrefabInstance:
     - target: {fileID: 3056311792344982018, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1573738796}
+      objectReference: {fileID: 1573738792}
     - target: {fileID: 3056311792344982018, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: continueScene
+      value: ShowConfirmation
       objectReference: {fileID: 0}
     - target: {fileID: 3056311792344982018, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: FoldingMinigameManager, Assembly-CSharp
+      value: UIManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3247125816100506532, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_Pivot.y
