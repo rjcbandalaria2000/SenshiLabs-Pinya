@@ -5717,12 +5717,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 979513150}
     - target: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
-      propertyPath: instructionText.Array.size
-      value: 4
+      propertyPath: tutorialImages.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: instructionText.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: tutorialImages.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: tutorialImages.Array.data[1]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: tutorialImages.Array.data[2]
