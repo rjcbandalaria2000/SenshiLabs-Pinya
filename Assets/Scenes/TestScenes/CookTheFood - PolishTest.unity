@@ -546,42 +546,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1788603124050508306, guid: 888fba8b9858f884f89759d4f8510ca9, type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: e6392ef4cd2a0754ab6aa888712fc5d2, type: 3}
     - target: {fileID: 4675826665115256732, guid: 888fba8b9858f884f89759d4f8510ca9, type: 3}
       propertyPath: tutorialImages.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4675826665115256732, guid: 888fba8b9858f884f89759d4f8510ca9, type: 3}
       propertyPath: instructionText.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4675826665115256732, guid: 888fba8b9858f884f89759d4f8510ca9, type: 3}
       propertyPath: tutorialImages.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 8082b7ba7f158cb489932b5a13a99911, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 4675826665115256732, guid: 888fba8b9858f884f89759d4f8510ca9, type: 3}
       propertyPath: tutorialImages.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: 8082b7ba7f158cb489932b5a13a99911, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 4675826665115256732, guid: 888fba8b9858f884f89759d4f8510ca9, type: 3}
       propertyPath: tutorialImages.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: f7fb195dc18a919409f43d06c7aa8b9b, type: 3}
+      objectReference: {fileID: 21300000, guid: fd47084633a830d45bef001d621207c4, type: 3}
     - target: {fileID: 4675826665115256732, guid: 888fba8b9858f884f89759d4f8510ca9, type: 3}
       propertyPath: tutorialImages.Array.data[3]
       value: 
       objectReference: {fileID: 21300000, guid: f7fb195dc18a919409f43d06c7aa8b9b, type: 3}
     - target: {fileID: 4675826665115256732, guid: 888fba8b9858f884f89759d4f8510ca9, type: 3}
       propertyPath: instructionText.Array.data[0]
-      value: 'Help Pina as she tries to cook food!  '
-      objectReference: {fileID: 0}
-    - target: {fileID: 4675826665115256732, guid: 888fba8b9858f884f89759d4f8510ca9, type: 3}
-      propertyPath: instructionText.Array.data[1]
       value: 'Drag all of the ingredients to the pot that was gathered in the grocery.  '
       objectReference: {fileID: 0}
     - target: {fileID: 4675826665115256732, guid: 888fba8b9858f884f89759d4f8510ca9, type: 3}
-      propertyPath: instructionText.Array.data[2]
+      propertyPath: instructionText.Array.data[1]
       value: 'Click the mouse button and the time speed of the cursor to cook the
         food.  '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675826665115256732, guid: 888fba8b9858f884f89759d4f8510ca9, type: 3}
+      propertyPath: instructionText.Array.data[2]
+      value: 'Successfully clicking on the red bar makes you cook the food. '
       objectReference: {fileID: 0}
     - target: {fileID: 4675826665115256732, guid: 888fba8b9858f884f89759d4f8510ca9, type: 3}
       propertyPath: instructionText.Array.data[3]
@@ -683,6 +687,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8737040125071915618, guid: 888fba8b9858f884f89759d4f8510ca9, type: 3}
+      propertyPath: clips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737040125071915618, guid: 888fba8b9858f884f89759d4f8510ca9, type: 3}
+      propertyPath: clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 32900000, guid: e6392ef4cd2a0754ab6aa888712fc5d2, type: 3}
+    - target: {fileID: 8737040125071915618, guid: 888fba8b9858f884f89759d4f8510ca9, type: 3}
+      propertyPath: clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 32900000, guid: a419faa2e55c9ba42bdf1cee01db565e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 888fba8b9858f884f89759d4f8510ca9, type: 3}
 --- !u!1 &198629087
