@@ -1808,47 +1808,62 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: tutorialImages.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: instructionText.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: tutorialImages.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 395cef2c1df651342b15d842d2d2ee33, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: tutorialImages.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: 395cef2c1df651342b15d842d2d2ee33, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: tutorialImages.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: 395cef2c1df651342b15d842d2d2ee33, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: tutorialImages.Array.data[3]
       value: 
       objectReference: {fileID: 21300000, guid: 395cef2c1df651342b15d842d2d2ee33, type: 3}
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: instructionText.Array.data[0]
-      value: 'Help Pina as she get fresh water to use to other tasks! Drop the bucket
-        into the water by slowly swiping down the rope into the well. '
+      value: 'Drop the bucket into the water by slowly swiping down the rope into
+        the well. '
       objectReference: {fileID: 0}
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: instructionText.Array.data[1]
-      value: 'Thread slowly as fast swiping will make the rope to be broken. Making
-        you repeat and start all over again. '
+      value: 'The progress bar on the left side will show you the distance between
+        the bucket and the water.  '
       objectReference: {fileID: 0}
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: instructionText.Array.data[2]
-      value: 'The progress bar on the left side will show you the distance between
-        the bucket and the water.  '
+      value: 'Perform a quick swipe up to get the water bucket to complete the tasks!  '
       objectReference: {fileID: 0}
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: instructionText.Array.data[3]
       value: 'Perform a quick swipe up to get the water bucket to complete the tasks!  '
       objectReference: {fileID: 0}
+    - target: {fileID: 7072823945728941641, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
+      propertyPath: clips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072823945728941641, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
+      propertyPath: clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 32900000, guid: 23edc532855ee4d48b4dd4746febebc7, type: 3}
+    - target: {fileID: 7072823945728941641, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
+      propertyPath: clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 32900000, guid: d252ce1ce5b14df40b72c71c27dfb009, type: 3}
+    - target: {fileID: 7072823945728941641, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
+      propertyPath: clips.Array.data[2]
+      value: 
+      objectReference: {fileID: 32900000, guid: 46c877a65826c2349a3d8684aa41526b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
 --- !u!1 &687581338
