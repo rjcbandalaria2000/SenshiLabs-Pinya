@@ -15,10 +15,36 @@ public class TutorialUIManager : MonoBehaviour
     public TextMeshProUGUI currentPage;
     public TextMeshProUGUI maxPage;
     int tempPage;
+    public RawImage videoImage;
+    VideoManager videoManager;
 
     public Button nextArrow;
     public Button prevArrow;
 
+    private void Awake()
+    {
+        videoManager = GetComponent<VideoManager>();
+    }
+
+    private void Start()
+    {
+        if (tutorialImages[pageCount] == null)
+        {
+            videoImage.gameObject.SetActive(true);
+
+            imageGO.gameObject.SetActive(false);
+            videoManager.MoveVideo(0);
+            // videoManager.MoveVideo(0);
+        }
+        else
+        {
+            if (tutorialImages.Count > 0)
+            {
+                imageGO.sprite = tutorialImages[0];
+                videoImage.gameObject.SetActive(false);
+            }
+        }
+    }
     private void OnEnable()
     {
         prevArrow.gameObject.SetActive(false);
@@ -27,11 +53,7 @@ public class TutorialUIManager : MonoBehaviour
         tempPage = 1;
         currentPage.text = "1"; 
 
-        if(tutorialImages.Count > 0)
-        {
-            imageGO.sprite = tutorialImages[0];
-        }
-           
+       
 
         maxPage.text = instructionText.Count.ToString();
     }
@@ -51,14 +73,30 @@ public class TutorialUIManager : MonoBehaviour
             tempPage++;
             textGO.text = instructionText[pageCount];
 
-            if (tutorialImages.Count > 0)
-                imageGO.sprite = tutorialImages[pageCount];
 
             if(pageCount >= instructionText.Count - 1)
             {
                 nextArrow.gameObject.SetActive(false);
             }
 
+
+            if (tutorialImages[pageCount] == null)
+            {
+                imageGO.gameObject.SetActive(false);
+                videoImage.gameObject.SetActive(true);
+                videoManager.NextVideo();
+               // videoManager.MoveVideo(0);
+            }
+            else
+            {
+                if (tutorialImages.Count > 0)
+                {
+                    videoImage.gameObject.SetActive(false);
+                    imageGO.gameObject.SetActive(true);
+                    imageGO.sprite = tutorialImages[pageCount];
+                }
+            }
+           
         }
 
         //    int temp = pageCount + 1;
@@ -91,6 +129,23 @@ public class TutorialUIManager : MonoBehaviour
             {
                 prevArrow.gameObject.SetActive(false);
             }
+            if (tutorialImages[pageCount] == null)
+            {
+                imageGO.gameObject.SetActive(false);
+                videoImage.gameObject.SetActive(true);
+                // videoManager.MoveVideo(0);
+                videoManager.PrevVideo();
+            }
+            else
+            {
+                if (tutorialImages.Count > 0)
+                {
+                    videoImage.gameObject.SetActive(false);
+                    imageGO.gameObject.SetActive(true);
+                    imageGO.sprite = tutorialImages[pageCount];
+                }
+            }
+
         }
 
         currentPage.text = tempPage.ToString();

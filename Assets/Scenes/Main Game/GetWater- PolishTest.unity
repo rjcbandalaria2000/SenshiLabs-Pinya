@@ -1785,15 +1785,15 @@ PrefabInstance:
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: tutorialImages.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: 395cef2c1df651342b15d842d2d2ee33, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: tutorialImages.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: 395cef2c1df651342b15d842d2d2ee33, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: tutorialImages.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: 395cef2c1df651342b15d842d2d2ee33, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6594496635681416119, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: tutorialImages.Array.data[3]
       value: 
@@ -1825,6 +1825,22 @@ PrefabInstance:
       propertyPath: instructionText.Array.data[4]
       value: 'Perform a quick swipe up to get the water bucket to complete the tasks!  '
       objectReference: {fileID: 0}
+    - target: {fileID: 7072823945728941641, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
+      propertyPath: clips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072823945728941641, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
+      propertyPath: clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 32900000, guid: 23edc532855ee4d48b4dd4746febebc7, type: 3}
+    - target: {fileID: 7072823945728941641, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
+      propertyPath: clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 32900000, guid: d252ce1ce5b14df40b72c71c27dfb009, type: 3}
+    - target: {fileID: 7072823945728941641, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
+      propertyPath: clips.Array.data[2]
+      value: 
+      objectReference: {fileID: 32900000, guid: 46c877a65826c2349a3d8684aa41526b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
 --- !u!1 &687581338
@@ -6290,6 +6306,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1744995649, guid: 79ddbf630769dcb419744cc69782224b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 58416bd99cc59a44897dc96f4ee9126c, type: 3}
+    - target: {fileID: 1783723127, guid: 79ddbf630769dcb419744cc69782224b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 99917ed5235118142b5e9c1b493ab52d, type: 3}
     - target: {fileID: 4723817009131137376, guid: 79ddbf630769dcb419744cc69782224b, type: 3}
       propertyPath: pullUpSFX
       value: 

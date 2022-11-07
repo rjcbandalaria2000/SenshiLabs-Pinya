@@ -3143,6 +3143,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1516140953}
     m_Modifications:
+    - target: {fileID: 739634606, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 58416bd99cc59a44897dc96f4ee9126c, type: 3}
     - target: {fileID: 739634607, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
       propertyPath: startPos.x
       value: 0.047619577
@@ -4584,6 +4588,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arrow
       objectReference: {fileID: 0}
+    - target: {fileID: 158816393, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 58416bd99cc59a44897dc96f4ee9126c, type: 3}
     - target: {fileID: 158816394, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
       propertyPath: startPos.x
       value: 0.119368665
@@ -6019,6 +6027,10 @@ PrefabInstance:
       propertyPath: startPos.y
       value: 1.16
       objectReference: {fileID: 0}
+    - target: {fileID: 1560607762, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 58416bd99cc59a44897dc96f4ee9126c, type: 3}
     - target: {fileID: 1278223492080597529, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
       propertyPath: m_Name
       value: Sink - CleanTheDishes
@@ -6096,6 +6108,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1516140953}
     m_Modifications:
+    - target: {fileID: 1705872688, guid: e41e923d36dd9184699d21fe2e39658e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 58416bd99cc59a44897dc96f4ee9126c, type: 3}
     - target: {fileID: 1705872689, guid: e41e923d36dd9184699d21fe2e39658e, type: 3}
       propertyPath: startPos.x
       value: -3.796506
@@ -10391,6 +10407,10 @@ PrefabInstance:
       propertyPath: preRequisiteTasks.Array.data[0]
       value: 
       objectReference: {fileID: 1114841000}
+    - target: {fileID: 1256053893, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 58416bd99cc59a44897dc96f4ee9126c, type: 3}
     - target: {fileID: 1256053894, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
       propertyPath: startPos.x
       value: 0.0640235
