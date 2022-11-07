@@ -14,6 +14,10 @@ public class VideoManager : MonoBehaviour
         videoPlayer = GetComponent<VideoPlayer>();
     }
 
+    private void Start()
+    {
+        videoPlayer.clip = clips[0];
+    }
 
     public void MoveVideo(int index)
     {
