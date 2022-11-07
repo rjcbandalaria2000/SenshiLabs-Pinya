@@ -2401,6 +2401,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1152418267}
     - target: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: tutorialImages.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: tutorialImages.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 1cea866d3c7eaf940bb5b6cb0d42c382, type: 3}
+    - target: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: tutorialImages.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: ad436c6c07b7a0941a1ec32a196c0c42, type: 3}
+    - target: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: instructionText.Array.data[0]
       value: 'Can you help Pina fold all the clothes as quickly as possible? '
       objectReference: {fileID: 0}
@@ -4524,15 +4536,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0946c9decca17a47b32401f881889d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instructionText:
-  - 'Can you help Pina fold all the clothes as quickly as possible? '
-  - 'To fold the clothes, Pina must use the mouse button to click and swipe in the
-    direction given on the screen.   '
-  tutorialImages: []
-  pageCount: 0
-  textGO: {fileID: 2016981021}
-  imageGO: {fileID: 800452961}
-  currentPage: {fileID: 0}
-  maxPage: {fileID: 0}
-  nextArrow: {fileID: 0}
-  prevArrow: {fileID: 0}
