@@ -920,22 +920,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 32900000, guid: d2b849c788a346b408e08d5df45b8732, type: 3}
     - target: {fileID: 5563670667801656280, guid: 31cfb3a59497eb149b60851bbf70a1ae, type: 3}
-      propertyPath: tutorialImages.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5563670667801656280, guid: 31cfb3a59497eb149b60851bbf70a1ae, type: 3}
-      propertyPath: instructionText.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5563670667801656280, guid: 31cfb3a59497eb149b60851bbf70a1ae, type: 3}
-      propertyPath: instructionText.Array.data[0]
-      value: 'Click and drag the sponge to wipe the plates clean! '
-      objectReference: {fileID: 0}
-    - target: {fileID: 5563670667801656280, guid: 31cfb3a59497eb149b60851bbf70a1ae, type: 3}
-      propertyPath: instructionText.Array.data[1]
-      value: 'You need to clean all the plates before the timer runs out! entire
-        house! '
-    - target: {fileID: 5563670667801656280, guid: 31cfb3a59497eb149b60851bbf70a1ae, type: 3}
       propertyPath: nextArrow
       value: 
       objectReference: {fileID: 1176466669}
@@ -945,24 +929,35 @@ PrefabInstance:
       objectReference: {fileID: 1338297202}
     - target: {fileID: 5563670667801656280, guid: 31cfb3a59497eb149b60851bbf70a1ae, type: 3}
       propertyPath: tutorialImages.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5563670667801656280, guid: 31cfb3a59497eb149b60851bbf70a1ae, type: 3}
       propertyPath: instructionText.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5563670667801656280, guid: 31cfb3a59497eb149b60851bbf70a1ae, type: 3}
       propertyPath: tutorialImages.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: cd312f1c2e7c91b4683a3b927c6ae51c, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 5563670667801656280, guid: 31cfb3a59497eb149b60851bbf70a1ae, type: 3}
       propertyPath: tutorialImages.Array.data[1]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563670667801656280, guid: 31cfb3a59497eb149b60851bbf70a1ae, type: 3}
+      propertyPath: tutorialImages.Array.data[2]
+      value: 
       objectReference: {fileID: 21300000, guid: cd312f1c2e7c91b4683a3b927c6ae51c, type: 3}
     - target: {fileID: 5563670667801656280, guid: 31cfb3a59497eb149b60851bbf70a1ae, type: 3}
+      propertyPath: instructionText.Array.data[0]
+      value: 'Click to pickup the sponge to wipe the plates clean! '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563670667801656280, guid: 31cfb3a59497eb149b60851bbf70a1ae, type: 3}
       propertyPath: instructionText.Array.data[1]
-      value: 'Click and drag the sponge to wipe the plates clean! You need to clean
-        all the plates before the timer runs out! entire house! '
+      value: 'While holding the sponge, drag it across the dirty plate to clean them. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563670667801656280, guid: 31cfb3a59497eb149b60851bbf70a1ae, type: 3}
+      propertyPath: instructionText.Array.data[2]
+      value: Pina must clean all the dirty plates before the time runs out
       objectReference: {fileID: 0}
     - target: {fileID: 5987790108873907657, guid: 31cfb3a59497eb149b60851bbf70a1ae, type: 3}
       propertyPath: m_Name
