@@ -1646,6 +1646,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimePeriodPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 3525441405723593178, guid: 389792d16f982444a8c1830abeb3c754, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3525441405723593179, guid: 389792d16f982444a8c1830abeb3c754, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5602,7 +5606,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1060226796
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10418,6 +10422,10 @@ PrefabInstance:
     - target: {fileID: 1256053894, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
       propertyPath: startPos.y
       value: 2.074
+      objectReference: {fileID: 0}
+    - target: {fileID: 1690378345, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4035600955571030600, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
       propertyPath: m_Name
