@@ -24,32 +24,36 @@ public class VideoManager : MonoBehaviour
 
     public void MoveVideo(int index)
     {
-        if(index <= 0)
-        {
-            videoPlayer.clip = clips[0];
-        }
-        else
-        {
-            videoPlayer.clip = clips[index];
 
+        if (rawImage.activeInHierarchy)
+        {
+            if (index <= 0)
+            {
+                videoPlayer.clip = clips[0];
+            }
+            else
+            {
+                videoPlayer.clip = clips[index];
+
+            }
         }
+       
     }
 
     public void NextVideo()
     {
         if (rawImage.activeInHierarchy)
         {
-            videoPlayer.clip = clips[counter];
-
-            if (counter < clips.Count - 1)
+            if (counter < clips.Count)
             {
                 // videoPlayer.gameObject
-            
+                videoPlayer.clip = clips[counter];
                 counter++;
             }
             else
             {
                 counter = clips.Count - 1;
+                videoPlayer.clip = clips[counter];
             }
         }
        
@@ -58,20 +62,31 @@ public class VideoManager : MonoBehaviour
 
     public void PrevVideo()
     {
-  
+       
         if (counter <= 0)
         {
             counter = 0;
+              videoPlayer.clip = clips[counter];
         }
         else
         {
-            counter--;
+            // counter--;
+            if (counter >= clips.Count)
+            {
+             
+                counter -= 2;
+                videoPlayer.clip = clips[counter];
+
+            }
+            else
+            {
+                counter--;
+                videoPlayer.clip = clips[counter];
+            }
+
         }
 
-        if (rawImage.activeInHierarchy)
-        {
-            videoPlayer.clip = clips[counter];
-        }
+    
 
     }
 }
