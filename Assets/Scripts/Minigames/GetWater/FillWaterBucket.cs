@@ -8,6 +8,9 @@ public class FillWaterBucket : MonoBehaviour
     public float        waterAmount = 0;
     public float        maxWater = 5;
 
+    [Header("States")]
+    public bool isFilling = false;
+        
     [Header("Fill Speed")]
     public float        fillSpeed = 1;
     public float        fillAmount = 0.1f;
@@ -26,8 +29,13 @@ public class FillWaterBucket : MonoBehaviour
 
     public void StartFillingBucket()
     {
-        sFX.PlayMusic();
-        fillBucketRoutine = StartCoroutine(FillTheBucket());
+        if (!isFilling)
+        {
+            isFilling = true;
+            sFX.PlayMusic();
+            fillBucketRoutine = StartCoroutine(FillTheBucket());
+        }
+       
     }
 
     IEnumerator FillTheBucket()
@@ -45,6 +53,7 @@ public class FillWaterBucket : MonoBehaviour
     {
         if (fillBucketRoutine == null) { return; }
         StopCoroutine(fillBucketRoutine);
+        isFilling=false;
     }
     
     public void ResetWaterBucket()
