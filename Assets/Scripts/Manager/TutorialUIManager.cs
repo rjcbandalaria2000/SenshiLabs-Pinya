@@ -85,9 +85,11 @@ public class TutorialUIManager : MonoBehaviour
                 imageGO.gameObject.SetActive(false);
                 videoImage.gameObject.SetActive(true);
 
-                
-             ///  videoManager.NextVideo();
-                 videoManager.MoveVideo(pageCount - 1);
+
+                //videoManager.NextVideo();
+                //     Debug.Log(pageCount);
+               // videoManager.me++;
+               // videoManager.MoveVideo(videoManager.counter);
             }
             else
             {
@@ -135,8 +137,11 @@ public class TutorialUIManager : MonoBehaviour
             {
                 imageGO.gameObject.SetActive(false);
                 videoImage.gameObject.SetActive(true);
-                 videoManager.MoveVideo(pageCount - 1);
-               // videoManager.PrevVideo();
+                // videoManager.MoveVideo(pageCount);
+                //   Debug.Log(pageCount - 1);
+                //  videoManager.PrevVideo();
+            //    videoManager.counter--;
+             //   videoManager.MoveVideo(videoManager.counter);
             }
             else
             {

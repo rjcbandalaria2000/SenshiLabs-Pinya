@@ -9,6 +9,8 @@ public class VideoManager : MonoBehaviour
     VideoPlayer videoPlayer;
     public List<VideoClip> clips;
     public int counter;
+    public GameObject rawImage;
+
     private void Awake()
     {
         videoPlayer = GetComponent<VideoPlayer>();
@@ -16,37 +18,75 @@ public class VideoManager : MonoBehaviour
 
     private void Start()
     {
+
         videoPlayer.clip = clips[0];
     }
 
     public void MoveVideo(int index)
     {
-        
-        videoPlayer.clip = clips[index];
+
+        if (rawImage.activeInHierarchy)
+        {
+            if (index <= 0)
+            {
+                videoPlayer.clip = clips[0];
+            }
+            else
+            {
+                videoPlayer.clip = clips[index];
+
+            }
+        }
+       
     }
 
     public void NextVideo()
     {
-        if (counter <= clips.Count - 1)
+        if (rawImage.activeInHierarchy)
         {
-            counter++;
-            videoPlayer.clip = clips[counter];
+            if (counter < clips.Count)
+            {
+                // videoPlayer.gameObject
+                videoPlayer.clip = clips[counter];
+                counter++;
+            }
+            else
+            {
+                counter = clips.Count - 1;
+                videoPlayer.clip = clips[counter];
+            }
         }
-      
+       
+
     }
 
     public void PrevVideo()
     {
-        if(counter > 0)
+       
+        if (counter <= 0)
         {
-            counter--;
-
+            counter = 0;
+              videoPlayer.clip = clips[counter];
         }
         else
         {
-            counter = 0;
+            // counter--;
+            if (counter >= clips.Count)
+            {
+             
+                counter -= 2;
+                videoPlayer.clip = clips[counter];
+
+            }
+            else
+            {
+                counter--;
+                videoPlayer.clip = clips[counter];
+            }
+
         }
 
-        videoPlayer.clip = clips[counter];
+    
+
     }
 }
