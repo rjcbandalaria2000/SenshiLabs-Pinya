@@ -18,7 +18,7 @@ public class VideoManager : MonoBehaviour
 
     private void Start()
     {
-
+        //counter = 1;
         videoPlayer.clip = clips[0];
     }
 
@@ -37,7 +37,7 @@ public class VideoManager : MonoBehaviour
 
             }
         }
-       
+
     }
 
     public void NextVideo()
@@ -47,46 +47,38 @@ public class VideoManager : MonoBehaviour
             if (counter < clips.Count)
             {
                 // videoPlayer.gameObject
-                videoPlayer.clip = clips[counter];
                 counter++;
+                videoPlayer.clip = clips[counter - 1];
+                
             }
             else
             {
                 counter = clips.Count - 1;
-                videoPlayer.clip = clips[counter];
+                videoPlayer.clip = clips[counter - 1];
             }
         }
-       
+
 
     }
 
     public void PrevVideo()
     {
-       
+
         if (counter <= 0)
         {
             counter = 0;
-              videoPlayer.clip = clips[counter];
+            videoPlayer.clip = clips[counter];
         }
         else
         {
-            // counter--;
-            if (counter >= clips.Count)
-            {
-             
-                counter -= 2;
-                videoPlayer.clip = clips[counter];
-
-            }
-            else
-            {
+           
                 counter--;
-                videoPlayer.clip = clips[counter];
-            }
+                videoPlayer.clip = clips[counter - 1];
+            
 
         }
 
-    
+
 
     }
 }

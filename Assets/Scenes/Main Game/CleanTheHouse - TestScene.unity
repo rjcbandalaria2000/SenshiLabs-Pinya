@@ -6850,6 +6850,11 @@ Transform:
   m_Father: {fileID: 1410387041}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1436289454 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1505901428625156866, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+  m_PrefabInstance: {fileID: 2064771248}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1477813723
 GameObject:
   m_ObjectHideFlags: 0
@@ -9878,6 +9883,10 @@ PrefabInstance:
       propertyPath: prevArrow
       value: 
       objectReference: {fileID: 2064771252}
+    - target: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: tutorialImages.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 670568283771031146, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 20
@@ -10182,6 +10191,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -76
       objectReference: {fileID: 0}
+    - target: {fileID: 4153422935850325320, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: rawImage
+      value: 
+      objectReference: {fileID: 1436289454}
     - target: {fileID: 4153422935850325320, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: clips.Array.size
       value: 2
