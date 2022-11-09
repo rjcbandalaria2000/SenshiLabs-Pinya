@@ -15,7 +15,7 @@ public class TaskManager : MonoBehaviour
     public List<MinigameObject>     minigameObjects = new();
     //public List<PreRequisiteTask>   tasks = new();
     public List<MinigameObject>     requiredTasks = new();
-    public List<MinigameObject>     finishedTasks = new();
+   // public List<MinigameObject>     finishedTasks = new();
   
     [Header("Task UI")]
     public GameObject               taskTextPrefab;
@@ -113,6 +113,7 @@ public class TaskManager : MonoBehaviour
             {
                 tempTaskList.Add(minigameObjects[i]);
             }
+          
 
         }
         // Clear required task list 
@@ -318,5 +319,17 @@ public class TaskManager : MonoBehaviour
             Debug.Log("Is not duplicate");
         }
         return isDuplicate;
+    }
+
+    public void chechTaskStatus()
+    {
+        for(int i = 0;i < minigameObjects.Count;i++)
+        {
+            if (minigameObjects[i].hasCompleted)
+            {
+                minigameObjects[i].deactivateUnfinishState();
+            }
+            
+        }
     }
 }

@@ -19,6 +19,8 @@ public class MinigameObject : MonoBehaviour
     protected SceneChange   sceneChange;
     protected PlayerData    playerData;
     protected Coroutine     interactRoutine;
+
+    public GameObject uncompleteState;
     private void Awake()
     {
        
@@ -57,6 +59,11 @@ public class MinigameObject : MonoBehaviour
     public virtual IEnumerator InteractCoroutine(GameObject player = null)
     {
         yield return null; 
+    }
+
+    public virtual void deactivateUnfinishState()
+    {
+        uncompleteState.SetActive(false);
     }
 
     public bool CheckIfPrerequisiteFinished()

@@ -116,6 +116,11 @@ public class SleepingMinigame : MinigameObject
     {
         interactRoutine = StartCoroutine(InteractCoroutine());
     }
+
+    public void deactivateUncompleteState()
+    {
+        uncompleteState.SetActive(false);
+    }
 }
 
     
