@@ -18,6 +18,7 @@ public class CleanTheHouseManager : MinigameManager
     public int                  numberOfDustSwept = 0;
 
     private SpawnManager        spawnManager;
+    private PlayerProgress      playerProgress;
     
     private void Awake()
     {
@@ -33,6 +34,7 @@ public class CleanTheHouseManager : MinigameManager
         transitionManager = SingletonManager.Get<TransitionManager>();
         sceneChange = this.gameObject.GetComponent<SceneChange>();
         spawnManager = SingletonManager.Get<SpawnManager>();
+        playerProgress = SingletonManager.Get<PlayerProgress>();
         Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
         startMinigameRoutine = null;
         spawnManager.NumToSpawn[0] = numberOfToys;
@@ -114,6 +116,12 @@ public class CleanTheHouseManager : MinigameManager
         spawnManager.SpawnRandomNoRepeat();
         isCompleted = false;
 
+        //Count the attempt in the Progress Tracker
+        if (playerProgress)
+        {
+            playerProgress.cleanTheHouseTracker.numOfAttempts += 1;
+        }
+
     }
 
     #endregion
@@ -166,6 +174,12 @@ public class CleanTheHouseManager : MinigameManager
     {
         SingletonManager.Get<UIManager>().ActivateResultScreen();
         SingletonManager.Get<UIManager>().ActivateBadResult();
+        //Count the fail in the Progress Tracker
+        if (playerProgress)
+        {
+            playerProgress.cleanTheHouseTracker.numOfTimesFailed += 1;
+            //playerProgress.cleanTheHouseTracker.time 
+        }
         Debug.Log("Minigame lose");
     }
 
@@ -179,6 +193,11 @@ public class CleanTheHouseManager : MinigameManager
             SingletonManager.Get<UIManager>().ActivateGoodResult();
             SingletonManager.Get<PlayerData>().isCleanTheHouseFinished = true;
             Debug.Log("Minigame complete");
+            //Count the win in the Progress Tracker
+            if (playerProgress)
+            {
+                playerProgress.cleanTheHouseTracker.numOfTimesCompleted += 1;
+            }
         }
     }
 
