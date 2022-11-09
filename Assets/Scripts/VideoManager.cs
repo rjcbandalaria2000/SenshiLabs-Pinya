@@ -42,21 +42,20 @@ public class VideoManager : MonoBehaviour
 
     public void NextVideo()
     {
-        if (rawImage.activeInHierarchy)
-        {
+
             if (counter < clips.Count)
             {
                 // videoPlayer.gameObject
                 counter++;
-                videoPlayer.clip = clips[counter - 1];
+                videoPlayer.clip = clips[counter ];
                 
             }
             else
             {
                 counter = clips.Count - 1;
-                videoPlayer.clip = clips[counter - 1];
+                videoPlayer.clip = clips[counter ];
             }
-        }
+        
 
 
     }
@@ -73,7 +72,7 @@ public class VideoManager : MonoBehaviour
         {
            
                 counter--;
-                videoPlayer.clip = clips[counter - 1];
+                videoPlayer.clip = clips[counter];
             
 
         }

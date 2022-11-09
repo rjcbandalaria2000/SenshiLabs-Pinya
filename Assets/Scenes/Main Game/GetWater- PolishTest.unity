@@ -1918,18 +1918,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7072823945728941641, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: clips.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7072823945728941641, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: clips.Array.data[0]
       value: 
-      objectReference: {fileID: 32900000, guid: 23edc532855ee4d48b4dd4746febebc7, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 7072823945728941641, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: clips.Array.data[1]
       value: 
-      objectReference: {fileID: 32900000, guid: d252ce1ce5b14df40b72c71c27dfb009, type: 3}
+      objectReference: {fileID: 32900000, guid: 23edc532855ee4d48b4dd4746febebc7, type: 3}
     - target: {fileID: 7072823945728941641, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
       propertyPath: clips.Array.data[2]
+      value: 
+      objectReference: {fileID: 32900000, guid: d252ce1ce5b14df40b72c71c27dfb009, type: 3}
+    - target: {fileID: 7072823945728941641, guid: 91f46c70ac33bbf409877499a233f7d2, type: 3}
+      propertyPath: clips.Array.data[3]
       value: 
       objectReference: {fileID: 32900000, guid: 46c877a65826c2349a3d8684aa41526b, type: 3}
     m_RemovedComponents: []
