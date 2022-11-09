@@ -178,7 +178,7 @@ public class CleanTheHouseManager : MinigameManager
         if (playerProgress)
         {
             playerProgress.cleanTheHouseTracker.numOfTimesFailed += 1;
-            //playerProgress.cleanTheHouseTracker.time 
+            playerProgress.cleanTheHouseTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
         }
         Debug.Log("Minigame lose");
     }
@@ -197,6 +197,7 @@ public class CleanTheHouseManager : MinigameManager
             if (playerProgress)
             {
                 playerProgress.cleanTheHouseTracker.numOfTimesCompleted += 1;
+                playerProgress.cleanTheHouseTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
             }
         }
     }
