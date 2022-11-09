@@ -1281,6 +1281,34 @@ PrefabInstance:
       value: 'Be careful to pick the pineapple food, she will get dizzy when she
         receives it!  '
       objectReference: {fileID: 0}
+    - target: {fileID: 2174895158130304438, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174895158130304438, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174895158130304438, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1403501169}
+    - target: {fileID: 2174895158130304438, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174895158130304438, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: PrevVideo
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174895158130304438, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: VideoManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174895158130304438, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2174895158145102627, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: m_Name
       value: Tutorial Prompt
@@ -1401,9 +1429,37 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ExitTutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 2174895159123499892, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174895159123499892, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174895159123499892, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1403501169}
+    - target: {fileID: 2174895159123499892, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174895159123499892, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: NextVideo
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174895159123499892, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: VideoManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174895159123499892, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4153422935850325320, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: clips.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4153422935850325320, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: clips.Array.data[0]
@@ -1411,6 +1467,10 @@ PrefabInstance:
       objectReference: {fileID: 32900000, guid: 9eadd97194ef5ca4198d159a7a6da069, type: 3}
     - target: {fileID: 4153422935850325320, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153422935850325320, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: clips.Array.data[2]
       value: 
       objectReference: {fileID: 32900000, guid: 14700eadd73e3b040bd46d2383ef60e9, type: 3}
     - target: {fileID: 6355065629241791800, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
@@ -5033,6 +5093,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2174895158145102627, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
   m_PrefabInstance: {fileID: 504938702}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1403501169 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4153422935850325320, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+  m_PrefabInstance: {fileID: 504938702}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403501167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 678ed9b2887875341a5a31132b380199, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1468323993
 PrefabInstance:
   m_ObjectHideFlags: 0
