@@ -22,8 +22,9 @@ public class CutsceneManager : MonoBehaviour
     }
     void Start()
     {
-      //  pageImage.sprite = spritePages[0];
-    //    text.text = story[0];
+        pageImage.Play(spritePages[0].name);
+        //    text.text = story[0];
+
     }
 
     public void OnNextPage()
