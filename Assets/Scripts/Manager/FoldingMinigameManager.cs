@@ -5,32 +5,29 @@ using UnityEngine.Assertions;
 
 public class FoldingMinigameManager : MinigameManager
 {
-
-    public Clothes ClothesComponent;
-    public GameObject spawnClothes;
-    public int clothesNum;
+    public Clothes              ClothesComponent;
+    public GameObject           spawnClothes;
+    public int                  clothesNum;
 
     [Header("Countdown Timer")]
     public float GameStartTime = 3f;
     public DisplayGameCountdown CountdownTimerUI;
 
     [Header("Position")]
-    public GameObject startPos;
-    public GameObject middlePos;
-    public GameObject endPos;
+    public GameObject           startPos;
+    public GameObject           middlePos;
+    public GameObject           endPos;
+
+    private PlayerProgress      playerProgress; 
 
     private void Awake()
     {
         SingletonManager.Register(this);
-
-       
     }
 
     // Start is called before the first frame update
     void Start()
     {
-
-       
         Initialize();
         //  Events.OnObjectiveUpdate.Invoke();
         Events.UpdateScore.Invoke();
@@ -49,14 +46,12 @@ public class FoldingMinigameManager : MinigameManager
     {
         transitionManager = SingletonManager.Get<TransitionManager>();
         sceneChange = this.gameObject.GetComponent<SceneChange>();
-
-       
+        playerProgress = SingletonManager.Get<PlayerProgress>();
 
         spawnClothes.GetComponent<Clothes>().startPos = startPos;
         spawnClothes.GetComponent<Clothes>().middlePos = middlePos;
         spawnClothes.GetComponent<Clothes>().endPos = endPos;
         
-
         SingletonManager.Get<UIManager>().ActivateMiniGameMainMenu();
         Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
         Events.OnSceneChange.AddListener(OnSceneChange);
@@ -70,6 +65,8 @@ public class FoldingMinigameManager : MinigameManager
         Events.OnSceneChange.RemoveListener(OnSceneChange);
 
     }
+
+    #region Starting Minigame Functions
 
     public override void StartMinigame()
     {
@@ -116,12 +113,19 @@ public class FoldingMinigameManager : MinigameManager
         SingletonManager.Get<UIManager>().ActivateMiniGameTimerUI();
         SingletonManager.Get<MiniGameTimer>().StartCountdownTimer();
 
-
+        //Count the attempt in player progress 
+        if (playerProgress)
+        {
+            playerProgress.foldTheClothesTracker.numOfAttempts += 1; 
+        }
  
         Debug.Log("Refresh Score board");
         //Spawn objects
 
         isCompleted = false;
+
+        
+
     }
 
 
@@ -146,38 +150,62 @@ public class FoldingMinigameManager : MinigameManager
 
     }
 
+    #endregion
+
+    #region Minigame Checkers
     public override void CheckIfFinished()
     {
         if (ClothesComponent.clothes <= 0)
         {
-            Debug.Log("Minigame complete");
-            SingletonManager.Get<UIManager>().ActivateResultScreen();
-            SingletonManager.Get<UIManager>().ActivateGoodResult();
-            SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
-            SingletonManager.Get<PlayerData>().isFoldingClothesFinished = true;
+            OnWin();
         }
         else
         {
-            Debug.Log("Minigame lose");
-            SingletonManager.Get<UIManager>().ActivateResultScreen();
-            SingletonManager.Get<UIManager>().ActivateBadResult();
-            SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
+            OnMinigameLose();
         }
 
     }
 
-    public void continueScene()
+    public override void OnWin()
     {
         Debug.Log("Minigame complete");
-        exitMinigameRoutine = StartCoroutine(ExitMinigame());
+        SingletonManager.Get<UIManager>().ActivateResultScreen();
+        SingletonManager.Get<UIManager>().ActivateGoodResult();
+        SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
+        SingletonManager.Get<PlayerData>().isFoldingClothesFinished = true;
+        if (playerProgress)
+        {
+            playerProgress.foldTheClothesTracker.numOfTimesCompleted += 1;
+            playerProgress.foldTheClothesTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
+        }
     }
+
+    public override void OnMinigameLose()
+    {
+        Debug.Log("Minigame lose");
+        SingletonManager.Get<UIManager>().ActivateResultScreen();
+        SingletonManager.Get<UIManager>().ActivateBadResult();
+        SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
+        if (playerProgress)
+        {
+            playerProgress.foldTheClothesTracker.numOfTimesFailed += 1;
+            playerProgress.foldTheClothesTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
+        }
+    }
+    #endregion
+
+    #region Exit Minigame Functions 
 
     public void gameOver()
     {
         Debug.Log("Minigame lose");
         exitMinigameRoutine = StartCoroutine(ExitMinigame());
     }
-
+    public void continueScene()
+    {
+        Debug.Log("Minigame complete");
+        exitMinigameRoutine = StartCoroutine(ExitMinigame());
+    }
     protected override IEnumerator ExitMinigame()
     {
         // Play close animation
@@ -205,5 +233,7 @@ public class FoldingMinigameManager : MinigameManager
         sceneChange.OnChangeScene(NameOfNextScene);
         yield return null;
     }
+    #endregion
+
 
 }

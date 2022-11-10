@@ -16,6 +16,7 @@ public class GetWaterManager : MinigameManager
     public int          RequiredNumSwipes = 3;
     public int          NumOfSwipes = 0;
 
+    private PlayerProgress playerProgress;
     private void Awake()
     {
         //Trying this solution since
@@ -49,6 +50,7 @@ public class GetWaterManager : MinigameManager
         transitionManager = SingletonManager.Get<TransitionManager>();
         isCompleted= false; 
         Events.OnObjectiveUpdate.Invoke();
+        playerProgress = SingletonManager.Get<PlayerProgress>();
     }
 
    
@@ -111,7 +113,15 @@ public class GetWaterManager : MinigameManager
         well.UI.SetActive(true);
         well.CanSwipeDown = true;
         Events.OnObjectiveUpdate.Invoke();
+        
+
+        //Count the attempt in player progress 
+        if (playerProgress)
+        {
+            playerProgress.getWaterTracker.numOfAttempts += 1; 
+        }
         Debug.Log("Refresh Score board");
+
     }
 
     #endregion
@@ -167,6 +177,11 @@ public class GetWaterManager : MinigameManager
             SingletonManager.Get<UIManager>().ActivateResultScreen();
             SingletonManager.Get<UIManager>().ActivateGoodResult();
             SingletonManager.Get<PlayerData>().isGetWaterFinished = true;
+            if (playerProgress) 
+            {
+                playerProgress.getWaterTracker.numOfTimesCompleted += 1;
+                playerProgress.getWaterTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            }
             Debug.Log("Minigame complete");
         }
     }
@@ -177,6 +192,11 @@ public class GetWaterManager : MinigameManager
         SingletonManager.Get<UIManager>().ActivateResultScreen();
         SingletonManager.Get<UIManager>().ActivateBadResult();
         Debug.Log("Minigame lose");
+        if (playerProgress)
+        {
+            playerProgress.getWaterTracker.numOfTimesFailed += 1;
+            playerProgress.getWaterTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
+        }
     } 
     
     public void CheckIfComplete()

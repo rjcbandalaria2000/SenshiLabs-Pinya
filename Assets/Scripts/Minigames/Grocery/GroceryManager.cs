@@ -43,6 +43,7 @@ public class GroceryManager : MinigameManager //Might rename this
     public DisplayGameCountdown CountdownTimerUI;
     
     private Coroutine setUpGroceryRoutine;
+    private PlayerProgress playerProgress;
 
     private void Awake()
     {
@@ -121,6 +122,11 @@ public class GroceryManager : MinigameManager //Might rename this
             SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
             SingletonManager.Get<PlayerData>().isGroceryFinished = true;
             objectList.SetActive(false);
+            if (playerProgress)
+            {
+                playerProgress.groceryTracker.numOfTimesCompleted += 1;
+                playerProgress.groceryTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            }
         }
 
     }
@@ -130,14 +136,18 @@ public class GroceryManager : MinigameManager //Might rename this
 
         SingletonManager.Get<UIManager>().ActivateResultScreen();
         SingletonManager.Get<UIManager>().ActivateBadResult();
-
+        if (playerProgress)
+        {
+            playerProgress.groceryTracker.numOfTimesFailed += 1;
+            playerProgress.groceryTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
+        }
 
     }
 
     public override void Initialize()
     {
         transitionManager = SingletonManager.Get<TransitionManager>();
-
+        playerProgress = SingletonManager.Get<PlayerProgress>();
         SingletonManager.Get<UIManager>().ActivateMiniGameMainMenu();
         Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
         Events.OnSceneChange.AddListener(OnSceneChange);
@@ -215,14 +225,21 @@ public class GroceryManager : MinigameManager //Might rename this
         SingletonManager.Get<UIManager>().DeactivateGameCountdown();
         SingletonManager.Get<UIManager>().ActivateMiniGameTimerUI();
         SingletonManager.Get<MiniGameTimer>().StartCountdownTimer();
+
+        //Count the attempt in player progress 
+        if (playerProgress)
+        {
+            playerProgress.groceryTracker.numOfAttempts += 1; 
+        }
         
-       
        
         //Events.OnObjectiveUpdate.Invoke();
         Debug.Log("Refresh Score board");
         //Spawn objects
       
         isCompleted = false;
+
+        
     }
 
     public IEnumerator initialGrocery()
