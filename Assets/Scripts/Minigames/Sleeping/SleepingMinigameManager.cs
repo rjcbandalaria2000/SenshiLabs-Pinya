@@ -20,7 +20,7 @@ public class SleepingMinigameManager : MinigameManager
     public DisplayGameCountdown CountdownTimerUI;
 
     private SpawnManager        spawnManager;
-
+    private PlayerProgress      playerProgress;
 
     private void Awake()
     {
@@ -84,19 +84,7 @@ public class SleepingMinigameManager : MinigameManager
         }
         else if(PlayerPoints <= RequiredPoints && SingletonManager.Get<MiniGameTimer>().GetTimer() <= 0)
         {
-            // spawnManager.StopTimedUnlimitedSpawnBox();
-            spawnManager.stopSpawnChance();
-            Debug.Log("Minigame Fail");
-            basket.SetActive(false);
-            //if (sceneChange == null) { return; }
-            //if (NameOfNextScene == null) { return; }
-            SingletonManager.Get<UIManager>().ActivateResultScreen();
-            SingletonManager.Get<UIManager>().ActivateBadResult();
-            SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
-
-            //SingletonManager.Remove<SleepingMinigameManager>();
-            //SingletonManager.Remove<SpawnManager>();
-
+            OnMinigameLose();
         }
     }
 
@@ -149,6 +137,12 @@ public class SleepingMinigameManager : MinigameManager
         //Spawn objects
 
         isCompleted = false;
+
+        //Count the attempt in Player progress
+        if (playerProgress)
+        {
+            playerProgress.sleepTracker.numOfAttempts += 1;
+        }
     }
 
     public void continueButton()
@@ -204,7 +198,33 @@ public class SleepingMinigameManager : MinigameManager
         SingletonManager.Get<UIManager>().ActivateResultScreen();
         SingletonManager.Get<UIManager>().ActivateGoodResult();
         SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
-        
+
+        if (playerProgress)
+        {
+            playerProgress.sleepTracker.numOfTimesCompleted += 1;
+            playerProgress.sleepTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
+        }
+        //SingletonManager.Remove<SleepingMinigameManager>();
+        //SingletonManager.Remove<SpawnManager>();
+    }
+
+    public override void OnMinigameLose()
+    {
+        // spawnManager.StopTimedUnlimitedSpawnBox();
+        spawnManager.stopSpawnChance();
+        Debug.Log("Minigame Fail");
+        basket.SetActive(false);
+        //if (sceneChange == null) { return; }
+        //if (NameOfNextScene == null) { return; }
+        SingletonManager.Get<UIManager>().ActivateResultScreen();
+        SingletonManager.Get<UIManager>().ActivateBadResult();
+        SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
+
+        if (playerProgress)
+        {
+            playerProgress.sleepTracker.numOfTimesFailed += 1;
+            playerProgress.sleepTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
+        }
         //SingletonManager.Remove<SleepingMinigameManager>();
         //SingletonManager.Remove<SpawnManager>();
     }
