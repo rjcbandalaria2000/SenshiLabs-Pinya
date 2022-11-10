@@ -14,7 +14,14 @@ public class CleanTheHouseMinigame : MinigameObject
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(this.gameObject.activeSelf == true && hasCompleted == false)
+        {
+            uncompleteState.SetActive(true);
+        }
+        else
+        {
+            uncompleteState.SetActive(false);
+        }
     }
 
     public override void Initialize()
