@@ -6041,7 +6041,7 @@ PrefabInstance:
       objectReference: {fileID: 553878873}
     - target: {fileID: 4153422935850325320, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: clips.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4153422935850325320, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: clips.Array.data[0]
@@ -6051,6 +6051,10 @@ PrefabInstance:
       propertyPath: clips.Array.data[1]
       value: 
       objectReference: {fileID: 32900000, guid: 5440278edd318bc4d9dbf91e7214ef2f, type: 3}
+    - target: {fileID: 4153422935850325320, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
+      propertyPath: clips.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8179498856002177307, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: m_text
       value: /
