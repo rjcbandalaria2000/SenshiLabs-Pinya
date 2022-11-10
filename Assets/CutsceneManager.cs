@@ -8,8 +8,8 @@ public class CutsceneManager : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public Image pageImage;
-    public List<Sprite> spritePages;
+    public Animator pageImage;
+    public List<AnimationClip> spritePages;
     public int pageCount;
    // public List<string> story;
     //public TextMeshProUGUI text;
@@ -22,23 +22,33 @@ public class CutsceneManager : MonoBehaviour
     }
     void Start()
     {
-        pageImage.sprite = spritePages[0];
-    //    text.text = story[0];
+        pageImage.Play(spritePages[0].name);
+        //    text.text = story[0];
+
     }
 
     public void OnNextPage()
     {
-        if(pageCount < spritePages.Count -1)
+      //  if(pageCount < spritePages.Count -1)
+      //  {
+      //      pageCount++;
+      //      pageImage.sprite = spritePages[pageCount];
+      ////      text.text = story[pageCount];
+      //  }
+      //  else
+      //  {
+      //      //Move Scene
+      //      sceneChange.OnChangeScene(sceneName);
+      //  }
+      
+        if(pageCount < spritePages.Count - 1)
         {
             pageCount++;
-            pageImage.sprite = spritePages[pageCount];
-      //      text.text = story[pageCount];
+            pageImage.Play(spritePages[pageCount].name);
         }
         else
         {
-            //Move Scene
             sceneChange.OnChangeScene(sceneName);
         }
-      
     }
 }
