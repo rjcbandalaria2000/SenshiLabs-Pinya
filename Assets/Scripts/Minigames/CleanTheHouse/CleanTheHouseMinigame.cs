@@ -16,11 +16,16 @@ public class CleanTheHouseMinigame : MinigameObject
     {
         if(this.gameObject.activeSelf == true && hasCompleted == false)
         {
-            uncompleteState.SetActive(true);
+            if (uncompleteState != null)
+            {
+                uncompleteState.SetActive(true);
+            }
+          
         }
         else
         {
-            uncompleteState.SetActive(false);
+            if (uncompleteState != null)
+                uncompleteState.SetActive(false);
         }
     }
 

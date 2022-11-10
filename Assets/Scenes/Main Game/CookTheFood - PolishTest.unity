@@ -779,7 +779,7 @@ PrefabInstance:
       objectReference: {fileID: 1869729411}
     - target: {fileID: 8737040125071915618, guid: 888fba8b9858f884f89759d4f8510ca9, type: 3}
       propertyPath: clips.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8737040125071915618, guid: 888fba8b9858f884f89759d4f8510ca9, type: 3}
       propertyPath: clips.Array.data[0]
@@ -789,6 +789,10 @@ PrefabInstance:
       propertyPath: clips.Array.data[1]
       value: 
       objectReference: {fileID: 32900000, guid: a419faa2e55c9ba42bdf1cee01db565e, type: 3}
+    - target: {fileID: 8737040125071915618, guid: 888fba8b9858f884f89759d4f8510ca9, type: 3}
+      propertyPath: clips.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 888fba8b9858f884f89759d4f8510ca9, type: 3}
 --- !u!1 &198629087
