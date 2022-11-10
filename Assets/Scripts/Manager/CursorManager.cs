@@ -107,7 +107,7 @@ public class CursorManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             if (EventSystem.current.IsPointerOverGameObject()) {
-                Debug.Log("There is no game object");
+            //    Debug.Log("There is no game object");
                 
                 return; }
             if (defaultCursorPressDownTexture == null) { return; }

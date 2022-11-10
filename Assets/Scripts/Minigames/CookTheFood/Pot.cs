@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Pot : MonoBehaviour
 {
@@ -38,11 +39,11 @@ public class Pot : MonoBehaviour
         Ingredient collidedIngredient = collision.gameObject.GetComponent<Ingredient>();
         if (collidedIngredient)
         {
-            Debug.Log("Collided with ingredient");
+          //  Debug.Log("Collided with ingredient");
             if(collidedIngredient.IsPickedUp && !collidedIngredient.IsHolding)
             {
                 sFX.PlaySFX(insertFoodSFX);
-                Debug.Log("Accept Ingredient");
+            //    Debug.Log("Accept Ingredient");
                 CurrentIngredientCount++;
                 CheckAllIngredients();
                 collidedIngredient.gameObject.SetActive(false);
@@ -96,6 +97,8 @@ public class Pot : MonoBehaviour
         if(midCookedImage == null) { return; }
         if(potCover == null) { return;} 
         if(cookedImage == null) { return; }
+
+        Debug.Log(stageIndex);
         switch (stageIndex)
         {
             case 0:
@@ -106,21 +109,24 @@ public class Pot : MonoBehaviour
                 break;
             case 1:
                 unCookedImage.SetActive(true);
-                midCookedImage.SetActive(false);
-                cookedImage.SetActive(false);
+               // midCookedImage.SetActive(true);
+                //cookedImage.SetActive(false);
                 potCover.SetActive(true);
                 break;
             case 2:
+                potCover.GetComponent<SpriteRenderer>().sortingOrder = 4;
                 unCookedImage.SetActive(true);
                 midCookedImage.SetActive(true);
-                cookedImage.SetActive(false);
-                potCover.SetActive(true);
+                cookedImage.SetActive(true);
+              
+                potCover.transform.DOMoveY(2.70f, 1f, true);
+               // potCover.SetActive(false);
                 break;
             case 3:
                 unCookedImage.SetActive(true);
                 midCookedImage.SetActive(true);
                 cookedImage.SetActive(true);
-                potCover.SetActive(false);
+              
                 break;
             default:
                 unCookedImage.SetActive(false);

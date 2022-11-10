@@ -26,7 +26,7 @@ public class TempertureTracker : MonoBehaviour
         if (collidedTemp)
         {
             parentTempControl.ChosenTemp = collidedTemp.gameObject;
-            Debug.Log("Collided temp");
+          //  Debug.Log("Collided temp");
         }
     }
 
