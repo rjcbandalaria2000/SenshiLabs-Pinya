@@ -161,7 +161,6 @@ public class GroceryManager : MinigameManager //Might rename this
     {
         Events.OnObjectiveUpdate.RemoveListener(CheckIfFinished);
         Events.OnSceneChange.RemoveListener(OnSceneChange);
-
     }
 
     public override void StartMinigame()

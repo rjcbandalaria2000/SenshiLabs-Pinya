@@ -16,6 +16,8 @@ public class HideSeekManager : MinigameManager
     public float GameStartTime = 3f;
     public DisplayGameCountdown CountdownTimerUI;
 
+    private PlayerProgress playerProgress;
+
     private void Start()
     {
         count = 0;
@@ -33,7 +35,7 @@ public class HideSeekManager : MinigameManager
     {
         transitionManager = SingletonManager.Get<TransitionManager>();
         sceneChange = this.gameObject.GetComponent<SceneChange>();
-       
+        playerProgress = SingletonManager.Get<PlayerProgress>();
 
         SingletonManager.Get<UIManager>().ActivateMiniGameMainMenu();
         Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
@@ -63,22 +65,42 @@ public class HideSeekManager : MinigameManager
     {
         if (score >= spawnPoints.Count)
         {
-            Debug.Log("Minigame complete");
-            SingletonManager.Get<UIManager>().ActivateResultScreen();
-            SingletonManager.Get<UIManager>().ActivateGoodResult();
-            SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
+            OnWin();
         }
         else if(SingletonManager.Get<MiniGameTimer>().GetTimer() <= 0)
         {
-            Debug.Log("Minigame lose");
-            SingletonManager.Get<UIManager>().ActivateResultScreen();
-            SingletonManager.Get<UIManager>().ActivateBadResult();
-            SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
+           OnMinigameLose();
         }
 
     }
 
-   
+    public override void OnWin()
+    {
+        Debug.Log("Minigame complete");
+        SingletonManager.Get<UIManager>().ActivateResultScreen();
+        SingletonManager.Get<UIManager>().ActivateGoodResult();
+        SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
+        if (playerProgress)
+        {
+            playerProgress.hideSeekTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.hideSeekTracker.numOfTimesCompleted += 1;
+        }
+    }
+
+    public override void OnMinigameLose()
+    {
+        Debug.Log("Minigame lose");
+        SingletonManager.Get<UIManager>().ActivateResultScreen();
+        SingletonManager.Get<UIManager>().ActivateBadResult();
+        SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
+        if (playerProgress)
+        {
+            playerProgress.hideSeekTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.hideSeekTracker.numOfTimesFailed += 1;
+        }
+    }
+
+
     public override void StartMinigame()
     {
 
