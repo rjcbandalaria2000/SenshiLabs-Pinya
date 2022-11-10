@@ -18,6 +18,8 @@ public class TagManager : MinigameManager
     
     public UIManager uIManager;
 
+    private PlayerProgress playerProgress;
+
     private void Awake()
     {
         SingletonManager.Register(this);
@@ -33,6 +35,7 @@ public class TagManager : MinigameManager
     {
         transitionManager = SingletonManager.Get<TransitionManager>();
         sceneChange = this.gameObject.GetComponent<SceneChange>();
+        playerProgress = SingletonManager.Get<PlayerProgress>();    
 
         uIManager.ActivateMiniGameMainMenu();
         Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
@@ -98,6 +101,11 @@ public class TagManager : MinigameManager
         //Debug.Log("Refresh Score board");
         //Spawn objects
 
+        if (playerProgress)
+        {
+            playerProgress.tagTracker.numOfAttempts += 1;
+        }
+
         isCompleted = false;
     }
 
@@ -111,6 +119,12 @@ public class TagManager : MinigameManager
             uIManager.ActivateGoodResult();
             SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
             spawnedPlayer.gameObject.SetActive(false);
+            if (playerProgress)
+            {
+                playerProgress.tagTracker.numOfTimesCompleted += 1;
+                playerProgress.tagTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            }
+
         }
         else
         {
@@ -120,9 +134,15 @@ public class TagManager : MinigameManager
             uIManager.ActivateBadResult();
             SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
             spawnedPlayer.gameObject.SetActive(false);
+            if (playerProgress)
+            {
+                playerProgress.tagTracker.numOfTimesFailed += 1;
+                playerProgress.tagTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            }
         }
 
     }
+
     IEnumerator initializeMiniGame()
     {
         GameObject newPlayer = Instantiate(player.gameObject, playerPos.position, Quaternion.identity);
