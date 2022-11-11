@@ -11989,15 +11989,28 @@ MonoBehaviour:
   - But be careful, each time you press it your health gets depleted!
   - 'Be careful of too much pestering for question to your sick mom or else, you
     will be turn into a mysterious food!  '
-  tutorialImages: []
+  tutorialImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   pageCount: 0
   textGO: {fileID: 2174895157989061256}
   imageGO: {fileID: 2174895158253153285}
   currentPage: {fileID: 2438997712282354141}
   maxPage: {fileID: 2174895158790376352}
   videoImage: {fileID: 5527241467063017171}
-  nextArrow: {fileID: 2174895158873629307}
-  prevArrow: {fileID: 2174895159101204484}
+  nextArrow: {fileID: 2174895159101204484}
+  prevArrow: {fileID: 2174895158173537990}
 --- !u!1 &2145497557
 GameObject:
   m_ObjectHideFlags: 0
@@ -12544,7 +12557,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!223 &2174895158166863956
 Canvas:
   m_ObjectHideFlags: 0
@@ -13928,8 +13941,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clips:
   - {fileID: 32900000, guid: 40af659b2250e7148bcc4d27ddec35f5, type: 3}
+  - {fileID: 32900000, guid: 40af659b2250e7148bcc4d27ddec35f5, type: 3}
+  - {fileID: 32900000, guid: 40af659b2250e7148bcc4d27ddec35f5, type: 3}
+  - {fileID: 32900000, guid: 40af659b2250e7148bcc4d27ddec35f5, type: 3}
+  - {fileID: 32900000, guid: 40af659b2250e7148bcc4d27ddec35f5, type: 3}
+  - {fileID: 32900000, guid: 40af659b2250e7148bcc4d27ddec35f5, type: 3}
+  - {fileID: 32900000, guid: 40af659b2250e7148bcc4d27ddec35f5, type: 3}
+  - {fileID: 32900000, guid: 40af659b2250e7148bcc4d27ddec35f5, type: 3}
+  - {fileID: 32900000, guid: 40af659b2250e7148bcc4d27ddec35f5, type: 3}
+  - {fileID: 32900000, guid: 40af659b2250e7148bcc4d27ddec35f5, type: 3}
+  - {fileID: 32900000, guid: 40af659b2250e7148bcc4d27ddec35f5, type: 3}
+  - {fileID: 32900000, guid: 40af659b2250e7148bcc4d27ddec35f5, type: 3}
   counter: 0
-  rawImage: {fileID: 0}
+  rawImage: {fileID: 1505901428579817586}
 --- !u!1001 &4332310455667157454
 PrefabInstance:
   m_ObjectHideFlags: 0
