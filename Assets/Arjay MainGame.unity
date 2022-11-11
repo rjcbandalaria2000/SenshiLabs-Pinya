@@ -11996,8 +11996,8 @@ MonoBehaviour:
   currentPage: {fileID: 2438997712282354141}
   maxPage: {fileID: 2174895158790376352}
   videoImage: {fileID: 5527241467063017171}
-  nextArrow: {fileID: 2174895158873629307}
-  prevArrow: {fileID: 2174895159101204484}
+  nextArrow: {fileID: 2174895159101204484}
+  prevArrow: {fileID: 2174895158173537990}
 --- !u!1 &2145497557
 GameObject:
   m_ObjectHideFlags: 0
@@ -14484,7 +14484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8444550675331691413, guid: 290bbffabefb435418b09d4da2e53dc6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8444550675331691419, guid: 290bbffabefb435418b09d4da2e53dc6, type: 3}
       propertyPath: m_RootOrder
