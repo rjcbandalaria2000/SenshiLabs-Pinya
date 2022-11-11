@@ -82,7 +82,8 @@ public class HideSeekManager : MinigameManager
         SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
         if (playerProgress)
         {
-            playerProgress.hideSeekTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.hideSeekTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.hideSeekTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
             playerProgress.hideSeekTracker.numOfTimesCompleted += 1;
         }
     }
@@ -95,7 +96,8 @@ public class HideSeekManager : MinigameManager
         SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
         if (playerProgress)
         {
-            playerProgress.hideSeekTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.hideSeekTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.hideSeekTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
             playerProgress.hideSeekTracker.numOfTimesFailed += 1;
         }
     }

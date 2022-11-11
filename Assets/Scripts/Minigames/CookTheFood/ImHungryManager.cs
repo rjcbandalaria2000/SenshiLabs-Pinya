@@ -149,7 +149,8 @@ public class ImHungryManager : MinigameManager
         SingletonManager.Get<PlayerData>().isImHungryFinished = true;
         if (playerProgress)
         {
-            playerProgress.imHungryTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.imHungryTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.imHungryTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
             playerProgress.imHungryTracker.numOfTimesCompleted += 1;
         }
         Debug.Log("Minigame complete");
@@ -162,7 +163,8 @@ public class ImHungryManager : MinigameManager
         SingletonManager.Get<UIManager>().ActivateBadResult();
         if (playerProgress)
         {
-            playerProgress.imHungryTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.imHungryTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.imHungryTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
             playerProgress.imHungryTracker.numOfTimesFailed += 1;
         }
         Debug.Log("Minigame lose");

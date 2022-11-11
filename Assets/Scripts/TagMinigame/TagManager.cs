@@ -122,7 +122,8 @@ public class TagManager : MinigameManager
             if (playerProgress)
             {
                 playerProgress.tagTracker.numOfTimesCompleted += 1;
-                playerProgress.tagTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
+                playerProgress.tagTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
+                playerProgress.tagTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
             }
 
         }
@@ -137,7 +138,8 @@ public class TagManager : MinigameManager
             if (playerProgress)
             {
                 playerProgress.tagTracker.numOfTimesFailed += 1;
-                playerProgress.tagTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
+                playerProgress.tagTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
+                playerProgress.tagTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
             }
         }
 

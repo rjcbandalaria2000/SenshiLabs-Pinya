@@ -208,7 +208,8 @@ public class WashTheDishesManager : MinigameManager
         SingletonManager.Get<PlayerData>().isWashTheDishesFinished = true;
         if (playerProgress)
         {
-            playerProgress.washTheDishesTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.washTheDishesTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.washTheDishesTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
             playerProgress.washTheDishesTracker.numOfTimesCompleted += 1;
         }
 
@@ -227,7 +228,8 @@ public class WashTheDishesManager : MinigameManager
         }
         if (playerProgress)
         {
-            playerProgress.washTheDishesTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.washTheDishesTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.washTheDishesTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
             playerProgress.washTheDishesTracker.numOfTimesFailed += 1;
         }
     }

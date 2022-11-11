@@ -6,7 +6,8 @@ using UnityEngine;
 public struct ScoreTracker
 {
     public float score;
-    public float time;
+    public float timeRemaining;
+    public float timeElapsed;
     public int numOfTimesCompleted;
     public int numOfTimesFailed;
     public int numOfAttempts;
@@ -31,11 +32,6 @@ public class PlayerProgress : MonoBehaviour
     private void Awake()
     {
         SingletonManager.Register(this);
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     

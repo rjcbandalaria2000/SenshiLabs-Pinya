@@ -125,7 +125,8 @@ public class GroceryManager : MinigameManager //Might rename this
             if (playerProgress)
             {
                 playerProgress.groceryTracker.numOfTimesCompleted += 1;
-                playerProgress.groceryTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
+                playerProgress.groceryTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
+                playerProgress.groceryTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
             }
         }
 
@@ -139,7 +140,8 @@ public class GroceryManager : MinigameManager //Might rename this
         if (playerProgress)
         {
             playerProgress.groceryTracker.numOfTimesFailed += 1;
-            playerProgress.groceryTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.groceryTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.groceryTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
         }
 
     }

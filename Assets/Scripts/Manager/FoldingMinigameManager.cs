@@ -176,7 +176,8 @@ public class FoldingMinigameManager : MinigameManager
         if (playerProgress)
         {
             playerProgress.foldTheClothesTracker.numOfTimesCompleted += 1;
-            playerProgress.foldTheClothesTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.foldTheClothesTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.foldTheClothesTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
         }
     }
 
@@ -189,7 +190,8 @@ public class FoldingMinigameManager : MinigameManager
         if (playerProgress)
         {
             playerProgress.foldTheClothesTracker.numOfTimesFailed += 1;
-            playerProgress.foldTheClothesTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.foldTheClothesTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.foldTheClothesTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
         }
     }
     #endregion

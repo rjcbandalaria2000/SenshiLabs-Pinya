@@ -202,7 +202,8 @@ public class SleepingMinigameManager : MinigameManager
         if (playerProgress)
         {
             playerProgress.sleepTracker.numOfTimesCompleted += 1;
-            playerProgress.sleepTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.sleepTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.sleepTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
         }
         //SingletonManager.Remove<SleepingMinigameManager>();
         //SingletonManager.Remove<SpawnManager>();
@@ -223,7 +224,8 @@ public class SleepingMinigameManager : MinigameManager
         if (playerProgress)
         {
             playerProgress.sleepTracker.numOfTimesFailed += 1;
-            playerProgress.sleepTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.sleepTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.sleepTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
         }
         //SingletonManager.Remove<SleepingMinigameManager>();
         //SingletonManager.Remove<SpawnManager>();

@@ -180,7 +180,8 @@ public class GetWaterManager : MinigameManager
             if (playerProgress) 
             {
                 playerProgress.getWaterTracker.numOfTimesCompleted += 1;
-                playerProgress.getWaterTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
+                playerProgress.getWaterTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
+                playerProgress.getWaterTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
             }
             Debug.Log("Minigame complete");
         }
@@ -195,7 +196,8 @@ public class GetWaterManager : MinigameManager
         if (playerProgress)
         {
             playerProgress.getWaterTracker.numOfTimesFailed += 1;
-            playerProgress.getWaterTracker.time = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.getWaterTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.getWaterTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
         }
     } 
     
