@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Constants
 {
-    public static int WIN_VALUE = 0;
+    public const int GOOD_ENDING_REQUIREMENT = 10;
 }

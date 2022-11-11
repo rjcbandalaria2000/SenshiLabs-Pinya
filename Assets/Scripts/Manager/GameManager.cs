@@ -30,12 +30,12 @@ public class GameManager : MonoBehaviour
     private TransitionManager       transitionManager;
     private Coroutine               startGameRoutine;
     private SceneChange             sceneChange;
-
+    private PlayerProgress          playerProgress;
     private void Awake()
     {
         SingletonManager.Register(this);
         sceneChange = this.GetComponent<SceneChange>();
-        
+        playerProgress = SingletonManager.Get<PlayerProgress>();
         currentTime = maxTime;
         Events.OnPinyaEmpty.AddListener(GameLose);
         Events.OnSceneChange.AddListener(OnSceneChange);
