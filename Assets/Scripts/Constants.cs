@@ -4,5 +4,7 @@ using UnityEngine;
 
 public class Constants
 {
-    public const int GOOD_ENDING_REQUIREMENT = 10;
+    public const float GOOD_ENDING_REQUIREMENT = 10f;
+    public const int NUM_OF_MAIN_TASKS = 7;
+    public const int NUM_OF_MOTIVATION_TASKS = 3;
 }

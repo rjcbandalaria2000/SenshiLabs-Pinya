@@ -34,6 +34,19 @@ public class PlayerProgress : MonoBehaviour
         SingletonManager.Register(this);
     }
 
+    public float GetAverageTimeElapsed()
+    {
+        float avgTimeElapsed = 0f;
+
+        float totalTimeElapsed = cleanTheHouseTracker.timeElapsed + washTheDishesTracker.timeElapsed + groceryTracker.timeElapsed +
+            groceryTracker.timeElapsed + waterThePlantsTracker.timeElapsed + getWaterTracker.timeElapsed +
+            imHungryTracker.timeElapsed + foldTheClothesTracker.timeElapsed;
+
+        avgTimeElapsed = totalTimeElapsed / Constants.NUM_OF_MAIN_TASKS;
+
+        return avgTimeElapsed;
+    }
+
     
 
    

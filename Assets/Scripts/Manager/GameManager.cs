@@ -125,7 +125,17 @@ public class GameManager : MonoBehaviour
 
     public void CheckEndingCondition()
     {
-
+        if (playerProgress)
+        {
+            if(playerProgress.GetAverageTimeElapsed() >= Constants.GOOD_ENDING_REQUIREMENT)
+            {
+                Debug.Log("Get the good ending");
+            }
+            else
+            {
+                Debug.Log("Get the bad ending ");
+            }
+        }
     }
 
     public void OnSceneChange()
