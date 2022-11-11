@@ -14,10 +14,18 @@ public class StateDayTransition : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public Image skyBG;
+    public RectTransform skyBG;
     public DayState dayState;
     public RectTransform daySun;
     public RectTransform dayCloud;
+
+    public RectTransform afternoonSun;
+    public RectTransform afternoonCloud;
+
+    public RectTransform eveSun;
+    //public RectTransform eveCloud;
+
+    public List<RectTransform> statesGO;
 
     public List<float> xSkyPos;
 
@@ -58,21 +66,34 @@ public class StateDayTransition : MonoBehaviour
 
     public void MorningState()
     {
+        Debug.Log("Morning");
         Sequence mySequence = DOTween.Sequence();
-
-        mySequence.Append(dayCloud.DOMoveX(1000f, 1, false)).WaitForCompletion();
         mySequence.Append(daySun.DOJumpAnchorPos(stateEndPos[(int)dayState], 200, 4, 1f, false)).WaitForCompletion();
+        mySequence.Append(dayCloud.DOMoveX(1000f, 1, false)).WaitForCompletion();
+       
 
         dayState++;
     }
 
     public void AfternoonState()
     {
-
+        Debug.Log("Afternoon");
+        int index = (int)dayState - 1;
+        Sequence mySequence = DOTween.Sequence();
+        statesGO[index].DOMoveX(-3000f, 1, false);
+        skyBG.DOAnchorPosX(xSkyPos[index], 1, false);
+        mySequence.Append(afternoonSun.DOJumpAnchorPos(stateEndPos[(int)dayState], 200, 4, 1f, false));
+        mySequence.Append(afternoonCloud.DOAnchorPosX(-38f, 1, false));
+        dayState++;
     }
 
     public void EveningState()
     {
-
+        Debug.Log("Evening");
+        int index = (int)dayState - 1;
+        Sequence mySequence = DOTween.Sequence();
+        statesGO[index].DOMoveX(-3000f, 1, false);
+        skyBG.DOAnchorPosX(xSkyPos[index], 1, false);
+        mySequence.Append(eveSun.DOJumpAnchorPos(stateEndPos[(int)dayState], 200, 4, 1f, false));
     }
 }

@@ -111,7 +111,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1930, y: 188}
+  m_AnchoredPosition: {x: -3999, y: 188}
   m_SizeDelta: {x: 2057, y: 1391}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2892929989602696271
@@ -262,7 +262,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1615, y: 492}
+  m_AnchoredPosition: {x: -1615, y: 1219}
   m_SizeDelta: {x: 507, y: 942}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2892929990120293319
@@ -338,7 +338,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 2002, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2892929990964373228
@@ -353,6 +353,7 @@ GameObject:
   - component: {fileID: 2892929990964373231}
   - component: {fileID: 2892929990964373230}
   - component: {fileID: 2892929990964373229}
+  - component: {fileID: 84774168}
   m_Layer: 5
   m_Name: StateDayCanvas
   m_TagString: Untagged
@@ -446,6 +447,37 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &84774168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2892929990964373228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96ae4b0ff41410a4fbcd80abf2ffa55b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skyBG: {fileID: 2892929991609866130}
+  dayState: 0
+  daySun: {fileID: 2892929990120293317}
+  dayCloud: {fileID: 2892929989602696269}
+  afternoonSun: {fileID: 2892929991504439173}
+  afternoonCloud: {fileID: 2892929991347408730}
+  eveSun: {fileID: 2892929991232563581}
+  statesGO:
+  - {fileID: 2892929990549940798}
+  - {fileID: 2892929990056536952}
+  - {fileID: 2892929989807577661}
+  xSkyPos:
+  - 45
+  - -1899
+  stateEndPos:
+  - {x: -1615, y: 492, z: 0}
+  - {x: -388, y: 445, z: 0}
+  - {x: -599, y: 469, z: 0}
+  cloudEndPos: []
 --- !u!1 &2892929991232563580
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,7 +513,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1385, y: 439}
+  m_AnchoredPosition: {x: -599, y: 1327}
   m_SizeDelta: {x: 359, y: 699}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2892929991232563583
@@ -557,7 +589,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -38, y: 188}
+  m_AnchoredPosition: {x: 2002, y: 188}
   m_SizeDelta: {x: 2067, y: 1494}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2892929991347408732
@@ -633,7 +665,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -336, y: 435}
+  m_AnchoredPosition: {x: -388, y: 1182}
   m_SizeDelta: {x: 507, y: 942}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2892929991504439175
@@ -709,7 +741,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 157.74, y: 0}
+  m_AnchoredPosition: {x: 1922, y: 0}
   m_SizeDelta: {x: 5760, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2892929991609866132
