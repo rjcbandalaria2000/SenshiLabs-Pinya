@@ -11990,19 +11990,18 @@ MonoBehaviour:
   - 'Be careful of too much pestering for question to your sick mom or else, you
     will be turn into a mysterious food!  '
   tutorialImages:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: d266fb5127c9cd04b84b663223841a9c, type: 3}
+  - {fileID: 21300000, guid: d266fb5127c9cd04b84b663223841a9c, type: 3}
+  - {fileID: 21300000, guid: d266fb5127c9cd04b84b663223841a9c, type: 3}
+  - {fileID: 21300000, guid: d266fb5127c9cd04b84b663223841a9c, type: 3}
+  - {fileID: 21300000, guid: d266fb5127c9cd04b84b663223841a9c, type: 3}
+  - {fileID: 21300000, guid: d266fb5127c9cd04b84b663223841a9c, type: 3}
+  - {fileID: 21300000, guid: d266fb5127c9cd04b84b663223841a9c, type: 3}
+  - {fileID: 21300000, guid: d266fb5127c9cd04b84b663223841a9c, type: 3}
+  - {fileID: 21300000, guid: d266fb5127c9cd04b84b663223841a9c, type: 3}
+  - {fileID: 21300000, guid: d266fb5127c9cd04b84b663223841a9c, type: 3}
+  - {fileID: 21300000, guid: d266fb5127c9cd04b84b663223841a9c, type: 3}
+  - {fileID: 21300000, guid: d266fb5127c9cd04b84b663223841a9c, type: 3}
   pageCount: 0
   textGO: {fileID: 2174895157989061256}
   imageGO: {fileID: 2174895158253153285}
