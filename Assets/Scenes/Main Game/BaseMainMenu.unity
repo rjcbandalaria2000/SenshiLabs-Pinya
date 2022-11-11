@@ -218,6 +218,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StateDayCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2892929990964373228, guid: 7acd83035cfc1aa44b4c64c13146f364, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7acd83035cfc1aa44b4c64c13146f364, type: 3}
 --- !u!1 &307201537

@@ -15,7 +15,7 @@ public class StateDayTransition : MonoBehaviour
     // Start is called before the first frame update
 
     public RectTransform skyBG;
-    public DayState dayState;
+    private DayState dayState;
     public RectTransform daySun;
     public RectTransform dayCloud;
 
@@ -30,23 +30,7 @@ public class StateDayTransition : MonoBehaviour
     public List<float> xSkyPos;
 
     public List<Vector3> stateEndPos;
-    public List<Vector3> cloudEndPos;
-
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            NextState();
-        }
-    }
-
+  //  public List<Vector3> cloudEndPos;
 
     public void NextState()
     {
@@ -70,8 +54,6 @@ public class StateDayTransition : MonoBehaviour
         Sequence mySequence = DOTween.Sequence();
         mySequence.Append(daySun.DOJumpAnchorPos(stateEndPos[(int)dayState], 200, 4, 1f, false)).WaitForCompletion();
         mySequence.Append(dayCloud.DOMoveX(1000f, 1, false)).WaitForCompletion();
-       
-
         dayState++;
     }
 
