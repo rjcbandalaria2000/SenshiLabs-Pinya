@@ -123,6 +123,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void CheckEndingCondition()
+    {
+
+    }
+
     public void OnSceneChange()
     {
         //Remove Active singletons 
