@@ -118,6 +118,7 @@ public class GameManager : MonoBehaviour
         {
             isGameFinished = true;
             Debug.Log("Player wins");
+            CheckEndingCondition();
             SingletonManager.Get<UIManager>().ActivateWinPanel();
             sceneChange.OnChangeScene("EndingStoryboard");
         }
@@ -127,7 +128,7 @@ public class GameManager : MonoBehaviour
     {
         if (playerProgress)
         {
-            if(playerProgress.GetAverageTimeElapsed() >= Constants.GOOD_ENDING_REQUIREMENT)
+            if(playerProgress.GetAverageTimeElapsed() <= Constants.GOOD_ENDING_REQUIREMENT)
             {
                 Debug.Log("Get the good ending");
             }
