@@ -14,13 +14,16 @@ public class CleanTheHouseMinigame : MinigameObject
     // Start is called before the first frame update
     void Start()
     {
-        if(this.gameObject.activeSelf == true && hasCompleted == false)
+        
+    }
+    private void OnEnable()
+    {
+        if(hasCompleted == false)
         {
             if (uncompleteState != null)
             {
                 uncompleteState.SetActive(true);
             }
-          
         }
         else
         {
@@ -29,6 +32,10 @@ public class CleanTheHouseMinigame : MinigameObject
         }
     }
 
+    private void OnDisable()
+    {
+        uncompleteState.SetActive(false);
+    }
     public override void Initialize()
     {
         interactable = this.GetComponent<Interactable>();
