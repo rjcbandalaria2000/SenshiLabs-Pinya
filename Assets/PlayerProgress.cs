@@ -53,6 +53,8 @@ public class PlayerProgress : MonoBehaviour
             groceryTracker.timeElapsed + waterThePlantsTracker.timeElapsed + getWaterTracker.timeElapsed +
             imHungryTracker.timeElapsed + foldTheClothesTracker.timeElapsed;
 
+        Debug.Log("Total time elapsed: " + totalTimeElapsed);
+
         return totalTimeElapsed;
     }
 
@@ -61,6 +63,8 @@ public class PlayerProgress : MonoBehaviour
         float totalTime = cleanTheHouseTracker.totalTime + washTheDishesTracker.totalTime + groceryTracker.totalTime +
             groceryTracker.totalTime + waterThePlantsTracker.totalTime + getWaterTracker.totalTime +
             imHungryTracker.totalTime + foldTheClothesTracker.totalTime;
+
+        Debug.Log("Total time elapsed: " + totalTime);
 
         return totalTime;
     }

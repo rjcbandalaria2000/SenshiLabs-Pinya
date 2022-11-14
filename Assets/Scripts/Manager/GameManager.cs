@@ -128,7 +128,7 @@ public class GameManager : MonoBehaviour
     {
         if (playerProgress)
         {
-            if(playerProgress.GetAverageTimeElapsed() <= Constants.GOOD_ENDING_REQUIREMENT)
+            if(playerProgress.GetTotalTimeElapsed() <= playerProgress.GetAllTotalTime())
             {
                 Debug.Log("Get the good ending");
             }
