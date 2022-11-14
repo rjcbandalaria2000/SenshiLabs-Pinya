@@ -21,6 +21,7 @@ public class MinigameObject : MonoBehaviour
     protected Coroutine     interactRoutine;
 
     public GameObject uncompleteState;
+    public GameObject completeState;
     private void Awake()
     {
        
@@ -30,7 +31,35 @@ public class MinigameObject : MonoBehaviour
 
         
     }
+    private void OnEnable()
+    {
+        if (hasCompleted == false)
+        {
+            if (uncompleteState != null)
+            {
+                uncompleteState.SetActive(true);
+            }
 
+            if(completeState != null)
+            {
+                completeState.SetActive(false);
+            }
+        }
+        else
+        {
+            if (uncompleteState != null)
+                uncompleteState.SetActive(false);
+
+            if (completeState != null)
+               completeState.SetActive(true);
+            
+        }
+    }
+
+    private void OnDisable()
+    {
+        uncompleteState.SetActive(false);
+    }
     public virtual void Initialize()
     {
 

@@ -16,26 +16,7 @@ public class CleanTheHouseMinigame : MinigameObject
     {
         
     }
-    private void OnEnable()
-    {
-        if(hasCompleted == false)
-        {
-            if (uncompleteState != null)
-            {
-                uncompleteState.SetActive(true);
-            }
-        }
-        else
-        {
-            if (uncompleteState != null)
-                uncompleteState.SetActive(false);
-        }
-    }
-
-    private void OnDisable()
-    {
-        uncompleteState.SetActive(false);
-    }
+  
     public override void Initialize()
     {
         interactable = this.GetComponent<Interactable>();
