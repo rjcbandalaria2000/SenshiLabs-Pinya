@@ -230,6 +230,7 @@ public class GroceryManager : MinigameManager //Might rename this
         //Count the attempt in player progress 
         if (playerProgress)
         {
+            playerProgress.groceryTracker.totalTime = maxTimer;
             playerProgress.groceryTracker.numOfAttempts += 1; 
         }
         

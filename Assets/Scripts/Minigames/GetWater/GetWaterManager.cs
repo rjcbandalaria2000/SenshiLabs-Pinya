@@ -117,7 +117,8 @@ public class GetWaterManager : MinigameManager
 
         //Count the attempt in player progress 
         if (playerProgress)
-        {
+        {   
+            playerProgress.getWaterTracker.totalTime = maxTimer;
             playerProgress.getWaterTracker.numOfAttempts += 1; 
         }
         Debug.Log("Refresh Score board");

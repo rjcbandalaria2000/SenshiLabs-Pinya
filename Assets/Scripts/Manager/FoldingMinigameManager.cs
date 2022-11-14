@@ -116,6 +116,7 @@ public class FoldingMinigameManager : MinigameManager
         //Count the attempt in player progress 
         if (playerProgress)
         {
+            playerProgress.foldTheClothesTracker.totalTime = maxTimer;
             playerProgress.foldTheClothesTracker.numOfAttempts += 1; 
         }
  

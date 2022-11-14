@@ -85,6 +85,7 @@ public class ImHungryManager : MinigameManager
         //Count progress in Player Progress 
         if (playerProgress)
         {
+            playerProgress.imHungryTracker.totalTime = maxTimer;
             playerProgress.imHungryTracker.numOfAttempts += 1;
         }
     }

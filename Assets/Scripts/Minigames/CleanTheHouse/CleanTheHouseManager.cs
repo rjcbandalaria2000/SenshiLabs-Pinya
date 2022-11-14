@@ -119,6 +119,7 @@ public class CleanTheHouseManager : MinigameManager
         //Count the attempt in the Progress Tracker
         if (playerProgress)
         {
+            playerProgress.cleanTheHouseTracker.totalTime = maxTimer;
             playerProgress.cleanTheHouseTracker.numOfAttempts += 1;
         }
 

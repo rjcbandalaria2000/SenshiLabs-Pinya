@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public struct ScoreTracker
 {
-    public float score;
+    public float totalTime;
     public float timeRemaining;
     public float timeElapsed;
     public int numOfTimesCompleted;
@@ -45,6 +45,24 @@ public class PlayerProgress : MonoBehaviour
         avgTimeElapsed = totalTimeElapsed / Constants.NUM_OF_MAIN_TASKS;
 
         return avgTimeElapsed;
+    }
+
+    public float GetTotalTimeElapsed()
+    {
+        float totalTimeElapsed = cleanTheHouseTracker.timeElapsed + washTheDishesTracker.timeElapsed + groceryTracker.timeElapsed +
+            groceryTracker.timeElapsed + waterThePlantsTracker.timeElapsed + getWaterTracker.timeElapsed +
+            imHungryTracker.timeElapsed + foldTheClothesTracker.timeElapsed;
+
+        return totalTimeElapsed;
+    }
+
+    public float GetAllTotalTime()
+    {
+        float totalTime = cleanTheHouseTracker.totalTime + washTheDishesTracker.totalTime + groceryTracker.totalTime +
+            groceryTracker.totalTime + waterThePlantsTracker.totalTime + getWaterTracker.totalTime +
+            imHungryTracker.totalTime + foldTheClothesTracker.totalTime;
+
+        return totalTime;
     }
 
     

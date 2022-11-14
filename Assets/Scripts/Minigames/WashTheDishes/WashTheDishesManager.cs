@@ -177,6 +177,7 @@ public class WashTheDishesManager : MinigameManager
 
         if (playerProgress)
         {
+            playerProgress.washTheDishesTracker.totalTime = maxTimer;
             playerProgress.washTheDishesTracker.numOfAttempts += 1;
         }
 

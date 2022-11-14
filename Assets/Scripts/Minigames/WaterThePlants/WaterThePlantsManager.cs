@@ -155,6 +155,7 @@ public class WaterThePlantsManager : MinigameManager
         isCompleted = false;
         if (playerProgress)
         {
+            playerProgress.waterThePlantsTracker.totalTime = maxTimer;
             playerProgress.waterThePlantsTracker.numOfAttempts += 1;
         }
         yield return null;
