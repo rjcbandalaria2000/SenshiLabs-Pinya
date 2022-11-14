@@ -7665,6 +7665,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MotivationBar
       objectReference: {fileID: 0}
+    - target: {fileID: 2777084149738793783, guid: da8f08f5586c40f41b8739997c82f052, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2777084150130361040, guid: da8f08f5586c40f41b8739997c82f052, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.5
@@ -10927,17 +10931,9 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 58416bd99cc59a44897dc96f4ee9126c, type: 3}
-    - target: {fileID: 1256053894, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
-      propertyPath: startPos.x
-      value: 0.0640235
-      objectReference: {fileID: 0}
-    - target: {fileID: 1256053894, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
-      propertyPath: startPos.y
-      value: 2.074
-      objectReference: {fileID: 0}
     - target: {fileID: 1690378345, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4035600955571030600, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
       propertyPath: m_Name
@@ -11982,7 +11978,6 @@ MonoBehaviour:
   - To fill them up you need to play with your friends!
   - "If you\u2019re having trouble, Press the Ask Mom to see the chores that you
     need to do!"
-  - The hidden tasks will be shown to you!
   - These lists will not be available until you press the button, so you need to
     remember them!
   - But be careful, each time you press it your health gets depleted!
@@ -11992,15 +11987,14 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 21300000, guid: 3916aa1c875dc72418a87105e9ce228f, type: 3}
   - {fileID: 0}
+  - {fileID: 21300000, guid: b564b5df0fa240f44bf246b9912f8cc7, type: 3}
+  - {fileID: 21300000, guid: 2b9a9394d9a5427428dbb61661668976, type: 3}
+  - {fileID: 21300000, guid: 54a76460263c06d498837b02084e68c4, type: 3}
+  - {fileID: 21300000, guid: a4126de4e25e037439a74dc39f4bed2f, type: 3}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: bf65bf2b3a9542849bea6ef2656b7107, type: 3}
   pageCount: 0
   textGO: {fileID: 2174895157989061256}
   imageGO: {fileID: 2174895158253153285}
@@ -12555,7 +12549,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!223 &2174895158166863956
 Canvas:
   m_ObjectHideFlags: 0
@@ -13938,18 +13932,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 32900000, guid: 40af659b2250e7148bcc4d27ddec35f5, type: 3}
-  - {fileID: 32900000, guid: 40af659b2250e7148bcc4d27ddec35f5, type: 3}
-  - {fileID: 32900000, guid: 40af659b2250e7148bcc4d27ddec35f5, type: 3}
-  - {fileID: 32900000, guid: 40af659b2250e7148bcc4d27ddec35f5, type: 3}
-  - {fileID: 32900000, guid: 40af659b2250e7148bcc4d27ddec35f5, type: 3}
-  - {fileID: 32900000, guid: 40af659b2250e7148bcc4d27ddec35f5, type: 3}
-  - {fileID: 32900000, guid: 40af659b2250e7148bcc4d27ddec35f5, type: 3}
-  - {fileID: 32900000, guid: 40af659b2250e7148bcc4d27ddec35f5, type: 3}
-  - {fileID: 32900000, guid: 40af659b2250e7148bcc4d27ddec35f5, type: 3}
-  - {fileID: 32900000, guid: 40af659b2250e7148bcc4d27ddec35f5, type: 3}
-  - {fileID: 32900000, guid: 40af659b2250e7148bcc4d27ddec35f5, type: 3}
-  - {fileID: 32900000, guid: 40af659b2250e7148bcc4d27ddec35f5, type: 3}
+  - {fileID: 32900000, guid: 83960763dd829774fb8fb4bdaa4c62aa, type: 3}
+  - {fileID: 32900000, guid: 24bf3e4d47c21644aa599b045f2f4777, type: 3}
+  - {fileID: 32900000, guid: 83960763dd829774fb8fb4bdaa4c62aa, type: 3}
+  - {fileID: 32900000, guid: a62c8f9c820fa7a4889a4fbc89b764d5, type: 3}
   counter: 0
   rawImage: {fileID: 1505901428579817586}
 --- !u!1001 &4332310455667157454
