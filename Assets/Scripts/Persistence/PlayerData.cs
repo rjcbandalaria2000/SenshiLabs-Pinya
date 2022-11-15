@@ -12,6 +12,7 @@ public class PlayerData : MonoBehaviour
     public int                      minigamesPlayed;
     public bool                     hasSaved;
     public Vector2                  playerLocation;
+    public bool                     firstTime;
 
     [Header("Minigames")]
     
