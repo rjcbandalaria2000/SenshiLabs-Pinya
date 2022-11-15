@@ -30,7 +30,8 @@ public class StateDayTransition : MonoBehaviour
     public List<float> xSkyPos;
 
     public List<Vector3> stateEndPos;
-  //  public List<Vector3> cloudEndPos;
+    //  public List<Vector3> cloudEndPos;
+
 
     public void NextState()
     {

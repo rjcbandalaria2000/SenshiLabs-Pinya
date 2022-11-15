@@ -9420,6 +9420,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8574204910938546591, guid: d3f9bdcd8888d1d45badf2f251152c89, type: 3}
+      propertyPath: m_Volume
+      value: 0.559
+      objectReference: {fileID: 0}
+    - target: {fileID: 8574204910938546591, guid: d3f9bdcd8888d1d45badf2f251152c89, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: a2787619e145bdf4baddc44150fe85c3, type: 3}
@@ -10949,6 +10953,10 @@ PrefabInstance:
       propertyPath: endPos.y
       value: 197
       objectReference: {fileID: 0}
+    - target: {fileID: 5013682240661548592, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
+      propertyPath: audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d45e7fe25afe9a4f942986e012d8007, type: 3}
     - target: {fileID: 7840490333810857148, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_RaycastTarget
       value: 0
