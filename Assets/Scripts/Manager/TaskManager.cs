@@ -101,7 +101,7 @@ public class TaskManager : MonoBehaviour
 
     public void SetRandomTasks()
     {
-
+        
         //Temporarily store all tasks. Modify to avoid duplicates 
         //List<MinigameObject> tempTaskList = new();
 
@@ -115,12 +115,18 @@ public class TaskManager : MonoBehaviour
             }
 
         }
+        if(tempTaskList.Count <= 0)
+        {
+            Debug.Log("No more incomplete minigames");
+            return;
+        }
         // Clear required task list 
         requiredTasks.Clear();
         for (int i = 0; i < maxNumOfTasks; i++)
         {
 
             int randomTaskIndex = Random.Range(0, tempTaskList.Count);
+            Debug.Log("Random Selected task: " + tempTaskList[randomTaskIndex]);
             //Check for duplicates
             if (!CheckForMinigameDuplicateInList(requiredTasks, tempTaskList[randomTaskIndex]))
             {
@@ -303,6 +309,7 @@ public class TaskManager : MonoBehaviour
 
         bool isDuplicate = false;
         if (minigameList.Count <= 0) { return false; } 
+        if(minigameToCheck == null) { return false; }
         foreach(MinigameObject minigame in minigameList)
         {
             if(minigame == minigameToCheck)
