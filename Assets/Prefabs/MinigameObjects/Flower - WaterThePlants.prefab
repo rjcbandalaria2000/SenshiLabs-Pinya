@@ -268,6 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b184774aea6e554189928c1d27ee0db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPos: {x: 0.0640235, y: 2.074, z: 0}
   endPos: {x: 0.0640235, y: 1.602, z: 0}
 --- !u!1 &1642928215
 GameObject:
@@ -568,6 +569,7 @@ MonoBehaviour:
   minigameScene: WaterThePlants-Polish
   preRequisiteTasks:
   - {fileID: 0}
+  uncompleteState: {fileID: 0}
 --- !u!114 &-5706834350741523079
 MonoBehaviour:
   m_ObjectHideFlags: 0
