@@ -58,7 +58,11 @@ public class MinigameObject : MonoBehaviour
 
     private void OnDisable()
     {
-        uncompleteState.SetActive(false);
+        if (uncompleteState != null)
+            uncompleteState.SetActive(false);
+        if (completeState != null)
+            completeState.SetActive(false);
+        
     }
     public virtual void Initialize()
     {

@@ -21,6 +21,8 @@ public class TutorialUIManager : MonoBehaviour
     public Button nextArrow;
     public Button prevArrow;
 
+    public Button startButton;
+
     private void Awake()
     {
         videoManager = GetComponent<VideoManager>();
@@ -43,6 +45,11 @@ public class TutorialUIManager : MonoBehaviour
                 imageGO.sprite = tutorialImages[0];
                 videoImage.gameObject.SetActive(false);
             }
+        }
+
+        if(startButton != null)
+        {
+            startButton.gameObject.SetActive(false);
         }
     }
     private void OnEnable()
@@ -77,6 +84,15 @@ public class TutorialUIManager : MonoBehaviour
             if(pageCount >= instructionText.Count - 1)
             {
                 nextArrow.gameObject.SetActive(false);
+
+                if(startButton != null)
+                {
+                    startButton.gameObject.SetActive(true);
+                }
+                else
+                {
+                    startButton.gameObject.SetActive(false);
+                }
             }
 
 
