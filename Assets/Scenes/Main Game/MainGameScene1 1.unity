@@ -6848,6 +6848,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 58416bd99cc59a44897dc96f4ee9126c, type: 3}
+    - target: {fileID: 123950439056106135, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1278223491085755477, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
       propertyPath: m_Size.x
       value: 6.5050898
@@ -6956,6 +6960,18 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -2.0247822
       objectReference: {fileID: 0}
+    - target: {fileID: 2647711667271816489, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3354894616055362484, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5285038560494157795, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
+      propertyPath: completeState
+      value: 
+      objectReference: {fileID: 1139237642}
     - target: {fileID: 5285038560494157795, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
       propertyPath: uncompleteState
       value: 
@@ -6985,6 +7001,11 @@ GameObject:
 --- !u!1 &1139237641 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8889901751572321164, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
+  m_PrefabInstance: {fileID: 1139237638}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1139237642 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 123950439056106135, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
   m_PrefabInstance: {fileID: 1139237638}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1142555485
@@ -12007,6 +12028,18 @@ PrefabInstance:
       propertyPath: preRequisiteTasks.Array.data[0]
       value: 
       objectReference: {fileID: 893641064}
+    - target: {fileID: 887505232, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076030878, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898466280, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 325155188160618073, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
       propertyPath: m_Name
       value: Kitchen - ImHungry
