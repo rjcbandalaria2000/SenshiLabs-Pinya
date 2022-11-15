@@ -111,11 +111,15 @@ public class GameManager : MonoBehaviour
 
     public void GameLose()
     {
-        //Activate Lose Panel
-        UI.ActivateLosePanel();
 
-        //Disable Game UI
-        UI.DeactivateGameUI();
+        OnSceneChange();
+        GoToEnding(badEndingSceneName);
+
+        ////Activate Lose Panel
+        //UI.ActivateLosePanel();
+
+        ////Disable Game UI
+        //UI.DeactivateGameUI();
     }
 
     public void GameWin()
