@@ -21,16 +21,22 @@ public class GameManager : MonoBehaviour
     public float                    maxTime;
     public float                    speedCounter;
 
+    [Header("Player")]
     public Player                   player;
 
-    [Header("MiniGame Manager")]
-    public List<MinigameObject>     minigames = new();
+    [Header("Ending Scenes")]
+    public string                   goodEndingSceneName;
+    public string                   badEndingSceneName;   
+
+    //[Header("MiniGame Manager")]
+    //public List<MinigameObject>     minigames = new();
     
     private UIManager               UI;
     private TransitionManager       transitionManager;
     private Coroutine               startGameRoutine;
     private SceneChange             sceneChange;
     private PlayerProgress          playerProgress;
+
     private void Awake()
     {
         SingletonManager.Register(this);
@@ -119,8 +125,8 @@ public class GameManager : MonoBehaviour
             isGameFinished = true;
             Debug.Log("Player wins");
             CheckEndingCondition();
-            SingletonManager.Get<UIManager>().ActivateWinPanel();
-            sceneChange.OnChangeScene("EndingStoryboard");
+            //SingletonManager.Get<UIManager>().ActivateWinPanel();
+            //sceneChange.OnChangeScene("EndingStoryboard");
         }
     }
 
@@ -130,13 +136,22 @@ public class GameManager : MonoBehaviour
         {
             if(playerProgress.GetTotalTimeElapsed() <= playerProgress.GetAllTotalTime())
             {
+                GoToEnding(goodEndingSceneName);
                 Debug.Log("Get the good ending");
             }
             else
             {
+                GoToEnding(badEndingSceneName);
                 Debug.Log("Get the bad ending ");
             }
         }
+    }
+
+    public void GoToEnding(string endingSceneName)
+    {
+        Assert.IsNotNull(sceneChange, "Scene change is not set or is null");
+        OnSceneChange();
+        sceneChange.OnChangeScene(endingSceneName);
     }
 
     public void OnSceneChange()

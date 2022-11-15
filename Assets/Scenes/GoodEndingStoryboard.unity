@@ -452,10 +452,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pageImage: {fileID: 1454389998}
   spritePages:
-  - {fileID: 21300000, guid: ad2a82f386880e740891d114d31f65cb, type: 3}
-  - {fileID: 21300000, guid: f4405537669f2f44cabacd7fda0080d0, type: 3}
-  - {fileID: 21300000, guid: c614922a376e4964cac191d2a75a7378, type: 3}
-  - {fileID: 21300000, guid: 0a2fc3f39d8044642ba29fe1ecf42b8f, type: 3}
   - {fileID: 21300000, guid: a3fd0b3a166cb50488abcce9cbe4b631, type: 3}
   pageCount: 0
   sceneName: MainGameScene1 1
@@ -513,6 +509,7 @@ MonoBehaviour:
   minigameResultsUI: {fileID: 0}
   minigameGoodResult: {fileID: 0}
   minigameBadResult: {fileID: 0}
+  transitionUI: {fileID: 0}
   loadingUI: {fileID: 1924175503}
   askMomButton: {fileID: 0}
   tutorialGO: {fileID: 0}
@@ -548,6 +545,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultCursorTexture: {fileID: 2800000, guid: 2d8d391eb824a4b4ca6a42a3ad4ca394, type: 3}
   defaultHotspotPos: 0
+  defaultCursorPressDownTexture: {fileID: 0}
+  defaultPressDownHotspotPos: 0
   enterCursorTexture: {fileID: 2800000, guid: 2d8d391eb824a4b4ca6a42a3ad4ca394, type: 3}
   enterCursorHotspotPos: 0
   dragCursorTexture: {fileID: 2800000, guid: e6b9150ca460c9e498965eb3c3554b91, type: 3}
