@@ -454,7 +454,7 @@ MonoBehaviour:
   spritePages:
   - {fileID: 21300000, guid: a3fd0b3a166cb50488abcce9cbe4b631, type: 3}
   pageCount: 0
-  sceneName: MainGameScene1 1
+  sceneName: BaseMainMenu
 --- !u!4 &798298896
 Transform:
   m_ObjectHideFlags: 0
@@ -1171,7 +1171,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ad2a82f386880e740891d114d31f65cb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a3fd0b3a166cb50488abcce9cbe4b631, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
