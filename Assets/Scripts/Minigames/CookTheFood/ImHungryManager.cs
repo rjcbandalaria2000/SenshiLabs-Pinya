@@ -6,13 +6,17 @@ using UnityEngine.Assertions;
 public class ImHungryManager : MinigameManager
 {
     [Header("Setup")]
-    public SpawnManager SpawnManager;
-    public int NumOfIngredients;
+    public SpawnManager     SpawnManager;
+    public int              NumOfIngredients;
     public List<GameObject> IngredientsToSpawn;
-    public GameObject Pot;
+    public GameObject       Pot;
 
-    private Pot pot;
-    private PlayerProgress playerProgress; 
+    [Header("Life Meter")]
+    public float            lifeMeterValue = 20;
+
+    private Pot             pot;
+    private PlayerProgress  playerProgress;
+    private PlayerData      playerData;
 
     private void Awake()
     {
@@ -29,6 +33,7 @@ public class ImHungryManager : MinigameManager
     {
         transitionManager = SingletonManager.Get<TransitionManager>();
         sceneChange = this.GetComponent<SceneChange>();
+        playerData = SingletonManager.Get<PlayerData>();
         Assert.IsNotNull(Pot, "Pot is null or is not set");
         SpawnManager = SingletonManager.Get<SpawnManager>();
         playerProgress = SingletonManager.Get<PlayerProgress>();
@@ -37,6 +42,14 @@ public class ImHungryManager : MinigameManager
         Events.OnObjectiveComplete.AddListener(CheckIfFinished);
     }
 
+    public void IncreaseLifeMeter(float lifeValue)
+    {
+        Assert.IsNotNull(playerData, "Player Data is not set or is null");
+        if(playerData.storedPinyaData < playerData.maxPinyaData)
+        {
+            playerData.storedPinyaData += lifeValue;
+        }
+    }
 
 
     #region Starting Minigame Functions
@@ -143,6 +156,7 @@ public class ImHungryManager : MinigameManager
 
     public override void OnWin()
     {
+        IncreaseLifeMeter(lifeMeterValue);
         SingletonManager.Get<MiniGameTimer>().StopCountdownTimer();
         isCompleted = true;
         SingletonManager.Get<UIManager>().ActivateResultScreen();
