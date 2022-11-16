@@ -41,13 +41,13 @@ public class TaskManager : MonoBehaviour
             if (SingletonManager.Get<PlayerData>().requiredTasks.Count > 0)
             {
                 RestoreSavedRequiredTasks();
-                ActivateSetTasks();
+                //ActivateSetTasks();
             }
         }
         else
         {
             SetRandomTasks();
-            ActivateSetTasks();
+            //ActivateSetTasks();
             SingletonManager.Get<DayCycle>().ChangeTimePeriod(SingletonManager.Get<DayCycle>().timeIndex);
         }
 
