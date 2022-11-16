@@ -36,6 +36,10 @@ public class AITagMinigame : MonoBehaviour
 
     public Animator animator;
 
+    [Header("Character Model")]
+    public float flippedAngle = 180;
+    public float normalAngle = 0;
+
     private void Start()
     {
         spriteUpdate();
@@ -124,6 +128,33 @@ public class AITagMinigame : MonoBehaviour
                 animator.SetBool("IsIdle", false);
                 this.transform.position = Vector2.MoveTowards(this.transform.position, target.transform.position, speed * Time.deltaTime);
                 distance = Vector2.Distance(this.transform.position, target.transform.position);
+
+                Vector2 lookDirection = target.transform.position - this.transform.position;
+                if (lookDirection.normalized.x > 0)
+                {
+                   
+                    if (defaultState.activeSelf == true)
+                    {
+                        defaultState.transform.rotation = Quaternion.Euler(0, flippedAngle, 0);
+                    }
+                    else if (tagState.activeSelf == true)
+                    {
+                        tagState.transform.rotation = Quaternion.Euler(0, flippedAngle, 0);
+                    }
+
+
+                }
+                else if (lookDirection.normalized.x < 0)
+                {
+                    if (defaultState.activeSelf == true)
+                    {
+                        defaultState.transform.rotation = Quaternion.Euler(0, normalAngle, 0);
+                    }
+                    else if (tagState.activeSelf == true)
+                    {
+                        tagState.transform.rotation = Quaternion.Euler(0, normalAngle, 0);
+                    }
+                }
 
             }
             
