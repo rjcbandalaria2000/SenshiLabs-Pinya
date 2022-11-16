@@ -6,19 +6,23 @@ using UnityEngine.Assertions;
 
 public class TagManager : MinigameManager
 {
-    public GameObject player;
-    public GameObject spawnedPlayer;
+    public GameObject       player;
+    public GameObject       spawnedPlayer;
 
     [Header("AI")]
     public List<GameObject> activeAI;
     public List<Transform>  points;
 
     [Header("SpawnPos")]
-    public Transform playerPos;
+    public Transform        playerPos;
     
-    public UIManager uIManager;
+    public UIManager        uIManager;
 
-    private PlayerProgress playerProgress;
+    [Header("Motivational Value")]
+    public float earnedMotivationalValue = 20f;
+
+    private PlayerProgress  playerProgress;
+    private PlayerData      playerData;
 
     private void Awake()
     {
@@ -35,7 +39,8 @@ public class TagManager : MinigameManager
     {
         transitionManager = SingletonManager.Get<TransitionManager>();
         sceneChange = this.gameObject.GetComponent<SceneChange>();
-        playerProgress = SingletonManager.Get<PlayerProgress>();    
+        playerProgress = SingletonManager.Get<PlayerProgress>();
+        playerData = SingletonManager.Get<PlayerData>();
 
         uIManager.ActivateMiniGameMainMenu();
         Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
@@ -51,6 +56,7 @@ public class TagManager : MinigameManager
 
     }
 
+    #region Starting Minigame Functions
     public override void StartMinigame()
     {
 
@@ -109,10 +115,50 @@ public class TagManager : MinigameManager
         isCompleted = false;
     }
 
+    #endregion
+
+    #region Exit Minigame Functions
+    public void continueScene()
+    {
+        Debug.Log("Minigame complete");
+
+        exitMinigameRoutine = StartCoroutine(ExitMinigame());
+    }
+
+    public void gameOver()
+    {
+        Debug.Log("Minigame lose");
+
+        exitMinigameRoutine = StartCoroutine(ExitMinigame());
+    }
+
+    protected override IEnumerator ExitMinigame()
+    {
+        // Play close animation
+        transitionManager.ChangeAnimation(TransitionManager.CURTAIN_CLOSE);
+        //Deactivate active UI 
+        uIManager.DeactivateResultScreen();
+        uIManager.DeactivateTimerUI();
+        uIManager.DeactivateGameUI();
+        //Wait for transition to end
+        while (!transitionManager.IsAnimationFinished())
+        {
+            Debug.Log("Transition to closing");
+            yield return null;
+        }
+        Events.OnSceneChange.Invoke();
+        Assert.IsNotNull(sceneChange, "Scene change is null or not set");
+        sceneChange.OnChangeScene(NameOfNextScene);
+        yield return null;
+    }
+    #endregion
+
+    #region Minigame Checker Functions
     public override void CheckIfFinished()
     {
         if (spawnedPlayer.GetComponent<TagMinigamePlayer>().isTag == false)
         {
+            IncreaseMotivationMeter(earnedMotivationalValue);
             Debug.Log("Minigame complete");
             isCompleted = true;
             uIManager.ActivateResultScreen();
@@ -144,6 +190,10 @@ public class TagManager : MinigameManager
         }
 
     }
+
+    #endregion
+
+    
 
     IEnumerator initializeMiniGame()
     {
@@ -196,39 +246,14 @@ public class TagManager : MinigameManager
 
     }
 
-    public void continueScene()
+  
+    public void IncreaseMotivationMeter(float motivationValue)
     {
-        Debug.Log("Minigame complete");
-
-        exitMinigameRoutine = StartCoroutine(ExitMinigame());
-    }
-
-    public void gameOver()
-    {
-        Debug.Log("Minigame lose");
-
-        exitMinigameRoutine = StartCoroutine(ExitMinigame());
-    }
-
-    protected override IEnumerator ExitMinigame()
-    {
-        // Play close animation
-        transitionManager.ChangeAnimation(TransitionManager.CURTAIN_CLOSE);
-        //Deactivate active UI 
-        uIManager.DeactivateResultScreen();
-        uIManager.DeactivateTimerUI();
-        uIManager.DeactivateGameUI();
-        //Wait for transition to end
-        while (!transitionManager.IsAnimationFinished())
+        Assert.IsNotNull(playerData, "Player data is not set or is null");
+        if(playerData.storedMotivationData < playerData.maxMotivationData)
         {
-            Debug.Log("Transition to closing");
-            yield return null;
+            playerData.storedMotivationData += motivationValue;
         }
-        Events.OnSceneChange.Invoke();
-        Assert.IsNotNull(sceneChange, "Scene change is null or not set");
-        sceneChange.OnChangeScene(NameOfNextScene);
-        yield return null;
     }
-
    
 }

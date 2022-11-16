@@ -231,10 +231,14 @@ public class SleepingMinigameManager : MinigameManager
         //SingletonManager.Remove<SpawnManager>();
     }
 
-    public void IncreaseMotivationalMeter(float points)
+    public void IncreaseMotivationalMeter(float motivationValue)
     {
         PlayerData playerData = SingletonManager.Get<PlayerData>();
         if(playerData == null) { return; }
-        playerData.storedMotivationData += points;
+        if(playerData.storedMotivationData < playerData.maxMotivationData)
+        {
+            playerData.storedMotivationData += motivationValue;
+        }
+       
     }
 }
