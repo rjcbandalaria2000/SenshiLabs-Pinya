@@ -154,46 +154,57 @@ public class TagManager : MinigameManager
     #endregion
 
     #region Minigame Checker Functions
+
     public override void CheckIfFinished()
     {
         if (spawnedPlayer.GetComponent<TagMinigamePlayer>().isTag == false)
         {
-            IncreaseMotivationMeter(earnedMotivationalValue);
-            Debug.Log("Minigame complete");
-            isCompleted = true;
-            uIManager.ActivateResultScreen();
-            uIManager.ActivateGoodResult();
-            SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
-            spawnedPlayer.gameObject.SetActive(false);
-            if (playerProgress)
-            {
-                playerProgress.tagTracker.numOfTimesCompleted += 1;
-                playerProgress.tagTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
-                playerProgress.tagTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
-            }
+            OnWin();
 
         }
         else
         {
-            Debug.Log("Minigame lose");
-            isCompleted = true;
-            uIManager.ActivateResultScreen();
-            uIManager.ActivateBadResult();
-            SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
-            spawnedPlayer.gameObject.SetActive(false);
-            if (playerProgress)
-            {
-                playerProgress.tagTracker.numOfTimesFailed += 1;
-                playerProgress.tagTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
-                playerProgress.tagTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
-            }
+            OnMinigameLose();
         }
 
     }
 
+    public override void OnMinigameLose()
+    {
+        Debug.Log("Minigame lose");
+        isCompleted = true;
+        uIManager.ActivateResultScreen();
+        uIManager.ActivateBadResult();
+        SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
+        spawnedPlayer.gameObject.SetActive(false);
+        if (playerProgress)
+        {
+            playerProgress.tagTracker.numOfTimesFailed += 1;
+            playerProgress.tagTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.tagTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
+        }
+    }
+
+    public override void OnWin()
+    {
+        IncreaseMotivationMeter(earnedMotivationalValue);
+        Debug.Log("Minigame complete");
+        isCompleted = true;
+        uIManager.ActivateResultScreen();
+        uIManager.ActivateGoodResult();
+        SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
+        spawnedPlayer.gameObject.SetActive(false);
+        if (playerProgress)
+        {
+            playerProgress.tagTracker.numOfTimesCompleted += 1;
+            playerProgress.tagTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.tagTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
+        }
+    }
+
     #endregion
 
-    
+
 
     IEnumerator initializeMiniGame()
     {
