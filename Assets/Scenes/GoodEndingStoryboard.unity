@@ -450,9 +450,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 218d4e49618cf2842b5ac28f562ad377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pageImage: {fileID: 1454389998}
+  pageImage: {fileID: 1454390000}
   spritePages:
-  - {fileID: 21300000, guid: a3fd0b3a166cb50488abcce9cbe4b631, type: 3}
+  - {fileID: 7400000, guid: 25dc8db8b1fb00c44bc1b6dae322c353, type: 2}
+  - {fileID: 7400000, guid: 63237980b91b2e541bb5f1cc5766e717, type: 2}
+  - {fileID: 7400000, guid: c54ef813dd110bf49b0e94cc0c14ec92, type: 2}
+  - {fileID: 7400000, guid: 59820fd77672479489d77ce830488cc2, type: 2}
+  - {fileID: 7400000, guid: f50a55c70805a7843978dfcc2c282181, type: 2}
   pageCount: 0
   sceneName: BaseMainMenu
 --- !u!4 &798298896
@@ -1124,6 +1128,7 @@ GameObject:
   - component: {fileID: 1454389997}
   - component: {fileID: 1454389999}
   - component: {fileID: 1454389998}
+  - component: {fileID: 1454390000}
   m_Layer: 5
   m_Name: BG
   m_TagString: Untagged
@@ -1189,6 +1194,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1454389996}
   m_CullTransparentMesh: 1
+--- !u!95 &1454390000
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454389996}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 8304be16bd22ded4483504fcd1822b23, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1716403906
 GameObject:
   m_ObjectHideFlags: 0

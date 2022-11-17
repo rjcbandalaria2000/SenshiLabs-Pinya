@@ -22,7 +22,11 @@ public class CutsceneManager : MonoBehaviour
     }
     void Start()
     {
-        pageImage.Play(spritePages[0].name);
+        if (pageImage)
+        {
+            pageImage.Play(spritePages[0].name);
+        }
+        
         //    text.text = story[0];
 
     }
