@@ -19,10 +19,11 @@ public class TagManager : MinigameManager
     public UIManager        uIManager;
 
     [Header("Motivational Value")]
-    public float earnedMotivationalValue = 20f;
+    public float            earnedMotivationalValue = 20f;
 
     private PlayerProgress  playerProgress;
     private PlayerData      playerData;
+    private Coroutine       checkStatusRoutine;
 
     private void Awake()
     {
@@ -102,7 +103,7 @@ public class TagManager : MinigameManager
         uIManager.ActivateMiniGameTimerUI();
         SingletonManager.Get<MiniGameTimer>().StartCountdownTimer();
 
-        StartCoroutine(checkStatus());
+        //StartCoroutine(checkStatus());
 
         //Debug.Log("Refresh Score board");
         //Spawn objects
@@ -164,14 +165,22 @@ public class TagManager : MinigameManager
         }
         else
         {
-            OnMinigameLose();
+            OnLose();
         }
 
     }
 
     public override void OnMinigameLose()
     {
+        //Use this to check if the minigame is finished since when the minigame timer is 0, this function is called.
+        CheckIfFinished();
+    }
+
+    public override void OnLose()
+    {
         Debug.Log("Minigame lose");
+        DisableTaggers();
+        //StopCoroutine(checkStatus());
         isCompleted = true;
         uIManager.ActivateResultScreen();
         uIManager.ActivateBadResult();
@@ -187,6 +196,8 @@ public class TagManager : MinigameManager
 
     public override void OnWin()
     {
+        DisableTaggers();
+        //StopCoroutine(checkStatus());
         IncreaseMotivationMeter(earnedMotivationalValue);
         Debug.Log("Minigame complete");
         isCompleted = true;
@@ -247,8 +258,9 @@ public class TagManager : MinigameManager
                     activeAI[i].SetActive(false);
                     spawnedPlayer.gameObject.SetActive(false);
                 }
+                isCompleted = true;
                 CheckIfFinished();
-
+                Debug.Log("Check Status");
                 yield return null;
             }
 
@@ -266,5 +278,19 @@ public class TagManager : MinigameManager
             playerData.storedMotivationData += motivationValue;
         }
     }
+
+    public void DisableTaggers()
+    {
+        if(activeAI.Count <= 0) { return; }
+        for (int i = 0; i < activeAI.Count; i++)
+        {
+            activeAI[i].SetActive(false);
+            spawnedPlayer.gameObject.SetActive(false);
+        }
+    }
+    //public void StartCheckStatusRoutine()
+    //{
+    //    checkStatusRoutine = StartCoroutine(checkStatus());
+    //}
    
 }
