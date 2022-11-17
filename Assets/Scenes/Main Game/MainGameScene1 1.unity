@@ -10857,6 +10857,10 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 44300140238168719, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 44300140412646877, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
       propertyPath: m_Size.x
       value: 3.6275392
@@ -10886,12 +10890,24 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 44300141547989908, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 44300141547989908, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 44300141547989908, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 44300141547989908, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.79
+      value: 8.89
       objectReference: {fileID: 0}
     - target: {fileID: 44300141547989908, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.19
+      value: -7.81
       objectReference: {fileID: 0}
     - target: {fileID: 44300141547989908, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14031,6 +14047,18 @@ PrefabInstance:
     - target: {fileID: 5983059630999239051, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5983059630999239051, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1770717
+      objectReference: {fileID: 0}
+    - target: {fileID: 5983059630999239051, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1770717
+      objectReference: {fileID: 0}
+    - target: {fileID: 5983059630999239051, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1770717
       objectReference: {fileID: 0}
     - target: {fileID: 5983059630999239051, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
       propertyPath: m_LocalPosition.x
