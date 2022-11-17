@@ -17,7 +17,7 @@ public class PlayerControls : MonoBehaviour
 
     private Vector3     targetPosition;
     private PlayerData  playerData;
-    private Camera      mainCamera; 
+    private Camera      mainCamera;
 
     void Start()
     {
@@ -27,32 +27,11 @@ public class PlayerControls : MonoBehaviour
         }
         mainCamera = Camera.main;
 
-        if(SingletonManager.Get<PlayerData>() == null)
+        if(playerData == null)
         {
             playerData = SingletonManager.Get<PlayerData>();
         }
-       
-        if (playerData)
-        {
-            if (playerData.hasSaved)
-            {
-                // load last location of the player
-                this.transform.position = playerData.playerLocation;
-                targetPosition = playerData.playerLocation;
-                Debug.Log("Going to last location");
-            }
-            else
-            {
-                // if no saved position, target will be where the player is 
-                targetPosition = this.transform.position;
-            }
-        }
-        else // if there is no player data present 
-        {
-            targetPosition = this.transform.position;
-        }
-       
-       
+        RestoreLastPlayerPosition();
     }
 
     
@@ -96,4 +75,28 @@ public class PlayerControls : MonoBehaviour
             animator.SetBool("IsIdle", true);
         }
     }
+
+    public void RestoreLastPlayerPosition()
+    {
+        if (playerData)
+        {
+            if (playerData.hasSaved)
+            {
+                // load last location of the player
+                this.transform.position = playerData.playerLocation;
+                targetPosition = playerData.playerLocation;
+                Debug.Log("Going to last location");
+            }
+            else
+            {
+                // if no saved position, target will be where the player is 
+                targetPosition = this.transform.position;
+            }
+        }
+        else // if there is no player data present 
+        {
+            targetPosition = this.transform.position;
+        }
+    }
+
 }
