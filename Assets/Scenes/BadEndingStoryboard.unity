@@ -452,13 +452,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pageImage: {fileID: 1454390000}
   spritePages:
-  - {fileID: 7400000, guid: 25dc8db8b1fb00c44bc1b6dae322c353, type: 2}
-  - {fileID: 7400000, guid: 63237980b91b2e541bb5f1cc5766e717, type: 2}
-  - {fileID: 7400000, guid: c54ef813dd110bf49b0e94cc0c14ec92, type: 2}
-  - {fileID: 7400000, guid: 59820fd77672479489d77ce830488cc2, type: 2}
-  - {fileID: 7400000, guid: f50a55c70805a7843978dfcc2c282181, type: 2}
+  - {fileID: 21300000, guid: ad2a82f386880e740891d114d31f65cb, type: 3}
   pageCount: 0
-  sceneName: MainGameScene1 1
+  sceneName: BaseMainMenu
 --- !u!4 &798298896
 Transform:
   m_ObjectHideFlags: 0

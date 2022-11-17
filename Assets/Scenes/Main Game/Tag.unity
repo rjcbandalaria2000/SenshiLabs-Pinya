@@ -1033,7 +1033,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 285345095498947022, guid: 8144eb43e2faa144589c5c42d9279979, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 285345095498947022, guid: 8144eb43e2faa144589c5c42d9279979, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1753,6 +1753,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24d2d50983e357b4d90c145654d7dc68, type: 3}
+--- !u!4 &694972317
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: -7552582706839291426, guid: d227488d61b2e4949bc4f1deb5f56fcd, type: 3}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994304551}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &781254069
 GameObject:
   m_ObjectHideFlags: 0
@@ -1844,7 +1859,7 @@ MonoBehaviour:
   loadingUI: {fileID: 21562959}
   askMomButton: {fileID: 0}
   tutorialGO: {fileID: 169305956}
-  confirmationGO: {fileID: 1927765909}
+  confirmationGO: {fileID: 1104427115}
 --- !u!114 &781254076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1879,6 +1894,7 @@ MonoBehaviour:
   - {fileID: 1685383650}
   playerPos: {fileID: 1695980588}
   uIManager: {fileID: 781254075}
+  earnedMotivationalValue: 20
 --- !u!1 &813079524
 GameObject:
   m_ObjectHideFlags: 0
@@ -2111,6 +2127,11 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3056311791677182187, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
   m_PrefabInstance: {fileID: 1249490775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1104427115 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8301517833032827722, guid: 1717608a280b0f148a9e05cf914c7d77, type: 3}
+  m_PrefabInstance: {fileID: 1927765908}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1166972493
 GameObject:
@@ -3690,7 +3711,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5126306651134867058, guid: 55ba75a0b91c77841aa3228a8faef8af, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5126306651134867058, guid: 55ba75a0b91c77841aa3228a8faef8af, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3889,10 +3910,14 @@ PrefabInstance:
     - target: {fileID: 8301517832720503713, guid: 1717608a280b0f148a9e05cf914c7d77, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 781254074}
+      objectReference: {fileID: 781254075}
     - target: {fileID: 8301517832720503713, guid: 1717608a280b0f148a9e05cf914c7d77, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnChangeScene
+      value: OnConfirmExitMinigame
+      objectReference: {fileID: 0}
+    - target: {fileID: 8301517832720503713, guid: 1717608a280b0f148a9e05cf914c7d77, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8301517833032827718, guid: 1717608a280b0f148a9e05cf914c7d77, type: 3}
       propertyPath: m_Pivot.x
@@ -4003,6 +4028,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 35712579516144246, guid: 7097282c45c3e4c429e546e680d7b37e, type: 3}
   m_PrefabInstance: {fileID: 35712578279623834}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1994304551
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 694972317}
+  m_Layer: 0
+  m_Name: 'Recovery GameObject for Transform (ID in file: 694972317)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1998032847
 GameObject:
   m_ObjectHideFlags: 0

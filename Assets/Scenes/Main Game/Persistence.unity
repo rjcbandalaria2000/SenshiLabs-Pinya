@@ -178,6 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1566311201}
   - component: {fileID: 1566311202}
+  - component: {fileID: 1566311203}
   m_Layer: 0
   m_Name: PlayerData
   m_TagString: Untagged
@@ -233,3 +234,55 @@ MonoBehaviour:
   requiredTasks: []
   savedTimeIndex: 0
   savedTimePeriod: 0
+--- !u!114 &1566311203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566311199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10ced246723865a41894fe3e64cb3a26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cleanTheHouseTracker:
+    score: 0
+    time: 0
+    numOfTimesCompleted: 0
+  washTheDishesTracker:
+    score: 0
+    time: 0
+    numOfTimesCompleted: 0
+  groceryTracker:
+    score: 0
+    time: 0
+    numOfTimesCompleted: 0
+  waterThePlantsTracker:
+    score: 0
+    time: 0
+    numOfTimesCompleted: 0
+  getWaterTracker:
+    score: 0
+    time: 0
+    numOfTimesCompleted: 0
+  imHungryTracker:
+    score: 0
+    time: 0
+    numOfTimesCompleted: 0
+  foldTheClothesTracker:
+    score: 0
+    time: 0
+    numOfTimesCompleted: 0
+  tagTracker:
+    score: 0
+    time: 0
+    numOfTimesCompleted: 0
+  sleepTracker:
+    score: 0
+    time: 0
+    numOfTimesCompleted: 0
+  hideSeekTracker:
+    score: 0
+    time: 0
+    numOfTimesCompleted: 0

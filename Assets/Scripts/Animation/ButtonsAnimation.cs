@@ -21,6 +21,7 @@ public class ButtonsAnimation : MonoBehaviour
 
     public void PlayAnimation()
     {
+
         StartCoroutine(scaleAnimation());
     }
 

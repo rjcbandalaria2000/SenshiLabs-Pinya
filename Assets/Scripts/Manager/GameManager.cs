@@ -21,15 +21,21 @@ public class GameManager : MonoBehaviour
     public float                    maxTime;
     public float                    speedCounter;
 
+    [Header("Player")]
     public Player                   player;
 
-    [Header("MiniGame Manager")]
-    public List<MinigameObject>     minigames = new();
+    [Header("Ending Scenes")]
+    public string                   goodEndingSceneName;
+    public string                   badEndingSceneName;   
+
+    //[Header("MiniGame Manager")]
+    //public List<MinigameObject>     minigames = new();
     
     private UIManager               UI;
     private TransitionManager       transitionManager;
     private Coroutine               startGameRoutine;
     private SceneChange             sceneChange;
+    private PlayerProgress          playerProgress;
 
     public GameObject tutorial;
 
@@ -37,7 +43,7 @@ public class GameManager : MonoBehaviour
     {
         SingletonManager.Register(this);
         sceneChange = this.GetComponent<SceneChange>();
-        
+        playerProgress = SingletonManager.Get<PlayerProgress>();
         currentTime = maxTime;
         Events.OnPinyaEmpty.AddListener(GameLose);
         Events.OnSceneChange.AddListener(OnSceneChange);
@@ -119,11 +125,15 @@ public class GameManager : MonoBehaviour
 
     public void GameLose()
     {
-        //Activate Lose Panel
-        UI.ActivateLosePanel();
 
-        //Disable Game UI
-        UI.DeactivateGameUI();
+        OnSceneChange();
+        GoToEnding(badEndingSceneName);
+
+        ////Activate Lose Panel
+        //UI.ActivateLosePanel();
+
+        ////Disable Game UI
+        //UI.DeactivateGameUI();
     }
 
     public void GameWin()
@@ -132,9 +142,34 @@ public class GameManager : MonoBehaviour
         {
             isGameFinished = true;
             Debug.Log("Player wins");
-            SingletonManager.Get<UIManager>().ActivateWinPanel();
-            sceneChange.OnChangeScene("EndingStoryboard");
+            CheckEndingCondition();
+            //SingletonManager.Get<UIManager>().ActivateWinPanel();
+            //sceneChange.OnChangeScene("EndingStoryboard");
         }
+    }
+
+    public void CheckEndingCondition()
+    {
+        if (playerProgress)
+        {
+            if(playerProgress.GetTotalTimeElapsed() <= playerProgress.GetAllTotalTime())
+            {
+                GoToEnding(goodEndingSceneName);
+                Debug.Log("Get the good ending");
+            }
+            else
+            {
+                GoToEnding(badEndingSceneName);
+                Debug.Log("Get the bad ending ");
+            }
+        }
+    }
+
+    public void GoToEnding(string endingSceneName)
+    {
+        Assert.IsNotNull(sceneChange, "Scene change is not set or is null");
+        OnSceneChange();
+        sceneChange.OnChangeScene(endingSceneName);
     }
 
     public void OnSceneChange()

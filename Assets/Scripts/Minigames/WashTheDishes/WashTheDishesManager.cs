@@ -29,9 +29,11 @@ public class WashTheDishesManager : MinigameManager
     private int             plateIndex = 0;
     private Coroutine       plateToWashAreaRoutine;
     private Coroutine       nextPlateToWashRoutine;
+    private PlayerProgress  playerProgress;
 
     public SFXManager source;
     public AudioClip audioClip;
+
     private void Awake()
     {
         SingletonManager.Register(this);
@@ -49,12 +51,14 @@ public class WashTheDishesManager : MinigameManager
         transitionManager = SingletonManager.Get<TransitionManager>();
         plateToWashAreaRoutine = null;
         spawnManager = SingletonManager.Get<SpawnManager>();
+        playerProgress = SingletonManager.Get<PlayerProgress>();
         Assert.IsNotNull(spawnManager, "Spawn manager is null or is not set");
         //Disable sponge at start 
         if (sponge)
         {
             sponge.SetActive(false);
         }
+
     }
 
     public void GoToWashArea()
@@ -171,7 +175,11 @@ public class WashTheDishesManager : MinigameManager
         StartPlateToWashArea();
         Events.OnPlateCleaned.AddListener(StartNextPlate);
 
-
+        if (playerProgress)
+        {
+            playerProgress.washTheDishesTracker.totalTime = maxTimer;
+            playerProgress.washTheDishesTracker.numOfAttempts += 1;
+        }
 
         isCompleted = false;
         yield return null;
@@ -199,6 +207,12 @@ public class WashTheDishesManager : MinigameManager
         SingletonManager.Get<UIManager>().ActivateGoodResult();
         isCompleted = true;
         SingletonManager.Get<PlayerData>().isWashTheDishesFinished = true;
+        if (playerProgress)
+        {
+            playerProgress.washTheDishesTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.washTheDishesTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
+            playerProgress.washTheDishesTracker.numOfTimesCompleted += 1;
+        }
 
     }
 
@@ -212,6 +226,12 @@ public class WashTheDishesManager : MinigameManager
         if (spongeControls)
         {
             spongeControls.enabled = false;
+        }
+        if (playerProgress)
+        {
+            playerProgress.washTheDishesTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.washTheDishesTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
+            playerProgress.washTheDishesTracker.numOfTimesFailed += 1;
         }
     }
 

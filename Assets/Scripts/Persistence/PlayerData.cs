@@ -70,6 +70,7 @@ public class PlayerData : MonoBehaviour
         isImHungryFinished = false;
         isWashTheDishesFinished = false;
         isWaterThePlantsFinished = false;
+        isFoldingClothesFinished = false;
         requiredTasks.Clear();
     }
 }

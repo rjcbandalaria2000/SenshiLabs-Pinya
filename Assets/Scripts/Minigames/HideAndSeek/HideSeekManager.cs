@@ -5,16 +5,23 @@ using UnityEngine.Assertions;
 
 public class HideSeekManager : MinigameManager
 {
-    public GameObject children;
-    public int score;
-    public List<GameObject> spawnPoints;
-    private int RNG;
-    public int count;
-    Coroutine spawnRoutine;
+    public GameObject               children;
+    public int                      score;
+    public List<GameObject>         spawnPoints;
+    
+    public int                      count;
+    Coroutine                       spawnRoutine;
 
     [Header("Countdown Timer")]
-    public float GameStartTime = 3f;
-    public DisplayGameCountdown CountdownTimerUI;
+    public float                    GameStartTime = 3f;
+    public DisplayGameCountdown     CountdownTimerUI;
+
+    [Header("Motivational Meter")]
+    public float                    earnedMotivationalValue = 20f;
+
+    private int                     RNG;
+    private PlayerProgress          playerProgress;
+    private PlayerData              playerData;
 
     private void Start()
     {
@@ -33,8 +40,8 @@ public class HideSeekManager : MinigameManager
     {
         transitionManager = SingletonManager.Get<TransitionManager>();
         sceneChange = this.gameObject.GetComponent<SceneChange>();
-       
-
+        playerProgress = SingletonManager.Get<PlayerProgress>();
+        playerData = SingletonManager.Get<PlayerData>();
         SingletonManager.Get<UIManager>().ActivateMiniGameMainMenu();
         Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
         Events.OnSceneChange.AddListener(OnSceneChange);
@@ -63,22 +70,45 @@ public class HideSeekManager : MinigameManager
     {
         if (score >= spawnPoints.Count)
         {
-            Debug.Log("Minigame complete");
-            SingletonManager.Get<UIManager>().ActivateResultScreen();
-            SingletonManager.Get<UIManager>().ActivateGoodResult();
-            SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
+            OnWin();
         }
         else if(SingletonManager.Get<MiniGameTimer>().GetTimer() <= 0)
         {
-            Debug.Log("Minigame lose");
-            SingletonManager.Get<UIManager>().ActivateResultScreen();
-            SingletonManager.Get<UIManager>().ActivateBadResult();
-            SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
+           OnMinigameLose();
         }
 
     }
 
-   
+    public override void OnWin()
+    {
+        IncreaseMotivationMeter(earnedMotivationalValue);
+        Debug.Log("Minigame complete");
+        SingletonManager.Get<UIManager>().ActivateResultScreen();
+        SingletonManager.Get<UIManager>().ActivateGoodResult();
+        SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
+        if (playerProgress)
+        {
+            playerProgress.hideSeekTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.hideSeekTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
+            playerProgress.hideSeekTracker.numOfTimesCompleted += 1;
+        }
+    }
+
+    public override void OnMinigameLose()
+    {
+        Debug.Log("Minigame lose");
+        SingletonManager.Get<UIManager>().ActivateResultScreen();
+        SingletonManager.Get<UIManager>().ActivateBadResult();
+        SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
+        if (playerProgress)
+        {
+            playerProgress.hideSeekTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.hideSeekTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
+            playerProgress.hideSeekTracker.numOfTimesFailed += 1;
+        }
+    }
+
+
     public override void StartMinigame()
     {
 
@@ -169,5 +199,14 @@ public class HideSeekManager : MinigameManager
         Assert.IsNotNull(sceneChange, "Scene change is null or not set");
         sceneChange.OnChangeScene(NameOfNextScene);
         yield return null;
+    }
+
+    public void IncreaseMotivationMeter(float motivationValue)
+    {
+        Assert.IsNotNull(playerData, "Player data is not set or is null");
+        if (playerData.storedMotivationData < playerData.maxMotivationData)
+        {
+            playerData.storedMotivationData += motivationValue;
+        }
     }
 }

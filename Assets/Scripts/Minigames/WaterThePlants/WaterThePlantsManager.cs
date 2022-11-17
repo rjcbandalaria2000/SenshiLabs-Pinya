@@ -13,6 +13,8 @@ public class WaterThePlantsManager : MinigameManager
     public int plantsWatered;
     public int numOfPlants;
 
+    private PlayerProgress playerProgress;
+
     private void Awake()
     {
         SingletonManager.Register(this);
@@ -29,6 +31,7 @@ public class WaterThePlantsManager : MinigameManager
         sceneChange = this.GetComponent<SceneChange>();
         Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
         transitionManager = SingletonManager.Get<TransitionManager>();
+        playerProgress = SingletonManager.Get<PlayerProgress>();
         numOfPlants = Plants.Count;
         //Disable Player / Water Bucket controls 
         if(waterBucket != null)
@@ -150,6 +153,11 @@ public class WaterThePlantsManager : MinigameManager
         //Show all plants
         ShowAllPlants();
         isCompleted = false;
+        if (playerProgress)
+        {
+            playerProgress.waterThePlantsTracker.totalTime = maxTimer;
+            playerProgress.waterThePlantsTracker.numOfAttempts += 1;
+        }
         yield return null;
     }
 
@@ -193,6 +201,13 @@ public class WaterThePlantsManager : MinigameManager
             SingletonManager.Get<UIManager>().ActivateGoodResult();
             isCompleted = true;
             SingletonManager.Get<PlayerData>().isWaterThePlantsFinished = true;
+
+            if (playerProgress)
+            {
+                playerProgress.waterThePlantsTracker.numOfTimesCompleted += 1;
+                playerProgress.waterThePlantsTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
+                playerProgress.waterThePlantsTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
+            }
             //OnMinigameFinished();
         }
         
@@ -217,6 +232,12 @@ public class WaterThePlantsManager : MinigameManager
             {
                 mouseFollow.enabled = false;
             }
+        }
+        if (playerProgress)
+        {
+            playerProgress.waterThePlantsTracker.numOfTimesFailed += 1;
+            playerProgress.waterThePlantsTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.waterThePlantsTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
         }
         Debug.Log("Minigame lose");
     }

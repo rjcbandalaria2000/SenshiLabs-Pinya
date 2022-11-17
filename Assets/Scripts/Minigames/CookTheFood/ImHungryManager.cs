@@ -6,12 +6,18 @@ using UnityEngine.Assertions;
 public class ImHungryManager : MinigameManager
 {
     [Header("Setup")]
-    public SpawnManager SpawnManager;
-    public int NumOfIngredients;
+    public SpawnManager     SpawnManager;
+    public int              NumOfIngredients;
     public List<GameObject> IngredientsToSpawn;
-    public GameObject Pot;
+    public GameObject       Pot;
 
-    private Pot pot;
+    [Header("Life Meter")]
+    public float            lifeMeterValue = 20;
+
+    private Pot             pot;
+    private PlayerProgress  playerProgress;
+    private PlayerData      playerData;
+
     private void Awake()
     {
         SingletonManager.Register(this);
@@ -20,20 +26,30 @@ public class ImHungryManager : MinigameManager
     // Start is called before the first frame update
     void Start()
     {
+        Initialize();   
+    }
+
+    public override void Initialize()
+    {
         transitionManager = SingletonManager.Get<TransitionManager>();
         sceneChange = this.GetComponent<SceneChange>();
+        playerData = SingletonManager.Get<PlayerData>();
         Assert.IsNotNull(Pot, "Pot is null or is not set");
         SpawnManager = SingletonManager.Get<SpawnManager>();
+        playerProgress = SingletonManager.Get<PlayerProgress>();
         //SpawnManager.ObjectToSpawn = IngredientsToSpawn;
         pot = Pot.GetComponent<Pot>();
         Events.OnObjectiveComplete.AddListener(CheckIfFinished);
     }
 
-    public override void Initialize()
+    public void IncreaseLifeMeter(float lifeValue)
     {
-        base.Initialize();
+        Assert.IsNotNull(playerData, "Player Data is not set or is null");
+        if(playerData.storedPinyaData < playerData.maxPinyaData)
+        {
+            playerData.storedPinyaData += lifeValue;
+        }
     }
-
 
 
     #region Starting Minigame Functions
@@ -78,6 +94,13 @@ public class ImHungryManager : MinigameManager
 
         //Spawn Ingredients 
         SpawnManager.SpawnRandomObjectsInStaticPositions();
+
+        //Count progress in Player Progress 
+        if (playerProgress)
+        {
+            playerProgress.imHungryTracker.totalTime = maxTimer;
+            playerProgress.imHungryTracker.numOfAttempts += 1;
+        }
     }
 
     #endregion
@@ -133,11 +156,18 @@ public class ImHungryManager : MinigameManager
 
     public override void OnWin()
     {
+        IncreaseLifeMeter(lifeMeterValue);
         SingletonManager.Get<MiniGameTimer>().StopCountdownTimer();
         isCompleted = true;
         SingletonManager.Get<UIManager>().ActivateResultScreen();
         SingletonManager.Get<UIManager>().ActivateGoodResult();
         SingletonManager.Get<PlayerData>().isImHungryFinished = true;
+        if (playerProgress)
+        {
+            playerProgress.imHungryTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.imHungryTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
+            playerProgress.imHungryTracker.numOfTimesCompleted += 1;
+        }
         Debug.Log("Minigame complete");
     }
 
@@ -146,6 +176,12 @@ public class ImHungryManager : MinigameManager
         SingletonManager.Get<MiniGameTimer>().StopCountdownTimer();
         SingletonManager.Get<UIManager>().ActivateResultScreen();
         SingletonManager.Get<UIManager>().ActivateBadResult();
+        if (playerProgress)
+        {
+            playerProgress.imHungryTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
+            playerProgress.imHungryTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
+            playerProgress.imHungryTracker.numOfTimesFailed += 1;
+        }
         Debug.Log("Minigame lose");
     }
 

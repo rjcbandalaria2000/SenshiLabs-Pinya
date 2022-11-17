@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public enum DayState
 {
@@ -30,7 +31,27 @@ public class StateDayTransition : MonoBehaviour
     public List<float> xSkyPos;
 
     public List<Vector3> stateEndPos;
-  //  public List<Vector3> cloudEndPos;
+    //  public List<Vector3> cloudEndPos;
+
+    public List<AudioClip> soundSFX;
+    AudioSource audioSource;
+
+    public UnityEvent WoodSound;
+    private void Awake()
+    {
+        
+    }
+    private void Start()
+    {
+        audioSource = gameObject.GetComponent<AudioSource>();
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            NextState();
+        }
+    }
 
     public void NextState()
     {
@@ -54,6 +75,8 @@ public class StateDayTransition : MonoBehaviour
         Sequence mySequence = DOTween.Sequence();
         mySequence.Append(daySun.DOJumpAnchorPos(stateEndPos[(int)dayState], 200, 4, 1f, false)).WaitForCompletion();
         mySequence.Append(dayCloud.DOMoveX(1000f, 1, false)).WaitForCompletion();
+        audioSource.PlayOneShot(soundSFX[(int)dayState]);
+        WoodSound.Invoke();
         dayState++;
     }
 
@@ -66,6 +89,8 @@ public class StateDayTransition : MonoBehaviour
         skyBG.DOAnchorPosX(xSkyPos[index], 1, false);
         mySequence.Append(afternoonSun.DOJumpAnchorPos(stateEndPos[(int)dayState], 200, 4, 1f, false));
         mySequence.Append(afternoonCloud.DOAnchorPosX(-38f, 1, false));
+        audioSource.PlayOneShot(soundSFX[(int)dayState]);
+        WoodSound.Invoke();
         dayState++;
     }
 
@@ -76,6 +101,8 @@ public class StateDayTransition : MonoBehaviour
         Sequence mySequence = DOTween.Sequence();
         statesGO[index].DOMoveX(-3000f, 1, false);
         skyBG.DOAnchorPosX(xSkyPos[index], 1, false);
+        audioSource.PlayOneShot(soundSFX[(int)dayState]);
+        WoodSound.Invoke();
         mySequence.Append(eveSun.DOJumpAnchorPos(stateEndPos[(int)dayState], 200, 4, 1f, false));
     }
 }

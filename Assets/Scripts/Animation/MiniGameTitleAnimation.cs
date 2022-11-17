@@ -12,9 +12,12 @@ public class MiniGameTitleAnimation : MonoBehaviour
     public Vector2 startPos;
     public Vector2 endPos;
     ButtonsAnimation buttonsAnimation;
+    public AudioSource audioSource;
+    public AudioClip audioClip;
     void Start()
     {
         buttonsAnimation = GetComponent<ButtonsAnimation>();
+        audioSource = gameObject.GetComponentInParent<AudioSource>();
         TitleAnimation();
     }
 
@@ -30,8 +33,9 @@ public class MiniGameTitleAnimation : MonoBehaviour
         // Add a movement tween at the beginning
         //   mySequence.Append(title.DOAnchorPos(endPos, 1f, true));
          mySequence.Append(title.DOJumpAnchorPos(endPos, 100f, 4, 1f, false)).OnComplete(buttonsAnimation.PlayAnimation);
-
-      /// title.DOJumpAnchorPos(endPos, 100f, 4, 1f, false).OnComplete(Stuff);
+        StartCoroutine(PlaySFX());
+ 
+        /// title.DOJumpAnchorPos(endPos, 100f, 4, 1f, false).OnComplete(Stuff);
         //  buttonsAnimation.PlayAnimation();
         // Add a rotation tween as soon as the previous one is finished
         //mySequence.Append(transform.DORotate(new Vector3(0, 180, 0), 1));
@@ -44,5 +48,12 @@ public class MiniGameTitleAnimation : MonoBehaviour
     public void Stuff()
     {
 
+    }
+
+    public IEnumerator PlaySFX()
+    {
+
+        yield return new WaitForSeconds(.5f);
+        audioSource.PlayOneShot(audioClip);
     }
 }
