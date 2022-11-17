@@ -220,6 +220,7 @@ MonoBehaviour:
   minigamesPlayed: 0
   hasSaved: 0
   playerLocation: {x: 0, y: 0}
+  firstTime: 1
   isCleanTheHouseFinished: 0
   isWashTheDishesFinished: 0
   isGroceryFinished: 0

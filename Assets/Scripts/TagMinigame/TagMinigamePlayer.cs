@@ -21,7 +21,10 @@ public class TagMinigamePlayer : MonoBehaviour
 
     [Header("Animation")]
     public Animator animator;
-   
+
+    [Header("Character Model")]
+    public float flippedAngle = 180;
+    public float normalAngle = 0;
 
     void Start()
     {
@@ -42,6 +45,33 @@ public class TagMinigamePlayer : MonoBehaviour
             animator.SetBool("IsIdle", false);
             targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             targetPosition.z = this.transform.position.z;
+
+            Vector2 lookDirection = targetPosition - this.transform.position;
+            if (lookDirection.normalized.x > 0)
+            {
+                //the target position is going right
+                if(normalState.activeSelf == true)
+                {
+                    normalState.transform.rotation = Quaternion.Euler(0, flippedAngle, 0);
+                }
+                else if(tagState.activeSelf == true)
+                {
+                    tagState.transform.rotation = Quaternion.Euler(0, flippedAngle, 0);
+                }
+
+                
+            }
+            else if (lookDirection.normalized.x < 0)
+            {
+                if(normalState.activeSelf == true)
+                {
+                    normalState.transform.rotation = Quaternion.Euler(0, normalAngle, 0);
+                }
+                else if(tagState.activeSelf == true)
+                {
+                    tagState.transform.rotation = Quaternion.Euler(0, normalAngle, 0);
+                }
+            }
         }
     }
     private void FixedUpdate()

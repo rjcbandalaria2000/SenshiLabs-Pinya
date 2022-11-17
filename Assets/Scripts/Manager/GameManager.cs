@@ -76,8 +76,18 @@ public class GameManager : MonoBehaviour
         {
             transitionManager = SingletonManager.Get<TransitionManager>();
         }
+      
+        if(SingletonManager.Get<PlayerData>().firstTime == true)
+        {
+            tutorial.SetActive(true);
+        }
+        else
+        {
+            tutorial.SetActive(false);
+            StartGameTransition();
+        }
 
-        tutorial.SetActive(true);
+       
        // StartGameTransition();
     }
 
@@ -177,6 +187,7 @@ public class GameManager : MonoBehaviour
     public void tutorialPlayButton()
     {
         tutorial.SetActive(false);
+        SingletonManager.Get<PlayerData>().firstTime = false;
 
         StartGameTransition();
     }

@@ -145,7 +145,21 @@ public class TutorialUIManager : MonoBehaviour
             if (tutorialImages.Count > 0)
                 imageGO.sprite = tutorialImages[pageCount];
 
-            if(pageCount <= 0)
+            if (pageCount <= instructionText.Count - 1)
+            {
+
+                if (startButton != null)
+                {
+                    startButton.gameObject.SetActive(false);
+                }
+               
+            }
+            else
+            {
+                startButton.gameObject.SetActive(true);
+            }
+
+            if (pageCount <= 0)
             {
                 prevArrow.gameObject.SetActive(false);
             }
