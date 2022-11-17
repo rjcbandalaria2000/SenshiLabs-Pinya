@@ -220,7 +220,7 @@ public class TaskManager : MonoBehaviour
     public void OnTasksDone()
     {
         SetRandomTasks();
-        ActivateSetTasks();
+        //ActivateSetTasks();
     }
 
     public void OnSceneChange()
