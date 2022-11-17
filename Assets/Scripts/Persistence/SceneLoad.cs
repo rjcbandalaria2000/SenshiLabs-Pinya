@@ -34,6 +34,7 @@ public class SceneLoad : MonoBehaviour
 
     private IEnumerator LoadSequence(string sceneId)
     {
+        
         if (!string.IsNullOrEmpty(currentSceneId)) //currentsceneID != string.empty
         {
             SceneHandler addSceneLoader = SingletonManager.Get<SceneHandler>();
@@ -57,31 +58,13 @@ public class SceneLoad : MonoBehaviour
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId, LoadSceneMode.Additive);
         
         yield return operation;
+
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneId));
         currentSceneId = sceneId;
 
         yield return null;
 
-        if(SingletonManager.Get<UIManager>() != null)
-        {
-            SingletonManager.Get<UIManager>().ActivateLoadingUI();
-        }
-        else { Debug.Log("NO LOADING SCREEN"); }
-        
-
-        while (!operation.isDone)
-        {
-            Debug.Log("Loading");
-            loadProgress = Mathf.Clamp01(operation.progress/.9f);
-            yield return null;
-        }
-
-        if (SingletonManager.Get<UIManager>() != null)
-        {
-            SingletonManager.Get<UIManager>().DeactivateLoadingUI();
-        }
-            
-
+      
     }
 
     public Coroutine LoadScene(string sceneId)
