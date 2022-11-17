@@ -7746,7 +7746,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4257680015237913099, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
@@ -10330,6 +10330,7 @@ MonoBehaviour:
   player: {fileID: 312946475}
   goodEndingSceneName: GoodEndingStoryboard
   badEndingSceneName: BadEndingStoryboard
+  tutorial: {fileID: 9061992653547662851}
 --- !u!4 &1473840147
 Transform:
   m_ObjectHideFlags: 0
