@@ -33,6 +33,8 @@ public class TemperatureControl : MonoBehaviour
     SFXManager sFX;
     public AudioClip correctSFX;
     public AudioClip wrongSFX;
+    public Animator fireAnimator;
+    public List<AnimationClip> fireClips;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +45,8 @@ public class TemperatureControl : MonoBehaviour
         if(pot != null)
         {
             pot.ShowCookingStage(pointCounter);
+            //fireAnimator.SetBool("isFireOn", true);
+         //   fireAnimator.SetInteger("Index", 0);
         }
     }
 
@@ -60,6 +64,7 @@ public class TemperatureControl : MonoBehaviour
         Tracker.transform.position = StartPosition.transform.position;
         destination = EndPosition.transform.position;
         moveTrackerRoutine = StartCoroutine(MoveTracker());
+        fireAnimator.SetBool("isFireOn", true);
     }
 
     IEnumerator MoveTracker()
@@ -99,9 +104,11 @@ public class TemperatureControl : MonoBehaviour
         if(ChosenTemp != null) {
             if (pointCounter < RequiredPointCounter)
             {
+           
                 pointCounter++;
                 sFX.ChangePlayMusic(cookingSFX[pointCounter - 1]);
                 sFX.PlaySFX(correctSFX);
+                fireAnimator.SetInteger("Index", pointCounter);
                 Tracker.transform.position = StartPosition.transform.position;
                 SetRandomTemperaturePosition();
                 Events.OnCookingButtonPressed.Invoke();

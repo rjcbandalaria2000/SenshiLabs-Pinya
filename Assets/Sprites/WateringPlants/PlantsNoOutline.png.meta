@@ -1,0 +1,2259 @@
+fileFormatVersion: 2
+guid: 9272a735e74513c498e61250d8c8c520
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PlantsNoOutline_0
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 3686
+        width: 286
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f4bc643d56e0d64a829c8206d412240
+      internalID: 901153332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_1
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 3686
+        width: 286
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c590404d41e06b4993ea1bd973ff3c5
+      internalID: 430521141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_2
+      rect:
+        serializedVersion: 2
+        x: 1194
+        y: 3288
+        width: 600
+        height: 586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03a6eb8cae85d9c459830abd004e3f67
+      internalID: -1245629413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_3
+      rect:
+        serializedVersion: 2
+        x: 1802
+        y: 3748
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00bb7539561ad594a94763f11693d94b
+      internalID: -646299618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_4
+      rect:
+        serializedVersion: 2
+        x: 2282
+        y: 3288
+        width: 506
+        height: 478
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a7afd95381164b468694edea3c8732d
+      internalID: -1588524944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_5
+      rect:
+        serializedVersion: 2
+        x: 3260
+        y: 3288
+        width: 552
+        height: 670
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 179f475197ad02d45bf8938e3f39faaf
+      internalID: 301394110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_6
+      rect:
+        serializedVersion: 2
+        x: 2802
+        y: 3658
+        width: 24
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a08913f60ce3dd44cb8504a4afc65a28
+      internalID: -1598359724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_7
+      rect:
+        serializedVersion: 2
+        x: 3826
+        y: 3658
+        width: 24
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c422b8134378f9248be8da8282a3b1b8
+      internalID: -2112413544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_8
+      rect:
+        serializedVersion: 2
+        x: 2814
+        y: 3652
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02dbeeaf397bdf84389f581895413a4c
+      internalID: -564750627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_9
+      rect:
+        serializedVersion: 2
+        x: 3838
+        y: 3652
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46462cc976c0a73469baa9685f97e0ec
+      internalID: 1096199352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_10
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 2724
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c7ad6fa2b34edb468b73a6e7e22a867
+      internalID: -187384098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_11
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 2264
+        width: 462
+        height: 674
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53fb18c4391831f43a7601039f03dbd8
+      internalID: 304915900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_12
+      rect:
+        serializedVersion: 2
+        x: 2326
+        y: 2264
+        width: 462
+        height: 548
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56e483ca6a3dadd4bb695b31dc6a89ab
+      internalID: 409716525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_13
+      rect:
+        serializedVersion: 2
+        x: 3350
+        y: 2264
+        width: 462
+        height: 674
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9519575b0427309419a31cc2fd53906d
+      internalID: -495527793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_14
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 2198
+        width: 594
+        height: 464
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af9251d638f316b4780953f48482d7a3
+      internalID: -1622592646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_15
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 2634
+        width: 24
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 234981b8f024543498effd69b602a10d
+      internalID: 2023331139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_16
+      rect:
+        serializedVersion: 2
+        x: 1778
+        y: 2634
+        width: 24
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f80d12ccfd8ad9540a9e6d739fe99b1a
+      internalID: -2075024475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_17
+      rect:
+        serializedVersion: 2
+        x: 2802
+        y: 2634
+        width: 24
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1641a2d1cc53949449a1d43497678f3a
+      internalID: 1852149788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_18
+      rect:
+        serializedVersion: 2
+        x: 3826
+        y: 2634
+        width: 24
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52ee68b888a87b6498e08ec20e305e61
+      internalID: -1739986228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_19
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 2628
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46518a01eccc97b469300d5f967c6638
+      internalID: 645500637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_20
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 2628
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b8766f09deb9824781a7b254b185936
+      internalID: 255315442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_21
+      rect:
+        serializedVersion: 2
+        x: 2814
+        y: 2628
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e563af16a508b3d4f81c557658bd5a1d
+      internalID: 732958978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_22
+      rect:
+        serializedVersion: 2
+        x: 3838
+        y: 2628
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05cb00233629c8c48a4ed7258b21059e
+      internalID: -1287095861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_23
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 1240
+        width: 474
+        height: 468
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b141cb8bba4d74ca2f5a0a42c915e9
+      internalID: 1885143703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_24
+      rect:
+        serializedVersion: 2
+        x: 1286
+        y: 1240
+        width: 490
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 307e3084210f9ab4c9e8aa61ef68ce47
+      internalID: 1864355895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_25
+      rect:
+        serializedVersion: 2
+        x: 1484
+        y: 1642
+        width: 40
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be0ff53079f050e4794c387d288721df
+      internalID: 1835849409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_26
+      rect:
+        serializedVersion: 2
+        x: 1532
+        y: 1628
+        width: 120
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3a1537b01972954c91631c3b64bd42e
+      internalID: -312430639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_28
+      rect:
+        serializedVersion: 2
+        x: 2042
+        y: 930
+        width: 1024
+        height: 1025
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cc3e7d57b01cc84fb8b6fbdcf53a3f8
+      internalID: -1887605884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_29
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 1610
+        width: 24
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d971f1f0c2486d4a9905d149bf983a0
+      internalID: -335747101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_30
+      rect:
+        serializedVersion: 2
+        x: 1778
+        y: 1610
+        width: 24
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b11abdc7277ee44c8df529ed8de9cc0
+      internalID: -1720288898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_31
+      rect:
+        serializedVersion: 2
+        x: 2802
+        y: 1610
+        width: 24
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a35840add75922b4c8bb9fc76807aabc
+      internalID: 722970885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_32
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 1602
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1e08800026eff84ab195033d32e7c17
+      internalID: -1861482221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_33
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1604
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a40ddc3ef9dc13a45bce65beb386095d
+      internalID: 13739047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_34
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 1604
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6e11fc67d1d2d94fa84f7901a657d42
+      internalID: 509849130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_35
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 1604
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c377d20aa1f9bbb43a262fc2e593575a
+      internalID: 1775178055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_36
+      rect:
+        serializedVersion: 2
+        x: 2814
+        y: 1604
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aff3066e2f407ca42b88a3a073f5ed3b
+      internalID: 935544701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_37
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 1600
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f928ad0bf45275a4c8deca742a2f7356
+      internalID: -2129029758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_38
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 1190
+        width: 150
+        height: 414
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf102695b7cd48446b06e192c86bebfa
+      internalID: 1415024981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_39
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 1574
+        width: 6
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2e1756e704bcfd4580bee4fc8eb811e
+      internalID: 841645630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_40
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 1526
+        width: 20
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a070ef06bf0573e48bc8afeee137fb65
+      internalID: 1698212583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_41
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 1188
+        width: 158
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c46657e745d46a46a8fa0f3c72f45f5
+      internalID: -907070988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_44
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 1548
+        width: 6
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d9bb2279a0222f41869365c2588d7ae
+      internalID: 610577726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_45
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1522
+        width: 6
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 785d78cfa9315754a96c387bbd69f16c
+      internalID: 1867707824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_46
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 1510
+        width: 4
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6d943c1f4879b143822327599b54c13
+      internalID: -881956002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_47
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 1496
+        width: 6
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ed0f4567f0eb754f8a7221e054b03d9
+      internalID: 417462364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_48
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 1412
+        width: 30
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90b5f3fe57fac3c4c82470740dae9762
+      internalID: -1331257524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_49
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 1470
+        width: 6
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d583d45854f99c24b8b6317134a1acc8
+      internalID: -226603304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_50
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 1448
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ee93671da1c35f49b1b3314c5f21ab0
+      internalID: 1021634522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_51
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 1274
+        width: 96
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0865a4093b9fc2547ba8151c83957c86
+      internalID: -511980776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_52
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 1400
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b301e98f57d28646ae254dad3ca3b35
+      internalID: 395489529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_53
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 1390
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 283e8de941a3245498a68dbf3a147b39
+      internalID: 794668432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_54
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 1304
+        width: 18
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f86f528bb2c10b4f89c2809ed7655cb
+      internalID: -303546453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_55
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 1220
+        width: 16
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 431087edd0ebc32459aa9ab4d3ace468
+      internalID: -248935491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_56
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 1190
+        width: 94
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c29cfd69a49483f438ef88b58fd5c083
+      internalID: -1324587999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_57
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 1196
+        width: 10
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88c61c9107be92c4bb32aff4f76fbdc7
+      internalID: -359968296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_58
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 1194
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7dbc56559226544b91af88a83d6ad1c
+      internalID: -988264669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_59
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 1192
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11ac4fb28979ee54481d4b3e3fbf4d7c
+      internalID: -1452548302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_60
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1188
+        width: 18
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0697d1aa8461b1c4db99fef30bbfa172
+      internalID: -773241983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_61
+      rect:
+        serializedVersion: 2
+        x: 1382
+        y: 1188
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d663063fd7910af468cd001a641004d1
+      internalID: -1852171844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_62
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 1186
+        width: 12
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fbc9de6ead155c4a8efadcb3c855c4c
+      internalID: -1892758459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_63
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 1186
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5444292c50e4d554ea0db4c0e8de5c03
+      internalID: 1984751708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_64
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 1186
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23b081dc08154a545a855209902192a5
+      internalID: 700714610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_65
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 1186
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 878e8c24ad4385c4c99c506f172f554f
+      internalID: 1339998719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_66
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 1188
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bece34ead9fe104694e1a9706a53d0f
+      internalID: -387057798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_67
+      rect:
+        serializedVersion: 2
+        x: 1396
+        y: 1174
+        width: 94
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1b3301972bf79f4184adc51309613f8
+      internalID: 1159068056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_68
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 1186
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 997cdb6e13110dc4c98d1ee3e4c78cab
+      internalID: -1445714346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_69
+      rect:
+        serializedVersion: 2
+        x: 1642
+        y: 1186
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa0607dfe0f5096479279e8a8cd1c201
+      internalID: -1345646745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_70
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 1188
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42bf1c024a8ece642beddc4aa914153c
+      internalID: 618024320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_71
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 1184
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9edb27e6954cb774fbedb45bd942bf16
+      internalID: 1783150810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_72
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1184
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9fd8ba685b9acc4ab6860b8d7ce116c
+      internalID: 1313874006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_73
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 1182
+        width: 12
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1085396f6831aa4593574995ffc5bf1
+      internalID: -963998380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_74
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1182
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ff03e100c3ad0c4ab69ca1e412fced2
+      internalID: 1677279333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_75
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 1182
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c46a09addfff6d143a8f94180b00f886
+      internalID: -30632058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_76
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 1184
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb366c6fa925b774dafd587c9abd4af9
+      internalID: 1687676676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_77
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 1184
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4bc2b2d645206c408d8d1abd8c2bff0
+      internalID: -261262039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_78
+      rect:
+        serializedVersion: 2
+        x: 1582
+        y: 1182
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8ebf25d54a4c3141b23a67e5c4d63ae
+      internalID: -379979669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_79
+      rect:
+        serializedVersion: 2
+        x: 1594
+        y: 1182
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6a87ddd2400c85428d9c783ebc8d46e
+      internalID: 321862960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_80
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 1184
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed0e8bfdc0f1fdd4d84aa9463d8ba7c7
+      internalID: 2096797520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_81
+      rect:
+        serializedVersion: 2
+        x: 1618
+        y: 1184
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77f8ff1a6c1d6d04aa88b4f81dbf00c9
+      internalID: 1256911030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_82
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 1180
+        width: 12
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dae875f9c7809a49af6911ec72b56b5
+      internalID: -1448519425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_83
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 1178
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9024ae775a59bf74997dc1aa136b358b
+      internalID: -94992572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_84
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1178
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d67488486c0fad48a69729a7bfcb62f
+      internalID: 743726633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_85
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 1178
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45f7a461a5d14ff4dbcfac21f34cd4e8
+      internalID: -1104307904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_86
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 1180
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15bcefb4c8ef5ff4eb9c57a5e9bf4629
+      internalID: -1612901735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_87
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 1180
+        width: 8
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f299bc682172c044c8cdb9f067f0cbb4
+      internalID: 1099502987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_88
+      rect:
+        serializedVersion: 2
+        x: 1534
+        y: 1178
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0135e38dee5ca34a9d7a22e08090370
+      internalID: -2075901247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_89
+      rect:
+        serializedVersion: 2
+        x: 1546
+        y: 1178
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da3f1ba6e98d54d4aa41630392f721f3
+      internalID: -725394332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_90
+      rect:
+        serializedVersion: 2
+        x: 1558
+        y: 1180
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0db20bdaa638cc40b8c7aebc915e524
+      internalID: 1116604349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_91
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 1180
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e8b75af421a1294ba885f39f1115d43
+      internalID: -1776526336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_92
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1176
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12d81894c5ff1e348971f1f42b12fa82
+      internalID: 2031340883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_93
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 1174
+        width: 20
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 311e5eaf18dd6414489a4e452a95916e
+      internalID: 1046022416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_94
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 1176
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 787f418ac0c6d714eaf6b5d7bc008d9e
+      internalID: -1388629814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_95
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1176
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7326dbbbd30ded5488033058dc98ab2e
+      internalID: 1480315443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_96
+      rect:
+        serializedVersion: 2
+        x: 1492
+        y: 1174
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 408f6ec181313e740929d96fab16ddf7
+      internalID: 139893766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_97
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 1174
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e401c088e732fb2419de06a2304bdd37
+      internalID: -1171176538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_98
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 1176
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1e8888faf1c3da4c800ab431a9a8a3a
+      internalID: 1686804629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlantsNoOutline_99
+      rect:
+        serializedVersion: 2
+        x: 1522
+        y: 1176
+        width: 10
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4af75ff8678e1ab48820a1567d8f7af5
+      internalID: 1777562717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      PlantsNoOutline_96: 139893766
+      PlantsNoOutline_47: 417462364
+      PlantsNoOutline_82: -1448519425
+      PlantsNoOutline_32: -1861482221
+      PlantsNoOutline_83: -94992572
+      PlantsNoOutline_51: -511980776
+      PlantsNoOutline_91: -1776526336
+      PlantsNoOutline_33: 13739047
+      PlantsNoOutline_62: -1892758459
+      PlantsNoOutline_35: 1775178055
+      PlantsNoOutline_24: 1864355895
+      PlantsNoOutline_20: 255315442
+      PlantsNoOutline_5: 301394110
+      PlantsNoOutline_73: -963998380
+      PlantsNoOutline_38: 1415024981
+      PlantsNoOutline_7: -2112413544
+      PlantsNoOutline_13: -495527793
+      PlantsNoOutline_59: -1452548302
+      PlantsNoOutline_42: 516239052
+      PlantsNoOutline_46: -881956002
+      PlantsNoOutline_50: 1021634522
+      PlantsNoOutline_76: 1687676676
+      PlantsNoOutline_88: -2075901247
+      PlantsNoOutline_60: -773241983
+      PlantsNoOutline_81: 1256911030
+      PlantsNoOutline_97: -1171176538
+      PlantsNoOutline_25: 1835849409
+      PlantsNoOutline_6: -1598359724
+      PlantsNoOutline_70: 618024320
+      PlantsNoOutline_79: 321862960
+      PlantsNoOutline_19: 645500637
+      PlantsNoOutline_27: -805661221
+      PlantsNoOutline_54: -303546453
+      PlantsNoOutline_43: 100588574
+      PlantsNoOutline_4: -1588524944
+      PlantsNoOutline_99: 1777562717
+      PlantsNoOutline_92: 2031340883
+      PlantsNoOutline_53: 794668432
+      PlantsNoOutline_12: 409716525
+      PlantsNoOutline_84: 743726633
+      PlantsNoOutline_74: 1677279333
+      PlantsNoOutline_17: 1852149788
+      PlantsNoOutline_77: -261262039
+      PlantsNoOutline_18: -1739986228
+      PlantsNoOutline_16: -2075024475
+      PlantsNoOutline_86: -1612901735
+      PlantsNoOutline_36: 935544701
+      PlantsNoOutline_39: 841645630
+      PlantsNoOutline_52: 395489529
+      PlantsNoOutline_22: -1287095861
+      PlantsNoOutline_90: 1116604349
+      PlantsNoOutline_10: -187384098
+      PlantsNoOutline_11: 304915900
+      PlantsNoOutline_26: -312430639
+      PlantsNoOutline_8: -564750627
+      PlantsNoOutline_68: -1445714346
+      PlantsNoOutline_71: 1783150810
+      PlantsNoOutline_72: 1313874006
+      PlantsNoOutline_45: 1867707824
+      PlantsNoOutline_56: -1324587999
+      PlantsNoOutline_63: 1984751708
+      PlantsNoOutline_28: -1887605884
+      PlantsNoOutline_49: -226603304
+      PlantsNoOutline_95: 1480315443
+      PlantsNoOutline_87: 1099502987
+      PlantsNoOutline_67: 1159068056
+      PlantsNoOutline_55: -248935491
+      PlantsNoOutline_80: 2096797520
+      PlantsNoOutline_44: 610577726
+      PlantsNoOutline_15: 2023331139
+      PlantsNoOutline_21: 732958978
+      PlantsNoOutline_48: -1331257524
+      PlantsNoOutline_85: -1104307904
+      PlantsNoOutline_65: 1339998719
+      PlantsNoOutline_57: -359968296
+      PlantsNoOutline_0: 901153332
+      PlantsNoOutline_61: -1852171844
+      PlantsNoOutline_31: 722970885
+      PlantsNoOutline_23: 1885143703
+      PlantsNoOutline_1: 430521141
+      PlantsNoOutline_40: 1698212583
+      PlantsNoOutline_41: -907070988
+      PlantsNoOutline_37: -2129029758
+      PlantsNoOutline_98: 1686804629
+      PlantsNoOutline_34: 509849130
+      PlantsNoOutline_58: -988264669
+      PlantsNoOutline_9: 1096199352
+      PlantsNoOutline_69: -1345646745
+      PlantsNoOutline_89: -725394332
+      PlantsNoOutline_93: 1046022416
+      PlantsNoOutline_94: -1388629814
+      PlantsNoOutline_30: -1720288898
+      PlantsNoOutline_66: -387057798
+      PlantsNoOutline_29: -335747101
+      PlantsNoOutline_64: 700714610
+      PlantsNoOutline_2: -1245629413
+      PlantsNoOutline_75: -30632058
+      PlantsNoOutline_78: -379979669
+      PlantsNoOutline_14: -1622592646
+      PlantsNoOutline_3: -646299618
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

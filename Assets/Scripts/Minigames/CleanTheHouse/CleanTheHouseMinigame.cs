@@ -16,7 +16,7 @@ public class CleanTheHouseMinigame : MinigameObject
     {
         
     }
-
+  
     public override void Initialize()
     {
         interactable = this.GetComponent<Interactable>();

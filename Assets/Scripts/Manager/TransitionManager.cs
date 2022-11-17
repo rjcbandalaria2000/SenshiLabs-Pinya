@@ -18,12 +18,15 @@ public class TransitionManager : MonoBehaviour
     public const string CURTAIN_CLOSE = "CurtainsClosing";
     public const string CURTAIN_IDLE = "Idle";
 
+    public AudioSource audioSource;
+    public AudioClip audioClip;
     private Coroutine openingTransitionRoutine;
 
 
     private void Awake()
     {
         SingletonManager.Register(this);
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Start is called before the first frame update
@@ -34,9 +37,12 @@ public class TransitionManager : MonoBehaviour
 
     public void ChangeAnimation(string animationName)
     {
+        audioSource.PlayOneShot(audioClip);
         if (animator == null) { return; }
         animator.Play(animationName, 0 ,0f);
         currentAnimation = animationName;
+        StartCoroutine(StopSFX());
+    
     }
    
     public void Initialize()
@@ -58,14 +64,19 @@ public class TransitionManager : MonoBehaviour
             
             if (animator.GetCurrentAnimatorStateInfo(0).speed >= 1) // if the speed is positive 
             {
+               // audioSource.Stop();
                 return animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= (transitionTime);
+                  
             }
             else if (animator.GetCurrentAnimatorStateInfo(0).speed <= 0) // if speed is negative. used in closing animation since the speed is -1 to reverse the animation
             {
+               // audioSource.Stop();
                 return animator.GetCurrentAnimatorStateInfo(0).normalizedTime * animator.GetCurrentAnimatorStateInfo(0).speed <= (transitionTime * animator.GetCurrentAnimatorStateInfo(0).speed);
+               
             }
 
         }
+     
         return false;
     }
 
@@ -81,9 +92,10 @@ public class TransitionManager : MonoBehaviour
 
     IEnumerator OpeningTransition()
     {
+     
         Events.OnCurtainStart.Invoke();
         ChangeAnimation(CURTAIN_OPEN);
-
+     
         while (!IsAnimationFinished())
         {
             yield return null; 
@@ -93,4 +105,10 @@ public class TransitionManager : MonoBehaviour
         Events.OnCurtainsOpened.Invoke();
     }
 
+    IEnumerator StopSFX()
+    {
+       
+        yield return new WaitForSeconds(transitionTime);
+        audioSource.Stop();
+    }
 }

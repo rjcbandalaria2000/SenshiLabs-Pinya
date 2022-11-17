@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour
     private SceneChange             sceneChange;
     private PlayerProgress          playerProgress;
 
+    public GameObject tutorial;
+
     private void Awake()
     {
         SingletonManager.Register(this);
@@ -74,7 +76,9 @@ public class GameManager : MonoBehaviour
         {
             transitionManager = SingletonManager.Get<TransitionManager>();
         }
-        StartGameTransition();
+
+        tutorial.SetActive(true);
+       // StartGameTransition();
     }
 
     public void StartGameTransition()
@@ -170,4 +174,10 @@ public class GameManager : MonoBehaviour
         Events.OnTasksComplete.RemoveListener(GameWin);
     }
 
+    public void tutorialPlayButton()
+    {
+        tutorial.SetActive(false);
+
+        StartGameTransition();
+    }
 }

@@ -19,6 +19,9 @@ public class MinigameObject : MonoBehaviour
     protected SceneChange   sceneChange;
     protected PlayerData    playerData;
     protected Coroutine     interactRoutine;
+
+    public GameObject uncompleteState;
+    public GameObject completeState;
     private void Awake()
     {
        
@@ -28,7 +31,39 @@ public class MinigameObject : MonoBehaviour
 
         
     }
+    private void OnEnable()
+    {
+        if (hasCompleted == false)
+        {
+            if (uncompleteState != null)
+            {
+                uncompleteState.SetActive(true);
+            }
 
+            if(completeState != null)
+            {
+                completeState.SetActive(false);
+            }
+        }
+        else
+        {
+            if (uncompleteState != null)
+                uncompleteState.SetActive(false);
+
+            if (completeState != null)
+               completeState.SetActive(true);
+            
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (uncompleteState != null)
+            uncompleteState.SetActive(false);
+        if (completeState != null)
+            completeState.SetActive(false);
+        
+    }
     public virtual void Initialize()
     {
 
@@ -57,6 +92,11 @@ public class MinigameObject : MonoBehaviour
     public virtual IEnumerator InteractCoroutine(GameObject player = null)
     {
         yield return null; 
+    }
+
+    public virtual void deactivateUnfinishState()
+    {
+        uncompleteState.SetActive(false);
     }
 
     public bool CheckIfPrerequisiteFinished()
