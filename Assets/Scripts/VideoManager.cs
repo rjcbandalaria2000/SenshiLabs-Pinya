@@ -22,6 +22,15 @@ public class VideoManager : MonoBehaviour
         videoPlayer.clip = clips[0];
     }
 
+    private void OnEnable()
+    {
+        counter = 0;
+        if(clips[0] != null)
+        {
+            videoPlayer.clip = clips[0];
+        }
+    }
+
     public void MoveVideo(int index)
     {
 

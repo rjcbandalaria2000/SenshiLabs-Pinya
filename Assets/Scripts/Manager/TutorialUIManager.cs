@@ -55,8 +55,23 @@ public class TutorialUIManager : MonoBehaviour
     private void OnEnable()
     {
         prevArrow.gameObject.SetActive(false);
+        nextArrow.gameObject.SetActive(true);
         pageCount = 0;
         textGO.text = instructionText[0];
+        if(tutorialImages[0] != null)
+        {
+            videoImage.gameObject.SetActive(false);
+            imageGO.gameObject.SetActive(true);
+
+            imageGO.sprite = tutorialImages[0];
+
+
+        }
+        else
+        {
+            videoImage.gameObject.SetActive(true);
+            imageGO.gameObject.SetActive(false);
+        }
         tempPage = 1;
         currentPage.text = "1"; 
 
@@ -85,12 +100,13 @@ public class TutorialUIManager : MonoBehaviour
             {
                 nextArrow.gameObject.SetActive(false);
 
-                if(startButton != null)
+                if(startButton != null && startButton.gameObject.activeSelf == false)
                 {
                     startButton.gameObject.SetActive(true);
                 }
-                else
+                else if (startButton != null && startButton.gameObject.activeSelf == true)
                 {
+                   
                     startButton.gameObject.SetActive(false);
                 }
             }
