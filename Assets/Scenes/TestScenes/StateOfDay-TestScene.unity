@@ -2540,7 +2540,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &513541058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7601,8 +7601,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4257680015237913096, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4257680015237913096, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
+      propertyPath: stateOfDayGO
+      value: 
+      objectReference: {fileID: 2116959611}
     - target: {fileID: 4257680015237913097, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -8126,11 +8130,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2777084151479815385, guid: da8f08f5586c40f41b8739997c82f052, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2777084151479815385, guid: da8f08f5586c40f41b8739997c82f052, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6219940208187709655, guid: da8f08f5586c40f41b8739997c82f052, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -12859,6 +12863,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2116959611 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2892929990964373228, guid: 7acd83035cfc1aa44b4c64c13146f364, type: 3}
+  m_PrefabInstance: {fileID: 2041756639}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2145497557
 GameObject:
   m_ObjectHideFlags: 0
@@ -13694,7 +13703,7 @@ RectTransform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.8, y: 1}
   m_AnchoredPosition: {x: -10.874545, y: 1.4602051}
   m_SizeDelta: {x: -34.15498, y: -35.375603}
   m_Pivot: {x: 0.5, y: 0.5}

@@ -17,6 +17,7 @@ public class StateDayTransition : MonoBehaviour
 
     public RectTransform skyBG;
     private DayState dayState;
+    private TimePeriod currentTimePeriod;
     public RectTransform daySun;
     public RectTransform dayCloud;
 
@@ -37,9 +38,13 @@ public class StateDayTransition : MonoBehaviour
     AudioSource audioSource;
 
     public UnityEvent WoodSound;
+
+    [Header("States")]
+    public bool isFinished= false;
+
     private void Awake()
     {
-        
+        //SingletonManager.Register(this);
     }
     private void Start()
     {
@@ -47,10 +52,10 @@ public class StateDayTransition : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            NextState();
-        }
+        //if (Input.GetKeyDown(KeyCode.P))
+        //{
+        //    NextState();
+        //}
     }
 
     public void NextState()
@@ -69,8 +74,25 @@ public class StateDayTransition : MonoBehaviour
         }
     }
 
+    public void NextState(TimePeriod timePeriod)
+    {
+        switch (timePeriod)
+        {
+            case TimePeriod.Morning:
+                MorningState();
+                break;
+            case TimePeriod.Afternoon:
+                AfternoonState();
+                break;
+            case TimePeriod.Evening:
+                EveningState();
+                break;
+        }
+    }
+
     public void MorningState()
     {
+        isFinished = false;
         Debug.Log("Morning");
         Sequence mySequence = DOTween.Sequence();
         mySequence.Append(daySun.DOJumpAnchorPos(stateEndPos[(int)dayState], 200, 4, 1f, false)).WaitForCompletion();
@@ -78,6 +100,7 @@ public class StateDayTransition : MonoBehaviour
         audioSource.PlayOneShot(soundSFX[(int)dayState]);
         WoodSound.Invoke();
         dayState++;
+        isFinished = true;
     }
 
     public void AfternoonState()
