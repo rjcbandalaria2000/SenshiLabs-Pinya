@@ -77,6 +77,7 @@ public class StateDayTransition : MonoBehaviour
 
     public void NextState(TimePeriod timePeriod)
     {
+        currentTimePeriod = timePeriod;
         switch (timePeriod)
         {
             case TimePeriod.Morning:
@@ -107,7 +108,7 @@ public class StateDayTransition : MonoBehaviour
     public void AfternoonState()
     {
         Debug.Log("Afternoon");
-        int index = (int)dayState - 1;
+        int index = (int)currentTimePeriod - 1;
         Sequence mySequence = DOTween.Sequence();
         statesGO[index].DOMoveX(-3000f, 1, false);
         skyBG.DOAnchorPosX(xSkyPos[index], 1, false);
@@ -121,7 +122,7 @@ public class StateDayTransition : MonoBehaviour
     public void EveningState()
     {
         Debug.Log("Evening");
-        int index = (int)dayState - 1;
+        int index = (int)currentTimePeriod - 1;
         Sequence mySequence = DOTween.Sequence();
         statesGO[index].DOMoveX(-3000f, 1, false);
         skyBG.DOAnchorPosX(xSkyPos[index], 1, false);
