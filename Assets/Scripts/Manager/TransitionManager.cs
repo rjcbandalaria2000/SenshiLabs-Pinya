@@ -5,28 +5,37 @@ using UnityEngine;
 
 public class TransitionManager : MonoBehaviour
 {
-    public GameObject   curtain;
-    public Animator     animator;
-    public string       currentAnimation;
-    [Range(0f, 1f)]
-    public float        transitionTime = 1f;
+    [Header("Transition Game Objects")]
+    public GameObject           curtain;
+    public GameObject           stateOfDayGO;
+    public StateDayTransition  stateDayTransition;
 
-    public float animationTime;
+    [Header("Animation")]
+    public Animator             animator;
+    public string               currentAnimation;
+    [Range(0f, 1f)]
+    public float                transitionTime = 1f;
+
+    public float                animationTime;
 
     //Animation Names
-    public const string CURTAIN_OPEN = "CurtainsOpening";
-    public const string CURTAIN_CLOSE = "CurtainsClosing";
-    public const string CURTAIN_IDLE = "Idle";
+    public const string         CURTAIN_OPEN = "CurtainsOpening";
+    public const string         CURTAIN_CLOSE = "CurtainsClosing";
+    public const string         CURTAIN_IDLE = "Idle";
 
-    public AudioSource audioSource;
-    public AudioClip audioClip;
-    private Coroutine openingTransitionRoutine;
-
+    public AudioSource          audioSource;
+    public AudioClip            audioClip;
+    private Coroutine           openingTransitionRoutine;
+    
 
     private void Awake()
     {
         SingletonManager.Register(this);
         audioSource = GetComponent<AudioSource>();
+        if (stateOfDayGO)
+        {
+            stateDayTransition = stateOfDayGO.GetComponent<StateDayTransition>();
+        }
     }
 
     // Start is called before the first frame update

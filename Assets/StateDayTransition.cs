@@ -17,6 +17,7 @@ public class StateDayTransition : MonoBehaviour
 
     public RectTransform skyBG;
     private DayState dayState;
+    private TimePeriod currentTimePeriod;
     public RectTransform daySun;
     public RectTransform dayCloud;
 
@@ -37,20 +38,25 @@ public class StateDayTransition : MonoBehaviour
     AudioSource audioSource;
 
     public UnityEvent WoodSound;
+
+    [Header("States")]
+    public bool isFinished= false;
+
     private void Awake()
     {
-        
+        //SingletonManager.Register(this);
+        audioSource = this.GetComponent<AudioSource>();
     }
     private void Start()
     {
-        audioSource = gameObject.GetComponent<AudioSource>();
+        
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            NextState();
-        }
+        //if (Input.GetKeyDown(KeyCode.P))
+        //{
+        //    NextState();
+        //}
     }
 
     public void NextState()
@@ -69,40 +75,59 @@ public class StateDayTransition : MonoBehaviour
         }
     }
 
+    public void NextState(TimePeriod timePeriod)
+    {
+        currentTimePeriod = timePeriod;
+        switch (timePeriod)
+        {
+            case TimePeriod.Morning:
+                MorningState();
+                break;
+            case TimePeriod.Afternoon:
+                AfternoonState();
+                break;
+            case TimePeriod.Evening:
+                EveningState();
+                break;
+        }
+    }
+
     public void MorningState()
     {
+        isFinished = false;
         Debug.Log("Morning");
         Sequence mySequence = DOTween.Sequence();
-        mySequence.Append(daySun.DOJumpAnchorPos(stateEndPos[(int)dayState], 200, 4, 1f, false)).WaitForCompletion();
+        mySequence.Append(daySun.DOJumpAnchorPos(stateEndPos[(int)currentTimePeriod], 200, 4, 1f, false)).WaitForCompletion();
         mySequence.Append(dayCloud.DOMoveX(1000f, 1, false)).WaitForCompletion();
-        audioSource.PlayOneShot(soundSFX[(int)dayState]);
+        audioSource.PlayOneShot(soundSFX[(int)currentTimePeriod]);
         WoodSound.Invoke();
-        dayState++;
+        //dayState++;
+        isFinished = true;
     }
 
     public void AfternoonState()
     {
         Debug.Log("Afternoon");
-        int index = (int)dayState - 1;
+        int index = (int)currentTimePeriod - 1;
         Sequence mySequence = DOTween.Sequence();
         statesGO[index].DOMoveX(-3000f, 1, false);
         skyBG.DOAnchorPosX(xSkyPos[index], 1, false);
-        mySequence.Append(afternoonSun.DOJumpAnchorPos(stateEndPos[(int)dayState], 200, 4, 1f, false));
+        mySequence.Append(afternoonSun.DOJumpAnchorPos(stateEndPos[(int)currentTimePeriod], 200, 4, 1f, false));
         mySequence.Append(afternoonCloud.DOAnchorPosX(-38f, 1, false));
-        audioSource.PlayOneShot(soundSFX[(int)dayState]);
+        audioSource.PlayOneShot(soundSFX[(int)currentTimePeriod]);
         WoodSound.Invoke();
-        dayState++;
+        //dayState++;
     }
 
     public void EveningState()
     {
         Debug.Log("Evening");
-        int index = (int)dayState - 1;
+        int index = (int)currentTimePeriod - 1;
         Sequence mySequence = DOTween.Sequence();
         statesGO[index].DOMoveX(-3000f, 1, false);
         skyBG.DOAnchorPosX(xSkyPos[index], 1, false);
-        audioSource.PlayOneShot(soundSFX[(int)dayState]);
+        audioSource.PlayOneShot(soundSFX[(int)currentTimePeriod]);
         WoodSound.Invoke();
-        mySequence.Append(eveSun.DOJumpAnchorPos(stateEndPos[(int)dayState], 200, 4, 1f, false));
+        mySequence.Append(eveSun.DOJumpAnchorPos(stateEndPos[(int)currentTimePeriod], 200, 4, 1f, false));
     }
 }

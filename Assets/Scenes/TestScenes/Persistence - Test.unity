@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f191e60c091de1944acc59cb8a1f1455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstSceneId: DisplayTimePeriod - TestScene
+  FirstSceneId: StateOfDay-TestScene
 --- !u!4 &1480656603
 Transform:
   m_ObjectHideFlags: 0
@@ -201,17 +201,23 @@ MonoBehaviour:
   maxMotivationData: 0
   storedPinyaData: 0
   maxPinyaData: 0
-  MinigamesPlayed: 0
-  HasSaved: 0
+  minigamesPlayed: 0
+  hasSaved: 0
   playerLocation: {x: 0, y: 0}
-  IsCleanTheHouseFinished: 0
-  IsWashTheDishesFinished: 0
-  IsGroceryFinished: 0
-  IsWaterThePlantsFinished: 0
-  IsGetWaterFinished: 0
-  IsImHungryFinished: 0
-  IsSleepFinished: 0
+  firstTime: 0
+  isCleanTheHouseFinished: 0
+  isWashTheDishesFinished: 0
+  isGroceryFinished: 0
+  isWaterThePlantsFinished: 0
+  isGetWaterFinished: 0
+  isImHungryFinished: 0
+  isTagFinished: 0
+  isHideSeekFinished: 0
+  isSleepFinished: 0
+  isFoldingClothesFinished: 0
   requiredTasks: []
+  savedTimeIndex: 0
+  savedTimePeriod: 0
 --- !u!4 &1566311201
 Transform:
   m_ObjectHideFlags: 0
