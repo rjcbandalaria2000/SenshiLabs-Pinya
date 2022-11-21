@@ -7665,7 +7665,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4257680015237913099, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
@@ -13825,34 +13825,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4927296887461873722, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
-      propertyPath: clips.Array.size
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 4927296887461873722, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
-      propertyPath: clips.Array.data[3]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4927296887461873722, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
-      propertyPath: clips.Array.data[4]
-      value: 
-      objectReference: {fileID: 32900000, guid: a62c8f9c820fa7a4889a4fbc89b764d5, type: 3}
-    - target: {fileID: 4927296887461873722, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
-      propertyPath: clips.Array.data[5]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4927296887461873722, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
-      propertyPath: clips.Array.data[6]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4927296887461873722, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
-      propertyPath: clips.Array.data[7]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4927296887461873722, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
-      propertyPath: clips.Array.data[9]
-      value: 
-      objectReference: {fileID: 32900000, guid: a62c8f9c820fa7a4889a4fbc89b764d5, type: 3}
     - target: {fileID: 7200250650991117830, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 3
