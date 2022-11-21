@@ -48,15 +48,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Game/CookTheFood - PolishTest.unity
     guid: 05f4c92c76240864b9beb6bc81a3d70e
   - enabled: 1
-    path: Assets/Scenes/TestScenes/DisplayTimePeriod - TestScene.unity
-    guid: 2afd3906aeb666c43bf3d3561aba084b
-  - enabled: 1
     path: Assets/Scenes/Main Game/Tag.unity
     guid: 1717b9caff1b5174cb8f8f4b06589937
   - enabled: 1
-    path: Assets/Scenes/BadEndingStoryboard.unity
-    guid: 3e9296a42f1bf404fbaeb368e81edc51
-  - enabled: 1
     path: Assets/Scenes/GoodEndingStoryboard.unity
     guid: 1b7a012b7cf4cbe40948d3afbdc51e22
+  - enabled: 1
+    path: Assets/Scenes/BadEndingStoryboard.unity
+    guid: f321f9f423ed14543a436e111a9e0e44
   m_configObjects: {}

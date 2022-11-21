@@ -6843,14 +6843,14 @@ PrefabInstance:
     - target: {fileID: 8301517832720503713, guid: 1717608a280b0f148a9e05cf914c7d77, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 417715214}
+      objectReference: {fileID: 1725700282}
     - target: {fileID: 8301517832720503713, guid: 1717608a280b0f148a9e05cf914c7d77, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnChangeScene
+      value: OnConfirmExitMinigame
       objectReference: {fileID: 0}
     - target: {fileID: 8301517832720503713, guid: 1717608a280b0f148a9e05cf914c7d77, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SceneChange, Assembly-CSharp
+      value: UIManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8301517833032827718, guid: 1717608a280b0f148a9e05cf914c7d77, type: 3}
       propertyPath: m_Pivot.x
@@ -9955,6 +9955,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1725700281}
   - component: {fileID: 1725700282}
+  - component: {fileID: 1725700283}
   m_Layer: 0
   m_Name: ~UIManager
   m_TagString: Untagged
@@ -10009,6 +10010,18 @@ MonoBehaviour:
   askMomButton: {fileID: 0}
   tutorialGO: {fileID: 476275623}
   confirmationGO: {fileID: 2143539528}
+--- !u!114 &1725700283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725700280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c181a4815ee67c49846764ff353adc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1731092503
 GameObject:
   m_ObjectHideFlags: 0
