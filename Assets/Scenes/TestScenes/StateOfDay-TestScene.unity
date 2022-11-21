@@ -7607,6 +7607,10 @@ PrefabInstance:
       propertyPath: stateOfDayGO
       value: 
       objectReference: {fileID: 2116959611}
+    - target: {fileID: 4257680015237913096, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
+      propertyPath: stateDayTransition
+      value: 
+      objectReference: {fileID: 2116959613}
     - target: {fileID: 4257680015237913097, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -12868,6 +12872,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2892929990964373228, guid: 7acd83035cfc1aa44b4c64c13146f364, type: 3}
   m_PrefabInstance: {fileID: 2041756639}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2116959613 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 84774168, guid: 7acd83035cfc1aa44b4c64c13146f364, type: 3}
+  m_PrefabInstance: {fileID: 2041756639}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116959611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96ae4b0ff41410a4fbcd80abf2ffa55b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2145497557
 GameObject:
   m_ObjectHideFlags: 0

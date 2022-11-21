@@ -109,10 +109,11 @@ public class GameManager : MonoBehaviour
         UI.DeactivateGameUI();
         transitionManager.stateOfDayGO.SetActive(true);
         transitionManager.stateDayTransition.NextState(SingletonManager.Get<DayCycle>().timePeriod);
-        while (!transitionManager.stateDayTransition.isFinished)
-        {
-            yield return null;
-        }
+        yield return new WaitForSeconds(3f);
+        //while (!transitionManager.stateDayTransition.isFinished)
+        //{
+        //    yield return null;
+        //}
         transitionManager.stateOfDayGO.SetActive(false);
         // Start playing curtain animation 
         transitionManager.ChangeAnimation(TransitionManager.CURTAIN_OPEN);
