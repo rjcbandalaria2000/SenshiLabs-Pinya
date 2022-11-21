@@ -100,7 +100,7 @@ public class StateDayTransition : MonoBehaviour
         mySequence.Append(dayCloud.DOMoveX(1000f, 1, false)).WaitForCompletion();
         audioSource.PlayOneShot(soundSFX[(int)currentTimePeriod]);
         WoodSound.Invoke();
-        dayState++;
+        //dayState++;
         isFinished = true;
     }
 
@@ -115,7 +115,7 @@ public class StateDayTransition : MonoBehaviour
         mySequence.Append(afternoonCloud.DOAnchorPosX(-38f, 1, false));
         audioSource.PlayOneShot(soundSFX[(int)currentTimePeriod]);
         WoodSound.Invoke();
-        dayState++;
+        //dayState++;
     }
 
     public void EveningState()
