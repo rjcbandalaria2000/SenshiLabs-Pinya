@@ -2812,7 +2812,7 @@ MonoBehaviour:
   NumOfIngredients: 0
   IngredientsToSpawn: []
   Pot: {fileID: 1501611435}
-  lifeMeterValue: 20
+  lifeMeterValue: 35
 --- !u!4 &955251546
 Transform:
   m_ObjectHideFlags: 0

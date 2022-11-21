@@ -2898,7 +2898,7 @@ MonoBehaviour:
   count: 0
   GameStartTime: 3
   CountdownTimerUI: {fileID: 1211409094}
-  earnedMotivationalValue: 20
+  earnedMotivationalValue: 35
 --- !u!4 &448823272
 Transform:
   m_ObjectHideFlags: 0

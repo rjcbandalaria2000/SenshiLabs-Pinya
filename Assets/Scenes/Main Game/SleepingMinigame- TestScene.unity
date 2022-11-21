@@ -5839,7 +5839,7 @@ MonoBehaviour:
   countdownTimerUI: {fileID: 2056440752}
   RequiredPoints: 5
   PlayerPoints: 0
-  motivationalPoints: 20
+  motivationalPoints: 50
   basket: {fileID: 26107842}
   spawner: {fileID: 977571685}
   playerCanvas: {fileID: 2031391845}

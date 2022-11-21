@@ -3565,6 +3565,10 @@ PrefabInstance:
       propertyPath: startPos.y
       value: 1.99
       objectReference: {fileID: 0}
+    - target: {fileID: 2816954076214239179, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: motivationCost
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 2816954076488409267, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
       propertyPath: m_Name
       value: Broom-CleanTheHouse
@@ -5100,7 +5104,7 @@ PrefabInstance:
       objectReference: {fileID: 893641066}
     - target: {fileID: 1021784888, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
       propertyPath: motivationCost
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1379708972185959160, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
       propertyPath: m_SortingOrder
@@ -5409,7 +5413,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2907636213359965985, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
       propertyPath: motivationCost
-      value: 20
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 2907636213359965985, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
       propertyPath: uncompleteState
@@ -6894,6 +6898,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -1.3009715
       objectReference: {fileID: 0}
+    - target: {fileID: 6427477042207794531, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
+      propertyPath: motivationCost
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
 --- !u!1 &1114840999 stripped
@@ -7139,6 +7147,10 @@ PrefabInstance:
       propertyPath: completeState
       value: 
       objectReference: {fileID: 1139237641}
+    - target: {fileID: 5285038560494157795, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
+      propertyPath: motivationCost
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5285038560494157795, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
       propertyPath: uncompleteState
       value: 
@@ -7790,7 +7802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4257680015237913099, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
@@ -11626,6 +11638,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1516140953}
     m_Modifications:
     - target: {fileID: -4991398368355363817, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
+      propertyPath: motivationCost
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -4991398368355363817, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
       propertyPath: uncompleteState
       value: 
       objectReference: {fileID: 1896368318}
@@ -12033,6 +12049,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1516140953}
     m_Modifications:
+    - target: {fileID: -8512082004905795788, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
+      propertyPath: motivationCost
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: -8512082004905795788, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
       propertyPath: preRequisiteTasks.Array.data[0]
       value: 
