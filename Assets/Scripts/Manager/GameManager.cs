@@ -107,14 +107,14 @@ public class GameManager : MonoBehaviour
         }
         //Disable UI 
         UI.DeactivateGameUI();
-        transitionManager.stateOfDayGO.SetActive(true);
-        transitionManager.stateDayTransition.NextState(SingletonManager.Get<DayCycle>().timePeriod);
-        yield return new WaitForSeconds(3f);
-        //while (!transitionManager.stateDayTransition.isFinished)
-        //{
-        //    yield return null;
-        //}
-        transitionManager.stateOfDayGO.SetActive(false);
+        if (transitionManager.stateOfDayGO)
+        {
+            transitionManager.stateOfDayGO.SetActive(true);
+            transitionManager.stateDayTransition.NextState(SingletonManager.Get<DayCycle>().timePeriod);
+            yield return new WaitForSeconds(3f);
+            transitionManager.stateOfDayGO.SetActive(false);
+        }
+        
         // Start playing curtain animation 
         transitionManager.ChangeAnimation(TransitionManager.CURTAIN_OPEN);
 
