@@ -103,6 +103,7 @@ public class GameManager : MonoBehaviour
         PlayerControls playerControls = player.gameObject.GetComponent<PlayerControls>();
         if (playerControls)
         {
+            playerControls.Initialize();
             playerControls.enabled = false;
         }
         //Disable UI 
