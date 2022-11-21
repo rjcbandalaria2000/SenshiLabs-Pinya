@@ -4635,7 +4635,9 @@ MonoBehaviour:
   maxTime: 20
   speedCounter: 1
   player: {fileID: 0}
-  minigames: []
+  goodEndingSceneName: 
+  badEndingSceneName: 
+  tutorial: {fileID: 0}
 --- !u!1 &662185521 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4622933539618263828, guid: c8931a41b5edd41479a9c468c84f302c, type: 3}
@@ -11530,7 +11532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 285345095498947018, guid: 8144eb43e2faa144589c5c42d9279979, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 285345095498947022, guid: 8144eb43e2faa144589c5c42d9279979, type: 3}
       propertyPath: m_Pivot.x
