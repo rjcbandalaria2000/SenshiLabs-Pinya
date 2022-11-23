@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Assertions;
 using System.Linq;
 using System;
+using Random = UnityEngine.Random;
 
 public class SceneLoad : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class SceneLoad : MonoBehaviour
 
     private float loadProgress;
 
+    List<AsyncOperation> scenesLoading = new List<AsyncOperation>();   
     private void Awake()
     {
         SingletonManager.Register(this);
@@ -22,7 +24,10 @@ public class SceneLoad : MonoBehaviour
   
     private void Start()
     {
-        LoadScene(FirstSceneId);
+       // LoadScene(FirstSceneId);
+
+        SceneManager.LoadSceneAsync(FirstSceneId,LoadSceneMode.Additive);
+        currentSceneId = FirstSceneId;
 
         PlayerData playerData = SingletonManager.Get<PlayerData>();
     }
@@ -67,9 +72,48 @@ public class SceneLoad : MonoBehaviour
       
     }
 
+    private IEnumerator LoadGame(string sceneId)
+    {
+
+        yield return new WaitForSeconds(Random.Range(0.5f, 1.0f));
+        //scenesLoading.Add(SceneManager.UnloadSceneAsync(currentSceneId));
+        SceneManager.UnloadSceneAsync(currentSceneId);
+        currentSceneId = string.Empty;
+
+        yield return null;
+
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId, LoadSceneMode.Additive);
+       // scenesLoading.Add(operation);
+        yield return operation;
+
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneId));
+        currentSceneId = sceneId;
+
+        yield return null;
+
+       // StartCoroutine(ProgressLoad());
+    }
+
+    //IEnumerator ProgressLoad()
+    //{
+    //    for(int i = 0; i < scenesLoading.Count; i++)
+    //    {
+    //        while(!scenesLoading[i].isDone)
+    //        {
+    //            yield return null;
+    //        }
+
+
+    //    }
+
+    //    SingletonManager.Get<UIManager>().DeactivateLoadingUI();
+    //}
+
     public Coroutine LoadScene(string sceneId)
     {
-        return StartCoroutine(LoadSequence(sceneId));
+       // return StartCoroutine(LoadSequence(sceneId));
+
+        return StartCoroutine(LoadGame(sceneId));
     }
 
 }
