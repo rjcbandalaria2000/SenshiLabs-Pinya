@@ -4751,7 +4751,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1021784888, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
       propertyPath: motivationCost
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8510290887647143744, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
       propertyPath: m_Size.x
@@ -6524,6 +6524,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -1.3009715
       objectReference: {fileID: 0}
+    - target: {fileID: 6427477042207794531, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
+      propertyPath: motivationCost
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
 --- !u!1 &1114840999 stripped
@@ -6672,6 +6676,10 @@ PrefabInstance:
     - target: {fileID: 1278223492080597535, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
       propertyPath: m_Offset.y
       value: -2.0247822
+      objectReference: {fileID: 0}
+    - target: {fileID: 5285038560494157795, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
+      propertyPath: motivationCost
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5285038560494157795, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
       propertyPath: preRequisiteTasks.Array.data[0]
@@ -9795,7 +9803,9 @@ MonoBehaviour:
   maxTime: 0
   speedCounter: 0
   player: {fileID: 312946475}
-  minigames: []
+  goodEndingSceneName: 
+  badEndingSceneName: 
+  tutorial: {fileID: 0}
 --- !u!4 &1473840147
 Transform:
   m_ObjectHideFlags: 0
@@ -10920,6 +10930,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1516140953}
     m_Modifications:
     - target: {fileID: -4991398368355363817, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
+      propertyPath: motivationCost
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -4991398368355363817, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
       propertyPath: preRequisiteTasks.Array.data[0]
       value: 
       objectReference: {fileID: 1114841000}
@@ -11270,6 +11284,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1516140953}
     m_Modifications:
+    - target: {fileID: -8512082004905795788, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
+      propertyPath: motivationCost
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: -8512082004905795788, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
       propertyPath: preRequisiteTasks.Array.data[0]
       value: 
@@ -11998,6 +12016,7 @@ MonoBehaviour:
   videoImage: {fileID: 5527241467063017171}
   nextArrow: {fileID: 2174895159101204484}
   prevArrow: {fileID: 2174895158173537990}
+  startButton: {fileID: 0}
 --- !u!1 &2145497557
 GameObject:
   m_ObjectHideFlags: 0
