@@ -23,6 +23,8 @@ public class TutorialUIManager : MonoBehaviour
 
     public Button startButton;
 
+    private UIManager uiManager;
+
     private void Awake()
     {
         videoManager = GetComponent<VideoManager>();
@@ -50,6 +52,12 @@ public class TutorialUIManager : MonoBehaviour
         if(startButton != null)
         {
             startButton.gameObject.SetActive(false);
+        }
+
+        uiManager = SingletonManager.Get<UIManager>();
+        if (uiManager)
+        {
+            uiManager.DeactivateGameUI();
         }
     }
     private void OnEnable()
