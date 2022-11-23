@@ -44,7 +44,8 @@ public class ImHungryManager : MinigameManager
 
     public void IncreaseLifeMeter(float lifeValue)
     {
-        Assert.IsNotNull(playerData, "Player Data is not set or is null");
+        //Assert.IsNotNull(playerData, "Player Data is not set or is null");
+        if(playerData == null) { return; }
         if(playerData.storedPinyaData < playerData.maxPinyaData)
         {
             playerData.storedPinyaData += lifeValue;
