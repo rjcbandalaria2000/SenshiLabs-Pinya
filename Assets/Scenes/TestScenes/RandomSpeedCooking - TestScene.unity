@@ -2922,6 +2922,7 @@ MonoBehaviour:
   NumOfIngredients: 0
   IngredientsToSpawn: []
   Pot: {fileID: 1501611435}
+  lifeMeterValue: 20
 --- !u!4 &955251546
 Transform:
   m_ObjectHideFlags: 0
@@ -3341,11 +3342,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tracker: {fileID: 1007357098}
+  speedJitterTime: 1
   Speeds:
   - 2
-  - 3
   - 4
   - 5
+  - 8
   StartPosition: {fileID: 83568138}
   EndPosition: {fileID: 506559440}
   TempPositions: {fileID: 166510685}
