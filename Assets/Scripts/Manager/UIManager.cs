@@ -348,7 +348,8 @@ public class UIManager : MonoBehaviour
     {
         confirmationGO.SetActive(false);
         Events.OnSceneChange.Invoke();
-        if (sceneChange == null) { return; }
+        Assert.IsNotNull(sceneChange, "Scene change component is null or is not set");
+        //if (sceneChange == null) { return; }
         if (scene != null)
         {
             sceneChange.OnChangeScene(scene);

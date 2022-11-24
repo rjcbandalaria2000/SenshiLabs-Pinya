@@ -25,15 +25,19 @@ public class PlayerControls : MonoBehaviour
         {
             this.enabled = true;
         }
+        Initialize();
+    }
+
+    public void Initialize()
+    {
         mainCamera = Camera.main;
 
-        if(playerData == null)
+        if (playerData == null)
         {
             playerData = SingletonManager.Get<PlayerData>();
         }
         RestoreLastPlayerPosition();
     }
-
     
     void Update()
     {

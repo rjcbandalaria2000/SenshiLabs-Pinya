@@ -56,7 +56,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BadEndingStoryboard.unity
     guid: f321f9f423ed14543a436e111a9e0e44
-  - enabled: 1
-    path: Assets/Scenes/TestScenes/StateOfDay-TestScene.unity
-    guid: aceb9939f8983ca4faa5def75acf7996
   m_configObjects: {}
