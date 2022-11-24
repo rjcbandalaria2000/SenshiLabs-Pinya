@@ -2525,7 +2525,7 @@ MonoBehaviour:
   isCompleted: 0
   NameOfNextScene: MainGameScene1 1
   timer: 0
-  maxTimer: 10
+  maxTimer: 60
   speedTimer: 1
   gameStartTime: 3
   countdownTimerUI: {fileID: 323176906}

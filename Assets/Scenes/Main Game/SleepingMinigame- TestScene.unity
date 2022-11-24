@@ -5833,13 +5833,13 @@ MonoBehaviour:
   isCompleted: 0
   NameOfNextScene: MainGameScene1 1
   timer: 0
-  maxTimer: 20
+  maxTimer: 60
   speedTimer: 1
   gameStartTime: 3
   countdownTimerUI: {fileID: 2056440752}
-  RequiredPoints: 5
+  RequiredPoints: 10
   PlayerPoints: 0
-  motivationalPoints: 20
+  motivationalPoints: 50
   basket: {fileID: 26107842}
   spawner: {fileID: 977571685}
   playerCanvas: {fileID: 2031391845}
