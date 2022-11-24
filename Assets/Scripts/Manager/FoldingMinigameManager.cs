@@ -94,13 +94,15 @@ public class FoldingMinigameManager : MinigameManager
         }
         //Activate Game Countdown
         SingletonManager.Get<UIManager>().ActivateGameCountdown();
-        countdownTimerUI.UpdateCountdownSprites((int)gameStartTimer);
+    //    countdownTimerUI.UpdateCountdownSprites((int)gameStartTimer);
         //countdownTimerUI.UpdateCountdownTimer(gameStartTimer);
         //Wait till the game countdown is finish
         while (gameStartTimer > 0)
         {
             gameStartTimer -= 1 * Time.deltaTime;
             countdownTimerUI.UpdateCountdownSprites((int)gameStartTimer);
+           
+                
             yield return null;
         }
         //After Game Countdown
