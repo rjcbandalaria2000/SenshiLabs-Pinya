@@ -3342,12 +3342,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tracker: {fileID: 1007357098}
-  speedJitterTime: 1
+  speedJitterTime: 0.5
   Speeds:
   - 2
   - 4
   - 5
   - 8
+  - 10
   StartPosition: {fileID: 83568138}
   EndPosition: {fileID: 506559440}
   TempPositions: {fileID: 166510685}
