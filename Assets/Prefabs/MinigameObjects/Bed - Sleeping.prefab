@@ -278,8 +278,9 @@ GameObject:
   - component: {fileID: 1510476234243142140}
   - component: {fileID: 8612538750989501247}
   - component: {fileID: 5009685299509151713}
+  - component: {fileID: 3094543890552111434}
   m_Layer: 5
-  m_Name: wf
+  m_Name: SpeechBubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -344,6 +345,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3094543890552111434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2639276232553964281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c65d1576febdb714b935113c123583b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 7148304158928383472}
 --- !u!1 &6246211231711034711
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,7 +453,6 @@ GameObject:
   - component: {fileID: 5357421007875212583}
   - component: {fileID: 5589611513077463031}
   - component: {fileID: 6675037329015697051}
-  - component: {fileID: 7344810112113248100}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -512,23 +525,6 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
---- !u!114 &7344810112113248100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6845624200553067527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!1 &7148304157551453416
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,6 +761,12 @@ MonoBehaviour:
   hasCompleted: 0
   minigameScene: SleepingMinigame- TestScene
   preRequisiteTasks: []
+  onPlayerEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerExit:
+    m_PersistentCalls:
+      m_Calls: []
   uncompleteState: {fileID: 0}
   completeState: {fileID: 0}
 --- !u!114 &8938611812155796279

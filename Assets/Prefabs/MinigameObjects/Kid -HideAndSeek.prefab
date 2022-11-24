@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 2507198922063099343}
   - component: {fileID: 186901339807496308}
   - component: {fileID: 5122661997277766290}
+  - component: {fileID: 1257655543029900896}
   m_Layer: 5
-  m_Name: wf
+  m_Name: SpeechBubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,6 +78,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1257655543029900896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633634034870190505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c65d1576febdb714b935113c123583b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 5983059630999239054}
 --- !u!1 &5689960477516815322
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,6 +538,12 @@ MonoBehaviour:
   hasCompleted: 0
   minigameScene: 
   preRequisiteTasks: []
+  onPlayerEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerExit:
+    m_PersistentCalls:
+      m_Calls: []
   uncompleteState: {fileID: 0}
   completeState: {fileID: 0}
   children: []
@@ -539,7 +559,6 @@ GameObject:
   - component: {fileID: 1648581331672092434}
   - component: {fileID: 84855377478635855}
   - component: {fileID: 3957473576673301456}
-  - component: {fileID: 8349838846317481514}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -612,23 +631,6 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
---- !u!114 &8349838846317481514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7322466597257078966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!1001 &7856374183404996120
 PrefabInstance:
   m_ObjectHideFlags: 0

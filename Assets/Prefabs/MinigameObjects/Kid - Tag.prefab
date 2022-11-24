@@ -298,6 +298,12 @@ MonoBehaviour:
   hasCompleted: 0
   minigameScene: 
   preRequisiteTasks: []
+  onPlayerEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerExit:
+    m_PersistentCalls:
+      m_Calls: []
   uncompleteState: {fileID: 0}
   completeState: {fileID: 0}
 --- !u!1 &1227806166537666853
@@ -311,7 +317,7 @@ GameObject:
   - component: {fileID: 8051333493895252756}
   - component: {fileID: 7369621208534190261}
   - component: {fileID: 8667105211355645491}
-  - component: {fileID: 3377853464081278621}
+  - component: {fileID: 7877169432337835272}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -384,7 +390,7 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
---- !u!114 &3377853464081278621
+--- !u!114 &7877169432337835272
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -393,14 +399,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1227806166537666853}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Script: {fileID: 11500000, guid: 213281a4e99f23641b1de06c4493f156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
+  Parent: {fileID: 44300141547989905}
+  UI: {fileID: 0}
+  effects: {fileID: 0}
 --- !u!1 &8111840528028610564
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,8 +416,9 @@ GameObject:
   - component: {fileID: 8203217127653288426}
   - component: {fileID: 3857523742889076930}
   - component: {fileID: 4280358110834290297}
+  - component: {fileID: 7276423486497861384}
   m_Layer: 5
-  m_Name: wf
+  m_Name: SpeechBubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -478,6 +483,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7276423486497861384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8111840528028610564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c65d1576febdb714b935113c123583b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 44300141547989905}
 --- !u!1 &8335627432192717235
 GameObject:
   m_ObjectHideFlags: 0

@@ -40,6 +40,7 @@ public class MinigameDetector : MonoBehaviour
             MinigameObject detectedMinigame = collision.gameObject.GetComponent<MinigameObject>();
             if (detectedMinigame)
             {
+                detectedMinigame.onPlayerEnter.Invoke();
                 Events.OnInteract.AddListener(detectedMinigame.Interact);
                 Events.OnFinishInteract.AddListener(detectedMinigame.EndInteract);
             }
@@ -61,6 +62,7 @@ public class MinigameDetector : MonoBehaviour
             MinigameObject detectedMinigame = collision.gameObject.GetComponent<MinigameObject>();
             if (detectedMinigame)
             {
+                detectedMinigame.onPlayerExit.Invoke();
                 //Events.OnFinishInteract.AddListener(detectedMinigame.EndInteract);
                 interactedObject.FinishInteract(Parent);
                 Events.OnInteract.RemoveListener(detectedMinigame.Interact);

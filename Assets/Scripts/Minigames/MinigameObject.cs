@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class MinigameObject : MonoBehaviour
@@ -15,6 +16,10 @@ public class MinigameObject : MonoBehaviour
     public string           minigameScene;
 
     public List<MinigameObject> preRequisiteTasks;
+
+    [Header("UnityEvents")]
+    public UnityEvent onPlayerEnter;
+    public UnityEvent onPlayerExit;
 
     protected SceneChange   sceneChange;
     protected PlayerData    playerData;
