@@ -23,7 +23,11 @@ public class DisplayGameCountdown : MonoBehaviour
     }
     void Start()
     {
-     //   countdownImages = new List<GameObject>();
+        //   countdownImages = new List<GameObject>();
+        for (int i = 0; i < countdownImages.Count; i++)
+        {
+            countdownImages[i].SetActive(false);
+        }
     }
 
     public void UpdateCountdownTimer(float time)
@@ -40,19 +44,30 @@ public class DisplayGameCountdown : MonoBehaviour
     public void UpdateCountdownSprites(float time)
     {
        // PlaySFX();
-
+       
        
         for (int i = 0; i < countdownImages.Count; i++)
         {
-            countdownImages[i].SetActive(false);
-            sFXManager.PlaySFX(sfx[i]);
+            //countdownImages[i].SetActive(false);
+            
             if (time == i)
             {
-              //  index = i;
-                countdownImages[i].SetActive(true);
-                countdownImages[i].transform.DOShakeScale(0.5f, 0.1f, 3, 0, true);
-                countdownImages[i].transform.DOScale(1, 1).WaitForCompletion();
+                //  index = i;
+                if (!countdownImages[i].activeSelf)
+                {
+                    countdownImages[i].SetActive(true);
+                    countdownImages[i].transform.DOShakeScale(0.5f, 0.1f, 3, 0, true);
+                    countdownImages[i].transform.DOScale(1, 1).WaitForCompletion();
+                    sFXManager.PlaySFX(sfx[i]);
+                    Debug.Log("PlaySFX");
+                }
+                
             }
+            else
+            {
+                countdownImages[i].SetActive(false);
+            }
+
            
         }
 
