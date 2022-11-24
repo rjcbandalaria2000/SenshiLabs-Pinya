@@ -2898,6 +2898,7 @@ MonoBehaviour:
   count: 0
   GameStartTime: 3
   CountdownTimerUI: {fileID: 1211409094}
+  earnedMotivationalValue: 35
 --- !u!4 &448823272
 Transform:
   m_ObjectHideFlags: 0
@@ -6123,7 +6124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 285345095498947018, guid: 8144eb43e2faa144589c5c42d9279979, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 285345095498947022, guid: 8144eb43e2faa144589c5c42d9279979, type: 3}
       propertyPath: m_Pivot.x

@@ -4615,7 +4615,7 @@ MonoBehaviour:
   isCompleted: 0
   NameOfNextScene: MainGameScene1 1
   timer: 0
-  maxTimer: 20
+  maxTimer: 60
   speedTimer: 1
   gameStartTime: 3
   countdownTimerUI: {fileID: 608781851}
@@ -5117,7 +5117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 285345095498947018, guid: 8144eb43e2faa144589c5c42d9279979, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 285345095498947022, guid: 8144eb43e2faa144589c5c42d9279979, type: 3}
       propertyPath: m_Pivot.x

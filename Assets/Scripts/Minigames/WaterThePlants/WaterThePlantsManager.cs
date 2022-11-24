@@ -30,6 +30,7 @@ public class WaterThePlantsManager : MinigameManager
     {
         sceneChange = this.GetComponent<SceneChange>();
         Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
+        Events.OnSceneChange.AddListener(OnSceneChange);
         transitionManager = SingletonManager.Get<TransitionManager>();
         playerProgress = SingletonManager.Get<PlayerProgress>();
         numOfPlants = Plants.Count;
@@ -63,7 +64,7 @@ public class WaterThePlantsManager : MinigameManager
 
     public bool AreAllPlantsWatered()
     {
-        if (Plants == null) { return false; }
+        if (Plants.Count  <= 0) { return false; }
         bool AllWatered = false;
         foreach (GameObject plant in Plants)
         {
@@ -84,6 +85,12 @@ public class WaterThePlantsManager : MinigameManager
         }
         return AllWatered;
 
+    }
+
+    public void OnSceneChange()
+    {
+        Events.OnObjectiveUpdate.RemoveListener(CheckIfFinished);
+        Events.OnSceneChange.RemoveListener(OnSceneChange);
     }
 
     #region Getter Functions

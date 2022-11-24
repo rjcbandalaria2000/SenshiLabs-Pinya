@@ -1021,7 +1021,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 285345095498947018, guid: 8144eb43e2faa144589c5c42d9279979, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 285345095498947022, guid: 8144eb43e2faa144589c5c42d9279979, type: 3}
       propertyPath: m_Pivot.x
@@ -1766,7 +1766,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &781254069
 GameObject:
@@ -1894,7 +1894,7 @@ MonoBehaviour:
   - {fileID: 1685383650}
   playerPos: {fileID: 1695980588}
   uIManager: {fileID: 781254075}
-  earnedMotivationalValue: 20
+  earnedMotivationalValue: 35
 --- !u!1 &813079524
 GameObject:
   m_ObjectHideFlags: 0
@@ -3688,7 +3688,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1801602797
 PrefabInstance:
@@ -4013,11 +4013,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1717608a280b0f148a9e05cf914c7d77, type: 3}
---- !u!1 &1927765909 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8301517833032827722, guid: 1717608a280b0f148a9e05cf914c7d77, type: 3}
-  m_PrefabInstance: {fileID: 1927765908}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1984714475 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 35712579516144241, guid: 7097282c45c3e4c429e546e680d7b37e, type: 3}
