@@ -1088,6 +1088,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StateDayCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2892929990964373228, guid: 7acd83035cfc1aa44b4c64c13146f364, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7acd83035cfc1aa44b4c64c13146f364, type: 3}
 --- !u!1 &131146624 stripped
@@ -7206,6 +7210,30 @@ PrefabInstance:
       propertyPath: startPos.y
       value: 16.31
       objectReference: {fileID: 0}
+    - target: {fileID: 297185464604403564, guid: e41e923d36dd9184699d21fe2e39658e, type: 3}
+      propertyPath: m_fontSize
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 297185464604403564, guid: e41e923d36dd9184699d21fe2e39658e, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076455926124753325, guid: e41e923d36dd9184699d21fe2e39658e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076455926124753325, guid: e41e923d36dd9184699d21fe2e39658e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 5357421007875212583, guid: e41e923d36dd9184699d21fe2e39658e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5357421007875212583, guid: e41e923d36dd9184699d21fe2e39658e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7148304158928383472, guid: e41e923d36dd9184699d21fe2e39658e, type: 3}
       propertyPath: m_Name
       value: Bed - Sleeping
@@ -7802,7 +7830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4257680015237913099, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
@@ -11086,6 +11114,10 @@ PrefabInstance:
       propertyPath: minigameScene
       value: Tag
       objectReference: {fileID: 0}
+    - target: {fileID: 7369621208534190261, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
 --- !u!1 &1603101464 stripped
@@ -14153,9 +14185,53 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1516140953}
     m_Modifications:
+    - target: {fileID: 1648581331672092434, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1648581331672092434, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666965470687496379, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
+      propertyPath: m_fontSize
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666965470687496379, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666965470687496379, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 2346451310174245019, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
       propertyPath: m_SortingOrder
       value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507198922063099343, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507198922063099343, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2685203029621870885, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2685203029621870885, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2685203029621870885, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2685203029621870885, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.46
       objectReference: {fileID: 0}
     - target: {fileID: 3255592397443183566, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
       propertyPath: minigameName
