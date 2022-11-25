@@ -184,10 +184,12 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void EnableEffects()
     {
-        if(minigameObjects.Count <=0) { return; }
-        foreach(GameObject minigame in minigameObjects)
+        //if(minigameObjects.Count <=0) { return; }
+        Assert.IsNotNull(taskManager, "Task manager is not set or is null");
+        if(taskManager.requiredTasks.Count <= 0) { return; }
+        foreach(MinigameObject minigame in taskManager.requiredTasks)
         {
-            UnitInfo unitInfo = minigame.GetComponent<UnitInfo>();
+            UnitInfo unitInfo = minigame.gameObject.GetComponent<UnitInfo>();
             if (unitInfo)
             {
                 unitInfo.effects.gameObject.SetActive(true);
@@ -199,15 +201,15 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void DisableEffects()
     {
-        if (minigameObjects.Count <= 0) { return; }
-        foreach (GameObject minigame in minigameObjects)
+        Assert.IsNotNull(taskManager, "Task manager is not set or is null");
+        if (taskManager.requiredTasks.Count <= 0) { return; }
+        foreach (MinigameObject minigame in taskManager.requiredTasks)
         {
-            //minigame.transform.GetChild(2).gameObject.SetActive(true);
-            UnitInfo unitInfo = minigame.GetComponent<UnitInfo>();
+            UnitInfo unitInfo = minigame.gameObject.GetComponent<UnitInfo>();
             if (unitInfo)
             {
                 unitInfo.effects.gameObject.SetActive(false);
-                //Debug.Log("Deactivate Effects");
+                //Debug.Log("Activate Effects");
             }
 
         }
