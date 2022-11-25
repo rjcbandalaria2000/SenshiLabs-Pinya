@@ -33,30 +33,30 @@ public class SleepingMinigame : MinigameObject
         {
             Debug.Log("Interact with" + this.gameObject.name);
             //Decrease Motivation 
-            MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
-            if (playerMotivation)
-            {
-                //Check if has enough motivation
-                if (playerMotivation.MotivationAmount < motivationCost)
-                {
-                    // if there is not enough motivation amount
-                    Debug.Log("Not enough motivation");
-                    return;
-                }
-                else
-                {
-                    playerMotivation.DecreaseMotivation(motivationCost);
-                    //Disable player controls 
-                    PlayerControls playerControl = player.GetComponent<PlayerControls>();
-                    if (playerControl)
-                    {
-                        playerControl.enabled = false;
-                    }
+            //MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
+            //if (playerMotivation)
+            //{
+            //    //Check if has enough motivation
+            //    if (playerMotivation.MotivationAmount < motivationCost)
+            //    {
+            //        // if there is not enough motivation amount
+            //        Debug.Log("Not enough motivation");
+            //        return;
+            //    }
+            //    else
+            //    {
+            //        playerMotivation.DecreaseMotivation(motivationCost);
+            //        //Disable player controls 
+            //        PlayerControls playerControl = player.GetComponent<PlayerControls>();
+            //        if (playerControl)
+            //        {
+            //            playerControl.enabled = false;
+            //        }
                     Debug.Log("Interacted");
                     isInteracted = true; // to avoid being called again since it is already interacted
                     StartInteractRoutine();
-                }
-            }
+               // }
+            //}
         }
         //interactRoutine = StartCoroutine(InteractCoroutine(player));
     }

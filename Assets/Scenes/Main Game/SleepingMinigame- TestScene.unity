@@ -929,7 +929,7 @@ GameObject:
   - component: {fileID: 480825551}
   - component: {fileID: 480825550}
   m_Layer: 0
-  m_Name: UIManager
+  m_Name: ~UIManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3825,6 +3825,10 @@ PrefabInstance:
     - target: {fileID: 285345095498947018, guid: 8144eb43e2faa144589c5c42d9279979, type: 3}
       propertyPath: m_Name
       value: LoadingScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 285345095498947018, guid: 8144eb43e2faa144589c5c42d9279979, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 285345095498947022, guid: 8144eb43e2faa144589c5c42d9279979, type: 3}
       propertyPath: m_Pivot.x

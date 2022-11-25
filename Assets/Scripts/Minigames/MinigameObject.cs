@@ -17,10 +17,6 @@ public class MinigameObject : MonoBehaviour
 
     public List<MinigameObject> preRequisiteTasks;
 
-    [Header("UnityEvents")]
-    public UnityEvent onPlayerEnter;
-    public UnityEvent onPlayerExit;
-
     protected SceneChange   sceneChange;
     protected PlayerData    playerData;
     protected Coroutine     interactRoutine;

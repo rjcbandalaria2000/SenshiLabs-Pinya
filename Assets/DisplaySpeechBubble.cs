@@ -14,38 +14,23 @@ public class DisplaySpeechBubble : MonoBehaviour
         if (parent)
         {
             parentMinigameObject = parent.GetComponent<MinigameObject>();
-            parentMinigameObject.onPlayerEnter.AddListener(ShowSpeechBubble);
-            parentMinigameObject.onPlayerExit.AddListener(HideSpeechBubble);
         }
+        Events.OnEmptyMotivation.AddListener(ShowSpeechBubble);
         Events.OnSceneChange.AddListener(OnSceneChange);
         this.gameObject.SetActive(false);
     }
 
-    public void ShowSpeechBubble() 
+    public void ShowSpeechBubble(bool state) 
     {
-        if (!this.gameObject.activeSelf)
-        {
-            this.gameObject.SetActive(true);
-        }
-    }
-
-    public void HideSpeechBubble()
-    {
-        if (this.gameObject.activeSelf)
-        {
-            this.gameObject.SetActive(false);
-        }
+        
+            this.gameObject.SetActive(state);
+        
     }
 
     public void OnSceneChange()
     {
-        if (parent)
-        {
-            parentMinigameObject.onPlayerEnter.RemoveListener(ShowSpeechBubble);
-            parentMinigameObject.onPlayerExit.RemoveListener(HideSpeechBubble);
-        }
-        
         Events.OnSceneChange.RemoveListener(OnSceneChange);
+        Events.OnEmptyMotivation.RemoveListener(ShowSpeechBubble);
     }
    
 }

@@ -24,6 +24,7 @@ public class MotivationMeter : MonoBehaviour
         {
             InitializeMeter();
         }
+        CheckMotivationalMeter();
         Events.OnChangeMeter.Invoke();
     }
 
@@ -60,6 +61,18 @@ public class MotivationMeter : MonoBehaviour
         }
         Events.OnChangeMeter.Invoke();
         //EvtChangeMeter.Invoke();
+    }
+
+    public void CheckMotivationalMeter()
+    {
+        if(MotivationAmount <= 0)
+        {
+            Events.OnEmptyMotivation.Invoke(true);
+        }
+        else
+        {
+            Events.OnEmptyMotivation.Invoke(false);
+        }
     }
 
 }

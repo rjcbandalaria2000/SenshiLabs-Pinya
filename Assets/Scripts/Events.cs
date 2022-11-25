@@ -48,6 +48,13 @@ public static class Events
 
     #endregion
 
+    #region Motivational Meter Events
+
+    public static readonly Evt<bool> OnEmptyMotivation = new();
+
+
+    #endregion
+
     #region Interactable Events
     public static readonly Evt<GameObject> OnInteract = new();
     public static readonly Evt<GameObject> OnFinishInteract = new();

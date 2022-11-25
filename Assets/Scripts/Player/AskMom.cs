@@ -212,4 +212,36 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
         }
     }
+
+    public void EnableSpeechBubble()
+    {
+        if (minigameObjects.Count  <=0) { return; }
+        foreach(GameObject minigame in minigameObjects)
+        {
+            UnitInfo unitInfo = minigame.GetComponent<UnitInfo>();
+            if (unitInfo)
+            {
+                if (unitInfo.UI)
+                {
+                    unitInfo.UI.gameObject.SetActive(true);
+                }
+            }
+        }
+    }
+
+    public void DisableSpeechBubble()
+    {
+        if (minigameObjects.Count <= 0) { return; }
+        foreach (GameObject minigame in minigameObjects)
+        {
+            UnitInfo unitInfo = minigame.GetComponent<UnitInfo>();
+            if (unitInfo)
+            {
+                if (unitInfo.UI)
+                {
+                    unitInfo.UI.gameObject.SetActive(false);
+                }
+            }
+        }
+    }
 }

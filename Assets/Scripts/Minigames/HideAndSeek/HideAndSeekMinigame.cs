@@ -27,32 +27,37 @@ public class HideAndSeekMinigame : MinigameObject
 
     public override void Interact(GameObject player = null)
     {
-        isInteracted = true;
-        MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
-        if (playerMotivation)
+        if (!isInteracted)
         {
-            //Check if has enough motivation
-            if (playerMotivation.MotivationAmount < motivationCost)
-            {
-                // if there is not enough motivation amount
-                Debug.Log("Not enough motivation");
-                return;
-            }
-            else
-            {
-                playerMotivation.DecreaseMotivation(motivationCost);
-                //Disable player controls 
-                PlayerControls playerControl = player.GetComponent<PlayerControls>();
-                if (playerControl)
-                {
-                    playerControl.enabled = false;
-                }
-                Debug.Log("Interacted");
-                isInteracted = true; // to avoid being called again since it is already interacted
-                StartInteractRoutine();
-            }
+
+
+            //isInteracted = true;
+            //MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
+            //if (playerMotivation)
+            //{
+            //    //Check if has enough motivation
+            //    if (playerMotivation.MotivationAmount < motivationCost)
+            //    {
+            //        // if there is not enough motivation amount
+            //        Debug.Log("Not enough motivation");
+            //        return;
+            //    }
+            //    else
+            //    {
+            //        playerMotivation.DecreaseMotivation(motivationCost);
+            //        //Disable player controls 
+            //        PlayerControls playerControl = player.GetComponent<PlayerControls>();
+            //        if (playerControl)
+            //        {
+            //            playerControl.enabled = false;
+            //        }
+            //        Debug.Log("Interacted");
+            isInteracted = true; // to avoid being called again since it is already interacted
+            StartInteractRoutine();
+            //    }
+            //}
+            Debug.Log("Interacted");
         }
-        Debug.Log("Interacted");
     }
 
     public override IEnumerator InteractCoroutine(GameObject player = null)
