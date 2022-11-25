@@ -12,14 +12,14 @@ public class DisplayTimePeriod : MonoBehaviour
     {
         Events.OnSceneChange.AddListener(OnSceneChange);
         Events.OnChangeTimePeriod.AddListener(UpdateTimePeriod);
+        timePeriodText = this.GetComponent<TextMeshProUGUI>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
         dayCycle = SingletonManager.Get<DayCycle>();
-        timePeriodText = this.GetComponent<TextMeshProUGUI>();
-        
+        UpdateTimePeriod();
     }
 
     public void UpdateTimePeriod()
