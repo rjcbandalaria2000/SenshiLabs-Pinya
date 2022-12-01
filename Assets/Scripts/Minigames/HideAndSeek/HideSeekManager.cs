@@ -9,7 +9,8 @@ public class HideSeekManager : MinigameManager
     public int                      score;
     public List<GameObject>         spawnPoints;
     
-    public int                      count;
+    public int                      childCount;
+    public int                      objectiveScore;
     Coroutine                       spawnRoutine;
 
     [Header("Countdown Timer")]
@@ -25,7 +26,7 @@ public class HideSeekManager : MinigameManager
 
     private void Start()
     {
-        count = 0;
+        childCount = 0;
         sceneChange = this.GetComponent<SceneChange>();
         Initialize();
     }
@@ -58,17 +59,17 @@ public class HideSeekManager : MinigameManager
 
             int randomPoint = Random.Range(0, list.Count);
             GameObject child = Instantiate(children, list[randomPoint].transform.position, Quaternion.identity);
-            count += 1;
+            childCount += 1;
             list.RemoveAt(randomPoint);
 
         }
-
+        objectiveScore = childCount;
         yield return null;
 
     }
     public override void CheckIfFinished()
     {
-        if (score >= spawnPoints.Count)
+        if (score >= objectiveScore)
         {
             OnWin();
         }
@@ -81,11 +82,11 @@ public class HideSeekManager : MinigameManager
 
     public override void OnWin()
     {
-        IncreaseMotivationMeter(earnedMotivationalValue);
         Debug.Log("Minigame complete");
         SingletonManager.Get<UIManager>().ActivateResultScreen();
         SingletonManager.Get<UIManager>().ActivateGoodResult();
         SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
+        IncreaseMotivationMeter(earnedMotivationalValue);
         if (playerProgress)
         {
             playerProgress.hideSeekTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();

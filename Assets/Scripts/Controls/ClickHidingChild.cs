@@ -34,7 +34,7 @@ public class ClickHidingChild : MonoBehaviour
       
             
             hideSeekManager.score += 1;
-            hideSeekManager.count -= 1;
+            hideSeekManager.childCount -= 1;
             SingletonManager.Get<DisplayChildCount>().updateChildCount();
             hideSeekManager.CheckIfFinished();
            //     sFXManager.Wait(2f);
