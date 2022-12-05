@@ -17,11 +17,15 @@ public class Pot : MonoBehaviour
     public GameObject   midCookedImage;
     public GameObject   cookedImage;
     public GameObject   potCover;
+
+    [Header("Pot Cover Positions")]
+    public Transform    potOpenPos;
+    public Transform    potClosePos;
     
     [Header("Panels")]
     public GameObject   TempChoices;
 
-    SFXManager sFX;
+    SFXManager          sFX;
     
     public AudioClip insertFoodSFX;
 
@@ -32,6 +36,7 @@ public class Pot : MonoBehaviour
         TempChoices.SetActive(false);
         Events.OnIngredientPlaced.Invoke();
         Events.OnPrepStage.Invoke();
+        potCover.transform.DOMove(potOpenPos.position, 1, false);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
