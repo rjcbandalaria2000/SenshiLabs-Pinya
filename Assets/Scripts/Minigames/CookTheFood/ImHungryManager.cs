@@ -96,6 +96,11 @@ public class ImHungryManager : MinigameManager
         //Spawn Ingredients 
         SpawnManager.SpawnRandomObjectsInStaticPositions();
 
+        if (pot)
+        {
+            pot.OpenPotCover();
+        }
+
         //Count progress in Player Progress 
         if (playerProgress)
         {

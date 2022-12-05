@@ -36,7 +36,6 @@ public class Pot : MonoBehaviour
         TempChoices.SetActive(false);
         Events.OnIngredientPlaced.Invoke();
         Events.OnPrepStage.Invoke();
-        potCover.transform.DOMove(potOpenPos.position, 1, false);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -65,6 +64,7 @@ public class Pot : MonoBehaviour
             if(TempChoices == null) { return; }
             ActivateTempChoice();
             Events.OnCookingStage.Invoke();
+            ClosePotCover();
         }
     }
 
@@ -147,4 +147,13 @@ public class Pot : MonoBehaviour
         return RequiredIngredientCount - CurrentIngredientCount;
     }
 
+    public void OpenPotCover()
+    {
+        potCover.transform.DOMove(potOpenPos.position, 1f, false);
+    }
+
+    public void ClosePotCover()
+    {
+        potCover.transform.DOMove(potClosePos.position, 1f, false);
+    }
 }
