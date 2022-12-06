@@ -17,11 +17,15 @@ public class Pot : MonoBehaviour
     public GameObject   midCookedImage;
     public GameObject   cookedImage;
     public GameObject   potCover;
+
+    [Header("Pot Cover Positions")]
+    public Transform    potOpenPos;
+    public Transform    potClosePos;
     
     [Header("Panels")]
     public GameObject   TempChoices;
 
-    SFXManager sFX;
+    SFXManager          sFX;
     
     public AudioClip insertFoodSFX;
 
@@ -60,6 +64,7 @@ public class Pot : MonoBehaviour
             if(TempChoices == null) { return; }
             ActivateTempChoice();
             Events.OnCookingStage.Invoke();
+            ClosePotCover();
         }
     }
 
@@ -142,4 +147,13 @@ public class Pot : MonoBehaviour
         return RequiredIngredientCount - CurrentIngredientCount;
     }
 
+    public void OpenPotCover()
+    {
+        potCover.transform.DOMove(potOpenPos.position, 1f, false);
+    }
+
+    public void ClosePotCover()
+    {
+        potCover.transform.DOMove(potClosePos.position, 1f, false);
+    }
 }
