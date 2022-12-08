@@ -119,6 +119,7 @@ public class WaterWell : MonoBehaviour
                 {
                     //Store the waterAmount in the waterBuckets 
                     waterBuckets.Add(fillWaterBucket.waterAmount);
+                    //waterBuckets.Add(fillWaterBucket.GetNormalizedWaterAmount());
                     //Reset the waterAmount 
                     fillWaterBucket.ResetWaterBucket();
                     //subtract 1 fro the available buckets 
@@ -128,8 +129,8 @@ public class WaterWell : MonoBehaviour
                     playerSwipeDownCount = 0;
                     sFXManager.PlaySFX(pullUpSFX);
 
+                    //Slider for the bucket depth
                     SingletonManager.Get<GetWaterManager>().slider.DOValue(playerSwipeDownCount, animationDuration, false);
-                    //SingletonManager.Get<GetWaterManager>().slider.value = playerSwipeDownCount;
                     Events.OnBucketDrop.Invoke();
                 }
                 if(availableBuckets <= 0)

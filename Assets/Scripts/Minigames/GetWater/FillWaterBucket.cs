@@ -9,7 +9,7 @@ public class FillWaterBucket : MonoBehaviour
     public float        maxWater = 5;
 
     [Header("States")]
-    public bool isFilling = false;
+    public bool         isFilling = false;
         
     [Header("Fill Speed")]
     public float        fillSpeed = 1;
@@ -17,14 +17,12 @@ public class FillWaterBucket : MonoBehaviour
 
     private Coroutine   fillBucketRoutine;
 
-    SFXManager sFX;
-  //  public AudioClip fillWater;
+    private SFXManager  sFX;
 
     // Start is called before the first frame update
     void Start()
     {
         sFX = GetComponent<SFXManager>();
-        //StartFillingBucket();
     }
 
     public void StartFillingBucket()
@@ -61,6 +59,11 @@ public class FillWaterBucket : MonoBehaviour
         sFX.StopMusic();
         waterAmount = 0;
         Events.OnWaterFilling.Invoke();
+    }
+
+    public float GetNormalizedWaterAmount()
+    {
+        return waterAmount / maxWater;
     }
 
 }

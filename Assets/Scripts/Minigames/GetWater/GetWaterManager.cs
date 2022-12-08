@@ -224,7 +224,7 @@ public class GetWaterManager : MinigameManager
         {
             for(int i = 0; i < waterWell.waterBuckets.Count; i++)
             {
-                if (waterWell.waterBuckets[i] < waterWell.fillWaterBucket.maxWater)
+                if (waterWell.waterBuckets[i] < waterWell.fillWaterBucket.maxWater / 2)
                 {
                     Debug.Log("Insufficient water amount");
                     areBucketsFull = false;
