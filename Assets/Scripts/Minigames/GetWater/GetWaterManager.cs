@@ -217,6 +217,7 @@ public class GetWaterManager : MinigameManager
     public bool AreBucketsFull()
     {
         bool areBucketsFull = false;
+        float totalWaterAmount = 0; 
         Assert.IsNotNull(wateringWell, "Watering well is null or is not set");
         WaterWell waterWell = wateringWell.GetComponent<WaterWell>();
         if(waterWell == null) { return areBucketsFull; }
@@ -224,16 +225,17 @@ public class GetWaterManager : MinigameManager
         {
             for(int i = 0; i < waterWell.waterBuckets.Count; i++)
             {
-                if (waterWell.waterBuckets[i] < waterWell.fillWaterBucket.maxWater / 2)
-                {
-                    Debug.Log("Insufficient water amount");
-                    areBucketsFull = false;
-                    break;
-                }
-                else
-                {
-                    areBucketsFull = true;
-                }
+                totalWaterAmount += waterWell.waterBuckets[i];
+            }
+            if(totalWaterAmount >= (waterWell.fillWaterBucket.maxWater * RequiredNumSwipes) / 2)
+            {
+                Debug.Log("Win " + totalWaterAmount + " " + (waterWell.fillWaterBucket.maxWater * RequiredNumSwipes) / 2 );
+                areBucketsFull = true;
+            }
+            else
+            {
+                Debug.Log("Lose " + totalWaterAmount + " " + (waterWell.fillWaterBucket.maxWater * RequiredNumSwipes) / 2);
+                areBucketsFull = false;
             }
         }
         return areBucketsFull;
