@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.Events;
 
 public class WaterWell : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class WaterWell : MonoBehaviour
     [Header("Buckets Filled")]
     public List<float>      waterBuckets = new();
     public int              availableBuckets = 3;
+    public int              maxBuckets = 3;
 
     [Header("UI")]
     public GameObject       UI;
@@ -36,10 +38,14 @@ public class WaterWell : MonoBehaviour
     private Camera          mainCamera;
     private Vector2         initialMousePosition;
 
+    [Header("Audio")]
     public AudioClip pullDownSFX;
     public AudioClip pullUpSFX;
 
-    SFXManager sFXManager;
+    private SFXManager sFXManager;
+
+    [Header("Unity Events")]
+    public UnityEvent<int, float> OnBucketFilled = new();
  
     // Start is called before the first frame update
     void Start()
@@ -119,12 +125,14 @@ public class WaterWell : MonoBehaviour
                 {
                     //Store the waterAmount in the waterBuckets 
                     waterBuckets.Add(fillWaterBucket.waterAmount);
+                    OnBucketFilled.Invoke(availableBuckets - 1, fillWaterBucket.GetNormalizedWaterAmount());
                     //waterBuckets.Add(fillWaterBucket.GetNormalizedWaterAmount());
                     //Reset the waterAmount 
                     fillWaterBucket.ResetWaterBucket();
                     //subtract 1 fro the available buckets 
                     availableBuckets--;
                     Events.OnBucketUsed.Invoke();
+                    
                     //Reset swipes 
                     playerSwipeDownCount = 0;
                     sFXManager.PlaySFX(pullUpSFX);
@@ -187,5 +195,6 @@ public class WaterWell : MonoBehaviour
 
     }
     
+
 
 }

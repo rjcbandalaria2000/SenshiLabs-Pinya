@@ -26,10 +26,16 @@ public class DisplayBucketFill : MonoBehaviour
         //waterBucketFill.fillAmount = waterBucket.GetNormalizedWaterAmount();
         waterBucketFill.DOFillAmount(waterBucket.GetNormalizedWaterAmount(), duration);
     }
+
+    public void UpdateWaterFill(float amount)
+    {
+        if(waterBucketFill == null) { return; }
+        waterBucketFill.DOFillAmount(amount, duration);
+    }
     
     public void OnSceneChange()
     {
-        Events.OnWaterFilling.AddListener(UpdateWaterFill);
-        Events.OnSceneChange.AddListener(OnSceneChange);
+        Events.OnWaterFilling.RemoveListener(UpdateWaterFill);
+        Events.OnSceneChange.RemoveListener(OnSceneChange);
     }
 }
