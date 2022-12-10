@@ -5,19 +5,24 @@ using UnityEngine;
 public class FillWaterBucket : MonoBehaviour
 {
     [Header("Values")]
-    public float        waterAmount = 0;
-    public float        maxWater = 5;
+    public float waterAmount = 0;
+    public float maxWater = 5;
 
     [Header("States")]
-    public bool         isFilling = false;
-        
+    public bool isFilling = false;
+
     [Header("Fill Speed")]
-    public float        fillSpeed = 1;
-    public float        fillAmount = 0.1f;
+    public float fillSpeed = 1;
+    public float fillAmount = 0.1f;
 
-    private Coroutine   fillBucketRoutine;
+    private Coroutine fillBucketRoutine;
 
-    private SFXManager  sFX;
+    private SFXManager sFX;
+
+    [Header("VFX")]
+    public GameObject sparkleEffect;
+    //private Coroutine effectsRoutine;
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,14 +38,14 @@ public class FillWaterBucket : MonoBehaviour
             sFX.PlayMusic();
             fillBucketRoutine = StartCoroutine(FillTheBucket());
         }
-       
+
     }
 
     IEnumerator FillTheBucket()
     {
-        while(waterAmount < maxWater)
+        while (waterAmount < maxWater)
         {
-            yield return new WaitForSeconds(1/ fillSpeed);
+            yield return new WaitForSeconds(1 / fillSpeed);
             waterAmount += fillAmount;
             Events.OnWaterFilling.Invoke();
         }
@@ -49,11 +54,22 @@ public class FillWaterBucket : MonoBehaviour
 
     public void StopFillingBucket()
     {
+        //Play appropriate effects
+        if(waterAmount >= maxWater) // if water is filled, play sparkle effect
+        {
+            Events.OnBucketSuccess.Invoke();
+        }
+        else // if bucket is not filled, shake the bucket
+        {
+            Events.OnBucketFailed.Invoke();
+        }
         if (fillBucketRoutine == null) { return; }
         StopCoroutine(fillBucketRoutine);
-        isFilling=false;
+        isFilling = false;
+
+        
     }
-    
+
     public void ResetWaterBucket()
     {
         sFX.StopMusic();
@@ -65,5 +81,4 @@ public class FillWaterBucket : MonoBehaviour
     {
         return waterAmount / maxWater;
     }
-
 }

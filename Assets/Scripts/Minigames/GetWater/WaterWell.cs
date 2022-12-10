@@ -148,28 +148,8 @@ public class WaterWell : MonoBehaviour
                     SingletonManager.Get<GetWaterManager>().CheckIfComplete();
                 }
                 CanSwipeUp = false;
-
-
-                //if (!SwipedUp)
-                //{
-                //    // lock the controls of the player since the player lifted the bucket
-                //    SwipedUp = true;
-                //    CanSwipeDown = false;
-                //    CanSwipeUp = false;
-                //    playerSwipeUpCount++;
-                //    Events.OnObjectiveUpdate.Invoke();
-                //}
-
             }
         }
-        
-
-        //if(playerSwipeUpCount >= 1)
-        //{
-        //    SingletonManager.Get<GetWaterManager>().SetNumOfSwipes(playerSwipeDownCount);
-        //    SingletonManager.Get<GetWaterManager>().CheckIfComplete();
-        //}
-        //   Debug.Log("Y coordinate: " + mousePosition.normalized.y);
     }
 
     private void OnMouseUp()
@@ -189,12 +169,5 @@ public class WaterWell : MonoBehaviour
     {
         return playerSwipeDownCount;
     }
-
-    public void GetWater()
-    {
-
-    }
-    
-
 
 }

@@ -91,6 +91,8 @@ public static class Events
     public static readonly Evt OnBucketUsed = new();
     public static readonly Evt OnBucketDrop = new(); // controls the arrows UI in Get Water Minigame (activates down arrow)
     public static readonly Evt OnBucketRetrieve = new(); //controls the arrows UI in Get Water Minigame (activates up arrow)
+    public static readonly Evt OnBucketFailed = new(); // if the bucket is not full 
+    public static readonly Evt OnBucketSuccess = new(); // if the bucket is full
     #endregion
 
     #region CookTheFood Events

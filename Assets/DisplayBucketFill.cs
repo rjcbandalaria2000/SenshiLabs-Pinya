@@ -11,12 +11,19 @@ public class DisplayBucketFill : MonoBehaviour
 
     [Header("Tween Animation")]
     public float            duration = 1f;
+    public float            strength = 10f;
+
+    [Header("VFX")]
+    public GameObject       sparkle;
+    public Sequence         shakeSequence;
 
     // Start is called before the first frame update
     void Start()
     {
         Events.OnWaterFilling.AddListener(UpdateWaterFill);
         Events.OnSceneChange.AddListener(OnSceneChange);
+        Events.OnBucketSuccess.AddListener(PlaySuccessEffect);
+        Events.OnBucketFailed.AddListener(PlayFailedEffect);
     }
 
     public void UpdateWaterFill()
@@ -37,5 +44,30 @@ public class DisplayBucketFill : MonoBehaviour
     {
         Events.OnWaterFilling.RemoveListener(UpdateWaterFill);
         Events.OnSceneChange.RemoveListener(OnSceneChange);
+        Events.OnBucketSuccess.RemoveListener(PlaySuccessEffect);
+        Events.OnBucketFailed.RemoveListener(PlayFailedEffect);
+    }
+
+    public void PlaySuccessEffect()
+    {
+        if (sparkle == null) { return; }
+        if (!sparkle.activeSelf)
+        {
+            sparkle.SetActive(true);
+        }
+        ParticleSystem particle = sparkle.GetComponent<ParticleSystem>();
+        if (particle)
+        {
+            particle.Play();
+            if (!particle.isPlaying)
+            {
+                sparkle.SetActive(false);
+            }
+        }
+    }
+
+    public void PlayFailedEffect()
+    {
+        this.gameObject.transform.DOShakePosition(0.5f, new Vector3(strength,0,0), 10, 0, false, false  );
     }
 }
