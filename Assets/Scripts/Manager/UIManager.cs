@@ -25,6 +25,10 @@ public class UIManager : MonoBehaviour
     public GameObject       losePanelUI;
     public GameObject       winPanelUI;
 
+    [Header("PauseCanvas")]
+    public GameObject       PauseCanvas;
+    public GameObject       puaseConfirmation;
+
     //------------------------------------------------MINIGAME------------------------------------------------------------------------------------
 
     [Header("Minigame UI")]
@@ -50,6 +54,11 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        if(PauseCanvas != null)
+        {
+            PauseCanvas.SetActive(false);
+        }
+
         if(transitionUI != null)
         {
             transitionUI.SetActive(true);
@@ -296,10 +305,17 @@ public class UIManager : MonoBehaviour
 
     public void OnBackToMainMenuClicked(string scene)
     {
+        if(PauseCanvas != null)
+        {
+            PauseCanvas.SetActive(false);
+        }
+       
+        Time.timeScale = 1;
         if (sceneChange == null) { return; }
         if (scene == null) { return; }
         Events.OnSceneChange.Invoke();
         sceneChange.OnChangeScene(scene);
+        Debug.Log("GoToMainMenu");
     }
 
     public void OnPlayButtonClicked(string scene)
@@ -346,6 +362,7 @@ public class UIManager : MonoBehaviour
 
     public void OnConfirmExitMinigame(string scene)
     {
+        Time.timeScale = 1f;
         confirmationGO.SetActive(false);
         Events.OnSceneChange.Invoke();
         Assert.IsNotNull(sceneChange, "Scene change component is null or is not set");
@@ -364,6 +381,28 @@ public class UIManager : MonoBehaviour
     public void DeactivateCredits()
     {
         Debug.Log("Credits OFF");
+    }
+
+    public void ActivatePause()
+    {
+        PauseCanvas.SetActive(true);
+    }
+
+    public void DeactivatePause()
+    {
+        PauseCanvas.SetActive(false);
+    }
+
+    public void ActivatePauseConfirm()
+    {
+        puaseConfirmation.SetActive(true);
+        miniGameMainMenu.SetActive(false);
+    }
+
+    public void DeactivatePauseConfirm()
+    {
+        puaseConfirmation.SetActive(false);
+        PauseCanvas.SetActive(true);
     }
 }
     

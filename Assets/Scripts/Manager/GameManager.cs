@@ -200,4 +200,21 @@ public class GameManager : MonoBehaviour
 
         StartGameTransition();
     }
+
+    public void GamePause()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public void Resume()
+    {
+        Time.timeScale = 1f;
+    }
+
+    public void goToMainMenu(string sceneID)
+    {
+        Events.OnSceneChange.Invoke();
+        Assert.IsNotNull(sceneChange, "Scene change is null or not set");
+        sceneChange.OnChangeScene(sceneID);
+    }
 }

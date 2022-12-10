@@ -55,6 +55,16 @@ public class CleanTheHouseManager : MinigameManager
         CheckIfFinished();
     }
 
+    public override void GameMinigamePause()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public override void GameMinigameResume()
+    {
+        Time.timeScale = 1f;
+    }
+
     #region Getter Functions
     public int GetRemainingDust()
     {
