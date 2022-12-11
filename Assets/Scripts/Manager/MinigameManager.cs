@@ -86,4 +86,13 @@ public class MinigameManager : MonoBehaviour
         yield return null;
     }
 
+    public virtual void GameMinigamePause()
+    {
+
+    }
+
+    public virtual void GameMinigameResume()
+    {
+
+    }
 }

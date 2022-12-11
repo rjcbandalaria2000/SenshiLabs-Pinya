@@ -18,7 +18,7 @@ public class DisplayPinyaMeter : MonoBehaviour
     private Color       damageBarColor; // get the color property of the damageBarImage
     private PinyaMeter  playerPinyaMeter;
     private Coroutine   damageFadeRoutine;
-
+  
     private void Awake()
     {
         SingletonManager.Register(this);
