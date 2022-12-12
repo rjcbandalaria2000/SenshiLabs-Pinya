@@ -93,6 +93,17 @@ public class WaterThePlantsManager : MinigameManager
         Events.OnSceneChange.RemoveListener(OnSceneChange);
     }
 
+    public override void GameMinigamePause()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public override void GameMinigameResume()
+    {
+        Time.timeScale = 1f;
+    }
+
+
     #region Getter Functions
 
     public int GetRemainingPlants()

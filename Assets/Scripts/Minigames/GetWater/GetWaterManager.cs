@@ -60,7 +60,16 @@ public class GetWaterManager : MinigameManager
         NumOfSwipes = count;
     }
 
-    
+    public override void GameMinigamePause()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public override void GameMinigameResume()
+    {
+        Time.timeScale = 1f;
+    }
+
 
     #region Starting Minigame Functions
 

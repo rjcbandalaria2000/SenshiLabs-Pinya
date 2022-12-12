@@ -210,4 +210,14 @@ public class HideSeekManager : MinigameManager
             playerData.storedMotivationData += motivationValue;
         }
     }
+
+    public override void GameMinigamePause()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public override void GameMinigameResume()
+    {
+        Time.timeScale = 1f;
+    }
 }
