@@ -3404,6 +3404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waterBucket: {fileID: 0}
+  well: {fileID: 0}
   waterBucketFill: {fileID: 1876302453}
   duration: 1
   strength: 10
@@ -5558,6 +5559,8 @@ MonoBehaviour:
   gameUI: {fileID: 853361695}
   losePanelUI: {fileID: 0}
   winPanelUI: {fileID: 0}
+  PauseCanvas: {fileID: 0}
+  puaseConfirmation: {fileID: 0}
   miniGameTimerDisplay: {fileID: 490110257}
   miniGameMainMenu: {fileID: 1033436836}
   minigameStartCountdownUI: {fileID: 1698600891}
@@ -6096,6 +6099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waterBucket: {fileID: 0}
+  well: {fileID: 0}
   waterBucketFill: {fileID: 70505572}
   duration: 1
   strength: 10
@@ -6354,6 +6358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waterBucket: {fileID: 0}
+  well: {fileID: 0}
   waterBucketFill: {fileID: 726027147}
   duration: 1
   strength: 10

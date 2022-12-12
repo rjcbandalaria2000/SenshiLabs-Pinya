@@ -7,6 +7,7 @@ using DG.Tweening;
 public class DisplayBucketFill : MonoBehaviour
 {
     public FillWaterBucket  waterBucket;
+    public GameObject       well;
     public Image            waterBucketFill;
 
     [Header("Tween Animation")]
@@ -17,6 +18,8 @@ public class DisplayBucketFill : MonoBehaviour
     public GameObject       sparkle;
     public Sequence         shakeSequence;
 
+    private WaterWell       waterWell;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +27,11 @@ public class DisplayBucketFill : MonoBehaviour
         Events.OnSceneChange.AddListener(OnSceneChange);
         Events.OnBucketSuccess.AddListener(PlaySuccessEffect);
         Events.OnBucketFailed.AddListener(PlayFailedEffect);
+        if(well == null)
+        {
+            well = SingletonManager.Get<GetWaterManager>().wateringWell;
+        }
+        waterWell = well.GetComponent<WaterWell>();
     }
 
     public void UpdateWaterFill()
@@ -31,7 +39,7 @@ public class DisplayBucketFill : MonoBehaviour
         if(waterBucketFill == null) { return; }
         if(waterBucket == null) { return; }
         //waterBucketFill.fillAmount = waterBucket.GetNormalizedWaterAmount();
-        waterBucketFill.DOFillAmount(waterBucket.GetNormalizedWaterAmount(), duration);
+        waterBucketFill.DOFillAmount(waterWell.GetNormalizedTotalWater(), duration);
     }
 
     public void UpdateWaterFill(float amount)
@@ -70,4 +78,5 @@ public class DisplayBucketFill : MonoBehaviour
     {
         this.gameObject.transform.DOShakePosition(0.5f, new Vector3(strength,0,0), 10, 0, false, false  );
     }
+
 }

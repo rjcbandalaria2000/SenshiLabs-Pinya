@@ -170,4 +170,10 @@ public class WaterWell : MonoBehaviour
         return playerSwipeDownCount;
     }
 
+    public float GetNormalizedTotalWater()
+    {
+        if (fillWaterBucket == null) { return 0f; }
+        float totalWater = fillWaterBucket.maxWater * RequiredSwipes;
+        return fillWaterBucket.totalWater / totalWater;
+    }
 }

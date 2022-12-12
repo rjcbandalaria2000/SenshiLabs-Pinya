@@ -7,6 +7,7 @@ public class FillWaterBucket : MonoBehaviour
     [Header("Values")]
     public float waterAmount = 0;
     public float maxWater = 5;
+    public float totalWater;
 
     [Header("States")]
     public bool isFilling = false;
@@ -18,11 +19,6 @@ public class FillWaterBucket : MonoBehaviour
     private Coroutine fillBucketRoutine;
 
     private SFXManager sFX;
-
-    [Header("VFX")]
-    public GameObject sparkleEffect;
-    //private Coroutine effectsRoutine;
-
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +43,7 @@ public class FillWaterBucket : MonoBehaviour
         {
             yield return new WaitForSeconds(1 / fillSpeed);
             waterAmount += fillAmount;
+            totalWater += fillAmount;
             Events.OnWaterFilling.Invoke();
         }
         yield return null;
