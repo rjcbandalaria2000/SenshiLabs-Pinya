@@ -123,14 +123,19 @@ public class WaterWell : MonoBehaviour
                 fillWaterBucket.StopFillingBucket();
                 if (availableBuckets > 0)
                 {
-                    //Store the waterAmount in the waterBuckets 
-                    waterBuckets.Add(fillWaterBucket.waterAmount);
-                    OnBucketFilled.Invoke(availableBuckets - 1, fillWaterBucket.GetNormalizedWaterAmount());
+                    if (fillWaterBucket.waterAmount >= fillWaterBucket.maxWater)
+                    {
+                        //Store the waterAmount in the waterBuckets 
+                        waterBuckets.Add(fillWaterBucket.waterAmount);
+                        OnBucketFilled.Invoke(availableBuckets - 1, fillWaterBucket.GetNormalizedWaterAmount()); 
+                        availableBuckets--;
+                    }
+
                     //waterBuckets.Add(fillWaterBucket.GetNormalizedWaterAmount());
                     //Reset the waterAmount 
                     fillWaterBucket.ResetWaterBucket();
                     //subtract 1 fro the available buckets 
-                    availableBuckets--;
+                   
                     Events.OnBucketUsed.Invoke();
                     
                     //Reset swipes 

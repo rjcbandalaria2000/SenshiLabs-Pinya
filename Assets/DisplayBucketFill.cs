@@ -39,7 +39,7 @@ public class DisplayBucketFill : MonoBehaviour
         if(waterBucketFill == null) { return; }
         if(waterBucket == null) { return; }
         //waterBucketFill.fillAmount = waterBucket.GetNormalizedWaterAmount();
-        waterBucketFill.DOFillAmount(waterWell.GetNormalizedTotalWater(), duration);
+        waterBucketFill.DOFillAmount(waterBucket.GetNormalizedWaterAmount(), duration) ;
     }
 
     public void UpdateWaterFill(float amount)
