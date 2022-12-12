@@ -2268,6 +2268,7 @@ GameObject:
   - component: {fileID: 373609216}
   - component: {fileID: 373609215}
   - component: {fileID: 373609214}
+  - component: {fileID: 373609217}
   m_Layer: 5
   m_Name: PauseButton
   m_TagString: Untagged
@@ -2402,6 +2403,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 373609212}
   m_CullTransparentMesh: 1
+--- !u!114 &373609217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373609212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1466981895}
+          m_TargetAssemblyTypeName: SFXManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: f6c7ba8182665aa42a45b5e0a5b46fa2, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1466981895}
+          m_TargetAssemblyTypeName: SFXManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: b8d10cac23742464a9e5d3cef0460e60, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &386374416
 GameObject:
   m_ObjectHideFlags: 0
@@ -2467,6 +2513,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 106386032496589107, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6543178212547229291, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
       propertyPath: m_Size.x
       value: 1.3121767
@@ -2534,6 +2584,10 @@ PrefabInstance:
     - target: {fileID: 6543178212848092719, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703308844146281312, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
@@ -3679,6 +3733,10 @@ PrefabInstance:
       propertyPath: startPos.y
       value: 1.99
       objectReference: {fileID: 0}
+    - target: {fileID: 109346609246331448, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2816954076214239179, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
       propertyPath: motivationCost
       value: 25
@@ -3730,6 +3788,22 @@ PrefabInstance:
     - target: {fileID: 2816954076488409270, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6177269976712596823, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6593636387128621944, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6928436369269618000, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7229075759678765512, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
@@ -5018,7 +5092,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 12
   m_Sprite: {fileID: 1006955147, guid: 081a21cbab6b2974bb52a792c0d027bd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5598,19 +5672,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4735852996718008038, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
       propertyPath: m_Size.x
-      value: 7.123642
+      value: 10.12108
       objectReference: {fileID: 0}
     - target: {fileID: 4735852996718008038, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
       propertyPath: m_Size.y
-      value: 1.6881608
+      value: 3.1764004
       objectReference: {fileID: 0}
     - target: {fileID: 4735852996718008038, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
       propertyPath: m_Offset.x
-      value: -0.36744452
+      value: -0.50369096
       objectReference: {fileID: 0}
     - target: {fileID: 4735852996718008038, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
       propertyPath: m_Offset.y
-      value: -0.5861855
+      value: -0.32417142
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
@@ -13042,6 +13116,56 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
+--- !u!1 &2759568114136131007 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7257164462491388376, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
+  m_PrefabInstance: {fileID: 2759568114136131006}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2759568114136131008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2759568114136131007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1466981895}
+          m_TargetAssemblyTypeName: SFXManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: b8d10cac23742464a9e5d3cef0460e60, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1466981895}
+          m_TargetAssemblyTypeName: SFXManager, Assembly-CSharp
+          m_MethodName: PlaySFX
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: f6c7ba8182665aa42a45b5e0a5b46fa2, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!222 &2985707811973519142
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13155,6 +13279,10 @@ PrefabInstance:
     - target: {fileID: 4332310455696213679, guid: b5f3b46049cb2474ea85109f9b5b9918, type: 3}
       propertyPath: m_Name
       value: ~TimePeriod
+      objectReference: {fileID: 0}
+    - target: {fileID: 4332310455696213679, guid: b5f3b46049cb2474ea85109f9b5b9918, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5f3b46049cb2474ea85109f9b5b9918, type: 3}
@@ -13868,6 +13996,14 @@ PrefabInstance:
       propertyPath: startButton
       value: 
       objectReference: {fileID: 182872042}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: tutorialImages.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: instructionText.Array.size
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
 --- !u!1 &9061992653547662851 stripped
