@@ -292,5 +292,15 @@ public class TagManager : MinigameManager
     //{
     //    checkStatusRoutine = StartCoroutine(checkStatus());
     //}
-   
+
+    public override void GameMinigamePause()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public override void GameMinigameResume()
+    {
+        Time.timeScale = 1f;
+    }
+
 }

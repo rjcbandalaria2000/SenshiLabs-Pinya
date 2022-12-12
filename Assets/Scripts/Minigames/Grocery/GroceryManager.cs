@@ -266,6 +266,15 @@ public class GroceryManager : MinigameManager //Might rename this
 
         }
     }
+    public override void GameMinigamePause()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public override void GameMinigameResume()
+    {
+        Time.timeScale = 1f;
+    }
 
 
     public void continueScene()
