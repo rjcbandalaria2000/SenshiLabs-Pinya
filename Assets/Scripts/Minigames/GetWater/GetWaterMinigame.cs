@@ -11,12 +11,6 @@ public class GetWaterMinigame : MinigameObject
         Initialize();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-      
-    }
-
     public override void Initialize()
     {
         interactable = this.GetComponent<Interactable>();
@@ -31,6 +25,7 @@ public class GetWaterMinigame : MinigameObject
 
     public override void Interact(GameObject player = null)
     {
+        if (isInteracted) { return; }
         isInteracted = true;
         MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
         if (playerMotivation)
