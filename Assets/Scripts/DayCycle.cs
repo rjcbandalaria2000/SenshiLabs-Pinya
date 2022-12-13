@@ -18,25 +18,25 @@ public class DayCycle : MonoBehaviour
     private void Awake()
     {
         SingletonManager.Register(this);
-        
-    }
-    private void Start()
-    {
         if (SingletonManager.Get<PlayerData>())
         {
-            if (SingletonManager.Get<PlayerData>().hasSaved) 
+            if (SingletonManager.Get<PlayerData>().hasSaved)
             {
                 timePeriod = SingletonManager.Get<PlayerData>().savedTimePeriod;
                 timeIndex = SingletonManager.Get<PlayerData>().savedTimeIndex;
             }
         }
+    }
+    private void Start()
+    {
+     
         Events.OnChangeTimePeriod.Invoke();
         Events.OnSceneChange.AddListener(OnSceneChange);
     }
 
     public void ChangeTimePeriod(int timeIndex)
     {
-        //Mathf.Clamp(timeIndex, 0, 2);
+        Mathf.Clamp(timeIndex, 0, 2);
         switch (timeIndex)
         {
             case 0:

@@ -72,5 +72,7 @@ public class PlayerData : MonoBehaviour
         isWaterThePlantsFinished = false;
         isFoldingClothesFinished = false;
         requiredTasks.Clear();
+        savedTimeIndex = 0;
+        savedTimePeriod = TimePeriod.Morning;
     }
 }

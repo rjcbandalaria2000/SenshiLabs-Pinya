@@ -29,16 +29,12 @@ public class TaskManager : MonoBehaviour
     private void Awake()
     {
         SingletonManager.Register(this);
+        //Initialize();
     }
     // Start is called before the first frame update
     void Start()
     {
         Initialize();
-    }
-
-    public void Initialize()
-    {
-        CheckIfAllTasksDone();
         if (SingletonManager.Get<PlayerData>().hasSaved)
         {
             if (SingletonManager.Get<PlayerData>().requiredTasks.Count > 0)
@@ -47,7 +43,13 @@ public class TaskManager : MonoBehaviour
                 //ActivateSetTasks();
             }
         }
-        else
+    }
+
+    public void Initialize()
+    {
+        CheckIfAllTasksDone();
+        
+        if(!SingletonManager.Get<PlayerData>().hasSaved)
         {
             SetRandomTasks();
             //ActivateSetTasks();
@@ -220,7 +222,7 @@ public class TaskManager : MonoBehaviour
             Events.OnTasksComplete.Invoke();
         }
         {
-            SingletonManager.Get<DayCycle>().ChangeTimePeriod(SingletonManager.Get<DayCycle>().timeIndex);
+            //SingletonManager.Get<DayCycle>().ChangeTimePeriod(SingletonManager.Get<DayCycle>().timeIndex);
             Debug.Log("All tasks are not yet done");
         }
     }

@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
         if (transitionManager.stateOfDayGO)
         {
             transitionManager.stateOfDayGO.SetActive(true);
-            transitionManager.stateDayTransition.NextState(SingletonManager.Get<DayCycle>().timePeriod);
+            transitionManager.stateDayTransition.NextState(SingletonManager.Get<PlayerData>().savedTimePeriod);
             yield return new WaitForSeconds(3f);
             transitionManager.stateOfDayGO.SetActive(false);
         }
