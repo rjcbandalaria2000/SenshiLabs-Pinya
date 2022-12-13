@@ -17,7 +17,7 @@ public class DayCycle : MonoBehaviour
 
     private void Awake()
     {
-        SingletonManager.Register(this);
+       SingletonManager.Register(this);
         if (SingletonManager.Get<PlayerData>())
         {
             if (SingletonManager.Get<PlayerData>().hasSaved)
@@ -29,7 +29,12 @@ public class DayCycle : MonoBehaviour
     }
     private void Start()
     {
-     
+        Initialize();
+    }
+
+    public void Initialize()
+    {
+        
         Events.OnChangeTimePeriod.Invoke();
         Events.OnSceneChange.AddListener(OnSceneChange);
     }

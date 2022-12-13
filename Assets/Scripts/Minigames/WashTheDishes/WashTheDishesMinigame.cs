@@ -11,12 +11,6 @@ public class WashTheDishesMinigame : MinigameObject
         Initialize();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
-
     public override void Initialize()
     {
         interactable = this.GetComponent<Interactable>();

@@ -106,8 +106,10 @@ public class GameManager : MonoBehaviour
             playerControls.Initialize();
             playerControls.enabled = false;
         }
+       
         //Disable UI 
         UI.DeactivateGameUI();
+        SingletonManager.Get<TaskManager>().Initialize();
         if (transitionManager.stateOfDayGO)
         {
             transitionManager.stateOfDayGO.SetActive(true);

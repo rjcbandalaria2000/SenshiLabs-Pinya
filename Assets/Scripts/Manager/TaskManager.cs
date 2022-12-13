@@ -34,7 +34,12 @@ public class TaskManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Initialize();
+        //Initialize();
+    }
+
+    public void Initialize()
+    {
+        CheckIfAllTasksDone();
         if (SingletonManager.Get<PlayerData>().hasSaved)
         {
             if (SingletonManager.Get<PlayerData>().requiredTasks.Count > 0)
@@ -43,13 +48,7 @@ public class TaskManager : MonoBehaviour
                 //ActivateSetTasks();
             }
         }
-    }
-
-    public void Initialize()
-    {
-        CheckIfAllTasksDone();
-        
-        if(!SingletonManager.Get<PlayerData>().hasSaved)
+        else
         {
             SetRandomTasks();
             //ActivateSetTasks();
@@ -57,7 +56,7 @@ public class TaskManager : MonoBehaviour
         }
 
         CheckIfRequiredTasksDone();
-       
+        //SingletonManager.Get<DayCycle>().Initialize();
         taskListParent.SetActive(false);
         Events.OnSceneChange.AddListener(OnSceneChange);
     }
@@ -247,6 +246,7 @@ public class TaskManager : MonoBehaviour
                 playerData.requiredTasks.Add(minigame.minigameName);
             }
         }
+        //CheckIfRequiredTasksDone();
         Events.OnSceneChange.RemoveListener(OnSceneChange);
     }
 
