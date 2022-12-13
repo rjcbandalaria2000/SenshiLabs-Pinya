@@ -36,7 +36,7 @@ public class DayCycle : MonoBehaviour
 
     public void ChangeTimePeriod(int timeIndex)
     {
-        Mathf.Clamp(timeIndex, 0, 2);
+        //Mathf.Clamp(timeIndex, 0, 2);
         switch (timeIndex)
         {
             case 0:

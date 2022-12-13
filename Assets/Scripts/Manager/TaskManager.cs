@@ -23,6 +23,9 @@ public class TaskManager : MonoBehaviour
 
     private List<GameObject>        taskTexts = new();
     private List<MinigameObject> tempTaskList = new();
+
+    
+
     private void Awake()
     {
         SingletonManager.Register(this);
@@ -48,7 +51,7 @@ public class TaskManager : MonoBehaviour
         {
             SetRandomTasks();
             //ActivateSetTasks();
-            SingletonManager.Get<DayCycle>().ChangeTimePeriod(SingletonManager.Get<DayCycle>().timeIndex);
+            //SingletonManager.Get<DayCycle>().ChangeTimePeriod(SingletonManager.Get<DayCycle>().timeIndex);
         }
 
         CheckIfRequiredTasksDone();
@@ -194,6 +197,11 @@ public class TaskManager : MonoBehaviour
             OnTasksDone();
             SingletonManager.Get<DayCycle>().timeIndex++;
             SingletonManager.Get<DayCycle>().ChangeTimePeriod(SingletonManager.Get<DayCycle>().timeIndex);
+
+            //Save the new time index
+            SingletonManager.Get<PlayerData>().savedTimeIndex = SingletonManager.Get<DayCycle>().timeIndex;
+            SingletonManager.Get<PlayerData>().savedTimePeriod = SingletonManager.Get<DayCycle>().timePeriod;
+
             Debug.Log("Required Tasks are done");
 
         }
