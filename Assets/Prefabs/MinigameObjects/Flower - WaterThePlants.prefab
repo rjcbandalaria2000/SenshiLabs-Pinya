@@ -97,6 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1016077119}
   - component: {fileID: 1016077120}
+  - component: {fileID: 4624912700797820607}
   m_Layer: 0
   m_Name: SpriteSheet_YardAndKitchen_Props_2 (2)
   m_TagString: Untagged
@@ -171,6 +172,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4624912700797820607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016077118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bc6b48692aa5ab478dfff635c2692c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: {x: 1.035472, y: 2.066849, z: 0.9178527}
 --- !u!1 &1256053891
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,6 +294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1642928216}
   - component: {fileID: 1642928217}
+  - component: {fileID: 2610566011643908848}
   m_Layer: 0
   m_Name: SpriteSheet_YardAndKitchen_Props_2
   m_TagString: Untagged
@@ -354,6 +369,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2610566011643908848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642928215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bc6b48692aa5ab478dfff635c2692c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: {x: 1.035472, y: 2.066849, z: 0.9178527}
 --- !u!1 &1690378345
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,6 +426,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1950593003}
   - component: {fileID: 1950593004}
+  - component: {fileID: 7711630445252397392}
   m_Layer: 0
   m_Name: SpriteSheet_YardAndKitchen_Props_2 (1)
   m_TagString: Untagged
@@ -472,6 +501,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7711630445252397392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950593002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bc6b48692aa5ab478dfff635c2692c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: {x: 1.035472, y: 2.066849, z: 0.9178527}
 --- !u!1 &813893975698404262
 GameObject:
   m_ObjectHideFlags: 0
