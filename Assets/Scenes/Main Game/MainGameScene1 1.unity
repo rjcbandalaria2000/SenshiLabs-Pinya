@@ -7050,6 +7050,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sink - CleanTheDishes
       objectReference: {fileID: 0}
+    - target: {fileID: 1278223492080597529, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1278223492080597532, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -7127,6 +7131,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1516140953}
     m_Modifications:
+    - target: {fileID: 1618933501, guid: e41e923d36dd9184699d21fe2e39658e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1705872688, guid: e41e923d36dd9184699d21fe2e39658e, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -11743,6 +11751,10 @@ PrefabInstance:
       propertyPath: preRequisiteTasks.Array.data[0]
       value: 
       objectReference: {fileID: 893641064}
+    - target: {fileID: 397555470, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 714896941, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.35
@@ -11846,6 +11858,14 @@ PrefabInstance:
     - target: {fileID: 325155189039054869, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
       propertyPath: m_Offset.y
       value: 0.09064627
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922563359199658618, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7075492947985093227, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
