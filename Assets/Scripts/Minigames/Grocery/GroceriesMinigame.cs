@@ -4,22 +4,24 @@ using UnityEngine;
 
 public class GroceriesMinigame : MinigameObject
 {
+    private TransitionManager transitionManager;
 
     private void Awake()
     {
-        Initialize();
+        
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Initialize();
     }
 
     public override void Initialize()
     {
         interactable = this.GetComponent<Interactable>();
         sceneChange = this.gameObject.GetComponent<SceneChange>();
+        transitionManager = SingletonManager.Get<TransitionManager>();
         if (SingletonManager.Get<PlayerData>())
         {
             hasCompleted = SingletonManager.Get<PlayerData>().isGroceryFinished;
@@ -28,6 +30,7 @@ public class GroceriesMinigame : MinigameObject
 
     public override void Interact(GameObject player = null)
     {
+        if (isInteracted) { return; }
         isInteracted = true;
         MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
         if (playerMotivation)
@@ -35,7 +38,7 @@ public class GroceriesMinigame : MinigameObject
             playerMotivation.DecreaseMotivation(motivationCost);
         }
         Debug.Log("Interacted");
-        JumpToMiniGame();
+        StartInteractRoutine();
     }
 
     public override void EndInteract(GameObject player = null)
@@ -45,7 +48,27 @@ public class GroceriesMinigame : MinigameObject
 
     public override IEnumerator InteractCoroutine(GameObject player = null)
     {
-        return base.InteractCoroutine(player);
+        transitionManager = SingletonManager.Get<TransitionManager>();
+        //Disable UI Elements
+        SingletonManager.Get<UIManager>().DeactivateGameUI();
+
+        //Play animation of transition
+        if (transitionManager)
+        {
+
+            transitionManager.ChangeAnimation(TransitionManager.CURTAIN_CLOSE);
+
+        }
+        //Wait for the transition to end
+        while (!transitionManager.IsAnimationFinished())
+        {
+            Debug.Log("Closing Curtain Time: " + transitionManager.animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+            yield return null;
+        }
+
+        //Jump to next scene
+        JumpToMiniGame();
+        yield return null;
     }
 
     public override void JumpToMiniGame()
@@ -70,6 +93,10 @@ public class GroceriesMinigame : MinigameObject
         {
             Debug.Log("No Scene change");
         }
+    }
+    public override void StartInteractRoutine()
+    {
+        interactRoutine = StartCoroutine(InteractCoroutine());
     }
 
 }
