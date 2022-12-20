@@ -9,9 +9,8 @@ public class MotivationMeter : MonoBehaviour
     public float        MotivationAmount;
     public float        MaxMotivation;
 
-    //[Header("Unity Events")]
-    //public UnityEvent   EvtChangeMeter = new();
-
+    [Header("Threshold Values")]
+    public float        minMotivationAmount = 30f;
     
     // Start is called before the first frame update
     void Start()
@@ -65,7 +64,7 @@ public class MotivationMeter : MonoBehaviour
 
     public void CheckMotivationalMeter()
     {
-        if(MotivationAmount <= Constants.MINUMUM_MOTIVATION_THRESHOLD)
+        if(MotivationAmount <= minMotivationAmount)
         {
             Events.OnEmptyMotivation.Invoke(true);
         }
