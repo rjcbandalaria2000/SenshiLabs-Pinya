@@ -65,7 +65,7 @@ public class MotivationMeter : MonoBehaviour
 
     public void CheckMotivationalMeter()
     {
-        if(MotivationAmount <= 0)
+        if(MotivationAmount <= Constants.MINUMUM_MOTIVATION_THRESHOLD)
         {
             Events.OnEmptyMotivation.Invoke(true);
         }
