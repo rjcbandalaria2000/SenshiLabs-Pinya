@@ -180,7 +180,11 @@ public class TutorialUIManager : MonoBehaviour
             }
             else
             {
-                startButton.gameObject.SetActive(true);
+                if (startButton != null)
+                {
+                   startButton.gameObject.SetActive(true);
+                }
+               
             }
 
             if (pageCount <= 0)
