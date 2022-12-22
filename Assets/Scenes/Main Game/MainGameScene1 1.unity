@@ -2514,8 +2514,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -2348528930903622607, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
+      propertyPath: coolDown
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -2348528930903622607, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
+      propertyPath: thresholdSlider
+      value: 
+      objectReference: {fileID: 1281188706}
+    - target: {fileID: -2348528930903622607, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
       propertyPath: minMotivationAmount
-      value: 30
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 106386032496589107, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
       propertyPath: m_SortingOrder
@@ -8865,6 +8873,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2777084149738793780, guid: da8f08f5586c40f41b8739997c82f052, type: 3}
   m_PrefabInstance: {fileID: 1281188704}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1281188706 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2777084149738793781, guid: da8f08f5586c40f41b8739997c82f052, type: 3}
+  m_PrefabInstance: {fileID: 1281188704}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1321314940
 GameObject:
   m_ObjectHideFlags: 0
