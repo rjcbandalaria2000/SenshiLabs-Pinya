@@ -26,6 +26,8 @@ public class GroceriesMinigame : MinigameObject
         {
             hasCompleted = SingletonManager.Get<PlayerData>().isGroceryFinished;
         }
+        Events.OnSceneChange.AddListener(OnSceneChange);
+        StopInteractRoutine();
     }
 
     public override void Interact(GameObject player = null)
@@ -99,4 +101,19 @@ public class GroceriesMinigame : MinigameObject
         interactRoutine = StartCoroutine(InteractCoroutine());
     }
 
+    public override void StopInteractRoutine()
+    {
+        if(interactRoutine != null)
+        {
+            StopCoroutine(interactRoutine);
+            interactRoutine = null;
+        }
+    }
+    public override void OnSceneChange()
+    {
+        Events.OnSceneChange.RemoveListener(OnSceneChange);
+        Events.OnInteract.RemoveListener(Interact);
+        Events.OnFinishInteract.RemoveListener(EndInteract);
+        Debug.Log("Removed listener from Minigame");
+    }
 }

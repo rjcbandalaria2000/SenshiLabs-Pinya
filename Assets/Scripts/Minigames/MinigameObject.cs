@@ -95,7 +95,7 @@ public class MinigameObject : MonoBehaviour
         yield return null; 
     }
 
-    public virtual void deactivateUnfinishState()
+    public virtual void DeactivateUnfinishState()
     {
         uncompleteState.SetActive(false);
     }
@@ -103,5 +103,15 @@ public class MinigameObject : MonoBehaviour
     public bool CheckIfPrerequisiteFinished()
     {
         return false;
+    }
+
+    public virtual void StopInteractRoutine()
+    {
+
+    }
+
+    public virtual void OnSceneChange()
+    {
+
     }
 }

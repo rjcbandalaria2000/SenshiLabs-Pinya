@@ -23,39 +23,16 @@ public class HideAndSeekMinigame : MinigameObject
         {
             hasCompleted = SingletonManager.Get<PlayerData>().isHideSeekFinished;
         }
+        Events.OnSceneChange.AddListener(OnSceneChange);
+        StopInteractRoutine();
     }
 
     public override void Interact(GameObject player = null)
     {
         if (!isInteracted)
         {
-
-
-            //isInteracted = true;
-            //MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
-            //if (playerMotivation)
-            //{
-            //    //Check if has enough motivation
-            //    if (playerMotivation.MotivationAmount < motivationCost)
-            //    {
-            //        // if there is not enough motivation amount
-            //        Debug.Log("Not enough motivation");
-            //        return;
-            //    }
-            //    else
-            //    {
-            //        playerMotivation.DecreaseMotivation(motivationCost);
-            //        //Disable player controls 
-            //        PlayerControls playerControl = player.GetComponent<PlayerControls>();
-            //        if (playerControl)
-            //        {
-            //            playerControl.enabled = false;
-            //        }
-            //        Debug.Log("Interacted");
             isInteracted = true; // to avoid being called again since it is already interacted
             StartInteractRoutine();
-            //    }
-            //}
             Debug.Log("Interacted");
         }
     }
@@ -117,6 +94,21 @@ public class HideAndSeekMinigame : MinigameObject
     public override void StartInteractRoutine()
     {
         interactRoutine = StartCoroutine(InteractCoroutine());
+    }
+    public override void StopInteractRoutine()
+    {
+        if (interactRoutine != null)
+        {
+            StopCoroutine(interactRoutine);
+            interactRoutine = null;
+        }
+    }
+    public override void OnSceneChange()
+    {
+        Events.OnSceneChange.RemoveListener(OnSceneChange);
+        Events.OnInteract.RemoveListener(Interact);
+        Events.OnFinishInteract.RemoveListener(EndInteract);
+        Debug.Log("Removed listener from Minigame");
     }
 
 }

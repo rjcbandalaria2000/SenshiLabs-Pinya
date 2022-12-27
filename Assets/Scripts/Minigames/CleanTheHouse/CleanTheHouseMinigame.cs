@@ -10,12 +10,6 @@ public class CleanTheHouseMinigame : MinigameObject
     {
         Initialize();
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
   
     public override void Initialize()
     {
@@ -26,6 +20,8 @@ public class CleanTheHouseMinigame : MinigameObject
         {
             hasCompleted = SingletonManager.Get<PlayerData>().isCleanTheHouseFinished;
         }
+        Events.OnSceneChange.AddListener(OnSceneChange);
+        StopInteractRoutine();
     }
 
     public override void Interact(GameObject player = null)
@@ -120,5 +116,18 @@ public class CleanTheHouseMinigame : MinigameObject
         JumpToMiniGame();
         yield return null;
     }
-
+    public override void StopInteractRoutine()
+    {
+        if (interactRoutine != null)
+        {
+            StopCoroutine(interactRoutine);
+            interactRoutine = null;
+        }
+    }
+    public override void OnSceneChange()
+    {
+        Events.OnSceneChange.RemoveListener(OnSceneChange);
+        Events.OnInteract.RemoveListener(Interact);
+        Events.OnFinishInteract.RemoveListener(EndInteract);
+    }
 }

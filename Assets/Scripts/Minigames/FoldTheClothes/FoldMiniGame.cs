@@ -11,11 +11,6 @@ public class FoldMiniGame : MinigameObject
         Initialize();
     }
 
-    void Start()
-    {
-       
-    }
-
     public override void Initialize()
     {
         interactable = this.GetComponent<Interactable>();
@@ -26,6 +21,8 @@ public class FoldMiniGame : MinigameObject
         {
             hasCompleted = SingletonManager.Get<PlayerData>().isFoldingClothesFinished;
         }
+        Events.OnSceneChange.AddListener(OnSceneChange);
+        StopInteractRoutine();
     }
 
     public override void Interact(GameObject player = null)
@@ -116,5 +113,20 @@ public class FoldMiniGame : MinigameObject
     public override void StartInteractRoutine()
     {
         interactRoutine = StartCoroutine(InteractCoroutine());
+    }
+    public override void StopInteractRoutine()
+    {
+        if (interactRoutine != null)
+        {
+            StopCoroutine(interactRoutine);
+            interactRoutine = null;
+        }
+    }
+    public override void OnSceneChange()
+    {
+        Events.OnSceneChange.RemoveListener(OnSceneChange);
+        Events.OnInteract.RemoveListener(Interact);
+        Events.OnFinishInteract.RemoveListener(EndInteract);
+        Debug.Log("Removed listener from Minigame");
     }
 }

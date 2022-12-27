@@ -25,6 +25,8 @@ public class SleepingMinigame : MinigameObject
         {
             hasCompleted = SingletonManager.Get<PlayerData>().isSleepFinished;
         }
+        Events.OnSceneChange.AddListener(OnSceneChange);
+        StopInteractRoutine();
     }
 
     public override void Interact(GameObject player = null)
@@ -32,31 +34,9 @@ public class SleepingMinigame : MinigameObject
         if (!isInteracted)
         {
             Debug.Log("Interact with" + this.gameObject.name);
-            //Decrease Motivation 
-            //MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
-            //if (playerMotivation)
-            //{
-            //    //Check if has enough motivation
-            //    if (playerMotivation.MotivationAmount < motivationCost)
-            //    {
-            //        // if there is not enough motivation amount
-            //        Debug.Log("Not enough motivation");
-            //        return;
-            //    }
-            //    else
-            //    {
-            //        playerMotivation.DecreaseMotivation(motivationCost);
-            //        //Disable player controls 
-            //        PlayerControls playerControl = player.GetComponent<PlayerControls>();
-            //        if (playerControl)
-            //        {
-            //            playerControl.enabled = false;
-            //        }
-                    Debug.Log("Interacted");
-                    isInteracted = true; // to avoid being called again since it is already interacted
-                    StartInteractRoutine();
-               // }
-            //}
+            Debug.Log("Interacted");
+            isInteracted = true; // to avoid being called again since it is already interacted
+            StartInteractRoutine();
         }
         //interactRoutine = StartCoroutine(InteractCoroutine(player));
     }
@@ -120,6 +100,21 @@ public class SleepingMinigame : MinigameObject
     public void deactivateUncompleteState()
     {
         uncompleteState.SetActive(false);
+    }
+    public override void StopInteractRoutine()
+    {
+        if (interactRoutine != null)
+        {
+            StopCoroutine(interactRoutine);
+            interactRoutine = null;
+        }
+    }
+    public override void OnSceneChange()
+    {
+        Events.OnSceneChange.RemoveListener(OnSceneChange);
+        Events.OnInteract.RemoveListener(Interact);
+        Events.OnFinishInteract.RemoveListener(EndInteract);
+        Debug.Log("Removed listener from Minigame");
     }
 }
 

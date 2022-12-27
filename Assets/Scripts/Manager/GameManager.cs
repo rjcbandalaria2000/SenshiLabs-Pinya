@@ -164,12 +164,14 @@ public class GameManager : MonoBehaviour
         if (playerProgress)
         {
             if(playerProgress.GetTotalTimeElapsed() <= playerProgress.GetAllTotalTime())
-            {
+            {  
+                Events.OnSceneChange.Invoke();
                 GoToEnding(goodEndingSceneName);
                 Debug.Log("Get the good ending");
             }
             else
             {
+                Events.OnSceneChange.Invoke();
                 GoToEnding(badEndingSceneName);
                 Debug.Log("Get the bad ending ");
             }
@@ -188,6 +190,8 @@ public class GameManager : MonoBehaviour
         //Remove Active singletons 
         //SingletonManager.Remove<GameManager>();
         //SingletonManager.Remove<UIManager>();
+
+       
 
         //Remove all listeners when scene changes
         Events.OnPinyaEmpty.RemoveListener(GameLose);

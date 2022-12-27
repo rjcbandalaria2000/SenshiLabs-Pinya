@@ -11,13 +11,6 @@ public class WaterThePlantsMinigame : MinigameObject
         Initialize();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
-
-
     public override void Initialize()
     {
         interactable = this.GetComponent<Interactable>();
@@ -26,6 +19,8 @@ public class WaterThePlantsMinigame : MinigameObject
         {
             hasCompleted = SingletonManager.Get<PlayerData>().isWaterThePlantsFinished;
         }
+        Events.OnSceneChange.AddListener(OnSceneChange);
+        StopInteractRoutine();
     }
 
     public override void Interact(GameObject player = null)
@@ -121,5 +116,19 @@ public class WaterThePlantsMinigame : MinigameObject
             Debug.Log("No Scene change");
         }
     }
-
+    public override void StopInteractRoutine()
+    {
+        if (interactRoutine != null)
+        {
+            StopCoroutine(interactRoutine);
+            interactRoutine = null;
+        }
+    }
+    public override void OnSceneChange()
+    {
+        Events.OnSceneChange.RemoveListener(OnSceneChange);
+        Events.OnInteract.RemoveListener(Interact);
+        Events.OnFinishInteract.RemoveListener(EndInteract);
+        Debug.Log("Removed listener from Minigame");
+    }
 }

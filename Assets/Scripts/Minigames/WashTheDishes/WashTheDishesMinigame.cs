@@ -21,6 +21,8 @@ public class WashTheDishesMinigame : MinigameObject
         {
             hasCompleted = SingletonManager.Get<PlayerData>().isWashTheDishesFinished;
         }
+        Events.OnSceneChange.AddListener(OnSceneChange);
+        StopInteractRoutine();
     }
 
     public override void Interact(GameObject player = null)
@@ -117,5 +119,21 @@ public class WashTheDishesMinigame : MinigameObject
         {
             Debug.Log("No Scene change");
         }
+    }
+    public override void StopInteractRoutine()
+    {
+        if (interactRoutine != null)
+        {
+            StopCoroutine(interactRoutine);
+            interactRoutine = null;
+        }
+    }
+
+    public override void OnSceneChange()
+    {
+        Events.OnSceneChange.RemoveListener(OnSceneChange);
+        Events.OnInteract.RemoveListener(Interact);
+        Events.OnFinishInteract.RemoveListener(EndInteract);
+        Debug.Log("Removed listener from Minigame");
     }
 }

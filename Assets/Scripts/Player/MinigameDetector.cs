@@ -12,7 +12,7 @@ public class MinigameDetector : MonoBehaviour
     public UnityEvent   EvtFinishInteract = new();
 
     //private Interactable interactable;
-    //private GameObject detectedObject; 
+    private MinigameObject interactedMinigame; 
 
     public void Start()
     {
@@ -25,6 +25,7 @@ public class MinigameDetector : MonoBehaviour
         {
             Parent = this.transform.parent.gameObject.GetComponent<UnitInfo>().GetParent();
         }
+        Events.OnSceneChange.AddListener(OnSceneChange);
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -37,9 +38,11 @@ public class MinigameDetector : MonoBehaviour
             PlayerInteract playerInteract = Parent.GetComponent<PlayerInteract>();
             if (playerInteract == null) { return; }
             playerInteract.InteractableObject = interactedObject;
+            
             MinigameObject detectedMinigame = collision.gameObject.GetComponent<MinigameObject>();
             if (detectedMinigame)
             {
+                interactedMinigame = detectedMinigame;//Save interacted object
                 Events.OnInteract.AddListener(detectedMinigame.Interact);
                 Events.OnFinishInteract.AddListener(detectedMinigame.EndInteract);
             }
@@ -55,17 +58,27 @@ public class MinigameDetector : MonoBehaviour
             PlayerInteract playerInteract = Parent.GetComponent<PlayerInteract>();
             if (playerInteract == null) { return; }
             playerInteract.InteractableObject = null;
+            interactedMinigame = null; //Remove saved interacted object 
             //Method 1 for different spawning scene 
             // Only add listener when collided 
             //Remove all listener when outside of collider 
             MinigameObject detectedMinigame = collision.gameObject.GetComponent<MinigameObject>();
             if (detectedMinigame)
             {
-                //Events.OnFinishInteract.AddListener(detectedMinigame.EndInteract);
                 interactedObject.FinishInteract(Parent);
                 Events.OnInteract.RemoveListener(detectedMinigame.Interact);
                 Events.OnFinishInteract.RemoveListener(detectedMinigame.EndInteract);
             }
+        }
+    }
+
+    public void OnSceneChange()
+    {
+        Events.OnSceneChange.RemoveListener(OnSceneChange);
+        if (interactedMinigame)
+        {
+            Events.OnInteract.RemoveListener(interactedMinigame.Interact);
+            Events.OnFinishInteract.RemoveListener(interactedMinigame.EndInteract);
         }
     }
 }

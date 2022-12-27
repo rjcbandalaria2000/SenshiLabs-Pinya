@@ -71,6 +71,9 @@ public class PlayerData : MonoBehaviour
         isWashTheDishesFinished = false;
         isWaterThePlantsFinished = false;
         isFoldingClothesFinished = false;
+        isTagFinished = false;
+        isHideSeekFinished = false;
+        isSleepFinished = false;
         requiredTasks.Clear();
         savedTimeIndex = 0;
         savedTimePeriod = TimePeriod.Morning;

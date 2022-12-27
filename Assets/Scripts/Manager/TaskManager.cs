@@ -344,7 +344,7 @@ public class TaskManager : MonoBehaviour
         {
             if (minigameObjects[i].hasCompleted)
             {
-                minigameObjects[i].deactivateUnfinishState();
+                minigameObjects[i].DeactivateUnfinishState();
             }
             
         }
