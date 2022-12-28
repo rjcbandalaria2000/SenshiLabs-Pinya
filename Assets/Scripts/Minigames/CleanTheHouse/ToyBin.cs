@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DG.Tweening;
 public class ToyBin : MonoBehaviour
 {
     public SFXManager sFX;
@@ -35,9 +35,15 @@ public class ToyBin : MonoBehaviour
                 sFX.PlaySFX(clip);
                 SingletonManager.Get<CleanTheHouseManager>().AddTrashThrown(1);
                 Destroy(collidedToy.gameObject);
+                Shake();
             }
         }
     }
 
+
+    public void Shake()
+    {
+        gameObject.transform.DOPunchScale(new Vector3(0.3f, 0.3f, 0.3f), 0.5f, 1, 1);
+    }
 
 }
