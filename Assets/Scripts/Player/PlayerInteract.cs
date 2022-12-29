@@ -7,13 +7,16 @@ public class PlayerInteract : MonoBehaviour
     public Interactable InteractableObject;
 
     private Coroutine interactRoutine;
+
+    private void Awake()
+    {
+        StopInteractRoutine();
+        interactRoutine = null;
+        InteractableObject = null;
+    }
     // Start is called before the first frame update
     void Start()
     {
-        if(interactRoutine != null)
-        {
-            StopCoroutine(interactRoutine);
-        }
         interactRoutine = StartCoroutine(Interact());
         Events.OnSceneChange.AddListener(OnSceneChange);
     }
@@ -35,16 +38,29 @@ public class PlayerInteract : MonoBehaviour
         
     }
 
+    private void StopInteractRoutine()
+    {
+        if(interactRoutine != null)
+        {
+            StopCoroutine(interactRoutine);
+            interactRoutine = null;
+        }
+    }
+
     public void OnSceneChange()
     {
+        //Stop the interact routine
+        StopInteractRoutine();
         //Remove any listener if there is still an interactable object 
         Events.OnSceneChange.RemoveListener(OnSceneChange);
         if (InteractableObject == null) { return; }
         MinigameObject minigameObject = InteractableObject.gameObject.GetComponent<MinigameObject>();
-        if (minigameObject == null) { return; }
-        Events.OnInteract.RemoveListener(minigameObject.Interact);
-        Events.OnFinishInteract.RemoveListener(minigameObject.EndInteract);
-        InteractableObject = null;
+        if (minigameObject)
+        {
+            Events.OnInteract.RemoveListener(minigameObject.Interact);
+            Events.OnFinishInteract.RemoveListener(minigameObject.EndInteract);
+            InteractableObject = null;
+        }
     }
 
    

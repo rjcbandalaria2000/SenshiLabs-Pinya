@@ -80,5 +80,6 @@ public class MinigameDetector : MonoBehaviour
             Events.OnInteract.RemoveListener(interactedMinigame.Interact);
             Events.OnFinishInteract.RemoveListener(interactedMinigame.EndInteract);
         }
+        interactedMinigame = null;
     }
 }

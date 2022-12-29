@@ -21,10 +21,6 @@ public class Player : MonoBehaviour
         }
         
         Events.OnSceneChange.AddListener(OnSceneChange);
-        //Events.OnSceneChange.AddListener(SavePlayer);
-        //SavePlayer();
-        //LoadPlayer();
-        //Events.OnSceneLoad.AddListener(LoadPlayer);
     }
 
     //Move to Manager

@@ -129,5 +129,6 @@ public class CleanTheHouseMinigame : MinigameObject
         Events.OnSceneChange.RemoveListener(OnSceneChange);
         Events.OnInteract.RemoveListener(Interact);
         Events.OnFinishInteract.RemoveListener(EndInteract);
+        Debug.Log("Removed listener from Minigame");
     }
 }

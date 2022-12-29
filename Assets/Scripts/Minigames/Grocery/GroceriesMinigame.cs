@@ -8,7 +8,7 @@ public class GroceriesMinigame : MinigameObject
 
     private void Awake()
     {
-        
+       StopInteractRoutine();
     }
 
     // Start is called before the first frame update
@@ -27,7 +27,7 @@ public class GroceriesMinigame : MinigameObject
             hasCompleted = SingletonManager.Get<PlayerData>().isGroceryFinished;
         }
         Events.OnSceneChange.AddListener(OnSceneChange);
-        StopInteractRoutine();
+        
     }
 
     public override void Interact(GameObject player = null)
@@ -106,11 +106,13 @@ public class GroceriesMinigame : MinigameObject
         if(interactRoutine != null)
         {
             StopCoroutine(interactRoutine);
-            interactRoutine = null;
+            
         }
+        interactRoutine = null;
     }
     public override void OnSceneChange()
     {
+        StopInteractRoutine();
         Events.OnSceneChange.RemoveListener(OnSceneChange);
         Events.OnInteract.RemoveListener(Interact);
         Events.OnFinishInteract.RemoveListener(EndInteract);
