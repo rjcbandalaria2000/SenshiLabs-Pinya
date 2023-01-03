@@ -188,10 +188,12 @@ public class GameManager : MonoBehaviour
     public void OnSceneChange()
     {
         //Remove Active singletons 
-        //SingletonManager.Remove<GameManager>();
-        //SingletonManager.Remove<UIManager>();
-
-       
+        SingletonManager.Remove<GameManager>();
+        SingletonManager.Remove<UIManager>();
+        SingletonManager.Remove<TaskManager>();
+        SingletonManager.Remove<CursorManager>();
+        SingletonManager.Remove<DayCycle>();
+        SingletonManager.Remove<TransitionManager>();
 
         //Remove all listeners when scene changes
         Events.OnPinyaEmpty.RemoveListener(GameLose);
