@@ -27,6 +27,7 @@ public class FoldMiniGame : MinigameObject
 
     public override void Interact(GameObject player = null)
     {
+        if (isInteracted) { return; }   
         isInteracted = true;
         MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
         if (playerMotivation)
@@ -71,7 +72,7 @@ public class FoldMiniGame : MinigameObject
                 Events.OnSceneChange.Invoke();
                 Events.OnInteract.RemoveListener(Interact);
                 Events.OnFinishInteract.RemoveListener(EndInteract);
-
+                StopInteractRoutine();
                 sceneChange.OnChangeScene(minigameScene);
             }
             else
@@ -94,14 +95,11 @@ public class FoldMiniGame : MinigameObject
         //Play animation of transition
         if (transitionManager)
         {
-
             transitionManager.ChangeAnimation(TransitionManager.CURTAIN_CLOSE);
-
         }
         //Wait for the transition to end
         while (!transitionManager.IsAnimationFinished())
         {
-            Debug.Log("Closing Curtain Time: " + transitionManager.animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
             yield return null;
         }
 
@@ -112,6 +110,7 @@ public class FoldMiniGame : MinigameObject
 
     public override void StartInteractRoutine()
     {
+        if(interactRoutine != null) { return; }
         interactRoutine = StartCoroutine(InteractCoroutine());
     }
     public override void StopInteractRoutine()
@@ -120,6 +119,7 @@ public class FoldMiniGame : MinigameObject
         {
             StopCoroutine(interactRoutine);
             interactRoutine = null;
+            Debug.Log("Empty Interact Routine");
         }
     }
     public override void OnSceneChange()
@@ -127,6 +127,13 @@ public class FoldMiniGame : MinigameObject
         Events.OnSceneChange.RemoveListener(OnSceneChange);
         Events.OnInteract.RemoveListener(Interact);
         Events.OnFinishInteract.RemoveListener(EndInteract);
+        StopInteractRoutine();
         Debug.Log("Removed listener from Minigame");
+    }
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
+        OnSceneChange();
     }
 }

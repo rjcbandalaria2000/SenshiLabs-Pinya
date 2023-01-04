@@ -50,7 +50,7 @@ public class DisplayMotivationalBar : MonoBehaviour
     {
         Assert.IsNotNull(playerMotivation, "Player Motivation is not set or is null");
         MotivationSlider.value = playerMotivation.MotivationAmount;
-        Debug.Log("UpdatedMotivationalBar");
+        //Debug.Log("UpdatedMotivationalBar");
     }
 
     public void RemoveListeners()

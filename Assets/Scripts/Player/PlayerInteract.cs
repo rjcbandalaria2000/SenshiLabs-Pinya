@@ -44,6 +44,7 @@ public class PlayerInteract : MonoBehaviour
         {
             StopCoroutine(interactRoutine);
             interactRoutine = null;
+            Debug.Log("Stop Player Interact Controls");
         }
     }
 
@@ -59,9 +60,15 @@ public class PlayerInteract : MonoBehaviour
         {
             Events.OnInteract.RemoveListener(minigameObject.Interact);
             Events.OnFinishInteract.RemoveListener(minigameObject.EndInteract);
-            InteractableObject = null;
+            
         }
+        InteractableObject = null;
     }
 
-   
+    private void OnDestroy()
+    {
+        StopInteractRoutine();
+    }
+
+
 }
