@@ -55,7 +55,11 @@ public class TaskManager : MonoBehaviour
             //SingletonManager.Get<DayCycle>().ChangeTimePeriod(SingletonManager.Get<DayCycle>().timeIndex);
         }
 
-        CheckIfRequiredTasksDone();
+        if (!AreAllTasksDone())
+        {
+            CheckIfRequiredTasksDone();
+        }
+
         //SingletonManager.Get<DayCycle>().Initialize();
         taskListParent.SetActive(false);
         Events.OnSceneChange.AddListener(OnSceneChange);
@@ -277,7 +281,7 @@ public class TaskManager : MonoBehaviour
         if (minigameObjects.Count <= 0) { return false; }
         for (int i = 0; i < minigameObjects.Count; i++) 
         {
-            Debug.Log(minigameObjects[i].minigameName + " is completed?  " + minigameObjects[i].hasCompleted);
+            //Debug.Log(minigameObjects[i].minigameName + " is completed?  " + minigameObjects[i].hasCompleted);
             if (!minigameObjects[i].hasCompleted)
             {
                 areTasksDone = false;
@@ -313,7 +317,7 @@ public class TaskManager : MonoBehaviour
                 }
             }
         }
-        Debug.Log("Activating Required Tasks");
+        //Debug.Log("Activating Required Tasks");
     }
 
     public bool CheckForMinigameDuplicateInList(List<MinigameObject> minigameList, MinigameObject minigameToCheck) {

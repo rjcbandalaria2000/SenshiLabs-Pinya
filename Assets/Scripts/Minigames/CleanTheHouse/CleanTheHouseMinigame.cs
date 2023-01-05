@@ -126,9 +126,16 @@ public class CleanTheHouseMinigame : MinigameObject
     }
     public override void OnSceneChange()
     {
+        StopInteractRoutine();
         Events.OnSceneChange.RemoveListener(OnSceneChange);
         Events.OnInteract.RemoveListener(Interact);
         Events.OnFinishInteract.RemoveListener(EndInteract);
         Debug.Log("Removed listener from Minigame");
+    }
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
+        OnSceneChange();
     }
 }

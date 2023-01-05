@@ -64,7 +64,7 @@ public class GroceriesMinigame : MinigameObject
         //Wait for the transition to end
         while (!transitionManager.IsAnimationFinished())
         {
-            Debug.Log("Closing Curtain Time: " + transitionManager.animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+            //Debug.Log("Closing Curtain Time: " + transitionManager.animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
             yield return null;
         }
 
@@ -117,5 +117,12 @@ public class GroceriesMinigame : MinigameObject
         Events.OnInteract.RemoveListener(Interact);
         Events.OnFinishInteract.RemoveListener(EndInteract);
         Debug.Log("Removed listener from Minigame");
+    }
+
+    private void OnDestroy()
+    {
+        //Used when switching scene since all will be destroyed. In case the invoke doesnt go through 
+        StopAllCoroutines(); //Stop all coroutines and set it to null for the next playthrough to access the object reference
+        OnSceneChange();
     }
 }

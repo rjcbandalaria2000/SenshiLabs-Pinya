@@ -133,7 +133,8 @@ public class FoldMiniGame : MinigameObject
 
     private void OnDestroy()
     {
-        StopAllCoroutines();
+        //Used when switching scene since all will be destroyed. In case the invoke doesnt go through 
+        StopAllCoroutines(); //Stop all coroutines and set it to null for the next playthrough to access the object reference
         OnSceneChange();
     }
 }

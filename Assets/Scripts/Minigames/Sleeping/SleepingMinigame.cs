@@ -114,7 +114,14 @@ public class SleepingMinigame : MinigameObject
         Events.OnSceneChange.RemoveListener(OnSceneChange);
         Events.OnInteract.RemoveListener(Interact);
         Events.OnFinishInteract.RemoveListener(EndInteract);
+        StopInteractRoutine();
         Debug.Log("Removed listener from Minigame");
+    }
+    private void OnDestroy()
+    {
+        //Used when switching scene since all will be destroyed. In case the invoke doesnt go through 
+        StopAllCoroutines(); //Stop all coroutines and set it to null for the next playthrough to access the object reference
+        OnSceneChange();
     }
 }
 
