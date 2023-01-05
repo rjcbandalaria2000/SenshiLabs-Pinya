@@ -8097,6 +8097,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 131146624}
     - target: {fileID: 4257680015237913096, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
+      propertyPath: transitionTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257680015237913096, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
       propertyPath: stateDayTransition
       value: 
       objectReference: {fileID: 131146625}
