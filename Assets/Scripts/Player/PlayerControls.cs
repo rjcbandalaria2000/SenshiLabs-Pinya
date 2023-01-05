@@ -19,6 +19,8 @@ public class PlayerControls : MonoBehaviour
     private PlayerData  playerData;
     private Camera      mainCamera;
 
+
+    private StepSFX stepSFX;
     void Start()
     {
         if (!this.enabled)
@@ -26,6 +28,7 @@ public class PlayerControls : MonoBehaviour
             this.enabled = true;
         }
         Initialize();
+        
     }
 
     public void Initialize()
@@ -37,6 +40,7 @@ public class PlayerControls : MonoBehaviour
             playerData = SingletonManager.Get<PlayerData>();
         }
         RestoreLastPlayerPosition();
+        stepSFX = gameObject.GetComponent<StepSFX>();
     }
     
     void Update()
@@ -72,7 +76,7 @@ public class PlayerControls : MonoBehaviour
         if(Vector3.Distance(this.transform.position,targetPosition) > 1)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
-            
+            //stepSFX.Step();
         }
         else
         {
