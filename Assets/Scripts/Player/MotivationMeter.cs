@@ -87,6 +87,7 @@ public class MotivationMeter : MonoBehaviour
         {
             Events.OnEmptyMotivation.Invoke(false);
             isThreshold = false;
+        //    ShakeScreen();
         }
     }
 
@@ -98,7 +99,7 @@ public class MotivationMeter : MonoBehaviour
             thresholdSlider.gameObject.transform.DOScale(0.6199f, 0.3f).SetEase(Ease.OutBounce);
             // overlayGO.transform.DOScale(1.1f, 0.3f).SetEase(Ease.OutBounce);
             yield return new WaitForSeconds(1f);
-            thresholdSlider.gameObject.transform.DOScale(1, 0.3f).SetEase(Ease.OutBounce);
+            thresholdSlider.gameObject.transform.DOScale(3f, 0.3f).SetEase(Ease.OutBounce);
         }
 
         thresholdSlider.gameObject.transform.DOScale(0.6199f, 0.3f).SetEase(Ease.OutBounce);
@@ -109,4 +110,7 @@ public class MotivationMeter : MonoBehaviour
         StartCoroutine(PulsateObj());
       
     }
+
+ 
+    
 }

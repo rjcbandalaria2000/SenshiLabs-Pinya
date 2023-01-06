@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using DG.Tweening;
 using UnityEngine.SceneManagement;
 
 public class MinigameObject : MonoBehaviour
@@ -113,5 +114,12 @@ public class MinigameObject : MonoBehaviour
     public virtual void OnSceneChange()
     {
 
+    }
+
+    public void ShakeScreen()
+    {
+        Camera camera = Camera.main;
+
+        camera.DOShakePosition(0.8f, 2, 5, 90, true).WaitForCompletion();
     }
 }

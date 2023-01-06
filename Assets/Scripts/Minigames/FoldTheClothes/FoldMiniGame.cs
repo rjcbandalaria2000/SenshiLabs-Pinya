@@ -37,6 +37,7 @@ public class FoldMiniGame : MinigameObject
             {
                 // if there is not enough motivation amount
                 Debug.Log("Not enough motivation");
+                ShakeScreen();
                 return;
             }
             else

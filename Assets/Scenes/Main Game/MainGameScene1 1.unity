@@ -2528,7 +2528,7 @@ PrefabInstance:
       objectReference: {fileID: 1281188706}
     - target: {fileID: -2348528930903622607, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
       propertyPath: minMotivationAmount
-      value: 35
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 106386032496589107, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
       propertyPath: m_SortingOrder

@@ -41,6 +41,7 @@ public class WashTheDishesMinigame : MinigameObject
             {
                 // if there is not enough motivation amount
                 Debug.Log("Not enough motivation");
+                ShakeScreen();
                 return;
             }
             else
