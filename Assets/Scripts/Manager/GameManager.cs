@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     private SceneChange             sceneChange;
     private PlayerProgress          playerProgress;
 
-    public GameObject tutorial;
+    public GameObject tutorial, tutorial2;
 
     private void Awake()
     {
@@ -224,5 +224,17 @@ public class GameManager : MonoBehaviour
         Events.OnSceneChange.Invoke();
         Assert.IsNotNull(sceneChange, "Scene change is null or not set");
         sceneChange.OnChangeScene(sceneID);
+    }
+
+    public void TutorialMain()
+    {
+        tutorial2.SetActive(true);
+
+    }
+
+    public void CloseTutorialPause()
+    {
+        tutorial2.SetActive(false);
+        UI.ActivateGameUI();
     }
 }

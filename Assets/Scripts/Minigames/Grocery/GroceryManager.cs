@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using DG.Tweening;
 public enum Ingredients // Use for comparing
 {
     egg,
@@ -307,5 +308,10 @@ public class GroceryManager : MinigameManager //Might rename this
         Assert.IsNotNull(sceneChange, "Scene change is null or not set");
         sceneChange.OnChangeScene(NameOfNextScene);
         yield return null;
+    }
+
+    public void Shake()
+    {
+        basket.transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.2f, 1, 1);
     }
 }

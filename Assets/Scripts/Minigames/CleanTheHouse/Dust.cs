@@ -24,6 +24,10 @@ public class Dust : MonoBehaviour
 
     AudioSource audioSource;
     public AudioClip audioClip;
+
+    [Header("UX")]
+    public ParticleSystem Particle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +63,7 @@ public class Dust : MonoBehaviour
         {
             audioSource.PlayOneShot(audioClip);
             swipeCounter++;
+            Particle.Play();
             swipedLeft = false;
             swipedRight = false;
         }
@@ -71,5 +76,5 @@ public class Dust : MonoBehaviour
         //Debug.Log("X coordinate: " + mousePosition.normalized.x);
     }
 
-
+    
 }

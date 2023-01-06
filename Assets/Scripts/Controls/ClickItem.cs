@@ -14,6 +14,7 @@ public class ClickItem : MonoBehaviour
     SFXManager sFX;
     public AudioClip correctSFX;
     public AudioClip wrongSFX;
+    public Vector3 itemPos;
 
     // Start is called before the first frame update
 
@@ -26,7 +27,7 @@ public class ClickItem : MonoBehaviour
         item = this.gameObject;
         isDuplicate = false;
         quantity = 0;
-
+        itemPos = item.transform.position;
         if (groceryMiniGame == null)
         {
             groceryMiniGame = GameObject.FindObjectOfType<GroceryManager>();
@@ -73,6 +74,7 @@ public class ClickItem : MonoBehaviour
                 StartCoroutine(lerpItem());
                 groceryList.blank();
                 groceryMiniGame.wantedItems.RemoveAt(i);
+                groceryMiniGame.Shake();
                 groceryList.updateList();
                 isCorrect = true;
                 sFX.PlaySFX(correctSFX);
@@ -85,12 +87,18 @@ public class ClickItem : MonoBehaviour
         {
             Debug.Log("Wrong");
             Vector3 shake = new Vector3(0.5f, 0, 0);
-            item.transform.DOShakePosition(0.3f, shake, 10, 45, false, false);
+
+            this.item.transform.DOShakePosition(0.3f, shake, 10, 45, false, false).OnComplete(ResetPos);
             sFX.PlaySFX(wrongSFX);
         }
 
        
         Events.OnObjectiveUpdate.Invoke();  
         
+    }
+
+    public void ResetPos()
+    {
+        this.item.transform.position = itemPos;
     }
 }
