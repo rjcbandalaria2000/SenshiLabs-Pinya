@@ -35,6 +35,7 @@ public class Plate : MonoBehaviour
 
     [Header("UX")]
     public ParticleSystem particle;
+    public ParticleSystem bubble;
 
 
     // Start is called before the first frame update
@@ -113,10 +114,12 @@ public class Plate : MonoBehaviour
             if (spongePosition.normalized.x < SwipeLeftAccept) // if sponge swiped left 
             {
                 swipedLeft = true;
+                bubble.Play();
             }
             if (spongePosition.normalized.x > SwipeRightAccept) // if sponge swiped right
             {
                 swipedRight = true;
+                bubble.Play();
             }
             if (swipedRight && swipedLeft) // if the player both reached both ends
             {
@@ -132,6 +135,7 @@ public class Plate : MonoBehaviour
                     particle.Play();
                     ChangeModel();
                     Events.OnPlateCleaned.Invoke();
+                    this.GetComponent<BoxCollider2D>().enabled = false;
        
                 }
                 
