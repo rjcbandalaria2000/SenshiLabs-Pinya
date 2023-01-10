@@ -44,6 +44,7 @@ public class MotivationMeter : MonoBehaviour
         {
             Debug.Log("Motivation is maxed out");
         }
+        MotivationAmount = Mathf.Clamp(MotivationAmount, 0, MaxMotivation);
         Events.OnChangeMeter.Invoke();
         //EvtChangeMeter.Invoke();
     }
