@@ -9559,6 +9559,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1190567528}
     m_Modifications:
+    - target: {fileID: 4927296887461873722, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: clips.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4927296887461873722, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: clips.Array.data[7]
+      value: 
+      objectReference: {fileID: 32900000, guid: a62c8f9c820fa7a4889a4fbc89b764d5, type: 3}
+    - target: {fileID: 4927296887461873722, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: clips.Array.data[8]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7200250650991117830, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 3
@@ -9757,11 +9769,79 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
       propertyPath: tutorialImages.Array.size
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
       propertyPath: instructionText.Array.size
-      value: 9
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: tutorialImages.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 119857277298511478c49b0893a3f777, type: 3}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: tutorialImages.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: tutorialImages.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9da236a610063bb419516b4fda7f381d, type: 3}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: tutorialImages.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: fc16cc3ad2bc1a0489a7b06259392f2d, type: 3}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: tutorialImages.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: fe39281ab9b2406489d1cf5a9dbb18ae, type: 3}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: tutorialImages.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5b0628108fbd6d94baa064a7c9be0745, type: 3}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: tutorialImages.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 58a48f89aab196b4f91d7864d5030b47, type: 3}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: tutorialImages.Array.data[7]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: instructionText.Array.data[0]
+      value: You need to help her do household chores around the house to uplift
+        the curse.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: instructionText.Array.data[1]
+      value: Press LMB to control Pina's movement.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: instructionText.Array.data[2]
+      value: When this image appears, Press RMB to enter the household chore's minigame.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: instructionText.Array.data[3]
+      value: Playing the tasks depletes your motivation bar, if that happens, Pina
+        will refuse to do the tasks.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: instructionText.Array.data[4]
+      value: To fill them up you need to play with your friends!
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: instructionText.Array.data[5]
+      value: "If you\u2019re having trouble, Press the Ask Mom to see the chores
+        that you need to do!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: instructionText.Array.data[6]
+      value: These lists will not be available until you press the button, so you
+        need to remember them!
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: instructionText.Array.data[7]
+      value: But be careful, each time you press it your health gets depleted!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
@@ -16428,6 +16508,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1190567528}
     m_Modifications:
+    - target: {fileID: 4927296887461873722, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: clips.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4927296887461873722, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: clips.Array.data[7]
+      value: 
+      objectReference: {fileID: 32900000, guid: a62c8f9c820fa7a4889a4fbc89b764d5, type: 3}
+    - target: {fileID: 4927296887461873722, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: clips.Array.data[8]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7200250650991117830, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 3
@@ -16586,11 +16678,79 @@ PrefabInstance:
       objectReference: {fileID: 182872042}
     - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
       propertyPath: tutorialImages.Array.size
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
       propertyPath: instructionText.Array.size
-      value: 9
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: tutorialImages.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 119857277298511478c49b0893a3f777, type: 3}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: tutorialImages.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: tutorialImages.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9da236a610063bb419516b4fda7f381d, type: 3}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: tutorialImages.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: fc16cc3ad2bc1a0489a7b06259392f2d, type: 3}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: tutorialImages.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: fe39281ab9b2406489d1cf5a9dbb18ae, type: 3}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: tutorialImages.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 5b0628108fbd6d94baa064a7c9be0745, type: 3}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: tutorialImages.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 58a48f89aab196b4f91d7864d5030b47, type: 3}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: tutorialImages.Array.data[7]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: instructionText.Array.data[0]
+      value: You need to help her do household chores around the house to uplift
+        the curse.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: instructionText.Array.data[1]
+      value: Press LMB to control Pina's movement.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: instructionText.Array.data[2]
+      value: When this image appears, Press RMB to enter the household chore's minigame.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: instructionText.Array.data[3]
+      value: Playing the tasks depletes your motivation bar, if that happens, Pina
+        will refuse to do the tasks.
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: instructionText.Array.data[4]
+      value: To fill them up you need to play with your friends!
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: instructionText.Array.data[5]
+      value: "If you\u2019re having trouble, Press the Ask Mom to see the chores
+        that you need to do!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: instructionText.Array.data[6]
+      value: These lists will not be available until you press the button, so you
+        need to remember them!
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061992653118109124, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
+      propertyPath: instructionText.Array.data[7]
+      value: But be careful, each time you press it your health gets depleted!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41a7f1fa0ee16634cb7dd8da50207c6f, type: 3}
