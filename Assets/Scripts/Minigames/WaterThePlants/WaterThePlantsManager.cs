@@ -213,11 +213,13 @@ public class WaterThePlantsManager : MinigameManager
                     mouseFollow.enabled = false;
                 }
             }
-            
+
+            SingletonManager.Get<PlayerData>().storedMotivationData -= motivationalCost;
             SingletonManager.Get<MiniGameTimer>().StopCountdownTimer();
             SingletonManager.Get<UIManager>().ActivateResultScreen();
             SingletonManager.Get<UIManager>().ActivateGoodResult();
             isCompleted = true;
+       
             SingletonManager.Get<PlayerData>().isWaterThePlantsFinished = true;
 
             if (playerProgress)
