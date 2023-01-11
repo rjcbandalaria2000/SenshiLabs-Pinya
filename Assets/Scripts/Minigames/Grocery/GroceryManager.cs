@@ -120,7 +120,13 @@ public class GroceryManager : MinigameManager //Might rename this
             SingletonManager.Get<UIManager>().ActivateResultScreen();
             SingletonManager.Get<UIManager>().ActivateGoodResult();
             SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
-            SingletonManager.Get<PlayerData>().isGroceryFinished = true;
+
+            //Check if the minigame is in the task list
+            if (IsMinigameInTaskList())
+            {
+                SingletonManager.Get<PlayerData>().isGroceryFinished = true;
+            }
+            
             objectList.SetActive(false);
             if (playerProgress)
             {
@@ -148,6 +154,7 @@ public class GroceryManager : MinigameManager //Might rename this
 
     public override void Initialize()
     {
+        id = Constants.GROCERY_NAME;
         transitionManager = SingletonManager.Get<TransitionManager>();
         playerProgress = SingletonManager.Get<PlayerProgress>();
         SingletonManager.Get<UIManager>().ActivateMiniGameMainMenu();
@@ -155,8 +162,6 @@ public class GroceryManager : MinigameManager //Might rename this
         Events.OnSceneChange.AddListener(OnSceneChange);
         objectList.SetActive(false); 
         startMinigameRoutine = null;
-
-       
     }
 
     private void OnSceneChange()
@@ -165,84 +170,7 @@ public class GroceryManager : MinigameManager //Might rename this
         Events.OnSceneChange.RemoveListener(OnSceneChange);
     }
 
-    public override void StartMinigame()
-    {
-       
-        objectList.SetActive(false);
-        groceryList.SetActive(false);
 
-      
-
-        SingletonManager.Get<UIManager>().DeactivateMiniGameMainMenu();
-        SingletonManager.Get<UIManager>().ActivateMiniGameTimerUI();
-
-        numberOfItems = 5;
-        sceneChange = this.gameObject.GetComponent<SceneChange>();
-
-
-        startMinigameRoutine = StartCoroutine(StartMinigameCounter());
-
-        if (basket == null)
-        {
-            basket = GameObject.FindGameObjectWithTag("Basket"); // Might change this
-            basketPosition = basket.transform.position;
-        }
-
-    }
-
-    protected override IEnumerator StartMinigameCounter()
-    {
-        gameStartTimer = GameStartTime;
-
-        //Deactivate Minigame Main Menu
-        SingletonManager.Get<UIManager>().DeactivateMiniGameMainMenu();
-        //Start Curtain Transition
-        SingletonManager.Get<TransitionManager>().ChangeAnimation(TransitionManager.CURTAIN_OPEN);
-       
-        //Wait for the animation to finish 
-        if (transitionManager != null)
-        {
-            while (!transitionManager.IsAnimationFinished())
-            {
-                yield return null;
-            }
-        }
-        //Activate Game Countdown
-        SingletonManager.Get<UIManager>().ActivateGameCountdown();
-        countdownTimerUI.UpdateCountdownSprites((int)gameStartTimer);
-        //countdownTimerUI.UpdateCountdownTimer(gameStartTimer);
-        //Wait till the game countdown is finish
-        while (gameStartTimer > 0)
-        {
-            gameStartTimer -= 1 * Time.deltaTime;
-            countdownTimerUI.UpdateCountdownSprites((int)gameStartTimer);
-            yield return null;
-        }
-
-        //After Game Countdown
-        //Activate GameUI and Timer
-        setUpGroceryRoutine = StartCoroutine(initialGrocery());
-
-        SingletonManager.Get<UIManager>().DeactivateGameCountdown();
-        SingletonManager.Get<UIManager>().ActivateMiniGameTimerUI();
-        SingletonManager.Get<MiniGameTimer>().StartCountdownTimer();
-
-        //Count the attempt in player progress 
-        if (playerProgress)
-        {
-            playerProgress.groceryTracker.totalTime = maxTimer;
-            playerProgress.groceryTracker.numOfAttempts += 1; 
-        }
-        
-       
-        //Events.OnObjectiveUpdate.Invoke();
-        Debug.Log("Refresh Score board");
-        //Spawn objects
-      
-        isCompleted = false;
-
-        
-    }
 
     public IEnumerator initialGrocery()
     {
@@ -277,6 +205,91 @@ public class GroceryManager : MinigameManager //Might rename this
     }
 
 
+   
+
+    #region Starting Minigame Functions
+    public override void StartMinigame()
+    {
+
+        objectList.SetActive(false);
+        groceryList.SetActive(false);
+
+
+
+        SingletonManager.Get<UIManager>().DeactivateMiniGameMainMenu();
+        SingletonManager.Get<UIManager>().ActivateMiniGameTimerUI();
+
+        numberOfItems = 5;
+        sceneChange = this.gameObject.GetComponent<SceneChange>();
+
+
+        startMinigameRoutine = StartCoroutine(StartMinigameCounter());
+
+        if (basket == null)
+        {
+            basket = GameObject.FindGameObjectWithTag("Basket"); // Might change this
+            basketPosition = basket.transform.position;
+        }
+
+    }
+
+    protected override IEnumerator StartMinigameCounter()
+    {
+        gameStartTimer = GameStartTime;
+
+        //Deactivate Minigame Main Menu
+        SingletonManager.Get<UIManager>().DeactivateMiniGameMainMenu();
+        //Start Curtain Transition
+        SingletonManager.Get<TransitionManager>().ChangeAnimation(TransitionManager.CURTAIN_OPEN);
+
+        //Wait for the animation to finish 
+        if (transitionManager != null)
+        {
+            while (!transitionManager.IsAnimationFinished())
+            {
+                yield return null;
+            }
+        }
+        //Activate Game Countdown
+        SingletonManager.Get<UIManager>().ActivateGameCountdown();
+        countdownTimerUI.UpdateCountdownSprites((int)gameStartTimer);
+        //countdownTimerUI.UpdateCountdownTimer(gameStartTimer);
+        //Wait till the game countdown is finish
+        while (gameStartTimer > 0)
+        {
+            gameStartTimer -= 1 * Time.deltaTime;
+            countdownTimerUI.UpdateCountdownSprites((int)gameStartTimer);
+            yield return null;
+        }
+
+        //After Game Countdown
+        //Activate GameUI and Timer
+        setUpGroceryRoutine = StartCoroutine(initialGrocery());
+
+        SingletonManager.Get<UIManager>().DeactivateGameCountdown();
+        SingletonManager.Get<UIManager>().ActivateMiniGameTimerUI();
+        SingletonManager.Get<MiniGameTimer>().StartCountdownTimer();
+
+        //Count the attempt in player progress 
+        if (playerProgress)
+        {
+            playerProgress.groceryTracker.totalTime = maxTimer;
+            playerProgress.groceryTracker.numOfAttempts += 1;
+        }
+
+
+        //Events.OnObjectiveUpdate.Invoke();
+        Debug.Log("Refresh Score board");
+        //Spawn objects
+
+        isCompleted = false;
+
+
+    }
+
+    #endregion
+
+    #region Exit Minigame Functions
     public void continueScene()
     {
         Debug.Log("Minigame complete");
@@ -300,7 +313,6 @@ public class GroceryManager : MinigameManager //Might rename this
         //Wait for transition to end
         while (!transitionManager.IsAnimationFinished())
         {
-            Debug.Log("Transition to closing");
             yield return null;
         }
         Events.OnSceneChange.Invoke();
@@ -308,4 +320,29 @@ public class GroceryManager : MinigameManager //Might rename this
         sceneChange.OnChangeScene(NameOfNextScene);
         yield return null;
     }
+
+    #endregion
+
+    #region Minigame Checker
+    public bool IsMinigameInTaskList()
+    {
+        playerData = SingletonManager.Get<PlayerData>();
+        if (playerData)
+        {
+            if (playerData.requiredTasks.Count <= 0) { return false; }
+            foreach (string minigameID in playerData.requiredTasks)
+            {
+                if (minigameID == id)
+                {
+                    Debug.Log("Current minigame is in the list");
+                    return true;
+                }
+            }
+        }
+        return false;
+
+    }
+
+    #endregion
+
 }

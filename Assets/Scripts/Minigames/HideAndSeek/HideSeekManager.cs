@@ -22,7 +22,6 @@ public class HideSeekManager : MinigameManager
 
     private int                     RNG;
     private PlayerProgress          playerProgress;
-    private PlayerData              playerData;
 
     private void Start()
     {
@@ -39,6 +38,7 @@ public class HideSeekManager : MinigameManager
     }
     public override void Initialize()
     {
+        id = Constants.HIDE_AND_SEEK_NAME;
         transitionManager = SingletonManager.Get<TransitionManager>();
         sceneChange = this.gameObject.GetComponent<SceneChange>();
         playerProgress = SingletonManager.Get<PlayerProgress>();
@@ -87,6 +87,7 @@ public class HideSeekManager : MinigameManager
         SingletonManager.Get<UIManager>().ActivateGoodResult();
         SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
         IncreaseMotivationMeter(earnedMotivationalValue);
+
         if (playerProgress)
         {
             playerProgress.hideSeekTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
@@ -219,5 +220,23 @@ public class HideSeekManager : MinigameManager
     public override void GameMinigameResume()
     {
         Time.timeScale = 1f;
+    }
+    public bool IsMinigameInTaskList()
+    {
+        playerData = SingletonManager.Get<PlayerData>();
+        if (playerData)
+        {
+            if (playerData.requiredTasks.Count <= 0) { return false; }
+            foreach (string minigameID in playerData.requiredTasks)
+            {
+                if (minigameID == id)
+                {
+                    Debug.Log("Current minigame is in the list");
+                    return true;
+                }
+            }
+        }
+        return false;
+
     }
 }

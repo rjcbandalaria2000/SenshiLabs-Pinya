@@ -30,7 +30,8 @@ public class CleanTheHouseManager : MinigameManager
         Initialize();
     }
     public override void Initialize()
-    { 
+    {
+        id = Constants.CLEAN_THE_HOUSE_NAME;
         transitionManager = SingletonManager.Get<TransitionManager>();
         sceneChange = this.gameObject.GetComponent<SceneChange>();
         spawnManager = SingletonManager.Get<SpawnManager>();
@@ -203,7 +204,13 @@ public class CleanTheHouseManager : MinigameManager
             isCompleted = true;
             SingletonManager.Get<UIManager>().ActivateResultScreen();
             SingletonManager.Get<UIManager>().ActivateGoodResult();
-            SingletonManager.Get<PlayerData>().isCleanTheHouseFinished = true;
+
+            //Check if the minigame is in the task list
+            if (IsMinigameInTaskList())
+            {
+                SingletonManager.Get<PlayerData>().isCleanTheHouseFinished = true;
+            }
+            
             Debug.Log("Minigame complete");
             //Count the win in the Progress Tracker
             if (playerProgress)
@@ -213,6 +220,24 @@ public class CleanTheHouseManager : MinigameManager
                 playerProgress.cleanTheHouseTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
             }
         }
+    }
+    public bool IsMinigameInTaskList()
+    {
+        playerData = SingletonManager.Get<PlayerData>();
+        if (playerData)
+        {
+            if (playerData.requiredTasks.Count <= 0) { return false; }
+            foreach (string minigameID in playerData.requiredTasks)
+            {
+                if (minigameID == id)
+                {
+                    Debug.Log("Current minigame is in the list");
+                    return true;
+                }
+            }
+        }
+        return false;
+
     }
 
     #endregion

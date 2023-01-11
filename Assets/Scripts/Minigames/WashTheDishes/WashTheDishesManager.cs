@@ -47,6 +47,7 @@ public class WashTheDishesManager : MinigameManager
 
     public override void Initialize()
     {
+        id = Constants.WASH_THE_DISHES_NAME;
         sceneChange = this.GetComponent<SceneChange>();
         transitionManager = SingletonManager.Get<TransitionManager>();
         plateToWashAreaRoutine = null;
@@ -216,7 +217,13 @@ public class WashTheDishesManager : MinigameManager
         SingletonManager.Get<UIManager>().ActivateResultScreen();
         SingletonManager.Get<UIManager>().ActivateGoodResult();
         isCompleted = true;
-        SingletonManager.Get<PlayerData>().isWashTheDishesFinished = true;
+
+        //Check the minigame if its in the task list
+        if (IsMinigameInTaskList())
+        {
+            SingletonManager.Get<PlayerData>().isWashTheDishesFinished = true;
+        }
+        
         if (playerProgress)
         {
             playerProgress.washTheDishesTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
@@ -300,4 +307,26 @@ public class WashTheDishesManager : MinigameManager
 
     #endregion
 
+    #region Minigame Checkers 
+
+    public bool IsMinigameInTaskList()
+    {
+        playerData = SingletonManager.Get<PlayerData>();
+        if (playerData)
+        {
+            if (playerData.requiredTasks.Count <= 0) { return false; }
+            foreach (string minigameID in playerData.requiredTasks)
+            {
+                if (minigameID == id)
+                {
+                    Debug.Log("Current minigame is in the list");
+                    return true;
+                }
+            }
+        }
+        return false;
+
+    }
+
+    #endregion
 }

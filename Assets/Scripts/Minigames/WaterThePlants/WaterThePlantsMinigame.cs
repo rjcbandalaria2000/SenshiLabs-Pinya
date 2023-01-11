@@ -16,9 +16,10 @@ public class WaterThePlantsMinigame : MinigameObject
         id = Constants.WATER_THE_PLANTS_NAME;
         interactable = this.GetComponent<Interactable>();
         sceneChange = this.GetComponent<SceneChange>();
-        if (SingletonManager.Get<PlayerData>())
+        playerData = SingletonManager.Get<PlayerData>();
+        if (playerData)
         {
-            hasCompleted = SingletonManager.Get<PlayerData>().isWaterThePlantsFinished;
+            hasCompleted = playerData.isWaterThePlantsFinished;
         }
         Events.OnSceneChange.AddListener(OnSceneChange);
         StopInteractRoutine();
@@ -85,9 +86,14 @@ public class WaterThePlantsMinigame : MinigameObject
         //Wait for the transition to end
         while (!transitionManager.IsAnimationFinished())
         {
-            Debug.Log("Closing Curtain Time: " + transitionManager.animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
             yield return null;
         }
+
+        //Set the current minigame accessed in the player data. 
+        //if (playerData)
+        //{
+        //    playerData.SetCurrentMinigame(id); //Use the ID since it is constant; 
+        //}
 
         //Jump to next scene
         JumpToMiniGame();
@@ -133,6 +139,7 @@ public class WaterThePlantsMinigame : MinigameObject
         StopInteractRoutine();
         Debug.Log("Removed listener from Minigame");
     }
+
     private void OnDestroy()
     {
         //Used when switching scene since all will be destroyed. In case the invoke doesnt go through 

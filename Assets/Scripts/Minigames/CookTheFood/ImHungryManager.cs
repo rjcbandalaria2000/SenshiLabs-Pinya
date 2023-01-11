@@ -31,6 +31,7 @@ public class ImHungryManager : MinigameManager
 
     public override void Initialize()
     {
+        id = Constants.COOK_THE_FOOD_NAME;
         transitionManager = SingletonManager.Get<TransitionManager>();
         sceneChange = this.GetComponent<SceneChange>();
         playerData = SingletonManager.Get<PlayerData>();
@@ -61,8 +62,6 @@ public class ImHungryManager : MinigameManager
     {
         Time.timeScale = 1f;
     }
-
-
 
     #region Starting Minigame Functions
 
@@ -122,7 +121,6 @@ public class ImHungryManager : MinigameManager
 
     #endregion
 
-
     #region Exit Minigame Functions
 
     public override void OnExitMinigame()
@@ -178,7 +176,13 @@ public class ImHungryManager : MinigameManager
         isCompleted = true;
         SingletonManager.Get<UIManager>().ActivateResultScreen();
         SingletonManager.Get<UIManager>().ActivateGoodResult();
-        SingletonManager.Get<PlayerData>().isImHungryFinished = true;
+
+        //Check if the minigame is in the task list
+        if (IsMinigameInTaskList())
+        {
+            SingletonManager.Get<PlayerData>().isImHungryFinished = true;
+        }
+        
         if (playerProgress)
         {
             playerProgress.imHungryTracker.timeRemaining = SingletonManager.Get<MiniGameTimer>().GetTimer();
@@ -207,6 +211,25 @@ public class ImHungryManager : MinigameManager
         Events.OnSceneChange.Invoke();
         Assert.IsNotNull(sceneChange, "Scene change is null or not set");
         sceneChange.OnChangeScene(NameOfNextScene);
+    }
+
+    public bool IsMinigameInTaskList()
+    {
+        playerData = SingletonManager.Get<PlayerData>();
+        if (playerData)
+        {
+            if (playerData.requiredTasks.Count <= 0) { return false; }
+            foreach (string minigameID in playerData.requiredTasks)
+            {
+                if (minigameID == id)
+                {
+                    Debug.Log("Current minigame is in the list");
+                    return true;
+                }
+            }
+        }
+        return false;
+
     }
 
     #endregion

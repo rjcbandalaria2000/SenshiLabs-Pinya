@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class MinigameManager : MonoBehaviour
 {
+    [Header("Setup Values")]
+    protected string            id;
+
     [Header("State")]
     public bool                 isCompleted = false;
 
@@ -27,7 +30,7 @@ public class MinigameManager : MonoBehaviour
 
     [Header("Managers")]
     protected TransitionManager transitionManager;
-
+    protected PlayerData        playerData;
 
     // Start is called before the first frame update
     void Start()

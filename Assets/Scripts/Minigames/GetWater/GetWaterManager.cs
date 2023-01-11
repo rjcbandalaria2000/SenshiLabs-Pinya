@@ -43,6 +43,7 @@ public class GetWaterManager : MinigameManager
 
     public override void Initialize()
     {
+        id = Constants.GET_WATER_NAME;
         if(sceneChange == null)
         {
             sceneChange = this.GetComponent<SceneChange>();
@@ -186,7 +187,13 @@ public class GetWaterManager : MinigameManager
             isCompleted = true;
             SingletonManager.Get<UIManager>().ActivateResultScreen();
             SingletonManager.Get<UIManager>().ActivateGoodResult();
-            SingletonManager.Get<PlayerData>().isGetWaterFinished = true;
+
+            //Check if the minigame is in the task list
+            if (IsMinigameInTaskList())
+            {
+                SingletonManager.Get<PlayerData>().isGetWaterFinished = true;
+            }
+            
             if (playerProgress) 
             {
                 playerProgress.getWaterTracker.numOfTimesCompleted += 1;
@@ -248,6 +255,24 @@ public class GetWaterManager : MinigameManager
             }
         }
         return areBucketsFull;
+    }
+    public bool IsMinigameInTaskList()
+    {
+        playerData = SingletonManager.Get<PlayerData>();
+        if (playerData)
+        {
+            if (playerData.requiredTasks.Count <= 0) { return false; }
+            foreach (string minigameID in playerData.requiredTasks)
+            {
+                if (minigameID == id)
+                {
+                    Debug.Log("Current minigame is in the list");
+                    return true;
+                }
+            }
+        }
+        return false;
+
     }
     #endregion
 }

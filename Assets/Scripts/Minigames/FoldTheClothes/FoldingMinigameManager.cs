@@ -44,6 +44,7 @@ public class FoldingMinigameManager : MinigameManager
 
     public override void Initialize()
     {
+        id = Constants.FOLD_THE_CLOTHES_NAME;
         transitionManager = SingletonManager.Get<TransitionManager>();
         sceneChange = this.gameObject.GetComponent<SceneChange>();
         playerProgress = SingletonManager.Get<PlayerProgress>();
@@ -186,7 +187,13 @@ public class FoldingMinigameManager : MinigameManager
         SingletonManager.Get<UIManager>().ActivateResultScreen();
         SingletonManager.Get<UIManager>().ActivateGoodResult();
         SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
-        SingletonManager.Get<PlayerData>().isFoldingClothesFinished = true;
+
+        //Check if the minigame is in the list
+        if (IsMinigameInTaskList())
+        {
+            SingletonManager.Get<PlayerData>().isFoldingClothesFinished = true;
+        }
+       
         if (playerProgress)
         {
             playerProgress.foldTheClothesTracker.numOfTimesCompleted += 1;
@@ -208,6 +215,25 @@ public class FoldingMinigameManager : MinigameManager
             playerProgress.foldTheClothesTracker.timeElapsed = SingletonManager.Get<MiniGameTimer>().GetTimeElapsed();
         }
     }
+    public bool IsMinigameInTaskList()
+    {
+        playerData = SingletonManager.Get<PlayerData>();
+        if (playerData)
+        {
+            if (playerData.requiredTasks.Count <= 0) { return false; }
+            foreach (string minigameID in playerData.requiredTasks)
+            {
+                if (minigameID == id)
+                {
+                    Debug.Log("Current minigame is in the list");
+                    return true;
+                }
+            }
+        }
+        return false;
+
+    }
+
     #endregion
 
     #region Exit Minigame Functions 

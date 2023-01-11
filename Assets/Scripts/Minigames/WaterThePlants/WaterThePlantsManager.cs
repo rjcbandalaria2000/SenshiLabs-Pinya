@@ -7,13 +7,13 @@ public class WaterThePlantsManager : MinigameManager
 {
     [Header("Game Objects")]
     public List<GameObject> Plants;
-    public GameObject waterBucket;
+    public GameObject       waterBucket;
 
     [Header("Values")]
-    public int plantsWatered;
-    public int numOfPlants;
+    public int              plantsWatered;
+    public int              numOfPlants;
 
-    private PlayerProgress playerProgress;
+    private PlayerProgress  playerProgress;
 
     private void Awake()
     {
@@ -28,6 +28,7 @@ public class WaterThePlantsManager : MinigameManager
 
     public override void Initialize()
     {
+        id = Constants.WATER_THE_PLANTS_NAME;
         sceneChange = this.GetComponent<SceneChange>();
         Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
         Events.OnSceneChange.AddListener(OnSceneChange);
@@ -103,6 +104,7 @@ public class WaterThePlantsManager : MinigameManager
         Time.timeScale = 1f;
     }
 
+   
 
     #region Getter Functions
 
@@ -218,7 +220,13 @@ public class WaterThePlantsManager : MinigameManager
             SingletonManager.Get<UIManager>().ActivateResultScreen();
             SingletonManager.Get<UIManager>().ActivateGoodResult();
             isCompleted = true;
-            SingletonManager.Get<PlayerData>().isWaterThePlantsFinished = true;
+
+            //Check if the minigame is included on the list. If the minigame is in the task list, can count as complete. If not, ignore
+            if (IsMinigameInTaskList())
+            {
+                SingletonManager.Get<PlayerData>().isWaterThePlantsFinished = true;
+            }
+            
 
             if (playerProgress)
             {
@@ -310,6 +318,29 @@ public class WaterThePlantsManager : MinigameManager
         }
         
         yield return null;
+    }
+
+    #endregion
+
+    #region Minigame Checker Functions
+    
+    public bool IsMinigameInTaskList()
+    {
+        playerData = SingletonManager.Get<PlayerData>();
+        if (playerData)
+        {
+            if (playerData.requiredTasks.Count <= 0) { return false; }
+            foreach (string minigameID in playerData.requiredTasks)
+            {
+                if (minigameID == id)
+                {
+                    Debug.Log("Current minigame is in the list");
+                    return true;
+                }
+            }
+        }
+        return false;
+       
     }
 
     #endregion

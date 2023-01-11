@@ -77,14 +77,11 @@ public class TagMiniGame : MinigameObject
         //Play animation of transition
         if (transitionManager)
         {
-
             transitionManager.ChangeAnimation(TransitionManager.CURTAIN_CLOSE);
-
         }
         //Wait for the transition to end
         while (!transitionManager.IsAnimationFinished())
         {
-            Debug.Log("Closing Curtain Time: " + transitionManager.animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
             yield return null;
         }
 

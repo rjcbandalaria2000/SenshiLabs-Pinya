@@ -78,5 +78,12 @@ public class PlayerData : MonoBehaviour
         requiredTasks.Clear();
         savedTimeIndex = 0;
         savedTimePeriod = TimePeriod.Morning;
+        currentMinigame = null;
+    }
+
+    public void SetCurrentMinigame(string id)
+    {
+        currentMinigame = id;
+        Debug.Log("Currently accessing: " + currentMinigame);
     }
 }
