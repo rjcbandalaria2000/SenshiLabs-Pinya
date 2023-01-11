@@ -14,6 +14,7 @@ public class TagMiniGame : MinigameObject
 
     public override void Initialize()
     {
+        id = Constants.TAG_NAME;
         interactable = this.GetComponent<Interactable>();
         sceneChange = this.gameObject.GetComponent<SceneChange>();
         transitionManager = SingletonManager.Get<TransitionManager>();

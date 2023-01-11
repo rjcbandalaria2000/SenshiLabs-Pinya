@@ -13,6 +13,7 @@ public class WaterThePlantsMinigame : MinigameObject
 
     public override void Initialize()
     {
+        id = Constants.WATER_THE_PLANTS_NAME;
         interactable = this.GetComponent<Interactable>();
         sceneChange = this.GetComponent<SceneChange>();
         if (SingletonManager.Get<PlayerData>())

@@ -13,6 +13,7 @@ public class FoldMiniGame : MinigameObject
 
     public override void Initialize()
     {
+        id = Constants.FOLD_THE_CLOTHES_NAME;
         interactable = this.GetComponent<Interactable>();
 
         sceneChange = this.gameObject.GetComponent<SceneChange>();

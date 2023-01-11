@@ -13,6 +13,7 @@ public class CleanTheHouseMinigame : MinigameObject
   
     public override void Initialize()
     {
+        id = Constants.CLEAN_THE_HOUSE_NAME;
         interactable = this.GetComponent<Interactable>();
         sceneChange = this.gameObject.GetComponent<SceneChange>();
         isInteracted = false;

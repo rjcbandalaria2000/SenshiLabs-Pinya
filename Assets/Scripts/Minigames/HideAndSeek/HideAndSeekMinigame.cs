@@ -16,6 +16,7 @@ public class HideAndSeekMinigame : MinigameObject
 
     public override void Initialize()
     {
+        id = Constants.HIDE_AND_SEEK_NAME;
         interactable = this.GetComponent<Interactable>();
         sceneChange = this.GetComponent<SceneChange>();
         transitionManager = SingletonManager.Get<TransitionManager>();

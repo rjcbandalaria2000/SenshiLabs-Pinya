@@ -13,6 +13,7 @@ public class ImHungryMinigame : MinigameObject
 
     public override void Initialize()
     {
+        id = Constants.COOK_THE_FOOD_NAME;
         interactable = this.GetComponent<Interactable>();
         sceneChange = this.GetComponent<SceneChange>();
         transitionManager = SingletonManager.Get<TransitionManager>();

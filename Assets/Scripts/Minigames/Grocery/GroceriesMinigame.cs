@@ -19,6 +19,7 @@ public class GroceriesMinigame : MinigameObject
 
     public override void Initialize()
     {
+        id = Constants.GROCERY_NAME;
         interactable = this.GetComponent<Interactable>();
         sceneChange = this.gameObject.GetComponent<SceneChange>();
         transitionManager = SingletonManager.Get<TransitionManager>();

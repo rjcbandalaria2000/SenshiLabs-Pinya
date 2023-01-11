@@ -15,7 +15,6 @@ public class PlayerData : MonoBehaviour
     public bool                     firstTime;
 
     [Header("Minigames")]
-    
     public bool                     isCleanTheHouseFinished;
     public bool                     isWashTheDishesFinished;
     public bool                     isGroceryFinished;
@@ -26,6 +25,8 @@ public class PlayerData : MonoBehaviour
     public bool                     isHideSeekFinished;
     public bool                     isSleepFinished;
     public bool                     isFoldingClothesFinished;
+
+    public string                   currentMinigame;
 
     [Header("Tasks")]
     public List<string>             requiredTasks;

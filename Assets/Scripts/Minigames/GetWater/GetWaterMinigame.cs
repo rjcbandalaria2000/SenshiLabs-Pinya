@@ -13,6 +13,7 @@ public class GetWaterMinigame : MinigameObject
 
     public override void Initialize()
     {
+        id = Constants.GET_WATER_NAME;
         interactable = this.GetComponent<Interactable>();
         sceneChange = this.gameObject.GetComponent<SceneChange>();
         transitionManager = SingletonManager.Get<TransitionManager>();

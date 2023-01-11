@@ -18,6 +18,7 @@ public class SleepingMinigame : MinigameObject
 
     public override void Initialize()
     {
+        id = Constants.SLEEPING_NAME;
         interactable = this.GetComponent<Interactable>();
         sceneChange = this.GetComponent<SceneChange>();
         transitionManager = SingletonManager.Get<TransitionManager>();

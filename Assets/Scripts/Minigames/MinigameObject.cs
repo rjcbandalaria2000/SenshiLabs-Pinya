@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class MinigameObject : MonoBehaviour
 {
     [Header("Setup Values")]
+    protected string        id;
     public string           minigameName;
     public int              motivationCost;
     

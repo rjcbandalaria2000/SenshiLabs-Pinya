@@ -13,6 +13,7 @@ public class WashTheDishesMinigame : MinigameObject
 
     public override void Initialize()
     {
+        id = Constants.WASH_THE_DISHES_NAME;
         interactable = this.GetComponent<Interactable>();
         sceneChange = this.GetComponent<SceneChange>();
         transitionManager = SingletonManager.Get<TransitionManager>();
@@ -32,6 +33,7 @@ public class WashTheDishesMinigame : MinigameObject
         //    Debug.Log("Finish Pre-Req");
         //    return;
         //}
+        if (isInteracted) { return; }
         isInteracted = true;
         MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
         if (playerMotivation)
