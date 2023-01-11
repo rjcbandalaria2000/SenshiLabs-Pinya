@@ -42,7 +42,7 @@ public class FoldMiniGame : MinigameObject
             }
             else
             {
-                playerMotivation.DecreaseMotivation(motivationCost);
+                //playerMotivation.DecreaseMotivation(motivationCost);
                 //Disable player controls 
                 PlayerControls playerControl = player.GetComponent<PlayerControls>();
                 if (playerControl)

@@ -199,10 +199,12 @@ public class CleanTheHouseManager : MinigameManager
     {
         if (!isCompleted)
         {
+            SingletonManager.Get<PlayerData>().storedMotivationData -= motivationalCost;
             SingletonManager.Get<MiniGameTimer>().StopCountdownTimer();
             isCompleted = true;
             SingletonManager.Get<UIManager>().ActivateResultScreen();
             SingletonManager.Get<UIManager>().ActivateGoodResult();
+  
             SingletonManager.Get<PlayerData>().isCleanTheHouseFinished = true;
             Debug.Log("Minigame complete");
             //Count the win in the Progress Tracker

@@ -8,6 +8,7 @@ public class FoldingMinigameManager : MinigameManager
     public Clothes              ClothesComponent;
     public GameObject           spawnClothes;
     public int                  clothesNum;
+   
 
     [Header("Countdown Timer")]
     public float GameStartTime = 3f;
@@ -183,9 +184,11 @@ public class FoldingMinigameManager : MinigameManager
     public override void OnWin()
     {
         Debug.Log("Minigame complete");
+        SingletonManager.Get<PlayerData>().storedMotivationData -= motivationalCost;
         SingletonManager.Get<UIManager>().ActivateResultScreen();
         SingletonManager.Get<UIManager>().ActivateGoodResult();
         SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
+
         SingletonManager.Get<PlayerData>().isFoldingClothesFinished = true;
         if (playerProgress)
         {
@@ -244,6 +247,7 @@ public class FoldingMinigameManager : MinigameManager
             Debug.Log("Transition to closing");
             yield return null;
         }
+       
         Events.OnSceneChange.Invoke();
         Assert.IsNotNull(sceneChange, "Scene change is null or not set");
         sceneChange.OnChangeScene(NameOfNextScene);

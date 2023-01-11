@@ -182,10 +182,12 @@ public class GetWaterManager : MinigameManager
     {
         if (!isCompleted)
         {
+            SingletonManager.Get<PlayerData>().storedMotivationData -= motivationalCost;
             SingletonManager.Get<MiniGameTimer>().StopCountdownTimer();
             isCompleted = true;
             SingletonManager.Get<UIManager>().ActivateResultScreen();
             SingletonManager.Get<UIManager>().ActivateGoodResult();
+        
             SingletonManager.Get<PlayerData>().isGetWaterFinished = true;
             if (playerProgress) 
             {
