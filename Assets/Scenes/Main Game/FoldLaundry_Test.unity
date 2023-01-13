@@ -2598,7 +2598,7 @@ PrefabInstance:
     - target: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: tutorialImages.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: ad436c6c07b7a0941a1ec32a196c0c42, type: 3}
+      objectReference: {fileID: 21300000, guid: f88a71370e0f49d4ebc7467e0faae3ff, type: 3}
     - target: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: instructionText.Array.data[0]
       value: 'Can you help Pina fold all the clothes as quickly as possible? '

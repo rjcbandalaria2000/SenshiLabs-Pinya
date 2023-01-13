@@ -1172,6 +1172,7 @@ MonoBehaviour:
   goodEndingSceneName: 
   badEndingSceneName: 
   tutorial: {fileID: 0}
+  tutorial2: {fileID: 0}
 --- !u!114 &480825551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1249,7 +1250,7 @@ PrefabInstance:
     - target: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: tutorialImages.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: 33edc4cf8a3bf3a4dbb869acc40ad382, type: 3}
+      objectReference: {fileID: 21300000, guid: 2f8d6bf180b57b642b0257486d9e56ca, type: 3}
     - target: {fileID: 2064771254, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: tutorialImages.Array.data[2]
       value: 

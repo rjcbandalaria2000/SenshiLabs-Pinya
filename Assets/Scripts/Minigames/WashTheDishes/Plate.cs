@@ -33,6 +33,9 @@ public class Plate : MonoBehaviour
     public SFXManager sFX;
     public AudioClip audioClip;
 
+    [Header("UX")]
+    public ParticleSystem particle;
+
 
     // Start is called before the first frame update
     void Start()
@@ -126,6 +129,7 @@ public class Plate : MonoBehaviour
                 if (!IsClean)
                 {
                     IsClean = true;
+                    particle.Play();
                     ChangeModel();
                     Events.OnPlateCleaned.Invoke();
        

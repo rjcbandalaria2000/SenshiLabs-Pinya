@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DG.Tweening;
 public class ToyBin : MonoBehaviour
 {
     public SFXManager sFX;
     public AudioClip clip;
+    public ParticleSystem particle;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,11 +34,18 @@ public class ToyBin : MonoBehaviour
             {
                 Debug.Log("Accept toy");
                 sFX.PlaySFX(clip);
+                particle.Play();
                 SingletonManager.Get<CleanTheHouseManager>().AddTrashThrown(1);
                 Destroy(collidedToy.gameObject);
+                Shake();
             }
         }
     }
 
+
+    public void Shake()
+    {
+        gameObject.transform.DOPunchScale(new Vector3(0.3f, 0.3f, 0.3f), 0.5f, 1, 1);
+    }
 
 }

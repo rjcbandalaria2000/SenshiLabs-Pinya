@@ -107,6 +107,7 @@ MonoBehaviour:
   quantity: 0
   correctSFX: {fileID: 8300000, guid: ec89cf7214124ed46b5c4307bb8108d8, type: 3}
   wrongSFX: {fileID: 8300000, guid: 64a4bf67d2c9e224889811732c9fbf1a, type: 3}
+  itemPos: {x: 0, y: 0, z: 0}
 --- !u!61 &5112537779925609580
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -120,7 +121,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.034175754, y: -0.01518929}
+  m_Offset: {x: 0.072530866, y: -0.0061645657}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -131,7 +132,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.85164845, y: 1.0440538}
+  m_Size: {x: 0.54932, y: 0.773312}
   m_EdgeRadius: 0
 --- !u!114 &-5567891302630558050
 MonoBehaviour:
