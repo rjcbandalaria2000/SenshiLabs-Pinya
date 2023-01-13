@@ -172,6 +172,7 @@ public class ImHungryManager : MinigameManager
     public override void OnWin()
     {
         IncreaseLifeMeter(lifeMeterValue);
+        SingletonManager.Get<PlayerData>().storedMotivationData -= motivationalCost;
         SingletonManager.Get<MiniGameTimer>().StopCountdownTimer();
         isCompleted = true;
         SingletonManager.Get<UIManager>().ActivateResultScreen();

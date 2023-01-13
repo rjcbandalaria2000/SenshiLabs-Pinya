@@ -118,6 +118,7 @@ public class GroceryManager : MinigameManager //Might rename this
         if (wantedItems.Count <= 0)
         {
             Debug.Log("Minigame success");
+            SingletonManager.Get<PlayerData>().storedMotivationData -= motivationalCost;
             SingletonManager.Get<UIManager>().ActivateResultScreen();
             SingletonManager.Get<UIManager>().ActivateGoodResult();
             SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;

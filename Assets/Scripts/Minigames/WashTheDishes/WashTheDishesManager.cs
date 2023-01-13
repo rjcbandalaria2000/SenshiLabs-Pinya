@@ -214,6 +214,7 @@ public class WashTheDishesManager : MinigameManager
         //Stop timer 
         SingletonManager.Get<MiniGameTimer>().StopCountdownTimer();
         //Show result screen
+        SingletonManager.Get<PlayerData>().storedMotivationData -= motivationalCost;
         SingletonManager.Get<UIManager>().ActivateResultScreen();
         SingletonManager.Get<UIManager>().ActivateGoodResult();
         isCompleted = true;

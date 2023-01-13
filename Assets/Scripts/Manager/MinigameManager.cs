@@ -26,7 +26,8 @@ public class MinigameManager : MonoBehaviour
     protected Coroutine         startMinigameRoutine;
     protected Coroutine         exitMinigameRoutine;
 
-    
+    [Header("Costs")]
+    public int motivationalCost = 20;
 
     [Header("Managers")]
     protected TransitionManager transitionManager;

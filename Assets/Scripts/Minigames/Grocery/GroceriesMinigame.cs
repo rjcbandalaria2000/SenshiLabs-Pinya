@@ -36,10 +36,10 @@ public class GroceriesMinigame : MinigameObject
         if (isInteracted) { return; }
         isInteracted = true;
         MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
-        if (playerMotivation)
-        {
-            playerMotivation.DecreaseMotivation(motivationCost);
-        }
+        //if (playerMotivation)
+        //{
+        //    playerMotivation.DecreaseMotivation(motivationCost);
+        //}
         Debug.Log("Interacted");
         StartInteractRoutine();
     }
