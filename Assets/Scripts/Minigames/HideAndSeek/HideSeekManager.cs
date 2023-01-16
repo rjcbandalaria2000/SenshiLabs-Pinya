@@ -210,6 +210,7 @@ public class HideSeekManager : MinigameManager
         {
             playerData.storedMotivationData += motivationValue;
         }
+        playerData.storedMotivationData = Mathf.Clamp(playerData.storedMotivationData, 0, playerData.maxMotivationData);
     }
 
     public override void GameMinigamePause()
