@@ -69,6 +69,7 @@ public class TaskManager : MonoBehaviour
     {
         taskListParent.SetActive(true);
         Assert.IsNotNull(minigameObjects, "Minigameobjects are not set");
+        //Clear any existing texts
         if (taskTexts.Count > 0)
         {
             for (int i = 0; i < taskTexts.Count; i++)
@@ -78,6 +79,7 @@ public class TaskManager : MonoBehaviour
             taskTexts.Clear();
         }
         Assert.IsNotNull(taskTextPrefab, "taskTextPrefab is not set");
+        //Spawn new texts
         for (int i = 0; i < requiredTasks.Count; i++)
         {
             //Only spawn if minigame is not yet completed 
@@ -88,6 +90,15 @@ public class TaskManager : MonoBehaviour
                 if (text)
                 {
                     text.text = requiredTasks[i].minigameName.ToString();
+                    //check if the task displayed has a pre requisite
+                    for(int j = 0; j < requiredTasks[i].preRequisiteTasks.Count; j++)
+                    {
+                        // if the pre req task is not yet finished, cross it out
+                        if (!requiredTasks[i].preRequisiteTasks[j].hasCompleted)
+                        {
+                            text.fontStyle = FontStyles.Strikethrough;
+                        }
+                    }
                 }
                 taskTexts.Add(spawnedText);
             }

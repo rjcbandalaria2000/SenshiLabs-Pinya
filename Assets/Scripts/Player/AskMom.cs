@@ -98,37 +98,14 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void EnableHighlight()
     {
         //  cm.transform.dos(1,0.3f,10,0,false);
-        //twinkleGO.SetActive(true);
-        //arrowsGO.SetActive(true);
         EnableEffects();
         lifeBar.transform.DOShakeScale(coolDown + 1, 0.1f, 1, 0, false);
-        //if (highLight.Count > 0)
-        //{
-        //    for(int i = 0; i < highLight.Count; i++)
-        //    {
-        //        highLight[i].SetActive(true);
-        //        highLight[i].transform.DOShakeScale(coolDown + 1,0.1f,1,0,false);
-               
-                
-        //    }
-        //}
         PulsatingHeart();
     }
 
     public void DisableHighlight()
     {
-        //arrowsGO.SetActive(false);
-        //twinkleGO.SetActive(false);
         DisableEffects();
-        //if (highLight.Count > 0)
-        //{
-        //    for (int i = 0; i < highLight.Count; i++)
-        //    {
-
-        //        highLight[i].SetActive(false);
-
-        //    }
-        //}
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -151,18 +128,13 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     }
     public void PulsatingHeart()
     {
-
         StartCoroutine(PulsateHeart());
-
-        //  heartGO.transform.DOScale(0.8f, 0.1f).SetEase(Ease.OutBounce);
     }
 
 
     IEnumerator PulsateHeart()
     {
         float tempCooldown = coolDown;
-      //  crackedGlass.SetActive(true);
-      //  overlayGO.SetActive(true);
         while (tempCooldown > 0)
         {
             Debug.Log("animatio");
