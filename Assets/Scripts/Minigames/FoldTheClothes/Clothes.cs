@@ -68,6 +68,7 @@ public class Clothes : MonoBehaviour
     {
         SingletonManager.Register(this);
         sFXManager = GetComponent<SFXManager>();
+        clothes = 3;
     }
 
    
@@ -95,7 +96,7 @@ public class Clothes : MonoBehaviour
         downFold = false;
 
         mainCamera = Camera.main;
-        clothes = 2;
+       
 
         RNG = Random.Range(0, listArrow.Count);
  
@@ -195,7 +196,7 @@ public class Clothes : MonoBehaviour
 
         if (leftFold == true && topFold == true && downFold == true)
         {
-            if( clothes > 0)
+            if( clothes > 1)
             {
                 clothes--;
                 sFXManager.PlaySFX(stackSFX);
@@ -236,33 +237,33 @@ public class Clothes : MonoBehaviour
        
     }
 
-    IEnumerator EndTransition()
-    {
-        while (this.transform.position != endPos.transform.position)
-        {
-            Debug.Log(Vector2.Distance(this.transform.position, endPos.transform.position));
+    //IEnumerator EndTransition()
+    //{
+    //    while (this.transform.position != endPos.transform.position)
+    //    {
+    //        Debug.Log(Vector2.Distance(this.transform.position, endPos.transform.position));
 
-            this.transform.position = Vector2.Lerp(this.transform.position, endPos.transform.position, lerpSpeed * Time.deltaTime);
+    //        this.transform.position = Vector2.Lerp(this.transform.position, endPos.transform.position, lerpSpeed * Time.deltaTime);
          
-            yield return null;
-        }
+    //        yield return null;
+    //    }
 
-        yield return new WaitForSeconds(5f);
-        Reset();
+    //    yield return new WaitForSeconds(5f);
+    //    Reset();
        
 
-    }
+    //}
 
     private void Reset()
     {
 
         SingletonManager.Get<DisplayFoldCount>().UpdateFoldCount();
 
-        if(clothes == 1)
+        if(clothes == 2)
         {
             spriteChanger(3);
         }
-        else
+        else if(clothes == 1) 
         {
             spriteChanger(6);
         }
@@ -319,13 +320,13 @@ public class Clothes : MonoBehaviour
                 
                 switch (clothes)
                 {
-                    case 2:
+                    case 3:
                         spriteChanger(1);
                         break;
-                    case 1:
+                    case 2:
                         spriteChanger(4);
                         break;
-                    case 0:
+                    case 1:
                         spriteChanger(7);
                         break;
                     default:
@@ -346,13 +347,13 @@ public class Clothes : MonoBehaviour
 
                 switch (clothes)
                 {
-                    case 2:
+                    case 3:
                         spriteChanger(2);
                         break;
-                    case 1:
+                    case 2:
                         spriteChanger(5);
                         break;
-                    case 0:
+                    case 1:
                         spriteChanger(8);
                         break;
                     default:
@@ -373,13 +374,13 @@ public class Clothes : MonoBehaviour
 
                 switch (clothes)
                 {
-                    case 2:
+                    case 3:
                         spriteChanger(2);
                         break;
-                    case 1:
+                    case 2:
                         spriteChanger(5);
                         break;
-                    case 0:
+                    case 1:
                         spriteChanger(8);
                         break;
                     default:

@@ -171,7 +171,7 @@ public class FoldingMinigameManager : MinigameManager
     #region Minigame Checkers
     public override void CheckIfFinished()
     {
-        if (ClothesComponent.clothes <= 0)
+        if (ClothesComponent.clothes <= 1)
         {
             OnWin();
         }
