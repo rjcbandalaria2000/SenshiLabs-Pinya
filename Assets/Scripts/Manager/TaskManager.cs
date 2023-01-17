@@ -86,17 +86,43 @@ public class TaskManager : MonoBehaviour
             if (!requiredTasks[i].hasCompleted)
             {
                 GameObject spawnedText = Instantiate(taskTextPrefab, taskListParent.transform, false);
+                //Display Text
                 TextMeshProUGUI text = spawnedText.GetComponent<TextMeshProUGUI>();
                 if (text)
                 {
                     text.text = requiredTasks[i].minigameName.ToString();
-                    //check if the task displayed has a pre requisite
-                    for(int j = 0; j < requiredTasks[i].preRequisiteTasks.Count; j++)
+
+                    //Check if there is a pre req task
+                    if (requiredTasks[i].preRequisiteTasks.Count > 0)
                     {
-                        // if the pre req task is not yet finished, cross it out
-                        if (!requiredTasks[i].preRequisiteTasks[j].hasCompleted)
+                        //check if the task displayed has a pre requisite
+                        for (int j = 0; j < requiredTasks[i].preRequisiteTasks.Count; j++)
                         {
-                            text.fontStyle = FontStyles.Strikethrough;
+                            // if the pre req task is not yet finished, cross it out
+                            if (!requiredTasks[i].preRequisiteTasks[j].hasCompleted)
+                            {
+                                text.fontStyle = FontStyles.Strikethrough;
+                            }
+
+                            //Display icon for pre requisite
+                            DisplayRequiredTask displayRequiredTask = spawnedText.GetComponent<DisplayRequiredTask>();
+                            if (displayRequiredTask)
+                            {
+                                displayRequiredTask.imageGO.GetComponent<Image>().enabled = true;  
+                                if (displayRequiredTask.imageGO)
+                                {
+                                    UnitInfo unitInfo = requiredTasks[i].preRequisiteTasks[j].GetComponent<UnitInfo>();
+                                    if (unitInfo)
+                                    {
+                                        if (unitInfo.iconSprite)
+                                        {
+                                            displayRequiredTask.imageGO.GetComponent<Image>().sprite = unitInfo.iconSprite;
+                                            Debug.Log("Pre Req Icon");
+                                        }
+                                    }
+                                    
+                                }
+                            }
                         }
                     }
                 }

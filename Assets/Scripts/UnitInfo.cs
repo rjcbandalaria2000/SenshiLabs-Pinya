@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UnitInfo : MonoBehaviour
 {
     public GameObject   Parent;
     public GameObject   UI;
     public GameObject   effects;
+    public Sprite       iconSprite;
   
     public void Start()
     {

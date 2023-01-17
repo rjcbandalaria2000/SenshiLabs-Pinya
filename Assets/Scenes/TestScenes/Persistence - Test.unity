@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f191e60c091de1944acc59cb8a1f1455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstSceneId: StateOfDay-TestScene
+  FirstSceneId: PreReqIcon - TestScene
 --- !u!4 &1480656603
 Transform:
   m_ObjectHideFlags: 0
@@ -215,6 +215,7 @@ MonoBehaviour:
   isHideSeekFinished: 0
   isSleepFinished: 0
   isFoldingClothesFinished: 0
+  currentMinigame: 
   requiredTasks: []
   savedTimeIndex: 0
   savedTimePeriod: 0
