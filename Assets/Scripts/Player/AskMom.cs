@@ -189,11 +189,14 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if(taskManager.requiredTasks.Count <= 0) { return; }
         foreach(MinigameObject minigame in taskManager.requiredTasks)
         {
-            UnitInfo unitInfo = minigame.gameObject.GetComponent<UnitInfo>();
-            if (unitInfo)
+            if (!minigame.hasCompleted)
             {
-                unitInfo.effects.gameObject.SetActive(true);
-                //Debug.Log("Activate Effects");
+                UnitInfo unitInfo = minigame.gameObject.GetComponent<UnitInfo>();
+                if (unitInfo)
+                {
+                    unitInfo.effects.gameObject.SetActive(true);
+                    //Debug.Log("Activate Effects");
+                }
             }
             
         }
@@ -205,6 +208,7 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         if (taskManager.requiredTasks.Count <= 0) { return; }
         foreach (MinigameObject minigame in taskManager.requiredTasks)
         {
+            
             UnitInfo unitInfo = minigame.gameObject.GetComponent<UnitInfo>();
             if (unitInfo)
             {
