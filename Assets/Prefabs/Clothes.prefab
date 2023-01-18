@@ -224,6 +224,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ca0a76e02a8a8464d84321c40799a918, type: 3}
   - {fileID: 8300000, guid: 7894c61fc919b7f44a0657e7c84a6cd8, type: 3}
   stackSFX: {fileID: 8300000, guid: e9e597293c8cc3c49937cd9a7988ae12, type: 3}
+  glow: {fileID: 177394133595661808, guid: 68d5df7b53e1c0a439c6428d8b659087, type: 3}
 --- !u!114 &571389345484029026
 MonoBehaviour:
   m_ObjectHideFlags: 0

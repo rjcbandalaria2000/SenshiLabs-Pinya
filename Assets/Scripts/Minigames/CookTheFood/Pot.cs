@@ -28,6 +28,7 @@ public class Pot : MonoBehaviour
     SFXManager          sFX;
     
     public AudioClip insertFoodSFX;
+    public ParticleSystem vfx;
 
     // Start is called before the first frame update
     void Start()
@@ -47,7 +48,8 @@ public class Pot : MonoBehaviour
             if(collidedIngredient.IsPickedUp && !collidedIngredient.IsHolding)
             {
                 sFX.PlaySFX(insertFoodSFX);
-            //    Debug.Log("Accept Ingredient");
+                vfx.Play();
+                //    Debug.Log("Accept Ingredient");
                 CurrentIngredientCount++;
                 CheckAllIngredients();
                 collidedIngredient.gameObject.SetActive(false);

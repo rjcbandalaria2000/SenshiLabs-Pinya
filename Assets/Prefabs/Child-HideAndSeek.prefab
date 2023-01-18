@@ -109,7 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   child: {fileID: 0}
   hideSeekManager: {fileID: 0}
-  foundSFX: {fileID: 8300000, guid: 6b895b0b7f79d1d4c97a8d8ec262968c, type: 3}
+  glow: {fileID: 177394133595661808, guid: 68d5df7b53e1c0a439c6428d8b659087, type: 3}
 --- !u!50 &-5809036701721279090
 Rigidbody2D:
   serializedVersion: 4

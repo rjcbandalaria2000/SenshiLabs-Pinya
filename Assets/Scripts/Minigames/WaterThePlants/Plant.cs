@@ -26,6 +26,7 @@ public class Plant : MonoBehaviour
 
     SFXManager sFX;
     public AudioClip audioSource;
+    public ParticleSystem glowSFX;
 
     // Start is called before the first frame update
     void Start()
@@ -70,11 +71,13 @@ public class Plant : MonoBehaviour
             if(sFX != null)
             {
                 sFX.PlaySFX(audioSource);
+               
             }
-  
+     
             HydratedModel.SetActive(true);
             MiddleModel.SetActive(false);
             DehydratedModel.SetActive(false);
+            glowSFX.Play();
 
             this.sFX = null;
         }
@@ -83,12 +86,15 @@ public class Plant : MonoBehaviour
             HydratedModel.SetActive(false);
             MiddleModel.SetActive(true);
             DehydratedModel.SetActive(false);
+            glowSFX.Play();
+
         } 
         else// not yet watered
         {
             HydratedModel.SetActive(false);
             DehydratedModel.SetActive(true);
             MiddleModel.SetActive(false) ;
+         
         }
 
     }

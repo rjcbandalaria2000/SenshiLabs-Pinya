@@ -64,6 +64,7 @@ public class Clothes : MonoBehaviour
     public List<AudioClip> audioClips;
     public AudioClip stackSFX;
     SFXManager sFXManager;
+    public ParticleSystem glow;
     private void Awake()
     {
         SingletonManager.Register(this);
@@ -200,6 +201,7 @@ public class Clothes : MonoBehaviour
             {
                 clothes--;
                 sFXManager.PlaySFX(stackSFX);
+                Instantiate(glow,this.transform.position,Quaternion.identity);
                 Reset();   
             }
             else

@@ -10,6 +10,8 @@ public class ClickHidingChild : MonoBehaviour
     public Event onCoverDisable;
 
     public HideSeekManager hideSeekManager;
+
+    public ParticleSystem glow;
     //public bool isHiding;
 
 
@@ -35,6 +37,7 @@ public class ClickHidingChild : MonoBehaviour
             
             hideSeekManager.score += 1;
             hideSeekManager.childCount -= 1;
+            Instantiate(glow,this.transform.position, Quaternion.identity);
             SingletonManager.Get<DisplayChildCount>().updateChildCount();
             hideSeekManager.CheckIfFinished();
            //     sFXManager.Wait(2f);
