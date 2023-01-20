@@ -120,6 +120,7 @@ public class TagMiniGameManager : MinigameManager
             uIManager.ActivateGoodResult();
             SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
             spawnPlayer.gameObject.SetActive(false);
+            IncreaseMotivationalMeter(motivationalCost);
         }
         else 
         {
@@ -241,5 +242,16 @@ public class TagMiniGameManager : MinigameManager
         {
             currentTagged = spawnPlayer.gameObject;
         }
+    }
+    public void IncreaseMotivationalMeter(float motivationValue)
+    {
+        playerData = SingletonManager.Get<PlayerData>();
+        if (playerData == null) { return; }
+        if (playerData.storedMotivationData < playerData.maxMotivationData)
+        {
+            playerData.storedMotivationData += motivationValue;
+           
+        }
+        playerData.storedMotivationData = Mathf.Clamp(playerData.storedMotivationData, 0, playerData.maxMotivationData);
     }
 }

@@ -198,7 +198,7 @@ public class TagManager : MinigameManager
     {
         DisableTaggers();
         //StopCoroutine(checkStatus());
-        IncreaseMotivationMeter(earnedMotivationalValue);
+        IncreaseMotivationalMeter(earnedMotivationalValue);
         Debug.Log("Minigame complete");
         isCompleted = true;
         uIManager.ActivateResultScreen();
@@ -269,14 +269,17 @@ public class TagManager : MinigameManager
 
     }
 
-  
-    public void IncreaseMotivationMeter(float motivationValue)
+
+    public void IncreaseMotivationalMeter(float motivationValue)
     {
-        Assert.IsNotNull(playerData, "Player data is not set or is null");
-        if(playerData.storedMotivationData < playerData.maxMotivationData)
+        playerData = SingletonManager.Get<PlayerData>();
+        if (playerData == null) { return; }
+        if (playerData.storedMotivationData < playerData.maxMotivationData)
         {
             playerData.storedMotivationData += motivationValue;
+
         }
+        playerData.storedMotivationData = Mathf.Clamp(playerData.storedMotivationData, 0, playerData.maxMotivationData);
     }
 
     public void DisableTaggers()

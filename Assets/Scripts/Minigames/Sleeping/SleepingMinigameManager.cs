@@ -238,9 +238,9 @@ public class SleepingMinigameManager : MinigameManager
         if(playerData.storedMotivationData < playerData.maxMotivationData)
         {
             playerData.storedMotivationData += motivationValue;
-            playerData.storedMotivationData = Mathf.Clamp(playerData.storedMotivationData, 0, playerData.maxMotivationData);
+            
         }
-       
+       playerData.storedMotivationData = Mathf.Clamp(playerData.storedMotivationData, 0, playerData.maxMotivationData);
     }
 
     public override void GameMinigamePause()
