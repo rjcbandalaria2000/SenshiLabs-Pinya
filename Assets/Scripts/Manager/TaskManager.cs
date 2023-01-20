@@ -69,6 +69,7 @@ public class TaskManager : MonoBehaviour
     {
         taskListParent.SetActive(true);
         Assert.IsNotNull(minigameObjects, "Minigameobjects are not set");
+        //Clear any existing texts
         if (taskTexts.Count > 0)
         {
             for (int i = 0; i < taskTexts.Count; i++)
@@ -78,16 +79,52 @@ public class TaskManager : MonoBehaviour
             taskTexts.Clear();
         }
         Assert.IsNotNull(taskTextPrefab, "taskTextPrefab is not set");
+        //Spawn new texts
         for (int i = 0; i < requiredTasks.Count; i++)
         {
             //Only spawn if minigame is not yet completed 
             if (!requiredTasks[i].hasCompleted)
             {
                 GameObject spawnedText = Instantiate(taskTextPrefab, taskListParent.transform, false);
+                //Display Text
                 TextMeshProUGUI text = spawnedText.GetComponent<TextMeshProUGUI>();
                 if (text)
                 {
                     text.text = requiredTasks[i].minigameName.ToString();
+
+                    //Check if there is a pre req task
+                    if (requiredTasks[i].preRequisiteTasks.Count > 0)
+                    {
+                        //check if the task displayed has a pre requisite
+                        for (int j = 0; j < requiredTasks[i].preRequisiteTasks.Count; j++)
+                        {
+                            // if the pre req task is not yet finished, cross it out
+                            if (!requiredTasks[i].preRequisiteTasks[j].hasCompleted)
+                            {
+                                text.fontStyle = FontStyles.Strikethrough;
+                            }
+
+                            //Display icon for pre requisite
+                            DisplayRequiredTask displayRequiredTask = spawnedText.GetComponent<DisplayRequiredTask>();
+                            if (displayRequiredTask)
+                            {
+                                displayRequiredTask.imageGO.GetComponent<Image>().enabled = true;  
+                                if (displayRequiredTask.imageGO)
+                                {
+                                    UnitInfo unitInfo = requiredTasks[i].preRequisiteTasks[j].GetComponent<UnitInfo>();
+                                    if (unitInfo)
+                                    {
+                                        if (unitInfo.iconSprite)
+                                        {
+                                            displayRequiredTask.imageGO.GetComponent<Image>().sprite = unitInfo.iconSprite;
+                                            Debug.Log("Pre Req Icon");
+                                        }
+                                    }
+                                    
+                                }
+                            }
+                        }
+                    }
                 }
                 taskTexts.Add(spawnedText);
             }

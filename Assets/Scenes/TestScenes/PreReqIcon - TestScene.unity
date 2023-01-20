@@ -4705,17 +4705,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
---- !u!114 &677417415 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2816954076214239179, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
-  m_PrefabInstance: {fileID: 677417414}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 677417416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5679a837f9ce5524c87cc90b2d00cb43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &677417416 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2816954076488409267, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
@@ -6805,17 +6794,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4735852996718008032, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
   m_PrefabInstance: {fileID: 917626506}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &917626509 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2907636213359965985, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
-  m_PrefabInstance: {fileID: 917626506}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 917626508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcb796f3904931a458c6734213c8ab5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &917626510 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5754867739372100553, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
@@ -8346,17 +8324,6 @@ PrefabInstance:
       objectReference: {fileID: 1114841000}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
---- !u!114 &1139237639 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5285038560494157795, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
-  m_PrefabInstance: {fileID: 1139237638}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1139237640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec7c0dab23d242c4ab69af8ad60a2174, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1139237640 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1278223492080597529, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
@@ -16144,7 +16111,7 @@ PrefabInstance:
       objectReference: {fileID: 1060226795}
     - target: {fileID: 8444550675331691412, guid: 290bbffabefb435418b09d4da2e53dc6, type: 3}
       propertyPath: minigameObjects.Array.size
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8444550675331691412, guid: 290bbffabefb435418b09d4da2e53dc6, type: 3}
       propertyPath: minigameObjects.Array.data[0]
@@ -16157,15 +16124,15 @@ PrefabInstance:
     - target: {fileID: 8444550675331691412, guid: 290bbffabefb435418b09d4da2e53dc6, type: 3}
       propertyPath: minigameObjects.Array.data[2]
       value: 
-      objectReference: {fileID: 1139237639}
+      objectReference: {fileID: 893641064}
     - target: {fileID: 8444550675331691412, guid: 290bbffabefb435418b09d4da2e53dc6, type: 3}
       propertyPath: minigameObjects.Array.data[3]
       value: 
-      objectReference: {fileID: 893641064}
+      objectReference: {fileID: 1114841000}
     - target: {fileID: 8444550675331691412, guid: 290bbffabefb435418b09d4da2e53dc6, type: 3}
       propertyPath: minigameObjects.Array.data[4]
       value: 
-      objectReference: {fileID: 677417415}
+      objectReference: {fileID: 1114841000}
     - target: {fileID: 8444550675331691412, guid: 290bbffabefb435418b09d4da2e53dc6, type: 3}
       propertyPath: minigameObjects.Array.data[5]
       value: 
@@ -16173,7 +16140,7 @@ PrefabInstance:
     - target: {fileID: 8444550675331691412, guid: 290bbffabefb435418b09d4da2e53dc6, type: 3}
       propertyPath: minigameObjects.Array.data[6]
       value: 
-      objectReference: {fileID: 917626509}
+      objectReference: {fileID: 0}
     - target: {fileID: 8444550675331691412, guid: 290bbffabefb435418b09d4da2e53dc6, type: 3}
       propertyPath: minigameObjects.Array.data[7]
       value: 
