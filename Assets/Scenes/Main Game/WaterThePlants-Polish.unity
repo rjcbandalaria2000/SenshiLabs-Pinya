@@ -1344,6 +1344,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!198 &160172007 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6318458016364607748, guid: a9a545faf6aa14444afafd1dcf1be089, type: 3}
+  m_PrefabInstance: {fileID: 455347007969374342}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &167932766
 GameObject:
   m_ObjectHideFlags: 0
@@ -2353,6 +2358,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3664893281747020194, guid: c8931a41b5edd41479a9c468c84f302c, type: 3}
+      propertyPath: glowSFX
+      value: 
+      objectReference: {fileID: 1123377149}
+    - target: {fileID: 3664893281747020194, guid: c8931a41b5edd41479a9c468c84f302c, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 8300000, guid: 31fc9af7ab2f1cb42b18bbad9b55fc94, type: 3}
@@ -2363,6 +2372,10 @@ PrefabInstance:
     - target: {fileID: 4622933539618263828, guid: c8931a41b5edd41479a9c468c84f302c, type: 3}
       propertyPath: m_Name
       value: SiliPlant
+      objectReference: {fileID: 0}
+    - target: {fileID: 9015357583313073705, guid: c8931a41b5edd41479a9c468c84f302c, type: 3}
+      propertyPath: lengthInSec
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1530863813, guid: c8931a41b5edd41479a9c468c84f302c, type: 3}
@@ -3202,6 +3215,7 @@ MonoBehaviour:
   speedTimer: 1
   gameStartTime: 3
   countdownTimerUI: {fileID: 7784184}
+  motivationalCost: 20
   Plants:
   - {fileID: 475102912}
   - {fileID: 446830637}
@@ -4789,6 +4803,7 @@ MonoBehaviour:
   goodEndingSceneName: 
   badEndingSceneName: 
   tutorial: {fileID: 0}
+  tutorial2: {fileID: 0}
 --- !u!1 &662185521 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4622933539618263828, guid: c8931a41b5edd41479a9c468c84f302c, type: 3}
@@ -7455,6 +7470,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!198 &1123377149 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 9015357583313073705, guid: c8931a41b5edd41479a9c468c84f302c, type: 3}
+  m_PrefabInstance: {fileID: 325545779}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1134636513
 GameObject:
   m_ObjectHideFlags: 0
@@ -9870,6 +9890,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1633913918}
   m_CullTransparentMesh: 1
+--- !u!198 &1653123772 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4717845511681238575, guid: 318ce907d304d9744b7f944c9b945499, type: 3}
+  m_PrefabInstance: {fileID: 4374989288346633469}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1658457765
 GameObject:
   m_ObjectHideFlags: 0
@@ -13223,6 +13248,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 879719745306984207, guid: a9a545faf6aa14444afafd1dcf1be089, type: 3}
+      propertyPath: glowSFX
+      value: 
+      objectReference: {fileID: 160172007}
+    - target: {fileID: 879719745306984207, guid: a9a545faf6aa14444afafd1dcf1be089, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 8300000, guid: 31fc9af7ab2f1cb42b18bbad9b55fc94, type: 3}
@@ -13274,6 +13303,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6318458016364607748, guid: a9a545faf6aa14444afafd1dcf1be089, type: 3}
+      propertyPath: lengthInSec
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 9137452868184032697, guid: a9a545faf6aa14444afafd1dcf1be089, type: 3}
       propertyPath: m_Name
       value: TomatoPlant
@@ -13291,6 +13324,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EggplantPlant
       objectReference: {fileID: 0}
+    - target: {fileID: 4717845511681238575, guid: 318ce907d304d9744b7f944c9b945499, type: 3}
+      propertyPath: lengthInSec
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4938423479226487045, guid: 318ce907d304d9744b7f944c9b945499, type: 3}
+      propertyPath: glowSFX
+      value: 
+      objectReference: {fileID: 1653123772}
     - target: {fileID: 4938423479226487045, guid: 318ce907d304d9744b7f944c9b945499, type: 3}
       propertyPath: audioSource
       value: 

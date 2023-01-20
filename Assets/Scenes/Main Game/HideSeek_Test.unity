@@ -2895,6 +2895,7 @@ MonoBehaviour:
   speedTimer: 1
   gameStartTime: 3
   countdownTimerUI: {fileID: 1211409094}
+  motivationalCost: 20
   children: {fileID: 4245984274280499005, guid: 3c443e307dd1d03439f18e77edce0ee2, type: 3}
   score: 0
   spawnPoints:
