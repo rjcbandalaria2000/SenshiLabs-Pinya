@@ -5425,6 +5425,7 @@ MonoBehaviour:
   speedTimer: 1
   gameStartTime: 3
   countdownTimerUI: {fileID: 1698600892}
+  motivationalCost: 20
   wateringWell: {fileID: 1168003673}
   slider: {fileID: 1126816171}
   RequiredNumSwipes: 3
