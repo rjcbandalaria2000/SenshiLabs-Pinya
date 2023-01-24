@@ -32,6 +32,7 @@ public class PlayerData : MonoBehaviour
     public List<string>             requiredTasks;
 
     [Header("TimePeriod")]
+    public bool                     hasPlayed;
     public int                      savedTimeIndex;
     public TimePeriod               savedTimePeriod;
 
