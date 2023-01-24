@@ -202,6 +202,7 @@ public class CleanTheHouseManager : MinigameManager
         if (!isCompleted)
         {
             previousVal = SingletonManager.Get<PlayerData>().storedMotivationData;
+
             SingletonManager.Get<PlayerData>().storedMotivationData -= motivationalCost;
             SingletonManager.Get<MiniGameTimer>().StopCountdownTimer();
             isCompleted = true;

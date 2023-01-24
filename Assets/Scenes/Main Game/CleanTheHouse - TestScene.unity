@@ -3207,6 +3207,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -10
       objectReference: {fileID: 0}
+    - target: {fileID: 758503089800070046, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.0005493164
+      objectReference: {fileID: 0}
     - target: {fileID: 758503089884906362, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 16.949951
@@ -3215,13 +3219,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -107.94995
       objectReference: {fileID: 0}
+    - target: {fileID: 758503089884906363, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
+      propertyPath: m_Direction
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 758503090553775255, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 758503090553775255, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 758503090553775255, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.4161987
       objectReference: {fileID: 0}
     - target: {fileID: 2009363870646069662, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_fontSize
@@ -3359,6 +3371,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2521525648044228177, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.0005493164
+      objectReference: {fileID: 0}
+    - target: {fileID: 3233351702171603017, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3233351702171603017, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4363026294955890098, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -7.9057007
+      objectReference: {fileID: 0}
     - target: {fileID: 5075874855342666790, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_fontSize
       value: 96.01
@@ -3402,6 +3430,10 @@ PrefabInstance:
     - target: {fileID: 7515639530825026661, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8817269008825757849, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 19.057617
       objectReference: {fileID: 0}
     - target: {fileID: 8862315065208118765, guid: 0c90d775e7869c746aa0a0d970cb2af3, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -4827,6 +4859,7 @@ MonoBehaviour:
   speedTimer: 1
   gameStartTime: 3
   countdownTimerUI: {fileID: 608781851}
+  motivationalCost: 20
   numberOfToys: 5
   numberOfDust: 5
   objectsToSpawn: []

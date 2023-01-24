@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
+using DG.Tweening;
+using static UnityEngine.GraphicsBuffer;
 
 public class DisplayMinigameResult : MonoBehaviour
 {
@@ -13,6 +15,8 @@ public class DisplayMinigameResult : MonoBehaviour
     public Slider pinyaMeterSlider;
 
     private PlayerData playerData;
+
+    private float currentVel = 0;
     // Start is called before the first frame update
     void Start()
     {        
@@ -31,7 +35,11 @@ public class DisplayMinigameResult : MonoBehaviour
         if (motivationMeterSlider == null) { return; }
         if(playerData == null) { return; }
         motivationMeterSlider.maxValue = playerData.maxMotivationData;
-        motivationMeterSlider.value = playerData.storedMotivationData;
+
+        motivationMeterSlider.value = playerData.maxMotivationData;
+        motivationMeterSlider.DOValue(playerData.storedMotivationData, 1f);
+
+       // motivationMeterSlider.value = playerData.storedMotivationData;
         Debug.Log("Remaining motivation");
     }
 
