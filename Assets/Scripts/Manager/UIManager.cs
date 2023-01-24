@@ -52,6 +52,8 @@ public class UIManager : MonoBehaviour
 
     private SceneChange     sceneChange;
 
+    public GameObject creditsGO;
+
     private void Start()
     {
         if(PauseCanvas != null)
@@ -376,11 +378,13 @@ public class UIManager : MonoBehaviour
     public void ActivateCredits()
     {
         Debug.Log("Credits ON");
+        creditsGO.gameObject.SetActive(true);
     }
 
     public void DeactivateCredits()
     {
         Debug.Log("Credits OFF");
+        creditsGO.gameObject.SetActive(false);
     }
 
     public void ActivatePause()
