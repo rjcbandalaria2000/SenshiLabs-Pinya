@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class WashTheDishesMinigame : MinigameObject
 {
@@ -31,6 +32,10 @@ public class WashTheDishesMinigame : MinigameObject
         if (!SingletonManager.Get<PlayerData>().isGetWaterFinished)
         {
             Debug.Log("Finish Pre-Req");
+
+            Vector3 shake = new Vector3(0.5f, 0, 0);
+
+            this.transform.DOShakePosition(0.3f, shake, 10, 45, false, false);
             return;
         }
         if (isInteracted) { return; }
@@ -148,4 +153,6 @@ public class WashTheDishesMinigame : MinigameObject
         StopAllCoroutines(); //Stop all coroutines and set it to null for the next playthrough to access the object reference
         OnSceneChange();
     }
+
+  
 }

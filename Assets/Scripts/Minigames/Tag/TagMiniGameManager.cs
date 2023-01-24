@@ -115,12 +115,13 @@ public class TagMiniGameManager : MinigameManager
         if (spawnPlayer.isTag == false)
         {
             Debug.Log("Minigame complete");
+            IncreaseMotivationalMeter(motivationalCost);
             isCompleted = true;
             uIManager.ActivateResultScreen();
             uIManager.ActivateGoodResult();
             SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
             spawnPlayer.gameObject.SetActive(false);
-            IncreaseMotivationalMeter(motivationalCost);
+         
         }
         else 
         {

@@ -83,10 +83,11 @@ public class HideSeekManager : MinigameManager
     public override void OnWin()
     {
         Debug.Log("Minigame complete");
+        IncreaseMotivationMeter(earnedMotivationalValue);
         SingletonManager.Get<UIManager>().ActivateResultScreen();
         SingletonManager.Get<UIManager>().ActivateGoodResult();
         SingletonManager.Get<MiniGameTimer>().decreaseValue = 0;
-        IncreaseMotivationMeter(earnedMotivationalValue);
+       
 
         if (playerProgress)
         {
