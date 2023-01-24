@@ -137,7 +137,7 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         float tempCooldown = coolDown;
         while (tempCooldown > 0)
         {
-            Debug.Log("animatio");
+            //Debug.Log("animatio");
             heartGO.transform.DOScale(1, 0.3f).SetEase(Ease.OutBounce);
            // overlayGO.transform.DOScale(1.1f, 0.3f).SetEase(Ease.OutBounce);
             yield return new WaitForSeconds(1f);
@@ -184,6 +184,7 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             UnitInfo unitInfo = minigame.gameObject.GetComponent<UnitInfo>();
             if (unitInfo)
             {
+                unitInfo.effects.GetComponentInChildren<ArrowAnimation>().ResetPosition();
                 unitInfo.effects.gameObject.SetActive(false);
                 //Debug.Log("Activate Effects");
             }
