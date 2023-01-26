@@ -46,6 +46,8 @@ public class StateDayTransition : MonoBehaviour
     public bool                 isEvening = false;
 
     private Coroutine morningCoroutine;
+    private Coroutine afternoonCoroutine;
+    private Coroutine eveningCoroutine;
 
     private void Awake()
     {
@@ -70,10 +72,10 @@ public class StateDayTransition : MonoBehaviour
                 StartMorningState();
                 break;
             case DayState.Afternoon:
-                AfternoonState();
+                StartAfternoonState();
                 break;
             case DayState.Evening:
-                EveningState();
+                StartEveningState();
                 break;
         }
     }
@@ -87,21 +89,23 @@ public class StateDayTransition : MonoBehaviour
                 StartMorningState();
                 break;
             case TimePeriod.Afternoon:
-                AfternoonState();
+                StartAfternoonState();
                 break;
             case TimePeriod.Evening:
-                EveningState();
+                StartEveningState();
                 break;
         }
     }
 
     public void StartMorningState()
     {
-        if(isMorning) {
+        if (isMorning)
+        {
             Debug.Log("Already played morning");
             this.gameObject.SetActive(false);
             isFinished = true;
-            return; }
+            return;
+        }
         if(morningCoroutine != null)
         {
             StopMorningState();
@@ -113,8 +117,9 @@ public class StateDayTransition : MonoBehaviour
         if (morningCoroutine != null)
         {
             StopCoroutine(morningCoroutine);
-            morningCoroutine = null;
+            
         }
+        morningCoroutine = null;
     }
 
     IEnumerator AnimateMorningState()
@@ -137,9 +142,30 @@ public class StateDayTransition : MonoBehaviour
         yield return null;
     }
 
-    public void AfternoonState()
+    public void StartAfternoonState()
     {
-        
+        if (isAfternoon)
+        {
+            Debug.Log("Already played afternoon");
+            this.gameObject.SetActive(false);
+            isFinished = true;
+            return;
+        }
+        if(afternoonCoroutine != null)
+        {
+            StopAfternoonState();
+        }
+        afternoonCoroutine = StartCoroutine(AnimateAfternoonState());
+    }
+
+    public void StopAfternoonState()
+    {
+        if(afternoonCoroutine != null)
+        {
+            StopCoroutine(afternoonCoroutine);
+            
+        }
+        afternoonCoroutine = null;
     }
 
     IEnumerator AnimateAfternoonState()
@@ -155,25 +181,63 @@ public class StateDayTransition : MonoBehaviour
         yield return mySequence.WaitForCompletion();
         audioSource.PlayOneShot(soundSFX[(int)currentTimePeriod]);
         WoodSound.Invoke();
+        yield return new WaitForSeconds(0.5f);
+        isFinished = true;
+        this.gameObject.SetActive(false);
+        isAfternoon = true;
         yield return null;
         //dayState++;
     }
 
-    public void EveningState()
+    public void StartEveningState()
+    {
+        if (isEvening)
+        {
+            Debug.Log("Already played evening state");
+            isFinished=true;
+            this.gameObject.SetActive(false);
+        }
+        if(eveningCoroutine != null)
+        {
+            StopEveningState();
+        }
+        if (!this.gameObject.activeSelf) { return; } // if its inactive due to scene change
+        eveningCoroutine = StartCoroutine(AnimateEveningState());   
+    }
+
+    public void StopEveningState()
+    {
+        if(eveningCoroutine != null)
+        {
+            StopCoroutine(eveningCoroutine);
+        }
+        eveningCoroutine = null;
+    }
+
+    IEnumerator AnimateEveningState()
     {
         Debug.Log("Evening");
         int index = (int)currentTimePeriod - 1;
         Sequence mySequence = DOTween.Sequence();
         statesGO[index].DOMoveX(-3000f, 1, false);
         skyBG.DOAnchorPosX(xSkyPos[index], 1, false);
+        mySequence.Append(eveSun.DOJumpAnchorPos(stateEndPos[(int)currentTimePeriod], 200, 4, 1f, false));
+        yield return mySequence.WaitForCompletion();
         audioSource.PlayOneShot(soundSFX[(int)currentTimePeriod]);
         WoodSound.Invoke();
-        mySequence.Append(eveSun.DOJumpAnchorPos(stateEndPos[(int)currentTimePeriod], 200, 4, 1f, false));
+        yield return new WaitForSeconds(0.5f);
+        isFinished=true;
+        isEvening = true;
+        
+        this.gameObject.SetActive(false);
+        yield return null;
     }
 
     public void OnSceneChange()
     {
         StopMorningState();
+        StopAfternoonState();
+        StopEveningState();
         SingletonManager.Get<PlayerData>().isMorning = isMorning;
         SingletonManager.Get<PlayerData>().isAfternoon = isAfternoon;
         SingletonManager.Get<PlayerData>().isEvening = isEvening;

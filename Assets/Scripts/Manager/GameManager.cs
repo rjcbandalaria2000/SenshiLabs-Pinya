@@ -118,8 +118,11 @@ public class GameManager : MonoBehaviour
             //only play the state of day transition one time 
             //if (!transitionManager.stateDayTransition.hasPlayed)
             //{
-                //transitionManager.stateOfDayGO.SetActive(true);
+            //transitionManager.stateOfDayGO.SetActive(true);
+            if (transitionManager.stateOfDayGO.activeSelf)
+            {
                 transitionManager.stateDayTransition.NextState(SingletonManager.Get<PlayerData>().savedTimePeriod);
+            }
             //if (!transitionManager.stateDayTransition.hasPlayed)
             //{
             // yield return new WaitForSeconds(3f);
