@@ -25,6 +25,7 @@ public class MinigameObject : MonoBehaviour
 
     public GameObject uncompleteState;
     public GameObject completeState;
+    public ParticleSystem glow;
     private void Awake()
     {
        
@@ -50,6 +51,11 @@ public class MinigameObject : MonoBehaviour
         }
         else
         {
+            if(glow != null)
+            {
+                glow.Play();
+            }
+
             if (uncompleteState != null)
                 uncompleteState.SetActive(false);
 
