@@ -32,8 +32,8 @@ public class MinigameObject : MonoBehaviour
     }
     private void Start()
     {
+       
 
-        
     }
     private void OnEnable()
     {
@@ -44,24 +44,28 @@ public class MinigameObject : MonoBehaviour
                 uncompleteState.SetActive(true);
             }
 
-            if(completeState != null)
+            if (completeState != null)
             {
                 completeState.SetActive(false);
             }
         }
         else
         {
-            if(glow != null)
-            {
-                glow.Play();
-            }
-
+          
             if (uncompleteState != null)
+            {
                 uncompleteState.SetActive(false);
+            }
+    
 
             if (completeState != null)
-               completeState.SetActive(true);
-            
+            {
+                completeState.SetActive(true);
+                glow.Play();
+                Debug.Log("FinishTask");
+            }
+             
+
         }
     }
 

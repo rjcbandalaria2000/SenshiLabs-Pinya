@@ -4636,6 +4636,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2816954076214239179, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: glow
+      value: 
+      objectReference: {fileID: 677417419}
+    - target: {fileID: 2816954076214239179, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
       propertyPath: motivationCost
       value: 25
       objectReference: {fileID: 0}
@@ -4700,6 +4704,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7014152468480160061, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: lengthInSec
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014152468480160061, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
       propertyPath: ShapeModule.radius.value
       value: 10
       objectReference: {fileID: 0}
@@ -4752,6 +4760,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPos: {x: 0, y: 0, z: 0}
   size: {x: 1.703343, y: 1.85253, z: 1.0795}
+--- !u!198 &677417419 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7014152468480160061, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+  m_PrefabInstance: {fileID: 677417414}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &681327836
 GameObject:
   m_ObjectHideFlags: 0
@@ -6350,7 +6363,7 @@ PrefabInstance:
     - target: {fileID: 1021784888, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
       propertyPath: glow
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 893641068}
     - target: {fileID: 1021784888, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
       propertyPath: completeState
       value: 
@@ -6402,6 +6415,10 @@ PrefabInstance:
     - target: {fileID: 5874913604952719382, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
       propertyPath: m_SortingOrder
       value: 98
+      objectReference: {fileID: 0}
+    - target: {fileID: 6034357358816529074, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
+      propertyPath: lengthInSec
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6034357358816529074, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
       propertyPath: ShapeModule.radius.value
@@ -6569,6 +6586,11 @@ GameObject:
 --- !u!4 &893641067 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1854719985, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
+  m_PrefabInstance: {fileID: 893641063}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &893641068 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6034357358816529074, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
   m_PrefabInstance: {fileID: 893641063}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &900718486
@@ -6740,6 +6762,10 @@ PrefabInstance:
     - target: {fileID: 2006427808, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072051677585461131, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
+      propertyPath: lengthInSec
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 2907636213359965985, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
       propertyPath: minigameName
@@ -8404,6 +8430,10 @@ PrefabInstance:
       propertyPath: preRequisiteTasks.Array.data[0]
       value: 
       objectReference: {fileID: 1114841000}
+    - target: {fileID: 5826733974511870138, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
+      propertyPath: lengthInSec
+      value: 2.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
 --- !u!114 &1139237639 stripped
@@ -9166,7 +9196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4257680015237913099, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6efcc101449224648bbe59cb72835bfe, type: 3}
@@ -13879,6 +13909,14 @@ PrefabInstance:
     - target: {fileID: 5240747441386036936, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.354
+      objectReference: {fileID: 0}
+    - target: {fileID: 5626648307122134332, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
+      propertyPath: lengthInSec
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5626648307122134332, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7312500210407402546, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
       propertyPath: m_IsActive
