@@ -32,9 +32,12 @@ public class PlayerData : MonoBehaviour
     public List<string>             requiredTasks;
 
     [Header("TimePeriod")]
+    public bool                     hasPlayed;
     public int                      savedTimeIndex;
     public TimePeriod               savedTimePeriod;
-
+    public bool                     isMorning;
+    public bool                     isAfternoon;
+    public bool                     isEvening;
     public void Awake()
     {
         SingletonManager.Register(this);
@@ -79,6 +82,9 @@ public class PlayerData : MonoBehaviour
         savedTimeIndex = 0;
         savedTimePeriod = TimePeriod.Morning;
         currentMinigame = null;
+        isMorning = false;
+        isAfternoon = false;
+        isEvening = false;
     }
 
     public void SetCurrentMinigame(string id)

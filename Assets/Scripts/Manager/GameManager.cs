@@ -110,12 +110,30 @@ public class GameManager : MonoBehaviour
         //Disable UI 
         UI.DeactivateGameUI();
         SingletonManager.Get<TaskManager>().Initialize();
+
+        //Time of Day transition
         if (transitionManager.stateOfDayGO)
         {
-            transitionManager.stateOfDayGO.SetActive(true);
-            transitionManager.stateDayTransition.NextState(SingletonManager.Get<PlayerData>().savedTimePeriod);
-            yield return new WaitForSeconds(3f);
-            transitionManager.stateOfDayGO.SetActive(false);
+            //transitionManager.stateDayTransition.hasPlayed = SingletonManager.Get<PlayerData>().hasPlayed;
+            //only play the state of day transition one time 
+            //if (!transitionManager.stateDayTransition.hasPlayed)
+            //{
+            //transitionManager.stateOfDayGO.SetActive(true);
+            if (transitionManager.stateOfDayGO.activeSelf)
+            {
+                transitionManager.stateDayTransition.NextState(SingletonManager.Get<PlayerData>().savedTimePeriod);
+            }
+            //if (!transitionManager.stateDayTransition.hasPlayed)
+            //{
+            // yield return new WaitForSeconds(3f);
+            //}
+
+            //transitionManager.stateOfDayGO.SetActive(false);
+            //}
+            while (!transitionManager.stateDayTransition.isFinished)
+            {
+                yield return null;
+            }
         }
         
         // Start playing curtain animation 
@@ -199,6 +217,11 @@ public class GameManager : MonoBehaviour
         Events.OnPinyaEmpty.RemoveListener(GameLose);
         Events.OnSceneChange.RemoveListener(OnSceneChange);
         Events.OnTasksComplete.RemoveListener(GameWin);
+
+        if (transitionManager.stateOfDayGO)
+        {
+            //SingletonManager.Get<PlayerData>().hasPlayed = transitionManager.stateDayTransition.hasPlayed;
+        }
     }
 
     public void tutorialPlayButton()
