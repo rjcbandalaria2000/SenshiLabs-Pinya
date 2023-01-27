@@ -6,6 +6,7 @@ using DG.Tweening;
 public class WashTheDishesMinigame : MinigameObject
 {
     private TransitionManager transitionManager;
+    public GameObject preReqObj;
 
     private void Awake()
     {
@@ -35,7 +36,7 @@ public class WashTheDishesMinigame : MinigameObject
 
             Vector3 shake = new Vector3(0.5f, 0, 0);
 
-            this.transform.DOShakePosition(0.3f, shake, 10, 45, false, false);
+            preReqObj.transform.DOShakePosition(0.3f, shake, 10, 45, false, false);
             return;
         }
         if (isInteracted) { return; }

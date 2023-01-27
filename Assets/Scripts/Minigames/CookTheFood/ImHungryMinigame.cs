@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine;
 public class ImHungryMinigame : MinigameObject
 {
     private TransitionManager transitionManager;
+
+    public GameObject preReqObj;
 
     private void Awake()
     {
@@ -30,6 +33,9 @@ public class ImHungryMinigame : MinigameObject
         if (!SingletonManager.Get<PlayerData>().isGroceryFinished)
         {
             Debug.Log("Finish Pre-Req");
+            Vector3 shake = new Vector3(0.5f, 0, 0);
+
+            preReqObj.transform.DOShakePosition(0.3f, shake, 10, 45, false, false);
             return;
         }
         isInteracted = true;

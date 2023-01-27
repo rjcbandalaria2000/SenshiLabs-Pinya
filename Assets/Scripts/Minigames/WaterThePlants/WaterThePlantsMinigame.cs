@@ -6,6 +6,7 @@ using UnityEngine;
 public class WaterThePlantsMinigame : MinigameObject
 {
     private TransitionManager   transitionManager;
+    public GameObject preReqObj;
 
     private void Awake()
     {
@@ -33,7 +34,7 @@ public class WaterThePlantsMinigame : MinigameObject
             Debug.Log("Finish Pre-Req");
             Vector3 shake = new Vector3(0.5f, 0, 0);
 
-            this.transform.DOShakePosition(0.3f, shake, 10, 45, false, false);
+            preReqObj.transform.DOShakePosition(0.3f, shake, 10, 45, false, false);
             return;
         }
         if (!isInteracted)
