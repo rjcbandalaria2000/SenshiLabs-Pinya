@@ -4699,13 +4699,21 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7014152468480160061, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7229075759678765512, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
       propertyPath: m_SortingOrder
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8769901102264196878, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1.82
+      value: 6.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 8769901102264196878, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
@@ -6387,9 +6395,29 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5430756332358984833, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.31
+      objectReference: {fileID: 0}
     - target: {fileID: 5874913604952719382, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
       propertyPath: m_SortingOrder
       value: 98
+      objectReference: {fileID: 0}
+    - target: {fileID: 6034357358816529074, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6034357358816529074, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6034357358816529074, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6034357358816529074, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
+      propertyPath: EmissionModule.rateOverDistance.scalar
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8510290887517753513, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
       propertyPath: m_RootOrder
@@ -13561,6 +13589,7 @@ MonoBehaviour:
   askMomButton: {fileID: 0}
   tutorialGO: {fileID: 0}
   confirmationGO: {fileID: 0}
+  creditsGO: {fileID: 0}
 --- !u!4 &1787921855
 Transform:
   m_ObjectHideFlags: 0
