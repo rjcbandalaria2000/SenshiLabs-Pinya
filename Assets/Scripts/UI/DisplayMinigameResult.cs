@@ -36,7 +36,7 @@ public class DisplayMinigameResult : MonoBehaviour
         if(playerData == null) { return; }
         motivationMeterSlider.maxValue = playerData.maxMotivationData;
 
-        motivationMeterSlider.value = playerData.maxMotivationData;
+        motivationMeterSlider.value = playerData.previousStoredMotivation;
         motivationMeterSlider.DOValue(playerData.storedMotivationData, 1f);
 
        // motivationMeterSlider.value = playerData.storedMotivationData;

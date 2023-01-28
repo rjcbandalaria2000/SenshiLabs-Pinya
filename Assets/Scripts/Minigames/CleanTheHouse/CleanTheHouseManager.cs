@@ -12,7 +12,7 @@ public class CleanTheHouseManager : MinigameManager
     public int                  numberOfToys = 1;
     public int                  numberOfDust = 1;
     public List<GameObject>     objectsToSpawn = new();
-    private float                 previousVal;
+
    
     [Header("Player Score")]
     public int                  numberOfToysKept = 0;
@@ -201,7 +201,8 @@ public class CleanTheHouseManager : MinigameManager
     {
         if (!isCompleted)
         {
-            previousVal = SingletonManager.Get<PlayerData>().storedMotivationData;
+            this.previousVal = SingletonManager.Get<PlayerData>().storedMotivationData;
+            SingletonManager.Get<PlayerData>().previousStoredMotivation = this.previousVal;
 
             SingletonManager.Get<PlayerData>().storedMotivationData -= motivationalCost;
             SingletonManager.Get<MiniGameTimer>().StopCountdownTimer();

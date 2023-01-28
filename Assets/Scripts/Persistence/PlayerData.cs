@@ -38,6 +38,8 @@ public class PlayerData : MonoBehaviour
     public bool                     isMorning;
     public bool                     isAfternoon;
     public bool                     isEvening;
+
+    public float previousStoredMotivation;
     public void Awake()
     {
         SingletonManager.Register(this);

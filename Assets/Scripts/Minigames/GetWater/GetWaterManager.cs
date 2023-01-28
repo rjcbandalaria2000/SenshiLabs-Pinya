@@ -183,6 +183,8 @@ public class GetWaterManager : MinigameManager
     {
         if (!isCompleted)
         {
+            this.previousVal = SingletonManager.Get<PlayerData>().storedMotivationData;
+            SingletonManager.Get<PlayerData>().previousStoredMotivation = this.previousVal;
             SingletonManager.Get<PlayerData>().storedMotivationData -= motivationalCost;
             SingletonManager.Get<MiniGameTimer>().StopCountdownTimer();
             isCompleted = true;

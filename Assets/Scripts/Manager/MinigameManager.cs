@@ -33,6 +33,8 @@ public class MinigameManager : MonoBehaviour
     protected TransitionManager transitionManager;
     protected PlayerData        playerData;
 
+    public float previousVal;
+
     // Start is called before the first frame update
     void Start()
     {

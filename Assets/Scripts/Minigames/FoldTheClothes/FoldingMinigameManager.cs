@@ -185,6 +185,9 @@ public class FoldingMinigameManager : MinigameManager
     public override void OnWin()
     {
         Debug.Log("Minigame complete");
+
+        this.previousVal = SingletonManager.Get<PlayerData>().storedMotivationData;
+        SingletonManager.Get<PlayerData>().previousStoredMotivation = this.previousVal;
         SingletonManager.Get<PlayerData>().storedMotivationData -= motivationalCost;
         SingletonManager.Get<UIManager>().ActivateResultScreen();
         SingletonManager.Get<UIManager>().ActivateGoodResult();

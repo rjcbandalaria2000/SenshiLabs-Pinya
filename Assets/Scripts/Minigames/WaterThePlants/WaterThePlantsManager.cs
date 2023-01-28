@@ -215,6 +215,8 @@ public class WaterThePlantsManager : MinigameManager
                     mouseFollow.enabled = false;
                 }
             }
+            this.previousVal = SingletonManager.Get<PlayerData>().storedMotivationData;
+            SingletonManager.Get<PlayerData>().previousStoredMotivation = this.previousVal;
 
             SingletonManager.Get<PlayerData>().storedMotivationData -= motivationalCost;
             SingletonManager.Get<MiniGameTimer>().StopCountdownTimer();
