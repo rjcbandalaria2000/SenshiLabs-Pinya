@@ -18,7 +18,7 @@ public class HideSeekManager : MinigameManager
     public DisplayGameCountdown     CountdownTimerUI;
 
     [Header("Motivational Meter")]
-    public float                    earnedMotivationalValue = 20f;
+    public float                    earnedMotivationalValue = 15f;
 
     private int                     RNG;
     private PlayerProgress          playerProgress;
@@ -43,6 +43,7 @@ public class HideSeekManager : MinigameManager
         sceneChange = this.gameObject.GetComponent<SceneChange>();
         playerProgress = SingletonManager.Get<PlayerProgress>();
         playerData = SingletonManager.Get<PlayerData>();
+        earnedMotivationalValue = 20f;
         SingletonManager.Get<UIManager>().ActivateMiniGameMainMenu();
         Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
         Events.OnSceneChange.AddListener(OnSceneChange);
@@ -209,6 +210,9 @@ public class HideSeekManager : MinigameManager
         Assert.IsNotNull(playerData, "Player data is not set or is null");
         if (playerData.storedMotivationData < playerData.maxMotivationData)
         {
+            this.previousVal = SingletonManager.Get<PlayerData>().storedMotivationData;
+            SingletonManager.Get<PlayerData>().previousStoredMotivation = this.previousVal;
+
             playerData.storedMotivationData += motivationValue;
         }
         playerData.storedMotivationData = Mathf.Clamp(playerData.storedMotivationData, 0, playerData.maxMotivationData);

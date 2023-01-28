@@ -52,7 +52,7 @@ public class SleepingMinigameManager : MinigameManager
         transitionManager = SingletonManager.Get<TransitionManager>();
         spawnManager = SingletonManager.Get<SpawnManager>();
         sceneChange = this.gameObject.GetComponent<SceneChange>();
-
+        motivationalPoints = 20f;
         SingletonManager.Get<UIManager>().ActivateMiniGameMainMenu();
         Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
         Events.OnSceneChange.AddListener(OnSceneChange);
@@ -237,6 +237,8 @@ public class SleepingMinigameManager : MinigameManager
         if(playerData == null) { return; }
         if(playerData.storedMotivationData < playerData.maxMotivationData)
         {
+            this.previousVal = SingletonManager.Get<PlayerData>().storedMotivationData;
+            SingletonManager.Get<PlayerData>().previousStoredMotivation = this.previousVal;
             playerData.storedMotivationData += motivationValue;
             
         }

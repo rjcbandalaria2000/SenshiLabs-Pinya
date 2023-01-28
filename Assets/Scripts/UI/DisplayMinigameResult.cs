@@ -37,7 +37,7 @@ public class DisplayMinigameResult : MonoBehaviour
         motivationMeterSlider.maxValue = playerData.maxMotivationData;
 
         motivationMeterSlider.value = playerData.previousStoredMotivation;
-        motivationMeterSlider.DOValue(playerData.storedMotivationData, 1f);
+        motivationMeterSlider.DOValue(playerData.storedMotivationData, 1.0f);
 
        // motivationMeterSlider.value = playerData.storedMotivationData;
         Debug.Log("Remaining motivation");

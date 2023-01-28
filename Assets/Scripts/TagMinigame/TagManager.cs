@@ -19,7 +19,7 @@ public class TagManager : MinigameManager
     public UIManager        uIManager;
 
     [Header("Motivational Value")]
-    public float            earnedMotivationalValue = 20f;
+    public float            earnedMotivationalValue = 15f;
 
     private PlayerProgress  playerProgress;
     private PlayerData      playerData;
@@ -43,6 +43,7 @@ public class TagManager : MinigameManager
         playerProgress = SingletonManager.Get<PlayerProgress>();
         playerData = SingletonManager.Get<PlayerData>();
 
+        earnedMotivationalValue = 20f;
         uIManager.ActivateMiniGameMainMenu();
         Events.OnObjectiveUpdate.AddListener(CheckIfFinished);
         Events.OnSceneChange.AddListener(OnSceneChange);
@@ -276,10 +277,13 @@ public class TagManager : MinigameManager
         if (playerData == null) { return; }
         if (playerData.storedMotivationData < playerData.maxMotivationData)
         {
+            this.previousVal = SingletonManager.Get<PlayerData>().storedMotivationData;
+            SingletonManager.Get<PlayerData>().previousStoredMotivation = this.previousVal;
+
             playerData.storedMotivationData += motivationValue;
 
         }
-        playerData.storedMotivationData = Mathf.Clamp(playerData.storedMotivationData, 0, playerData.maxMotivationData);
+        //playerData.storedMotivationData = Mathf.Clamp(playerData.storedMotivationData, 0, playerData.maxMotivationData);
     }
 
     public void DisableTaggers()
