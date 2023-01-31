@@ -17,7 +17,7 @@ public class DisplaySpeechBubble : MonoBehaviour
         }
         //Events.OnEmptyMotivation.AddListener(ShowSpeechBubble);
         Events.OnSceneChange.AddListener(OnSceneChange);
-        this.gameObject.SetActive(false);
+      //  this.gameObject.SetActive(false);
     }
 
     public void ShowSpeechBubble(bool state) 
