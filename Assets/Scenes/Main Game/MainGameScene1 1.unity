@@ -8549,6 +8549,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3094543890552111434, guid: e41e923d36dd9184699d21fe2e39658e, type: 3}
+      propertyPath: motivationMeter
+      value: 
+      objectReference: {fileID: 312946478}
     - target: {fileID: 4076455926124753325, guid: e41e923d36dd9184699d21fe2e39658e, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.04
@@ -13294,6 +13298,10 @@ PrefabInstance:
       propertyPath: minigameScene
       value: Tag
       objectReference: {fileID: 0}
+    - target: {fileID: 7276423486497861384, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
+      propertyPath: motivationMeter
+      value: 
+      objectReference: {fileID: 312946478}
     - target: {fileID: 7369621208534190261, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
       propertyPath: m_SortingOrder
       value: 0
@@ -17830,6 +17838,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1516140953}
     m_Modifications:
+    - target: {fileID: 1257655543029900896, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
+      propertyPath: motivationMeter
+      value: 
+      objectReference: {fileID: 312946478}
     - target: {fileID: 1648581331672092434, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
       propertyPath: m_SizeDelta.x
       value: 11

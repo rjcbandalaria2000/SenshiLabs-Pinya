@@ -8,29 +8,37 @@ public class DisplaySpeechBubble : MonoBehaviour
 
     private MinigameObject parentMinigameObject;
 
+    public MotivationMeter motivationMeter;
+
     // Start is called before the first frame update
     void Start()
     {
-        if (parent)
-        {
-            parentMinigameObject = parent.GetComponent<MinigameObject>();
-        }
+        //if (parent)
+        //{
+        //    parentMinigameObject = parent.GetComponent<MinigameObject>();
+        //}
         //Events.OnEmptyMotivation.AddListener(ShowSpeechBubble);
-        Events.OnSceneChange.AddListener(OnSceneChange);
+       // Events.OnSceneChange.AddListener(OnSceneChange);
         this.gameObject.SetActive(false);
     }
 
-    public void ShowSpeechBubble(bool state) 
+
+    private void Update()
     {
-        
-            this.gameObject.SetActive(state);
-        
+        motivationMeter.CheckMotivationalMeter();
     }
 
-    public void OnSceneChange()
+
+    public void ShowSpeechBubble()
     {
-        Events.OnSceneChange.RemoveListener(OnSceneChange);
-        //Events.OnEmptyMotivation.RemoveListener(ShowSpeechBubble);
+        
+        //this.gameObject.SetActive(state);
     }
-   
+
+    //public void OnSceneChange()
+    //{
+    //    Events.OnSceneChange.RemoveListener(OnSceneChange);
+    //    //Events.OnEmptyMotivation.RemoveListener(ShowSpeechBubble);
+    //}
+
 }
