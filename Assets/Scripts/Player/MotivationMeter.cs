@@ -14,10 +14,10 @@ public class MotivationMeter : MonoBehaviour
     [Header("Threshold Values")]
     public float        minMotivationAmount = 30f;
 
-    public Slider thresholdSlider;
+    public Slider       thresholdSlider;
 
-    public float coolDown;
-    bool isThreshold;
+    public float        coolDown;
+    bool                isThreshold;
 
     public List<GameObject> bubbleSpeeches;
 
@@ -34,11 +34,6 @@ public class MotivationMeter : MonoBehaviour
         }
         CheckMotivationalMeter();
         Events.OnChangeMeter.Invoke();
-    }
-
-    private void Update()
-    {
-        
     }
 
     public void InitializeMeter() {

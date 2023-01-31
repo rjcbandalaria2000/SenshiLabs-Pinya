@@ -8565,6 +8565,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5589611513077463031, guid: e41e923d36dd9184699d21fe2e39658e, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 485797382}
     - target: {fileID: 7148304158928383472, guid: e41e923d36dd9184699d21fe2e39658e, type: 3}
       propertyPath: m_Name
       value: Bed - Sleeping
@@ -13294,15 +13298,52 @@ PrefabInstance:
       propertyPath: minigameScene
       value: Tag
       objectReference: {fileID: 0}
+    - target: {fileID: 7276423486497861384, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1603101464}
+    - target: {fileID: 7369621208534190261, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 485797382}
     - target: {fileID: 7369621208534190261, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 999
       objectReference: {fileID: 0}
     - target: {fileID: 7437954087026273301, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
       propertyPath: m_SortingOrder
       value: 100
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8051333493895252756, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 10.639
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051333493895252756, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 3.729
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051333493895252756, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 3.329
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051333493895252756, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 4.969
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203217127653288426, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -0.15360263
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203217127653288426, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203217127653288426, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7877169432337835272, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
 --- !u!1 &1603101464 stripped
 GameObject:
@@ -17830,6 +17871,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1516140953}
     m_Modifications:
+    - target: {fileID: 84855377478635855, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 485797382}
+    - target: {fileID: 84855377478635855, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
+      propertyPath: m_SortingOrder
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 1257655543029900896, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 9115556523157542576}
     - target: {fileID: 1648581331672092434, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
       propertyPath: m_SizeDelta.x
       value: 11
@@ -17861,6 +17914,18 @@ PrefabInstance:
     - target: {fileID: 2507198922063099343, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
       propertyPath: m_SizeDelta.y
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507198922063099343, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -0.15360263
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507198922063099343, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507198922063099343, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.47
       objectReference: {fileID: 0}
     - target: {fileID: 2685203029621870885, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
       propertyPath: m_SizeDelta.x
