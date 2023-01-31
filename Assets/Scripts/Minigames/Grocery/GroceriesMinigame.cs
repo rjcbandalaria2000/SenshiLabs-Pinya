@@ -36,6 +36,32 @@ public class GroceriesMinigame : MinigameObject
         if (isInteracted) { return; }
         isInteracted = true;
         MotivationMeter playerMotivation = player.GetComponent<MotivationMeter>();
+        //Check if has enough motivation
+        if(playerMotivation != null)
+        {
+            if (playerMotivation.MotivationAmount < motivationCost)
+            {
+                // if there is not enough motivation amount
+                Debug.Log("Not enough motivation");
+                ShakeScreen();
+                return;
+            }
+            else
+            {
+                //playerMotivation.DecreaseMotivation(motivationCost);
+                //Disable player controls 
+                PlayerControls playerControl = player.GetComponent<PlayerControls>();
+                if (playerControl)
+                {
+                    playerControl.enabled = false;
+                }
+                Debug.Log("Interacted");
+                isInteracted = true; // to avoid being called again since it is already interacted
+                StartInteractRoutine();
+                //JumpToMiniGame();
+            }
+        }
+      
         //if (playerMotivation)
         //{
         //    playerMotivation.DecreaseMotivation(motivationCost);
