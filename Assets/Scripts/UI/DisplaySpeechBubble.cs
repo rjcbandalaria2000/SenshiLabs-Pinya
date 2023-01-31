@@ -1,30 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DisplaySpeechBubble : MonoBehaviour
 {
-    public GameObject parent;
+    public Image image;
 
-    private MinigameObject parentMinigameObject;
-
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        if (parent)
+        if(image == null)
         {
-            parentMinigameObject = parent.GetComponent<MinigameObject>();
+            image = this.gameObject.GetComponent<Image>();
         }
         Events.OnEmptyMotivation.AddListener(ShowSpeechBubble);
         Events.OnSceneChange.AddListener(OnSceneChange);
-        this.gameObject.SetActive(false);
     }
 
-    public void ShowSpeechBubble(bool state) 
+    // Start is called before the first frame update
+
+    public void ShowSpeechBubble(bool state)
     {
-        
-            this.gameObject.SetActive(state);
-        
+        this.gameObject.SetActive(state);
+
+
+        Debug.Log("Low motivation" + this.gameObject.transform.parent.gameObject.transform.parent.name);
     }
 
     public void OnSceneChange()
@@ -32,5 +32,10 @@ public class DisplaySpeechBubble : MonoBehaviour
         Events.OnSceneChange.RemoveListener(OnSceneChange);
         Events.OnEmptyMotivation.RemoveListener(ShowSpeechBubble);
     }
-   
+
+    private void OnDestroy()
+    {
+        OnSceneChange();
+    }
+
 }
