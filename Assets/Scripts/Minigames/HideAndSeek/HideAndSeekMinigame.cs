@@ -34,7 +34,7 @@ public class HideAndSeekMinigame : MinigameObject
         {
             isInteracted = true; // to avoid being called again since it is already interacted
             StartInteractRoutine();
-            Debug.Log("Interacted");
+         //   Debug.Log("Interacted");
         }
     }
 
@@ -54,7 +54,7 @@ public class HideAndSeekMinigame : MinigameObject
         //Wait for the transition to end
         while (!transitionManager.IsAnimationFinished())
         {
-            Debug.Log("Closing Curtain Time: " + transitionManager.animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+            ///Debug.Log("Closing Curtain Time: " + transitionManager.animator.GetCurrentAnimatorStateInfo(0).normalizedTime);
             yield return null;
         }
 
@@ -78,12 +78,12 @@ public class HideAndSeekMinigame : MinigameObject
             }
             else
             {
-                Debug.Log("No next scene name");
+              //  Debug.Log("No next scene name");
             }
         }
         else
         {
-            Debug.Log("No Scene change");
+           // Debug.Log("No Scene change");
         }
     }
 
@@ -110,7 +110,7 @@ public class HideAndSeekMinigame : MinigameObject
         Events.OnInteract.RemoveListener(Interact);
         Events.OnFinishInteract.RemoveListener(EndInteract);
         StopInteractRoutine();
-        Debug.Log("Removed listener from Minigame");
+      //  Debug.Log("Removed listener from Minigame");
     }
     private void OnDestroy()
     {

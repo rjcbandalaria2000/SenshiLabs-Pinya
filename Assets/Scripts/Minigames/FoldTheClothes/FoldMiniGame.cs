@@ -37,7 +37,7 @@ public class FoldMiniGame : MinigameObject
             if (playerMotivation.MotivationAmount < motivationCost)
             {
                 // if there is not enough motivation amount
-                Debug.Log("Not enough motivation");
+           //     Debug.Log("Not enough motivation");
                 ShakeScreen();
                 return;
             }
@@ -50,12 +50,12 @@ public class FoldMiniGame : MinigameObject
                 {
                     playerControl.enabled = false;
                 }
-                Debug.Log("Interacted");
+         //       Debug.Log("Interacted");
                 isInteracted = true; // to avoid being called again since it is already interacted
                 StartInteractRoutine();
             }
         }
-        Debug.Log("Interacted");
+       // Debug.Log("Interacted");
     }
 
     public override void EndInteract(GameObject player = null)
@@ -79,12 +79,12 @@ public class FoldMiniGame : MinigameObject
             }
             else
             {
-                Debug.Log("No next scene name");
+            //    Debug.Log("No next scene name");
             }
         }
         else
         {
-            Debug.Log("No Scene change");
+          //  Debug.Log("No Scene change");
         }
     }
 
@@ -121,7 +121,7 @@ public class FoldMiniGame : MinigameObject
         {
             StopCoroutine(interactRoutine);
             interactRoutine = null;
-            Debug.Log("Empty Interact Routine");
+        //    Debug.Log("Empty Interact Routine");
         }
     }
     public override void OnSceneChange()
@@ -130,7 +130,7 @@ public class FoldMiniGame : MinigameObject
         Events.OnInteract.RemoveListener(Interact);
         Events.OnFinishInteract.RemoveListener(EndInteract);
         StopInteractRoutine();
-        Debug.Log("Removed listener from Minigame");
+      //  Debug.Log("Removed listener from Minigame");
     }
 
     private void OnDestroy()

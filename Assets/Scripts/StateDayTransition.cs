@@ -101,7 +101,7 @@ public class StateDayTransition : MonoBehaviour
     {
         if (isMorning)
         {
-            Debug.Log("Already played morning");
+           // Debug.Log("Already played morning");
             this.gameObject.SetActive(false);
             isFinished = true;
             return;
@@ -126,7 +126,7 @@ public class StateDayTransition : MonoBehaviour
     {
         this.gameObject.SetActive(true);
         isFinished = false;
-        Debug.Log("Morning");
+//        Debug.Log("Morning");
         Sequence mySequence = DOTween.Sequence();
         mySequence.Append(daySun.DOJumpAnchorPos(stateEndPos[(int)currentTimePeriod], 200, 4, 1f, false)).WaitForCompletion();
         mySequence.Append(dayCloud.DOMoveX(1000f, 1, false)).WaitForCompletion();
@@ -146,7 +146,7 @@ public class StateDayTransition : MonoBehaviour
     {
         if (isAfternoon)
         {
-            Debug.Log("Already played afternoon");
+         //   Debug.Log("Already played afternoon");
             this.gameObject.SetActive(false);
             isFinished = true;
             return;
@@ -170,7 +170,7 @@ public class StateDayTransition : MonoBehaviour
 
     IEnumerator AnimateAfternoonState()
     {
-        Debug.Log("Afternoon");
+        //Debug.Log("Afternoon");
         int index = (int)currentTimePeriod - 1;
         Sequence mySequence = DOTween.Sequence();
         statesGO[index].DOMoveX(-3000f, 1, false);
@@ -193,7 +193,7 @@ public class StateDayTransition : MonoBehaviour
     {
         if (isEvening)
         {
-            Debug.Log("Already played evening state");
+         //   Debug.Log("Already played evening state");
             isFinished=true;
             this.gameObject.SetActive(false);
         }
@@ -216,7 +216,7 @@ public class StateDayTransition : MonoBehaviour
 
     IEnumerator AnimateEveningState()
     {
-        Debug.Log("Evening");
+       // Debug.Log("Evening");
         int index = (int)currentTimePeriod - 1;
         Sequence mySequence = DOTween.Sequence();
         statesGO[index].DOMoveX(-3000f, 1, false);

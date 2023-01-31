@@ -78,12 +78,12 @@ public class DisplayPinyaMeter : MonoBehaviour
         if (damageBarColor.a <= 0)
         {
             damageBarImage.fillAmount = ((float)PinyaSlider.value - (float) pinyaCost) / (float)PinyaSlider.maxValue;
-            Debug.Log("Fill Amount Damage Fade: " + damageBarImage.fillAmount);
+           // Debug.Log("Fill Amount Damage Fade: " + damageBarImage.fillAmount);
         }
         damageBarColor.a = 1f;
         damageBarImage.color = damageBarColor;
         damageFadeRoutine = StartCoroutine(DamageFade());
-        Debug.Log("Start fade");
+       // Debug.Log("Start fade");
     }
 
     public void StopDamageFade()

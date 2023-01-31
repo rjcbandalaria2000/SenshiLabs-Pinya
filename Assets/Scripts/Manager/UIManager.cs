@@ -74,7 +74,7 @@ public class UIManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("Not Minigame");
+       //         Debug.Log("Not Minigame");
             }
         }
         if (miniGameTimerDisplay != null)
@@ -103,7 +103,7 @@ public class UIManager : MonoBehaviour
         {
             timerDisplay.SetActive(true);
         }
-        else { Debug.Log("timerDisplay null"); }
+        else { /*Debug.Log("timerDisplay null");*/ }
     }
 
     public void DeactivateTimerUI()
@@ -112,7 +112,7 @@ public class UIManager : MonoBehaviour
         {
             timerDisplay.SetActive(false);
         }
-        else { Debug.Log("timerDisplay null"); }
+        else { /*Debug.Log("timerDisplay null");*/ }
     }
 
     public void ActivateDayEndUI()
@@ -211,7 +211,7 @@ public class UIManager : MonoBehaviour
         Assert.IsNotNull(results);
         results.DisplayPinyaMeter();
         results.DisplayMotivation();
-        Debug.Log("ActivateResult");
+      //  Debug.Log("ActivateResult");
     }
 
     public void DeactivateResultScreen()
@@ -317,7 +317,7 @@ public class UIManager : MonoBehaviour
         if (scene == null) { return; }
         Events.OnSceneChange.Invoke();
         sceneChange.OnChangeScene(scene);
-        Debug.Log("GoToMainMenu");
+     //   Debug.Log("GoToMainMenu");
     }
 
     public void OnPlayButtonClicked(string scene)
@@ -377,13 +377,13 @@ public class UIManager : MonoBehaviour
 
     public void ActivateCredits()
     {
-        Debug.Log("Credits ON");
+     ///   Debug.Log("Credits ON");
         creditsGO.gameObject.SetActive(true);
     }
 
     public void DeactivateCredits()
     {
-        Debug.Log("Credits OFF");
+       // Debug.Log("Credits OFF");
         creditsGO.gameObject.SetActive(false);
     }
 

@@ -89,7 +89,7 @@ public class MinigameObject : MonoBehaviour
 
     public virtual void EndInteract(GameObject player = null)
     {
-        Debug.Log("End Interact");
+      //  Debug.Log("End Interact");
     }
 
     public virtual void JumpToMiniGame()

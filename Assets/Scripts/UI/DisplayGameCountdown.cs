@@ -59,7 +59,7 @@ public class DisplayGameCountdown : MonoBehaviour
                     countdownImages[i].transform.DOShakeScale(0.5f, 0.1f, 3, 0, true);
                     countdownImages[i].transform.DOScale(1, 1).WaitForCompletion();
                     sFXManager.PlaySFX(sfx[i]);
-                    Debug.Log("PlaySFX");
+                  //  Debug.Log("PlaySFX");
                 }
                 
             }

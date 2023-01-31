@@ -117,7 +117,7 @@ public class TaskManager : MonoBehaviour
                                         if (unitInfo.iconSprite)
                                         {
                                             displayRequiredTask.imageGO.GetComponent<Image>().sprite = unitInfo.iconSprite;
-                                            Debug.Log("Pre Req Icon");
+                                            //Debug.Log("Pre Req Icon");
                                         }
                                     }
                                     
@@ -163,7 +163,7 @@ public class TaskManager : MonoBehaviour
         }
         if(tempTaskList.Count <= 0)
         {
-            Debug.Log("No more incomplete minigames");
+         //   Debug.Log("No more incomplete minigames");
             return;
         }
         // Clear required task list 
@@ -172,7 +172,7 @@ public class TaskManager : MonoBehaviour
         {
 
             int randomTaskIndex = Random.Range(0, tempTaskList.Count);
-            Debug.Log("Random Selected task: " + tempTaskList[randomTaskIndex]);
+          //  Debug.Log("Random Selected task: " + tempTaskList[randomTaskIndex]);
             //Check for duplicates
             if (!CheckForMinigameDuplicateInList(requiredTasks, tempTaskList[randomTaskIndex]))
             {
@@ -215,12 +215,12 @@ public class TaskManager : MonoBehaviour
         if (requiredTasks.Count <= 0) { return false; }
         for (int i = 0; i < requiredTasks.Count; i++)
         { 
-            Debug.Log(requiredTasks[i].minigameName + " " + requiredTasks[i].hasCompleted);
+           // Debug.Log(requiredTasks[i].minigameName + " " + requiredTasks[i].hasCompleted);
             if (!requiredTasks[i].hasCompleted)
             {
                 allTasksDone = false;
                
-                Debug.Log("Not all tasks are done");
+              //  Debug.Log("Not all tasks are done");
                 break;
             }
             else
@@ -244,13 +244,13 @@ public class TaskManager : MonoBehaviour
             SingletonManager.Get<PlayerData>().savedTimeIndex = SingletonManager.Get<DayCycle>().timeIndex;
             SingletonManager.Get<PlayerData>().savedTimePeriod = SingletonManager.Get<DayCycle>().timePeriod;
 
-            Debug.Log("Required Tasks are done");
+         //   Debug.Log("Required Tasks are done");
 
         }
         else
         {
             SingletonManager.Get<DayCycle>().ChangeTimePeriod(SingletonManager.Get<DayCycle>().timeIndex);
-            Debug.Log("Required Tasks are not yet done");
+       //     Debug.Log("Required Tasks are not yet done");
         }
     }
 
@@ -258,12 +258,12 @@ public class TaskManager : MonoBehaviour
     {
         if (AreAllTasksDone())
         {
-            Debug.Log("Player wins ");
+          //  Debug.Log("Player wins ");
             Events.OnTasksComplete.Invoke();
         }
         {
             //SingletonManager.Get<DayCycle>().ChangeTimePeriod(SingletonManager.Get<DayCycle>().timeIndex);
-            Debug.Log("All tasks are not yet done");
+           // Debug.Log("All tasks are not yet done");
         }
     }
 
@@ -367,14 +367,14 @@ public class TaskManager : MonoBehaviour
             if(minigame == minigameToCheck)
             {
                 isDuplicate = true;
-                Debug.Log(minigameToCheck.minigameName + " is a duplicate");
+             //   Debug.Log(minigameToCheck.minigameName + " is a duplicate");
                 return isDuplicate;
                 
             }
         }
         if (!isDuplicate)
         {
-            Debug.Log("Is not duplicate");
+          //  Debug.Log("Is not duplicate");
         }
         return isDuplicate;
     }

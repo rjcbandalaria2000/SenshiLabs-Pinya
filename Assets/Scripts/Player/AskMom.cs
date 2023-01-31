@@ -111,7 +111,7 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void OnPointerEnter(PointerEventData eventData)
     {
         // When the player hovers over the ask mom button
-        Debug.Log("Ask mom hover");
+       // Debug.Log("Ask mom hover");
         if (pinyaMeterUI)
         {
             pinyaMeterUI.StartDamageFade(pinyaCost);
@@ -124,7 +124,7 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         {
             pinyaMeterUI.StopDamageFade();
         }
-        Debug.Log("Ask mom exit");
+      //  Debug.Log("Ask mom exit");
     }
     public void PulsatingHeart()
     {
@@ -137,7 +137,7 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         float tempCooldown = coolDown;
         while (tempCooldown > 0)
         {
-            Debug.Log("animatio");
+          //  Debug.Log("animatio");
             heartGO.transform.DOScale(1, 0.3f).SetEase(Ease.OutBounce);
            // overlayGO.transform.DOScale(1.1f, 0.3f).SetEase(Ease.OutBounce);
             yield return new WaitForSeconds(1f);
@@ -151,7 +151,7 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
         heartGO.transform.DOScale(1, 0.3f).SetEase(Ease.OutBounce);
       //  overlayGO.SetActive(false);
-        Debug.Log("End Pulsate");
+//        Debug.Log("End Pulsate");
     }
 
     public void EnableEffects()

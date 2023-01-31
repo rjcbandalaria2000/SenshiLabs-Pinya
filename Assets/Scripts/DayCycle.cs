@@ -59,7 +59,7 @@ public class DayCycle : MonoBehaviour
                 break;
         }
 
-        Debug.Log("Current Time Period " + timePeriod.ToString());
+     //   Debug.Log("Current Time Period " + timePeriod.ToString());
         Events.OnChangeTimePeriod.Invoke();
     }
 
@@ -69,11 +69,11 @@ public class DayCycle : MonoBehaviour
         PlayerData playerData = SingletonManager.Get<PlayerData>();
         if (playerData)
         {
-            Debug.Log("Saving time index: " + timeIndex);
+          //  Debug.Log("Saving time index: " + timeIndex);
             playerData.savedTimeIndex = timeIndex;
-            Debug.Log("Saving time index: " + timePeriod);
+           // Debug.Log("Saving time index: " + timePeriod);
             playerData.savedTimePeriod = timePeriod;
-            Debug.Log("Saved time");
+           // Debug.Log("Saved time");
         }
         Events.OnSceneChange.RemoveListener(OnSceneChange);
         
