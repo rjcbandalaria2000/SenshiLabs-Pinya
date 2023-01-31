@@ -19,6 +19,8 @@ public class MotivationMeter : MonoBehaviour
     public float coolDown;
     bool isThreshold;
 
+    public List<GameObject> bubbleSpeeches;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +59,7 @@ public class MotivationMeter : MonoBehaviour
             Debug.Log("Motivation is maxed out");
         }
         MotivationAmount = Mathf.Clamp(MotivationAmount, 0, MaxMotivation);
+        CheckMotivationalMeter();
         Events.OnChangeMeter.Invoke();
         //EvtChangeMeter.Invoke();
     }
@@ -71,6 +74,7 @@ public class MotivationMeter : MonoBehaviour
         {
             Debug.Log("Motivation is already at 0");
         }
+        CheckMotivationalMeter();
         Events.OnChangeMeter.Invoke();
         //EvtChangeMeter.Invoke();
     }
@@ -79,14 +83,29 @@ public class MotivationMeter : MonoBehaviour
     {
         if(MotivationAmount <= minMotivationAmount)
         {
-            Events.OnEmptyMotivation.Invoke(true);
+            if(bubbleSpeeches != null)
+            {
+                for(int i = 0; i < bubbleSpeeches.Count; i++)
+                {
+                    bubbleSpeeches[i].SetActive(true);
+                }
+            }
+
+            //Events.OnEmptyMotivation.Invoke(true);
             isThreshold = true;
             ActivateThreshold();
         
         }
         else
         {
-            Events.OnEmptyMotivation.Invoke(false);
+            if (bubbleSpeeches != null)
+            {
+                for (int i = 0; i < bubbleSpeeches.Count; i++)
+                {
+                    bubbleSpeeches[i].SetActive(false);
+                }
+            }
+            //Events.OnEmptyMotivation.Invoke(false);
             isThreshold = false;
         //    ShakeScreen();
         }

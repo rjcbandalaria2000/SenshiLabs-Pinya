@@ -15,7 +15,7 @@ public class DisplaySpeechBubble : MonoBehaviour
         {
             parentMinigameObject = parent.GetComponent<MinigameObject>();
         }
-        Events.OnEmptyMotivation.AddListener(ShowSpeechBubble);
+        //Events.OnEmptyMotivation.AddListener(ShowSpeechBubble);
         Events.OnSceneChange.AddListener(OnSceneChange);
         this.gameObject.SetActive(false);
     }
@@ -30,7 +30,7 @@ public class DisplaySpeechBubble : MonoBehaviour
     public void OnSceneChange()
     {
         Events.OnSceneChange.RemoveListener(OnSceneChange);
-        Events.OnEmptyMotivation.RemoveListener(ShowSpeechBubble);
+        //Events.OnEmptyMotivation.RemoveListener(ShowSpeechBubble);
     }
    
 }
