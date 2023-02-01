@@ -218,10 +218,10 @@ public class GameManager : MonoBehaviour
         Events.OnSceneChange.RemoveListener(OnSceneChange);
         Events.OnTasksComplete.RemoveListener(GameWin);
 
-        if (transitionManager.stateOfDayGO)
-        {
-            //SingletonManager.Get<PlayerData>().hasPlayed = transitionManager.stateDayTransition.hasPlayed;
-        }
+        //if (transitionManager.stateOfDayGO)
+        //{
+        //    SingletonManager.Get<PlayerData>().hasPlayed = transitionManager.stateDayTransition.hasPlayed;
+        //}
     }
 
     public void tutorialPlayButton()
