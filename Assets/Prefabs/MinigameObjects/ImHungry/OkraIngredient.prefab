@@ -59,6 +59,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8182111762439085950, guid: f33952753e4d48d44a8c40a307caf517, type: 3}
+      propertyPath: defaultCursorTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 2d8d391eb824a4b4ca6a42a3ad4ca394, type: 3}
+    - target: {fileID: 8182111762439085950, guid: f33952753e4d48d44a8c40a307caf517, type: 3}
+      propertyPath: defaultCursorPressDownTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: e6b9150ca460c9e498965eb3c3554b91, type: 3}
     - target: {fileID: 8239005412512939164, guid: f33952753e4d48d44a8c40a307caf517, type: 3}
       propertyPath: m_Name
       value: OkraIngredient

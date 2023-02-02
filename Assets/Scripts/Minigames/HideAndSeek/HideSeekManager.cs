@@ -126,6 +126,7 @@ public class HideSeekManager : MinigameManager
 
         //Deactivate Minigame Main Menu
         SingletonManager.Get<UIManager>().DeactivateMiniGameMainMenu();
+        Cursor.visible = false;
         //Start Curtain Transition
         transitionManager.ChangeAnimation(TransitionManager.CURTAIN_OPEN);
 
@@ -150,6 +151,7 @@ public class HideSeekManager : MinigameManager
         //After Game Countdown
         //Activate GameUI and Timer
 
+        Cursor.visible = true;
         spawnRoutine = StartCoroutine(spawn());
 
         SingletonManager.Get<UIManager>().DeactivateGameCountdown();

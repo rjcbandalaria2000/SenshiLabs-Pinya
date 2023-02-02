@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 6539688022829982207}
   - component: {fileID: 2910635622619697139}
   - component: {fileID: 3326018526265941119}
+  - component: {fileID: 8182111762439085950}
   m_Layer: 0
   m_Name: Ingredient
   m_TagString: Untagged
@@ -337,3 +338,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8182111762439085950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8239005412512939164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0408e621f7f0b124683412f3055fab37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultCursorTexture: {fileID: 2800000, guid: 2d8d391eb824a4b4ca6a42a3ad4ca394, type: 3}
+  defaultHotspotPos: 0
+  defaultCursorPressDownTexture: {fileID: 2800000, guid: e6b9150ca460c9e498965eb3c3554b91, type: 3}
+  defaultPressDownHotspotPos: 0
+  enterCursorTexture: {fileID: 2800000, guid: 5f31c2eb75a834f428b0bf9ea451e1ca, type: 3}
+  enterCursorHotspotPos: 4
+  dragCursorTexture: {fileID: 2800000, guid: f670a4dd9eb684049a5cbf1ed580b68d, type: 3}
+  dragCursorHotspotPos: 4
+  pressDownCursorTexture: {fileID: 2800000, guid: f670a4dd9eb684049a5cbf1ed580b68d, type: 3}
+  pressDownHotSpotPos: 4

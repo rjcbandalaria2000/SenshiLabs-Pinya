@@ -1982,6 +1982,7 @@ GameObject:
   - component: {fileID: 403256974}
   - component: {fileID: 403256975}
   - component: {fileID: 403256976}
+  - component: {fileID: 403256977}
   m_Layer: 8
   m_Name: Logs
   m_TagString: HidingSpot
@@ -2127,6 +2128,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 851aeff5ec98fc847a7230442026e6ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &403256977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403256970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0408e621f7f0b124683412f3055fab37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultCursorTexture: {fileID: 2800000, guid: 2d8d391eb824a4b4ca6a42a3ad4ca394, type: 3}
+  defaultHotspotPos: 0
+  defaultCursorPressDownTexture: {fileID: 2800000, guid: e6b9150ca460c9e498965eb3c3554b91, type: 3}
+  defaultPressDownHotspotPos: 0
+  enterCursorTexture: {fileID: 2800000, guid: 5f31c2eb75a834f428b0bf9ea451e1ca, type: 3}
+  enterCursorHotspotPos: 4
+  dragCursorTexture: {fileID: 2800000, guid: f670a4dd9eb684049a5cbf1ed580b68d, type: 3}
+  dragCursorHotspotPos: 4
+  pressDownCursorTexture: {fileID: 2800000, guid: 5f31c2eb75a834f428b0bf9ea451e1ca, type: 3}
+  pressDownHotSpotPos: 4
 --- !u!1 &408594055
 GameObject:
   m_ObjectHideFlags: 0
@@ -2896,6 +2919,7 @@ MonoBehaviour:
   gameStartTime: 3
   countdownTimerUI: {fileID: 1211409094}
   motivationalCost: 20
+  previousVal: 0
   children: {fileID: 4245984274280499005, guid: 3c443e307dd1d03439f18e77edce0ee2, type: 3}
   score: 0
   spawnPoints:
@@ -2960,6 +2984,7 @@ MonoBehaviour:
   askMomButton: {fileID: 0}
   tutorialGO: {fileID: 979513149}
   confirmationGO: {fileID: 2114801778}
+  creditsGO: {fileID: 0}
 --- !u!114 &448823275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4149,6 +4174,7 @@ GameObject:
   - component: {fileID: 637839144}
   - component: {fileID: 637839145}
   - component: {fileID: 637839146}
+  - component: {fileID: 637839147}
   m_Layer: 8
   m_Name: Logs
   m_TagString: HidingSpot
@@ -4282,6 +4308,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 851aeff5ec98fc847a7230442026e6ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &637839147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637839140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0408e621f7f0b124683412f3055fab37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultCursorTexture: {fileID: 2800000, guid: 2d8d391eb824a4b4ca6a42a3ad4ca394, type: 3}
+  defaultHotspotPos: 0
+  defaultCursorPressDownTexture: {fileID: 2800000, guid: e6b9150ca460c9e498965eb3c3554b91, type: 3}
+  defaultPressDownHotspotPos: 0
+  enterCursorTexture: {fileID: 2800000, guid: 5f31c2eb75a834f428b0bf9ea451e1ca, type: 3}
+  enterCursorHotspotPos: 4
+  dragCursorTexture: {fileID: 2800000, guid: f670a4dd9eb684049a5cbf1ed580b68d, type: 3}
+  dragCursorHotspotPos: 4
+  pressDownCursorTexture: {fileID: 2800000, guid: 5f31c2eb75a834f428b0bf9ea451e1ca, type: 3}
+  pressDownHotSpotPos: 4
 --- !u!1 &640052685
 GameObject:
   m_ObjectHideFlags: 0
@@ -6695,6 +6743,7 @@ GameObject:
   - component: {fileID: 1115072923}
   - component: {fileID: 1115072925}
   - component: {fileID: 1115072924}
+  - component: {fileID: 1115072926}
   m_Layer: 8
   m_Name: Leaves
   m_TagString: HidingSpot
@@ -6846,6 +6895,28 @@ MonoBehaviour:
   SwipeLeftAccept: -0.5
   SwipeRightAccept: 0.5
   child: {fileID: 0}
+--- !u!114 &1115072926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115072918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0408e621f7f0b124683412f3055fab37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultCursorTexture: {fileID: 2800000, guid: 2d8d391eb824a4b4ca6a42a3ad4ca394, type: 3}
+  defaultHotspotPos: 0
+  defaultCursorPressDownTexture: {fileID: 2800000, guid: e6b9150ca460c9e498965eb3c3554b91, type: 3}
+  defaultPressDownHotspotPos: 0
+  enterCursorTexture: {fileID: 2800000, guid: 063fea6173bab7b48b2bb3e46b64af58, type: 3}
+  enterCursorHotspotPos: 4
+  dragCursorTexture: {fileID: 2800000, guid: 063fea6173bab7b48b2bb3e46b64af58, type: 3}
+  dragCursorHotspotPos: 4
+  pressDownCursorTexture: {fileID: 2800000, guid: 063fea6173bab7b48b2bb3e46b64af58, type: 3}
+  pressDownHotSpotPos: 4
 --- !u!1 &1128791872
 GameObject:
   m_ObjectHideFlags: 0
@@ -9028,6 +9099,7 @@ GameObject:
   - component: {fileID: 1467588589}
   - component: {fileID: 1467588590}
   - component: {fileID: 1467588591}
+  - component: {fileID: 1467588592}
   m_Layer: 8
   m_Name: Logs
   m_TagString: HidingSpot
@@ -9173,6 +9245,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 851aeff5ec98fc847a7230442026e6ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1467588592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467588585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0408e621f7f0b124683412f3055fab37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultCursorTexture: {fileID: 2800000, guid: 2d8d391eb824a4b4ca6a42a3ad4ca394, type: 3}
+  defaultHotspotPos: 0
+  defaultCursorPressDownTexture: {fileID: 2800000, guid: e6b9150ca460c9e498965eb3c3554b91, type: 3}
+  defaultPressDownHotspotPos: 0
+  enterCursorTexture: {fileID: 2800000, guid: 5f31c2eb75a834f428b0bf9ea451e1ca, type: 3}
+  enterCursorHotspotPos: 4
+  dragCursorTexture: {fileID: 2800000, guid: f670a4dd9eb684049a5cbf1ed580b68d, type: 3}
+  dragCursorHotspotPos: 4
+  pressDownCursorTexture: {fileID: 2800000, guid: 5f31c2eb75a834f428b0bf9ea451e1ca, type: 3}
+  pressDownHotSpotPos: 4
 --- !u!1 &1472540302
 GameObject:
   m_ObjectHideFlags: 0
@@ -9396,6 +9490,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6930799082756882933, guid: 24d2d50983e357b4d90c145654d7dc68, type: 3}
+      propertyPath: dragCursorTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: e6b9150ca460c9e498965eb3c3554b91, type: 3}
+    - target: {fileID: 6930799082756882933, guid: 24d2d50983e357b4d90c145654d7dc68, type: 3}
+      propertyPath: enterCursorTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 2d8d391eb824a4b4ca6a42a3ad4ca394, type: 3}
+    - target: {fileID: 6930799082756882933, guid: 24d2d50983e357b4d90c145654d7dc68, type: 3}
+      propertyPath: defaultCursorTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 2d8d391eb824a4b4ca6a42a3ad4ca394, type: 3}
+    - target: {fileID: 6930799082756882933, guid: 24d2d50983e357b4d90c145654d7dc68, type: 3}
+      propertyPath: pressDownCursorTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: e6b9150ca460c9e498965eb3c3554b91, type: 3}
+    - target: {fileID: 6930799082756882933, guid: 24d2d50983e357b4d90c145654d7dc68, type: 3}
+      propertyPath: defaultCursorPressDownTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: e6b9150ca460c9e498965eb3c3554b91, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24d2d50983e357b4d90c145654d7dc68, type: 3}
 --- !u!1 &1510797482
@@ -11126,6 +11240,7 @@ GameObject:
   - component: {fileID: 1773115067}
   - component: {fileID: 1773115070}
   - component: {fileID: 1773115069}
+  - component: {fileID: 1773115071}
   m_Layer: 8
   m_Name: Leaves
   m_TagString: HidingSpot
@@ -11277,6 +11392,28 @@ MonoBehaviour:
   SwipeLeftAccept: -0.5
   SwipeRightAccept: 0.5
   child: {fileID: 0}
+--- !u!114 &1773115071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773115062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0408e621f7f0b124683412f3055fab37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultCursorTexture: {fileID: 2800000, guid: 2d8d391eb824a4b4ca6a42a3ad4ca394, type: 3}
+  defaultHotspotPos: 0
+  defaultCursorPressDownTexture: {fileID: 2800000, guid: e6b9150ca460c9e498965eb3c3554b91, type: 3}
+  defaultPressDownHotspotPos: 0
+  enterCursorTexture: {fileID: 2800000, guid: 063fea6173bab7b48b2bb3e46b64af58, type: 3}
+  enterCursorHotspotPos: 4
+  dragCursorTexture: {fileID: 2800000, guid: 063fea6173bab7b48b2bb3e46b64af58, type: 3}
+  dragCursorHotspotPos: 4
+  pressDownCursorTexture: {fileID: 2800000, guid: 063fea6173bab7b48b2bb3e46b64af58, type: 3}
+  pressDownHotSpotPos: 4
 --- !u!1 &1778564835
 GameObject:
   m_ObjectHideFlags: 0
@@ -11711,6 +11848,7 @@ GameObject:
   - component: {fileID: 1851014507}
   - component: {fileID: 1851014508}
   - component: {fileID: 1851014509}
+  - component: {fileID: 1851014510}
   m_Layer: 8
   m_Name: Logs
   m_TagString: HidingSpot
@@ -11856,6 +11994,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 851aeff5ec98fc847a7230442026e6ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1851014510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851014503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0408e621f7f0b124683412f3055fab37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultCursorTexture: {fileID: 2800000, guid: 2d8d391eb824a4b4ca6a42a3ad4ca394, type: 3}
+  defaultHotspotPos: 0
+  defaultCursorPressDownTexture: {fileID: 2800000, guid: e6b9150ca460c9e498965eb3c3554b91, type: 3}
+  defaultPressDownHotspotPos: 0
+  enterCursorTexture: {fileID: 2800000, guid: 5f31c2eb75a834f428b0bf9ea451e1ca, type: 3}
+  enterCursorHotspotPos: 4
+  dragCursorTexture: {fileID: 2800000, guid: f670a4dd9eb684049a5cbf1ed580b68d, type: 3}
+  dragCursorHotspotPos: 4
+  pressDownCursorTexture: {fileID: 2800000, guid: 5f31c2eb75a834f428b0bf9ea451e1ca, type: 3}
+  pressDownHotSpotPos: 4
 --- !u!1 &1871802604
 GameObject:
   m_ObjectHideFlags: 0
@@ -11870,6 +12030,7 @@ GameObject:
   - component: {fileID: 1871802609}
   - component: {fileID: 1871802612}
   - component: {fileID: 1871802611}
+  - component: {fileID: 1871802613}
   m_Layer: 8
   m_Name: Leaves
   m_TagString: HidingSpot
@@ -12021,6 +12182,28 @@ MonoBehaviour:
   SwipeLeftAccept: -0.5
   SwipeRightAccept: 0.5
   child: {fileID: 0}
+--- !u!114 &1871802613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871802604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0408e621f7f0b124683412f3055fab37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultCursorTexture: {fileID: 2800000, guid: 2d8d391eb824a4b4ca6a42a3ad4ca394, type: 3}
+  defaultHotspotPos: 0
+  defaultCursorPressDownTexture: {fileID: 2800000, guid: e6b9150ca460c9e498965eb3c3554b91, type: 3}
+  defaultPressDownHotspotPos: 0
+  enterCursorTexture: {fileID: 2800000, guid: 063fea6173bab7b48b2bb3e46b64af58, type: 3}
+  enterCursorHotspotPos: 4
+  dragCursorTexture: {fileID: 2800000, guid: 063fea6173bab7b48b2bb3e46b64af58, type: 3}
+  dragCursorHotspotPos: 4
+  pressDownCursorTexture: {fileID: 2800000, guid: 063fea6173bab7b48b2bb3e46b64af58, type: 3}
+  pressDownHotSpotPos: 4
 --- !u!1 &1887826315
 GameObject:
   m_ObjectHideFlags: 0
