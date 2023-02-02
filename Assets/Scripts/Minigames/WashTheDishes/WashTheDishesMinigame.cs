@@ -49,6 +49,8 @@ public class WashTheDishesMinigame : MinigameObject
             {
                 // if there is not enough motivation amount
                 Debug.Log("Not enough motivation");
+                lowMotivationText.gameObject.SetActive(false);
+
                 ShakeScreen();
                 return;
             }
@@ -62,6 +64,8 @@ public class WashTheDishesMinigame : MinigameObject
                     playerControl.enabled = false;
                 }
                 Debug.Log("Interacted");
+                lowMotivationText.gameObject.SetActive(true);
+
                 isInteracted = true; // to avoid being called again since it is already interacted
                 StartInteractRoutine();
                 //JumpToMiniGame();

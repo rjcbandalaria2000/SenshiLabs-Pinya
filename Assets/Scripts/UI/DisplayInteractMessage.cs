@@ -43,7 +43,7 @@ public class DisplayInteractMessage : MonoBehaviour
         if (!this.gameObject.activeSelf)
         {
             this.gameObject.SetActive(true);
-            StartCoroutine(RMBAnimation());
+          //  StartCoroutine(RMBAnimation());
         }
        
 
@@ -70,12 +70,12 @@ public class DisplayInteractMessage : MonoBehaviour
     {
         while (gameObject.activeInHierarchy)
         {
-           // interactLogo.DOColor(Color.gray, 0.5f);
-           // interactLogo.transform.DORotate(shake, 0.5f, RotateMode.Fast).WaitForCompletion();
+         //   interactLogo.DOColor(Color.gray, 0.5f);
+            interactLogo.transform.DORotate(new Vector3(0, 0, 10f), 0.5f, RotateMode.Fast);
            
             yield return new WaitForSeconds(1f);
-            ///interactLogo.DOColor(Color.white, 0.5f);
-            //interactLogo.transform.DORotate(new Vector3(0,0,0), 0.5f, RotateMode.Fast).WaitForCompletion();
+            // interactLogo.DOColor(Color.white, 0.5f);
+            interactLogo.transform.DORotate(new Vector3(0,0,-10f), 0.5f, RotateMode.Fast);
         }
-    }
+    }   
 }

@@ -43,6 +43,8 @@ public class GroceriesMinigame : MinigameObject
             {
                 // if there is not enough motivation amount
                 Debug.Log("Not enough motivation");
+                lowMotivationText.gameObject.SetActive(true);
+
                 ShakeScreen();
                 return;
             }
@@ -56,6 +58,8 @@ public class GroceriesMinigame : MinigameObject
                     playerControl.enabled = false;
                 }
                 Debug.Log("Interacted");
+                lowMotivationText.gameObject.SetActive(false);
+
                 isInteracted = true; // to avoid being called again since it is already interacted
                 StartInteractRoutine();
                 //JumpToMiniGame();
