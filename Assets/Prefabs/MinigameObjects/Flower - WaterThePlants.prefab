@@ -635,6 +635,37 @@ Transform:
   m_Father: {fileID: 4035600956947891031}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3998055685830383000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5459829194032991787}
+  m_Layer: 0
+  m_Name: Waypoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5459829194032991787
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3998055685830383000}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.8, z: 0}
+  m_LocalScale: {x: 0.61393243, y: 0.61393243, z: 0.61393243}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4035600955571030605}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4035600955571030600
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,6 +680,7 @@ GameObject:
   - component: {fileID: -4991398368355363817}
   - component: {fileID: -5706834350741523079}
   - component: {fileID: 1896368318}
+  - component: {fileID: 5714957448752238485}
   m_Layer: 6
   m_Name: Flower - WaterThePlants
   m_TagString: Untagged
@@ -672,6 +704,7 @@ Transform:
   - {fileID: 4035600956585092077}
   - {fileID: 1690378346}
   - {fileID: 6266313327784407823}
+  - {fileID: 5459829194032991787}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -685,10 +718,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.14}
+  m_Offset: {x: -0.012000799, y: -0.29301208}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -699,7 +732,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.34, y: 0.69}
+  m_Size: {x: 2.303997, y: 0.7920079}
   m_EdgeRadius: 0
 --- !u!114 &4035600955571030607
 MonoBehaviour:
@@ -735,7 +768,7 @@ MonoBehaviour:
   - {fileID: 0}
   uncompleteState: {fileID: 2407859834520409432}
   completeState: {fileID: 8594948677744635627}
-  glow: {fileID: 5626648307122134332}
+  preReqObj: {fileID: 0}
 --- !u!114 &-5706834350741523079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -764,6 +797,20 @@ MonoBehaviour:
   UI: {fileID: 0}
   effects: {fileID: 1690378345}
   iconSprite: {fileID: 0}
+--- !u!114 &5714957448752238485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4035600955571030600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ece264530074454f8c6fed1ff8ce458, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AIPlayer: {fileID: 0}
+  waypointIndex: 0
 --- !u!1 &4035600956585092078
 GameObject:
   m_ObjectHideFlags: 0
@@ -1581,11 +1628,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 406b4b45bd39f4e47a57d6377fda27d1, type: 3}
---- !u!198 &5626648307122134332 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 177394133595661808, guid: 406b4b45bd39f4e47a57d6377fda27d1, type: 3}
-  m_PrefabInstance: {fileID: 5504495871362103500}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &6266313327784407823 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1915594523078478787, guid: 406b4b45bd39f4e47a57d6377fda27d1, type: 3}

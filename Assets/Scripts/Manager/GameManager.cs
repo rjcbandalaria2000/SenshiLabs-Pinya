@@ -100,12 +100,12 @@ public class GameManager : MonoBehaviour
     IEnumerator StartGame()
     {
         //Disable player controls
-        PlayerControls playerControls = player.gameObject.GetComponent<PlayerControls>();
-        if (playerControls)
-        {
-            playerControls.Initialize();
-            playerControls.enabled = false;
-        }
+        //PlayerControls playerControls = player.gameObject.GetComponent<PlayerControls>();
+        //if (playerControls)
+        //{
+        //    playerControls.Initialize();
+        //    playerControls.enabled = false;
+        //}
        
         //Disable UI 
         UI.DeactivateGameUI();
@@ -148,7 +148,7 @@ public class GameManager : MonoBehaviour
         UI.ActivateGameUI();
 
         //Activate player controls 
-        playerControls.enabled = true;
+      //  playerControls.enabled = true;
         yield return null;
     }
 
