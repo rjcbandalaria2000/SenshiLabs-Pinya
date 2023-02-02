@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -6410516604438110439}
   - component: {fileID: -3869816558029378572}
   - component: {fileID: 5682874952658737502}
+  - component: {fileID: 8926943482617563279}
   m_Layer: 7
   m_Name: Egg
   m_TagString: Untagged
@@ -116,7 +117,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5937934297813480278}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -255,3 +256,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35f39ae76d8ad7c4bb3e6bc34adb005d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!60 &8926943482617563279
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5937934297813480278}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1.36}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.5, y: -0.35}
+      - {x: 0.5, y: 0}
+      - {x: 0.42, y: 0.26}
+      - {x: 0.26, y: 0.53}
+      - {x: 0.11, y: 0.65999997}
+      - {x: 0.08, y: 0.68}
+      - {x: -0.12, y: 0.68}
+      - {x: -0.25, y: 0.53}
+      - {x: -0.38, y: 0.32}
+      - {x: -0.45999998, y: 0.16}
+      - {x: -0.5, y: 0}
+      - {x: -0.5, y: -0.37}
+      - {x: -0.42999998, y: -0.48}
+      - {x: -0.35, y: -0.59}
+      - {x: -0.19, y: -0.68}
+      - {x: 0.19999999, y: -0.68}
+      - {x: 0.25, y: -0.66999996}
+      - {x: 0.39, y: -0.53999996}
+      - {x: 0.48999998, y: -0.42999998}
