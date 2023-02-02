@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: SenshiLabs- Pinya
+  companyName: Senshi.Labs
+  productName: 'Folktales: The Story of Pineapple'
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.058823533, g: 0.07058824, b: 0.09019608, a: 1}
