@@ -39,6 +39,7 @@ public class FoldMiniGame : MinigameObject
                 // if there is not enough motivation amount
                 //     Debug.Log("Not enough motivation");
                 lowMotivationText.gameObject.SetActive(true);
+                interactMessage.animator.SetBool("CanPlay", false);
 
                 ShakeScreen();
                 return;
@@ -53,6 +54,7 @@ public class FoldMiniGame : MinigameObject
                     playerControl.enabled = false;
                 }
                 //       Debug.Log("Interacted");
+                interactMessage.animator.SetBool("CanPlay", true);
                 lowMotivationText.gameObject.SetActive(false);
 
                 isInteracted = true; // to avoid being called again since it is already interacted

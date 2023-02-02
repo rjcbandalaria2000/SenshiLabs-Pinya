@@ -26,6 +26,7 @@ public class MinigameObject : MonoBehaviour
     public GameObject uncompleteState;
     public GameObject completeState;
     public GameObject lowMotivationText;
+    public DisplayInteractMessage interactMessage;
    // public ParticleSystem glow;
     private void Awake()
     {

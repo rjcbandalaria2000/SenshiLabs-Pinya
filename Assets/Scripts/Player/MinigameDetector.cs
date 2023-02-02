@@ -12,8 +12,8 @@ public class MinigameDetector : MonoBehaviour
     public UnityEvent   EvtFinishInteract = new();
 
     //private Interactable interactable;
-    private MinigameObject interactedMinigame; 
-
+    private MinigameObject interactedMinigame;
+    public DisplayInteractMessage interactMessage;
     public void Start()
     {
         Initialize();
@@ -35,6 +35,7 @@ public class MinigameDetector : MonoBehaviour
         if (interactedObject)
         {
             Events.OnEnterInteraction.Invoke();
+
             PlayerInteract playerInteract = Parent.GetComponent<PlayerInteract>();
             if (playerInteract == null) { return; }
             playerInteract.InteractableObject = interactedObject;

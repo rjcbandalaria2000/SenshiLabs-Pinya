@@ -14,8 +14,13 @@ public class DisplayInteractMessage : MonoBehaviour
     public Sprite rmb;
     public Image interactLogo;
     public Vector3 shake;
+    public Animator animator;
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        animator = gameObject.GetComponent<Animator>();
+    }
     void Start()
     {
         Initialize();
@@ -44,6 +49,7 @@ public class DisplayInteractMessage : MonoBehaviour
         {
             this.gameObject.SetActive(true);
           //  StartCoroutine(RMBAnimation());
+
         }
        
 
