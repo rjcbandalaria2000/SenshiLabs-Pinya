@@ -22,6 +22,7 @@ public class ClickMinigame : MonoBehaviour
 
      void OnMouseDown()
     {
+      // AIPlayer.goToTarget(waypointIndex);
        StartCoroutine(AIPlayer.goToTargetRoutine(waypointIndex));
         Debug.Log("Go To Target");
     }

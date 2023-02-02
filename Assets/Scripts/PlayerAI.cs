@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,7 @@ public class PlayerAI : MonoBehaviour
 
     public List<GameObject> wayPoints;
 
+    public AIDestinationSetter AiSetter;
 
 
     private StepSFX stepSFX;
@@ -38,7 +40,7 @@ public class PlayerAI : MonoBehaviour
     public void Initialize()
     {
         mainCamera = Camera.main;
-
+        AiSetter = GetComponent<AIDestinationSetter>();
         if (playerData == null)
         {
             playerData = SingletonManager.Get<PlayerData>();
@@ -82,12 +84,16 @@ public class PlayerAI : MonoBehaviour
 
     public void goToTarget(int index)
     {
-        while (this.transform.position != wayPoints[index].transform.position)
+        AiSetter.target = wayPoints[index].transform;
+
+        while (this.transform.position != AiSetter.target.position)
         {
             animator.SetBool("IsIdle", false);
-            transform.position = Vector2.Lerp(this.transform.position, wayPoints[index].transform.position, moveSpeed * Time.deltaTime);
+           // transform.position = Vector2.Lerp(this.transform.position, wayPoints[index].transform.position, moveSpeed * Time.deltaTime);
             //stepSFX.Step();
         }
+
+        animator.SetBool("IsIdle", true);
        
         
         
@@ -96,7 +102,8 @@ public class PlayerAI : MonoBehaviour
    public IEnumerator goToTargetRoutine(int index)
     {
         Vector3 targetPos = wayPoints[index].transform.position;
-        while (this.transform.position != targetPos)
+        AiSetter.target = wayPoints[index].transform;
+        while (Vector3.Distance(this.transform.position,AiSetter.target.position) > 1)
         {
             //targetPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
             //targetPosition.z = this.transform.position.z;
@@ -116,11 +123,15 @@ public class PlayerAI : MonoBehaviour
             }
 
             animator.SetBool("IsIdle", false);
-            transform.position = Vector2.Lerp(this.transform.position, wayPoints[index].transform.position, moveSpeed * Time.deltaTime);
+            //  transform.position = Vector2.Lerp(this.transform.position, wayPoints[index].transform.position, moveSpeed * Time.deltaTime);
+           
             yield return null;
             //stepSFX.Step();
         }
-    
+
+        yield return new WaitForSeconds(0.5f);
         animator.SetBool("IsIdle", true);
+      
+       
     }
 }
