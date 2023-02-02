@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5112537779925609580}
   - component: {fileID: -5567891302630558050}
   - component: {fileID: 4837241040729309939}
+  - component: {fileID: 6334691805986585250}
   m_Layer: 7
   m_Name: Sili
   m_TagString: Untagged
@@ -115,7 +116,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5859514393060168437}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -242,3 +243,53 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!60 &6334691805986585250
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5859514393060168437}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.75, y: 1.02}
+    newSize: {x: 0.92, y: 1.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.36499998, y: 0.19}
+      - {x: 0.315, y: 0.42}
+      - {x: 0.305, y: 0.44}
+      - {x: 0.265, y: 0.45}
+      - {x: 0.225, y: 0.41}
+      - {x: 0.13499999, y: 0.51}
+      - {x: 0.085, y: 0.51}
+      - {x: 0.065, y: 0.48999998}
+      - {x: -0.024999999, y: 0.39}
+      - {x: -0.125, y: 0.14}
+      - {x: -0.225, y: -0.24}
+      - {x: -0.375, y: -0.37}
+      - {x: -0.375, y: -0.42}
+      - {x: -0.24499999, y: -0.42}
+      - {x: -0.035, y: -0.32}
+      - {x: -0.145, y: -0.48999998}
+      - {x: -0.085, y: -0.51}
+      - {x: -0.044999998, y: -0.51}
+      - {x: 0.005, y: -0.48}
+      - {x: 0.16499999, y: -0.32}
+      - {x: 0.255, y: -0.42999998}
+      - {x: 0.33499998, y: -0.51}
+      - {x: 0.375, y: -0.51}
+      - {x: 0.375, y: -0.42}
+      - {x: 0.355, y: -0.31}
