@@ -87,22 +87,6 @@ public class PlayerAI : MonoBehaviour
        
     }
 
-    public void goToTarget(int index)
-    {
-        AiSetter.target = wayPoints[index].transform;
-
-        while (this.transform.position != AiSetter.target.position)
-        {
-            animator.SetBool("IsIdle", false);
-           // transform.position = Vector2.Lerp(this.transform.position, wayPoints[index].transform.position, moveSpeed * Time.deltaTime);
-            //stepSFX.Step();
-        }
-
-        animator.SetBool("IsIdle", true);
-       
-        
-        
-    }
 
    public IEnumerator goToTargetRoutine(int index)
     {
@@ -135,6 +119,7 @@ public class PlayerAI : MonoBehaviour
         }
 
         yield return new WaitForSeconds(0.5f);
+        AiSetter.target = null;
         animator.SetBool("IsIdle", true);
       
        

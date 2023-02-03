@@ -150,9 +150,10 @@ public class GameManager : MonoBehaviour
         UI.ActivateGameUI();
         playerAi.enabled = true;
         playerAi.target = null;
+        player.gameObject.GetComponent<PlayerAI>().animator.SetBool("IsIdle", true);
 
         //Activate player controls 
-      //  playerControls.enabled = true;
+        //  playerControls.enabled = true;
         yield return null;
     }
 
