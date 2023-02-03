@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -38,6 +39,7 @@ public class GameManager : MonoBehaviour
     private PlayerProgress          playerProgress;
 
     public GameObject tutorial, tutorial2;
+    public AIDestinationSetter playerAi;
 
     private void Awake()
     {
@@ -146,6 +148,8 @@ public class GameManager : MonoBehaviour
         }
         //Display UI
         UI.ActivateGameUI();
+        playerAi.enabled = true;
+        playerAi.target = null;
 
         //Activate player controls 
       //  playerControls.enabled = true;

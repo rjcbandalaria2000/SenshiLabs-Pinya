@@ -16,6 +16,8 @@ public class ClickItem : MonoBehaviour
     public AudioClip wrongSFX;
     public Vector3 itemPos;
 
+    public PolygonCollider2D collider;
+
     // Start is called before the first frame update
 
     private void Awake()
@@ -28,17 +30,17 @@ public class ClickItem : MonoBehaviour
         isDuplicate = false;
         quantity = 0;
         itemPos = item.transform.position;
+        if(this.GetComponent<PolygonCollider2D>() != null )
+        {
+            collider = this.GetComponent<PolygonCollider2D>();
+            collider.enabled = true;
+        }
+     
         if (groceryMiniGame == null)
         {
             groceryMiniGame = GameObject.FindObjectOfType<GroceryManager>();
             groceryList = GameObject.FindObjectOfType<DisplayGroceryList>();
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void OnMouseDown()
@@ -77,6 +79,7 @@ public class ClickItem : MonoBehaviour
                 groceryMiniGame.Shake();
                 groceryList.updateList();
                 isCorrect = true;
+                collider.enabled= false;
                 sFX.PlaySFX(correctSFX);
                 break;
             }

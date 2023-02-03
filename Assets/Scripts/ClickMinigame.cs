@@ -10,7 +10,7 @@ public class ClickMinigame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        AIPlayer = GameObject.FindObjectOfType<PlayerAI>();
     }
 
     // Update is called once per frame

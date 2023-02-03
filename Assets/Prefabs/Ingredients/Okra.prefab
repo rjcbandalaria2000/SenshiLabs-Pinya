@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4231141161419630781}
   - component: {fileID: 7742465383111282697}
   - component: {fileID: 7213201426757405380}
-  - component: {fileID: 189447156023594602}
   - component: {fileID: -6717390276932870387}
   - component: {fileID: 6836001327276860972}
   - component: {fileID: 3838811772339190740}
@@ -109,32 +108,6 @@ MonoBehaviour:
   correctSFX: {fileID: 8300000, guid: ec89cf7214124ed46b5c4307bb8108d8, type: 3}
   wrongSFX: {fileID: 8300000, guid: 64a4bf67d2c9e224889811732c9fbf1a, type: 3}
   itemPos: {x: 0, y: 0, z: 0}
---- !u!61 &189447156023594602
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5684846598116268635}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.016981244, y: -0.025471926}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.67, y: 1.68}
-    newSize: {x: 1.8, y: 1.82}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.3584871, y: 1.4633934}
-  m_EdgeRadius: 0
 --- !u!114 &-6717390276932870387
 MonoBehaviour:
   m_ObjectHideFlags: 0

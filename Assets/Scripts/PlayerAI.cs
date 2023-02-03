@@ -32,7 +32,12 @@ public class PlayerAI : MonoBehaviour
         if (!this.enabled)
         {
             this.enabled = true;
+            
         }
+        AiSetter = this.GetComponent<AIDestinationSetter>();
+        AiSetter.target = null;
+        AiSetter.enabled = false;
+        animator.SetBool("IsIdle", true);
         Initialize();
 
     }
