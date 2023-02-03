@@ -41,8 +41,9 @@ public class CleanTheHouseMinigame : MinigameObject
                     Debug.Log("Not enough motivation");
                     lowMotivationText.gameObject.SetActive(true);
                     interactMessage.animator.SetBool("CanPlay", false);
-
-                    ShakeScreen();
+                    interactMessage.interactLogo.sprite = interactMessage.noRMB;
+                    lowMotivation.gameObject.SetActive(true);
+                   // ShakeScreen();
                     return;
                 }
                 else
@@ -57,7 +58,8 @@ public class CleanTheHouseMinigame : MinigameObject
                     }
                     Debug.Log("Interacted");
                     lowMotivationText.gameObject.SetActive(false);
-                   
+                    lowMotivation.gameObject.SetActive(false);
+                    interactMessage.interactLogo.sprite = interactMessage.RMB;
 
                     isInteracted = true; // to avoid being called again since it is already interacted
                     StartInteractRoutine();

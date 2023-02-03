@@ -15,6 +15,8 @@ public class DisplayInteractMessage : MonoBehaviour
     public Image interactLogo;
     public Vector3 shake;
     public Animator animator;
+    public Sprite RMB;
+    public Sprite noRMB;
 
     // Start is called before the first frame update
     private void Awake()
@@ -84,4 +86,6 @@ public class DisplayInteractMessage : MonoBehaviour
             interactLogo.transform.DORotate(new Vector3(0,0,-10f), 0.5f, RotateMode.Fast);
         }
     }   
+
+    
 }

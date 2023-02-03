@@ -51,7 +51,9 @@ public class WashTheDishesMinigame : MinigameObject
                 Debug.Log("Not enough motivation");
                 lowMotivationText.gameObject.SetActive(true);
                 interactMessage.animator.SetBool("CanPlay", false);
-                ShakeScreen();
+                interactMessage.interactLogo.sprite = interactMessage.noRMB;
+                lowMotivation.gameObject.SetActive(true);
+//ShakeScreen();
                 return;
             }
             else
@@ -65,6 +67,8 @@ public class WashTheDishesMinigame : MinigameObject
                 }
                 Debug.Log("Interacted");
                 interactMessage.animator.SetBool("CanPlay", true);
+                lowMotivation.gameObject.SetActive(false);
+                interactMessage.interactLogo.sprite = interactMessage.RMB;
                 lowMotivationText.gameObject.SetActive(false);
 
                 isInteracted = true; // to avoid being called again since it is already interacted

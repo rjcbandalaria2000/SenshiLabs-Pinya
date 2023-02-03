@@ -45,7 +45,9 @@ public class GroceriesMinigame : MinigameObject
                 Debug.Log("Not enough motivation");
                 lowMotivationText.gameObject.SetActive(true);
                 interactMessage.animator.SetBool("CanPlay", false);
-                ShakeScreen();
+                lowMotivation.gameObject.SetActive(true);
+                interactMessage.interactLogo.sprite = interactMessage.noRMB;
+              //  ShakeScreen();
                 return;
             }
             else
@@ -59,7 +61,9 @@ public class GroceriesMinigame : MinigameObject
                 }
                 Debug.Log("Interacted");
                 lowMotivationText.gameObject.SetActive(false);
+                lowMotivation.gameObject.SetActive(false);
                 interactMessage.animator.SetBool("CanPlay", true);
+                interactMessage.interactLogo.sprite = interactMessage.RMB;
                 isInteracted = true; // to avoid being called again since it is already interacted
                 StartInteractRoutine();
                 //JumpToMiniGame();

@@ -2732,6 +2732,14 @@ PrefabInstance:
       value: Step
       objectReference: {fileID: 0}
     - target: {fileID: 6543178211513549872, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
+      propertyPath: RMB
+      value: 
+      objectReference: {fileID: 21300000, guid: 730840886c199d248af0af60b6e5f4f7, type: 3}
+    - target: {fileID: 6543178211513549872, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
+      propertyPath: noRMB
+      value: 
+      objectReference: {fileID: 21300000, guid: d39a3785ccaceb2488b926c0bdf7a1c7, type: 3}
+    - target: {fileID: 6543178211513549872, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
       propertyPath: shake.z
       value: 10
       objectReference: {fileID: 0}
@@ -4866,6 +4874,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 677417419}
     - target: {fileID: 2816954076214239179, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: lowMotivation
+      value: 
+      objectReference: {fileID: 1561432169}
+    - target: {fileID: 2816954076214239179, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
       propertyPath: motivationCost
       value: 25
       objectReference: {fileID: 0}
@@ -6608,6 +6620,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 893641066}
     - target: {fileID: 1021784888, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
+      propertyPath: lowMotivation
+      value: 
+      objectReference: {fileID: 1561432169}
+    - target: {fileID: 1021784888, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
       propertyPath: motivationCost
       value: 25
       objectReference: {fileID: 0}
@@ -7018,6 +7034,10 @@ PrefabInstance:
       propertyPath: minigameName
       value: Fold the Clothes
       objectReference: {fileID: 0}
+    - target: {fileID: 2907636213359965985, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
+      propertyPath: lowMotivation
+      value: 
+      objectReference: {fileID: 1561432169}
     - target: {fileID: 2907636213359965985, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
       propertyPath: minigameScene
       value: FoldLaundry_Test
@@ -8586,6 +8606,10 @@ PrefabInstance:
       value: -1.3009715
       objectReference: {fileID: 0}
     - target: {fileID: 6427477042207794531, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
+      propertyPath: lowMotivation
+      value: 
+      objectReference: {fileID: 1561432169}
+    - target: {fileID: 6427477042207794531, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
       propertyPath: motivationCost
       value: 25
       objectReference: {fileID: 0}
@@ -8694,6 +8718,10 @@ PrefabInstance:
       propertyPath: preReqObj
       value: 
       objectReference: {fileID: 1114840999}
+    - target: {fileID: 5285038560494157795, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
+      propertyPath: lowMotivation
+      value: 
+      objectReference: {fileID: 1561432169}
     - target: {fileID: 5285038560494157795, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
       propertyPath: motivationCost
       value: 20
@@ -8867,6 +8895,26 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7148304158928383472, guid: e41e923d36dd9184699d21fe2e39658e, type: 3}
   m_PrefabInstance: {fileID: 1142555485}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1142555489
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142555487}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c94861b9c7fe88248a225a816538c9f3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1144538572 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2816954076488409270, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
@@ -13683,11 +13731,31 @@ PrefabInstance:
       value: -0.15360263
       objectReference: {fileID: 0}
     - target: {fileID: 8203217127653288426, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203217127653288426, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203217127653288426, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203217127653288426, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203217127653288426, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -2.42
       objectReference: {fileID: 0}
     - target: {fileID: 8203217127653288426, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8203217127653288426, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -13714,6 +13782,26 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8111840528028610564, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
   m_PrefabInstance: {fileID: 1603101463}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1603101467
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603101466}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c94861b9c7fe88248a225a816538c9f3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1618416711 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2623126533286589074, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
@@ -14188,6 +14276,10 @@ PrefabInstance:
       propertyPath: preReqObj
       value: 
       objectReference: {fileID: 1114840999}
+    - target: {fileID: -4991398368355363817, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
+      propertyPath: lowMotivation
+      value: 
+      objectReference: {fileID: 1561432169}
     - target: {fileID: -4991398368355363817, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
       propertyPath: motivationCost
       value: 20
@@ -14714,6 +14806,10 @@ PrefabInstance:
       propertyPath: preReqObj
       value: 
       objectReference: {fileID: 893641065}
+    - target: {fileID: -8512082004905795788, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
+      propertyPath: lowMotivation
+      value: 
+      objectReference: {fileID: 1561432169}
     - target: {fileID: -8512082004905795788, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
       propertyPath: motivationCost
       value: 20
@@ -18418,6 +18514,26 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1633634034870190505, guid: 7063bb097329d3943bf29bf5273b9aee, type: 3}
   m_PrefabInstance: {fileID: 9115556523157542575}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &9115556523157542578
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9115556523157542577}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c94861b9c7fe88248a225a816538c9f3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &9188597008347393596
 GameObject:
   m_ObjectHideFlags: 0

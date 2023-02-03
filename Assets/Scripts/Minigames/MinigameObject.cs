@@ -27,6 +27,7 @@ public class MinigameObject : MonoBehaviour
     public GameObject completeState;
     public GameObject lowMotivationText;
     public DisplayInteractMessage interactMessage;
+    public DisplayLowMotivation lowMotivation;
    // public ParticleSystem glow;
     private void Awake()
     {
@@ -129,10 +130,10 @@ public class MinigameObject : MonoBehaviour
 
     }
 
-    public void ShakeScreen()
-    {
-        Camera camera = Camera.main;
+    //public void ShakeScreen()
+    //{
+    //    Camera camera = Camera.main;
 
-        camera.DOShakePosition(0.8f, 2, 5, 90, true).WaitForCompletion();
-    }
+    //    camera.DOShakePosition(0.8f, 2, 5, 90, true).WaitForCompletion();
+    //}
 }
