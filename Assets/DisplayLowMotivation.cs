@@ -52,13 +52,13 @@ public class DisplayLowMotivation : MonoBehaviour
 
     public IEnumerator MoveTransition()
     {
-         transform.gameObject.GetComponent<Image>().DOFade(255, 0.3f);
+         
     //    transform.gameObject.GetComponent<Image>().DOFade(0, 1f);
 
-        rectTransform.DOAnchorPos(endPosition, 0.3f).WaitForCompletion();
-
+        rectTransform.DOAnchorPos(endPosition, 3f).WaitForCompletion();
+      ///  transform.gameObject.GetComponent<Image>().DOFade(255, 3f);
         // transform.gameObject.GetComponent<Image>().DOFade(255, 1f);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
 
 
         gameObject.SetActive(false);
