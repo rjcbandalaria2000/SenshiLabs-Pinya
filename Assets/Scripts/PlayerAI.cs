@@ -24,8 +24,9 @@ public class PlayerAI : MonoBehaviour
 
     public AIDestinationSetter AiSetter;
 
-
     private StepSFX stepSFX;
+
+    Vector2 lastPlayerPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -90,31 +91,44 @@ public class PlayerAI : MonoBehaviour
 
    public IEnumerator goToTargetRoutine(int index)
     {
-        Vector3 targetPos = wayPoints[index].transform.position;
+        Vector2 targetPos = wayPoints[index].transform.position;
         AiSetter.target = wayPoints[index].transform;
-        while (Vector3.Distance(this.transform.position,AiSetter.target.position) > 1)
+
+        lastPlayerPos = Vector2.zero;
+        while (Vector2.Distance(this.transform.position,AiSetter.target.position) > 1)
         {
-            //targetPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-            //targetPosition.z = this.transform.position.z;
-
-
-            // for model flipping based on where the player is going 
-
-            Vector2 lookDirection = targetPos - this.transform.position;
-            if (lookDirection.normalized.x > 0)
+            //lastPlayerPos = this.transform.position;
+            if(lastPlayerPos != null || lastPlayerPos != Vector2.zero)
             {
-                //the target position is going right
-                playerModel.rotation = Quaternion.Euler(0, flippedAngle, 0);
-            }
-            else if (lookDirection.normalized.x < 0)
-            {
-                playerModel.rotation = Quaternion.Euler(0, normalAngle, 0);
+                //targetPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+                //targetPosition.z = this.transform.position.z;
+
+                // for model flipping based on where the player is going 
+
+                // Vector2 lookDirection = targetPos - (Vector2)this.transform.position;
+                Vector2 lookDirection = (Vector2)this.transform.position - lastPlayerPos;
+
+                // Vector2 lookDirection2 = 
+
+                if (lookDirection.normalized.x > 0)
+                {
+                    //the target position is going right    
+                    playerModel.rotation = Quaternion.Euler(0, flippedAngle, 0);
+                }
+                else if (lookDirection.normalized.x < 0)
+                {
+                    playerModel.rotation = Quaternion.Euler(0, normalAngle, 0);
+                }
+
+                animator.SetBool("IsIdle", false);
             }
 
-            animator.SetBool("IsIdle", false);
             //  transform.position = Vector2.Lerp(this.transform.position, wayPoints[index].transform.position, moveSpeed * Time.deltaTime);
-           
-            yield return null;
+            lastPlayerPos = this.transform.position;
+
+            yield return new WaitForSeconds(0.15f);
+
+          
             //stepSFX.Step();
         }
 
