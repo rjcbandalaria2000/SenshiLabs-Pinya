@@ -1125,7 +1125,7 @@ GameObject:
   - component: {fileID: 480825549}
   - component: {fileID: 480825552}
   - component: {fileID: 480825551}
-  - component: {fileID: 480825550}
+  - component: {fileID: 480825553}
   m_Layer: 0
   m_Name: ~UIManager
   m_TagString: Untagged
@@ -1148,31 +1148,6 @@ Transform:
   m_Father: {fileID: 645191246}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &480825550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 480825548}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 475ae4fca14c844448077912c08fbdd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerMotivation: {fileID: 0}
-  playerPinyaMeter: {fileID: 0}
-  isGameFinished: 0
-  MotivationValueChange: 0
-  PinyaMeterValueChange: 0
-  currentTime: 0
-  maxTime: 20
-  speedCounter: 1
-  player: {fileID: 0}
-  goodEndingSceneName: 
-  badEndingSceneName: 
-  tutorial: {fileID: 0}
-  tutorial2: {fileID: 0}
 --- !u!114 &480825551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1220,6 +1195,19 @@ MonoBehaviour:
   askMomButton: {fileID: 0}
   tutorialGO: {fileID: 1403501167}
   confirmationGO: {fileID: 1248121554}
+  creditsGO: {fileID: 0}
+--- !u!114 &480825553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480825548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c181a4815ee67c49846764ff353adc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &504938702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6354,6 +6342,8 @@ MonoBehaviour:
   speedTimer: 1
   gameStartTime: 3
   countdownTimerUI: {fileID: 2056440752}
+  motivationalCost: 20
+  previousVal: 0
   RequiredPoints: 10
   PlayerPoints: 0
   motivationalPoints: 50
