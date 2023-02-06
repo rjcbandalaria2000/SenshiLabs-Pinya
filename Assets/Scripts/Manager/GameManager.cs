@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour
     public GameObject tutorial, tutorial2;
     public AIDestinationSetter playerAi;
 
+    public List<Collider2D> colliders;
+
     private void Awake()
     {
         SingletonManager.Register(this);
@@ -89,8 +91,12 @@ public class GameManager : MonoBehaviour
             StartGameTransition();
         }
 
-       
-       // StartGameTransition();
+        for (int i = 0; i < colliders.Count; i++)
+        {
+            colliders[i].enabled = false;
+        }
+
+        // StartGameTransition();
     }
 
     public void StartGameTransition()
@@ -151,6 +157,7 @@ public class GameManager : MonoBehaviour
         playerAi.enabled = true;
         playerAi.target = null;
         player.gameObject.GetComponent<PlayerAI>().animator.SetBool("IsIdle", true);
+        ActivateColliders();
 
         //Activate player controls 
         //  playerControls.enabled = true;
@@ -264,5 +271,13 @@ public class GameManager : MonoBehaviour
     {
         tutorial2.SetActive(false);
         UI.ActivateGameUI();
+    }
+
+    public void ActivateColliders()
+    {
+        for(int i = 0; i < colliders.Count; i++)
+        {
+            colliders[i].enabled = true;
+        }
     }
 }

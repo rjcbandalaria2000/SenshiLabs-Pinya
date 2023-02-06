@@ -126,14 +126,14 @@ public class PlayerAI : MonoBehaviour
             //  transform.position = Vector2.Lerp(this.transform.position, wayPoints[index].transform.position, moveSpeed * Time.deltaTime);
             lastPlayerPos = this.transform.position;
 
-            yield return new WaitForSeconds(0.15f);
+            yield return new WaitForSeconds(0.1f);
 
           
             //stepSFX.Step();
         }
 
         yield return new WaitForSeconds(0.5f);
-        AiSetter.target = null;
+        //AiSetter.target = null;
         animator.SetBool("IsIdle", true);
       
        
