@@ -65,6 +65,7 @@ public class SleepingMinigameManager : MinigameManager
     {
         Events.OnObjectiveUpdate.RemoveListener(CheckIfFinished);
         Events.OnSceneChange.RemoveListener(OnSceneChange);
+        DisableControls();
 
     }
 
@@ -253,5 +254,16 @@ public class SleepingMinigameManager : MinigameManager
     public override void GameMinigameResume()
     {
         Time.timeScale = 1f;
+    }
+
+    public void DisableControls()
+    {
+        if (basket == null) { return; }
+
+        MouseFollow basketFollow = basket.GetComponent<MouseFollow>();
+        if (basketFollow)
+        {
+            basketFollow.canMove = false;
+        }
     }
 }
