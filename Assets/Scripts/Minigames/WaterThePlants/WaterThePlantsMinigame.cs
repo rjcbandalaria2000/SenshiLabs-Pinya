@@ -49,7 +49,11 @@ public class WaterThePlantsMinigame : MinigameObject
                 {
                     // if there is not enough motivation amount
                     Debug.Log("Not enough motivation");
-                    ShakeScreen();
+                    interactMessage.animator.SetBool("CanPlay", false);
+                    lowMotivationText.gameObject.SetActive(true);
+                    lowMotivation.gameObject.SetActive(true);
+                    interactMessage.interactLogo.sprite = interactMessage.noRMB;
+                    // ShakeScreen();
                     return;
                 }
                 else
@@ -62,6 +66,10 @@ public class WaterThePlantsMinigame : MinigameObject
                         playerControl.enabled = false;
                     }
                     Debug.Log("Interacted");
+                    lowMotivation.gameObject.SetActive(false);
+                    interactMessage.animator.SetBool("CanPlay", true);
+                    lowMotivationText.gameObject.SetActive(false);
+                    interactMessage.interactLogo.sprite = interactMessage.RMB;
                     isInteracted = true; // to avoid being called again since it is already interacted
                     StartInteractRoutine();
                 }

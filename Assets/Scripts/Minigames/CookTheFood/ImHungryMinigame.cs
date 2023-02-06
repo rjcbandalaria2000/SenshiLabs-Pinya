@@ -47,7 +47,11 @@ public class ImHungryMinigame : MinigameObject
             {
                 // if there is not enough motivation amount
                 Debug.Log("Not enough motivation");
-                ShakeScreen();
+                lowMotivationText.gameObject.SetActive(true);
+                interactMessage.animator.SetBool("CanPlay", false);
+                interactMessage.interactLogo.sprite = interactMessage.noRMB;
+                // ShakeScreen();
+                lowMotivation.gameObject.SetActive(true);
                 return;
             }
             else
@@ -60,6 +64,11 @@ public class ImHungryMinigame : MinigameObject
                     playerControl.enabled = false;
                 }
                 Debug.Log("Interacted");
+                lowMotivationText.gameObject.SetActive(false);
+                lowMotivation.gameObject.SetActive(false);
+                interactMessage.interactLogo.sprite = interactMessage.RMB;
+                interactMessage.animator.SetBool("CanPlay", true);
+
                 isInteracted = true; // to avoid being called again since it is already interacted
                 StartInteractRoutine();
             }

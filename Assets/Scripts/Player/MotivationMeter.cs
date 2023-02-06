@@ -21,6 +21,8 @@ public class MotivationMeter : MonoBehaviour
 
     public List<GameObject> bubbleSpeeches;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,6 +70,7 @@ public class MotivationMeter : MonoBehaviour
         else
         {
             Debug.Log("Motivation is already at 0");
+
         }
         CheckMotivationalMeter();
         Events.OnChangeMeter.Invoke();

@@ -39,19 +39,28 @@ public class CleanTheHouseMinigame : MinigameObject
                 {
                     // if there is not enough motivation amount
                     Debug.Log("Not enough motivation");
-                    ShakeScreen();
+                    lowMotivationText.gameObject.SetActive(true);
+                    interactMessage.animator.SetBool("CanPlay", false);
+                    interactMessage.interactLogo.sprite = interactMessage.noRMB;
+                    lowMotivation.gameObject.SetActive(true);
+                   // ShakeScreen();
                     return;
                 }
                 else
                 {
                     //playerMotivation.DecreaseMotivation(motivationCost);
                     //Disable player controls 
+                    interactMessage.animator.SetBool("CanPlay", true);
                     PlayerControls playerControl = player.GetComponent<PlayerControls>();
                     if (playerControl)
                     {
                         playerControl.enabled = false;
                     }
                     Debug.Log("Interacted");
+                    lowMotivationText.gameObject.SetActive(false);
+                    lowMotivation.gameObject.SetActive(false);
+                    interactMessage.interactLogo.sprite = interactMessage.RMB;
+
                     isInteracted = true; // to avoid being called again since it is already interacted
                     StartInteractRoutine();
                     //JumpToMiniGame();

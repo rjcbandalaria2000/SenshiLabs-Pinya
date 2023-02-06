@@ -37,7 +37,11 @@ public class GetWaterMinigame : MinigameObject
             {
                 // if there is not enough motivation amount
                 Debug.Log("Not enough motivation");
-                ShakeScreen();
+                interactMessage.animator.SetBool("CanPlay", false);
+                lowMotivationText.gameObject.SetActive(true);
+                interactMessage.interactLogo.sprite = interactMessage.noRMB;
+                lowMotivation.gameObject.SetActive(true);
+              //  ShakeScreen();
                 return;
             }
             else
@@ -50,6 +54,10 @@ public class GetWaterMinigame : MinigameObject
                     playerControl.enabled = false;
                 }
                 Debug.Log("Interacted");
+                interactMessage.animator.SetBool("CanPlay", true);
+                lowMotivationText.gameObject.SetActive(false);
+                lowMotivation.gameObject.SetActive(false);
+                interactMessage.interactLogo.sprite = interactMessage.RMB;
                 isInteracted = true; // to avoid being called again since it is already interacted
                 StartInteractRoutine();
             }
