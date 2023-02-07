@@ -47,4 +47,12 @@ public class ClickMinigame : MonoBehaviour
 
         Debug.Log("Mouse Over Object;");
     }
+
+    private void OnMouseExit()
+    {
+        if (hoverEffect != null)
+        {
+            this.hoverEffect.SetActive(false);
+        }
+    }
 }
