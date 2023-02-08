@@ -906,6 +906,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &55731334 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6543178211513549872, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
+  m_PrefabInstance: {fileID: 431213299}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a9f3deb060405346ac35ebf74bf6d8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &62659727
 GameObject:
   m_ObjectHideFlags: 0
@@ -1744,6 +1755,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &237125354 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1736519000002596106, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
+  m_PrefabInstance: {fileID: 431213299}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e92cdbe44ac10fa48b44a605c0a59626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &281171957 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2759568113863651915, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
@@ -2830,6 +2852,10 @@ PrefabInstance:
       propertyPath: wayPoints.Array.data[9]
       value: 
       objectReference: {fileID: 319734641}
+    - target: {fileID: 4834784674594947856, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6543178212547229291, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
       propertyPath: m_Size.x
       value: 1.2094576
@@ -5008,9 +5034,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2816954076214239179, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: lowMotivation
+      value: 
+      objectReference: {fileID: 237125354}
+    - target: {fileID: 2816954076214239179, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
       propertyPath: motivationCost
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 2816954076214239179, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: interactMessage
+      value: 
+      objectReference: {fileID: 55731334}
+    - target: {fileID: 2816954076214239179, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
+      propertyPath: lowMotivationText
+      value: 
+      objectReference: {fileID: 1419664533}
     - target: {fileID: 2816954076488409267, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
       propertyPath: m_Name
       value: Broom-CleanTheHouse
@@ -6791,9 +6829,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 893641066}
     - target: {fileID: 1021784888, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
+      propertyPath: lowMotivation
+      value: 
+      objectReference: {fileID: 237125354}
+    - target: {fileID: 1021784888, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
       propertyPath: motivationCost
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 1021784888, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
+      propertyPath: interactMessage
+      value: 
+      objectReference: {fileID: 55731334}
+    - target: {fileID: 1021784888, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
+      propertyPath: lowMotivationText
+      value: 
+      objectReference: {fileID: 1419664533}
     - target: {fileID: 1843540905, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
       propertyPath: iconSprite
       value: 
@@ -7303,6 +7353,10 @@ PrefabInstance:
       value: Fold the Clothes
       objectReference: {fileID: 0}
     - target: {fileID: 2907636213359965985, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
+      propertyPath: lowMotivation
+      value: 
+      objectReference: {fileID: 237125354}
+    - target: {fileID: 2907636213359965985, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
       propertyPath: minigameScene
       value: FoldLaundry_Test
       objectReference: {fileID: 0}
@@ -7311,9 +7365,17 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2907636213359965985, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
+      propertyPath: interactMessage
+      value: 
+      objectReference: {fileID: 55731334}
+    - target: {fileID: 2907636213359965985, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
       propertyPath: uncompleteState
       value: 
       objectReference: {fileID: 917626510}
+    - target: {fileID: 2907636213359965985, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
+      propertyPath: lowMotivationText
+      value: 
+      objectReference: {fileID: 1419664533}
     - target: {fileID: 3778097322742544426, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.38
@@ -8974,9 +9036,21 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6427477042207794531, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
+      propertyPath: lowMotivation
+      value: 
+      objectReference: {fileID: 237125354}
+    - target: {fileID: 6427477042207794531, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
       propertyPath: motivationCost
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 6427477042207794531, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
+      propertyPath: interactMessage
+      value: 
+      objectReference: {fileID: 55731334}
+    - target: {fileID: 6427477042207794531, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
+      propertyPath: lowMotivationText
+      value: 
+      objectReference: {fileID: 1419664533}
     - target: {fileID: 6862866902136498444, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
       propertyPath: m_Layer
       value: 10
@@ -9142,9 +9216,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1114840999}
     - target: {fileID: 5285038560494157795, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
+      propertyPath: lowMotivation
+      value: 
+      objectReference: {fileID: 237125354}
+    - target: {fileID: 5285038560494157795, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
       propertyPath: motivationCost
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5285038560494157795, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
+      propertyPath: interactMessage
+      value: 
+      objectReference: {fileID: 55731334}
+    - target: {fileID: 5285038560494157795, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
+      propertyPath: lowMotivationText
+      value: 
+      objectReference: {fileID: 1419664533}
     - target: {fileID: 5285038560494157795, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
       propertyPath: preRequisiteTasks.Array.data[0]
       value: 
@@ -11235,6 +11321,11 @@ Transform:
   m_Father: {fileID: 2024983726}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1419664533 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4748710150097153235, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
+  m_PrefabInstance: {fileID: 431213299}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1439431568
 GameObject:
   m_ObjectHideFlags: 0
@@ -14795,13 +14886,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1114840999}
     - target: {fileID: -4991398368355363817, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
+      propertyPath: lowMotivation
+      value: 
+      objectReference: {fileID: 237125354}
+    - target: {fileID: -4991398368355363817, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
       propertyPath: motivationCost
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: -4991398368355363817, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
+      propertyPath: interactMessage
+      value: 
+      objectReference: {fileID: 55731334}
+    - target: {fileID: -4991398368355363817, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
       propertyPath: uncompleteState
       value: 
       objectReference: {fileID: 1896368318}
+    - target: {fileID: -4991398368355363817, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
+      propertyPath: lowMotivationText
+      value: 
+      objectReference: {fileID: 1419664533}
     - target: {fileID: -4991398368355363817, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
       propertyPath: preRequisiteTasks.Array.data[0]
       value: 
@@ -15351,9 +15454,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 893641065}
     - target: {fileID: -8512082004905795788, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
+      propertyPath: lowMotivation
+      value: 
+      objectReference: {fileID: 237125354}
+    - target: {fileID: -8512082004905795788, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
       propertyPath: motivationCost
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: -8512082004905795788, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
+      propertyPath: interactMessage
+      value: 
+      objectReference: {fileID: 55731334}
+    - target: {fileID: -8512082004905795788, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
+      propertyPath: lowMotivationText
+      value: 
+      objectReference: {fileID: 1419664533}
     - target: {fileID: -8512082004905795788, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
       propertyPath: preRequisiteTasks.Array.data[0]
       value: 
