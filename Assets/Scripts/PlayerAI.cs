@@ -133,6 +133,17 @@ public class PlayerAI : MonoBehaviour
         }
 
         yield return new WaitForSeconds(0.5f);
+
+        if (wayPoints[index].gameObject.transform.parent.position.x > 0)
+        {
+            //the target position is going right    
+            playerModel.rotation = Quaternion.Euler(0, flippedAngle, 0);
+        }
+        else if (wayPoints[index].gameObject.transform.parent.position.x < 0)
+        {
+            playerModel.rotation = Quaternion.Euler(0, normalAngle, 0);
+        }
+
         //AiSetter.target = null;
         animator.SetBool("IsIdle", true);
       
