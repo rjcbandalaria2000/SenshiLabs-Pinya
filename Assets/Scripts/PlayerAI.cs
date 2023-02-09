@@ -62,6 +62,7 @@ public class PlayerAI : MonoBehaviour
             {
                 // load last location of the player
                 this.transform.position = playerData.playerLocation;
+
                 targetPosition = playerData.playerLocation;
                 Debug.Log("Going to last location");
             }

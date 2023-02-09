@@ -12,7 +12,7 @@ public class PlayerInteract : MonoBehaviour
     {
         StopInteractRoutine();
         interactRoutine = null;
-        InteractableObject = null;
+        //InteractableObject = null;
     }
     // Start is called before the first frame update
     void Start()

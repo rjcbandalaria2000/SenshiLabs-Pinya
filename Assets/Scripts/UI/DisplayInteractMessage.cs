@@ -18,14 +18,18 @@ public class DisplayInteractMessage : MonoBehaviour
     public Sprite RMB;
     public Sprite noRMB;
 
+    public MotivationMeter playerMotivation;
+    public PlayerInteract objCollided;
+
     // Start is called before the first frame update
     private void Awake()
     {
         animator = gameObject.GetComponent<Animator>();
+        Initialize();
     }
     void Start()
     {
-        Initialize();
+        this.gameObject.SetActive(false);
     }
 
     public void Initialize()
@@ -41,7 +45,7 @@ public class DisplayInteractMessage : MonoBehaviour
         Events.OnEnterInteraction.AddListener(ChangeMessage);
         Events.OnFinishInteract.AddListener(RemoveMessage);
         Events.OnSceneChange.AddListener(OnSceneChange);
-        this.gameObject.SetActive(false);
+
     }
 
     public void ChangeMessage()
@@ -50,10 +54,11 @@ public class DisplayInteractMessage : MonoBehaviour
         if (!this.gameObject.activeSelf)
         {
             this.gameObject.SetActive(true);
-          //  StartCoroutine(RMBAnimation());
+            //  StartCoroutine(RMBAnimation());
+
+
 
         }
-       
 
 
     }

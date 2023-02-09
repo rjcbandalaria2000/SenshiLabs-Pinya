@@ -2926,6 +2926,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6543178211513549872, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
+      propertyPath: InteractableObj
+      value: 
+      objectReference: {fileID: 1910625149}
+    - target: {fileID: 6543178211513549872, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
+      propertyPath: playerMotivationMeter
+      value: 
+      objectReference: {fileID: 312946478}
     - target: {fileID: 6543178212547229291, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
       propertyPath: m_Size.x
       value: 1.2094576
@@ -2966,6 +2974,22 @@ PrefabInstance:
       propertyPath: m_Simulated
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6543178212848092717, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
+      propertyPath: m_Size.x
+      value: 1.5037841
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543178212848092717, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
+      propertyPath: m_Size.y
+      value: 1.8103385
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543178212848092717, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.072609365
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543178212848092717, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.012055039
+      objectReference: {fileID: 0}
     - target: {fileID: 6543178212848092719, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -2980,7 +3004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6543178212848092719, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6543178212848092719, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5141,7 +5165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2816954076488409269, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2816954076488409270, guid: 9a500d2f2fe968c4bb4e997154dd0982, type: 3}
       propertyPath: m_RootOrder
@@ -7275,7 +7299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8510290888525592842, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8510290888525592844, guid: f55ff86e914cc6f4099cf873f858b868, type: 3}
       propertyPath: m_Name
@@ -7716,6 +7740,10 @@ PrefabInstance:
     - target: {fileID: 4735852996718008038, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
       propertyPath: m_Offset.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4735852996718008038, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5508432694659083454, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
       propertyPath: m_Sprite
@@ -9260,7 +9288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2623126533286589073, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2623126533286589074, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
       propertyPath: m_RootOrder
@@ -9536,7 +9564,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1278223492080597535, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4052544427327297394, guid: 885f05cd4654f584f9e787e6a8c24ce8, type: 3}
       propertyPath: m_Sprite
@@ -9845,7 +9873,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7148304158928383478, guid: e41e923d36dd9184699d21fe2e39658e, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e41e923d36dd9184699d21fe2e39658e, type: 3}
@@ -14792,7 +14820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 44300141547989911, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 213723507676344739, guid: 27c61c6f32efd4f45b01e2359a24735a, type: 3}
       propertyPath: m_Layer
@@ -15759,7 +15787,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4035600955571030606, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4035600956723155972, guid: 0f8b2c86c0f216a45b04df817fa1c4e1, type: 3}
       propertyPath: m_Size.y
@@ -15876,6 +15904,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPos: {x: 0, y: 0, z: 0}
   size: {x: 0, y: 0, z: 0}
+--- !u!114 &1910625149 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 312946476, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
+  m_PrefabInstance: {fileID: 431213299}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312946472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eef13ea121cd7d448bb3adae8be92aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1913686238 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2916342862115898981, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
@@ -16259,7 +16298,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 325155188160618079, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 325155189039054868, guid: 1d5e6cb2884dba240a538f7353a04cfe, type: 3}
       propertyPath: m_LocalPosition.x

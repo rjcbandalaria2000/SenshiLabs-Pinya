@@ -11,7 +11,7 @@ public class PlayerData : MonoBehaviour
     public float                    maxPinyaData;
     public int                      minigamesPlayed;
     public bool                     hasSaved;
-    public Vector2                  playerLocation;
+    public Vector3                  playerLocation;
     public bool                     firstTime;
 
     [Header("Minigames")]

@@ -50,6 +50,17 @@ public class MinigameDetector : MonoBehaviour
         }
     }
 
+    //private void OnTriggerStay2D(Collider2D collision)
+    //{
+    //    Debug.Log("Colliding");
+    //    Interactable interactedObject = collision.gameObject.GetComponent<Interactable>();
+    //    if (interactedObject)
+    //    {
+    //        Events.OnEnterInteraction.Invoke();
+
+    //    }
+
+    //}
     public void OnTriggerExit2D(Collider2D collision)
     {
         Interactable interactedObject = collision.gameObject.GetComponent<Interactable>();
