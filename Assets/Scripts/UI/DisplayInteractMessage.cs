@@ -19,7 +19,7 @@ public class DisplayInteractMessage : MonoBehaviour
     public Sprite noRMB;
 
     public MotivationMeter playerMotivation;
-    public PlayerInteract objCollided;
+    public Interactable objCollided;
 
     // Start is called before the first frame update
     private void Awake()
@@ -39,6 +39,8 @@ public class DisplayInteractMessage : MonoBehaviour
         {
             Parent = this.gameObject.transform.parent.GetComponent<UnitInfo>().Parent;
         }
+
+        playerMotivation = this.GetComponentInParent<UnitInfo>().Parent.GetComponent<MotivationMeter>();
         Assert.IsNotNull(Parent, "Parent is not set or is null");
 
         
@@ -55,9 +57,16 @@ public class DisplayInteractMessage : MonoBehaviour
         {
             this.gameObject.SetActive(true);
             //  StartCoroutine(RMBAnimation());
+            objCollided = this.GetComponentInParent<UnitInfo>().Parent.gameObject.GetComponent<PlayerInteract>().InteractableObject;
+        }
 
-
-
+        if(playerMotivation.MotivationAmount < objCollided.gameObject.GetComponent<MinigameObject>().motivationCost)
+        {
+            interactLogo.sprite = noRMB;
+        }
+        else
+        {
+            interactLogo.sprite = RMB;
         }
 
 

@@ -34,7 +34,7 @@ public class MinigameDetector : MonoBehaviour
         Interactable interactedObject = collision.gameObject.GetComponent<Interactable>();
         if (interactedObject)
         {
-            Events.OnEnterInteraction.Invoke();
+            
 
             PlayerInteract playerInteract = Parent.GetComponent<PlayerInteract>();
             if (playerInteract == null) { return; }
@@ -47,6 +47,8 @@ public class MinigameDetector : MonoBehaviour
                 Events.OnInteract.AddListener(detectedMinigame.Interact);
                 Events.OnFinishInteract.AddListener(detectedMinigame.EndInteract);
             }
+
+            Events.OnEnterInteraction.Invoke();
         }
     }
 
