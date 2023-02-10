@@ -8,6 +8,7 @@ public class ClickMinigame : MonoBehaviour
     public int waypointIndex;
 
     public GameObject hoverEffect;
+   // public List<SpriteRenderer> sprites;
     //public SpriteRenderer objSprite;
     //public Sprite unHoverSprite;
     //public Sprite hoverSprite;
@@ -43,6 +44,10 @@ public class ClickMinigame : MonoBehaviour
         if(hoverEffect != null)
         {
             this.hoverEffect.SetActive(true);
+            //foreach(SpriteRenderer sprite in sprites)
+            //{
+            //    sprite.enabled = true;
+            //}
         }
 
         Debug.Log("Mouse Over Object;");
@@ -53,6 +58,11 @@ public class ClickMinigame : MonoBehaviour
         if (hoverEffect != null)
         {
             this.hoverEffect.SetActive(false);
+            
+            //foreach (SpriteRenderer sprite in sprites)
+            //{
+            //    sprite.enabled = false;
+            //}
         }
     }
 }

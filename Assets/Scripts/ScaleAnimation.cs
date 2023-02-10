@@ -12,7 +12,7 @@ public class ScaleAnimation : MonoBehaviour
   
     private void OnEnable()
     {
-        gameObject.transform.DOShakeScale(0.5f,0.2f,2,90,true).SetLoops(-1, LoopType.Yoyo);
+        gameObject.transform.DOShakeScale(1f,0.1f,0, 0,true).SetLoops(-1, LoopType.Yoyo);
         //  gameObject.transform.DOScale(size, 1f).SetLoops(-1, LoopType.Yoyo);
     }
 
