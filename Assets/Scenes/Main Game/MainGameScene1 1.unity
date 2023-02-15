@@ -9936,20 +9936,26 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 784083599298499573, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
   m_PrefabInstance: {fileID: 1114840998}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1114841004
-MonoBehaviour:
+--- !u!95 &1114841004
+Animator:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1114841003}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bc6b48692aa5ab478dfff635c2692c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startPos: {x: 0.9126024, y: 1.14308, z: 0.547452}
-  size: {x: 0, y: 0, z: 0}
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2564f3ecdd8b6574f9a073d986addb5c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1139237638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12455,6 +12461,7 @@ GameObject:
   - component: {fileID: 1382251139}
   - component: {fileID: 1382251141}
   - component: {fileID: 1382251140}
+  - component: {fileID: 1382251142}
   m_Layer: 0
   m_Name: SpriteSheet_YardAndKitchen_Props_2 (1)
   m_TagString: Untagged
@@ -12490,7 +12497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {x: 0, y: 0, z: 0}
-  size: {x: 0, y: 0, z: 0}
+  size: {x: 0.12, y: 0.32, z: 0.11}
 --- !u!212 &1382251141
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12543,6 +12550,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1382251142
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382251138}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 73a5923abe13bc640a4033d7972c3840, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1419537487
 GameObject:
   m_ObjectHideFlags: 0
@@ -15317,6 +15344,7 @@ GameObject:
   - component: {fileID: 1570211907}
   - component: {fileID: 1570211910}
   - component: {fileID: 1570211909}
+  - component: {fileID: 1570211911}
   m_Layer: 0
   m_Name: SpriteSheet_YardAndKitchen_Props_2
   m_TagString: Untagged
@@ -15352,7 +15380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {x: 0, y: 0, z: 0}
-  size: {x: 0, y: 0, z: 0}
+  size: {x: 0.12, y: 0.32, z: 0.11}
 --- !u!212 &1570211910
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15405,6 +15433,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1570211911
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570211906}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3b4d787ccd09a5d4d99cce234e9e99d8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1583656505
 GameObject:
   m_ObjectHideFlags: 0
@@ -16285,6 +16333,7 @@ GameObject:
   - component: {fileID: 1796622789}
   - component: {fileID: 1796622791}
   - component: {fileID: 1796622790}
+  - component: {fileID: 1796622792}
   m_Layer: 0
   m_Name: SpriteSheet_YardAndKitchen_Props_2 (2)
   m_TagString: Untagged
@@ -16320,7 +16369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: {x: 0, y: 0, z: 0}
-  size: {x: 0, y: 0, z: 0}
+  size: {x: 0.12, y: 0.32, z: 0.11}
 --- !u!212 &1796622791
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16373,6 +16422,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1796622792
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796622788}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1c0c3ddbdc49d6d4f914487e044ab236, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!61 &1829736310 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 7148304158928383478, guid: e41e923d36dd9184699d21fe2e39658e, type: 3}
