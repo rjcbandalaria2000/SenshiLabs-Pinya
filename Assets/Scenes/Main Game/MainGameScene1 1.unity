@@ -818,7 +818,7 @@ MonoBehaviour:
   heuristic: 2
   heuristicScale: 1
   threadCount: 1
-  maxFrameTime: 1
+  maxFrameTime: 10
   batchGraphUpdates: 0
   graphUpdateBatchingInterval: 0.2
   euclideanEmbedding:
@@ -3195,6 +3195,10 @@ PrefabInstance:
     - target: {fileID: 569652437243931840, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
       propertyPath: m_TagString
       value: Step
+      objectReference: {fileID: 0}
+    - target: {fileID: 1392043630490455415, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
+      propertyPath: maxSpeed
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1392043630490455415, guid: 4fbf49b74ee9d9844bf9a6029ac1c9cc, type: 3}
       propertyPath: gravity.x
@@ -18960,6 +18964,10 @@ PrefabInstance:
       propertyPath: lifeBar
       value: 
       objectReference: {fileID: 811907666}
+    - target: {fileID: 2759568114136131008, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
+      propertyPath: pinyaCost
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2759568114136131008, guid: 26c8ca2b769152c41b96579298d3a164, type: 3}
       propertyPath: pinyaMeterUI
       value: 
