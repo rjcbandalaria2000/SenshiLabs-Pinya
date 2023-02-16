@@ -786,7 +786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAABAIex9WveCbAIAACMFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMtymzAU/RWP1nUGMPGju5Y4ThdJPHE72bCRxcVoLCRGErGdjP+9VwIMpSvL577OObrii3BpKmBW6Y3m2bPKgHyfEHcm3yZ98AnO9KDkjn9Cl/POM1u4JOpz3qjlCvHQlRlVgtWc/ZAH4ZIDBGvJc6XLdXaARBlrEM6pMIAhrayrlgh9TcgZf6YrV3LBU7Rwp088rYLJFY8MpAU9SA3vgtl9NFvGy/U0mLdlXVFTU0smaFlB5gT0pXHUDZn7NInS2gwngykhuGl5EXupvO6EVqZGVZiQcYo6PZnwboZAAfxQWNdwWP6a5wZsS0rTywPXaFjTl/xUjYslNceG2QcVtacQRLGn1XR9/i9hGvpwrlX51A0OAzfEFpwd3+iFUWMHPg/hhwF379CJiiPdC3gvQL6ojVa1zDBode1KawPRQ//3pi0pgB17vKE6AuuqtzwY3Y/TcPXyz4ng5d6F7uIG2AnlLfe7ABov5xcS9pti2haIOhZ/DPymh+FKtYFHro3FUKtSOnp7VWuXStbeM6emtonSEjzckq5AUmEvW2xjx3c4ig3GjiKP1D2edngb697EqMTDfX4QjEJbdbpdlinU6RlM8VpbwSX0pF3gBX1KlJTNig096cp2tc4pG5Qdap79u1pkNo8XK7qKF/uI3Qf7eDrPF+EyX8I8WrKI7kPid49L1EnFtiHa2oO3JvvmEves+6ZMNppWft0zTU8b/lmqgeVc5mrHNIB8bTrciIPGIfgws3XG0aAdWMulv2/ylRKh2BGy9NYo9UrXZ6tp2ndJScU/lHVIShL/EUmJg2+7vNXwweHkhnfNruT6F1BLAwQUAAAICAAAQCHs06bIHm0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNdRUEovSizIKAaKGII4pZkpIHa0krGZiblloqWJeZJRsqlBkomuWZq5oUWaRaqZkUWyUWKSoVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAAQCHsfVr3gmwCAAAjBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAQCHs06bIHm0AAAB4AAAACQAkAAAAAAAAAAAAAAC5AgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAHEDAAAAAA==
+    dataString: UEsDBBQAAAgIAABAIexTQ+uMbQIAACQFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1zmzAQ/SsenesMYOKP3lriOD0k8cTt5MJFFovRWEiMJGI7Gf/3rgQYSk+W39uP91YrvgiXpgJmld5onj2rDMj3CXFn8m3Sk09wpgcld/wTuph3ntnCBVEf80YtV4iHLs2oEqzm7Ic8CBccIFhLnitdrrMDJMpYg3BOhQGktLIuWyL0NSFn/JmuXMoFT9HCnT7xtAomVzwykBb0IDS8C2b30WwZL9fTYN6mdUlNTi2ZoGUFmTPQp8ZR12TuwyRaayOcDaaE4KbVReyl8r4TWpkaXWFAxin69GLCuxkCBfBDYV3BYfprnhuwrShNLw9c48CauuSnaqZYUnNslH1QUXsJQRR7WU3V5/8CpqGnc63Kp65xGLgmtuDs+EYvjBo7mPMQfhho9xM6UXGkewHvBcgXtdGqlhmSVtcutTYQPfR/b96SAtixxxupI7Cu+pEHo/txHq7e/jkRvNw76i5ugJ1QfuR+F0Dj5fxCwX5TTFsCUafij4Hf9DBcqZZ45NpYpFqX0snbq1q7ULL2M3NuapsoLcHDregKJBX2ssUydnyHI27QdsQ8Uvd42uYt172JUYqH+/ggGFFbdbpdlinU6RlM8VpbweWwmGNecFCJkrLZMTNiXd6u1jll0Js91Dz7d7fIbB4vVnQVL/YRuw/28XSeL8JlvoR5tGQR3YfELx+XaJSKbaO0nQ9em+yLS1y07qMy2Wha+X3PND1t+GepBjPnMlc7pgHka1PhJhw0NsGXma0zjhPagbVc+gsnXykRih0hS2+FUu90fbaapn2VlFT8Q1mHpCTxX5GUOPi2zFsNHxxOrnlX7EqufwFQSwMEFAAACAgAAEAh7NOmyB5tAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tJKxmYm5ZaKliXmSUbKpQZKJrlmauaFFmkWqmZFFslFikqFSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAEAh7FND64xtAgAAJAUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAEAh7NOmyB5tAAAAeAAAAAkAJAAAAAAAAAAAAAAAugIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAAByAwAAAAA=
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -7053,7 +7053,7 @@ GameObject:
   m_Component:
   - component: {fileID: 870316041}
   - component: {fileID: 870316042}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DiningTable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7068,7 +7068,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 870316040}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.18, y: -0.87000006, z: 9.880768}
+  m_LocalPosition: {x: 3.46, y: -2.11, z: 9.880768}
   m_LocalScale: {x: 2.1316, y: 1.7887, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8026,7 +8026,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778097322742544426, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.47
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 4557378344841969085, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
       propertyPath: m_Layer
@@ -8106,11 +8106,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4735852996718008037, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.96
+      value: 7.17
       objectReference: {fileID: 0}
     - target: {fileID: 4735852996718008037, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.62
+      value: 1.41
       objectReference: {fileID: 0}
     - target: {fileID: 4735852996718008037, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8189,6 +8189,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7035147809103243502, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7874245065383101772, guid: b6018f2a0be39ee4fb122780f0e2cfcc, type: 3}
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
@@ -8776,13 +8780,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1006122974}
   - component: {fileID: 1006122975}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Chair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1006122974
 Transform:
   m_ObjectHideFlags: 0
@@ -9723,6 +9727,10 @@ PrefabInstance:
       propertyPath: iconSprite
       value: 
       objectReference: {fileID: 21300000, guid: 5813b0479d2b6e84ea3115bf65b7aff4, type: 3}
+    - target: {fileID: 784083599298499573, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2623126533286589073, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
       propertyPath: m_Size.x
       value: 13.008668
@@ -9859,6 +9867,10 @@ PrefabInstance:
       propertyPath: hoverEffect
       value: 
       objectReference: {fileID: 1114841003}
+    - target: {fileID: 5047885580580159306, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5096522019583905802, guid: 108d91e3577918d48a72d194004f8be8, type: 3}
       propertyPath: m_LocalPosition.y
       value: -9
