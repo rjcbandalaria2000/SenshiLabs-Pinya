@@ -23,11 +23,13 @@ public class Leaves : MonoBehaviour
     private Vector2 initialPosition;
     public GameObject child;
 
-    
+    AudioSource audioSource;
+    public AudioClip audioClip;
+
     // Start is called before the first frame update
     void Start()
     {
-       
+        audioSource = this.GetComponent<AudioSource>();
     }
 
     private void OnEnable()
@@ -67,6 +69,7 @@ public class Leaves : MonoBehaviour
         }
         if (swipedRight && swipedLeft)
         {
+            audioSource.PlayOneShot(audioClip);
             swipeCounter++;
             swipedLeft = false;
             swipedRight = false;
