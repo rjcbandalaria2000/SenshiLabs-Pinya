@@ -41,7 +41,7 @@ public class ClickMinigame : MonoBehaviour
     private void OnMouseOver()
     {
         //change sprite
-        if(hoverEffect != null)
+        if(hoverEffect != null && this.enabled)
         {
             this.hoverEffect.SetActive(true);
             //foreach(SpriteRenderer sprite in sprites)

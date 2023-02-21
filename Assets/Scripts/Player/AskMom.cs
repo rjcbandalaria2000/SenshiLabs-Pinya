@@ -67,7 +67,6 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
                 pinyaMeterUI.StartDamageFade(pinyaCost);
             }
         }
-        
         playerPinyaMeter.DecreasePinyaMeter(pinyaCost);
 
     }
@@ -78,16 +77,21 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         {
             uiManager.ButtonUninteractable();
         }
+        UnenableHoverEffect();
         EnableHighlight();
         if (taskManager != null)
         {
             taskManager.DisplayTasks();
         }
+
+        
         yield return new WaitForSeconds(coolDown);
+
         if (uiManager != null)
         {
             uiManager.ButtonInteractable();
         }
+        EnableHoverEffect();
         DisableHighlight();
         if (taskManager != null)
         {
@@ -222,4 +226,21 @@ public class AskMom : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             }
         }
     }
+
+    public void EnableHoverEffect()
+    {
+        for(int i = 0; i < minigameObjects.Count;i++)
+        {
+            minigameObjects[i].GetComponent<ClickMinigame>().enabled = true;
+        }
+    }
+
+    public void UnenableHoverEffect()
+    {
+        for (int i = 0; i < minigameObjects.Count; i++)
+        {
+            minigameObjects[i].GetComponent<ClickMinigame>().enabled = false;
+        }
+    }
+
 }
