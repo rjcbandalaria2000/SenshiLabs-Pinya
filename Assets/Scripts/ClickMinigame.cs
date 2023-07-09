@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ClickMinigame : MonoBehaviour
 {
@@ -8,7 +9,11 @@ public class ClickMinigame : MonoBehaviour
     public int waypointIndex;
 
     public GameObject hoverEffect;
-   // public List<SpriteRenderer> sprites;
+
+    public UnityEvent onHighlight;
+    public UnityEvent onHighlightRemove;
+
+    // public List<SpriteRenderer> sprites;
     //public SpriteRenderer objSprite;
     //public Sprite unHoverSprite;
     //public Sprite hoverSprite;
@@ -44,6 +49,8 @@ public class ClickMinigame : MonoBehaviour
         if(hoverEffect != null && this.enabled)
         {
             this.hoverEffect.SetActive(true);
+            onHighlight?.Invoke();
+
             //foreach(SpriteRenderer sprite in sprites)
             //{
             //    sprite.enabled = true;
@@ -58,7 +65,8 @@ public class ClickMinigame : MonoBehaviour
         if (hoverEffect != null)
         {
             this.hoverEffect.SetActive(false);
-            
+            onHighlightRemove?.Invoke();
+
             //foreach (SpriteRenderer sprite in sprites)
             //{
             //    sprite.enabled = false;
