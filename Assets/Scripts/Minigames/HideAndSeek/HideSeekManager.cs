@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
+public enum HidingSpot
+{
+    Logs,
+    Leaves
+}
+
 public class HideSeekManager : MinigameManager
 {
     public GameObject               children;
@@ -23,6 +29,9 @@ public class HideSeekManager : MinigameManager
     private int                     RNG;
     private PlayerProgress          playerProgress;
 
+    public GameObject logs, leaves;
+
+    public List<SpawnHidingInfo> hidingInfo = new List<SpawnHidingInfo>();
     private void Start()
     {
         childCount = 0;
@@ -51,15 +60,54 @@ public class HideSeekManager : MinigameManager
 
     }
 
+    public void RandomizeHidingSpot()
+    {
+        
+        float rand = Random.Range(0.0f, 1f);
+
+        SpawnHidingInfo cacheInfo = new SpawnHidingInfo();
+
+        if (rand < 0.5f)
+        {
+            cacheInfo.HidingObject = logs;
+            cacheInfo.HidingSpot = HidingSpot.Logs;
+        }
+        else
+        {
+            cacheInfo.HidingObject = leaves;
+            cacheInfo.HidingSpot = HidingSpot.Leaves;
+        }
+
+        hidingInfo.Add(cacheInfo);
+    }
+
+    public void SpawnHidingSpots()
+    {
+        for(int i = 0; i< spawnPoints.Count; i++)
+        {
+            RandomizeHidingSpot();
+            GameObject hideObj = Instantiate(hidingInfo[i].HidingObject, spawnPoints[i].transform.position, Quaternion.identity);
+
+        }
+
+    }
+
     IEnumerator spawn()
     {
+        List<GameObject> list = new List<GameObject>();
+
+        SpawnHidingSpots();
+
         for (int i = 0; i < spawnPoints.Count; i++)
         {
-            List<GameObject> list = new List<GameObject>();
-            list = spawnPoints;
 
+           // RandomizeHidingSpot();
+
+            list = spawnPoints;
             int randomPoint = Random.Range(0, list.Count);
+
             GameObject child = Instantiate(children, list[randomPoint].transform.position, Quaternion.identity);
+
             childCount += 1;
             list.RemoveAt(randomPoint);
 
