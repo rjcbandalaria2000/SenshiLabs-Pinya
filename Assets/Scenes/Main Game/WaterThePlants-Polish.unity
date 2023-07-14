@@ -1528,6 +1528,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseButton
       objectReference: {fileID: 0}
+    - target: {fileID: 167334696666823809, guid: 5e0baa05114e15e49af2af8969c8c440, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7304332244328301733, guid: 5e0baa05114e15e49af2af8969c8c440, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -2356,6 +2360,14 @@ PrefabInstance:
     - target: {fileID: 1582221871243474479, guid: c8931a41b5edd41479a9c468c84f302c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2548611733074802810, guid: c8931a41b5edd41479a9c468c84f302c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3093537875076477523, guid: c8931a41b5edd41479a9c468c84f302c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3664893281747020194, guid: c8931a41b5edd41479a9c468c84f302c, type: 3}
       propertyPath: glowSFX
@@ -3216,6 +3228,7 @@ MonoBehaviour:
   gameStartTime: 3
   countdownTimerUI: {fileID: 7784184}
   motivationalCost: 20
+  previousVal: 0
   Plants:
   - {fileID: 475102912}
   - {fileID: 446830637}
@@ -4779,6 +4792,7 @@ MonoBehaviour:
   askMomButton: {fileID: 0}
   tutorialGO: {fileID: 0}
   confirmationGO: {fileID: 0}
+  creditsGO: {fileID: 0}
 --- !u!114 &661794643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4804,6 +4818,8 @@ MonoBehaviour:
   badEndingSceneName: 
   tutorial: {fileID: 0}
   tutorial2: {fileID: 0}
+  playerAi: {fileID: 0}
+  colliders: []
 --- !u!1 &662185521 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4622933539618263828, guid: c8931a41b5edd41479a9c468c84f302c, type: 3}
@@ -6583,6 +6599,10 @@ PrefabInstance:
     - target: {fileID: 6554247499413389988, guid: ba7fae1de7f5a9044bbe3e133154ee73, type: 3}
       propertyPath: m_Name
       value: Pause
+      objectReference: {fileID: 0}
+    - target: {fileID: 6554247499413389988, guid: ba7fae1de7f5a9044bbe3e133154ee73, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba7fae1de7f5a9044bbe3e133154ee73, type: 3}
@@ -10129,7 +10149,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 345.82324, y: -115.274414}
+  m_AnchoredPosition: {x: 365, y: -144}
   m_SizeDelta: {x: 691.6465, y: 230.5488}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1710597981
@@ -10405,6 +10425,7 @@ MonoBehaviour:
   askMomButton: {fileID: 0}
   tutorialGO: {fileID: 476275623}
   confirmationGO: {fileID: 2143539528}
+  creditsGO: {fileID: 0}
 --- !u!114 &1725700283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13110,7 +13131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8266011235985157277, guid: e4b650b5d63dcde4da16e72d023d1435, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8266011236554886056, guid: e4b650b5d63dcde4da16e72d023d1435, type: 3}
       propertyPath: m_SizeDelta.x
@@ -13146,6 +13167,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5126306651134866956, guid: 55ba75a0b91c77841aa3228a8faef8af, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5126306651134866958, guid: 55ba75a0b91c77841aa3228a8faef8af, type: 3}
       propertyPath: m_Name
       value: Timer
@@ -13259,6 +13284,14 @@ PrefabInstance:
       propertyPath: animationTime
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 1443193921381475582, guid: a9a545faf6aa14444afafd1dcf1be089, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141261138078510807, guid: a9a545faf6aa14444afafd1dcf1be089, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3106387665378238594, guid: a9a545faf6aa14444afafd1dcf1be089, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -13303,6 +13336,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5735035677503687837, guid: a9a545faf6aa14444afafd1dcf1be089, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.71
+      objectReference: {fileID: 0}
     - target: {fileID: 6318458016364607748, guid: a9a545faf6aa14444afafd1dcf1be089, type: 3}
       propertyPath: lengthInSec
       value: 0.1
@@ -13320,6 +13357,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 516604575945958039, guid: 318ce907d304d9744b7f944c9b945499, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.43
+      objectReference: {fileID: 0}
     - target: {fileID: 3923595661847489459, guid: 318ce907d304d9744b7f944c9b945499, type: 3}
       propertyPath: m_Name
       value: EggplantPlant
@@ -13339,6 +13380,14 @@ PrefabInstance:
     - target: {fileID: 4938423479226487045, guid: 318ce907d304d9744b7f944c9b945499, type: 3}
       propertyPath: animationTime
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127956700156756189, guid: 318ce907d304d9744b7f944c9b945499, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6681908867227912948, guid: 318ce907d304d9744b7f944c9b945499, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7179215613973450376, guid: 318ce907d304d9744b7f944c9b945499, type: 3}
       propertyPath: m_RootOrder

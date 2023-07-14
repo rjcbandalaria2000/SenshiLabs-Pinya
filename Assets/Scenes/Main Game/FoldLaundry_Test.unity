@@ -1668,6 +1668,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1250727528}
     m_Modifications:
+    - target: {fileID: 5126306651134866956, guid: 55ba75a0b91c77841aa3228a8faef8af, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5126306651134866958, guid: 55ba75a0b91c77841aa3228a8faef8af, type: 3}
       propertyPath: m_Name
       value: Timer (1)
@@ -3621,6 +3625,7 @@ MonoBehaviour:
   askMomButton: {fileID: 0}
   tutorialGO: {fileID: 2136206196}
   confirmationGO: {fileID: 150778038}
+  creditsGO: {fileID: 0}
 --- !u!114 &1573738793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3669,6 +3674,7 @@ MonoBehaviour:
   gameStartTime: 3
   countdownTimerUI: {fileID: 2131424719}
   motivationalCost: 20
+  previousVal: 0
   ClothesComponent: {fileID: 0}
   spawnClothes: {fileID: 571389345484029030, guid: d7735d86a7908f84ab460f23c7172cdb, type: 3}
   clothesNum: 0
@@ -4319,7 +4325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3056311791677182187, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3056311791677182191, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_Pivot.x
@@ -4773,6 +4779,10 @@ PrefabInstance:
     - target: {fileID: 6554247499413389988, guid: ba7fae1de7f5a9044bbe3e133154ee73, type: 3}
       propertyPath: m_Name
       value: Pause
+      objectReference: {fileID: 0}
+    - target: {fileID: 6554247499413389988, guid: ba7fae1de7f5a9044bbe3e133154ee73, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba7fae1de7f5a9044bbe3e133154ee73, type: 3}

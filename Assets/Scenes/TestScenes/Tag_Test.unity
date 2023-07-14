@@ -617,6 +617,10 @@ MonoBehaviour:
   imageGO: {fileID: 169305957}
   currentPage: {fileID: 0}
   maxPage: {fileID: 0}
+  videoImage: {fileID: 0}
+  nextArrow: {fileID: 0}
+  prevArrow: {fileID: 0}
+  startButton: {fileID: 0}
 --- !u!1 &185422487
 GameObject:
   m_ObjectHideFlags: 0
@@ -1615,6 +1619,8 @@ MonoBehaviour:
   speedTimer: 1
   gameStartTime: 3
   countdownTimerUI: {fileID: 297066471}
+  motivationalCost: 20
+  previousVal: 0
   player: {fileID: 7551254009506139844, guid: 9467bbb18482bc343b6d86e50e54cba5, type: 3}
   spawnPlayer: {fileID: 0}
   bot: {fileID: 3473092747535473346, guid: d1ed0b8b1f495ba4ea0f10f2370d7e7a, type: 3}
@@ -1682,6 +1688,8 @@ MonoBehaviour:
   gameUI: {fileID: 0}
   losePanelUI: {fileID: 0}
   winPanelUI: {fileID: 0}
+  PauseCanvas: {fileID: 0}
+  puaseConfirmation: {fileID: 0}
   miniGameTimerDisplay: {fileID: 1742925307}
   miniGameMainMenu: {fileID: 1008215766}
   minigameStartCountdownUI: {fileID: 297066470}
@@ -1693,6 +1701,7 @@ MonoBehaviour:
   askMomButton: {fileID: 0}
   tutorialGO: {fileID: 0}
   confirmationGO: {fileID: 0}
+  creditsGO: {fileID: 0}
 --- !u!1 &813079524
 GameObject:
   m_ObjectHideFlags: 0
@@ -2028,7 +2037,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3056311791677182187, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3056311791677182191, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: m_Pivot.x
@@ -2260,7 +2269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5013682240661548592, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: endPos.x
-      value: 73
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 5013682240661548592, guid: 8a752e71e55b21449b43cc046a5b6402, type: 3}
       propertyPath: endPos.y
