@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum TimePeriod{
     Morning = 0,
@@ -13,7 +14,11 @@ public class DayCycle : MonoBehaviour
 
     public TimePeriod   timePeriod;
     public int          timeIndex = 0;
-    //[SerializeField] bool isMorning;
+    [Header("UI Color")]
+    public GameObject   colorOverlay;
+    public Color        morningShade;
+    public Color        afternoonShade;
+    public Color        eveningShade;
 
     private void Awake()
     {
@@ -34,7 +39,6 @@ public class DayCycle : MonoBehaviour
 
     public void Initialize()
     {
-        
         Events.OnChangeTimePeriod.Invoke();
         Events.OnSceneChange.AddListener(OnSceneChange);
     }
