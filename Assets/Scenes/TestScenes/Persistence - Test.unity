@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f191e60c091de1944acc59cb8a1f1455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstSceneId: PreReqIcons -TestScene
+  FirstSceneId: Test- TimeOfDayColorChange
 --- !u!4 &1480656603
 Transform:
   m_ObjectHideFlags: 0
@@ -203,7 +203,7 @@ MonoBehaviour:
   maxPinyaData: 0
   minigamesPlayed: 0
   hasSaved: 0
-  playerLocation: {x: 0, y: 0}
+  playerLocation: {x: 0, y: 0, z: 0}
   firstTime: 0
   isCleanTheHouseFinished: 0
   isWashTheDishesFinished: 0
@@ -217,8 +217,13 @@ MonoBehaviour:
   isFoldingClothesFinished: 0
   currentMinigame: 
   requiredTasks: []
+  hasPlayed: 0
   savedTimeIndex: 0
   savedTimePeriod: 0
+  isMorning: 0
+  isAfternoon: 0
+  isEvening: 0
+  previousStoredMotivation: 0
 --- !u!4 &1566311201
 Transform:
   m_ObjectHideFlags: 0
