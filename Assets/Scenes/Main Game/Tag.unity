@@ -281,14 +281,6 @@ PrefabInstance:
       propertyPath: m_text
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 2174895157945811449, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.000011295
-      objectReference: {fileID: 0}
-    - target: {fileID: 2174895157945811449, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -662.5
-      objectReference: {fileID: 0}
     - target: {fileID: 2174895158130304436, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: m_Name
       value: Previous Page
@@ -347,7 +339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2174895158145102627, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: m_Name
-      value: Tutorial Prompt (3)
+      value: Tutorial Prompt
       objectReference: {fileID: 0}
     - target: {fileID: 2174895158145102627, guid: 4b4d9e8fd43fd5649afa4b3116c76184, type: 3}
       propertyPath: m_IsActive
@@ -1852,6 +1844,7 @@ MonoBehaviour:
   askMomButton: {fileID: 0}
   tutorialGO: {fileID: 169305956}
   confirmationGO: {fileID: 1104427115}
+  creditsGO: {fileID: 0}
 --- !u!114 &781254076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1871,6 +1864,8 @@ MonoBehaviour:
   speedTimer: 1
   gameStartTime: 3
   countdownTimerUI: {fileID: 297066471}
+  motivationalCost: 20
+  previousVal: 0
   player: {fileID: 7551254009506139849, guid: 9467bbb18482bc343b6d86e50e54cba5, type: 3}
   spawnedPlayer: {fileID: 0}
   activeAI:
